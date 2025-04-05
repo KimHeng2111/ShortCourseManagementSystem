@@ -37,6 +37,7 @@ Partial Class RegisterForm
         Me.btnRegister = New CustomControls.RJControls.RJButton()
         Me.btnStudent = New CustomControls.RJControls.RJButton()
         Me.btnStudentImage = New CustomControls.RJControls.RJButton()
+        Me.picStudent = New System.Windows.Forms.PictureBox()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.txtDis = New CustomControls.RJControls.RJTextBox()
         Me.Label23 = New System.Windows.Forms.Label()
@@ -81,9 +82,9 @@ Partial Class RegisterForm
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.picStudent = New System.Windows.Forms.PictureBox()
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
+        CType(Me.picStudent, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel8.SuspendLayout()
         Me.Panel7.SuspendLayout()
         Me.Panel6.SuspendLayout()
@@ -91,7 +92,6 @@ Partial Class RegisterForm
         Me.Panel10.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        CType(Me.picStudent, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel2
@@ -112,8 +112,9 @@ Partial Class RegisterForm
         Me.Panel2.Controls.Add(Me.Panel3)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1666, 879)
+        Me.Panel2.Size = New System.Drawing.Size(1924, 1055)
         Me.Panel2.TabIndex = 40
         '
         'Panel1
@@ -128,10 +129,10 @@ Partial Class RegisterForm
         Me.Panel1.Controls.Add(Me.Label29)
         Me.Panel1.Controls.Add(Me.lbAmount)
         Me.Panel1.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel1.Location = New System.Drawing.Point(665, 370)
+        Me.Panel1.Location = New System.Drawing.Point(887, 455)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(578, 284)
+        Me.Panel1.Size = New System.Drawing.Size(771, 350)
         Me.Panel1.TabIndex = 40
         '
         'txtPayAmount
@@ -145,15 +146,15 @@ Partial Class RegisterForm
         Me.txtPayAmount.BorderSize = 2
         Me.txtPayAmount.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPayAmount.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.txtPayAmount.Location = New System.Drawing.Point(194, 227)
-        Me.txtPayAmount.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtPayAmount.Location = New System.Drawing.Point(259, 279)
+        Me.txtPayAmount.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.txtPayAmount.Multiline = False
         Me.txtPayAmount.Name = "txtPayAmount"
-        Me.txtPayAmount.Padding = New System.Windows.Forms.Padding(10, 7, 10, 7)
+        Me.txtPayAmount.Padding = New System.Windows.Forms.Padding(13, 9, 13, 9)
         Me.txtPayAmount.PasswordChar = False
         Me.txtPayAmount.PlaceholderColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(248, Byte), Integer))
         Me.txtPayAmount.PlaceholderText = "0"
-        Me.txtPayAmount.Size = New System.Drawing.Size(70, 44)
+        Me.txtPayAmount.Size = New System.Drawing.Size(93, 55)
         Me.txtPayAmount.TabIndex = 54
         Me.txtPayAmount.Texts = ""
         Me.txtPayAmount.UnderlinedStyle = True
@@ -164,9 +165,10 @@ Partial Class RegisterForm
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label27.AutoSize = True
         Me.Label27.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label27.Location = New System.Drawing.Point(271, 235)
+        Me.Label27.Location = New System.Drawing.Point(361, 289)
+        Me.Label27.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(22, 29)
+        Me.Label27.Size = New System.Drawing.Size(26, 36)
         Me.Label27.TabIndex = 53
         Me.Label27.Text = "$"
         '
@@ -177,9 +179,10 @@ Partial Class RegisterForm
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label17.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.Label17.Location = New System.Drawing.Point(13, 242)
+        Me.Label17.Location = New System.Drawing.Point(17, 298)
+        Me.Label17.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(67, 29)
+        Me.Label17.Size = New System.Drawing.Size(83, 36)
         Me.Label17.TabIndex = 50
         Me.Label17.Text = "បង់ប្រាក់"
         '
@@ -187,10 +190,11 @@ Partial Class RegisterForm
         '
         Me.txtCourseDes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtCourseDes.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCourseDes.Location = New System.Drawing.Point(18, 64)
+        Me.txtCourseDes.Location = New System.Drawing.Point(24, 79)
+        Me.txtCourseDes.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.txtCourseDes.Name = "txtCourseDes"
-        Me.txtCourseDes.Padding = New System.Windows.Forms.Padding(10)
-        Me.txtCourseDes.Size = New System.Drawing.Size(533, 115)
+        Me.txtCourseDes.Padding = New System.Windows.Forms.Padding(13, 12, 13, 12)
+        Me.txtCourseDes.Size = New System.Drawing.Size(710, 141)
         Me.txtCourseDes.TabIndex = 7
         '
         'Label38
@@ -198,9 +202,10 @@ Partial Class RegisterForm
         Me.Label38.AutoSize = True
         Me.Label38.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label38.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.Label38.Location = New System.Drawing.Point(212, 17)
+        Me.Label38.Location = New System.Drawing.Point(283, 21)
+        Me.Label38.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label38.Name = "Label38"
-        Me.Label38.Size = New System.Drawing.Size(163, 29)
+        Me.Label38.Size = New System.Drawing.Size(205, 36)
         Me.Label38.TabIndex = 3
         Me.Label38.Text = "កាពិព៌ណនាអំពីវគ្គសិក្សា"
         '
@@ -211,9 +216,10 @@ Partial Class RegisterForm
         Me.Label28.AutoSize = True
         Me.Label28.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label28.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.Label28.Location = New System.Drawing.Point(13, 197)
+        Me.Label28.Location = New System.Drawing.Point(17, 242)
+        Me.Label28.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(72, 29)
+        Me.Label28.Size = New System.Drawing.Size(89, 36)
         Me.Label28.TabIndex = 48
         Me.Label28.Text = "តម្លៃសរុប"
         '
@@ -223,9 +229,10 @@ Partial Class RegisterForm
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(164, 242)
+        Me.Label19.Location = New System.Drawing.Point(219, 298)
+        Me.Label19.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(17, 29)
+        Me.Label19.Size = New System.Drawing.Size(21, 36)
         Me.Label19.TabIndex = 47
         Me.Label19.Text = ":"
         '
@@ -235,9 +242,10 @@ Partial Class RegisterForm
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label29.AutoSize = True
         Me.Label29.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label29.Location = New System.Drawing.Point(164, 197)
+        Me.Label29.Location = New System.Drawing.Point(219, 242)
+        Me.Label29.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(17, 29)
+        Me.Label29.Size = New System.Drawing.Size(21, 36)
         Me.Label29.TabIndex = 47
         Me.Label29.Text = ":"
         '
@@ -247,9 +255,10 @@ Partial Class RegisterForm
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lbAmount.AutoSize = True
         Me.lbAmount.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbAmount.Location = New System.Drawing.Point(193, 197)
+        Me.lbAmount.Location = New System.Drawing.Point(257, 242)
+        Me.lbAmount.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbAmount.Name = "lbAmount"
-        Me.lbAmount.Size = New System.Drawing.Size(31, 29)
+        Me.lbAmount.Size = New System.Drawing.Size(37, 36)
         Me.lbAmount.TabIndex = 49
         Me.lbAmount.Text = "0$"
         '
@@ -265,9 +274,10 @@ Partial Class RegisterForm
         Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClear.Font = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClear.ForeColor = System.Drawing.Color.White
-        Me.btnClear.Location = New System.Drawing.Point(928, 761)
+        Me.btnClear.Location = New System.Drawing.Point(940, 937)
+        Me.btnClear.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(142, 40)
+        Me.btnClear.Size = New System.Drawing.Size(189, 49)
         Me.btnClear.TabIndex = 39
         Me.btnClear.Text = "សម្អាត"
         Me.btnClear.TextColor = System.Drawing.Color.White
@@ -285,9 +295,10 @@ Partial Class RegisterForm
         Me.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnRegister.Font = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRegister.ForeColor = System.Drawing.Color.White
-        Me.btnRegister.Location = New System.Drawing.Point(634, 761)
+        Me.btnRegister.Location = New System.Drawing.Point(548, 937)
+        Me.btnRegister.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnRegister.Name = "btnRegister"
-        Me.btnRegister.Size = New System.Drawing.Size(142, 40)
+        Me.btnRegister.Size = New System.Drawing.Size(189, 49)
         Me.btnRegister.TabIndex = 39
         Me.btnRegister.Text = "ចុះឈ្មោះ"
         Me.btnRegister.TextColor = System.Drawing.Color.White
@@ -305,9 +316,10 @@ Partial Class RegisterForm
         Me.btnStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnStudent.Font = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnStudent.ForeColor = System.Drawing.Color.White
-        Me.btnStudent.Location = New System.Drawing.Point(277, 761)
+        Me.btnStudent.Location = New System.Drawing.Point(72, 937)
+        Me.btnStudent.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnStudent.Name = "btnStudent"
-        Me.btnStudent.Size = New System.Drawing.Size(142, 40)
+        Me.btnStudent.Size = New System.Drawing.Size(189, 49)
         Me.btnStudent.TabIndex = 39
         Me.btnStudent.Text = "ជ្រើសរើសសិស្ស"
         Me.btnStudent.TextColor = System.Drawing.Color.White
@@ -325,13 +337,28 @@ Partial Class RegisterForm
         Me.btnStudentImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnStudentImage.Font = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnStudentImage.ForeColor = System.Drawing.Color.White
-        Me.btnStudentImage.Location = New System.Drawing.Point(1448, 260)
+        Me.btnStudentImage.Location = New System.Drawing.Point(1634, 320)
+        Me.btnStudentImage.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnStudentImage.Name = "btnStudentImage"
-        Me.btnStudentImage.Size = New System.Drawing.Size(142, 40)
+        Me.btnStudentImage.Size = New System.Drawing.Size(189, 49)
         Me.btnStudentImage.TabIndex = 39
         Me.btnStudentImage.Text = "ជ្រើសរើសរូបភាព"
         Me.btnStudentImage.TextColor = System.Drawing.Color.White
         Me.btnStudentImage.UseVisualStyleBackColor = False
+        '
+        'picStudent
+        '
+        Me.picStudent.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.picStudent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.picStudent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.picStudent.Image = Global.StudentManagementSystem.My.Resources.Resources.profile
+        Me.picStudent.Location = New System.Drawing.Point(1623, 28)
+        Me.picStudent.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.picStudent.Name = "picStudent"
+        Me.picStudent.Size = New System.Drawing.Size(210, 253)
+        Me.picStudent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picStudent.TabIndex = 38
+        Me.picStudent.TabStop = False
         '
         'Panel8
         '
@@ -352,10 +379,10 @@ Partial Class RegisterForm
         Me.Panel8.Controls.Add(Me.Label16)
         Me.Panel8.Controls.Add(Me.lbSchedule)
         Me.Panel8.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel8.Location = New System.Drawing.Point(51, 370)
+        Me.Panel8.Location = New System.Drawing.Point(68, 455)
         Me.Panel8.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(518, 284)
+        Me.Panel8.Size = New System.Drawing.Size(691, 350)
         Me.Panel8.TabIndex = 23
         '
         'txtDis
@@ -369,15 +396,15 @@ Partial Class RegisterForm
         Me.txtDis.BorderSize = 2
         Me.txtDis.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDis.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.txtDis.Location = New System.Drawing.Point(349, 189)
-        Me.txtDis.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtDis.Location = New System.Drawing.Point(465, 233)
+        Me.txtDis.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.txtDis.Multiline = False
         Me.txtDis.Name = "txtDis"
-        Me.txtDis.Padding = New System.Windows.Forms.Padding(10, 7, 10, 7)
+        Me.txtDis.Padding = New System.Windows.Forms.Padding(13, 9, 13, 9)
         Me.txtDis.PasswordChar = False
         Me.txtDis.PlaceholderColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(248, Byte), Integer))
         Me.txtDis.PlaceholderText = "0"
-        Me.txtDis.Size = New System.Drawing.Size(70, 44)
+        Me.txtDis.Size = New System.Drawing.Size(93, 55)
         Me.txtDis.TabIndex = 52
         Me.txtDis.Texts = ""
         Me.txtDis.UnderlinedStyle = True
@@ -388,9 +415,10 @@ Partial Class RegisterForm
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label23.AutoSize = True
         Me.Label23.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.Location = New System.Drawing.Point(325, 197)
+        Me.Label23.Location = New System.Drawing.Point(433, 242)
+        Me.Label23.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(17, 29)
+        Me.Label23.Size = New System.Drawing.Size(21, 36)
         Me.Label23.TabIndex = 50
         Me.Label23.Text = ":"
         '
@@ -401,9 +429,10 @@ Partial Class RegisterForm
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label24.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.Label24.Location = New System.Drawing.Point(245, 197)
+        Me.Label24.Location = New System.Drawing.Point(327, 242)
+        Me.Label24.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(74, 29)
+        Me.Label24.Size = New System.Drawing.Size(92, 36)
         Me.Label24.TabIndex = 51
         Me.Label24.Text = "បញ្ចុះតម្លៃ"
         '
@@ -413,9 +442,10 @@ Partial Class RegisterForm
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label21.AutoSize = True
         Me.Label21.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(426, 197)
+        Me.Label21.Location = New System.Drawing.Point(568, 242)
+        Me.Label21.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(22, 29)
+        Me.Label21.Size = New System.Drawing.Size(26, 36)
         Me.Label21.TabIndex = 49
         Me.Label21.Text = "$"
         '
@@ -425,9 +455,10 @@ Partial Class RegisterForm
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lbPrice.AutoSize = True
         Me.lbPrice.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbPrice.Location = New System.Drawing.Point(185, 197)
+        Me.lbPrice.Location = New System.Drawing.Point(247, 242)
+        Me.lbPrice.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbPrice.Name = "lbPrice"
-        Me.lbPrice.Size = New System.Drawing.Size(31, 29)
+        Me.lbPrice.Size = New System.Drawing.Size(37, 36)
         Me.lbPrice.TabIndex = 49
         Me.lbPrice.Text = "0$"
         '
@@ -437,9 +468,10 @@ Partial Class RegisterForm
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cbCourses.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbCourses.FormattingEnabled = True
-        Me.cbCourses.Location = New System.Drawing.Point(190, 17)
+        Me.cbCourses.Location = New System.Drawing.Point(253, 21)
+        Me.cbCourses.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cbCourses.Name = "cbCourses"
-        Me.cbCourses.Size = New System.Drawing.Size(308, 37)
+        Me.cbCourses.Size = New System.Drawing.Size(409, 44)
         Me.cbCourses.TabIndex = 7
         '
         'Label25
@@ -448,9 +480,10 @@ Partial Class RegisterForm
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label25.AutoSize = True
         Me.Label25.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label25.Location = New System.Drawing.Point(156, 21)
+        Me.Label25.Location = New System.Drawing.Point(208, 26)
+        Me.Label25.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(17, 29)
+        Me.Label25.Size = New System.Drawing.Size(21, 36)
         Me.Label25.TabIndex = 1
         Me.Label25.Text = ":"
         '
@@ -461,9 +494,10 @@ Partial Class RegisterForm
         Me.Label26.AutoSize = True
         Me.Label26.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label26.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.Label26.Location = New System.Drawing.Point(3, 21)
+        Me.Label26.Location = New System.Drawing.Point(4, 26)
+        Me.Label26.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(129, 29)
+        Me.Label26.Size = New System.Drawing.Size(160, 36)
         Me.Label26.TabIndex = 0
         Me.Label26.Text = "ជ្រើសរើសវគ្គសិក្សា"
         '
@@ -473,9 +507,10 @@ Partial Class RegisterForm
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(156, 197)
+        Me.Label14.Location = New System.Drawing.Point(208, 242)
+        Me.Label14.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(17, 29)
+        Me.Label14.Size = New System.Drawing.Size(21, 36)
         Me.Label14.TabIndex = 47
         Me.Label14.Text = ":"
         '
@@ -485,9 +520,10 @@ Partial Class RegisterForm
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lbDate.AutoSize = True
         Me.lbDate.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbDate.Location = New System.Drawing.Point(185, 132)
+        Me.lbDate.Location = New System.Drawing.Point(247, 162)
+        Me.lbDate.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbDate.Name = "lbDate"
-        Me.lbDate.Size = New System.Drawing.Size(91, 29)
+        Me.lbDate.Size = New System.Drawing.Size(113, 36)
         Me.lbDate.TabIndex = 46
         Me.lbDate.Text = "22/12/2025"
         '
@@ -498,9 +534,10 @@ Partial Class RegisterForm
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.Label11.Location = New System.Drawing.Point(5, 197)
+        Me.Label11.Location = New System.Drawing.Point(7, 242)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(93, 29)
+        Me.Label11.Size = New System.Drawing.Size(116, 36)
         Me.Label11.TabIndex = 48
         Me.Label11.Text = "តម្លៃវគ្គសិក្សា"
         '
@@ -511,9 +548,10 @@ Partial Class RegisterForm
         Me.Label22.AutoSize = True
         Me.Label22.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label22.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.Label22.Location = New System.Drawing.Point(5, 78)
+        Me.Label22.Location = New System.Drawing.Point(7, 96)
+        Me.Label22.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(71, 29)
+        Me.Label22.Size = New System.Drawing.Size(88, 36)
         Me.Label22.TabIndex = 42
         Me.Label22.Text = "វេនសិក្សា"
         '
@@ -523,9 +561,10 @@ Partial Class RegisterForm
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(156, 132)
+        Me.Label15.Location = New System.Drawing.Point(208, 162)
+        Me.Label15.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(17, 29)
+        Me.Label15.Size = New System.Drawing.Size(21, 36)
         Me.Label15.TabIndex = 44
         Me.Label15.Text = ":"
         '
@@ -535,9 +574,10 @@ Partial Class RegisterForm
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(156, 78)
+        Me.Label13.Location = New System.Drawing.Point(208, 96)
+        Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(17, 29)
+        Me.Label13.Size = New System.Drawing.Size(21, 36)
         Me.Label13.TabIndex = 41
         Me.Label13.Text = ":"
         '
@@ -548,9 +588,10 @@ Partial Class RegisterForm
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label16.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.Label16.Location = New System.Drawing.Point(5, 132)
+        Me.Label16.Location = New System.Drawing.Point(7, 162)
+        Me.Label16.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(141, 29)
+        Me.Label16.Size = New System.Drawing.Size(175, 36)
         Me.Label16.TabIndex = 45
         Me.Label16.Text = "កាលបរិច្ឆេទចូលរៀន"
         '
@@ -560,9 +601,10 @@ Partial Class RegisterForm
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lbSchedule.AutoSize = True
         Me.lbSchedule.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbSchedule.Location = New System.Drawing.Point(185, 78)
+        Me.lbSchedule.Location = New System.Drawing.Point(247, 96)
+        Me.lbSchedule.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbSchedule.Name = "lbSchedule"
-        Me.lbSchedule.Size = New System.Drawing.Size(184, 29)
+        Me.lbSchedule.Size = New System.Drawing.Size(232, 36)
         Me.lbSchedule.TabIndex = 43
         Me.lbSchedule.Text = "Mon-Tus 4:00 - 5:30 Pm"
         '
@@ -572,9 +614,10 @@ Partial Class RegisterForm
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(141, 574)
+        Me.Label12.Location = New System.Drawing.Point(188, 679)
+        Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(17, 29)
+        Me.Label12.Size = New System.Drawing.Size(21, 36)
         Me.Label12.TabIndex = 8
         Me.Label12.Text = ":"
         '
@@ -584,10 +627,10 @@ Partial Class RegisterForm
         Me.Panel7.Controls.Add(Me.Label9)
         Me.Panel7.Controls.Add(Me.Label10)
         Me.Panel7.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel7.Location = New System.Drawing.Point(669, 253)
+        Me.Panel7.Location = New System.Drawing.Point(892, 311)
         Me.Panel7.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(578, 65)
+        Me.Panel7.Size = New System.Drawing.Size(771, 80)
         Me.Panel7.TabIndex = 22
         '
         'txtAddress
@@ -601,15 +644,15 @@ Partial Class RegisterForm
         Me.txtAddress.BorderSize = 2
         Me.txtAddress.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtAddress.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.txtAddress.Location = New System.Drawing.Point(143, 21)
-        Me.txtAddress.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtAddress.Location = New System.Drawing.Point(191, 26)
+        Me.txtAddress.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.txtAddress.Multiline = False
         Me.txtAddress.Name = "txtAddress"
-        Me.txtAddress.Padding = New System.Windows.Forms.Padding(10, 7, 10, 7)
+        Me.txtAddress.Padding = New System.Windows.Forms.Padding(13, 9, 13, 9)
         Me.txtAddress.PasswordChar = False
         Me.txtAddress.PlaceholderColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(248, Byte), Integer))
         Me.txtAddress.PlaceholderText = "ខេត្ត/រាជធានី"
-        Me.txtAddress.Size = New System.Drawing.Size(256, 44)
+        Me.txtAddress.Size = New System.Drawing.Size(341, 55)
         Me.txtAddress.TabIndex = 6
         Me.txtAddress.Texts = ""
         Me.txtAddress.UnderlinedStyle = True
@@ -620,9 +663,10 @@ Partial Class RegisterForm
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(114, 29)
+        Me.Label9.Location = New System.Drawing.Point(152, 36)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(17, 29)
+        Me.Label9.Size = New System.Drawing.Size(21, 36)
         Me.Label9.TabIndex = 1
         Me.Label9.Text = ":"
         '
@@ -633,9 +677,10 @@ Partial Class RegisterForm
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.Label10.Location = New System.Drawing.Point(9, 29)
+        Me.Label10.Location = New System.Drawing.Point(12, 36)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(110, 29)
+        Me.Label10.Size = New System.Drawing.Size(138, 36)
         Me.Label10.TabIndex = 0
         Me.Label10.Text = "ទីកន្លែងកំណើត"
         '
@@ -645,10 +690,10 @@ Partial Class RegisterForm
         Me.Panel6.Controls.Add(Me.Label7)
         Me.Panel6.Controls.Add(Me.Label8)
         Me.Panel6.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel6.Location = New System.Drawing.Point(51, 253)
-        Me.Panel6.Margin = New System.Windows.Forms.Padding(15, 0, 15, 15)
+        Me.Panel6.Location = New System.Drawing.Point(68, 311)
+        Me.Panel6.Margin = New System.Windows.Forms.Padding(20, 0, 20, 18)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(518, 65)
+        Me.Panel6.Size = New System.Drawing.Size(691, 80)
         Me.Panel6.TabIndex = 21
         '
         'txtPhone
@@ -663,15 +708,15 @@ Partial Class RegisterForm
         Me.txtPhone.BorderSize = 2
         Me.txtPhone.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPhone.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.txtPhone.Location = New System.Drawing.Point(123, 21)
-        Me.txtPhone.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtPhone.Location = New System.Drawing.Point(164, 26)
+        Me.txtPhone.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.txtPhone.Multiline = False
         Me.txtPhone.Name = "txtPhone"
-        Me.txtPhone.Padding = New System.Windows.Forms.Padding(10, 7, 10, 7)
+        Me.txtPhone.Padding = New System.Windows.Forms.Padding(13, 9, 13, 9)
         Me.txtPhone.PasswordChar = False
         Me.txtPhone.PlaceholderColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(248, Byte), Integer))
         Me.txtPhone.PlaceholderText = "បញ្ចូលលេខទូរស័ព្ទ"
-        Me.txtPhone.Size = New System.Drawing.Size(391, 44)
+        Me.txtPhone.Size = New System.Drawing.Size(521, 55)
         Me.txtPhone.TabIndex = 5
         Me.txtPhone.Texts = ""
         Me.txtPhone.UnderlinedStyle = True
@@ -682,9 +727,10 @@ Partial Class RegisterForm
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(99, 29)
+        Me.Label7.Location = New System.Drawing.Point(132, 36)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(17, 29)
+        Me.Label7.Size = New System.Drawing.Size(21, 36)
         Me.Label7.TabIndex = 1
         Me.Label7.Text = ":"
         '
@@ -695,9 +741,10 @@ Partial Class RegisterForm
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.Label8.Location = New System.Drawing.Point(5, 29)
+        Me.Label8.Location = New System.Drawing.Point(7, 36)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(88, 29)
+        Me.Label8.Size = New System.Drawing.Size(109, 36)
         Me.Label8.TabIndex = 0
         Me.Label8.Text = "លេខទូរស័ព្ទ"
         '
@@ -708,10 +755,10 @@ Partial Class RegisterForm
         Me.Panel5.Controls.Add(Me.Label5)
         Me.Panel5.Controls.Add(Me.Label6)
         Me.Panel5.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel5.Location = New System.Drawing.Point(669, 128)
-        Me.Panel5.Margin = New System.Windows.Forms.Padding(15, 0, 15, 15)
+        Me.Panel5.Location = New System.Drawing.Point(892, 158)
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(20, 0, 20, 18)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(578, 75)
+        Me.Panel5.Size = New System.Drawing.Size(771, 92)
         Me.Panel5.TabIndex = 20
         '
         'RjDatePicker2
@@ -723,10 +770,11 @@ Partial Class RegisterForm
         Me.RjDatePicker2.CustomFormat = "dd /MM / yyyy"
         Me.RjDatePicker2.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RjDatePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.RjDatePicker2.Location = New System.Drawing.Point(153, 35)
+        Me.RjDatePicker2.Location = New System.Drawing.Point(204, 43)
+        Me.RjDatePicker2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.RjDatePicker2.MinimumSize = New System.Drawing.Size(4, 35)
         Me.RjDatePicker2.Name = "RjDatePicker2"
-        Me.RjDatePicker2.Size = New System.Drawing.Size(256, 37)
+        Me.RjDatePicker2.Size = New System.Drawing.Size(340, 44)
         Me.RjDatePicker2.SkinColor = System.Drawing.Color.MediumSlateBlue
         Me.RjDatePicker2.TabIndex = 4
         Me.RjDatePicker2.TextColor = System.Drawing.Color.White
@@ -736,9 +784,10 @@ Partial Class RegisterForm
         Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(118, 43)
+        Me.Label5.Location = New System.Drawing.Point(157, 53)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(17, 29)
+        Me.Label5.Size = New System.Drawing.Size(21, 36)
         Me.Label5.TabIndex = 1
         Me.Label5.Text = ":"
         '
@@ -747,9 +796,10 @@ Partial Class RegisterForm
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.Label6.Location = New System.Drawing.Point(9, 41)
+        Me.Label6.Location = New System.Drawing.Point(12, 50)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(109, 29)
+        Me.Label6.Size = New System.Drawing.Size(136, 36)
         Me.Label6.TabIndex = 0
         Me.Label6.Text = "ថ្ងៃខែឆ្នាំកំណើត"
         '
@@ -761,11 +811,11 @@ Partial Class RegisterForm
         Me.Panel10.Controls.Add(Me.Label18)
         Me.Panel10.Controls.Add(Me.Label20)
         Me.Panel10.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel10.Location = New System.Drawing.Point(51, 128)
-        Me.Panel10.Margin = New System.Windows.Forms.Padding(15, 0, 15, 15)
+        Me.Panel10.Location = New System.Drawing.Point(68, 158)
+        Me.Panel10.Margin = New System.Windows.Forms.Padding(20, 0, 20, 18)
         Me.Panel10.Name = "Panel10"
-        Me.Panel10.Padding = New System.Windows.Forms.Padding(10)
-        Me.Panel10.Size = New System.Drawing.Size(518, 75)
+        Me.Panel10.Padding = New System.Windows.Forms.Padding(13, 12, 13, 12)
+        Me.Panel10.Size = New System.Drawing.Size(691, 92)
         Me.Panel10.TabIndex = 19
         '
         'rbFemale
@@ -773,9 +823,10 @@ Partial Class RegisterForm
         Me.rbFemale.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.rbFemale.AutoSize = True
         Me.rbFemale.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbFemale.Location = New System.Drawing.Point(235, 41)
+        Me.rbFemale.Location = New System.Drawing.Point(313, 51)
+        Me.rbFemale.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.rbFemale.Name = "rbFemale"
-        Me.rbFemale.Size = New System.Drawing.Size(52, 33)
+        Me.rbFemale.Size = New System.Drawing.Size(62, 40)
         Me.rbFemale.TabIndex = 3
         Me.rbFemale.TabStop = True
         Me.rbFemale.Text = "ស្រី"
@@ -786,9 +837,10 @@ Partial Class RegisterForm
         Me.rbMale.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.rbMale.AutoSize = True
         Me.rbMale.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbMale.Location = New System.Drawing.Point(134, 41)
+        Me.rbMale.Location = New System.Drawing.Point(179, 51)
+        Me.rbMale.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.rbMale.Name = "rbMale"
-        Me.rbMale.Size = New System.Drawing.Size(63, 33)
+        Me.rbMale.Size = New System.Drawing.Size(76, 40)
         Me.rbMale.TabIndex = 2
         Me.rbMale.TabStop = True
         Me.rbMale.Text = "ប្រុស"
@@ -799,9 +851,10 @@ Partial Class RegisterForm
         Me.Label18.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(99, 41)
+        Me.Label18.Location = New System.Drawing.Point(132, 50)
+        Me.Label18.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(17, 29)
+        Me.Label18.Size = New System.Drawing.Size(21, 36)
         Me.Label18.TabIndex = 1
         Me.Label18.Text = ":"
         '
@@ -811,9 +864,10 @@ Partial Class RegisterForm
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label20.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.Label20.Location = New System.Drawing.Point(5, 41)
+        Me.Label20.Location = New System.Drawing.Point(7, 50)
+        Me.Label20.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(40, 29)
+        Me.Label20.Size = New System.Drawing.Size(49, 36)
         Me.Label20.TabIndex = 0
         Me.Label20.Text = "ភេទ"
         '
@@ -823,10 +877,10 @@ Partial Class RegisterForm
         Me.Panel4.Controls.Add(Me.Label3)
         Me.Panel4.Controls.Add(Me.Label4)
         Me.Panel4.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel4.Location = New System.Drawing.Point(669, 33)
-        Me.Panel4.Margin = New System.Windows.Forms.Padding(30)
+        Me.Panel4.Location = New System.Drawing.Point(892, 41)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(40, 37, 40, 37)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(578, 69)
+        Me.Panel4.Size = New System.Drawing.Size(771, 85)
         Me.Panel4.TabIndex = 17
         '
         'txtEngName
@@ -841,15 +895,15 @@ Partial Class RegisterForm
         Me.txtEngName.BorderSize = 2
         Me.txtEngName.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtEngName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.txtEngName.Location = New System.Drawing.Point(143, 25)
-        Me.txtEngName.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtEngName.Location = New System.Drawing.Point(191, 31)
+        Me.txtEngName.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.txtEngName.Multiline = False
         Me.txtEngName.Name = "txtEngName"
-        Me.txtEngName.Padding = New System.Windows.Forms.Padding(10, 7, 10, 7)
+        Me.txtEngName.Padding = New System.Windows.Forms.Padding(13, 9, 13, 9)
         Me.txtEngName.PasswordChar = False
         Me.txtEngName.PlaceholderColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(248, Byte), Integer))
         Me.txtEngName.PlaceholderText = "បញ្ចូលឈ្មោះទាំងត្រកូល"
-        Me.txtEngName.Size = New System.Drawing.Size(431, 44)
+        Me.txtEngName.Size = New System.Drawing.Size(575, 55)
         Me.txtEngName.TabIndex = 1
         Me.txtEngName.Texts = ""
         Me.txtEngName.UnderlinedStyle = True
@@ -859,9 +913,10 @@ Partial Class RegisterForm
         Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(114, 36)
+        Me.Label3.Location = New System.Drawing.Point(152, 44)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(17, 29)
+        Me.Label3.Size = New System.Drawing.Size(21, 36)
         Me.Label3.TabIndex = 1
         Me.Label3.Text = ":"
         '
@@ -871,9 +926,10 @@ Partial Class RegisterForm
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.Label4.Location = New System.Drawing.Point(9, 36)
+        Me.Label4.Location = New System.Drawing.Point(12, 44)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(99, 29)
+        Me.Label4.Size = New System.Drawing.Size(122, 36)
         Me.Label4.TabIndex = 0
         Me.Label4.Text = "ឈ្មោះឡាតាំង"
         '
@@ -883,10 +939,10 @@ Partial Class RegisterForm
         Me.Panel3.Controls.Add(Me.Label1)
         Me.Panel3.Controls.Add(Me.Label2)
         Me.Panel3.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel3.Location = New System.Drawing.Point(51, 33)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(30)
+        Me.Panel3.Location = New System.Drawing.Point(68, 41)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(40, 37, 40, 37)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(518, 69)
+        Me.Panel3.Size = New System.Drawing.Size(691, 85)
         Me.Panel3.TabIndex = 17
         '
         'txtKhName
@@ -901,15 +957,15 @@ Partial Class RegisterForm
         Me.txtKhName.BorderSize = 2
         Me.txtKhName.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtKhName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.txtKhName.Location = New System.Drawing.Point(123, 25)
-        Me.txtKhName.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtKhName.Location = New System.Drawing.Point(164, 31)
+        Me.txtKhName.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.txtKhName.Multiline = False
         Me.txtKhName.Name = "txtKhName"
-        Me.txtKhName.Padding = New System.Windows.Forms.Padding(10, 7, 10, 7)
+        Me.txtKhName.Padding = New System.Windows.Forms.Padding(13, 9, 13, 9)
         Me.txtKhName.PasswordChar = False
         Me.txtKhName.PlaceholderColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(248, Byte), Integer))
         Me.txtKhName.PlaceholderText = "បញ្ចូលឈ្មោះទាំងត្រកូល"
-        Me.txtKhName.Size = New System.Drawing.Size(391, 44)
+        Me.txtKhName.Size = New System.Drawing.Size(521, 55)
         Me.txtKhName.TabIndex = 0
         Me.txtKhName.Texts = ""
         Me.txtKhName.UnderlinedStyle = True
@@ -920,9 +976,10 @@ Partial Class RegisterForm
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(99, 36)
+        Me.Label1.Location = New System.Drawing.Point(132, 44)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(17, 29)
+        Me.Label1.Size = New System.Drawing.Size(21, 36)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = ":"
         '
@@ -933,9 +990,10 @@ Partial Class RegisterForm
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.Label2.Location = New System.Drawing.Point(5, 36)
+        Me.Label2.Location = New System.Drawing.Point(7, 44)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(72, 29)
+        Me.Label2.Size = New System.Drawing.Size(88, 36)
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "ឈ្មោះខ្មែរ"
         '
@@ -943,31 +1001,20 @@ Partial Class RegisterForm
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
-        'picStudent
-        '
-        Me.picStudent.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.picStudent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.picStudent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.picStudent.Image = Global.StudentManagementSystem.My.Resources.Resources.profile
-        Me.picStudent.Location = New System.Drawing.Point(1440, 23)
-        Me.picStudent.Name = "picStudent"
-        Me.picStudent.Size = New System.Drawing.Size(158, 206)
-        Me.picStudent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picStudent.TabIndex = 38
-        Me.picStudent.TabStop = False
-        '
         'RegisterForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1666, 879)
+        Me.ClientSize = New System.Drawing.Size(1924, 1055)
         Me.Controls.Add(Me.Panel2)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "RegisterForm"
         Me.Text = "Form1"
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.picStudent, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel8.ResumeLayout(False)
         Me.Panel8.PerformLayout()
         Me.Panel7.ResumeLayout(False)
@@ -982,7 +1029,6 @@ Partial Class RegisterForm
         Me.Panel4.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
-        CType(Me.picStudent, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

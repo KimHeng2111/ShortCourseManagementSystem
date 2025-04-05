@@ -71,7 +71,7 @@ Public Class MainForm
     Private Sub BtnMenu_Click(sender As Object, e As EventArgs) Handles btnMenu.Click
 
         If panelMenu.Width >= 200 Then
-            panelMenu.Width = 80
+            panelMenu.Width = panelMenu.MinimumSize.Width
             btnMenu.Dock = DockStyle.Top
             Panel1.Visible = False
             If currentBtn IsNot Nothing Then
@@ -84,7 +84,7 @@ Public Class MainForm
 
             Next
         Else
-            panelMenu.Width = 238
+            panelMenu.Width = panelMenu.MaximumSize.Width
             btnMenu.Dock = DockStyle.None
             Panel1.Visible = True
             If currentBtn IsNot Nothing Then
