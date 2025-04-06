@@ -71,7 +71,7 @@ Public Class MainForm
     Private Sub BtnMenu_Click(sender As Object, e As EventArgs) Handles btnMenu.Click
 
         If panelMenu.Width >= 200 Then
-            panelMenu.Width = panelMenu.MinimumSize.Width
+            panelMenu.Width = 100
             btnMenu.Dock = DockStyle.Top
             Panel1.Visible = False
             If currentBtn IsNot Nothing Then
@@ -84,7 +84,7 @@ Public Class MainForm
 
             Next
         Else
-            panelMenu.Width = panelMenu.MaximumSize.Width
+            panelMenu.Width = 230
             btnMenu.Dock = DockStyle.None
             Panel1.Visible = True
             If currentBtn IsNot Nothing Then
@@ -135,9 +135,5 @@ Public Class MainForm
 
     Private Sub BtnPayment_Click(sender As Object, e As EventArgs) Handles btnPayment.Click
         Activatebutton(sender, ThemeColor.activeColor)
-    End Sub
-
-    Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        MsgBox(panelChildForm.Width & "    " & panelChildForm.Height)
     End Sub
 End Class
