@@ -1,4 +1,5 @@
 ﻿Imports System.Data.OleDb
+Imports System.Diagnostics.Eventing
 
 Public Class RegisterForm
     Dim conn As OleDbConnection
@@ -15,7 +16,7 @@ Public Class RegisterForm
         lbDate.Text = DateTime.Now.ToString("dddd dd/MMM/yyyy")
         conn = New OleDbConnection(ConnectionDB.connString)
         Try
-            Conn.open()
+            conn.Open()
             Dim query As String = "SELECT tblCourses.CourseName FROM tblCourses INNER JOIN tblClass ON tblCourses.ID = tblClass.CourseID;"
             Dim cmd As New OleDbCommand(query, conn)
             Dim reader As OleDbDataReader = cmd.ExecuteReader()
@@ -23,9 +24,30 @@ Public Class RegisterForm
                 Dim courseName As String = reader("CourseName").ToString()
                 cbCourses.Items.Add(courseName)
             End While
-        Catch ex As Exception
 
+        Catch ex As Exception
         End Try
     End Sub
 
+    Private Sub cbCourses_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbCourses.SelectedIndexChanged
+        Dim query As String = "SELECT tblSchedule.StartTime, tblSchedule.EndTime, tblCourses.BasePrice, tblClass.StartDate, tblCourses.Description
+        FROM tblCourses INNER JOIN (tblSchedule INNER JOIN tblClass ON tblSchedule.ID = tblClass.SecheduleID) ON tblCourses.ID = tblClass.CourseID
+        WHERE (((tblCourses.CourseName)=@CourseName));
+        "
+        Dim courseName As String = cbCourses.Text
+        Try
+            Dim cmd As New OleDbCommand(query, conn)
+            cmd.Parameters.AddWithValue("@CourseName", courseName)
+            Dim reader As OleDbDataReader = cmd.ExecuteReader()
+            If reader.Read() Then
+                lbDate.Text = reader("StartDate")
+                lbPrice.Text = reader("BasePrice")
+                lbCourseDes.Text = reader("Description")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+
+        End Try
+    End Sub
 End Class

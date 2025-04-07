@@ -27,7 +27,7 @@ Partial Class RegisterForm
         Me.txtPayAmount = New CustomControls.RJControls.RJTextBox()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
-        Me.txtCourseDes = New System.Windows.Forms.Label()
+        Me.lbCourseDes = New System.Windows.Forms.Label()
         Me.Label38 = New System.Windows.Forms.Label()
         Me.Label28 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
@@ -123,7 +123,7 @@ Partial Class RegisterForm
         Me.Panel1.Controls.Add(Me.txtPayAmount)
         Me.Panel1.Controls.Add(Me.Label27)
         Me.Panel1.Controls.Add(Me.Label17)
-        Me.Panel1.Controls.Add(Me.txtCourseDes)
+        Me.Panel1.Controls.Add(Me.lbCourseDes)
         Me.Panel1.Controls.Add(Me.Label38)
         Me.Panel1.Controls.Add(Me.Label28)
         Me.Panel1.Controls.Add(Me.Label19)
@@ -148,7 +148,7 @@ Partial Class RegisterForm
         Me.txtPayAmount.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPayAmount.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.txtPayAmount.Location = New System.Drawing.Point(194, 227)
-        Me.txtPayAmount.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtPayAmount.Margin = New System.Windows.Forms.Padding(4)
         Me.txtPayAmount.Multiline = False
         Me.txtPayAmount.Name = "txtPayAmount"
         Me.txtPayAmount.Padding = New System.Windows.Forms.Padding(10, 7, 10, 7)
@@ -185,15 +185,15 @@ Partial Class RegisterForm
         Me.Label17.TabIndex = 50
         Me.Label17.Text = "បង់ប្រាក់"
         '
-        'txtCourseDes
+        'lbCourseDes
         '
-        Me.txtCourseDes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCourseDes.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCourseDes.Location = New System.Drawing.Point(18, 64)
-        Me.txtCourseDes.Name = "txtCourseDes"
-        Me.txtCourseDes.Padding = New System.Windows.Forms.Padding(10, 10, 10, 10)
-        Me.txtCourseDes.Size = New System.Drawing.Size(533, 115)
-        Me.txtCourseDes.TabIndex = 7
+        Me.lbCourseDes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lbCourseDes.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbCourseDes.Location = New System.Drawing.Point(18, 64)
+        Me.lbCourseDes.Name = "lbCourseDes"
+        Me.lbCourseDes.Padding = New System.Windows.Forms.Padding(10)
+        Me.lbCourseDes.Size = New System.Drawing.Size(533, 115)
+        Me.lbCourseDes.TabIndex = 7
         '
         'Label38
         '
@@ -385,7 +385,7 @@ Partial Class RegisterForm
         Me.txtDis.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDis.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.txtDis.Location = New System.Drawing.Point(349, 189)
-        Me.txtDis.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtDis.Margin = New System.Windows.Forms.Padding(4)
         Me.txtDis.Multiline = False
         Me.txtDis.Name = "txtDis"
         Me.txtDis.Padding = New System.Windows.Forms.Padding(10, 7, 10, 7)
@@ -617,7 +617,7 @@ Partial Class RegisterForm
         Me.txtAddress.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtAddress.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.txtAddress.Location = New System.Drawing.Point(143, 21)
-        Me.txtAddress.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtAddress.Margin = New System.Windows.Forms.Padding(4)
         Me.txtAddress.Multiline = False
         Me.txtAddress.Name = "txtAddress"
         Me.txtAddress.Padding = New System.Windows.Forms.Padding(10, 7, 10, 7)
@@ -679,7 +679,7 @@ Partial Class RegisterForm
         Me.txtPhone.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPhone.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.txtPhone.Location = New System.Drawing.Point(123, 21)
-        Me.txtPhone.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtPhone.Margin = New System.Windows.Forms.Padding(4)
         Me.txtPhone.Multiline = False
         Me.txtPhone.Name = "txtPhone"
         Me.txtPhone.Padding = New System.Windows.Forms.Padding(10, 7, 10, 7)
@@ -779,7 +779,7 @@ Partial Class RegisterForm
         Me.Panel10.Location = New System.Drawing.Point(51, 128)
         Me.Panel10.Margin = New System.Windows.Forms.Padding(15, 0, 15, 15)
         Me.Panel10.Name = "Panel10"
-        Me.Panel10.Padding = New System.Windows.Forms.Padding(10, 10, 10, 10)
+        Me.Panel10.Padding = New System.Windows.Forms.Padding(10)
         Me.Panel10.Size = New System.Drawing.Size(518, 75)
         Me.Panel10.TabIndex = 19
         '
@@ -839,7 +839,7 @@ Partial Class RegisterForm
         Me.Panel4.Controls.Add(Me.Label4)
         Me.Panel4.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel4.Location = New System.Drawing.Point(669, 33)
-        Me.Panel4.Margin = New System.Windows.Forms.Padding(30, 30, 30, 30)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(30)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(578, 69)
         Me.Panel4.TabIndex = 17
@@ -857,7 +857,7 @@ Partial Class RegisterForm
         Me.txtEngName.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtEngName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.txtEngName.Location = New System.Drawing.Point(143, 25)
-        Me.txtEngName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtEngName.Margin = New System.Windows.Forms.Padding(4)
         Me.txtEngName.Multiline = False
         Me.txtEngName.Name = "txtEngName"
         Me.txtEngName.Padding = New System.Windows.Forms.Padding(10, 7, 10, 7)
@@ -899,7 +899,7 @@ Partial Class RegisterForm
         Me.Panel3.Controls.Add(Me.Label2)
         Me.Panel3.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel3.Location = New System.Drawing.Point(51, 33)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(30, 30, 30, 30)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(30)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(518, 69)
         Me.Panel3.TabIndex = 17
@@ -917,7 +917,7 @@ Partial Class RegisterForm
         Me.txtKhName.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtKhName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.txtKhName.Location = New System.Drawing.Point(123, 25)
-        Me.txtKhName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtKhName.Margin = New System.Windows.Forms.Padding(4)
         Me.txtKhName.Multiline = False
         Me.txtKhName.Name = "txtKhName"
         Me.txtKhName.Padding = New System.Windows.Forms.Padding(10, 7, 10, 7)
@@ -1023,7 +1023,7 @@ Partial Class RegisterForm
     Friend WithEvents btnStudentImage As CustomControls.RJControls.RJButton
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents txtCourseDes As Label
+    Friend WithEvents lbCourseDes As Label
     Friend WithEvents Label38 As Label
     Friend WithEvents lbDate As Label
     Friend WithEvents Label22 As Label
