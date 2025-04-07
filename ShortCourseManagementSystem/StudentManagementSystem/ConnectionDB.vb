@@ -1,7 +1,7 @@
 ﻿Imports System.Data.OleDb
 
 Public Class ConnectionDB
-    Public Shared connString As String = "Provider=Microsoft.ACE.OLEDB.16.0;Data Source=C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\StudentManagementSystem\StudentManagementSystem.accdb;Persist Security Info=False;"
+    Public Shared connString As String = "Provider=Microsoft.ACE.OLEDB.16.0;Data Source=Data\StudentManagementSystem.accdb;Persist Security Info=False;"
     Private Shared conn As OleDbConnection
     Public Sub RegisterQuery(KhName As String, EngName As String, DateOfBirth As String, Gender As String, Phone As String, Address As String)
         Dim query As String = "INSERT INTO Users (KhName, EngName, DateOfBirth, Gender, Phone, Address)

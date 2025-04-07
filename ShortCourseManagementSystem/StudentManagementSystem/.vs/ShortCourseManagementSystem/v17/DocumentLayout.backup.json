@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:forms\\registerform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\StudentManagementSystem\\forms\\registerform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:forms\\registerform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\StudentManagementSystem\\connectiondb.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:connectiondb.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\StudentManagementSystem\\forms\\registerform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:forms\\registerform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\StudentManagementSystem\\mainform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
@@ -30,11 +30,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "RegisterForm.vb [Design]",
               "DocumentMoniker": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\StudentManagementSystem\\Forms\\RegisterForm.vb",
               "RelativeDocumentMoniker": "Forms\\RegisterForm.vb",
@@ -47,16 +47,21 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "ConnectionDB.vb",
               "DocumentMoniker": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\StudentManagementSystem\\ConnectionDB.vb",
               "RelativeDocumentMoniker": "ConnectionDB.vb",
               "ToolTip": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\StudentManagementSystem\\ConnectionDB.vb",
               "RelativeToolTip": "ConnectionDB.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAABcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-04-06T16:54:56.917Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
             },
             {
               "$type": "Bookmark",
@@ -81,7 +86,7 @@
               "RelativeDocumentMoniker": "Forms\\RegisterForm.vb",
               "ToolTip": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\StudentManagementSystem\\Forms\\RegisterForm.vb",
               "RelativeToolTip": "Forms\\RegisterForm.vb",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAwwC8AAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-04-06T16:19:54.816Z",
               "EditorCaption": ""

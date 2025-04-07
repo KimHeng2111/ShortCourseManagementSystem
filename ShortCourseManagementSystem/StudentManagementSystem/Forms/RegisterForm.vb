@@ -41,7 +41,7 @@ Public Class RegisterForm
             Dim reader As OleDbDataReader = cmd.ExecuteReader()
             If reader.Read() Then
                 lbDate.Text = reader("StartDate")
-                lbPrice.Text = reader("BasePrice")
+                lbPrice.Text = reader("BasePrice") & " $"
                 lbCourseDes.Text = reader("Description")
             End If
         Catch ex As Exception
