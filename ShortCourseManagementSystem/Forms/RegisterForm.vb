@@ -14,7 +14,7 @@ Public Class RegisterForm
     Private Sub RegisterForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         lbDate.Text = DateTime.Now.ToString("dddd dd/MMM/yyyy")
-        conn = New OleDbConnection(ConnectionDB.connString)
+        conn = New OleDbConnection(connDb.connString)
         Try
             conn.Open()
             Dim query As String = "SELECT tblCourses.CourseName FROM tblCourses INNER JOIN tblClass ON tblCourses.ID = tblClass.CourseID;"

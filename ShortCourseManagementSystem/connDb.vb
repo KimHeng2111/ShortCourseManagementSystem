@@ -1,6 +1,6 @@
 ﻿Imports System.Data.OleDb
 
-Public Class ConnectionDB
+Public Class connDb
     Public Shared connString As String = "Provider=Microsoft.ACE.OLEDB.16.0;Data Source=Data\StudentManagementSystem.accdb;Persist Security Info=False;"
     Private Shared conn As OleDbConnection
     Public Sub RegisterQuery(KhName As String, EngName As String, DateOfBirth As String, Gender As String, Phone As String, Address As String)
