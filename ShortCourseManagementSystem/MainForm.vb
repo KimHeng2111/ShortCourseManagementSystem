@@ -136,4 +136,8 @@ Public Class MainForm
     Private Sub BtnPayment_Click(sender As Object, e As EventArgs) Handles btnPayment.Click
         Activatebutton(sender, ThemeColor.activeColor)
     End Sub
+
+    Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        MsgBox(panelChildForm.Width & "   " & panelChildForm.Height)
+    End Sub
 End Class

@@ -50,4 +50,5 @@ Public Class RegisterForm
 
         End Try
     End Sub
+
 End Class

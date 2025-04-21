@@ -37,11 +37,9 @@ Partial Class MainForm
         Me.lbSchoolName = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.panelTitlebar = New System.Windows.Forms.Panel()
-        Me.panelFormOpen = New System.Windows.Forms.FlowLayoutPanel()
         Me.lbFormTitle = New System.Windows.Forms.Label()
         Me.IconCurrentForm = New FontAwesome.Sharp.IconPictureBox()
         Me.panelChildForm = New System.Windows.Forms.Panel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.panelMenu.SuspendLayout()
         Me.panelMenuUpper.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -63,8 +61,9 @@ Partial Class MainForm
         Me.panelMenu.Controls.Add(Me.panelMenuUpper)
         Me.panelMenu.Dock = System.Windows.Forms.DockStyle.Left
         Me.panelMenu.Location = New System.Drawing.Point(0, 0)
+        Me.panelMenu.Margin = New System.Windows.Forms.Padding(4)
         Me.panelMenu.Name = "panelMenu"
-        Me.panelMenu.Size = New System.Drawing.Size(210, 761)
+        Me.panelMenu.Size = New System.Drawing.Size(280, 937)
         Me.panelMenu.TabIndex = 0
         '
         'btnPayment
@@ -80,11 +79,11 @@ Partial Class MainForm
         Me.btnPayment.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.btnPayment.IconSize = 32
         Me.btnPayment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnPayment.Location = New System.Drawing.Point(0, 510)
+        Me.btnPayment.Location = New System.Drawing.Point(0, 627)
         Me.btnPayment.Margin = New System.Windows.Forms.Padding(0)
         Me.btnPayment.Name = "btnPayment"
-        Me.btnPayment.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
-        Me.btnPayment.Size = New System.Drawing.Size(210, 70)
+        Me.btnPayment.Padding = New System.Windows.Forms.Padding(13, 0, 27, 0)
+        Me.btnPayment.Size = New System.Drawing.Size(280, 86)
         Me.btnPayment.TabIndex = 5
         Me.btnPayment.Tag = "Payment"
         Me.btnPayment.Text = "Payment"
@@ -103,11 +102,11 @@ Partial Class MainForm
         Me.btnExit.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.btnExit.IconSize = 32
         Me.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnExit.Location = New System.Drawing.Point(0, 701)
-        Me.btnExit.Margin = New System.Windows.Forms.Padding(3, 10, 3, 3)
+        Me.btnExit.Location = New System.Drawing.Point(0, 863)
+        Me.btnExit.Margin = New System.Windows.Forms.Padding(4, 12, 4, 4)
         Me.btnExit.Name = "btnExit"
-        Me.btnExit.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
-        Me.btnExit.Size = New System.Drawing.Size(210, 60)
+        Me.btnExit.Padding = New System.Windows.Forms.Padding(13, 0, 27, 0)
+        Me.btnExit.Size = New System.Drawing.Size(280, 74)
         Me.btnExit.TabIndex = 6
         Me.btnExit.Tag = "        Exit"
         Me.btnExit.Text = "        Exit"
@@ -126,11 +125,11 @@ Partial Class MainForm
         Me.btnTeacher.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.btnTeacher.IconSize = 32
         Me.btnTeacher.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnTeacher.Location = New System.Drawing.Point(0, 440)
+        Me.btnTeacher.Location = New System.Drawing.Point(0, 541)
         Me.btnTeacher.Margin = New System.Windows.Forms.Padding(0)
         Me.btnTeacher.Name = "btnTeacher"
-        Me.btnTeacher.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
-        Me.btnTeacher.Size = New System.Drawing.Size(210, 70)
+        Me.btnTeacher.Padding = New System.Windows.Forms.Padding(13, 0, 27, 0)
+        Me.btnTeacher.Size = New System.Drawing.Size(280, 86)
         Me.btnTeacher.TabIndex = 6
         Me.btnTeacher.Tag = "Teachers"
         Me.btnTeacher.Text = "Teachers"
@@ -149,11 +148,11 @@ Partial Class MainForm
         Me.btnCourse.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.btnCourse.IconSize = 32
         Me.btnCourse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCourse.Location = New System.Drawing.Point(0, 370)
+        Me.btnCourse.Location = New System.Drawing.Point(0, 455)
         Me.btnCourse.Margin = New System.Windows.Forms.Padding(0)
         Me.btnCourse.Name = "btnCourse"
-        Me.btnCourse.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
-        Me.btnCourse.Size = New System.Drawing.Size(210, 70)
+        Me.btnCourse.Padding = New System.Windows.Forms.Padding(13, 0, 27, 0)
+        Me.btnCourse.Size = New System.Drawing.Size(280, 86)
         Me.btnCourse.TabIndex = 4
         Me.btnCourse.Tag = "Courses"
         Me.btnCourse.Text = "Courses"
@@ -172,11 +171,11 @@ Partial Class MainForm
         Me.btnStudent.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.btnStudent.IconSize = 32
         Me.btnStudent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnStudent.Location = New System.Drawing.Point(0, 300)
+        Me.btnStudent.Location = New System.Drawing.Point(0, 369)
         Me.btnStudent.Margin = New System.Windows.Forms.Padding(0)
         Me.btnStudent.Name = "btnStudent"
-        Me.btnStudent.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
-        Me.btnStudent.Size = New System.Drawing.Size(210, 70)
+        Me.btnStudent.Padding = New System.Windows.Forms.Padding(13, 0, 27, 0)
+        Me.btnStudent.Size = New System.Drawing.Size(280, 86)
         Me.btnStudent.TabIndex = 3
         Me.btnStudent.Tag = "Student"
         Me.btnStudent.Text = "Student"
@@ -195,11 +194,11 @@ Partial Class MainForm
         Me.btnRegister.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.btnRegister.IconSize = 32
         Me.btnRegister.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnRegister.Location = New System.Drawing.Point(0, 230)
+        Me.btnRegister.Location = New System.Drawing.Point(0, 283)
         Me.btnRegister.Margin = New System.Windows.Forms.Padding(0)
         Me.btnRegister.Name = "btnRegister"
-        Me.btnRegister.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
-        Me.btnRegister.Size = New System.Drawing.Size(210, 70)
+        Me.btnRegister.Padding = New System.Windows.Forms.Padding(13, 0, 27, 0)
+        Me.btnRegister.Size = New System.Drawing.Size(280, 86)
         Me.btnRegister.TabIndex = 2
         Me.btnRegister.Tag = "Register"
         Me.btnRegister.Text = "​Register"
@@ -218,11 +217,11 @@ Partial Class MainForm
         Me.btnDashboard.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.btnDashboard.IconSize = 32
         Me.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnDashboard.Location = New System.Drawing.Point(0, 160)
+        Me.btnDashboard.Location = New System.Drawing.Point(0, 197)
         Me.btnDashboard.Margin = New System.Windows.Forms.Padding(0)
         Me.btnDashboard.Name = "btnDashboard"
-        Me.btnDashboard.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
-        Me.btnDashboard.Size = New System.Drawing.Size(210, 70)
+        Me.btnDashboard.Padding = New System.Windows.Forms.Padding(13, 0, 27, 0)
+        Me.btnDashboard.Size = New System.Drawing.Size(280, 86)
         Me.btnDashboard.TabIndex = 1
         Me.btnDashboard.Tag = "Dashboard"
         Me.btnDashboard.Text = "Dashboard"
@@ -234,9 +233,9 @@ Partial Class MainForm
         Me.panelMenuUpper.Controls.Add(Me.Panel1)
         Me.panelMenuUpper.Dock = System.Windows.Forms.DockStyle.Top
         Me.panelMenuUpper.Location = New System.Drawing.Point(0, 0)
-        Me.panelMenuUpper.Margin = New System.Windows.Forms.Padding(3, 3, 3, 10)
+        Me.panelMenuUpper.Margin = New System.Windows.Forms.Padding(4, 4, 4, 12)
         Me.panelMenuUpper.Name = "panelMenuUpper"
-        Me.panelMenuUpper.Size = New System.Drawing.Size(210, 160)
+        Me.panelMenuUpper.Size = New System.Drawing.Size(280, 197)
         Me.panelMenuUpper.TabIndex = 0
         '
         'btnMenu
@@ -248,10 +247,10 @@ Partial Class MainForm
         Me.btnMenu.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.btnMenu.IconSize = 32
         Me.btnMenu.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnMenu.Location = New System.Drawing.Point(162, 0)
-        Me.btnMenu.Margin = New System.Windows.Forms.Padding(3, 25, 3, 3)
+        Me.btnMenu.Location = New System.Drawing.Point(216, 0)
+        Me.btnMenu.Margin = New System.Windows.Forms.Padding(4, 31, 4, 4)
         Me.btnMenu.Name = "btnMenu"
-        Me.btnMenu.Size = New System.Drawing.Size(45, 45)
+        Me.btnMenu.Size = New System.Drawing.Size(60, 55)
         Me.btnMenu.TabIndex = 1
         Me.btnMenu.UseVisualStyleBackColor = True
         '
@@ -261,8 +260,9 @@ Partial Class MainForm
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(149, 160)
+        Me.Panel1.Size = New System.Drawing.Size(199, 197)
         Me.Panel1.TabIndex = 0
         '
         'lbSchoolName
@@ -270,9 +270,10 @@ Partial Class MainForm
         Me.lbSchoolName.AutoSize = True
         Me.lbSchoolName.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbSchoolName.ForeColor = System.Drawing.Color.White
-        Me.lbSchoolName.Location = New System.Drawing.Point(28, 116)
+        Me.lbSchoolName.Location = New System.Drawing.Point(37, 143)
+        Me.lbSchoolName.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbSchoolName.Name = "lbSchoolName"
-        Me.lbSchoolName.Size = New System.Drawing.Size(66, 19)
+        Me.lbSchoolName.Size = New System.Drawing.Size(80, 23)
         Me.lbSchoolName.TabIndex = 1
         Me.lbSchoolName.Text = "RPITSB"
         '
@@ -281,9 +282,10 @@ Partial Class MainForm
         Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Padding = New System.Windows.Forms.Padding(0, 25, 0, 0)
-        Me.PictureBox1.Size = New System.Drawing.Size(149, 107)
+        Me.PictureBox1.Padding = New System.Windows.Forms.Padding(0, 31, 0, 0)
+        Me.PictureBox1.Size = New System.Drawing.Size(199, 132)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
@@ -291,23 +293,14 @@ Partial Class MainForm
         'panelTitlebar
         '
         Me.panelTitlebar.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.panelTitlebar.Controls.Add(Me.panelFormOpen)
         Me.panelTitlebar.Controls.Add(Me.lbFormTitle)
         Me.panelTitlebar.Controls.Add(Me.IconCurrentForm)
         Me.panelTitlebar.Dock = System.Windows.Forms.DockStyle.Top
-        Me.panelTitlebar.Location = New System.Drawing.Point(210, 0)
+        Me.panelTitlebar.Location = New System.Drawing.Point(280, 0)
+        Me.panelTitlebar.Margin = New System.Windows.Forms.Padding(4)
         Me.panelTitlebar.Name = "panelTitlebar"
-        Me.panelTitlebar.Size = New System.Drawing.Size(880, 91)
+        Me.panelTitlebar.Size = New System.Drawing.Size(1173, 75)
         Me.panelTitlebar.TabIndex = 1
-        '
-        'panelFormOpen
-        '
-        Me.panelFormOpen.BackColor = System.Drawing.Color.White
-        Me.panelFormOpen.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.panelFormOpen.Location = New System.Drawing.Point(0, 66)
-        Me.panelFormOpen.Name = "panelFormOpen"
-        Me.panelFormOpen.Size = New System.Drawing.Size(880, 25)
-        Me.panelFormOpen.TabIndex = 2
         '
         'lbFormTitle
         '
@@ -315,9 +308,10 @@ Partial Class MainForm
         Me.lbFormTitle.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbFormTitle.ForeColor = System.Drawing.Color.Gainsboro
         Me.lbFormTitle.ImageAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.lbFormTitle.Location = New System.Drawing.Point(62, 18)
+        Me.lbFormTitle.Location = New System.Drawing.Point(83, 26)
+        Me.lbFormTitle.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbFormTitle.Name = "lbFormTitle"
-        Me.lbFormTitle.Size = New System.Drawing.Size(38, 15)
+        Me.lbFormTitle.Size = New System.Drawing.Size(53, 19)
         Me.lbFormTitle.TabIndex = 1
         Me.lbFormTitle.Text = "Home"
         '
@@ -328,10 +322,11 @@ Partial Class MainForm
         Me.IconCurrentForm.IconChar = FontAwesome.Sharp.IconChar.Home
         Me.IconCurrentForm.IconColor = System.Drawing.Color.Gainsboro
         Me.IconCurrentForm.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.IconCurrentForm.IconSize = 45
-        Me.IconCurrentForm.Location = New System.Drawing.Point(11, 5)
+        Me.IconCurrentForm.IconSize = 55
+        Me.IconCurrentForm.Location = New System.Drawing.Point(15, 10)
+        Me.IconCurrentForm.Margin = New System.Windows.Forms.Padding(4)
         Me.IconCurrentForm.Name = "IconCurrentForm"
-        Me.IconCurrentForm.Size = New System.Drawing.Size(45, 45)
+        Me.IconCurrentForm.Size = New System.Drawing.Size(60, 55)
         Me.IconCurrentForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.IconCurrentForm.TabIndex = 0
         Me.IconCurrentForm.TabStop = False
@@ -339,31 +334,23 @@ Partial Class MainForm
         'panelChildForm
         '
         Me.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.panelChildForm.Location = New System.Drawing.Point(210, 91)
-        Me.panelChildForm.MinimumSize = New System.Drawing.Size(222, 648)
+        Me.panelChildForm.Location = New System.Drawing.Point(280, 75)
+        Me.panelChildForm.Margin = New System.Windows.Forms.Padding(4)
+        Me.panelChildForm.MinimumSize = New System.Drawing.Size(296, 798)
         Me.panelChildForm.Name = "panelChildForm"
-        Me.panelChildForm.Size = New System.Drawing.Size(880, 670)
+        Me.panelChildForm.Size = New System.Drawing.Size(1173, 862)
         Me.panelChildForm.TabIndex = 2
-        '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel2.Location = New System.Drawing.Point(210, 744)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(880, 17)
-        Me.Panel2.TabIndex = 3
         '
         'MainForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1090, 761)
-        Me.Controls.Add(Me.Panel2)
+        Me.ClientSize = New System.Drawing.Size(1453, 937)
         Me.Controls.Add(Me.panelChildForm)
         Me.Controls.Add(Me.panelTitlebar)
         Me.Controls.Add(Me.panelMenu)
-        Me.MinimumSize = New System.Drawing.Size(1106, 799)
+        Me.Margin = New System.Windows.Forms.Padding(4)
+        Me.MinimumSize = New System.Drawing.Size(1469, 973)
         Me.Name = "MainForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
@@ -397,6 +384,4 @@ Partial Class MainForm
     Friend WithEvents IconCurrentForm As FontAwesome.Sharp.IconPictureBox
     Friend WithEvents lbFormTitle As Label
     Friend WithEvents btnPayment As FontAwesome.Sharp.IconButton
-    Friend WithEvents panelFormOpen As FlowLayoutPanel
-    Friend WithEvents Panel2 As Panel
 End Class

@@ -1,4 +1,5 @@
-﻿Public MustInherit Class ConnectionDB
+﻿Imports System.Data.OleDb
+Public MustInherit Class ConnectionDB
     Private ReadOnly connString As String
     Private Shared conn As OleDbConnection
     Public Sub New()
