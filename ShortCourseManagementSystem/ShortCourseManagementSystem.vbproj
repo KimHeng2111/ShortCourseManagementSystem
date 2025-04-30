@@ -73,6 +73,9 @@
     <Reference Include="FontAwesome.Sharp, Version=5.15.4.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
       <HintPath>packages\FontAwesome.Sharp.5.15.4\lib\net45\FontAwesome.Sharp.dll</HintPath>
     </Reference>
+    <Reference Include="Guna.UI2">
+      <HintPath>D:\VS tool\framwork-main\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna.UI-Framework-Lib-master\Guna.UI2 WinForms\.net 4.0\Guna.UI2.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System">
@@ -81,7 +84,9 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
@@ -117,6 +122,18 @@
     <Compile Include="DataSet1.vb">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ClassForm.Designer.vb">
+      <DependentUpon>ClassForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ClassForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Courses.Designer.vb">
+      <DependentUpon>Courses.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Courses.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\RegisterForm.Designer.vb">
       <DependentUpon>RegisterForm.vb</DependentUpon>
     </Compile>
@@ -151,6 +168,12 @@
     <Compile Include="ThemeColor.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\ClassForm.resx">
+      <DependentUpon>ClassForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Courses.resx">
+      <DependentUpon>Courses.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\RegisterForm.resx">
       <DependentUpon>RegisterForm.vb</DependentUpon>
     </EmbeddedResource>

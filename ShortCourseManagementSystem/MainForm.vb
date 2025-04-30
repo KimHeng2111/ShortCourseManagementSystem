@@ -137,7 +137,8 @@ Public Class MainForm
         Activatebutton(sender, ThemeColor.activeColor)
     End Sub
 
-    Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        MsgBox(panelChildForm.Width & "   " & panelChildForm.Height)
+    Private Sub btnClass_Click(sender As Object, e As EventArgs) Handles btnClass.Click
+        Activatebutton(sender, ThemeColor.activeColor)
+        OpenChildForm(New ClassForm())
     End Sub
 End Class

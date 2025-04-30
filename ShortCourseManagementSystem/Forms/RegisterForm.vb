@@ -4,7 +4,7 @@ Imports System.Diagnostics.Eventing
 Public Class RegisterForm
     Dim conn As OleDbConnection
 
-    Private Sub btnStudentImage_Click(sender As Object, e As EventArgs) Handles btnStudentImage.Click, picStudent.Click
+    Private Sub btnStudentImage_Click(sender As Object, e As EventArgs)
         OpenFileDialog1.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp; *.png)|*.jpg; *.jpeg; *.gif; *.bmp; *.png"
         If OpenFileDialog1.ShowDialog() = DialogResult.OK Then
             picStudent.Image = Image.FromFile(OpenFileDialog1.FileName)
@@ -16,7 +16,7 @@ Public Class RegisterForm
         lbDate.Text = DateTime.Now.ToString("dddd dd/MMM/yyyy")
         conn = New OleDbConnection(connDb.connString)
         Try
-            conn.Open()
+        conn.Open()
             Dim query As String = "SELECT tblCourses.CourseName FROM tblCourses INNER JOIN tblClass ON tblCourses.ID = tblClass.CourseID;"
             Dim cmd As New OleDbCommand(query, conn)
             Dim reader As OleDbDataReader = cmd.ExecuteReader()
@@ -43,6 +43,7 @@ Public Class RegisterForm
                 lbDate.Text = reader("StartDate")
                 lbPrice.Text = reader("BasePrice") & " $"
                 lbCourseDes.Text = reader("Description")
+
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -51,4 +52,12 @@ Public Class RegisterForm
         End Try
     End Sub
 
+    Private Sub btnStudentImage_Click_1(sender As Object, e As EventArgs) Handles btnStudentImage.Click
+        OpenFileDialog1.Title = "Choose Student Picture"
+        OpenFileDialog1.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif"
+        If OpenFileDialog1.ShowDialog() = DialogResult.OK Then
+            picStudent.ImageLocation = OpenFileDialog1.FileName
+        End If
+
+    End Sub
 End Class
