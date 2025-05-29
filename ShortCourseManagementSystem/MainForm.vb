@@ -12,6 +12,9 @@ Public Class MainForm
         leftBorderBtn = New Panel()
         leftBorderBtn.Size = New Size(10, btnCourse.Height)
         panelMenu.Controls.Add(leftBorderBtn)
+        Me.DoubleBuffered = True
+        Me.MaximizedBounds = Screen.FromHandle(Me.Handle).WorkingArea
+        MessageBox.Show(Application.StartupPath)
     End Sub
     Private Sub Activatebutton(senderBtn As Object, customColor As Color)
         If senderBtn IsNot Nothing Then
@@ -68,38 +71,6 @@ Public Class MainForm
         childForm.BringToFront()
         childForm.Show()
     End Sub
-    Private Sub BtnMenu_Click(sender As Object, e As EventArgs) Handles btnMenu.Click
-
-        If panelMenu.Width >= 200 Then
-            panelMenu.Width = 100
-            btnMenu.Dock = DockStyle.Top
-            Panel1.Visible = False
-            If currentBtn IsNot Nothing Then
-                leftBorderBtn.Location = New Point(currentBtn.Location.X, currentBtn.Location.Y)
-            End If
-            For Each btn As IconButton In panelMenu.Controls.OfType(Of IconButton)()
-                btn.Text = String.Empty
-                btn.ImageAlign = ContentAlignment.MiddleCenter
-                btn.Padding = New Padding(0)
-
-            Next
-        Else
-            panelMenu.Width = 230
-            btnMenu.Dock = DockStyle.None
-            Panel1.Visible = True
-            If currentBtn IsNot Nothing Then
-                leftBorderBtn.Location = New Point(currentBtn.Location.X, currentBtn.Location.Y)
-                currentBtn.TextAlign = ContentAlignment.MiddleCenter
-                currentBtn.ImageAlign = ContentAlignment.MiddleRight
-                currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage
-            End If
-            For Each btn As IconButton In panelMenu.Controls.OfType(Of IconButton)()
-                btn.Text = btn.Tag.ToString()
-                btn.ImageAlign = ContentAlignment.MiddleLeft
-                btn.Padding = New Padding(10, 0, 20, 0)
-            Next
-        End If
-    End Sub
 
     Private Sub Reset()
         DisableButton()
@@ -115,18 +86,19 @@ Public Class MainForm
 
     End Sub
 
-    Private Sub BtnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
-        Activatebutton(sender, ThemeColor.activeColor)
-        OpenChildForm(New RegisterForm())
-    End Sub
+    'Private Sub BtnRegister_Click(sender As Object, e As EventArgs)
+    '    Activatebutton(sender, ThemeColor.activeColor)
+    '    OpenChildForm(New RegisterForm())
+    'End Sub
 
-    Private Sub BtnStudent_Click(sender As Object, e As EventArgs) Handles btnStudent.Click
+    Private Sub BtnStudent_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
         Activatebutton(sender, ThemeColor.activeColor)
         OpenChildForm(New Student())
     End Sub
 
     Private Sub BtnCourse_Click(sender As Object, e As EventArgs) Handles btnCourse.Click
         Activatebutton(sender, ThemeColor.CourseColor)
+        OpenChildForm(New Courses())
     End Sub
 
     Private Sub BtnTeacher_Click(sender As Object, e As EventArgs) Handles btnTeacher.Click
@@ -137,8 +109,14 @@ Public Class MainForm
         Activatebutton(sender, ThemeColor.activeColor)
     End Sub
 
-    Private Sub btnClass_Click(sender As Object, e As EventArgs) Handles btnClass.Click
-        Activatebutton(sender, ThemeColor.activeColor)
-        OpenChildForm(New ClassForm())
+    Private Sub panelTitlebar_Paint(sender As Object, e As PaintEventArgs) Handles panelTitlebar.Paint
+
+    End Sub
+    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        Application.Exit()
+    End Sub
+
+    Private Sub btnMin_Click(sender As Object, e As EventArgs) Handles btnMin.Click
+        Me.WindowState = FormWindowState.Minimized
     End Sub
 End Class

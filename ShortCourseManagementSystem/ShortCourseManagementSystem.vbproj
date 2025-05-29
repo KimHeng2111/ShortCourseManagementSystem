@@ -14,6 +14,21 @@
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>x64</PlatformTarget>
@@ -70,6 +85,9 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuUserControl">
       <HintPath>F:\Application\VS\BunifuCrack-main\Bunifu.UI.WinForms.BunifuUserControl.dll</HintPath>
     </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="FontAwesome.Sharp, Version=5.15.4.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
       <HintPath>packages\FontAwesome.Sharp.5.15.4\lib\net45\FontAwesome.Sharp.dll</HintPath>
     </Reference>
@@ -113,37 +131,28 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="connDb.vb" />
-    <Compile Include="DataSet1.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSet1.vb">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ClassForm.Designer.vb">
-      <DependentUpon>ClassForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ClassForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Forms\Courses.Designer.vb">
       <DependentUpon>Courses.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Courses.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\RegisterForm.Designer.vb">
-      <DependentUpon>RegisterForm.vb</DependentUpon>
+    <Compile Include="Forms\Payment.Designer.vb">
+      <DependentUpon>Payment.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\RegisterForm.vb">
+    <Compile Include="Forms\Payment.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Student.Designer.vb">
       <DependentUpon>Student.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Student.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TeachersForm.Designer.vb">
+      <DependentUpon>TeachersForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TeachersForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.vb">
@@ -153,7 +162,6 @@
       <DependentUpon>MainForm.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Model\ConnectionDB.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -168,17 +176,17 @@
     <Compile Include="ThemeColor.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Forms\ClassForm.resx">
-      <DependentUpon>ClassForm.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Courses.resx">
       <DependentUpon>Courses.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\RegisterForm.resx">
-      <DependentUpon>RegisterForm.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Payment.resx">
+      <DependentUpon>Payment.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Student.resx">
       <DependentUpon>Student.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TeachersForm.resx">
+      <DependentUpon>TeachersForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
@@ -192,17 +200,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet1.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.vb</LastGenOutput>
-    </None>
-    <None Include="DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -215,20 +212,26 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <None Include="Resources\calendar.png" />
+    <None Include="Resources\user.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\profile.png" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\search.png" />
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="StudentManagementSystem.accdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Folder Include="Model\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
