@@ -10,7 +10,7 @@ Public Class MainForm
 
         'Add any initialization after the InitializeComponent() call.
         leftBorderBtn = New Panel()
-        leftBorderBtn.Size = New Size(10, btnCourse.Height)
+        leftBorderBtn.Size = New Size(10, btnReport.Height)
         panelMenu.Controls.Add(leftBorderBtn)
         Me.DoubleBuffered = True
         Me.MaximizedBounds = Screen.FromHandle(Me.Handle).WorkingArea
@@ -85,38 +85,22 @@ Public Class MainForm
         Activatebutton(sender, ThemeColor.DashboardColor)
 
     End Sub
-
-    'Private Sub BtnRegister_Click(sender As Object, e As EventArgs)
-    '    Activatebutton(sender, ThemeColor.activeColor)
-    '    OpenChildForm(New RegisterForm())
-    'End Sub
-
     Private Sub BtnStudent_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
         Activatebutton(sender, ThemeColor.activeColor)
-        OpenChildForm(New Student())
+        OpenChildForm(New RegisterForm())
     End Sub
 
-    Private Sub BtnCourse_Click(sender As Object, e As EventArgs) Handles btnCourse.Click
-        Activatebutton(sender, ThemeColor.CourseColor)
-        OpenChildForm(New Courses())
-    End Sub
-
-    Private Sub BtnTeacher_Click(sender As Object, e As EventArgs) Handles btnTeacher.Click
-        Activatebutton(sender, ThemeColor.activeColor)
-    End Sub
-
-    Private Sub BtnPayment_Click(sender As Object, e As EventArgs) Handles btnPayment.Click
-        Activatebutton(sender, ThemeColor.activeColor)
-    End Sub
-
-    Private Sub panelTitlebar_Paint(sender As Object, e As PaintEventArgs) Handles panelTitlebar.Paint
-
-    End Sub
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Application.Exit()
     End Sub
 
-    Private Sub btnMin_Click(sender As Object, e As EventArgs) Handles btnMin.Click
-        Me.WindowState = FormWindowState.Minimized
+    Private Sub btnCourse_Click(sender As Object, e As EventArgs) Handles btnCourse.Click
+        Activatebutton(sender, ThemeColor.activeColor)
+        OpenChildForm(New CoursesForm())
+    End Sub
+
+    Private Sub btnTeacher_Click(sender As Object, e As EventArgs) Handles btnTeacher.Click
+        Activatebutton(sender, ThemeColor.activeColor)
+        OpenChildForm(New TeachersForm())
     End Sub
 End Class

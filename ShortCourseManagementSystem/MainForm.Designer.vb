@@ -24,10 +24,11 @@ Partial Class MainForm
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainForm))
         Me.panelMenu = New System.Windows.Forms.Panel()
-        Me.btnPayment = New FontAwesome.Sharp.IconButton()
-        Me.btnClass = New FontAwesome.Sharp.IconButton()
-        Me.btnExit = New FontAwesome.Sharp.IconButton()
+        Me.btnReport = New FontAwesome.Sharp.IconButton()
         Me.btnCourse = New FontAwesome.Sharp.IconButton()
+        Me.btnClass = New FontAwesome.Sharp.IconButton()
+        Me.btnStudent = New FontAwesome.Sharp.IconButton()
+        Me.btnExit = New FontAwesome.Sharp.IconButton()
         Me.btnTeacher = New FontAwesome.Sharp.IconButton()
         Me.btnRegister = New FontAwesome.Sharp.IconButton()
         Me.btnDashboard = New FontAwesome.Sharp.IconButton()
@@ -50,10 +51,11 @@ Partial Class MainForm
         'panelMenu
         '
         Me.panelMenu.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.panelMenu.Controls.Add(Me.btnPayment)
-        Me.panelMenu.Controls.Add(Me.btnClass)
-        Me.panelMenu.Controls.Add(Me.btnExit)
+        Me.panelMenu.Controls.Add(Me.btnReport)
         Me.panelMenu.Controls.Add(Me.btnCourse)
+        Me.panelMenu.Controls.Add(Me.btnClass)
+        Me.panelMenu.Controls.Add(Me.btnStudent)
+        Me.panelMenu.Controls.Add(Me.btnExit)
         Me.panelMenu.Controls.Add(Me.btnTeacher)
         Me.panelMenu.Controls.Add(Me.btnRegister)
         Me.panelMenu.Controls.Add(Me.btnDashboard)
@@ -64,28 +66,51 @@ Partial Class MainForm
         Me.panelMenu.Size = New System.Drawing.Size(200, 1080)
         Me.panelMenu.TabIndex = 0
         '
-        'btnPayment
+        'btnReport
         '
-        Me.btnPayment.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.btnPayment.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnPayment.FlatAppearance.BorderSize = 0
-        Me.btnPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnPayment.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPayment.ForeColor = System.Drawing.Color.Gainsboro
-        Me.btnPayment.IconChar = FontAwesome.Sharp.IconChar.Wallet
-        Me.btnPayment.IconColor = System.Drawing.Color.Gainsboro
-        Me.btnPayment.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.btnPayment.IconSize = 32
-        Me.btnPayment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnPayment.Location = New System.Drawing.Point(0, 445)
-        Me.btnPayment.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnPayment.Name = "btnPayment"
-        Me.btnPayment.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
-        Me.btnPayment.Size = New System.Drawing.Size(200, 57)
-        Me.btnPayment.TabIndex = 5
-        Me.btnPayment.Tag = "Payment"
-        Me.btnPayment.Text = "Payment"
-        Me.btnPayment.UseVisualStyleBackColor = False
+        Me.btnReport.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnReport.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnReport.FlatAppearance.BorderSize = 0
+        Me.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnReport.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnReport.ForeColor = System.Drawing.Color.Gainsboro
+        Me.btnReport.IconChar = FontAwesome.Sharp.IconChar.FileAlt
+        Me.btnReport.IconColor = System.Drawing.Color.Gainsboro
+        Me.btnReport.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btnReport.IconSize = 32
+        Me.btnReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnReport.Location = New System.Drawing.Point(0, 502)
+        Me.btnReport.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnReport.Name = "btnReport"
+        Me.btnReport.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
+        Me.btnReport.Size = New System.Drawing.Size(200, 57)
+        Me.btnReport.TabIndex = 4
+        Me.btnReport.Tag = "Report"
+        Me.btnReport.Text = "Report"
+        Me.btnReport.UseVisualStyleBackColor = False
+        '
+        'btnCourse
+        '
+        Me.btnCourse.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnCourse.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnCourse.FlatAppearance.BorderSize = 0
+        Me.btnCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCourse.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCourse.ForeColor = System.Drawing.Color.Gainsboro
+        Me.btnCourse.IconChar = FontAwesome.Sharp.IconChar.Book
+        Me.btnCourse.IconColor = System.Drawing.Color.Gainsboro
+        Me.btnCourse.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btnCourse.IconSize = 32
+        Me.btnCourse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnCourse.Location = New System.Drawing.Point(0, 445)
+        Me.btnCourse.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnCourse.Name = "btnCourse"
+        Me.btnCourse.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
+        Me.btnCourse.Size = New System.Drawing.Size(200, 57)
+        Me.btnCourse.TabIndex = 7
+        Me.btnCourse.Tag = "Course"
+        Me.btnCourse.Text = "Course"
+        Me.btnCourse.UseVisualStyleBackColor = False
         '
         'btnClass
         '
@@ -95,7 +120,7 @@ Partial Class MainForm
         Me.btnClass.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClass.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClass.ForeColor = System.Drawing.Color.Gainsboro
-        Me.btnClass.IconChar = FontAwesome.Sharp.IconChar.Wallet
+        Me.btnClass.IconChar = FontAwesome.Sharp.IconChar.Clipboard
         Me.btnClass.IconColor = System.Drawing.Color.Gainsboro
         Me.btnClass.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.btnClass.IconSize = 32
@@ -105,10 +130,33 @@ Partial Class MainForm
         Me.btnClass.Name = "btnClass"
         Me.btnClass.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
         Me.btnClass.Size = New System.Drawing.Size(200, 57)
-        Me.btnClass.TabIndex = 7
-        Me.btnClass.Tag = "Class"
-        Me.btnClass.Text = "Class"
+        Me.btnClass.TabIndex = 5
+        Me.btnClass.Tag = "Manage Class"
+        Me.btnClass.Text = "Manage Class"
         Me.btnClass.UseVisualStyleBackColor = False
+        '
+        'btnStudent
+        '
+        Me.btnStudent.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnStudent.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnStudent.FlatAppearance.BorderSize = 0
+        Me.btnStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnStudent.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnStudent.ForeColor = System.Drawing.Color.Gainsboro
+        Me.btnStudent.IconChar = FontAwesome.Sharp.IconChar.UserGraduate
+        Me.btnStudent.IconColor = System.Drawing.Color.Gainsboro
+        Me.btnStudent.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btnStudent.IconSize = 32
+        Me.btnStudent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnStudent.Location = New System.Drawing.Point(0, 331)
+        Me.btnStudent.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnStudent.Name = "btnStudent"
+        Me.btnStudent.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
+        Me.btnStudent.Size = New System.Drawing.Size(200, 57)
+        Me.btnStudent.TabIndex = 8
+        Me.btnStudent.Tag = "Student"
+        Me.btnStudent.Text = "Student"
+        Me.btnStudent.UseVisualStyleBackColor = False
         '
         'btnExit
         '
@@ -132,29 +180,6 @@ Partial Class MainForm
         Me.btnExit.Tag = "        Exit"
         Me.btnExit.Text = "        Exit"
         Me.btnExit.UseVisualStyleBackColor = False
-        '
-        'btnCourse
-        '
-        Me.btnCourse.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.btnCourse.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnCourse.FlatAppearance.BorderSize = 0
-        Me.btnCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCourse.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCourse.ForeColor = System.Drawing.Color.Gainsboro
-        Me.btnCourse.IconChar = FontAwesome.Sharp.IconChar.BookOpen
-        Me.btnCourse.IconColor = System.Drawing.Color.Gainsboro
-        Me.btnCourse.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.btnCourse.IconSize = 32
-        Me.btnCourse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCourse.Location = New System.Drawing.Point(0, 331)
-        Me.btnCourse.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnCourse.Name = "btnCourse"
-        Me.btnCourse.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
-        Me.btnCourse.Size = New System.Drawing.Size(200, 57)
-        Me.btnCourse.TabIndex = 4
-        Me.btnCourse.Tag = "Courses"
-        Me.btnCourse.Text = "Courses"
-        Me.btnCourse.UseVisualStyleBackColor = False
         '
         'btnTeacher
         '
@@ -381,15 +406,16 @@ Partial Class MainForm
     Friend WithEvents panelChildForm As Panel
     Friend WithEvents btnExit As FontAwesome.Sharp.IconButton
     Friend WithEvents btnTeacher As FontAwesome.Sharp.IconButton
-    Friend WithEvents btnCourse As FontAwesome.Sharp.IconButton
+    Friend WithEvents btnReport As FontAwesome.Sharp.IconButton
     Friend WithEvents btnRegister As FontAwesome.Sharp.IconButton
     Friend WithEvents btnDashboard As FontAwesome.Sharp.IconButton
     Friend WithEvents lbSchoolName As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents IconCurrentForm As FontAwesome.Sharp.IconPictureBox
     Friend WithEvents lbFormTitle As Label
-    Friend WithEvents btnPayment As FontAwesome.Sharp.IconButton
     Friend WithEvents btnClass As FontAwesome.Sharp.IconButton
+    Friend WithEvents btnCourse As FontAwesome.Sharp.IconButton
     Friend WithEvents btnMin As FontAwesome.Sharp.IconButton
     Friend WithEvents btnClose As FontAwesome.Sharp.IconButton
+    Friend WithEvents btnStudent As FontAwesome.Sharp.IconButton
 End Class
