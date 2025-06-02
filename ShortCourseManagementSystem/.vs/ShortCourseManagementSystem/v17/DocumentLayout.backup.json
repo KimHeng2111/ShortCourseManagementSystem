@@ -3,32 +3,48 @@
   "WorkspaceRootPath": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|c:\\users\\lengk\\onedrive\\desktop\\shortcoursemanagementsystem\\shortcoursemanagementsystem\\forms\\registerform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:forms\\registerform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|c:\\users\\lengk\\onedrive\\desktop\\shortcoursemanagementsystem\\shortcoursemanagementsystem\\forms\\registerform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:forms\\registerform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|c:\\users\\lengk\\onedrive\\desktop\\shortcoursemanagementsystem\\shortcoursemanagementsystem\\forms\\manageclassform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:forms\\manageclassform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|c:\\users\\lengk\\onedrive\\desktop\\shortcoursemanagementsystem\\shortcoursemanagementsystem\\model\\register.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:model\\register.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|c:\\users\\lengk\\onedrive\\desktop\\shortcoursemanagementsystem\\shortcoursemanagementsystem\\model\\manageclass.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:model\\manageclass.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|c:\\users\\lengk\\onedrive\\desktop\\shortcoursemanagementsystem\\shortcoursemanagementsystem\\forms\\teachersform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:forms\\teachersform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|c:\\users\\lengk\\onedrive\\desktop\\shortcoursemanagementsystem\\shortcoursemanagementsystem\\model\\teacher.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:model\\teacher.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|c:\\users\\lengk\\onedrive\\desktop\\shortcoursemanagementsystem\\shortcoursemanagementsystem\\model\\connectiondb.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:model\\connectiondb.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|c:\\users\\lengk\\onedrive\\desktop\\shortcoursemanagementsystem\\shortcoursemanagementsystem\\forms\\coursesform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\forms\\coursesform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:forms\\coursesform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|c:\\users\\lengk\\onedrive\\desktop\\shortcoursemanagementsystem\\shortcoursemanagementsystem\\model\\course.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|c:\\users\\lengk\\onedrive\\desktop\\shortcoursemanagementsystem\\shortcoursemanagementsystem\\forms\\studentform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:forms\\studentform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|c:\\users\\lengk\\onedrive\\desktop\\shortcoursemanagementsystem\\shortcoursemanagementsystem\\forms\\studentform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:forms\\studentform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|c:\\users\\lengk\\onedrive\\desktop\\shortcoursemanagementsystem\\shortcoursemanagementsystem\\model\\student.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:model\\student.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\model\\course.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:model\\course.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|c:\\users\\lengk\\onedrive\\desktop\\shortcoursemanagementsystem\\shortcoursemanagementsystem\\mainform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:mainform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|c:\\users\\lengk\\onedrive\\desktop\\shortcoursemanagementsystem\\shortcoursemanagementsystem\\mainform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:mainform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|c:\\users\\lengk\\onedrive\\desktop\\shortcoursemanagementsystem\\shortcoursemanagementsystem\\forms\\teachersform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
@@ -42,36 +58,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 4,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Course.vb",
-              "DocumentMoniker": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Model\\Course.vb",
-              "RelativeDocumentMoniker": "Model\\Course.vb",
-              "ToolTip": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Model\\Course.vb",
-              "RelativeToolTip": "Model\\Course.vb",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAADwAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-06-01T15:32:52.481Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CoursesForm.vb",
-              "DocumentMoniker": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Forms\\CoursesForm.vb",
-              "RelativeDocumentMoniker": "Forms\\CoursesForm.vb",
-              "ToolTip": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Forms\\CoursesForm.vb",
-              "RelativeToolTip": "Forms\\CoursesForm.vb",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-06-01T15:03:12.797Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
@@ -82,66 +70,93 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ConnectionDB.vb",
-              "DocumentMoniker": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Model\\ConnectionDB.vb",
-              "RelativeDocumentMoniker": "Model\\ConnectionDB.vb",
-              "ToolTip": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Model\\ConnectionDB.vb",
-              "RelativeToolTip": "Model\\ConnectionDB.vb",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAAD0AAAAyAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "ManageClass.vb",
+              "DocumentMoniker": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Model\\ManageClass.vb",
+              "RelativeDocumentMoniker": "Model\\ManageClass.vb",
+              "ToolTip": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Model\\ManageClass.vb",
+              "RelativeToolTip": "Model\\ManageClass.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-06-01T15:41:21.891Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Teacher.vb",
-              "DocumentMoniker": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Model\\Teacher.vb",
-              "RelativeDocumentMoniker": "Model\\Teacher.vb",
-              "ToolTip": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Model\\Teacher.vb*",
-              "RelativeToolTip": "Model\\Teacher.vb*",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAiwCkAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-06-01T09:42:24.836Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "MainForm.vb",
-              "DocumentMoniker": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\MainForm.vb",
-              "RelativeDocumentMoniker": "MainForm.vb",
-              "ToolTip": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\MainForm.vb",
-              "RelativeToolTip": "MainForm.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-06-01T14:48:57.009Z",
+              "WhenOpened": "2025-06-02T16:34:46.88Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "MainForm.vb [Design]",
-              "DocumentMoniker": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\MainForm.vb",
-              "RelativeDocumentMoniker": "MainForm.vb",
-              "ToolTip": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\MainForm.vb [Design]",
-              "RelativeToolTip": "MainForm.vb [Design]",
+              "Title": "CoursesForm.vb",
+              "DocumentMoniker": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Forms\\CoursesForm.vb",
+              "RelativeDocumentMoniker": "Forms\\CoursesForm.vb",
+              "ToolTip": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Forms\\CoursesForm.vb",
+              "RelativeToolTip": "Forms\\CoursesForm.vb",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-06-01T14:48:52.765Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-06-01T15:03:12.797Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
+              "Title": "Register.vb",
+              "DocumentMoniker": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Model\\Register.vb",
+              "RelativeDocumentMoniker": "Model\\Register.vb",
+              "ToolTip": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Model\\Register.vb",
+              "RelativeToolTip": "Model\\Register.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-06-02T16:08:11.673Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Course.vb",
+              "DocumentMoniker": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Model\\Course.vb",
+              "RelativeDocumentMoniker": "Model\\Course.vb",
+              "ToolTip": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Model\\Course.vb",
+              "RelativeToolTip": "Model\\Course.vb",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAADwAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-06-01T15:32:52.481Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Student.vb",
+              "DocumentMoniker": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Model\\Student.vb",
+              "RelativeDocumentMoniker": "Model\\Student.vb",
+              "ToolTip": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Model\\Student.vb",
+              "RelativeToolTip": "Model\\Student.vb",
+              "ViewState": "AgIAADoAAAAAAAAAAAAxwEQAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-06-02T08:11:48.012Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "StudentForm.vb",
+              "DocumentMoniker": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Forms\\StudentForm.vb",
+              "RelativeDocumentMoniker": "Forms\\StudentForm.vb",
+              "ToolTip": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Forms\\StudentForm.vb",
+              "RelativeToolTip": "Forms\\StudentForm.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-06-02T09:08:12.088Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "TeachersForm.vb",
               "DocumentMoniker": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Forms\\TeachersForm.vb",
               "RelativeDocumentMoniker": "Forms\\TeachersForm.vb",
-              "ToolTip": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Forms\\TeachersForm.vb*",
-              "RelativeToolTip": "Forms\\TeachersForm.vb*",
-              "ViewState": "AgIAAEkAAAAAAAAAAAAgwGYAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Forms\\TeachersForm.vb",
+              "RelativeToolTip": "Forms\\TeachersForm.vb",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAAAAcAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-06-01T14:46:32.972Z",
+              "WhenOpened": "2025-06-02T09:30:26.808Z",
               "EditorCaption": ""
             }
           ]
@@ -154,8 +169,8 @@
       "FloatingWindowState": {
         "Id": "2e977ec7-b904-420a-937b-3bde0729795e",
         "Display": 1,
-        "X": 243,
-        "Y": 59,
+        "X": 226,
+        "Y": 0,
         "Width": 1249,
         "Height": 773,
         "WindowState": 2
@@ -167,14 +182,63 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
+              "Title": "RegisterForm.vb",
+              "DocumentMoniker": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Forms\\RegisterForm.vb",
+              "RelativeDocumentMoniker": "Forms\\RegisterForm.vb",
+              "ToolTip": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Forms\\RegisterForm.vb*",
+              "RelativeToolTip": "Forms\\RegisterForm.vb*",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAACwAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-06-02T16:39:35.928Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "TeachersForm.vb [Design]",
               "DocumentMoniker": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Forms\\TeachersForm.vb",
               "RelativeDocumentMoniker": "Forms\\TeachersForm.vb",
-              "ToolTip": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Forms\\TeachersForm.vb [Design]*",
-              "RelativeToolTip": "Forms\\TeachersForm.vb [Design]*",
+              "ToolTip": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Forms\\TeachersForm.vb [Design]",
+              "RelativeToolTip": "Forms\\TeachersForm.vb [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-06-01T09:41:40.419Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RegisterForm.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Forms\\RegisterForm.vb",
+              "RelativeDocumentMoniker": "Forms\\RegisterForm.vb",
+              "ToolTip": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Forms\\RegisterForm.vb [Design]*",
+              "RelativeToolTip": "Forms\\RegisterForm.vb [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-06-02T08:18:28.773Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "StudentForm.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Forms\\StudentForm.vb",
+              "RelativeDocumentMoniker": "Forms\\StudentForm.vb",
+              "ToolTip": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Forms\\StudentForm.vb [Design]",
+              "RelativeToolTip": "Forms\\StudentForm.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-06-02T08:20:03.588Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ManageClassForm.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Forms\\ManageClassForm.vb",
+              "RelativeDocumentMoniker": "Forms\\ManageClassForm.vb",
+              "ToolTip": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Forms\\ManageClassForm.vb [Design]",
+              "RelativeToolTip": "Forms\\ManageClassForm.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-06-02T16:13:32.832Z",
               "EditorCaption": " [Design]"
             }
           ]

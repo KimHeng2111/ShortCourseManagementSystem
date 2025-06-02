@@ -6,10 +6,6 @@
         Display()
         picTeacher.ImageLocation = Application.StartupPath & "\Images\defalutStudent.png"
     End Sub
-
-
-
-
     'Display all teachers in DataGridView
     Sub Display()
         DataGridView2.DataSource = teacher.GetTeacherData()

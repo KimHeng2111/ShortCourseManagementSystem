@@ -79,19 +79,19 @@ Partial Class RegisterForm
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtKhName = New CustomControls.RJControls.RJTextBox()
-        Me.IconButton1 = New FontAwesome.Sharp.IconButton()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.cbGender = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.picStudent = New System.Windows.Forms.PictureBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel13 = New System.Windows.Forms.Panel()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.OpenPic = New System.Windows.Forms.OpenFileDialog()
         Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
+        Me.IconButton1 = New FontAwesome.Sharp.IconButton()
+        Me.picStudent = New System.Windows.Forms.PictureBox()
         Me.Panel2.SuspendLayout()
         Me.Panel15.SuspendLayout()
         Me.Panel14.SuspendLayout()
@@ -105,9 +105,9 @@ Partial Class RegisterForm
         Me.Panel6.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        CType(Me.picStudent, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel13.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picStudent, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel2
@@ -561,6 +561,7 @@ Partial Class RegisterForm
         Me.dtpDob.BorderColor = System.Drawing.Color.PaleVioletRed
         Me.dtpDob.BorderSize = 0
         Me.dtpDob.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtpDob.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpDob.Location = New System.Drawing.Point(157, 3)
         Me.dtpDob.MinimumSize = New System.Drawing.Size(4, 35)
         Me.dtpDob.Name = "dtpDob"
@@ -794,19 +795,6 @@ Partial Class RegisterForm
         Me.txtKhName.Texts = ""
         Me.txtKhName.UnderlinedStyle = True
         '
-        'IconButton1
-        '
-        Me.IconButton1.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.IconButton1.IconChar = FontAwesome.Sharp.IconChar.None
-        Me.IconButton1.IconColor = System.Drawing.Color.Black
-        Me.IconButton1.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.IconButton1.Location = New System.Drawing.Point(1511, 290)
-        Me.IconButton1.Name = "IconButton1"
-        Me.IconButton1.Size = New System.Drawing.Size(136, 32)
-        Me.IconButton1.TabIndex = 59
-        Me.IconButton1.Text = "Choose Image"
-        Me.IconButton1.UseVisualStyleBackColor = True
-        '
         'Label13
         '
         Me.Label13.Anchor = System.Windows.Forms.AnchorStyles.Top
@@ -862,18 +850,6 @@ Partial Class RegisterForm
         Me.Label5.Size = New System.Drawing.Size(32, 24)
         Me.Label5.TabIndex = 11
         Me.Label5.Text = "ភេទ"
-        '
-        'picStudent
-        '
-        Me.picStudent.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.picStudent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.picStudent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.picStudent.Location = New System.Drawing.Point(1506, 64)
-        Me.picStudent.Name = "picStudent"
-        Me.picStudent.Size = New System.Drawing.Size(146, 209)
-        Me.picStudent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picStudent.TabIndex = 50
-        Me.picStudent.TabStop = False
         '
         'Label7
         '
@@ -956,6 +932,31 @@ Partial Class RegisterForm
         '
         Me.PrintDialog1.UseEXDialog = True
         '
+        'IconButton1
+        '
+        Me.IconButton1.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.IconButton1.IconChar = FontAwesome.Sharp.IconChar.None
+        Me.IconButton1.IconColor = System.Drawing.Color.Black
+        Me.IconButton1.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.IconButton1.Location = New System.Drawing.Point(1511, 290)
+        Me.IconButton1.Name = "IconButton1"
+        Me.IconButton1.Size = New System.Drawing.Size(136, 32)
+        Me.IconButton1.TabIndex = 59
+        Me.IconButton1.Text = "Choose Image"
+        Me.IconButton1.UseVisualStyleBackColor = True
+        '
+        'picStudent
+        '
+        Me.picStudent.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.picStudent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.picStudent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.picStudent.Location = New System.Drawing.Point(1506, 64)
+        Me.picStudent.Name = "picStudent"
+        Me.picStudent.Size = New System.Drawing.Size(146, 209)
+        Me.picStudent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picStudent.TabIndex = 50
+        Me.picStudent.TabStop = False
+        '
         'RegisterForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -994,10 +995,10 @@ Partial Class RegisterForm
         Me.Panel5.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
-        CType(Me.picStudent, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel13.ResumeLayout(False)
         Me.Panel13.PerformLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picStudent, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

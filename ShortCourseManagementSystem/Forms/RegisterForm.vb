@@ -22,7 +22,7 @@ Public Class RegisterForm
     End Sub
 
     Sub ImportDataToTextboxCourse()
-        Dim cmdString As String = "SELECT tblCourses.CourseName, tblClass.StartDate, tblClass.StatusID FROM tblCourses INNER JOIN tblClass ON tblCourses.ID = tblClass.CourseID WHERE (((tblClass.StartDate)>=([End_Date]-10)) AND ((tblClass.StatusID)<=2));"
+        Dim cmdString As String = "SELECT tblCourses.CourseName, tblClass.StartDate, tblClass.StatusID FROM tblCourses INNER JOIN tblClass ON tblCourses.ID = tblClass.CourseID WHERE (((tblClass.StartDate)>=([End_Date]-100)) AND ((tblClass.StatusID)<=2));"
         Try
             conn.Open()
             cmd = New OleDbCommand(cmdString, conn)
@@ -42,7 +42,7 @@ Public Class RegisterForm
     Sub ImportDataToDataGridView()
         Dim cmdString As String = "SELECT tblClass.ClassID, tblCourses.CourseName, tblTeacher.engName AS TeacherName, tblClass.StartDate, tblSchedule.Schedule, tblRoom.RoomID, (SELECT COUNT(*) FROM tblRegister WHERE tblClass.ClassID = tblRegister.ClassID) AS Current_Enrollments, tblClassStatus.Status
 FROM tblClassStatus INNER JOIN (tblTeacher INNER JOIN (tblSchedule INNER JOIN (tblRoom INNER JOIN (tblCourses INNER JOIN tblClass ON tblCourses.ID = tblClass.CourseID) ON tblRoom.ID = tblClass.RoomID) ON tblSchedule.ID = tblClass.SecheduleID) ON tblTeacher.ID = tblClass.TeacherID) ON tblClassStatus.ID = tblClass.StatusID
-WHERE (((tblClass.StartDate)>=Now()-10) AND ((tblClass.StatusID)<=2));"
+WHERE (((tblClass.StartDate)>=Now()-100) AND ((tblClass.StatusID)<=2));"
         Try
             conn.Open()
             cmd = New OleDbCommand(cmdString, conn)
