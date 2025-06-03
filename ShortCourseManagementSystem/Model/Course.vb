@@ -44,6 +44,24 @@ Public Class Course
             Me.durations = Convert.ToInt32(reader("DurationHours"))
             Me.basePrice = Convert.ToDecimal(reader("BasePrice"))
         End While
+        reader.Close()
+        CloseConnection()
+    End Sub
+    Public Sub GetCourseByName(courseName As String)
+        Dim query As String = "SELECT * FROM tblCourses WHERE CourseName = @CourseName"
+        OpenConnection()
+        Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
+        cmd.Parameters.AddWithValue("@CourseName", courseName)
+        Dim reader As OleDbDataReader = cmd.ExecuteReader()
+        While reader.Read()
+            Me.courseID = reader("ID").ToString()
+            Me.courseName = reader("CourseName").ToString()
+            Me.Description = reader("Description").ToString()
+            Me.durations = Convert.ToInt32(reader("DurationHours"))
+            Me.basePrice = Convert.ToDecimal(reader("BasePrice"))
+        End While
+        reader.Close()
+        CloseConnection()
     End Sub
     Public Sub AddCourse(courseName As String, description As String, durationHours As Integer, basePrice As Decimal)
         Dim query As String = "INSERT INTO tblCourses (CourseName, Description, DurationHours, BasePrice) VALUES (@CourseName, @Description, @DurationHours, @BasePrice)"

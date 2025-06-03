@@ -82,4 +82,29 @@ Public Class Teacher
         reader.Close()
         CloseConnection()
     End Sub
+    Public Sub GetTeacherByName(name As String)
+        Dim query As String = "SELECT * FROM tblTeacher WHERE KhName = @khName;"
+        Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
+        cmd.Parameters.AddWithValue("@khName", name)
+        OpenConnection()
+        Dim reader As OleDbDataReader = cmd.ExecuteReader()
+        While reader.Read()
+            Me.TeacherID = reader("ID").ToString()
+            Me.KhName = reader("KhName").ToString()
+            Me.EngName = reader("EngName").ToString()
+            Me.Address = reader("POB").ToString()
+            Me.DoB = Convert.ToDateTime(reader("DOB"))
+            Me.Gender = reader("Gender").ToString()
+            Me.Phone = reader("Phone").ToString()
+            Me.Email = reader("Email").ToString()
+            If Not IsDBNull(reader("Picture")) Then
+                Me.Picture = reader("Picture").ToString()
+            Else
+                Me.Picture = String.Empty
+            End If
+        End While
+        reader.Close()
+        CloseConnection()
+    End Sub
+
 End Class
