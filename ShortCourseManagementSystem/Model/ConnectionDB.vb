@@ -29,7 +29,7 @@ Public Class ConnectionDB
             Dim adapter As New OleDbDataAdapter(cmd)
             adapter.Fill(dt)
         Catch ex As Exception
-            Throw New Exception("Error executing query: " & ex.Message)
+            MsgBox("Error executing query: " & ex.Message)
         Finally
             CloseConnection()
         End Try

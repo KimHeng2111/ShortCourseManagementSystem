@@ -108,4 +108,9 @@ Public Class MainForm
         Activatebutton(sender, ThemeColor.activeColor)
         OpenChildForm(New StudentForm())
     End Sub
+
+    Private Sub btnClass_Click(sender As Object, e As EventArgs) Handles btnClass.Click
+        Activatebutton(sender, ThemeColor.activeColor)
+        OpenChildForm(New ManageClassForm())
+    End Sub
 End Class

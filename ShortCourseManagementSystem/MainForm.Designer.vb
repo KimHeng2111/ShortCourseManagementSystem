@@ -50,7 +50,7 @@ Partial Class MainForm
         '
         'panelMenu
         '
-        Me.panelMenu.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.panelMenu.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(157, Byte), Integer))
         Me.panelMenu.Controls.Add(Me.btnReport)
         Me.panelMenu.Controls.Add(Me.btnCourse)
         Me.panelMenu.Controls.Add(Me.btnClass)
@@ -68,7 +68,7 @@ Partial Class MainForm
         '
         'btnReport
         '
-        Me.btnReport.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnReport.BackColor = System.Drawing.Color.Transparent
         Me.btnReport.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnReport.FlatAppearance.BorderSize = 0
         Me.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -91,7 +91,7 @@ Partial Class MainForm
         '
         'btnCourse
         '
-        Me.btnCourse.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnCourse.BackColor = System.Drawing.Color.Transparent
         Me.btnCourse.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnCourse.FlatAppearance.BorderSize = 0
         Me.btnCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -114,7 +114,7 @@ Partial Class MainForm
         '
         'btnClass
         '
-        Me.btnClass.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnClass.BackColor = System.Drawing.Color.Transparent
         Me.btnClass.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnClass.FlatAppearance.BorderSize = 0
         Me.btnClass.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -137,7 +137,7 @@ Partial Class MainForm
         '
         'btnStudent
         '
-        Me.btnStudent.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnStudent.BackColor = System.Drawing.Color.Transparent
         Me.btnStudent.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnStudent.FlatAppearance.BorderSize = 0
         Me.btnStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -160,7 +160,7 @@ Partial Class MainForm
         '
         'btnExit
         '
-        Me.btnExit.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnExit.BackColor = System.Drawing.Color.Transparent
         Me.btnExit.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.btnExit.FlatAppearance.BorderSize = 0
         Me.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -183,7 +183,7 @@ Partial Class MainForm
         '
         'btnTeacher
         '
-        Me.btnTeacher.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnTeacher.BackColor = System.Drawing.Color.Transparent
         Me.btnTeacher.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnTeacher.FlatAppearance.BorderSize = 0
         Me.btnTeacher.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -206,7 +206,7 @@ Partial Class MainForm
         '
         'btnRegister
         '
-        Me.btnRegister.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnRegister.BackColor = System.Drawing.Color.Transparent
         Me.btnRegister.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnRegister.FlatAppearance.BorderSize = 0
         Me.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -229,7 +229,7 @@ Partial Class MainForm
         '
         'btnDashboard
         '
-        Me.btnDashboard.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnDashboard.BackColor = System.Drawing.Color.Transparent
         Me.btnDashboard.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnDashboard.FlatAppearance.BorderSize = 0
         Me.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -291,7 +291,7 @@ Partial Class MainForm
         Me.lbFormTitle.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbFormTitle.ForeColor = System.Drawing.Color.Gainsboro
         Me.lbFormTitle.ImageAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.lbFormTitle.Location = New System.Drawing.Point(57, 21)
+        Me.lbFormTitle.Location = New System.Drawing.Point(56, 14)
         Me.lbFormTitle.Name = "lbFormTitle"
         Me.lbFormTitle.Size = New System.Drawing.Size(38, 15)
         Me.lbFormTitle.TabIndex = 1
@@ -304,18 +304,18 @@ Partial Class MainForm
         Me.IconCurrentForm.IconChar = FontAwesome.Sharp.IconChar.Home
         Me.IconCurrentForm.IconColor = System.Drawing.Color.Gainsboro
         Me.IconCurrentForm.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.IconCurrentForm.IconSize = 45
-        Me.IconCurrentForm.Location = New System.Drawing.Point(6, 2)
+        Me.IconCurrentForm.IconSize = 40
+        Me.IconCurrentForm.Location = New System.Drawing.Point(5, 2)
         Me.IconCurrentForm.Name = "IconCurrentForm"
         Me.IconCurrentForm.Padding = New System.Windows.Forms.Padding(0, 5, 0, 0)
-        Me.IconCurrentForm.Size = New System.Drawing.Size(45, 45)
+        Me.IconCurrentForm.Size = New System.Drawing.Size(40, 40)
         Me.IconCurrentForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.IconCurrentForm.TabIndex = 0
         Me.IconCurrentForm.TabStop = False
         '
         'panelTitlebar
         '
-        Me.panelTitlebar.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.panelTitlebar.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(94, Byte), Integer), CType(CType(144, Byte), Integer))
         Me.panelTitlebar.Controls.Add(Me.lbFormTitle)
         Me.panelTitlebar.Controls.Add(Me.btnMin)
         Me.panelTitlebar.Controls.Add(Me.btnClose)
@@ -323,13 +323,13 @@ Partial Class MainForm
         Me.panelTitlebar.Dock = System.Windows.Forms.DockStyle.Top
         Me.panelTitlebar.Location = New System.Drawing.Point(200, 0)
         Me.panelTitlebar.Name = "panelTitlebar"
-        Me.panelTitlebar.Size = New System.Drawing.Size(1720, 50)
+        Me.panelTitlebar.Size = New System.Drawing.Size(1720, 42)
         Me.panelTitlebar.TabIndex = 1
         '
         'btnMin
         '
         Me.btnMin.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnMin.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnMin.BackColor = System.Drawing.Color.Transparent
         Me.btnMin.FlatAppearance.BorderSize = 0
         Me.btnMin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue
         Me.btnMin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -349,7 +349,7 @@ Partial Class MainForm
         'btnClose
         '
         Me.btnClose.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnClose.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnClose.BackColor = System.Drawing.Color.Transparent
         Me.btnClose.FlatAppearance.BorderSize = 0
         Me.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
         Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -371,9 +371,9 @@ Partial Class MainForm
         Me.panelChildForm.BackColor = System.Drawing.SystemColors.MenuBar
         Me.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill
         Me.panelChildForm.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.panelChildForm.Location = New System.Drawing.Point(200, 50)
+        Me.panelChildForm.Location = New System.Drawing.Point(200, 42)
         Me.panelChildForm.Name = "panelChildForm"
-        Me.panelChildForm.Size = New System.Drawing.Size(1720, 1030)
+        Me.panelChildForm.Size = New System.Drawing.Size(1720, 1038)
         Me.panelChildForm.TabIndex = 2
         '
         'MainForm
