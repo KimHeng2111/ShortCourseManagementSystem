@@ -41,7 +41,6 @@ Partial Class ManageClassForm
         Me.btnClear = New System.Windows.Forms.Button()
         Me.btnNewClass = New System.Windows.Forms.Button()
         Me.Panel8 = New System.Windows.Forms.Panel()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
@@ -49,15 +48,12 @@ Partial Class ManageClassForm
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -76,6 +72,10 @@ Partial Class ManageClassForm
         Me.Panel12 = New System.Windows.Forms.Panel()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.cbTime = New System.Windows.Forms.ComboBox()
+        Me.cbRoom = New System.Windows.Forms.ComboBox()
+        Me.cbCourse = New System.Windows.Forms.ComboBox()
+        Me.cbTeacher = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel11.SuspendLayout()
@@ -260,25 +260,18 @@ Partial Class ManageClassForm
         Me.btnNewClass.Name = "btnNewClass"
         Me.btnNewClass.Size = New System.Drawing.Size(151, 44)
         Me.btnNewClass.TabIndex = 76
-        Me.btnNewClass.Text = "បង្កើតថ្នាក់ថ្នី"
+        Me.btnNewClass.Text = "បង្កើតថ្នាក់ថ្មី"
         Me.btnNewClass.UseVisualStyleBackColor = True
         '
         'Panel8
         '
-        Me.Panel8.Controls.Add(Me.TextBox6)
+        Me.Panel8.Controls.Add(Me.cbTime)
         Me.Panel8.Controls.Add(Me.Label13)
         Me.Panel8.Controls.Add(Me.Label14)
         Me.Panel8.Location = New System.Drawing.Point(1108, 133)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(364, 41)
         Me.Panel8.TabIndex = 8
-        '
-        'TextBox6
-        '
-        Me.TextBox6.Location = New System.Drawing.Point(164, 3)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(197, 37)
-        Me.TextBox6.TabIndex = 5
         '
         'Label13
         '
@@ -335,20 +328,13 @@ Partial Class ManageClassForm
         '
         'Panel6
         '
-        Me.Panel6.Controls.Add(Me.TextBox4)
+        Me.Panel6.Controls.Add(Me.cbTeacher)
         Me.Panel6.Controls.Add(Me.Label9)
         Me.Panel6.Controls.Add(Me.Label10)
         Me.Panel6.Location = New System.Drawing.Point(1108, 60)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(364, 41)
         Me.Panel6.TabIndex = 6
-        '
-        'TextBox4
-        '
-        Me.TextBox4.Location = New System.Drawing.Point(164, 3)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(197, 37)
-        Me.TextBox4.TabIndex = 5
         '
         'Label9
         '
@@ -370,20 +356,13 @@ Partial Class ManageClassForm
         '
         'Panel5
         '
-        Me.Panel5.Controls.Add(Me.TextBox3)
+        Me.Panel5.Controls.Add(Me.cbRoom)
         Me.Panel5.Controls.Add(Me.Label7)
         Me.Panel5.Controls.Add(Me.Label8)
         Me.Panel5.Location = New System.Drawing.Point(232, 211)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(364, 41)
         Me.Panel5.TabIndex = 5
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Location = New System.Drawing.Point(164, 3)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(197, 37)
-        Me.TextBox3.TabIndex = 5
         '
         'Label7
         '
@@ -405,20 +384,13 @@ Partial Class ManageClassForm
         '
         'Panel4
         '
-        Me.Panel4.Controls.Add(Me.TextBox2)
+        Me.Panel4.Controls.Add(Me.cbCourse)
         Me.Panel4.Controls.Add(Me.Label5)
         Me.Panel4.Controls.Add(Me.Label6)
         Me.Panel4.Location = New System.Drawing.Point(681, 60)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(364, 41)
         Me.Panel4.TabIndex = 4
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(164, 3)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(197, 37)
-        Me.TextBox2.TabIndex = 5
         '
         'Label5
         '
@@ -616,6 +588,42 @@ Partial Class ManageClassForm
         Me.DataGridView2.Size = New System.Drawing.Size(1657, 406)
         Me.DataGridView2.TabIndex = 62
         '
+        'cbTime
+        '
+        Me.cbTime.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.cbTime.FormattingEnabled = True
+        Me.cbTime.Location = New System.Drawing.Point(164, 2)
+        Me.cbTime.Name = "cbTime"
+        Me.cbTime.Size = New System.Drawing.Size(197, 37)
+        Me.cbTime.TabIndex = 5
+        '
+        'cbRoom
+        '
+        Me.cbRoom.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.cbRoom.FormattingEnabled = True
+        Me.cbRoom.Location = New System.Drawing.Point(164, 3)
+        Me.cbRoom.Name = "cbRoom"
+        Me.cbRoom.Size = New System.Drawing.Size(197, 37)
+        Me.cbRoom.TabIndex = 6
+        '
+        'cbCourse
+        '
+        Me.cbCourse.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.cbCourse.FormattingEnabled = True
+        Me.cbCourse.Location = New System.Drawing.Point(164, 1)
+        Me.cbCourse.Name = "cbCourse"
+        Me.cbCourse.Size = New System.Drawing.Size(197, 37)
+        Me.cbCourse.TabIndex = 7
+        '
+        'cbTeacher
+        '
+        Me.cbTeacher.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.cbTeacher.FormattingEnabled = True
+        Me.cbTeacher.Location = New System.Drawing.Point(167, 2)
+        Me.cbTeacher.Name = "cbTeacher"
+        Me.cbTeacher.Size = New System.Drawing.Size(197, 37)
+        Me.cbTeacher.TabIndex = 8
+        '
         'ManageClassForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 29.0!)
@@ -663,7 +671,6 @@ Partial Class ManageClassForm
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label2 As Label
     Friend WithEvents Panel4 As Panel
-    Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Panel3 As Panel
@@ -671,7 +678,6 @@ Partial Class ManageClassForm
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Panel8 As Panel
-    Friend WithEvents TextBox6 As TextBox
     Friend WithEvents Label13 As Label
     Friend WithEvents Label14 As Label
     Friend WithEvents Panel7 As Panel
@@ -679,11 +685,9 @@ Partial Class ManageClassForm
     Friend WithEvents Label11 As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents Panel6 As Panel
-    Friend WithEvents TextBox4 As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents Panel5 As Panel
-    Friend WithEvents TextBox3 As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents btnDelete As Button
@@ -709,4 +713,8 @@ Partial Class ManageClassForm
     Friend WithEvents Label21 As Label
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents Label20 As Label
+    Friend WithEvents cbTime As ComboBox
+    Friend WithEvents cbRoom As ComboBox
+    Friend WithEvents cbCourse As ComboBox
+    Friend WithEvents cbTeacher As ComboBox
 End Class
