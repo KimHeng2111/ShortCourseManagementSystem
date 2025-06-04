@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,29 +20,34 @@ Partial Class Form1
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
+        Me.ViewInvoice = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.SuspendLayout()
         '
-        'CrystalReportViewer1
+        'ViewInvoice
         '
-        Me.CrystalReportViewer1.ActiveViewIndex = -1
-        Me.CrystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.CrystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default
-        Me.CrystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.CrystalReportViewer1.Location = New System.Drawing.Point(0, 0)
-        Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
-        Me.CrystalReportViewer1.Size = New System.Drawing.Size(1100, 717)
-        Me.CrystalReportViewer1.TabIndex = 0
-        Me.CrystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
+        Me.ViewInvoice.ActiveViewIndex = -1
+        Me.ViewInvoice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ViewInvoice.Cursor = System.Windows.Forms.Cursors.Default
+        Me.ViewInvoice.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ViewInvoice.Location = New System.Drawing.Point(0, 0)
+        Me.ViewInvoice.Name = "ViewInvoice"
+        Me.ViewInvoice.ShowCloseButton = False
+        Me.ViewInvoice.ShowGroupTreeButton = False
+        Me.ViewInvoice.ShowPageNavigateButtons = False
+        Me.ViewInvoice.ShowRefreshButton = False
+        Me.ViewInvoice.ShowTextSearchButton = False
+        Me.ViewInvoice.Size = New System.Drawing.Size(1100, 717)
+        Me.ViewInvoice.TabIndex = 0
+        Me.ViewInvoice.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1100, 717)
-        Me.Controls.Add(Me.CrystalReportViewer1)
+        Me.Controls.Add(Me.ViewInvoice)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
@@ -50,5 +55,5 @@ Partial Class Form1
 
     End Sub
 
-    Friend WithEvents CrystalReportViewer1 As CrystalDecisions.Windows.Forms.CrystalReportViewer
+    Friend WithEvents ViewInvoice As CrystalDecisions.Windows.Forms.CrystalReportViewer
 End Class

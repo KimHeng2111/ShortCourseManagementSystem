@@ -1,4 +1,5 @@
 ﻿Imports System.Runtime.InteropServices
+Imports CrystalDecisions.CrystalReports.Engine
 
 Public Class Form1
     Dim register As New Register()
@@ -10,7 +11,7 @@ Public Class Form1
         ' Add any initialization after the InitializeComponent() call.
         register = reg
     End Sub
-    Private Sub CrystalReportViewer1_Load(sender As Object, e As EventArgs) Handles CrystalReportViewer1.Load
+    Private Sub CrystalReportViewer1_Load(sender As Object, e As EventArgs) Handles ViewInvoice.Load
         Dim invoice As New Invoice()
         invoice.SetParameterValue("PaymentID", register.payment.paymentID) ' Example parameter, replace with actual value
         invoice.SetParameterValue("khName", register.student.khName)
@@ -22,6 +23,9 @@ Public Class Form1
         invoice.SetParameterValue("CoursePrice", register.manageClass.course.basePrice)
         invoice.SetParameterValue("Amount", register.payment.amount)
         invoice.SetParameterValue("Unpaid", register.payment.unpaid)
-        CrystalReportViewer1.ReportSource = invoice
+        ViewInvoice.ReportSource = invoice
+        Dim invName As String = "Invoice_" & register.registerID & ".pdf"
+        Dim path As String = Application.StartupPath & "\Invoices\" & invName
+
     End Sub
 End Class
