@@ -41,7 +41,7 @@ Public Class RegisterForm
     'Import Data To CourseList DataGridView
     Sub ImportDataToDataGridView()
         Dim cmdString As String = "SELECT tblClass.ClassID, tblCourses.CourseName, tblTeacher.engName AS TeacherName, tblClass.StartDate, tblSchedule.Schedule, tblRoom.RoomID, (SELECT COUNT(*) FROM tblRegister WHERE tblClass.ClassID = tblRegister.ClassID) AS Current_Enrollments, tblClassStatus.Status
-FROM tblClassStatus INNER JOIN (tblTeacher INNER JOIN (tblSchedule INNER JOIN (tblRoom INNER JOIN (tblCourses INNER JOIN tblClass ON tblCourses.ID = tblClass.CourseID) ON tblRoom.ID = tblClass.RoomID) ON tblSchedule.ID = tblClass.SecheduleID) ON tblTeacher.ID = tblClass.TeacherID) ON tblClassStatus.ID = tblClass.StatusID
+FROM tblClassStatus INNER JOIN (tblTeacher INNER JOIN (tblSchedule INNER JOIN (tblRoom INNER JOIN (tblCourses INNER JOIN tblClass ON tblCourses.ID = tblClass.CourseID) ON tblRoom.ID = tblClass.RoomID) ON tblSchedule.ID = tblClass.ScheduleID) ON tblTeacher.ID = tblClass.TeacherID) ON tblClassStatus.ID = tblClass.StatusID
 WHERE (((tblClass.StartDate)>=Now()-100) AND ((tblClass.StatusID)<=2));"
         Try
             conn.Open()
@@ -59,7 +59,7 @@ WHERE (((tblClass.StartDate)>=Now()-100) AND ((tblClass.StatusID)<=2));"
 
     Private Sub cbCourse_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbCourse.SelectedIndexChanged
         Dim query As String = "SELECT tblCourses.BasePrice, tblSchedule.Schedule, tblRoom.RoomID
-From tblCourses INNER Join (tblSchedule INNER Join (tblRoom INNER Join tblClass On tblRoom.ID = tblClass.RoomID) ON tblSchedule.ID = tblClass.SecheduleID) ON tblCourses.ID = tblClass.CourseID
+From tblCourses INNER Join (tblSchedule INNER Join (tblRoom INNER Join tblClass On tblRoom.ID = tblClass.RoomID) ON tblSchedule.ID = tblClass.ScheduleID) ON tblCourses.ID = tblClass.CourseID
 Where (((tblCourses.CourseName) =@CourseName));"
         Dim courseName As String = cbCourse.Text
         Using conn As New OleDbConnection(connString)
