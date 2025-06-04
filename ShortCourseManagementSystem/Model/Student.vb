@@ -24,6 +24,7 @@ Public Class Student
     Public Sub AddStudent(khName As String, EngName As String, Gender As String, DOB As Date, Address As String, Phone As String, Email As String, Picture As String)
         Dim query As String = "INSERT INTO tblStudent(KhName , EngName ,Gender , DateOfBirth , Address , Email , Phone ,Picture ) 
                                                      VALUES (@KhName, @EngName, @Gender, @DateOfBirth, @Address, @Email, @Phone, @Picture)"
+        OpenConnection()
         Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
         cmd.Parameters.AddWithValue("@KhName", khName)
         cmd.Parameters.AddWithValue("@EngName", EngName)
@@ -33,7 +34,10 @@ Public Class Student
         cmd.Parameters.AddWithValue("@Email", Email)
         cmd.Parameters.AddWithValue("@Phone", Phone)
         cmd.Parameters.AddWithValue("@Picter", Picture)
-        ExecuteNonQuery(cmd)
+        cmd.ExecuteNonQuery()
+        cmd.CommandText = "SELECT @@IDENTITY;"
+        Dim id As String = cmd.ExecuteScalar().ToString()
+        GetStudentByID(Convert.ToInt32(id))
         MessageBox.Show("Student Name : " & khName & " has been added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
     Public Sub UpdateStudent(studentID As Integer, khName As String, EngName As String, Gender As String, DOB As Date, Address As String, Phone As String, Email As String, Picture As String)

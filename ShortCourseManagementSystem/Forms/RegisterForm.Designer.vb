@@ -32,10 +32,10 @@ Partial Class RegisterForm
         Me.Label32 = New System.Windows.Forms.Label()
         Me.btnChooseStudent = New System.Windows.Forms.Button()
         Me.Panel14 = New System.Windows.Forms.Panel()
+        Me.cbTime = New System.Windows.Forms.ComboBox()
         Me.lbRoom = New System.Windows.Forms.Label()
         Me.Label30 = New System.Windows.Forms.Label()
         Me.Label31 = New System.Windows.Forms.Label()
-        Me.lbTime = New System.Windows.Forms.Label()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.Label28 = New System.Windows.Forms.Label()
         Me.Panel12 = New System.Windows.Forms.Panel()
@@ -92,6 +92,11 @@ Partial Class RegisterForm
         Me.Label26 = New System.Windows.Forms.Label()
         Me.OpenPic = New System.Windows.Forms.OpenFileDialog()
         Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label33 = New System.Windows.Forms.Label()
+        Me.Label34 = New System.Windows.Forms.Label()
+        Me.Label35 = New System.Windows.Forms.Label()
+        Me.txtpay = New System.Windows.Forms.TextBox()
         Me.Panel2.SuspendLayout()
         Me.Panel15.SuspendLayout()
         Me.Panel14.SuspendLayout()
@@ -108,11 +113,13 @@ Partial Class RegisterForm
         CType(Me.picStudent, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel13.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.Panel2.Controls.Add(Me.Panel1)
         Me.Panel2.Controls.Add(Me.Panel15)
         Me.Panel2.Controls.Add(Me.btnChooseStudent)
         Me.Panel2.Controls.Add(Me.Panel14)
@@ -209,16 +216,25 @@ Partial Class RegisterForm
         'Panel14
         '
         Me.Panel14.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.Panel14.Controls.Add(Me.cbTime)
         Me.Panel14.Controls.Add(Me.lbRoom)
         Me.Panel14.Controls.Add(Me.Label30)
         Me.Panel14.Controls.Add(Me.Label31)
-        Me.Panel14.Controls.Add(Me.lbTime)
         Me.Panel14.Controls.Add(Me.Label27)
         Me.Panel14.Controls.Add(Me.Label28)
-        Me.Panel14.Location = New System.Drawing.Point(58, 225)
+        Me.Panel14.Location = New System.Drawing.Point(58, 242)
         Me.Panel14.Name = "Panel14"
         Me.Panel14.Size = New System.Drawing.Size(477, 41)
         Me.Panel14.TabIndex = 70
+        '
+        'cbTime
+        '
+        Me.cbTime.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!)
+        Me.cbTime.FormattingEnabled = True
+        Me.cbTime.Location = New System.Drawing.Point(101, 2)
+        Me.cbTime.Name = "cbTime"
+        Me.cbTime.Size = New System.Drawing.Size(199, 35)
+        Me.cbTime.TabIndex = 23
         '
         'lbRoom
         '
@@ -235,7 +251,7 @@ Partial Class RegisterForm
         '
         Me.Label30.AutoSize = True
         Me.Label30.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label30.Location = New System.Drawing.Point(333, 7)
+        Me.Label30.Location = New System.Drawing.Point(354, 7)
         Me.Label30.Name = "Label30"
         Me.Label30.Size = New System.Drawing.Size(16, 27)
         Me.Label30.TabIndex = 20
@@ -246,22 +262,11 @@ Partial Class RegisterForm
         Me.Label31.AutoSize = True
         Me.Label31.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label31.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label31.Location = New System.Drawing.Point(279, 7)
+        Me.Label31.Location = New System.Drawing.Point(306, 7)
         Me.Label31.Name = "Label31"
         Me.Label31.Size = New System.Drawing.Size(42, 27)
         Me.Label31.TabIndex = 21
         Me.Label31.Text = "បន្ទប់"
-        '
-        'lbTime
-        '
-        Me.lbTime.AutoSize = True
-        Me.lbTime.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbTime.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.lbTime.Location = New System.Drawing.Point(120, 6)
-        Me.lbTime.Name = "lbTime"
-        Me.lbTime.Size = New System.Drawing.Size(88, 27)
-        Me.lbTime.TabIndex = 19
-        Me.lbTime.Text = "..................."
         '
         'Label27
         '
@@ -291,9 +296,9 @@ Partial Class RegisterForm
         Me.Panel12.Controls.Add(Me.lbAmount)
         Me.Panel12.Controls.Add(Me.Label24)
         Me.Panel12.Controls.Add(Me.Label25)
-        Me.Panel12.Location = New System.Drawing.Point(886, 232)
+        Me.Panel12.Location = New System.Drawing.Point(839, 241)
         Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(243, 42)
+        Me.Panel12.Size = New System.Drawing.Size(227, 42)
         Me.Panel12.TabIndex = 69
         '
         'Label21
@@ -303,7 +308,7 @@ Partial Class RegisterForm
         Me.Label21.BackColor = System.Drawing.Color.Transparent
         Me.Label21.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label21.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label21.Location = New System.Drawing.Point(215, 6)
+        Me.Label21.Location = New System.Drawing.Point(199, 6)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(20, 27)
         Me.Label21.TabIndex = 70
@@ -316,7 +321,7 @@ Partial Class RegisterForm
         Me.lbAmount.BackColor = System.Drawing.Color.Transparent
         Me.lbAmount.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbAmount.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.lbAmount.Location = New System.Drawing.Point(111, 6)
+        Me.lbAmount.Location = New System.Drawing.Point(95, 6)
         Me.lbAmount.Name = "lbAmount"
         Me.lbAmount.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.lbAmount.Size = New System.Drawing.Size(20, 27)
@@ -374,7 +379,7 @@ Partial Class RegisterForm
         Me.Panel11.Controls.Add(Me.lbPrice)
         Me.Panel11.Controls.Add(Me.Label19)
         Me.Panel11.Controls.Add(Me.Label20)
-        Me.Panel11.Location = New System.Drawing.Point(1118, 181)
+        Me.Panel11.Location = New System.Drawing.Point(1118, 177)
         Me.Panel11.Name = "Panel11"
         Me.Panel11.Size = New System.Drawing.Size(278, 42)
         Me.Panel11.TabIndex = 67
@@ -436,7 +441,7 @@ Partial Class RegisterForm
         Me.Panel10.Controls.Add(Me.Label17)
         Me.Panel10.Controls.Add(Me.Label18)
         Me.Panel10.Controls.Add(Me.txtDis)
-        Me.Panel10.Location = New System.Drawing.Point(589, 232)
+        Me.Panel10.Location = New System.Drawing.Point(589, 241)
         Me.Panel10.Name = "Panel10"
         Me.Panel10.Size = New System.Drawing.Size(229, 42)
         Me.Panel10.TabIndex = 66
@@ -957,6 +962,60 @@ Partial Class RegisterForm
         '
         Me.PrintDialog1.UseEXDialog = True
         '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.Panel1.Controls.Add(Me.Label33)
+        Me.Panel1.Controls.Add(Me.Label34)
+        Me.Panel1.Controls.Add(Me.Label35)
+        Me.Panel1.Controls.Add(Me.txtpay)
+        Me.Panel1.Location = New System.Drawing.Point(1118, 241)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(278, 42)
+        Me.Panel1.TabIndex = 73
+        '
+        'Label33
+        '
+        Me.Label33.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label33.AutoSize = True
+        Me.Label33.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label33.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label33.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label33.Location = New System.Drawing.Point(255, 7)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(20, 27)
+        Me.Label33.TabIndex = 70
+        Me.Label33.Text = "$"
+        '
+        'Label34
+        '
+        Me.Label34.AutoSize = True
+        Me.Label34.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label34.Location = New System.Drawing.Point(96, 6)
+        Me.Label34.Name = "Label34"
+        Me.Label34.Size = New System.Drawing.Size(16, 27)
+        Me.Label34.TabIndex = 3
+        Me.Label34.Text = ":"
+        '
+        'Label35
+        '
+        Me.Label35.AutoSize = True
+        Me.Label35.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label35.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label35.Location = New System.Drawing.Point(8, 8)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(87, 27)
+        Me.Label35.TabIndex = 51
+        Me.Label35.Text = "ប្រាក់បានបង់"
+        '
+        'txtpay
+        '
+        Me.txtpay.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!)
+        Me.txtpay.Location = New System.Drawing.Point(152, 3)
+        Me.txtpay.Name = "txtpay"
+        Me.txtpay.Size = New System.Drawing.Size(123, 35)
+        Me.txtpay.TabIndex = 71
+        '
         'RegisterForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -999,6 +1058,8 @@ Partial Class RegisterForm
         Me.Panel13.ResumeLayout(False)
         Me.Panel13.PerformLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1055,7 +1116,6 @@ Partial Class RegisterForm
     Friend WithEvents Panel14 As Panel
     Friend WithEvents Label27 As Label
     Friend WithEvents Label28 As Label
-    Friend WithEvents lbTime As Label
     Friend WithEvents OpenPic As OpenFileDialog
     Friend WithEvents Label21 As Label
     Friend WithEvents Label23 As Label
@@ -1069,4 +1129,10 @@ Partial Class RegisterForm
     Friend WithEvents txtEmail As CustomControls.RJControls.RJTextBox
     Friend WithEvents Label32 As Label
     Friend WithEvents PrintDialog1 As PrintDialog
+    Friend WithEvents cbTime As ComboBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label33 As Label
+    Friend WithEvents Label34 As Label
+    Friend WithEvents Label35 As Label
+    Friend WithEvents txtpay As TextBox
 End Class

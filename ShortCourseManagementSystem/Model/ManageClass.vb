@@ -71,6 +71,15 @@ Public Class ManageClass
         ExecuteNonQuery(cmd)
     End Sub
 
+    Public Function GetCurrentEnrollments() As Integer
+        Dim query As String = "SELECT COUNT(*) FROM tblRegister WHERE ClassID = @ClassID;"
+        OpenConnection()
+        Dim cmd As New OleDbCommand(query, GetConnection())
+        cmd.Parameters.AddWithValue("@ClassID", Me.classID)
+        Dim count As Integer = Convert.ToInt32(cmd.ExecuteScalar())
+        CloseConnection()
+        Return count
+    End Function
 
     'Get Dictionary to insert to Combobox
     Public Function GetTimeList() As Dictionary(Of String, Integer)
