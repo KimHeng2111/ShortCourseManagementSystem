@@ -1,5 +1,5 @@
 ﻿Imports System.Data.OleDb
-Public Class Payment
+Public Class PaymentForm
     Dim conn As OleDbConnection
     Dim stuID, ClassID As Integer
     Dim cmd As OleDbCommand

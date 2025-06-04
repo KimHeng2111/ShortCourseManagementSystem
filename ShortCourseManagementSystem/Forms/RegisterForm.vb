@@ -22,7 +22,7 @@ Public Class RegisterForm
     End Sub
 
     Sub ImportDataToTextboxCourse()
-        Dim cmdString As String = "SELECT tblCourses.CourseName, tblClass.StartDate, tblClass.StatusID FROM tblCourses INNER JOIN tblClass ON tblCourses.ID = tblClass.CourseID WHERE (((tblClass.StartDate)>=([End_Date]-100)) AND ((tblClass.StatusID)<=2));"
+        Dim cmdString As String = "SELECT tblCourses.CourseName, tblClass.StartDate, tblClass.StatusID FROM tblCourses INNER JOIN tblClass ON tblCourses.ID = tblClass.CourseID WHERE (((tblClass.StartDate)>=([EndDate]-100)) AND ((tblClass.StatusID)<=2));"
         Try
             conn.Open()
             cmd = New OleDbCommand(cmdString, conn)
@@ -155,7 +155,7 @@ Where (((tblCourses.CourseName) =@CourseName));"
         End If
         Dim gender As String = cbGender.Text
         Dim pic As String = SaveImageAndReturnPath()
-        Dim query As String = "INSERT INTO tblStudent (KhName, EngName, DateOfBirth, Phone, Email, Gender, PlaceOfBirth, Picture) VALUES (@KhName, @EnghName, @DateOfBirth, @Phone, @Email, @Gender, @PlaceOfBirth, @Picture)"
+        Dim query As String = "INSERT INTO tblStudent (KhName, EngName, DateOfBirth, Phone, Email, Gender, Address, Picture) VALUES (@KhName, @EnghName, @DateOfBirth, @Phone, @Email, @Gender, @PlaceOfBirth, @Picture)"
         Try
             conn.Open()
             cmd = New OleDbCommand(query, conn)
