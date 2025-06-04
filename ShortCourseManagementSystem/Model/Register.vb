@@ -6,4 +6,6 @@
     Public discount As Decimal
     Public payment As Payment
 
+
+
 End Class
