@@ -103,7 +103,6 @@ Public Class Register
         While reader.Read()
             TimeList.Add(reader("Schedule"), Integer.Parse(reader("ClassID")))
         End While
-        MessageBox.Show(TimeList.Keys(0).ToString())
         reader.Close()
         CloseConnection()
         Return TimeList

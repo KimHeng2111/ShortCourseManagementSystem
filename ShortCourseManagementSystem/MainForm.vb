@@ -14,7 +14,6 @@ Public Class MainForm
         panelMenu.Controls.Add(leftBorderBtn)
         Me.DoubleBuffered = True
         Me.MaximizedBounds = Screen.FromHandle(Me.Handle).WorkingArea
-        MessageBox.Show(Application.StartupPath)
     End Sub
     Private Sub Activatebutton(senderBtn As Object, customColor As Color)
         If senderBtn IsNot Nothing Then

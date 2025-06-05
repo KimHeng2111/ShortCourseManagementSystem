@@ -26,6 +26,11 @@ Partial Class RegisterForm
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label33 = New System.Windows.Forms.Label()
+        Me.Label34 = New System.Windows.Forms.Label()
+        Me.Label35 = New System.Windows.Forms.Label()
+        Me.txtpay = New System.Windows.Forms.TextBox()
         Me.Panel15 = New System.Windows.Forms.Panel()
         Me.Label29 = New System.Windows.Forms.Label()
         Me.txtEmail = New CustomControls.RJControls.RJTextBox()
@@ -92,12 +97,8 @@ Partial Class RegisterForm
         Me.Label26 = New System.Windows.Forms.Label()
         Me.OpenPic = New System.Windows.Forms.OpenFileDialog()
         Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label33 = New System.Windows.Forms.Label()
-        Me.Label34 = New System.Windows.Forms.Label()
-        Me.Label35 = New System.Windows.Forms.Label()
-        Me.txtpay = New System.Windows.Forms.TextBox()
         Me.Panel2.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.Panel15.SuspendLayout()
         Me.Panel14.SuspendLayout()
         Me.Panel12.SuspendLayout()
@@ -113,7 +114,6 @@ Partial Class RegisterForm
         CType(Me.picStudent, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel13.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel2
@@ -145,6 +145,60 @@ Partial Class RegisterForm
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1710, 434)
         Me.Panel2.TabIndex = 3
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.Panel1.Controls.Add(Me.Label33)
+        Me.Panel1.Controls.Add(Me.Label34)
+        Me.Panel1.Controls.Add(Me.Label35)
+        Me.Panel1.Controls.Add(Me.txtpay)
+        Me.Panel1.Location = New System.Drawing.Point(1118, 241)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(278, 42)
+        Me.Panel1.TabIndex = 73
+        '
+        'Label33
+        '
+        Me.Label33.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label33.AutoSize = True
+        Me.Label33.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label33.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label33.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label33.Location = New System.Drawing.Point(255, 7)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(20, 27)
+        Me.Label33.TabIndex = 70
+        Me.Label33.Text = "$"
+        '
+        'Label34
+        '
+        Me.Label34.AutoSize = True
+        Me.Label34.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label34.Location = New System.Drawing.Point(96, 6)
+        Me.Label34.Name = "Label34"
+        Me.Label34.Size = New System.Drawing.Size(16, 27)
+        Me.Label34.TabIndex = 3
+        Me.Label34.Text = ":"
+        '
+        'Label35
+        '
+        Me.Label35.AutoSize = True
+        Me.Label35.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label35.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label35.Location = New System.Drawing.Point(8, 8)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(87, 27)
+        Me.Label35.TabIndex = 51
+        Me.Label35.Text = "ប្រាក់បានបង់"
+        '
+        'txtpay
+        '
+        Me.txtpay.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!)
+        Me.txtpay.Location = New System.Drawing.Point(152, 3)
+        Me.txtpay.Name = "txtpay"
+        Me.txtpay.Size = New System.Drawing.Size(123, 35)
+        Me.txtpay.TabIndex = 71
         '
         'Panel15
         '
@@ -962,60 +1016,6 @@ Partial Class RegisterForm
         '
         Me.PrintDialog1.UseEXDialog = True
         '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.Panel1.Controls.Add(Me.Label33)
-        Me.Panel1.Controls.Add(Me.Label34)
-        Me.Panel1.Controls.Add(Me.Label35)
-        Me.Panel1.Controls.Add(Me.txtpay)
-        Me.Panel1.Location = New System.Drawing.Point(1118, 241)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(278, 42)
-        Me.Panel1.TabIndex = 73
-        '
-        'Label33
-        '
-        Me.Label33.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label33.AutoSize = True
-        Me.Label33.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label33.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label33.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label33.Location = New System.Drawing.Point(255, 7)
-        Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(20, 27)
-        Me.Label33.TabIndex = 70
-        Me.Label33.Text = "$"
-        '
-        'Label34
-        '
-        Me.Label34.AutoSize = True
-        Me.Label34.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label34.Location = New System.Drawing.Point(96, 6)
-        Me.Label34.Name = "Label34"
-        Me.Label34.Size = New System.Drawing.Size(16, 27)
-        Me.Label34.TabIndex = 3
-        Me.Label34.Text = ":"
-        '
-        'Label35
-        '
-        Me.Label35.AutoSize = True
-        Me.Label35.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label35.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label35.Location = New System.Drawing.Point(8, 8)
-        Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(87, 27)
-        Me.Label35.TabIndex = 51
-        Me.Label35.Text = "ប្រាក់បានបង់"
-        '
-        'txtpay
-        '
-        Me.txtpay.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!)
-        Me.txtpay.Location = New System.Drawing.Point(152, 3)
-        Me.txtpay.Name = "txtpay"
-        Me.txtpay.Size = New System.Drawing.Size(123, 35)
-        Me.txtpay.TabIndex = 71
-        '
         'RegisterForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1030,6 +1030,8 @@ Partial Class RegisterForm
         Me.Text = "Student"
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.Panel15.ResumeLayout(False)
         Me.Panel15.PerformLayout()
         Me.Panel14.ResumeLayout(False)
@@ -1058,8 +1060,6 @@ Partial Class RegisterForm
         Me.Panel13.ResumeLayout(False)
         Me.Panel13.PerformLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub

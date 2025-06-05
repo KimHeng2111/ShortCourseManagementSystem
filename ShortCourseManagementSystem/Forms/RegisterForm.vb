@@ -17,9 +17,6 @@ Public Class RegisterForm
 
     Sub Display()
         DataGridView2.DataSource = register.GetRegisterData()
-        register.GetRegisterByID("1")
-        Dim invoice As New Form1(register)
-        invoice.ShowDialog()
     End Sub
 
 
