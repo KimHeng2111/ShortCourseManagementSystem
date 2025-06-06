@@ -22,12 +22,16 @@ Partial Class ManageClassForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.dtpEndDate = New CustomControls.RJControls.RJDatePicker()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.dtpStartDate = New CustomControls.RJControls.RJDatePicker()
         Me.Label15 = New System.Windows.Forms.Label()
@@ -61,12 +65,9 @@ Partial Class ManageClassForm
         Me.Panel12 = New System.Windows.Forms.Panel()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
-        Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.dtpEndDate = New CustomControls.RJControls.RJDatePicker()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        Me.Panel7.SuspendLayout()
         Me.Panel10.SuspendLayout()
         Me.Panel8.SuspendLayout()
         Me.Panel6.SuspendLayout()
@@ -76,7 +77,6 @@ Partial Class ManageClassForm
         Me.Panel9.SuspendLayout()
         Me.Panel12.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel7.SuspendLayout()
         Me.SuspendLayout()
         '
         'label1
@@ -118,6 +118,49 @@ Partial Class ManageClassForm
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1704, 335)
         Me.Panel2.TabIndex = 2
+        '
+        'Panel7
+        '
+        Me.Panel7.Controls.Add(Me.dtpEndDate)
+        Me.Panel7.Controls.Add(Me.Label11)
+        Me.Panel7.Controls.Add(Me.Label12)
+        Me.Panel7.Location = New System.Drawing.Point(232, 204)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(413, 41)
+        Me.Panel7.TabIndex = 80
+        '
+        'dtpEndDate
+        '
+        Me.dtpEndDate.BorderColor = System.Drawing.Color.PaleVioletRed
+        Me.dtpEndDate.BorderSize = 0
+        Me.dtpEndDate.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpEndDate.Location = New System.Drawing.Point(211, 2)
+        Me.dtpEndDate.MinimumSize = New System.Drawing.Size(4, 35)
+        Me.dtpEndDate.Name = "dtpEndDate"
+        Me.dtpEndDate.Size = New System.Drawing.Size(197, 35)
+        Me.dtpEndDate.SkinColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.dtpEndDate.TabIndex = 16
+        Me.dtpEndDate.TextColor = System.Drawing.Color.Black
+        Me.dtpEndDate.Value = New Date(2025, 6, 3, 0, 0, 0, 0)
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(188, 6)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(17, 29)
+        Me.Label11.TabIndex = 4
+        Me.Label11.Text = ":"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(3, 6)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(179, 29)
+        Me.Label12.TabIndex = 2
+        Me.Label12.Text = "កាលបរិច្ឋេទបញ្ចប់កាសិក្សា"
         '
         'Panel10
         '
@@ -438,77 +481,34 @@ Partial Class ManageClassForm
         Me.DataGridView2.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView2.GridColor = System.Drawing.SystemColors.ControlDarkDark
         Me.DataGridView2.Location = New System.Drawing.Point(21, 70)
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.ReadOnly = True
         Me.DataGridView2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView2.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView2.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.DataGridView2.RowHeadersWidth = 35
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DataGridView2.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridView2.RowsDefaultCellStyle = DataGridViewCellStyle6
         Me.DataGridView2.RowTemplate.ReadOnly = True
         Me.DataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView2.Size = New System.Drawing.Size(1657, 442)
         Me.DataGridView2.TabIndex = 62
-        '
-        'Panel7
-        '
-        Me.Panel7.Controls.Add(Me.dtpEndDate)
-        Me.Panel7.Controls.Add(Me.Label11)
-        Me.Panel7.Controls.Add(Me.Label12)
-        Me.Panel7.Location = New System.Drawing.Point(232, 204)
-        Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(413, 41)
-        Me.Panel7.TabIndex = 80
-        '
-        'dtpEndDate
-        '
-        Me.dtpEndDate.BorderColor = System.Drawing.Color.PaleVioletRed
-        Me.dtpEndDate.BorderSize = 0
-        Me.dtpEndDate.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpEndDate.Location = New System.Drawing.Point(211, 2)
-        Me.dtpEndDate.MinimumSize = New System.Drawing.Size(4, 35)
-        Me.dtpEndDate.Name = "dtpEndDate"
-        Me.dtpEndDate.Size = New System.Drawing.Size(197, 35)
-        Me.dtpEndDate.SkinColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.dtpEndDate.TabIndex = 16
-        Me.dtpEndDate.TextColor = System.Drawing.Color.Black
-        Me.dtpEndDate.Value = New Date(2025, 6, 3, 0, 0, 0, 0)
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(188, 6)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(17, 29)
-        Me.Label11.TabIndex = 4
-        Me.Label11.Text = ":"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(3, 6)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(179, 29)
-        Me.Label12.TabIndex = 2
-        Me.Label12.Text = "កាលបរិច្ឋេទបញ្ចប់កាសិក្សា"
         '
         'ManageClassForm
         '
@@ -526,6 +526,8 @@ Partial Class ManageClassForm
         Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.Panel7.ResumeLayout(False)
+        Me.Panel7.PerformLayout()
         Me.Panel10.ResumeLayout(False)
         Me.Panel10.PerformLayout()
         Me.Panel8.ResumeLayout(False)
@@ -542,8 +544,6 @@ Partial Class ManageClassForm
         Me.Panel12.ResumeLayout(False)
         Me.Panel12.PerformLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel7.ResumeLayout(False)
-        Me.Panel7.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub

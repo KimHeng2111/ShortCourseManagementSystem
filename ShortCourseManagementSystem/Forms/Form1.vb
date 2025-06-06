@@ -13,19 +13,19 @@ Public Class Form1
     End Sub
     Private Sub CrystalReportViewer1_Load(sender As Object, e As EventArgs) Handles ViewInvoice.Load
         Dim invoice As New Invoice()
+        ViewInvoice.ReportSource = invoice
         invoice.SetParameterValue("PaymentID", register.payment.paymentID) ' Example parameter, replace with actual value
         invoice.SetParameterValue("khName", register.student.khName)
-        invoice.SetParameterValue("EngName", register.student.engName) ' Example parameter, replace with actual value)
-        invoice.SetParameterValue("Address", register.student.address)
-        invoice.SetParameterValue("Phone", register.student.phone)
-        invoice.SetParameterValue("registerID", register.registerID)
-        invoice.SetParameterValue("Course", register.manageClass.course.courseName)
-        invoice.SetParameterValue("CoursePrice", register.manageClass.course.basePrice)
-        invoice.SetParameterValue("Amount", register.payment.amount)
-        invoice.SetParameterValue("Unpaid", register.payment.unpaid)
-        ViewInvoice.ReportSource = invoice
-        Dim invName As String = "Invoice_" & register.registerID & ".pdf"
-        Dim path As String = Application.StartupPath & "\Invoices\" & invName
+        invoice.SetParameterValue(2, register.student.engName) ' Example parameter, replace with actual value)
+        invoice.SetParameterValue(3, register.student.address)
+        invoice.SetParameterValue(4, register.student.phone)
+        invoice.SetParameterValue(7, register.registerID)
+        invoice.SetParameterValue(9, register.manageClass.course.courseName)
+        invoice.SetParameterValue(8, register.manageClass.course.basePrice)
+        invoice.SetParameterValue(5, register.payment.amount)
+        invoice.SetParameterValue(6, register.payment.unpaid)
+        invoice.SetParameterValue(10, register.manageClass.startDate)
+        ViewInvoice.Refresh()
 
     End Sub
 End Class

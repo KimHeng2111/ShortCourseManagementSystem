@@ -126,10 +126,13 @@ Public Class RegisterForm
         cbCourse.DataSource = New BindingSource(register.GetCourseList(), Nothing)
         cbCourse.DisplayMember = "Key"
         cbCourse.ValueMember = "Value"
-        cbCourse.Text = ""
+        cbCourse.SelectedIndex = cbCourse.Items.Count - 1 ' Set to the last item
     End Sub
     Private Sub cbCourse_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbCourse.SelectedIndexChanged
         If Integer.TryParse(cbCourse.SelectedValue.ToString(), Nothing) = False Then
+            Return
+        End If
+        If Integer.Parse(cbCourse.SelectedValue) = -1 Then
             Return
         End If
         register.manageClass.course.GetCourseByID(cbCourse.SelectedValue.ToString())
@@ -137,6 +140,7 @@ Public Class RegisterForm
         cbTime.DataSource = New BindingSource(register.GetTimeList(courseID), Nothing)
         cbTime.DisplayMember = "Key"
         cbTime.ValueMember = "Value"
+        cbTime.SelectedIndex = cbTime.Items.Count - 1
     End Sub
 
     Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click

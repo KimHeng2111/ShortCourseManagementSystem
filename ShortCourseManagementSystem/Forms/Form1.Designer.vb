@@ -38,7 +38,7 @@ Partial Class Form1
         Me.ViewInvoice.ShowPageNavigateButtons = False
         Me.ViewInvoice.ShowRefreshButton = False
         Me.ViewInvoice.ShowTextSearchButton = False
-        Me.ViewInvoice.Size = New System.Drawing.Size(1100, 717)
+        Me.ViewInvoice.Size = New System.Drawing.Size(817, 846)
         Me.ViewInvoice.TabIndex = 0
         Me.ViewInvoice.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
         '
@@ -46,11 +46,11 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1100, 717)
+        Me.ClientSize = New System.Drawing.Size(817, 846)
         Me.Controls.Add(Me.ViewInvoice)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Form1"
+        Me.Text = "InvoiceView"
         Me.ResumeLayout(False)
 
     End Sub

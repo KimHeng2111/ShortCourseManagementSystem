@@ -38,7 +38,6 @@ Public Class Student
         cmd.CommandText = "SELECT @@IDENTITY;"
         Dim id As String = cmd.ExecuteScalar().ToString()
         GetStudentByID(Convert.ToInt32(id))
-        MessageBox.Show("Student Name : " & khName & " has been added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
     Public Sub UpdateStudent(studentID As Integer, khName As String, EngName As String, Gender As String, DOB As Date, Address As String, Phone As String, Email As String, Picture As String)
         Dim query As String = "UPDATE tblStudent 

@@ -1,4 +1,5 @@
 ﻿Imports System.Data.OleDb
+Imports System.Web.UI
 
 Public Class Register
     Inherits ConnectionDB
@@ -11,8 +12,9 @@ Public Class Register
     'Method to register a student for a course
     Public Function GetRegisterData() As DataTable
         Dim query As String = "SELECT tblClass.ClassID, tblCourses.CourseName, tblTeacher.engName AS TeacherName, tblClass.StartDate, tblSchedule.Schedule, tblRoom.RoomID, (SELECT COUNT(*) FROM tblRegister WHERE tblClass.ClassID = tblRegister.ClassID) AS TotalStudent
-         FROM tblTeacher INNER JOIN (tblSchedule INNER JOIN (tblRoom INNER JOIN (tblCourses INNER JOIN (tblClassStatus INNER JOIN tblClass ON tblClassStatus.ID = tblClass.StatusID) ON tblCourses.ID = tblClass.CourseID) ON tblRoom.ID = tblClass.RoomID) ON tblSchedule.ID = tblClass.ScheduleID) ON tblTeacher.ID = tblClass.TeacherID
-         WHERE ((tblClass.StatusID)<=2);"
+                                FROM tblTeacher INNER JOIN (tblSchedule INNER JOIN (tblRoom INNER JOIN (tblCourses INNER JOIN (tblClassStatus INNER JOIN tblClass ON tblClassStatus.ID = tblClass.StatusID) ON tblCourses.ID = tblClass.CourseID) ON tblRoom.ID = tblClass.RoomID) ON tblSchedule.ID = tblClass.ScheduleID) ON tblTeacher.ID = tblClass.TeacherID
+                                WHERE (((tblClass.StatusID)<=2))
+                                ORDER BY tblClass.ClassID;"
         Dim dt As DataTable = ExecuteQuery(query)
         Return dt
     End Function
@@ -41,15 +43,17 @@ Public Class Register
     End Sub
     'Get register by ID
     Public Sub GetRegisterByID(id As String)
-        Dim query As String = "SELECT * FROM tblRegister WHERE RegisterID = @RegisterID;"
+        Dim query As String = "SELECT * FROM tblRegister WHERE ID = @RegisterID;"
         OpenConnection()
         Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
-        cmd.Parameters.AddWithValue("@RegisterID", id)
+        cmd.Parameters.AddWithValue("@RegisterID", Convert.ToInt16(id))
+        MessageBox.Show("Register ID : " & id)
         Dim reader As OleDbDataReader = cmd.ExecuteReader()
         If reader.Read() Then
             registerID = reader("ID").ToString()
             manageClass.GetClassByID(reader("ClassID").ToString())
             student.GetStudentByID(reader("StudentID").ToString())
+
             discount = Convert.ToByte(reader("Discount"))
             payment.GetPaymentByID(reader("PaymentID").ToString())
         End If
@@ -78,15 +82,18 @@ Public Class Register
     'Insert DATA TO combobox
     Public Function GetCourseList() As Dictionary(Of String, Integer)
         Dim CourseList As New Dictionary(Of String, Integer)
-        Dim query As String = "SELECT Distinct tblCourses.CourseName, tblCourses.ID
-                                FROM tblCourses INNER JOIN tblClass ON tblCourses.ID = tblClass.CourseID 
-                                WHERE tblClass.StatusID <= 2;"
+        Dim query As String = "SELECT tblCourses.CourseName, tblCourses.ID
+                                FROM tblCourses INNER JOIN tblClass ON tblCourses.ID = tblClass.CourseID
+                                GROUP BY tblCourses.CourseName, tblCourses.ID, tblClass.StatusID
+                                HAVING (((tblClass.StatusID)<=2))
+                                ORDER BY Var(tblClass.ClassID) ASC;"
         OpenConnection()
         Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
         Dim reader As OleDbDataReader = cmd.ExecuteReader()
         While reader.Read()
             CourseList.Add(reader("CourseName"), Integer.Parse(reader("ID")))
         End While
+        CourseList.Add("ជ្រើសរើសវគ្គសិក្សា", -1)
         reader.Close()
         CloseConnection()
         Return CourseList
@@ -94,8 +101,9 @@ Public Class Register
     Public Function GetTimeList(courseID As String) As Dictionary(Of String, Integer)
         Dim TimeList As New Dictionary(Of String, Integer)
         Dim query As String = "SELECT tblSchedule.Schedule, tblClass.ClassID
-                               FROM tblSchedule INNER JOIN tblClass ON tblSchedule.ID = tblClass.ScheduleID
-                               WHERE (((tblClass.CourseID) = @courseID AND tblClass.StatusID <= 2));"
+                                FROM tblSchedule INNER JOIN tblClass ON tblSchedule.ID = tblClass.ScheduleID
+                                WHERE (((tblClass.CourseID)=@courseID) AND ((tblClass.StatusID)<=2))
+                                ORDER BY tblSchedule.Schedule;"
         OpenConnection()
         Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
         cmd.Parameters.AddWithValue("@courseID", courseID)
@@ -103,6 +111,7 @@ Public Class Register
         While reader.Read()
             TimeList.Add(reader("Schedule"), Integer.Parse(reader("ClassID")))
         End While
+        TimeList.Add("ជ្រើសរើសម៉ោង", -1)
         reader.Close()
         CloseConnection()
         Return TimeList
