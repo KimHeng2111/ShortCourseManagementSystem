@@ -34,8 +34,9 @@ Public Class RegisterForm
 
     Private Sub txtDis_TextChanged_1(sender As Object, e As EventArgs) Handles txtDis.TextChanged
         Dim dis As Decimal
-        If cbCourse.Text = String.Empty Then
+        If cbCourse.SelectedIndex = cbCourse.Items.Count - 1 Then
             MessageBox.Show("Please Choose Course !!!!!", "Warrning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            txtDis.Text = ""
             Return
         End If
         If Not (Decimal.TryParse(txtDis.Text, dis)) Or dis < 0 Or dis > 100 Then
