@@ -181,7 +181,7 @@
     <value>Panel1</value>
   </data>
   <data name="&gt;&gt;Label2.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="Label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -214,7 +214,7 @@
     <value>Panel1</value>
   </data>
   <data name="&gt;&gt;Label3.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="cbDay.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>System</value>
@@ -250,34 +250,100 @@
     <value>Panel1</value>
   </data>
   <data name="&gt;&gt;cbDay.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="cbTime.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>System</value>
-  </data>
-  <data name="cbTime.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Khmer OS Siemreap, 9.75pt</value>
-  </data>
-  <data name="cbTime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>158, 105</value>
-  </data>
-  <data name="cbTime.Size" type="System.Drawing.Size, System.Drawing">
-    <value>311, 32</value>
-  </data>
-  <data name="cbTime.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;cbTime.Name" xml:space="preserve">
-    <value>cbTime</value>
+  <data name="Label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="&gt;&gt;cbTime.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="Label4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Khmer OS Battambang, 9.75pt</value>
   </data>
-  <data name="&gt;&gt;cbTime.Parent" xml:space="preserve">
+  <data name="Label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>293, 108</value>
+  </data>
+  <data name="Label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 24</value>
+  </data>
+  <data name="Label4.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="Label4.Text" xml:space="preserve">
+    <value>ដល់</value>
+  </data>
+  <data name="&gt;&gt;Label4.Name" xml:space="preserve">
+    <value>Label4</value>
+  </data>
+  <data name="&gt;&gt;Label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label4.Parent" xml:space="preserve">
     <value>Panel1</value>
   </data>
-  <data name="&gt;&gt;cbTime.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;Label4.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tpEnd.CalendarFont" type="System.Drawing.Font, System.Drawing">
+    <value>Khmer OS Siemreap, 9.75pt</value>
+  </data>
+  <data name="tpEnd.CustomFormat" xml:space="preserve">
+    <value>hh:mm tt</value>
+  </data>
+  <data name="tpEnd.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="tpEnd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>349, 106</value>
+  </data>
+  <data name="tpEnd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="tpEnd.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;tpEnd.Name" xml:space="preserve">
+    <value>tpEnd</value>
+  </data>
+  <data name="&gt;&gt;tpEnd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpEnd.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;tpEnd.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tpStart.CalendarFont" type="System.Drawing.Font, System.Drawing">
+    <value>Khmer OS Siemreap, 9.75pt</value>
+  </data>
+  <data name="tpStart.CustomFormat" xml:space="preserve">
+    <value>hh:mm tt</value>
+  </data>
+  <data name="tpStart.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="tpStart.Location" type="System.Drawing.Point, System.Drawing">
+    <value>158, 106</value>
+  </data>
+  <data name="tpStart.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 22</value>
+  </data>
+  <data name="tpStart.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;tpStart.Name" xml:space="preserve">
+    <value>tpStart</value>
+  </data>
+  <data name="&gt;&gt;tpStart.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpStart.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;tpStart.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="btnClear.Font" type="System.Drawing.Font, System.Drawing">
     <value>Khmer OS Battambang, 9.75pt</value>
@@ -307,7 +373,7 @@
     <value>Panel1</value>
   </data>
   <data name="&gt;&gt;btnClear.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>3</value>
   </data>
   <data name="btnDelete.Font" type="System.Drawing.Font, System.Drawing">
     <value>Khmer OS Battambang, 9.75pt</value>
@@ -337,7 +403,7 @@
     <value>Panel1</value>
   </data>
   <data name="&gt;&gt;btnDelete.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="btnAdd.Font" type="System.Drawing.Font, System.Drawing">
     <value>Khmer OS Battambang, 9.75pt</value>
@@ -364,7 +430,7 @@
     <value>Panel1</value>
   </data>
   <data name="&gt;&gt;btnAdd.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="Panel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>20, 52</value>
@@ -414,6 +480,27 @@
   <data name="&gt;&gt;DataGridView2.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="Label6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label6.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Khmer OS Moul Light, 9.75pt</value>
+  </data>
+  <data name="Label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>243, 19</value>
+  </data>
+  <data name="Label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 24</value>
+  </data>
+  <data name="Label6.TabIndex" type="System.Int32, mscorlib">
+    <value>64</value>
+  </data>
+  <data name="Label6.Text" xml:space="preserve">
+    <value>បញ្ជីវេនសិក្សា</value>
+  </data>
   <data name="&gt;&gt;Label6.Name" xml:space="preserve">
     <value>Label6</value>
   </data>
@@ -448,39 +535,6 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Panel2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="Label6.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="Label6.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Khmer OS Moul Light, 9.75pt</value>
-  </data>
-  <data name="Label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="Label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>243, 19</value>
-  </data>
-  <data name="Label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 24</value>
-  </data>
-  <data name="Label6.TabIndex" type="System.Int32, mscorlib">
-    <value>64</value>
-  </data>
-  <data name="Label6.Text" xml:space="preserve">
-    <value>បញ្ជីវេនសិក្សា</value>
-  </data>
-  <data name="&gt;&gt;Label6.Name" xml:space="preserve">
-    <value>Label6</value>
-  </data>
-  <data name="&gt;&gt;Label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label6.Parent" xml:space="preserve">
-    <value>Panel2</value>
-  </data>
-  <data name="&gt;&gt;Label6.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
