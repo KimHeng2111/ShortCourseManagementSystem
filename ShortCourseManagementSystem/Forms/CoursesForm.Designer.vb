@@ -194,7 +194,7 @@ Partial Class CoursesForm
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(778, 0)
+        Me.Label9.Location = New System.Drawing.Point(778, 5)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(125, 29)
         Me.Label9.TabIndex = 14
