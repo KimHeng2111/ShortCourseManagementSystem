@@ -14,8 +14,6 @@ Public Class MainForm
         panelMenu.Controls.Add(leftBorderBtn)
         Me.DoubleBuffered = True
         Me.MaximizedBounds = Screen.FromHandle(Me.Handle).WorkingArea
-        Dim test As Schedule = New Schedule()
-        test.ShowDialog()
     End Sub
     Private Sub Activatebutton(senderBtn As Object, customColor As Color)
         If senderBtn IsNot Nothing Then
@@ -91,7 +89,7 @@ Public Class MainForm
         OpenChildForm(New RegisterForm())
     End Sub
 
-    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+    Private Sub btnClose_Click(sender As Object, e As EventArgs)
         Application.Exit()
     End Sub
 
@@ -113,5 +111,13 @@ Public Class MainForm
     Private Sub btnClass_Click(sender As Object, e As EventArgs) Handles btnClass.Click
         Activatebutton(sender, ThemeColor.activeColor)
         OpenChildForm(New ManageClassForm())
+    End Sub
+
+    Private Sub btnClose_Click_1(sender As Object, e As EventArgs) Handles btnClose.Click
+        Application.Exit()
+    End Sub
+
+    Private Sub btnMin_Click(sender As Object, e As EventArgs) Handles btnMin.Click
+        Me.WindowState = FormWindowState.Minimized
     End Sub
 End Class

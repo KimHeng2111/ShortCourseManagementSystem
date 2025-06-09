@@ -22,9 +22,8 @@ Partial Class StudentForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Label14 = New System.Windows.Forms.Label()
@@ -40,7 +39,6 @@ Partial Class StudentForm
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.OpenPic = New System.Windows.Forms.OpenFileDialog()
         Me.txtPhone = New CustomControls.RJControls.RJTextBox()
@@ -55,6 +53,7 @@ Partial Class StudentForm
         Me.btnClear = New System.Windows.Forms.Button()
         Me.btnRegister = New System.Windows.Forms.Button()
         Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.dtpDob = New CustomControls.RJControls.RJDatePicker()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
@@ -65,11 +64,10 @@ Partial Class StudentForm
         Me.Label10 = New System.Windows.Forms.Label()
         Me.IconButton1 = New FontAwesome.Sharp.IconButton()
         Me.picStudent = New System.Windows.Forms.PictureBox()
-        Me.dtpDob = New CustomControls.RJControls.RJDatePicker()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Panel6.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel13.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel15.SuspendLayout()
@@ -77,6 +75,7 @@ Partial Class StudentForm
         Me.Panel7.SuspendLayout()
         Me.Panel4.SuspendLayout()
         CType(Me.picStudent, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label4
@@ -267,45 +266,6 @@ Partial Class StudentForm
         Me.Label7.TabIndex = 13
         Me.Label7.Text = ":"
         '
-        'DataGridView2
-        '
-        Me.DataGridView2.AllowUserToAddRows = False
-        Me.DataGridView2.AllowUserToDeleteRows = False
-        Me.DataGridView2.AllowUserToOrderColumns = True
-        Me.DataGridView2.AllowUserToResizeColumns = False
-        Me.DataGridView2.AllowUserToResizeRows = False
-        Me.DataGridView2.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
-        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.GridColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.DataGridView2.Location = New System.Drawing.Point(50, 75)
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.ReadOnly = True
-        Me.DataGridView2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView2.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
-        Me.DataGridView2.RowHeadersWidth = 35
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DataGridView2.RowsDefaultCellStyle = DataGridViewCellStyle6
-        Me.DataGridView2.RowTemplate.ReadOnly = True
-        Me.DataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView2.Size = New System.Drawing.Size(1604, 497)
-        Me.DataGridView2.TabIndex = 61
-        '
         'Label26
         '
         Me.Label26.Anchor = System.Windows.Forms.AnchorStyles.Top
@@ -349,7 +309,7 @@ Partial Class StudentForm
         'Panel13
         '
         Me.Panel13.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Panel13.Controls.Add(Me.DataGridView2)
+        Me.Panel13.Controls.Add(Me.DataGridView1)
         Me.Panel13.Controls.Add(Me.Label26)
         Me.Panel13.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel13.Location = New System.Drawing.Point(0, 328)
@@ -493,6 +453,21 @@ Partial Class StudentForm
         Me.Panel8.Size = New System.Drawing.Size(480, 41)
         Me.Panel8.TabIndex = 64
         '
+        'dtpDob
+        '
+        Me.dtpDob.BorderColor = System.Drawing.Color.PaleVioletRed
+        Me.dtpDob.BorderSize = 0
+        Me.dtpDob.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtpDob.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpDob.Location = New System.Drawing.Point(154, 3)
+        Me.dtpDob.MinimumSize = New System.Drawing.Size(4, 35)
+        Me.dtpDob.Name = "dtpDob"
+        Me.dtpDob.Size = New System.Drawing.Size(323, 35)
+        Me.dtpDob.SkinColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.dtpDob.TabIndex = 15
+        Me.dtpDob.TextColor = System.Drawing.Color.Black
+        Me.dtpDob.Value = New Date(2005, 12, 30, 0, 0, 0, 0)
+        '
         'Label11
         '
         Me.Label11.AutoSize = True
@@ -617,20 +592,32 @@ Partial Class StudentForm
         Me.picStudent.TabIndex = 50
         Me.picStudent.TabStop = False
         '
-        'dtpDob
+        'DataGridView1
         '
-        Me.dtpDob.BorderColor = System.Drawing.Color.PaleVioletRed
-        Me.dtpDob.BorderSize = 0
-        Me.dtpDob.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtpDob.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpDob.Location = New System.Drawing.Point(154, 3)
-        Me.dtpDob.MinimumSize = New System.Drawing.Size(4, 35)
-        Me.dtpDob.Name = "dtpDob"
-        Me.dtpDob.Size = New System.Drawing.Size(323, 35)
-        Me.dtpDob.SkinColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.dtpDob.TabIndex = 15
-        Me.dtpDob.TextColor = System.Drawing.Color.Black
-        Me.dtpDob.Value = New Date(2005, 12, 30, 0, 0, 0, 0)
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(254, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(254, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
+        Me.DataGridView1.Location = New System.Drawing.Point(22, 70)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(1655, 518)
+        Me.DataGridView1.TabIndex = 60
         '
         'StudentForm
         '
@@ -647,7 +634,6 @@ Partial Class StudentForm
         Me.Panel5.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel13.ResumeLayout(False)
         Me.Panel13.PerformLayout()
         Me.Panel2.ResumeLayout(False)
@@ -661,6 +647,7 @@ Partial Class StudentForm
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         CType(Me.picStudent, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -682,7 +669,6 @@ Partial Class StudentForm
     Friend WithEvents Label5 As Label
     Friend WithEvents picStudent As PictureBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents DataGridView2 As DataGridView
     Friend WithEvents Label26 As Label
     Friend WithEvents OpenPic As OpenFileDialog
     Friend WithEvents txtPhone As CustomControls.RJControls.RJTextBox
@@ -706,4 +692,5 @@ Partial Class StudentForm
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Label10 As Label
     Friend WithEvents dtpDob As CustomControls.RJControls.RJDatePicker
+    Friend WithEvents DataGridView1 As DataGridView
 End Class

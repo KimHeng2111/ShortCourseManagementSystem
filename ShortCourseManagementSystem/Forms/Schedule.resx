@@ -123,7 +123,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="Label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Khmer OS Moul Light, 9.75pt</value>
+    <value>Khmer OS Moul, 11.25pt</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="Label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -133,7 +133,7 @@
     <value>206, 9</value>
   </data>
   <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 24</value>
+    <value>209, 27</value>
   </data>
   <data name="Label1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -160,7 +160,7 @@
     <value>Khmer OS Battambang, 9.75pt</value>
   </data>
   <data name="Label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>48, 46</value>
+    <value>84, 46</value>
   </data>
   <data name="Label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>69, 24</value>
@@ -193,7 +193,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>48, 109</value>
+    <value>84, 109</value>
   </data>
   <data name="Label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>78, 24</value>
@@ -232,7 +232,7 @@
     <value>ជ្រើសវើសវេនសិក្សា</value>
   </data>
   <data name="cbDay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>158, 42</value>
+    <value>194, 42</value>
   </data>
   <data name="cbDay.Size" type="System.Drawing.Size, System.Drawing">
     <value>311, 32</value>
@@ -262,7 +262,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>293, 108</value>
+    <value>329, 108</value>
   </data>
   <data name="Label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 24</value>
@@ -295,7 +295,7 @@
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
   <data name="tpEnd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>349, 106</value>
+    <value>385, 106</value>
   </data>
   <data name="tpEnd.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 22</value>
@@ -325,7 +325,7 @@
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
   <data name="tpStart.Location" type="System.Drawing.Point, System.Drawing">
-    <value>158, 106</value>
+    <value>194, 106</value>
   </data>
   <data name="tpStart.Size" type="System.Drawing.Size, System.Drawing">
     <value>108, 22</value>
@@ -352,7 +352,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnClear.Location" type="System.Drawing.Point, System.Drawing">
-    <value>364, 193</value>
+    <value>385, 193</value>
   </data>
   <data name="btnClear.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 31</value>
@@ -382,7 +382,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnDelete.Location" type="System.Drawing.Point, System.Drawing">
-    <value>227, 193</value>
+    <value>248, 193</value>
   </data>
   <data name="btnDelete.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 31</value>
@@ -409,7 +409,7 @@
     <value>Khmer OS Battambang, 9.75pt</value>
   </data>
   <data name="btnAdd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>86, 193</value>
+    <value>107, 193</value>
   </data>
   <data name="btnAdd.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 31</value>
@@ -433,10 +433,10 @@
     <value>5</value>
   </data>
   <data name="Panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 52</value>
+    <value>0, 52</value>
   </data>
   <data name="Panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>547, 238</value>
+    <value>589, 238</value>
   </data>
   <data name="Panel1.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -451,33 +451,6 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Panel1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="DataGridView2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="DataGridView2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 55</value>
-  </data>
-  <data name="DataGridView2.RowHeadersWidth" type="System.Int32, mscorlib">
-    <value>35</value>
-  </data>
-  <data name="DataGridView2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>547, 222</value>
-  </data>
-  <data name="DataGridView2.TabIndex" type="System.Int32, mscorlib">
-    <value>63</value>
-  </data>
-  <data name="&gt;&gt;DataGridView2.Name" xml:space="preserve">
-    <value>DataGridView2</value>
-  </data>
-  <data name="&gt;&gt;DataGridView2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DataGridView2.Parent" xml:space="preserve">
-    <value>Panel2</value>
-  </data>
-  <data name="&gt;&gt;DataGridView2.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="Label6.AutoSize" type="System.Boolean, mscorlib">
@@ -512,6 +485,33 @@
   </data>
   <data name="&gt;&gt;Label6.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="DataGridView2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="DataGridView2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 55</value>
+  </data>
+  <data name="DataGridView2.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="DataGridView2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>547, 222</value>
+  </data>
+  <data name="DataGridView2.TabIndex" type="System.Int32, mscorlib">
+    <value>63</value>
+  </data>
+  <data name="&gt;&gt;DataGridView2.Name" xml:space="preserve">
+    <value>DataGridView2</value>
+  </data>
+  <data name="&gt;&gt;DataGridView2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DataGridView2.Parent" xml:space="preserve">
+    <value>Panel2</value>
+  </data>
+  <data name="&gt;&gt;DataGridView2.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="Panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>

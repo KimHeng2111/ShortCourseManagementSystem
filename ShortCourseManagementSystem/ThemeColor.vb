@@ -1,6 +1,6 @@
 ﻿Public Class ThemeColor
-    Public Shared menuBackColor As Color = Color.FromArgb(0, 107, 255)
-    Public Shared activeColor As Color = Color.FromArgb(175, 62, 65)
+    Public Shared menuBackColor As Color = Color.FromArgb(5, 43, 80)
+    Public Shared activeColor As Color = Color.FromArgb(17, 139, 254)
     Public Shared DashboardColor As Color = Color.FromArgb(63, 114, 236)
     Public Shared CourseColor As Color = Color.FromArgb(143, 135, 241)
     'Public Shared btnStudenBackColor As Color = 

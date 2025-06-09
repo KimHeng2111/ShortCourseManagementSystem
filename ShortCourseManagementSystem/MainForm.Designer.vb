@@ -38,19 +38,22 @@ Partial Class MainForm
         Me.lbFormTitle = New System.Windows.Forms.Label()
         Me.IconCurrentForm = New FontAwesome.Sharp.IconPictureBox()
         Me.panelTitlebar = New System.Windows.Forms.Panel()
+        Me.panelChildForm = New System.Windows.Forms.Panel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnMin = New FontAwesome.Sharp.IconButton()
         Me.btnClose = New FontAwesome.Sharp.IconButton()
-        Me.panelChildForm = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.panelMenu.SuspendLayout()
         Me.panelMenuUpper.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.IconCurrentForm, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelTitlebar.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'panelMenu
         '
-        Me.panelMenu.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(157, Byte), Integer))
+        Me.panelMenu.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.panelMenu.Controls.Add(Me.btnReport)
         Me.panelMenu.Controls.Add(Me.btnCourse)
         Me.panelMenu.Controls.Add(Me.btnClass)
@@ -61,9 +64,9 @@ Partial Class MainForm
         Me.panelMenu.Controls.Add(Me.btnDashboard)
         Me.panelMenu.Controls.Add(Me.panelMenuUpper)
         Me.panelMenu.Dock = System.Windows.Forms.DockStyle.Left
-        Me.panelMenu.Location = New System.Drawing.Point(0, 0)
+        Me.panelMenu.Location = New System.Drawing.Point(0, 24)
         Me.panelMenu.Name = "panelMenu"
-        Me.panelMenu.Size = New System.Drawing.Size(200, 1080)
+        Me.panelMenu.Size = New System.Drawing.Size(200, 1056)
         Me.panelMenu.TabIndex = 0
         '
         'btnReport
@@ -71,6 +74,8 @@ Partial Class MainForm
         Me.btnReport.BackColor = System.Drawing.Color.Transparent
         Me.btnReport.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnReport.FlatAppearance.BorderSize = 0
+        Me.btnReport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(134, Byte), Integer), CType(CType(217, Byte), Integer))
+        Me.btnReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(6, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(96, Byte), Integer))
         Me.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnReport.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReport.ForeColor = System.Drawing.Color.Gainsboro
@@ -94,6 +99,8 @@ Partial Class MainForm
         Me.btnCourse.BackColor = System.Drawing.Color.Transparent
         Me.btnCourse.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnCourse.FlatAppearance.BorderSize = 0
+        Me.btnCourse.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(134, Byte), Integer), CType(CType(217, Byte), Integer))
+        Me.btnCourse.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(6, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(96, Byte), Integer))
         Me.btnCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCourse.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCourse.ForeColor = System.Drawing.Color.Gainsboro
@@ -117,6 +124,8 @@ Partial Class MainForm
         Me.btnClass.BackColor = System.Drawing.Color.Transparent
         Me.btnClass.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnClass.FlatAppearance.BorderSize = 0
+        Me.btnClass.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(134, Byte), Integer), CType(CType(217, Byte), Integer))
+        Me.btnClass.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(6, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(96, Byte), Integer))
         Me.btnClass.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClass.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClass.ForeColor = System.Drawing.Color.Gainsboro
@@ -140,6 +149,8 @@ Partial Class MainForm
         Me.btnStudent.BackColor = System.Drawing.Color.Transparent
         Me.btnStudent.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnStudent.FlatAppearance.BorderSize = 0
+        Me.btnStudent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(134, Byte), Integer), CType(CType(217, Byte), Integer))
+        Me.btnStudent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(6, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(96, Byte), Integer))
         Me.btnStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnStudent.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnStudent.ForeColor = System.Drawing.Color.Gainsboro
@@ -171,7 +182,7 @@ Partial Class MainForm
         Me.btnExit.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.btnExit.IconSize = 32
         Me.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnExit.Location = New System.Drawing.Point(0, 1020)
+        Me.btnExit.Location = New System.Drawing.Point(0, 996)
         Me.btnExit.Margin = New System.Windows.Forms.Padding(3, 10, 3, 3)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
@@ -186,6 +197,8 @@ Partial Class MainForm
         Me.btnTeacher.BackColor = System.Drawing.Color.Transparent
         Me.btnTeacher.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnTeacher.FlatAppearance.BorderSize = 0
+        Me.btnTeacher.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(134, Byte), Integer), CType(CType(217, Byte), Integer))
+        Me.btnTeacher.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(6, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(96, Byte), Integer))
         Me.btnTeacher.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnTeacher.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnTeacher.ForeColor = System.Drawing.Color.Gainsboro
@@ -209,6 +222,8 @@ Partial Class MainForm
         Me.btnRegister.BackColor = System.Drawing.Color.Transparent
         Me.btnRegister.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnRegister.FlatAppearance.BorderSize = 0
+        Me.btnRegister.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(134, Byte), Integer), CType(CType(217, Byte), Integer))
+        Me.btnRegister.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(6, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(96, Byte), Integer))
         Me.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnRegister.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRegister.ForeColor = System.Drawing.Color.Gainsboro
@@ -232,6 +247,8 @@ Partial Class MainForm
         Me.btnDashboard.BackColor = System.Drawing.Color.Transparent
         Me.btnDashboard.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnDashboard.FlatAppearance.BorderSize = 0
+        Me.btnDashboard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(134, Byte), Integer), CType(CType(217, Byte), Integer))
+        Me.btnDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(6, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(96, Byte), Integer))
         Me.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDashboard.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDashboard.ForeColor = System.Drawing.Color.Gainsboro
@@ -288,12 +305,12 @@ Partial Class MainForm
         'lbFormTitle
         '
         Me.lbFormTitle.AutoSize = True
-        Me.lbFormTitle.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbFormTitle.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbFormTitle.ForeColor = System.Drawing.Color.Gainsboro
         Me.lbFormTitle.ImageAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.lbFormTitle.Location = New System.Drawing.Point(56, 14)
+        Me.lbFormTitle.Location = New System.Drawing.Point(47, 12)
         Me.lbFormTitle.Name = "lbFormTitle"
-        Me.lbFormTitle.Size = New System.Drawing.Size(38, 15)
+        Me.lbFormTitle.Size = New System.Drawing.Size(49, 19)
         Me.lbFormTitle.TabIndex = 1
         Me.lbFormTitle.Text = "Home"
         '
@@ -304,32 +321,53 @@ Partial Class MainForm
         Me.IconCurrentForm.IconChar = FontAwesome.Sharp.IconChar.Home
         Me.IconCurrentForm.IconColor = System.Drawing.Color.Gainsboro
         Me.IconCurrentForm.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.IconCurrentForm.IconSize = 40
-        Me.IconCurrentForm.Location = New System.Drawing.Point(5, 2)
+        Me.IconCurrentForm.IconSize = 35
+        Me.IconCurrentForm.Location = New System.Drawing.Point(6, 3)
         Me.IconCurrentForm.Name = "IconCurrentForm"
         Me.IconCurrentForm.Padding = New System.Windows.Forms.Padding(0, 5, 0, 0)
-        Me.IconCurrentForm.Size = New System.Drawing.Size(40, 40)
+        Me.IconCurrentForm.Size = New System.Drawing.Size(35, 35)
         Me.IconCurrentForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.IconCurrentForm.TabIndex = 0
         Me.IconCurrentForm.TabStop = False
         '
         'panelTitlebar
         '
-        Me.panelTitlebar.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(94, Byte), Integer), CType(CType(144, Byte), Integer))
+        Me.panelTitlebar.BackColor = System.Drawing.Color.FromArgb(CType(CType(48, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(167, Byte), Integer))
         Me.panelTitlebar.Controls.Add(Me.lbFormTitle)
-        Me.panelTitlebar.Controls.Add(Me.btnMin)
-        Me.panelTitlebar.Controls.Add(Me.btnClose)
         Me.panelTitlebar.Controls.Add(Me.IconCurrentForm)
         Me.panelTitlebar.Dock = System.Windows.Forms.DockStyle.Top
-        Me.panelTitlebar.Location = New System.Drawing.Point(200, 0)
+        Me.panelTitlebar.Location = New System.Drawing.Point(200, 24)
         Me.panelTitlebar.Name = "panelTitlebar"
-        Me.panelTitlebar.Size = New System.Drawing.Size(1720, 42)
+        Me.panelTitlebar.Size = New System.Drawing.Size(1720, 38)
         Me.panelTitlebar.TabIndex = 1
+        '
+        'panelChildForm
+        '
+        Me.panelChildForm.BackColor = System.Drawing.SystemColors.MenuBar
+        Me.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.panelChildForm.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.panelChildForm.Location = New System.Drawing.Point(200, 62)
+        Me.panelChildForm.Name = "panelChildForm"
+        Me.panelChildForm.Size = New System.Drawing.Size(1720, 1018)
+        Me.panelChildForm.TabIndex = 2
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.btnMin)
+        Me.Panel1.Controls.Add(Me.btnClose)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
+        Me.Panel1.Size = New System.Drawing.Size(1920, 24)
+        Me.Panel1.TabIndex = 3
         '
         'btnMin
         '
-        Me.btnMin.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnMin.BackColor = System.Drawing.Color.Transparent
+        Me.btnMin.Dock = System.Windows.Forms.DockStyle.Right
         Me.btnMin.FlatAppearance.BorderSize = 0
         Me.btnMin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue
         Me.btnMin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -339,17 +377,17 @@ Partial Class MainForm
         Me.btnMin.IconColor = System.Drawing.Color.Black
         Me.btnMin.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.btnMin.IconSize = 30
-        Me.btnMin.Location = New System.Drawing.Point(1660, 0)
+        Me.btnMin.Location = New System.Drawing.Point(1860, 0)
         Me.btnMin.Name = "btnMin"
-        Me.btnMin.Size = New System.Drawing.Size(30, 25)
-        Me.btnMin.TabIndex = 10
+        Me.btnMin.Size = New System.Drawing.Size(30, 24)
+        Me.btnMin.TabIndex = 12
         Me.btnMin.Text = "-"
         Me.btnMin.UseVisualStyleBackColor = False
         '
         'btnClose
         '
-        Me.btnClose.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnClose.BackColor = System.Drawing.Color.Transparent
+        Me.btnClose.Dock = System.Windows.Forms.DockStyle.Right
         Me.btnClose.FlatAppearance.BorderSize = 0
         Me.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
         Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -359,22 +397,26 @@ Partial Class MainForm
         Me.btnClose.IconColor = System.Drawing.Color.Black
         Me.btnClose.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.btnClose.IconSize = 30
-        Me.btnClose.Location = New System.Drawing.Point(1690, 0)
+        Me.btnClose.Location = New System.Drawing.Point(1890, 0)
         Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(30, 25)
-        Me.btnClose.TabIndex = 8
+        Me.btnClose.Size = New System.Drawing.Size(30, 24)
+        Me.btnClose.TabIndex = 11
         Me.btnClose.Text = "X"
         Me.btnClose.UseVisualStyleBackColor = False
         '
-        'panelChildForm
+        'Label1
         '
-        Me.panelChildForm.BackColor = System.Drawing.SystemColors.MenuBar
-        Me.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.panelChildForm.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.panelChildForm.Location = New System.Drawing.Point(200, 42)
-        Me.panelChildForm.Name = "panelChildForm"
-        Me.panelChildForm.Size = New System.Drawing.Size(1720, 1038)
-        Me.panelChildForm.TabIndex = 2
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(15, 0)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(3, 0, 0, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(234, 19)
+        Me.Label1.TabIndex = 13
+        Me.Label1.Text = "ShorCourse Management Systme"
         '
         'MainForm
         '
@@ -384,7 +426,9 @@ Partial Class MainForm
         Me.Controls.Add(Me.panelChildForm)
         Me.Controls.Add(Me.panelTitlebar)
         Me.Controls.Add(Me.panelMenu)
+        Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "MainForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
@@ -396,6 +440,8 @@ Partial Class MainForm
         CType(Me.IconCurrentForm, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelTitlebar.ResumeLayout(False)
         Me.panelTitlebar.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -415,7 +461,9 @@ Partial Class MainForm
     Friend WithEvents lbFormTitle As Label
     Friend WithEvents btnClass As FontAwesome.Sharp.IconButton
     Friend WithEvents btnCourse As FontAwesome.Sharp.IconButton
+    Friend WithEvents btnStudent As FontAwesome.Sharp.IconButton
+    Friend WithEvents Panel1 As Panel
     Friend WithEvents btnMin As FontAwesome.Sharp.IconButton
     Friend WithEvents btnClose As FontAwesome.Sharp.IconButton
-    Friend WithEvents btnStudent As FontAwesome.Sharp.IconButton
+    Friend WithEvents Label1 As Label
 End Class

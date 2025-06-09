@@ -17,6 +17,16 @@ Public Class RegisterForm
 
     Sub Display()
         DataGridView2.DataSource = register.GetRegisterData()
+        DataGridView2.ClearSelection()
+        For i As Integer = 0 To DataGridView2.Rows.Count - 1
+            If i Mod 2 = 1 Then
+                DataGridView2.Rows(i).DefaultCellStyle.BackColor = Color.FromArgb(245, 250, 253)
+                ' Alternate row color
+            Else
+                DataGridView2.Rows(i).DefaultCellStyle.BackColor = Color.FromArgb(254, 254, 254)
+            End If
+
+        Next i
     End Sub
 
 

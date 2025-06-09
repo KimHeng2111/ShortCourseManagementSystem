@@ -23,31 +23,18 @@ Public Class Schedule
             Else
                 DataGridView2.Rows(i).DefaultCellStyle.BackColor = Color.FromArgb(245, 250, 253)
             End If
-        Next i
 
+        Next i
     End Sub
 
-    'Private Sub DataGridView2_Click(sender As Object, e As EventArgs) Handles DataGridView2.Click
-    '    Dim schedule() As String = DataGridView2.CurrentRow.Cells(1).Value.ToString().Split(" ")
-    '    If schedule(0) = cbDay.Items(0) Then
-    '        cbDay.SelectedIndex = 0 ' Weekday
-    '    Else
-    '        cbDay.SelectedIndex = 1 ' Weekend
-    '    End If
-
-    '    Dim time As String = schedule(1) + " " + schedule(2)
-    '    MsgBox(time)
-    '    cbTime.SelectedIndex = cbTime.FindStringExact(time)
-    'End Sub
-
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
-        If cbDay.SelectedIndex = -1 Then
-            MsgBox("Please select a dayu.")
+        If cbDay.SelectedIndex = cbDay.Items.Count - 1 Then
+            MsgBox("សូមជ្រើសរើសវេនសិក្សាជាមុនសិន")
             Return
         End If
         Dim schedule As String = cbDay.SelectedItem.ToString() + " " + tpStart.Value.ToString("hh:mm tt").Split(" "c)(0) + "-" + tpEnd.Value.ToString("hh:mm tt")
         If IsDuplicate(schedule) Then
-            MsgBox("This schedule already exists.")
+            MsgBox("សូមអភ័យទោសវេនសិក្សានេះមានរួចហើយ")
             Return
         End If
         Dim query As String = "INSERT INTO tblSchedule (Schedule) VALUES (@Schedule);"
@@ -59,7 +46,7 @@ Public Class Schedule
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         If DataGridView2.SelectedRows.Count = 0 Then
-            MsgBox("Please select a row to delete.")
+            MsgBox("សូមជ្រើសរើសទិន្ន័យពីបញ្ជីវេនសិក្សាជាមុនសិន !!!")
             Return
         End If
         Dim id As Integer = Convert.ToInt32(DataGridView2.CurrentRow.Cells(0).Value)
@@ -89,5 +76,11 @@ Public Class Schedule
         parsedTime = DateTime.Parse(time(1) & " " & schedule(2))
         tpEnd.Value = DateTime.Today.AddHours(parsedTime.Hour)
 
+    End Sub
+
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+        cbDay.SelectedIndex = cbDay.Items.Count - 1
+        DataGridView2.ClearSelection()
+        id = 0
     End Sub
 End Class
