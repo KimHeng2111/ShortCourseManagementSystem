@@ -1,0 +1,12 @@
+C:\Users\lengk\OneDrive\Desktop\RJControls-main\CustomControls\bin\Debug\CustomControls.pdb
+C:\Users\lengk\OneDrive\Desktop\RJControls-main\CustomControls\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\lengk\OneDrive\Desktop\RJControls-main\CustomControls\obj\Debug\CustomControls.csproj.AssemblyReference.cache
+C:\Users\lengk\OneDrive\Desktop\RJControls-main\CustomControls\obj\Debug\CustomControls.Properties.Resources.resources
+C:\Users\lengk\OneDrive\Desktop\RJControls-main\CustomControls\obj\Debug\CustomControls.RJControls.RJTextBox.resources
+C:\Users\lengk\OneDrive\Desktop\RJControls-main\CustomControls\obj\Debug\CustomControls.csproj.GenerateResource.cache
+C:\Users\lengk\OneDrive\Desktop\RJControls-main\CustomControls\obj\Debug\CustomControls.csproj.CoreCompileInputs.cache
+C:\Users\lengk\OneDrive\Desktop\RJControls-main\CustomControls\obj\Debug\CustomCo.07DB2BD9.Up2Date
+C:\Users\lengk\OneDrive\Desktop\RJControls-main\CustomControls\obj\Debug\CustomControls.pdb
+C:\Users\lengk\OneDrive\Desktop\RJControls-main\CustomControls\bin\Debug\CustomControls.dll.config
+C:\Users\lengk\OneDrive\Desktop\RJControls-main\CustomControls\bin\Debug\CustomControls.dll
+C:\Users\lengk\OneDrive\Desktop\RJControls-main\CustomControls\obj\Debug\CustomControls.dll

@@ -92,6 +92,9 @@
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CustomControls">
+      <HintPath>..\RJControls-main\CustomControls\bin\Debug\CustomControls.dll</HintPath>
+    </Reference>
     <Reference Include="FontAwesome.Sharp, Version=5.15.4.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
       <HintPath>packages\FontAwesome.Sharp.5.15.4\lib\net45\FontAwesome.Sharp.dll</HintPath>
     </Reference>
@@ -224,6 +227,12 @@
     <Compile Include="Forms\RegisterForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Room.Designer.vb">
+      <DependentUpon>Room.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Room.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Schedule.Designer.vb">
       <DependentUpon>Schedule.vb</DependentUpon>
     </Compile>
@@ -294,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RegisterForm.resx">
       <DependentUpon>RegisterForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Room.resx">
+      <DependentUpon>Room.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Schedule.km-KH.resx">
       <DependentUpon>Schedule.vb</DependentUpon>

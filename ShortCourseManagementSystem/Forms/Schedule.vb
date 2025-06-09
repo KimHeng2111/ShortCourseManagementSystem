@@ -1,7 +1,7 @@
 ﻿Imports System.Data.OleDb
 Imports Org.BouncyCastle.Bcpg
 
-Public Class Schedule
+Public Class ClassRoom
     Dim conn As New ConnectionDB()
     Dim id As Integer = 0
 

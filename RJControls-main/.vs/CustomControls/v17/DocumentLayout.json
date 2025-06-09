@@ -1,0 +1,95 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\lengk\\OneDrive\\Desktop\\RJControls-main\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{602AA7A6-9A92-47E1-B800-2F78154EA050}|CustomControls\\CustomControls.csproj|c:\\users\\lengk\\onedrive\\desktop\\rjcontrols-main\\customcontrols\\rjcontrols\\menucolortable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{602AA7A6-9A92-47E1-B800-2F78154EA050}|CustomControls\\CustomControls.csproj|solutionrelative:customcontrols\\rjcontrols\\menucolortable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|CustomControls||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{602AA7A6-9A92-47E1-B800-2F78154EA050}|CustomControls\\CustomControls.csproj|c:\\users\\lengk\\onedrive\\desktop\\rjcontrols-main\\customcontrols\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{602AA7A6-9A92-47E1-B800-2F78154EA050}|CustomControls\\CustomControls.csproj|solutionrelative:customcontrols\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{602AA7A6-9A92-47E1-B800-2F78154EA050}|CustomControls\\CustomControls.csproj|C:\\Users\\lengk\\OneDrive\\Desktop\\RJControls-main\\customcontrols\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{602AA7A6-9A92-47E1-B800-2F78154EA050}|CustomControls\\CustomControls.csproj|solutionrelative:customcontrols\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{602AA7A6-9A92-47E1-B800-2F78154EA050}|CustomControls\\CustomControls.csproj|c:\\users\\lengk\\onedrive\\desktop\\rjcontrols-main\\customcontrols\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|5e9a8ac2-4f34-4521-858f-4c248ba31532"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MenuColorTable.cs",
+              "DocumentMoniker": "C:\\Users\\lengk\\OneDrive\\Desktop\\RJControls-main\\CustomControls\\RJControls\\MenuColorTable.cs",
+              "RelativeDocumentMoniker": "CustomControls\\RJControls\\MenuColorTable.cs",
+              "ToolTip": "C:\\Users\\lengk\\OneDrive\\Desktop\\RJControls-main\\CustomControls\\RJControls\\MenuColorTable.cs",
+              "RelativeToolTip": "CustomControls\\RJControls\\MenuColorTable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T17:17:15.893Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CustomControls",
+              "DocumentMoniker": "C:\\Users\\lengk\\OneDrive\\Desktop\\RJControls-main\\CustomControls\\CustomControls.csproj",
+              "RelativeDocumentMoniker": "CustomControls\\CustomControls.csproj",
+              "ToolTip": "C:\\Users\\lengk\\OneDrive\\Desktop\\RJControls-main\\CustomControls\\CustomControls.csproj",
+              "RelativeToolTip": "CustomControls\\CustomControls.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-09T17:17:08.896Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\lengk\\OneDrive\\Desktop\\RJControls-main\\CustomControls\\Program.cs",
+              "RelativeDocumentMoniker": "CustomControls\\Program.cs",
+              "ToolTip": "C:\\Users\\lengk\\OneDrive\\Desktop\\RJControls-main\\CustomControls\\Program.cs",
+              "RelativeToolTip": "CustomControls\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T17:15:57.508Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\lengk\\OneDrive\\Desktop\\RJControls-main\\CustomControls\\Form1.cs",
+              "RelativeDocumentMoniker": "CustomControls\\Form1.cs",
+              "ToolTip": "C:\\Users\\lengk\\OneDrive\\Desktop\\RJControls-main\\CustomControls\\Form1.cs [Design]",
+              "RelativeToolTip": "CustomControls\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T17:15:17.184Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

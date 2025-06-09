@@ -4,17 +4,17 @@ Public Class CoursesForm
     Dim course As New Course()
 
     Sub Display()
-        DataGridView1.DataSource = Nothing
         DataGridView1.DataSource = course.GetCourseData()
         DataGridView1.ColumnHeadersHeight = 40
         'DataGridView1.AllowUserToResizeColumns = True
         'Customize DataGridView columns
         DataGridView1.Columns(0).Width = 50 ' ID column width
         DataGridView1.Columns(1).Width = 200 ' Course Name column width
-        DataGridView1.Columns(3).Width = 100 ' Description column width
-        DataGridView1.Columns(4).Width = 100
-        DataGridView1.Columns(5).Width = 100
-        DataGridView1.Columns(6).Width = 130
+        DataGridView1.Columns(2).Width = 250 ' Description column width
+        DataGridView1.Columns(3).Width = 150 ' Description column width
+        DataGridView1.Columns(4).Width = 150
+        DataGridView1.Columns(5).Width = 150
+        DataGridView1.Columns(6).Width = 150
         DataGridView1.Columns(0).HeaderText = "ID"
         DataGridView1.Columns(1).HeaderText = "វគ្គសិក្សា"
         DataGridView1.Columns(2).HeaderText = "ការពិពណ៌នា"
@@ -38,10 +38,10 @@ Public Class CoursesForm
     End Sub
 
     Function CheckField() As Boolean
-        Dim courseName As String = txtCourseName.Text.Trim()
-        Dim description As String = txtDes.Text.Trim()
-        Dim duration As String = txtDuration.Text.Trim()
-        Dim basePrice As String = txtBasePrice.Text.Trim()
+        Dim courseName As String = txtCourseName.Texts.Trim()
+        Dim description As String = txtDes.Texts.Trim()
+        Dim duration As String = txtDuration.Texts.Trim()
+        Dim basePrice As String = txtBasePrice.Texts.Trim()
         If String.IsNullOrEmpty(courseName) Then
             MessageBox.Show("Please fill in all fields.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return False
@@ -65,65 +65,55 @@ Public Class CoursesForm
         If Not CheckField() Then
             Return
         Else
-            course.AddCourse(txtCourseName.Text.Trim(), txtDes.Text.Trim(), Convert.ToInt32(txtDuration.Text.Trim()), Convert.ToDecimal(txtBasePrice.Text.Trim()))
-            MessageBox.Show("Course added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            course.AddCourse(txtCourseName.Texts.Trim(), txtDes.Texts.Trim(), Convert.ToInt32(txtDuration.Texts.Trim()), Convert.ToDecimal(txtBasePrice.Texts.Trim()))
+            MessageBox.Show("វគ្គសិក្សា ៖ " & txtCourseName.Texts & "ត្រូវបានបង្កើតបានដោយជោគជ័យ!!!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
         Display()
-    End Sub
-
-    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
-        If Not CheckField() Then
-            Return
-        Else
-            course.courseName = txtCourseName.Text.Trim()
-            course.Description = txtDes.Text.Trim()
-            course.durations = Convert.ToInt32(txtDuration.Text.Trim())
-            course.basePrice = Convert.ToDecimal(txtBasePrice.Text.Trim())
-            course.UpdateCourse()
-            MessageBox.Show("Course updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        End If
-        Display()
-    End Sub
-
-    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
-        If Not CheckField() Then
-            Return
-        Else
-            course.DeleteCourse()
-            MessageBox.Show("Course deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        End If
-        Display()
-    End Sub
-    Sub Clear() Handles btnClear.Click
-        txtBasePrice.Text = ""
-        txtCourseName.Text = ""
-        txtDes.Text = ""
-        txtDuration.Text = ""
-        course.courseID = ""
-        course.courseName = ""
-        course.Description = ""
-        course.durations = 0
-        course.basePrice = 0D
-    End Sub
-
-    Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
-        Dim CoursID As String = DataGridView1.CurrentRow.Cells(0).Value.ToString()
-        course.GetCourseByID(CoursID)
-        txtCourseName.Text = course.courseName
-        txtDes.Text = course.Description
-        txtDuration.Text = course.durations.ToString()
-        txtBasePrice.Text = course.basePrice.ToString("F2")
     End Sub
 
     Private Sub Panel5_Paint(sender As Object, e As PaintEventArgs) Handles Panel5.Paint
         Display()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         Panel1.Visible = True
     End Sub
 
-    Private Sub Label8_Click(sender As Object, e As EventArgs) Handles Label8.Click
+    Private Sub DataGridView1_MouseClick(sender As Object, e As MouseEventArgs) Handles DataGridView1.MouseClick
+        Dim menu As New ContextMenuStrip()
+        menu.Font = New Font("Khmer OS System", 9, FontStyle.Regular)
+        menu.Items.Add("លម្អិត", Nothing, AddressOf ShowDetails)
+        menu.Items.Add("លុប", Nothing, AddressOf DeleteCourse)
+        menu.Items(0).BackColor = Color.FromArgb(144, 224, 239)
+        menu.Items(1).BackColor = Color.FromArgb(144, 224, 239)
+
+        If e.Button = MouseButtons.Right Then
+            Dim hit As DataGridView.HitTestInfo = DataGridView1.HitTest(e.X, e.Y)
+            If hit.RowIndex >= 0 Then
+                DataGridView1.Rows(hit.RowIndex).Selected = True
+                Dim CoursID As String = DataGridView1.CurrentRow.Cells(0).Value.ToString()
+                course.GetCourseByID(CoursID)
+                menu.Show(DataGridView1, e.Location)
+            End If
+        End If
+
+    End Sub
+
+    Private Sub DeleteCourse()
+        If DialogResult.Yes = MessageBox.Show("តើអ្នកពិតជាចង់លុបវគ្គសិក្សានេះទេ?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) Then
+            course.DeleteCourse()
+            MessageBox.Show("វគ្គសិក្សា ៖ " & course.courseName & " ត្រូវបានលុបដោយជោគជ័យ!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Display()
+        End If
+    End Sub
+
+    Private Sub ShowDetails()
+        Dim curseDialog As New CourseDialog(course)
+        curseDialog.ShowDialog()
+        Display()
+    End Sub
+
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         txtBasePrice.Text = ""
         txtCourseName.Text = ""
         txtDes.Text = ""
@@ -134,5 +124,55 @@ Public Class CoursesForm
         course.durations = 0
         course.basePrice = 0D
         Panel1.Visible = False
+    End Sub
+    Private Function SearchDataTable(condition As String) As DataTable
+        Dim dt As New DataTable()
+        Dim query As String = "SELECT tblCourses.ID, tblCourses.CourseName, tblCourses.Description, tblCourses.DurationHours, tblCourses.BasePrice, 
+                        (SELECT COUNT(*) FROM tblClass WHERE tblClass.CourseID = tblCourses.ID) AS AllClass, 
+                        (SELECT COUNT(*) FROM tblClass WHERE StatusID = 3 AND tblClass.CourseID = tblCourses.ID) AS CompleteClass
+                        FROM tblCourses
+                        WHERE ((tblCourses.ID = @id) or (tblCourses.CourseName LIKE @Condition));"
+        Dim cmd As New OleDb.OleDbCommand(query, course.GetConnection())
+        Dim id As Integer
+        If IsNumeric(condition) Then
+            id = Integer.Parse(condition)
+        Else
+            id = 0
+        End If
+        cmd.Parameters.AddWithValue("@id", id)
+        condition = condition & "%"
+        cmd.Parameters.AddWithValue("@Condition", condition)
+        dt = course.ExecuteQuery(cmd)
+        Return dt
+    End Function
+
+    Private Sub txtSearch__TextChanged(sender As Object, e As EventArgs) Handles txtSearch._TextChanged
+        If Not txtSearch.Texts = String.Empty Then
+            Dim condition As String = txtSearch.Texts.Trim()
+            DataGridView1.DataSource = SearchDataTable(condition)
+            If DataGridView1.Columns.Count <= 0 Then
+                Return
+            End If
+            DataGridView1.Columns(0).Width = 50 ' ID column width
+            DataGridView1.Columns(1).Width = 200 ' Course Name column width
+            DataGridView1.Columns(2).Width = 250 ' Description column width
+            DataGridView1.Columns(3).Width = 150 ' Description column width
+            DataGridView1.Columns(4).Width = 150
+            DataGridView1.Columns(5).Width = 150
+            DataGridView1.Columns(6).Width = 150
+            DataGridView1.Columns(0).HeaderText = "ID"
+            DataGridView1.Columns(1).HeaderText = "វគ្គសិក្សា"
+            DataGridView1.Columns(2).HeaderText = "ការពិពណ៌នា"
+            DataGridView1.Columns(3).HeaderText = "រយៈពេល (ម៉ោង)"
+            DataGridView1.Columns(4).HeaderText = "តម្លៃ ($)"
+            DataGridView1.Columns(5).HeaderText = "ចំនួនថ្នាក់រៀន"
+            DataGridView1.Columns(6).HeaderText = "ចំនួនថ្នាក់បញ្ចប់"
+            DataGridView1.ClearSelection()
+        End If
+    End Sub
+
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+        txtSearch.Texts = ""
+        Display()
     End Sub
 End Class

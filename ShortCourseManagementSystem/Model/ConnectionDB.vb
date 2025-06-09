@@ -28,6 +28,21 @@ Public Class ConnectionDB
             Dim cmd As New OleDbCommand(query, conn)
             Dim adapter As New OleDbDataAdapter(cmd)
             adapter.Fill(dt)
+            cmd.Dispose()
+        Catch ex As Exception
+            MsgBox("Error executing query: " & ex.Message)
+        Finally
+            CloseConnection()
+        End Try
+        Return dt
+    End Function
+    Public Function ExecuteQuery(cmd As OleDbCommand) As DataTable
+        Dim dt As New DataTable()
+        Try
+            OpenConnection()
+            Dim adapter As New OleDbDataAdapter(cmd)
+            adapter.Fill(dt)
+            cmd.Dispose()
         Catch ex As Exception
             MsgBox("Error executing query: " & ex.Message)
         Finally
@@ -40,6 +55,7 @@ Public Class ConnectionDB
             OpenConnection()
             Dim cmd As New OleDbCommand(query, conn)
             cmd.ExecuteNonQuery()
+            cmd.Dispose()
         Catch ex As Exception
             Throw New Exception("Error executing non-query: " & ex.Message)
         Finally
@@ -52,6 +68,7 @@ Public Class ConnectionDB
             OpenConnection()
             Dim cmd As New OleDbCommand(query, conn)
             result = cmd.ExecuteScalar()
+            cmd.Dispose()
         Catch ex As Exception
             Throw New Exception("Error executing scalar: " & ex.Message)
         Finally
@@ -63,6 +80,7 @@ Public Class ConnectionDB
         Try
             OpenConnection()
             cmd.ExecuteNonQuery()
+            cmd.Dispose()
         Catch ex As Exception
             MsgBox("Error executing non-query: " & ex.Message)
         Finally
