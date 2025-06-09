@@ -188,6 +188,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dialog\CourseDialog.Designer.vb">
+      <DependentUpon>CourseDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\CourseDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\CoursesForm.Designer.vb">
       <DependentUpon>CoursesForm.vb</DependentUpon>
     </Compile>
@@ -271,6 +277,9 @@
     <Compile Include="ThemeColor.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Dialog\CourseDialog.resx">
+      <DependentUpon>CourseDialog.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CoursesForm.resx">
       <DependentUpon>CoursesForm.vb</DependentUpon>
     </EmbeddedResource>

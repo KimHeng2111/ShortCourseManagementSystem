@@ -22,14 +22,13 @@ Partial Class CoursesForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.btnClear = New System.Windows.Forms.Button()
@@ -53,16 +52,15 @@ Partial Class CoursesForm
         Me.txtBasePrice = New CustomControls.RJControls.RJTextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.txtSearch = New CustomControls.RJControls.RJTextBox()
         Me.Panel5.SuspendLayout()
-        Me.Panel7.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel7.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel6.SuspendLayout()
-        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel5
@@ -74,24 +72,6 @@ Partial Class CoursesForm
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(1680, 919)
         Me.Panel5.TabIndex = 2
-        '
-        'Panel7
-        '
-        Me.Panel7.Controls.Add(Me.Button1)
-        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel7.Location = New System.Drawing.Point(0, 276)
-        Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(1680, 62)
-        Me.Panel7.TabIndex = 4
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(320, 18)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(170, 41)
-        Me.Button1.TabIndex = 11
-        Me.Button1.Text = "បន្ថែមថ្នាក់ថ្មី"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'DataGridView1
         '
@@ -112,7 +92,7 @@ Partial Class CoursesForm
         Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridView1.EnableHeadersVisualStyles = False
-        Me.DataGridView1.Location = New System.Drawing.Point(0, 338)
+        Me.DataGridView1.Location = New System.Drawing.Point(0, 348)
         Me.DataGridView1.Margin = New System.Windows.Forms.Padding(3, 3, 15, 3)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
@@ -131,8 +111,30 @@ Partial Class CoursesForm
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(1680, 581)
+        Me.DataGridView1.Size = New System.Drawing.Size(1680, 571)
         Me.DataGridView1.TabIndex = 0
+        '
+        'Panel7
+        '
+        Me.Panel7.Controls.Add(Me.txtSearch)
+        Me.Panel7.Controls.Add(Me.Button1)
+        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel7.Location = New System.Drawing.Point(0, 276)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(1680, 72)
+        Me.Panel7.TabIndex = 4
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(111, Byte), Integer), CType(CType(210, Byte), Integer))
+        Me.Button1.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(388, 13)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(173, 46)
+        Me.Button1.TabIndex = 11
+        Me.Button1.Text = "បន្ថែមថ្នាក់ថ្មី"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Panel1
         '
@@ -164,12 +166,17 @@ Partial Class CoursesForm
         '
         'btnClear
         '
-        Me.btnClear.Location = New System.Drawing.Point(631, 221)
+        Me.btnClear.BackColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(37, Byte), Integer))
+        Me.btnClear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(37, Byte), Integer))
+        Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnClear.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClear.ForeColor = System.Drawing.Color.White
+        Me.btnClear.Location = New System.Drawing.Point(650, 221)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(170, 41)
         Me.btnClear.TabIndex = 13
-        Me.btnClear.Text = "សអ្អាត"
-        Me.btnClear.UseVisualStyleBackColor = True
+        Me.btnClear.Text = "បោះបង់"
+        Me.btnClear.UseVisualStyleBackColor = False
         '
         'btnDelete
         '
@@ -418,9 +425,27 @@ Partial Class CoursesForm
         Me.Label7.TabIndex = 5
         Me.Label7.Text = "($)"
         '
-        'ErrorProvider1
+        'txtSearch
         '
-        Me.ErrorProvider1.ContainerControl = Me
+        Me.txtSearch.BackColor = System.Drawing.SystemColors.Window
+        Me.txtSearch.BorderColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(111, Byte), Integer), CType(CType(210, Byte), Integer))
+        Me.txtSearch.BorderFocusColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtSearch.BorderRadius = 10
+        Me.txtSearch.BorderSize = 2
+        Me.txtSearch.Font = New System.Drawing.Font("Khmer OS Battambang", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSearch.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.txtSearch.Location = New System.Drawing.Point(9, 17)
+        Me.txtSearch.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtSearch.Multiline = False
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.Padding = New System.Windows.Forms.Padding(10, 7, 10, 7)
+        Me.txtSearch.PasswordChar = False
+        Me.txtSearch.PlaceholderColor = System.Drawing.Color.DarkGray
+        Me.txtSearch.PlaceholderText = "ស្វែងរក ឈ្មោះ ឬ ID"
+        Me.txtSearch.Size = New System.Drawing.Size(340, 39)
+        Me.txtSearch.TabIndex = 17
+        Me.txtSearch.Texts = ""
+        Me.txtSearch.UnderlinedStyle = False
         '
         'CoursesForm
         '
@@ -434,8 +459,8 @@ Partial Class CoursesForm
         Me.Name = "CoursesForm"
         Me.Text = "Courses"
         Me.Panel5.ResumeLayout(False)
-        Me.Panel7.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel7.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.Panel4.ResumeLayout(False)
@@ -446,7 +471,6 @@ Partial Class CoursesForm
         Me.Panel3.PerformLayout()
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
-        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -467,7 +491,6 @@ Partial Class CoursesForm
     Friend WithEvents btnClear As Button
     Friend WithEvents btnDelete As Button
     Friend WithEvents btnUpdate As Button
-    Friend WithEvents ErrorProvider1 As ErrorProvider
     Friend WithEvents Label9 As Label
     Friend WithEvents Panel7 As Panel
     Friend WithEvents Button1 As Button
@@ -478,4 +501,5 @@ Partial Class CoursesForm
     Friend WithEvents Label1 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Label10 As Label
+    Friend WithEvents txtSearch As CustomControls.RJControls.RJTextBox
 End Class

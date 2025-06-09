@@ -1,4 +1,6 @@
-﻿Public Class CoursesForm
+﻿Imports System.Windows.Controls
+
+Public Class CoursesForm
     Dim course As New Course()
 
     Sub Display()
@@ -122,6 +124,15 @@
     End Sub
 
     Private Sub Label8_Click(sender As Object, e As EventArgs) Handles Label8.Click
-
+        txtBasePrice.Text = ""
+        txtCourseName.Text = ""
+        txtDes.Text = ""
+        txtDuration.Text = ""
+        course.courseID = ""
+        course.courseName = ""
+        course.Description = ""
+        course.durations = 0
+        course.basePrice = 0D
+        Panel1.Visible = False
     End Sub
 End Class
