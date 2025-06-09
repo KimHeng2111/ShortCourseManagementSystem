@@ -40,9 +40,9 @@ Partial Class MainForm
         Me.panelTitlebar = New System.Windows.Forms.Panel()
         Me.panelChildForm = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.btnMin = New FontAwesome.Sharp.IconButton()
         Me.btnClose = New FontAwesome.Sharp.IconButton()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.panelMenu.SuspendLayout()
         Me.panelMenuUpper.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -364,6 +364,20 @@ Partial Class MainForm
         Me.Panel1.Size = New System.Drawing.Size(1920, 24)
         Me.Panel1.TabIndex = 3
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(15, 0)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(3, 0, 0, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(234, 19)
+        Me.Label1.TabIndex = 13
+        Me.Label1.Text = "ShorCourse Management Systme"
+        '
         'btnMin
         '
         Me.btnMin.BackColor = System.Drawing.Color.Transparent
@@ -403,20 +417,6 @@ Partial Class MainForm
         Me.btnClose.TabIndex = 11
         Me.btnClose.Text = "X"
         Me.btnClose.UseVisualStyleBackColor = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(15, 0)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(3, 0, 0, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(234, 19)
-        Me.Label1.TabIndex = 13
-        Me.Label1.Text = "ShorCourse Management Systme"
         '
         'MainForm
         '

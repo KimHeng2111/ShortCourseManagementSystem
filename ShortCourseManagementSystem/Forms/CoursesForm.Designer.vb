@@ -23,251 +23,396 @@ Partial Class CoursesForm
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.btnClear = New System.Windows.Forms.Button()
         Me.btnDelete = New System.Windows.Forms.Button()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtDes = New CustomControls.RJControls.RJTextBox()
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.btmCreate = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.txtCourseName = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtCourseName = New CustomControls.RJControls.RJTextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.txtDuration = New System.Windows.Forms.TextBox()
+        Me.txtDuration = New CustomControls.RJControls.RJTextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.txtDes = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.txtBasePrice = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.txtBasePrice = New CustomControls.RJControls.RJTextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.Panel5.SuspendLayout()
+        Me.Panel7.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        Me.Panel4.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        Me.Panel4.SuspendLayout()
         Me.Panel6.SuspendLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(765, 20)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(175, 29)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Course Management"
-        '
         'Panel5
         '
         Me.Panel5.Controls.Add(Me.DataGridView1)
-        Me.Panel5.Location = New System.Drawing.Point(12, 412)
+        Me.Panel5.Controls.Add(Me.Panel7)
+        Me.Panel5.Controls.Add(Me.Panel1)
+        Me.Panel5.Location = New System.Drawing.Point(12, 12)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(1680, 519)
+        Me.Panel5.Size = New System.Drawing.Size(1680, 919)
         Me.Panel5.TabIndex = 2
+        '
+        'Panel7
+        '
+        Me.Panel7.Controls.Add(Me.Button1)
+        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel7.Location = New System.Drawing.Point(0, 276)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(1680, 62)
+        Me.Panel7.TabIndex = 4
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(320, 18)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(170, 41)
+        Me.Button1.TabIndex = 11
+        Me.Button1.Text = "បន្ថែមថ្នាក់ថ្មី"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'DataGridView1
         '
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.AllowUserToOrderColumns = True
-        Me.DataGridView1.AllowUserToResizeColumns = False
-        Me.DataGridView1.AllowUserToResizeRows = False
         Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(3, 70)
+        Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(254, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DataGridView1.EnableHeadersVisualStyles = False
+        Me.DataGridView1.Location = New System.Drawing.Point(0, 338)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(3, 3, 15, 3)
         Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.DataGridView1.RowHeadersVisible = False
+        Me.DataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(253, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(1674, 446)
+        Me.DataGridView1.Size = New System.Drawing.Size(1680, 581)
         Me.DataGridView1.TabIndex = 0
         '
         'Panel1
         '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(223, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Label9)
         Me.Panel1.Controls.Add(Me.btnClear)
         Me.Panel1.Controls.Add(Me.btnDelete)
+        Me.Panel1.Controls.Add(Me.Panel4)
         Me.Panel1.Controls.Add(Me.btnUpdate)
         Me.Panel1.Controls.Add(Me.btmCreate)
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.Panel3)
-        Me.Panel1.Controls.Add(Me.Panel4)
         Me.Panel1.Controls.Add(Me.Panel6)
-        Me.Panel1.Location = New System.Drawing.Point(12, 88)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1680, 302)
+        Me.Panel1.Size = New System.Drawing.Size(1680, 276)
         Me.Panel1.TabIndex = 3
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(4, 2)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(124, 29)
+        Me.Label9.TabIndex = 14
+        Me.Label9.Text = "ព័ត៌មានវគ្គសិក្សា"
         '
         'btnClear
         '
-        Me.btnClear.Location = New System.Drawing.Point(1143, 258)
+        Me.btnClear.Location = New System.Drawing.Point(631, 221)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(170, 41)
         Me.btnClear.TabIndex = 13
-        Me.btnClear.Text = "Clear"
+        Me.btnClear.Text = "សអ្អាត"
         Me.btnClear.UseVisualStyleBackColor = True
         '
         'btnDelete
         '
-        Me.btnDelete.Location = New System.Drawing.Point(865, 258)
+        Me.btnDelete.Location = New System.Drawing.Point(1152, 221)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(170, 41)
         Me.btnDelete.TabIndex = 12
-        Me.btnDelete.Text = "Delete"
+        Me.btnDelete.Text = "លុប"
         Me.btnDelete.UseVisualStyleBackColor = True
+        '
+        'Panel4
+        '
+        Me.Panel4.Controls.Add(Me.Label10)
+        Me.Panel4.Controls.Add(Me.Label3)
+        Me.Panel4.Controls.Add(Me.txtDes)
+        Me.Panel4.Location = New System.Drawing.Point(429, 95)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(3, 30, 35, 3)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(822, 110)
+        Me.Panel4.TabIndex = 7
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(95, 41)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(22, 29)
+        Me.Label10.TabIndex = 16
+        Me.Label10.Text = "៖"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(3, 41)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(93, 29)
+        Me.Label3.TabIndex = 0
+        Me.Label3.Text = "ការពិពណ៌នា"
+        '
+        'txtDes
+        '
+        Me.txtDes.BackColor = System.Drawing.SystemColors.Window
+        Me.txtDes.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtDes.BorderFocusColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(111, Byte), Integer), CType(CType(210, Byte), Integer))
+        Me.txtDes.BorderRadius = 0
+        Me.txtDes.BorderSize = 2
+        Me.txtDes.Font = New System.Drawing.Font("Khmer OS Battambang", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDes.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.txtDes.Location = New System.Drawing.Point(128, 16)
+        Me.txtDes.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtDes.Multiline = True
+        Me.txtDes.Name = "txtDes"
+        Me.txtDes.Padding = New System.Windows.Forms.Padding(10, 7, 10, 7)
+        Me.txtDes.PasswordChar = False
+        Me.txtDes.PlaceholderColor = System.Drawing.Color.DarkGray
+        Me.txtDes.PlaceholderText = ""
+        Me.txtDes.Size = New System.Drawing.Size(674, 79)
+        Me.txtDes.TabIndex = 15
+        Me.txtDes.Texts = ""
+        Me.txtDes.UnderlinedStyle = False
         '
         'btnUpdate
         '
-        Me.btnUpdate.Location = New System.Drawing.Point(607, 258)
+        Me.btnUpdate.Location = New System.Drawing.Point(875, 221)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(170, 41)
         Me.btnUpdate.TabIndex = 11
-        Me.btnUpdate.Text = "Update"
+        Me.btnUpdate.Text = "កែប្រែ"
         Me.btnUpdate.UseVisualStyleBackColor = True
         '
         'btmCreate
         '
-        Me.btmCreate.Location = New System.Drawing.Point(368, 258)
+        Me.btmCreate.BackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(222, Byte), Integer))
+        Me.btmCreate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(254, Byte), Integer))
+        Me.btmCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btmCreate.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btmCreate.ForeColor = System.Drawing.Color.White
+        Me.btmCreate.Location = New System.Drawing.Point(358, 221)
         Me.btmCreate.Name = "btmCreate"
         Me.btmCreate.Size = New System.Drawing.Size(170, 41)
         Me.btmCreate.TabIndex = 10
-        Me.btmCreate.Text = "CreateNewCourse"
-        Me.btmCreate.UseVisualStyleBackColor = True
+        Me.btmCreate.Text = "រក្សាទុក"
+        Me.btmCreate.UseVisualStyleBackColor = False
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.Panel2.Controls.Add(Me.txtCourseName)
+        Me.Panel2.BackColor = System.Drawing.Color.Transparent
+        Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.Label2)
-        Me.Panel2.Location = New System.Drawing.Point(249, 46)
+        Me.Panel2.Controls.Add(Me.txtCourseName)
+        Me.Panel2.Location = New System.Drawing.Point(155, 39)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 3, 35, 3)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(463, 37)
+        Me.Panel2.Size = New System.Drawing.Size(471, 54)
         Me.Panel2.TabIndex = 6
         '
-        'txtCourseName
+        'Label1
         '
-        Me.txtCourseName.Location = New System.Drawing.Point(143, 0)
-        Me.txtCourseName.Margin = New System.Windows.Forms.Padding(3, 3, 25, 3)
-        Me.txtCourseName.Name = "txtCourseName"
-        Me.txtCourseName.Size = New System.Drawing.Size(320, 37)
-        Me.txtCourseName.TabIndex = 1
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(102, 13)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(22, 29)
+        Me.Label1.TabIndex = 15
+        Me.Label1.Text = "៖"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(3, 6)
+        Me.Label2.Location = New System.Drawing.Point(3, 13)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(117, 29)
+        Me.Label2.Size = New System.Drawing.Size(104, 29)
         Me.Label2.TabIndex = 0
-        Me.Label2.Text = "Course Name :"
+        Me.Label2.Text = "ឈ្មោះវគ្គសិក្សា"
+        '
+        'txtCourseName
+        '
+        Me.txtCourseName.BackColor = System.Drawing.SystemColors.Window
+        Me.txtCourseName.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtCourseName.BorderFocusColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(111, Byte), Integer), CType(CType(210, Byte), Integer))
+        Me.txtCourseName.BorderRadius = 0
+        Me.txtCourseName.BorderSize = 2
+        Me.txtCourseName.Font = New System.Drawing.Font("Khmer OS Battambang", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCourseName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.txtCourseName.Location = New System.Drawing.Point(131, 8)
+        Me.txtCourseName.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtCourseName.Multiline = False
+        Me.txtCourseName.Name = "txtCourseName"
+        Me.txtCourseName.Padding = New System.Windows.Forms.Padding(10, 7, 10, 7)
+        Me.txtCourseName.PasswordChar = False
+        Me.txtCourseName.PlaceholderColor = System.Drawing.Color.DarkGray
+        Me.txtCourseName.PlaceholderText = ""
+        Me.txtCourseName.Size = New System.Drawing.Size(340, 39)
+        Me.txtCourseName.TabIndex = 16
+        Me.txtCourseName.Texts = ""
+        Me.txtCourseName.UnderlinedStyle = False
         '
         'Panel3
         '
         Me.Panel3.Controls.Add(Me.txtDuration)
         Me.Panel3.Controls.Add(Me.Label4)
         Me.Panel3.Controls.Add(Me.Label5)
-        Me.Panel3.Location = New System.Drawing.Point(249, 112)
+        Me.Panel3.Location = New System.Drawing.Point(1149, 39)
         Me.Panel3.Margin = New System.Windows.Forms.Padding(30, 3, 35, 3)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(463, 37)
+        Me.Panel3.Size = New System.Drawing.Size(376, 54)
         Me.Panel3.TabIndex = 8
         '
         'txtDuration
         '
-        Me.txtDuration.Location = New System.Drawing.Point(143, 0)
-        Me.txtDuration.Margin = New System.Windows.Forms.Padding(3, 3, 25, 3)
+        Me.txtDuration.BackColor = System.Drawing.SystemColors.Window
+        Me.txtDuration.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtDuration.BorderFocusColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(111, Byte), Integer), CType(CType(210, Byte), Integer))
+        Me.txtDuration.BorderRadius = 0
+        Me.txtDuration.BorderSize = 2
+        Me.txtDuration.Font = New System.Drawing.Font("Khmer OS Battambang", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDuration.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.txtDuration.Location = New System.Drawing.Point(82, 8)
+        Me.txtDuration.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtDuration.Multiline = False
         Me.txtDuration.Name = "txtDuration"
-        Me.txtDuration.Size = New System.Drawing.Size(247, 37)
-        Me.txtDuration.TabIndex = 1
+        Me.txtDuration.Padding = New System.Windows.Forms.Padding(10, 7, 10, 7)
+        Me.txtDuration.PasswordChar = False
+        Me.txtDuration.PlaceholderColor = System.Drawing.Color.DarkGray
+        Me.txtDuration.PlaceholderText = ""
+        Me.txtDuration.Size = New System.Drawing.Size(220, 39)
+        Me.txtDuration.TabIndex = 17
+        Me.txtDuration.Texts = ""
+        Me.txtDuration.UnderlinedStyle = False
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(3, 6)
+        Me.Label4.Location = New System.Drawing.Point(3, 13)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(120, 29)
+        Me.Label4.Size = New System.Drawing.Size(72, 29)
         Me.Label4.TabIndex = 0
-        Me.Label4.Text = "DurationHours :"
+        Me.Label4.Text = "រយៈពេល"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(393, 3)
+        Me.Label5.Location = New System.Drawing.Point(309, 13)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(70, 29)
+        Me.Label5.Size = New System.Drawing.Size(63, 29)
         Me.Label5.TabIndex = 5
-        Me.Label5.Text = "(hours)"
-        '
-        'Panel4
-        '
-        Me.Panel4.Controls.Add(Me.txtDes)
-        Me.Panel4.Controls.Add(Me.Label3)
-        Me.Panel4.Location = New System.Drawing.Point(843, 46)
-        Me.Panel4.Margin = New System.Windows.Forms.Padding(3, 30, 35, 3)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(589, 132)
-        Me.Panel4.TabIndex = 7
-        '
-        'txtDes
-        '
-        Me.txtDes.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtDes.Location = New System.Drawing.Point(159, 0)
-        Me.txtDes.Multiline = True
-        Me.txtDes.Name = "txtDes"
-        Me.txtDes.Size = New System.Drawing.Size(427, 127)
-        Me.txtDes.TabIndex = 1
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(3, 6)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(150, 29)
-        Me.Label3.TabIndex = 0
-        Me.Label3.Text = "Course Description :"
+        Me.Label5.Text = "(ម៉ោង)"
         '
         'Panel6
         '
+        Me.Panel6.Controls.Add(Me.Label8)
         Me.Panel6.Controls.Add(Me.txtBasePrice)
         Me.Panel6.Controls.Add(Me.Label6)
         Me.Panel6.Controls.Add(Me.Label7)
-        Me.Panel6.Location = New System.Drawing.Point(249, 182)
+        Me.Panel6.Location = New System.Drawing.Point(716, 39)
         Me.Panel6.Margin = New System.Windows.Forms.Padding(30, 30, 35, 3)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(463, 37)
+        Me.Panel6.Size = New System.Drawing.Size(352, 54)
         Me.Panel6.TabIndex = 9
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(49, 13)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(22, 29)
+        Me.Label8.TabIndex = 16
+        Me.Label8.Text = "៖"
         '
         'txtBasePrice
         '
-        Me.txtBasePrice.Location = New System.Drawing.Point(143, 0)
-        Me.txtBasePrice.Margin = New System.Windows.Forms.Padding(3, 3, 25, 3)
+        Me.txtBasePrice.BackColor = System.Drawing.SystemColors.Window
+        Me.txtBasePrice.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtBasePrice.BorderFocusColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(111, Byte), Integer), CType(CType(210, Byte), Integer))
+        Me.txtBasePrice.BorderRadius = 0
+        Me.txtBasePrice.BorderSize = 2
+        Me.txtBasePrice.Font = New System.Drawing.Font("Khmer OS Battambang", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBasePrice.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.txtBasePrice.Location = New System.Drawing.Point(88, 8)
+        Me.txtBasePrice.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtBasePrice.Multiline = False
         Me.txtBasePrice.Name = "txtBasePrice"
-        Me.txtBasePrice.Size = New System.Drawing.Size(247, 37)
-        Me.txtBasePrice.TabIndex = 1
+        Me.txtBasePrice.Padding = New System.Windows.Forms.Padding(10, 7, 10, 7)
+        Me.txtBasePrice.PasswordChar = False
+        Me.txtBasePrice.PlaceholderColor = System.Drawing.Color.DarkGray
+        Me.txtBasePrice.PlaceholderText = ""
+        Me.txtBasePrice.Size = New System.Drawing.Size(220, 39)
+        Me.txtBasePrice.TabIndex = 18
+        Me.txtBasePrice.Texts = ""
+        Me.txtBasePrice.UnderlinedStyle = False
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(3, 6)
+        Me.Label6.Location = New System.Drawing.Point(3, 13)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(91, 29)
+        Me.Label6.Size = New System.Drawing.Size(40, 29)
         Me.Label6.TabIndex = 0
-        Me.Label6.Text = "BasePrice :"
+        Me.Label6.Text = "តម្លៃ"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(393, 3)
+        Me.Label7.Location = New System.Drawing.Point(309, 13)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(40, 29)
         Me.Label7.TabIndex = 5
@@ -281,52 +426,56 @@ Partial Class CoursesForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 29.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(253, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1704, 943)
-        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel5)
-        Me.Controls.Add(Me.Label1)
         Me.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "CoursesForm"
         Me.Text = "Courses"
         Me.Panel5.ResumeLayout(False)
+        Me.Panel7.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
-        Me.Panel4.ResumeLayout(False)
-        Me.Panel4.PerformLayout()
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents Label1 As Label
     Friend WithEvents Panel5 As Panel
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Panel1 As Panel
     Friend WithEvents btmCreate As Button
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents txtCourseName As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents txtDuration As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Panel4 As Panel
-    Friend WithEvents txtDes As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Panel6 As Panel
-    Friend WithEvents txtBasePrice As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents btnClear As Button
     Friend WithEvents btnDelete As Button
     Friend WithEvents btnUpdate As Button
     Friend WithEvents ErrorProvider1 As ErrorProvider
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Panel7 As Panel
+    Friend WithEvents Button1 As Button
+    Friend WithEvents txtDes As CustomControls.RJControls.RJTextBox
+    Friend WithEvents txtCourseName As CustomControls.RJControls.RJTextBox
+    Friend WithEvents txtDuration As CustomControls.RJControls.RJTextBox
+    Friend WithEvents txtBasePrice As CustomControls.RJControls.RJTextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label10 As Label
 End Class
