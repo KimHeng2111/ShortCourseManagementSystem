@@ -84,8 +84,7 @@ Public Class CoursesForm
         menu.Font = New Font("Khmer OS System", 9, FontStyle.Regular)
         menu.Items.Add("លម្អិត", Nothing, AddressOf ShowDetails)
         menu.Items.Add("លុប", Nothing, AddressOf DeleteCourse)
-        menu.Items(0).BackColor = Color.FromArgb(144, 224, 239)
-        menu.Items(1).BackColor = Color.FromArgb(144, 224, 239)
+        menu.Items(0).BackColor = Color.FromArgb(245, 250, 253)
 
         If e.Button = MouseButtons.Right Then
             Dim hit As DataGridView.HitTestInfo = DataGridView1.HitTest(e.X, e.Y)

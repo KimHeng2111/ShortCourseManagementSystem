@@ -76,6 +76,19 @@ Public Class ConnectionDB
         End Try
         Return result
     End Function
+    Public Function ExecuteScalar(cmd As OleDbCommand) As Object
+        Dim result As Object = Nothing
+        Try
+            OpenConnection()
+            result = cmd.ExecuteScalar()
+            cmd.Dispose()
+        Catch ex As Exception
+            Throw New Exception("Error executing scalar: " & ex.Message)
+        Finally
+            CloseConnection()
+        End Try
+        Return result
+    End Function
     Public Sub ExecuteNonQuery(cmd As OleDbCommand)
         Try
             OpenConnection()

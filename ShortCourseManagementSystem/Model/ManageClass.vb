@@ -48,7 +48,6 @@ Public Class ManageClass
         cmd.Parameters.AddWithValue("@StartDate", startDate)
         cmd.Parameters.AddWithValue("@RoomID", roomID)
         cmd.Parameters.AddWithValue("@ScheduleID", scheduleID)
-        MessageBox.Show("ASDF")
         ExecuteNonQuery(cmd)
     End Sub
     Public Sub UpdateClass(classID As String, courseID As String, teacherID As String, startDate As String, roomID As Integer, scheduleID As Integer)
@@ -110,6 +109,20 @@ FROM tblRoom;"
         reader.Close()
         CloseConnection()
         Return RoomList
+    End Function
+    Public Function GetClassStatusList() As Dictionary(Of String, Integer)
+        Dim StatusList As New Dictionary(Of String, Integer)
+        Dim query As String = "SELECT * FROM  tblClassStatus;"
+        OpenConnection()
+        Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
+        Dim reader As OleDbDataReader = cmd.ExecuteReader()
+        While reader.Read()
+            StatusList.Add(reader("Status"), Integer.Parse(reader("ID")))
+        End While
+        reader.Close()
+        CloseConnection()
+        StatusList.Add("ទាំងអស់", 0) ' Add "All" option for filtering
+        Return StatusList
     End Function
     Public Function GetTeacherList() As Dictionary(Of String, String)
         Dim TeacherList As New Dictionary(Of String, String)

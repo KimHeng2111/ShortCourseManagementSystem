@@ -369,9 +369,10 @@ Partial Class CourseDialog
         '
         Me.Panel9.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Panel9.Controls.Add(Me.Label12)
-        Me.Panel9.Location = New System.Drawing.Point(0, 23)
+        Me.Panel9.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel9.Location = New System.Drawing.Point(0, 26)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(910, 37)
+        Me.Panel9.Size = New System.Drawing.Size(913, 37)
         Me.Panel9.TabIndex = 0
         '
         'Label12

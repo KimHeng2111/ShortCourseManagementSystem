@@ -191,6 +191,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dialog\ClassDetial.Designer.vb">
+      <DependentUpon>ClassDetial.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\ClassDetial.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Dialog\CourseDialog.Designer.vb">
       <DependentUpon>CourseDialog.vb</DependentUpon>
     </Compile>
@@ -286,6 +292,9 @@
     <Compile Include="ThemeColor.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Dialog\ClassDetial.resx">
+      <DependentUpon>ClassDetial.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialog\CourseDialog.resx">
       <DependentUpon>CourseDialog.vb</DependentUpon>
     </EmbeddedResource>
