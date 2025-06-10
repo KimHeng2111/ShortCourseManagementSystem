@@ -88,7 +88,7 @@ Partial Class CourseDialog
         Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClear.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClear.ForeColor = System.Drawing.Color.White
-        Me.btnClear.Location = New System.Drawing.Point(511, 177)
+        Me.btnClear.Location = New System.Drawing.Point(514, 177)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(170, 41)
         Me.btnClear.TabIndex = 15
@@ -102,7 +102,7 @@ Partial Class CourseDialog
         Me.btmCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btmCreate.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btmCreate.ForeColor = System.Drawing.Color.White
-        Me.btmCreate.Location = New System.Drawing.Point(231, 177)
+        Me.btmCreate.Location = New System.Drawing.Point(234, 177)
         Me.btmCreate.Name = "btmCreate"
         Me.btmCreate.Size = New System.Drawing.Size(170, 41)
         Me.btmCreate.TabIndex = 14
@@ -114,7 +114,7 @@ Partial Class CourseDialog
         Me.Panel4.Controls.Add(Me.Label10)
         Me.Panel4.Controls.Add(Me.Label9)
         Me.Panel4.Controls.Add(Me.txtDes)
-        Me.Panel4.Location = New System.Drawing.Point(23, 105)
+        Me.Panel4.Location = New System.Drawing.Point(26, 105)
         Me.Panel4.Margin = New System.Windows.Forms.Padding(3, 30, 35, 3)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(559, 51)
@@ -169,7 +169,7 @@ Partial Class CourseDialog
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.Label2)
         Me.Panel2.Controls.Add(Me.txtCourseName)
-        Me.Panel2.Location = New System.Drawing.Point(23, 18)
+        Me.Panel2.Location = New System.Drawing.Point(26, 18)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 3, 35, 3)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(559, 54)
@@ -224,7 +224,7 @@ Partial Class CourseDialog
         Me.Panel3.Controls.Add(Me.txtDuration)
         Me.Panel3.Controls.Add(Me.Label4)
         Me.Panel3.Controls.Add(Me.Label5)
-        Me.Panel3.Location = New System.Drawing.Point(629, 18)
+        Me.Panel3.Location = New System.Drawing.Point(632, 18)
         Me.Panel3.Margin = New System.Windows.Forms.Padding(30, 3, 35, 3)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(281, 54)
@@ -288,7 +288,7 @@ Partial Class CourseDialog
         Me.Panel6.Controls.Add(Me.txtBasePrice)
         Me.Panel6.Controls.Add(Me.Label6)
         Me.Panel6.Controls.Add(Me.Label7)
-        Me.Panel6.Location = New System.Drawing.Point(629, 105)
+        Me.Panel6.Location = New System.Drawing.Point(632, 105)
         Me.Panel6.Margin = New System.Windows.Forms.Padding(30, 30, 35, 3)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(281, 51)

@@ -64,9 +64,9 @@ Partial Class MainForm
         Me.panelMenu.Controls.Add(Me.btnDashboard)
         Me.panelMenu.Controls.Add(Me.panelMenuUpper)
         Me.panelMenu.Dock = System.Windows.Forms.DockStyle.Left
-        Me.panelMenu.Location = New System.Drawing.Point(0, 24)
+        Me.panelMenu.Location = New System.Drawing.Point(0, 33)
         Me.panelMenu.Name = "panelMenu"
-        Me.panelMenu.Size = New System.Drawing.Size(200, 1056)
+        Me.panelMenu.Size = New System.Drawing.Size(200, 1047)
         Me.panelMenu.TabIndex = 0
         '
         'btnReport
@@ -182,7 +182,7 @@ Partial Class MainForm
         Me.btnExit.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.btnExit.IconSize = 32
         Me.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnExit.Location = New System.Drawing.Point(0, 996)
+        Me.btnExit.Location = New System.Drawing.Point(0, 987)
         Me.btnExit.Margin = New System.Windows.Forms.Padding(3, 10, 3, 3)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
@@ -332,11 +332,11 @@ Partial Class MainForm
         '
         'panelTitlebar
         '
-        Me.panelTitlebar.BackColor = System.Drawing.Color.FromArgb(CType(CType(48, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(167, Byte), Integer))
+        Me.panelTitlebar.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.panelTitlebar.Controls.Add(Me.lbFormTitle)
         Me.panelTitlebar.Controls.Add(Me.IconCurrentForm)
         Me.panelTitlebar.Dock = System.Windows.Forms.DockStyle.Top
-        Me.panelTitlebar.Location = New System.Drawing.Point(200, 24)
+        Me.panelTitlebar.Location = New System.Drawing.Point(200, 33)
         Me.panelTitlebar.Name = "panelTitlebar"
         Me.panelTitlebar.Size = New System.Drawing.Size(1720, 38)
         Me.panelTitlebar.TabIndex = 1
@@ -346,22 +346,22 @@ Partial Class MainForm
         Me.panelChildForm.BackColor = System.Drawing.SystemColors.MenuBar
         Me.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill
         Me.panelChildForm.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.panelChildForm.Location = New System.Drawing.Point(200, 62)
+        Me.panelChildForm.Location = New System.Drawing.Point(200, 71)
         Me.panelChildForm.Name = "panelChildForm"
-        Me.panelChildForm.Size = New System.Drawing.Size(1720, 1018)
+        Me.panelChildForm.Size = New System.Drawing.Size(1720, 1009)
         Me.panelChildForm.TabIndex = 2
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.btnMin)
         Me.Panel1.Controls.Add(Me.btnClose)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
-        Me.Panel1.Size = New System.Drawing.Size(1920, 24)
+        Me.Panel1.Padding = New System.Windows.Forms.Padding(15, 5, 0, 0)
+        Me.Panel1.Size = New System.Drawing.Size(1920, 33)
         Me.Panel1.TabIndex = 3
         '
         'Label1
@@ -371,7 +371,7 @@ Partial Class MainForm
         Me.Label1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(15, 0)
+        Me.Label1.Location = New System.Drawing.Point(15, 5)
         Me.Label1.Margin = New System.Windows.Forms.Padding(3, 0, 0, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(234, 19)
@@ -391,9 +391,9 @@ Partial Class MainForm
         Me.btnMin.IconColor = System.Drawing.Color.Black
         Me.btnMin.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.btnMin.IconSize = 30
-        Me.btnMin.Location = New System.Drawing.Point(1860, 0)
+        Me.btnMin.Location = New System.Drawing.Point(1860, 5)
         Me.btnMin.Name = "btnMin"
-        Me.btnMin.Size = New System.Drawing.Size(30, 24)
+        Me.btnMin.Size = New System.Drawing.Size(30, 28)
         Me.btnMin.TabIndex = 12
         Me.btnMin.Text = "-"
         Me.btnMin.UseVisualStyleBackColor = False
@@ -411,9 +411,9 @@ Partial Class MainForm
         Me.btnClose.IconColor = System.Drawing.Color.Black
         Me.btnClose.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.btnClose.IconSize = 30
-        Me.btnClose.Location = New System.Drawing.Point(1890, 0)
+        Me.btnClose.Location = New System.Drawing.Point(1890, 5)
         Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(30, 24)
+        Me.btnClose.Size = New System.Drawing.Size(30, 28)
         Me.btnClose.TabIndex = 11
         Me.btnClose.Text = "X"
         Me.btnClose.UseVisualStyleBackColor = False

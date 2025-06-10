@@ -6,8 +6,10 @@ Public Class ManageClass
     Public course As Course
     Public teacher As Teacher
     Public startDate As Date
+    Public endDate As Date
     Public roomID As Integer
     Public scheduleID As Integer
+    Public StatusID As Integer
     Public Sub New()
         ' Constructor for ManageClass class
         MyBase.New()
@@ -32,8 +34,10 @@ Public Class ManageClass
             course.GetCourseByID(reader("CourseID").ToString())
             teacher.GetTeacherByID(reader("TeacherID").ToString())
             startDate = Convert.ToDateTime(reader("StartDate"))
-            roomID = Convert.ToInt32(reader("Room"))
+            roomID = Convert.ToInt32(reader("RoomID"))
             scheduleID = Convert.ToInt32(reader("ScheduleID"))
+            endDate = If(IsDBNull(reader("EndDate")), Date.Now(), Convert.ToDateTime(reader("EndDate")))
+            StatusID = Convert.ToInt32(reader("StatusID"))
         End If
         reader.Close()
         CloseConnection()
@@ -121,7 +125,6 @@ FROM tblRoom;"
         End While
         reader.Close()
         CloseConnection()
-        StatusList.Add("ទាំងអស់", 0) ' Add "All" option for filtering
         Return StatusList
     End Function
     Public Function GetTeacherList() As Dictionary(Of String, String)
@@ -149,6 +152,47 @@ FROM tblRoom;"
         reader.Close()
         CloseConnection()
         Return CourseList
-
+    End Function
+    Function GetRoomByID() As String
+        Dim query As String = "SELECT Room FROM tblRoom WHERE ID = @RoomID;"
+        Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
+        cmd.Parameters.AddWithValue("@RoomID", roomID)
+        OpenConnection()
+        Dim roomName As String = String.Empty
+        Dim reader As OleDbDataReader = cmd.ExecuteReader()
+        If reader.Read() Then
+            roomName = reader("Room").ToString()
+        End If
+        reader.Close()
+        CloseConnection()
+        Return roomName
+    End Function
+    Function GetScheduleByID() As String
+        Dim query As String = "SELECT Schedule FROM tblSchedule WHERE ID = @ScheduleID;"
+        Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
+        cmd.Parameters.AddWithValue("@ScheduleID", scheduleID)
+        OpenConnection()
+        Dim scheduleName As String = String.Empty
+        Dim reader As OleDbDataReader = cmd.ExecuteReader()
+        If reader.Read() Then
+            scheduleName = reader("Schedule").ToString()
+        End If
+        reader.Close()
+        CloseConnection()
+        Return scheduleName
+    End Function
+    Function GetStatusByID() As String
+        Dim query As String = "SELECT Status FROM tblClassStatus WHERE ID = @StatusID;"
+        Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
+        cmd.Parameters.AddWithValue("@StatusID", StatusID)
+        OpenConnection()
+        Dim statusName As String = String.Empty
+        Dim reader As OleDbDataReader = cmd.ExecuteReader()
+        If reader.Read() Then
+            statusName = reader("Status").ToString()
+        End If
+        reader.Close()
+        CloseConnection()
+        Return statusName
     End Function
 End Class

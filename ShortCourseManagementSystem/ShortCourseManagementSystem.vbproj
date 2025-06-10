@@ -173,9 +173,6 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
     <Reference Include="WindowsBase" />
-    <Reference Include="WindowsFormsApp1">
-      <HintPath>..\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />

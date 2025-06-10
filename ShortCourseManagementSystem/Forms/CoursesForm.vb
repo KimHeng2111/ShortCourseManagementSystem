@@ -174,5 +174,4 @@ Public Class CoursesForm
         txtSearch.Texts = ""
         Display()
     End Sub
-
 End Class
