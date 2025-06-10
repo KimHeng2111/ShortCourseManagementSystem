@@ -15,9 +15,9 @@ Public Class ManageClass
         teacher = New Teacher()
     End Sub
     Public Function GetClassData() As DataTable
-        Dim query As String = "SELECT tblClass.ClassID, tblCourses.CourseName AS Course, tblTeacher.KhName AS Teacher, tblRoom.RoomID AS Room, tblSchedule.Schedule, tblClass.StartDate, (SELECT COUNT(*) FROM tblRegister WHERE tblRegister.ClassID = tblClass.ClassID) AS TotalStudents
-            FROM tblSchedule INNER JOIN (tblTeacher INNER JOIN (tblRoom INNER JOIN (tblCourses INNER JOIN (tblClassStatus INNER JOIN tblClass ON tblClassStatus.ID = tblClass.StatusID) ON tblCourses.ID = tblClass.CourseID) ON tblRoom.ID = tblClass.RoomID) ON tblTeacher.ID = tblClass.TeacherID) ON tblSchedule.ID = tblClass.ScheduleID
-            GROUP BY tblClass.ClassID, tblCourses.CourseName, tblTeacher.KhName, tblRoom.RoomID, tblSchedule.Schedule, tblClass.StartDate;"
+        Dim query As String = "SELECT tblClass.ClassID, tblCourses.CourseName AS Course, tblTeacher.KhName AS Teacher, tblRoom.Room AS Room, tblSchedule.Schedule, (SELECT COUNT(*) FROM tblRegister WHERE tblRegister.ClassID = tblClass.ClassID) AS TotalStudents, tblClassStatus.Status
+                                FROM tblTeacher INNER JOIN (tblSchedule INNER JOIN (tblRoom INNER JOIN (tblCourses INNER JOIN (tblClassStatus INNER JOIN tblClass ON tblClassStatus.ID = tblClass.StatusID) ON tblCourses.ID = tblClass.CourseID) ON tblRoom.ID = tblClass.RoomID) ON tblSchedule.ID = tblClass.ScheduleID) ON tblTeacher.ID = tblClass.TeacherID
+                                GROUP BY tblClass.ClassID, tblCourses.CourseName, tblTeacher.KhName, tblRoom.Room, tblSchedule.Schedule, tblClassStatus.Status;"
         Dim dt As DataTable = ExecuteQuery(query)
         Return dt
     End Function
@@ -32,7 +32,7 @@ Public Class ManageClass
             course.GetCourseByID(reader("CourseID").ToString())
             teacher.GetTeacherByID(reader("TeacherID").ToString())
             startDate = Convert.ToDateTime(reader("StartDate"))
-            roomID = Convert.ToInt32(reader("RoomID"))
+            roomID = Convert.ToInt32(reader("Room"))
             scheduleID = Convert.ToInt32(reader("ScheduleID"))
         End If
         reader.Close()
@@ -48,11 +48,12 @@ Public Class ManageClass
         cmd.Parameters.AddWithValue("@StartDate", startDate)
         cmd.Parameters.AddWithValue("@RoomID", roomID)
         cmd.Parameters.AddWithValue("@ScheduleID", scheduleID)
+        MessageBox.Show("ASDF")
         ExecuteNonQuery(cmd)
     End Sub
     Public Sub UpdateClass(classID As String, courseID As String, teacherID As String, startDate As String, roomID As Integer, scheduleID As Integer)
         Dim query As String = "UPDATE tblClass 
-                            SET CourseID = @CourseID, TeacherID = @TeacherID, StartDate = @StartDate, RoomID = @RoomID, ScheduleID = @ScheduleID 
+                            SET CourseID = @CourseID, TeacherID = @TeacherID, StartDate = @StartDate, Room = @RoomID, ScheduleID = @ScheduleID 
                             WHERE ClassID = @ClassID;"
         Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
         cmd.Parameters.AddWithValue("@CourseID", courseID)
@@ -98,26 +99,26 @@ Public Class ManageClass
     End Function
     Public Function GetRoomList() As Dictionary(Of String, Integer)
         Dim RoomList As New Dictionary(Of String, Integer)
-        Dim query As String = "SELECT tblRoom.RoomID, tblRoom.ID
+        Dim query As String = "SELECT tblRoom.Room, tblRoom.ID
 FROM tblRoom;"
         OpenConnection()
         Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
         Dim reader As OleDbDataReader = cmd.ExecuteReader()
         While reader.Read()
-            RoomList.Add(reader("RoomID"), Integer.Parse(reader("ID")))
+            RoomList.Add(reader("Room"), Integer.Parse(reader("ID")))
         End While
         reader.Close()
         CloseConnection()
         Return RoomList
     End Function
-    Public Function GetTeacherList() As Dictionary(Of String, Integer)
-        Dim TeacherList As New Dictionary(Of String, Integer)
-        Dim query As String = "SELECT tblTeacher.ID, tblTeacher.engName FROM tblTeacher;"
+    Public Function GetTeacherList() As Dictionary(Of String, String)
+        Dim TeacherList As New Dictionary(Of String, String)
+        Dim query As String = "SELECT tblTeacher.ID, tblTeacher.KhName FROM tblTeacher;"
         OpenConnection()
         Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
         Dim reader As OleDbDataReader = cmd.ExecuteReader()
         While reader.Read()
-            TeacherList.Add(reader("engName"), Integer.Parse(reader("ID")))
+            TeacherList.Add(reader("KhName"), reader("ID"))
         End While
         reader.Close()
         CloseConnection()

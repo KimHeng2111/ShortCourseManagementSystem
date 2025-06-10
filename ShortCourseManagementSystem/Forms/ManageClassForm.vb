@@ -1,48 +1,80 @@
-﻿Public Class ManageClassForm
+﻿Imports System.Data.OleDb
+
+Public Class ManageClassForm
     Dim manageClass As ManageClass = New ManageClass()
-    Public Sub New()
-        ' Constructor for ManageClassForm class
-        InitializeComponent()
-        display()
-        GetCbTime()
-        GetCbRoom()
-        GetCbTeacher()
-        GetcbCourse()
-
-    End Sub
-
-
-
-
-
-
-
-
+    Dim startup As Boolean = True
     'GetData From Class ManageClass
     Private Sub display()
         DataGridView2.DataSource = manageClass.GetClassData()
+        If DataGridView2.Columns.Count = 7 Then
+            DataGridView2.Columns(0).Width = 100
+            DataGridView2.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            DataGridView2.Columns(1).Width = 250
+            DataGridView2.Columns(1).HeaderText = "វគ្គសិក្សា"
+            DataGridView2.Columns(2).Width = 200
+            DataGridView2.Columns(2).HeaderText = "គ្រូបង្រៀន"
+            DataGridView2.Columns(3).Width = 150
+            DataGridView2.Columns(3).HeaderText = "បន្ទប់"
+            DataGridView2.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            DataGridView2.Columns(4).Width = 200
+            DataGridView2.Columns(4).HeaderText = "វេនសិក្សា"
+            DataGridView2.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            DataGridView2.Columns(5).Width = 150
+            DataGridView2.Columns(5).HeaderText = "សិស្សសរុប"
+            DataGridView2.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            DataGridView2.Columns(6).Width = 200
+            DataGridView2.Columns(6).HeaderText = "ស្ថានភាព"
+            DataGridView2.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+            For i As Integer = 0 To DataGridView2.Rows.Count - 1
+                If i Mod 2 = 1 Then
+                    DataGridView2.Rows(i).DefaultCellStyle.BackColor = Color.FromArgb(254, 254, 254) ' Alternate row color
+                Else
+                    DataGridView2.Rows(i).DefaultCellStyle.BackColor = Color.FromArgb(245, 250, 253)
+                End If
+            Next i
+        End If
+        DataGridView2.ClearSelection()
     End Sub
     Sub GetCbTime()
-        cbTime.DataSource = New BindingSource(manageClass.GetTimeList, Nothing)
+        Dim timeList = manageClass.GetTimeList()
+        timeList.Add("ជ្រើសរើសវេនសិក្សា", -1)
+        cbTime.DataSource = New BindingSource(timeList, Nothing)
         cbTime.DisplayMember = "Key"
         cbTime.ValueMember = "Value"
+        cbTime.SelectedIndex = cbTime.Items.Count - 1
     End Sub
     Sub GetCbRoom()
-        cbRoom.DataSource = New BindingSource(manageClass.GetRoomList(), Nothing)
+        Dim RoomList = manageClass.GetRoomList()
+        RoomList.Add("ជ្រើសរើសបន្ទប់រៀន", -1)
+        cbRoom.DataSource = New BindingSource(RoomList, Nothing)
         cbRoom.DisplayMember = "Key"
         cbRoom.ValueMember = "Value"
+        cbRoom.SelectedIndex = cbRoom.Items.Count - 1
     End Sub
     Sub GetCbTeacher()
-        cbTeacher.DataSource = New BindingSource(manageClass.GetTeacherList(), Nothing)
+        Dim teacherList = manageClass.GetTeacherList()
+        teacherList.Add("ជ្រើសរើសគ្រូបង្រៀន", "-1")
+        cbTeacher.DataSource = New BindingSource(teacherList, Nothing)
         cbTeacher.DisplayMember = "Key"
         cbTeacher.ValueMember = "Value"
+        cbTeacher.SelectedIndex = cbTeacher.Items.Count - 1
     End Sub
     Sub GetcbCourse()
-        cbCourse.DataSource = New BindingSource(manageClass.GetCourseList(), Nothing)
+        Dim courseList = manageClass.GetCourseList()
+        courseList.Add("ជ្រើសរើសវគ្គសិក្សា", -1)
+        cbCourse.DataSource = New BindingSource(courseList, Nothing)
         cbCourse.DisplayMember = "Key"
         cbCourse.ValueMember = "Value"
     End Sub
-
+    Sub GetcbSearch()
+        Dim teacherList = manageClass.GetTeacherList()
+        teacherList.Add("គ្រប់គ្រូទាំងអស់", "%")
+        cbSearchTeacher.DataSource = New BindingSource(teacherList, Nothing)
+        cbSearchTeacher.DisplayMember = "Key"
+        cbSearchTeacher.ValueMember = "Value"
+        cbSearchTeacher.SelectedIndex = cbSearchTeacher.Items.Count - 1
+    End Sub
     Private Sub btnNewClass_Click(sender As Object, e As EventArgs) Handles btnNewClass.Click
         If CheckField() Then
             manageClass.classID = txtClassID.Text.Trim()
@@ -88,29 +120,96 @@
         display()
     End Sub
 
-    Private Sub DataGridView2_Click(sender As Object, e As EventArgs) Handles DataGridView2.Click
-        Dim id As String = DataGridView2.CurrentRow.Cells(0).Value.ToString()
-        manageClass.GetClassByID(id)
-        txtClassID.Text = manageClass.classID
-        cbCourse.SelectedIndex = cbCourse.FindStringExact(manageClass.course.courseName)
-        cbTeacher.SelectedIndex = cbTeacher.FindStringExact(manageClass.teacher.EngName)
-        dtpStartDate.Value = manageClass.startDate
-        For i As Integer = 0 To cbTime.Items.Count - 1
-            If cbTime.Items(i).Value = manageClass.scheduleID Then
-                cbTime.SelectedIndex = i
-                Exit For
-            End If
-        Next i
-        For i As Integer = 0 To cbRoom.Items.Count - 1
-            If cbRoom.Items(i).Value = manageClass.roomID Then
-                cbRoom.SelectedIndex = i
-                Exit For
-            End If
-        Next i
+    Private Sub Panel9_Paint(sender As Object, e As PaintEventArgs) Handles Panel9.Paint
+        display()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        cbSearchTeacher.SelectedIndex = cbSearchTeacher.Items.Count - 1
+        txtSearch.Texts = ""
+    End Sub
+
+    'Insert DATA To DataGridView
+    Private Sub InsertData(data As DataTable)
+        DataGridView2.DataSource = data
+        If DataGridView2.Columns.Count = 7 Then
+            DataGridView2.Columns(0).Width = 100
+            DataGridView2.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            DataGridView2.Columns(1).Width = 250
+            DataGridView2.Columns(1).HeaderText = "វគ្គសិក្សា"
+            DataGridView2.Columns(2).Width = 200
+            DataGridView2.Columns(2).HeaderText = "គ្រូបង្រៀន"
+            DataGridView2.Columns(3).Width = 150
+            DataGridView2.Columns(3).HeaderText = "បន្ទប់"
+            DataGridView2.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            DataGridView2.Columns(4).Width = 200
+            DataGridView2.Columns(4).HeaderText = "វេនសិក្សា"
+            DataGridView2.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            DataGridView2.Columns(5).Width = 150
+            DataGridView2.Columns(5).HeaderText = "សិស្សសរុប"
+            DataGridView2.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            DataGridView2.Columns(6).Width = 200
+            DataGridView2.Columns(6).HeaderText = "ស្ថានភាព"
+            DataGridView2.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+            For i As Integer = 0 To DataGridView2.Rows.Count - 1
+                If i Mod 2 = 1 Then
+                    DataGridView2.Rows(i).DefaultCellStyle.BackColor = Color.FromArgb(254, 254, 254) ' Alternate row color
+                Else
+                    DataGridView2.Rows(i).DefaultCellStyle.BackColor = Color.FromArgb(245, 250, 253)
+                End If
+            Next i
+        End If
+        DataGridView2.ClearSelection()
+    End Sub
+
+    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
+        GetCbTime()
+        GetCbRoom()
+        GetCbTeacher()
+        GetcbCourse()
+        GetcbSearch()
+    End Sub
+
+    Private Sub txtSearch__TextChanged(sender As Object, e As EventArgs) Handles txtSearch._TextChanged
+        If startup Then
+
+        Else
+            Dim textSearch = If(txtSearch.Texts.Trim() = "", "%", txtSearch.Texts.Trim()) + "%"
+            Dim teacherSearch = cbSearchTeacher.SelectedValue
+            Dim query As String = " SELECT tblClass.ClassID, tblCourses.CourseName AS Course, tblTeacher.KhName AS Teacher, tblRoom.Room AS Room, tblSchedule.Schedule, (SELECT COUNT(*) FROM tblRegister WHERE tblRegister.ClassID = tblClass.ClassID) AS TotalStudents, tblClassStatus.Status
+                            FROM tblTeacher INNER JOIN (tblSchedule INNER JOIN (tblRoom INNER JOIN (tblCourses INNER JOIN (tblClassStatus INNER JOIN tblClass ON tblClassStatus.ID = tblClass.StatusID) ON tblCourses.ID = tblClass.CourseID) ON tblRoom.ID = tblClass.RoomID) ON tblSchedule.ID = tblClass.ScheduleID) ON tblTeacher.ID = tblClass.TeacherID
+                            GROUP BY tblClass.ClassID, tblCourses.CourseName, tblTeacher.KhName, tblRoom.Room, tblSchedule.Schedule, tblClassStatus.Status, tblTeacher.ID 
+                            HAVING ((((tblClass.ClassID) Like @Classid) OR ((tblCourses.CourseName) Like @Classid)) AND ((tblTeacher.ID) Like @Teacher));"
+            Dim cmd As New OleDbCommand(query, manageClass.GetConnection())
+            cmd.Parameters.AddWithValue("@Classid", textSearch)
+            cmd.Parameters.AddWithValue("@Teacher", teacherSearch)
+            InsertData(manageClass.ExecuteQuery(cmd))
+        End If
+    End Sub
+
+    Private Sub cbSearchTeacher_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbSearchTeacher.SelectedIndexChanged
+        If Not IsNumeric(cbSearchTeacher.SelectedValue) And cbSearchTeacher.SelectedValue.ToString() <> "%" Then
+            Return
+        Else
+            Dim textSearch = If(txtSearch.Texts.Trim() = "", "%", txtSearch.Texts.Trim()) + "%"
+            Dim teacherSearch = cbSearchTeacher.SelectedValue
+            Dim query As String = " SELECT tblClass.ClassID, tblCourses.CourseName AS Course, tblTeacher.KhName AS Teacher, tblRoom.Room AS Room, tblSchedule.Schedule, (SELECT COUNT(*) FROM tblRegister WHERE tblRegister.ClassID = tblClass.ClassID) AS TotalStudents, tblClassStatus.Status
+                            FROM tblTeacher INNER JOIN (tblSchedule INNER JOIN (tblRoom INNER JOIN (tblCourses INNER JOIN (tblClassStatus INNER JOIN tblClass ON tblClassStatus.ID = tblClass.StatusID) ON tblCourses.ID = tblClass.CourseID) ON tblRoom.ID = tblClass.RoomID) ON tblSchedule.ID = tblClass.ScheduleID) ON tblTeacher.ID = tblClass.TeacherID
+                            GROUP BY tblClass.ClassID, tblCourses.CourseName, tblTeacher.KhName, tblRoom.Room, tblSchedule.Schedule, tblClassStatus.Status, tblTeacher.ID 
+                            HAVING ((((tblClass.ClassID) Like @Classid) OR ((tblCourses.CourseName) Like @Classid)) AND ((tblTeacher.ID) Like @Teacher));"
+            Dim cmd As New OleDbCommand(query, manageClass.GetConnection())
+            cmd.Parameters.AddWithValue("@Classid", textSearch)
+            cmd.Parameters.AddWithValue("@Teacher", teacherSearch)
+            InsertData(manageClass.ExecuteQuery(cmd))
+        End If
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
     End Sub
 
-    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
-
+    Private Sub ManageClassForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        startup = False
     End Sub
 End Class

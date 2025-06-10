@@ -224,10 +224,10 @@ Partial Class CourseDialog
         Me.Panel3.Controls.Add(Me.txtDuration)
         Me.Panel3.Controls.Add(Me.Label4)
         Me.Panel3.Controls.Add(Me.Label5)
-        Me.Panel3.Location = New System.Drawing.Point(678, 18)
+        Me.Panel3.Location = New System.Drawing.Point(629, 18)
         Me.Panel3.Margin = New System.Windows.Forms.Padding(30, 3, 35, 3)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(232, 54)
+        Me.Panel3.Size = New System.Drawing.Size(281, 54)
         Me.Panel3.TabIndex = 11
         '
         'Label3
@@ -258,7 +258,7 @@ Partial Class CourseDialog
         Me.txtDuration.PasswordChar = False
         Me.txtDuration.PlaceholderColor = System.Drawing.Color.DarkGray
         Me.txtDuration.PlaceholderText = ""
-        Me.txtDuration.Size = New System.Drawing.Size(100, 39)
+        Me.txtDuration.Size = New System.Drawing.Size(137, 39)
         Me.txtDuration.TabIndex = 17
         Me.txtDuration.Texts = ""
         Me.txtDuration.UnderlinedStyle = False
@@ -276,7 +276,7 @@ Partial Class CourseDialog
         '
         Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(183, 15)
+        Me.Label5.Location = New System.Drawing.Point(232, 15)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(50, 24)
         Me.Label5.TabIndex = 5
@@ -288,10 +288,10 @@ Partial Class CourseDialog
         Me.Panel6.Controls.Add(Me.txtBasePrice)
         Me.Panel6.Controls.Add(Me.Label6)
         Me.Panel6.Controls.Add(Me.Label7)
-        Me.Panel6.Location = New System.Drawing.Point(678, 105)
+        Me.Panel6.Location = New System.Drawing.Point(629, 105)
         Me.Panel6.Margin = New System.Windows.Forms.Padding(30, 30, 35, 3)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(232, 51)
+        Me.Panel6.Size = New System.Drawing.Size(281, 51)
         Me.Panel6.TabIndex = 12
         '
         'Label8
@@ -322,7 +322,7 @@ Partial Class CourseDialog
         Me.txtBasePrice.PasswordChar = False
         Me.txtBasePrice.PlaceholderColor = System.Drawing.Color.DarkGray
         Me.txtBasePrice.PlaceholderText = ""
-        Me.txtBasePrice.Size = New System.Drawing.Size(100, 39)
+        Me.txtBasePrice.Size = New System.Drawing.Size(137, 39)
         Me.txtBasePrice.TabIndex = 18
         Me.txtBasePrice.Texts = ""
         Me.txtBasePrice.UnderlinedStyle = False
@@ -340,7 +340,7 @@ Partial Class CourseDialog
         '
         Me.Label7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(195, 13)
+        Me.Label7.Location = New System.Drawing.Point(244, 13)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(31, 24)
         Me.Label7.TabIndex = 5
@@ -451,6 +451,7 @@ Partial Class CourseDialog
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 24.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(223, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(943, 759)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Panel1)
