@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class CourseDialog
+Partial Class CourseDetail
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -25,7 +25,7 @@ Partial Class CourseDialog
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CourseDialog))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CourseDetail))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnClear = New System.Windows.Forms.Button()
         Me.btmCreate = New System.Windows.Forms.Button()
@@ -224,16 +224,16 @@ Partial Class CourseDialog
         Me.Panel3.Controls.Add(Me.txtDuration)
         Me.Panel3.Controls.Add(Me.Label4)
         Me.Panel3.Controls.Add(Me.Label5)
-        Me.Panel3.Location = New System.Drawing.Point(632, 18)
+        Me.Panel3.Location = New System.Drawing.Point(615, 18)
         Me.Panel3.Margin = New System.Windows.Forms.Padding(30, 3, 35, 3)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(281, 54)
+        Me.Panel3.Size = New System.Drawing.Size(298, 54)
         Me.Panel3.TabIndex = 11
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(71, 15)
+        Me.Label3.Location = New System.Drawing.Point(68, 15)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(17, 24)
         Me.Label3.TabIndex = 18
@@ -258,7 +258,7 @@ Partial Class CourseDialog
         Me.txtDuration.PasswordChar = False
         Me.txtDuration.PlaceholderColor = System.Drawing.Color.DarkGray
         Me.txtDuration.PlaceholderText = ""
-        Me.txtDuration.Size = New System.Drawing.Size(137, 39)
+        Me.txtDuration.Size = New System.Drawing.Size(154, 39)
         Me.txtDuration.TabIndex = 17
         Me.txtDuration.Texts = ""
         Me.txtDuration.UnderlinedStyle = False
@@ -276,7 +276,7 @@ Partial Class CourseDialog
         '
         Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(232, 15)
+        Me.Label5.Location = New System.Drawing.Point(245, 15)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(50, 24)
         Me.Label5.TabIndex = 5
@@ -288,16 +288,16 @@ Partial Class CourseDialog
         Me.Panel6.Controls.Add(Me.txtBasePrice)
         Me.Panel6.Controls.Add(Me.Label6)
         Me.Panel6.Controls.Add(Me.Label7)
-        Me.Panel6.Location = New System.Drawing.Point(632, 105)
+        Me.Panel6.Location = New System.Drawing.Point(614, 105)
         Me.Panel6.Margin = New System.Windows.Forms.Padding(30, 30, 35, 3)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(281, 51)
+        Me.Panel6.Size = New System.Drawing.Size(299, 51)
         Me.Panel6.TabIndex = 12
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(49, 13)
+        Me.Label8.Location = New System.Drawing.Point(67, 13)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(17, 24)
         Me.Label8.TabIndex = 16
@@ -322,7 +322,7 @@ Partial Class CourseDialog
         Me.txtBasePrice.PasswordChar = False
         Me.txtBasePrice.PlaceholderColor = System.Drawing.Color.DarkGray
         Me.txtBasePrice.PlaceholderText = ""
-        Me.txtBasePrice.Size = New System.Drawing.Size(137, 39)
+        Me.txtBasePrice.Size = New System.Drawing.Size(155, 39)
         Me.txtBasePrice.TabIndex = 18
         Me.txtBasePrice.Texts = ""
         Me.txtBasePrice.UnderlinedStyle = False
@@ -340,7 +340,7 @@ Partial Class CourseDialog
         '
         Me.Label7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(244, 13)
+        Me.Label7.Location = New System.Drawing.Point(262, 13)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(31, 24)
         Me.Label7.TabIndex = 5
@@ -448,7 +448,7 @@ Partial Class CourseDialog
         Me.Label11.TabIndex = 0
         Me.Label11.Text = "ព័ត៌មានវគ្គសិក្សាលម្ពិត"
         '
-        'CourseDialog
+        'StudentDetail
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 24.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -458,10 +458,12 @@ Partial Class CourseDialog
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel7)
         Me.Font = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
-        Me.Name = "CourseDialog"
+        Me.MaximumSize = New System.Drawing.Size(959, 798)
+        Me.MinimumSize = New System.Drawing.Size(959, 798)
+        Me.Name = "StudentDetail"
         Me.Padding = New System.Windows.Forms.Padding(15)
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "   វគ្គសិក្សា"

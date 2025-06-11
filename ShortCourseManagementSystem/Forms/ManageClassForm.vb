@@ -328,9 +328,6 @@ Public Class ManageClassForm
         If e.Button = MouseButtons.Right Then
             Dim hit As DataGridView.HitTestInfo = DataGridView1.HitTest(e.X, e.Y)
             If hit.RowIndex >= 0 Then
-                'DataGridView1.Rows(hit.RowIndex).Selected = True
-                'MsgBox("Selected Row: " & hit.RowIndex.ToString())
-                'Dim ClassID As String = DataGridView1.CurrentRow.Cells(0).Value.ToString()
                 Dim ClassID As String = DataGridView1.Rows(hit.RowIndex).Cells(0).Value.ToString()
                 manageClass.GetClassByID(ClassID)
                 menu.Show(DataGridView1, e.Location)
@@ -340,13 +337,14 @@ Public Class ManageClassForm
     End Sub
 
     Private Sub DeleteCourse()
-        If DialogResult.Yes = MessageBox.Show("តើអ្នកពិតជាចង់លុបវគ្គសិក្សានេះទេ?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) Then
+        If DialogResult.Yes = MessageBox.Show("តើអ្នកពិតជាចង់លុបថ្នាក់រៀននេះមែនទេ?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) Then
             manageClass.DeleteClass()
+            Display()
         End If
     End Sub
 
     Private Sub ShowDetails()
-        Dim classDetail As New ClassDetial(manageClass)
+        Dim classDetail As New ClassDetail(manageClass)
         classDetail.ShowDialog()
         classDetail.Dispose()
         Display()

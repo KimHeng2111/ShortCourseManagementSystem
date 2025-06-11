@@ -8,7 +8,6 @@ Public Class Student
     Public engName As String
     Public DateOfBirth As Date
     Public gender As String
-    Public email As String
     Public phone As String
     Public address As String
     Public picture As String
@@ -17,13 +16,13 @@ Public Class Student
         MyBase.New()
     End Sub
     Public Function GetStudentData() As DataTable
-        Dim query As String = "SELECT tblStudent.ID, tblStudent.KhName, tblStudent.EngName, tblStudent.Gender, tblStudent.DateOfBirth, tblStudent.Email, tblStudent.Phone, tblStudent.Address FROM tblStudent;"
+        Dim query As String = "SELECT tblStudent.ID, tblStudent.KhName, tblStudent.EngName, tblStudent.Gender, tblStudent.DateOfBirth, tblStudent.Address , tblStudent.Phone FROM tblStudent;"
         Dim dt As DataTable = ExecuteQuery(query)
         Return dt
     End Function
     Public Sub AddStudent(khName As String, EngName As String, Gender As String, DOB As Date, Address As String, Phone As String, Email As String, Picture As String)
-        Dim query As String = "INSERT INTO tblStudent(KhName , EngName ,Gender , DateOfBirth , Address , Email , Phone ,Picture ) 
-                                                     VALUES (@KhName, @EngName, @Gender, @DateOfBirth, @Address, @Email, @Phone, @Picture)"
+        Dim query As String = "INSERT INTO tblStudent(KhName , EngName ,Gender , DateOfBirth , Address , Phone ,Picture ) 
+                                                     VALUES (@KhName, @EngName, @Gender, @DateOfBirth, @Address,  @Phone, @Picture)"
         OpenConnection()
         Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
         cmd.Parameters.AddWithValue("@KhName", khName)
@@ -31,7 +30,6 @@ Public Class Student
         cmd.Parameters.AddWithValue("@Gender", Gender)
         cmd.Parameters.AddWithValue("@DateOfBirth", DOB)
         cmd.Parameters.AddWithValue("@Address", Address)
-        cmd.Parameters.AddWithValue("@Email", Email)
         cmd.Parameters.AddWithValue("@Phone", Phone)
         cmd.Parameters.AddWithValue("@Picter", Picture)
         cmd.ExecuteNonQuery()
@@ -39,11 +37,11 @@ Public Class Student
         Dim id As String = cmd.ExecuteScalar().ToString()
         GetStudentByID(Convert.ToInt32(id))
     End Sub
-    Public Sub UpdateStudent(studentID As Integer, khName As String, EngName As String, Gender As String, DOB As Date, Address As String, Phone As String, Email As String, Picture As String)
+    Public Sub UpdateStudent(studentID As Integer, khName As String, EngName As String, Gender As String, DOB As Date, Address As String, Phone As String, Picture As String)
         Dim query As String = "UPDATE tblStudent 
                            SET KhName = @KhName, EngName = @EngName, Gender = @Gender, DateOfBirth = @DateOfBirth, 
-                               Address = @Address, Email = @Email, Phone = @Phone, Picture = @Picture 
-                           WHERE StudentID = @StudentID"
+                               Address = @Address, Phone = @Phone, Picture = @Picture 
+                           WHERE ID = @StudentID"
 
         Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
         cmd.Parameters.AddWithValue("@KhName", khName)
@@ -51,13 +49,10 @@ Public Class Student
         cmd.Parameters.AddWithValue("@Gender", Gender)
         cmd.Parameters.AddWithValue("@DateOfBirth", DOB)
         cmd.Parameters.AddWithValue("@Address", Address)
-        cmd.Parameters.AddWithValue("@Email", Email)
         cmd.Parameters.AddWithValue("@Phone", Phone)
         cmd.Parameters.AddWithValue("@Picture", Picture)
         cmd.Parameters.AddWithValue("@StudentID", studentID) ' Ensure you reference the correct ID field
-
         ExecuteNonQuery(cmd)
-        MessageBox.Show("Student ID: " & studentID & " has been updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
     Public Sub DeleteStudent()
         Dim query As String = "DELETE FROM tblStudent WHERE ID = @ID;"
@@ -78,7 +73,6 @@ Public Class Student
             Me.engName = reader("EngName").ToString()
             Me.DateOfBirth = reader("DateOfBirth").ToString()
             Me.gender = reader("Gender").ToString()
-            Me.email = reader("Email").ToString()
             Me.phone = reader("Phone").ToString()
             Me.address = reader("Address").ToString()
             Me.picture = reader("Picture").ToString()

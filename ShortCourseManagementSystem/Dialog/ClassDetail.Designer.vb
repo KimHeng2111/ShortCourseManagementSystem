@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class ClassDetial
+Partial Class ClassDetail
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -30,6 +30,14 @@ Partial Class ClassDetial
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.panel3 = New System.Windows.Forms.Panel()
+        Me.dtpEndDate = New System.Windows.Forms.DateTimePicker()
+        Me.cbStatus = New System.Windows.Forms.ComboBox()
+        Me.btnUpdate = New System.Windows.Forms.Button()
+        Me.btnCancel = New System.Windows.Forms.Button()
+        Me.txtStatus = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.btnSave = New System.Windows.Forms.Button()
+        Me.txtEndDate = New System.Windows.Forms.TextBox()
         Me.txtStartDate = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.txtTotal = New System.Windows.Forms.TextBox()
@@ -47,14 +55,8 @@ Partial Class ClassDetial
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.txtEndDate = New System.Windows.Forms.TextBox()
-        Me.btnSave = New System.Windows.Forms.Button()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.txtStatus = New System.Windows.Forms.TextBox()
-        Me.btnCancel = New System.Windows.Forms.Button()
-        Me.btnUpdate = New System.Windows.Forms.Button()
-        Me.cbStatus = New System.Windows.Forms.ComboBox()
-        Me.dtpEndDate = New System.Windows.Forms.DateTimePicker()
+        Me.CachedInvoice1 = New StudentManagementSystem.CachedInvoice()
+        Me.CachedInvoice2 = New StudentManagementSystem.CachedInvoice()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -170,6 +172,100 @@ Partial Class ClassDetial
         Me.panel3.Name = "panel3"
         Me.panel3.Size = New System.Drawing.Size(949, 298)
         Me.panel3.TabIndex = 0
+        '
+        'dtpEndDate
+        '
+        Me.dtpEndDate.CustomFormat = "   dd/MM/yyyy"
+        Me.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtpEndDate.Location = New System.Drawing.Point(441, 183)
+        Me.dtpEndDate.Name = "dtpEndDate"
+        Me.dtpEndDate.ShowUpDown = True
+        Me.dtpEndDate.Size = New System.Drawing.Size(173, 31)
+        Me.dtpEndDate.TabIndex = 34
+        Me.dtpEndDate.Value = New Date(2025, 6, 10, 22, 44, 3, 0)
+        Me.dtpEndDate.Visible = False
+        '
+        'cbStatus
+        '
+        Me.cbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbStatus.FormattingEnabled = True
+        Me.cbStatus.Location = New System.Drawing.Point(770, 182)
+        Me.cbStatus.Name = "cbStatus"
+        Me.cbStatus.Size = New System.Drawing.Size(121, 32)
+        Me.cbStatus.TabIndex = 33
+        Me.cbStatus.Visible = False
+        '
+        'btnUpdate
+        '
+        Me.btnUpdate.BackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(222, Byte), Integer))
+        Me.btnUpdate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(254, Byte), Integer))
+        Me.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnUpdate.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUpdate.ForeColor = System.Drawing.Color.White
+        Me.btnUpdate.Location = New System.Drawing.Point(389, 241)
+        Me.btnUpdate.Name = "btnUpdate"
+        Me.btnUpdate.Size = New System.Drawing.Size(170, 41)
+        Me.btnUpdate.TabIndex = 32
+        Me.btnUpdate.Text = "ធ្វើបច្ចុប្បន្នភាព"
+        Me.btnUpdate.UseVisualStyleBackColor = False
+        '
+        'btnCancel
+        '
+        Me.btnCancel.BackColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(37, Byte), Integer))
+        Me.btnCancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(37, Byte), Integer))
+        Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCancel.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancel.ForeColor = System.Drawing.Color.White
+        Me.btnCancel.Location = New System.Drawing.Point(511, 241)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(170, 41)
+        Me.btnCancel.TabIndex = 31
+        Me.btnCancel.Text = "បោះបង់"
+        Me.btnCancel.UseVisualStyleBackColor = False
+        Me.btnCancel.Visible = False
+        '
+        'txtStatus
+        '
+        Me.txtStatus.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtStatus.Location = New System.Drawing.Point(771, 180)
+        Me.txtStatus.Name = "txtStatus"
+        Me.txtStatus.ReadOnly = True
+        Me.txtStatus.Size = New System.Drawing.Size(113, 35)
+        Me.txtStatus.TabIndex = 30
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(651, 184)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(103, 27)
+        Me.Label7.TabIndex = 29
+        Me.Label7.Text = "ស្ថានភាពថ្នាក់ ៖"
+        '
+        'btnSave
+        '
+        Me.btnSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(222, Byte), Integer))
+        Me.btnSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(254, Byte), Integer))
+        Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSave.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSave.ForeColor = System.Drawing.Color.White
+        Me.btnSave.Location = New System.Drawing.Point(265, 241)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.Size = New System.Drawing.Size(170, 41)
+        Me.btnSave.TabIndex = 28
+        Me.btnSave.Text = "រក្សាទុក"
+        Me.btnSave.UseVisualStyleBackColor = False
+        Me.btnSave.Visible = False
+        '
+        'txtEndDate
+        '
+        Me.txtEndDate.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtEndDate.Location = New System.Drawing.Point(442, 180)
+        Me.txtEndDate.Name = "txtEndDate"
+        Me.txtEndDate.ReadOnly = True
+        Me.txtEndDate.Size = New System.Drawing.Size(172, 35)
+        Me.txtEndDate.TabIndex = 27
         '
         'txtStartDate
         '
@@ -332,105 +428,11 @@ Partial Class ClassDetial
         Me.Label11.Location = New System.Drawing.Point(390, 16)
         Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(154, 24)
+        Me.Label11.Size = New System.Drawing.Size(150, 24)
         Me.Label11.TabIndex = 1
-        Me.Label11.Text = "ព័ត៌មានវគ្គសិក្សាលម្ពិត"
+        Me.Label11.Text = "ព័ត៌មានថ្នាក់រៀនលម្ពិត"
         '
-        'txtEndDate
-        '
-        Me.txtEndDate.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEndDate.Location = New System.Drawing.Point(442, 180)
-        Me.txtEndDate.Name = "txtEndDate"
-        Me.txtEndDate.ReadOnly = True
-        Me.txtEndDate.Size = New System.Drawing.Size(172, 35)
-        Me.txtEndDate.TabIndex = 27
-        '
-        'btnSave
-        '
-        Me.btnSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(222, Byte), Integer))
-        Me.btnSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(254, Byte), Integer))
-        Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSave.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSave.ForeColor = System.Drawing.Color.White
-        Me.btnSave.Location = New System.Drawing.Point(265, 241)
-        Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(170, 41)
-        Me.btnSave.TabIndex = 28
-        Me.btnSave.Text = "រក្សាទុក"
-        Me.btnSave.UseVisualStyleBackColor = False
-        Me.btnSave.Visible = False
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(651, 184)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(103, 27)
-        Me.Label7.TabIndex = 29
-        Me.Label7.Text = "ស្ថានភាពថ្នាក់ ៖"
-        '
-        'txtStatus
-        '
-        Me.txtStatus.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtStatus.Location = New System.Drawing.Point(771, 180)
-        Me.txtStatus.Name = "txtStatus"
-        Me.txtStatus.ReadOnly = True
-        Me.txtStatus.Size = New System.Drawing.Size(113, 35)
-        Me.txtStatus.TabIndex = 30
-        '
-        'btnCancel
-        '
-        Me.btnCancel.BackColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.btnCancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancel.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancel.ForeColor = System.Drawing.Color.White
-        Me.btnCancel.Location = New System.Drawing.Point(511, 241)
-        Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(170, 41)
-        Me.btnCancel.TabIndex = 31
-        Me.btnCancel.Text = "បោះបង់"
-        Me.btnCancel.UseVisualStyleBackColor = False
-        Me.btnCancel.Visible = False
-        '
-        'btnUpdate
-        '
-        Me.btnUpdate.BackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(222, Byte), Integer))
-        Me.btnUpdate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(254, Byte), Integer))
-        Me.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnUpdate.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUpdate.ForeColor = System.Drawing.Color.White
-        Me.btnUpdate.Location = New System.Drawing.Point(389, 241)
-        Me.btnUpdate.Name = "btnUpdate"
-        Me.btnUpdate.Size = New System.Drawing.Size(170, 41)
-        Me.btnUpdate.TabIndex = 32
-        Me.btnUpdate.Text = "ធ្វើបច្ចុប្បន្នភាព"
-        Me.btnUpdate.UseVisualStyleBackColor = False
-        '
-        'cbStatus
-        '
-        Me.cbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbStatus.FormattingEnabled = True
-        Me.cbStatus.Location = New System.Drawing.Point(770, 182)
-        Me.cbStatus.Name = "cbStatus"
-        Me.cbStatus.Size = New System.Drawing.Size(121, 32)
-        Me.cbStatus.TabIndex = 33
-        Me.cbStatus.Visible = False
-        '
-        'dtpEndDate
-        '
-        Me.dtpEndDate.CustomFormat = "   dd/MM/yyyy"
-        Me.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpEndDate.Location = New System.Drawing.Point(441, 183)
-        Me.dtpEndDate.Name = "dtpEndDate"
-        Me.dtpEndDate.ShowUpDown = True
-        Me.dtpEndDate.Size = New System.Drawing.Size(173, 31)
-        Me.dtpEndDate.TabIndex = 34
-        Me.dtpEndDate.Value = New Date(2025, 6, 10, 22, 44, 3, 0)
-        Me.dtpEndDate.Visible = False
-        '
-        'ClassDetial
+        'ClassDetail
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 24.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -439,7 +441,7 @@ Partial Class ClassDetial
         Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
-        Me.Name = "ClassDetial"
+        Me.Name = "ClassDetail"
         Me.Padding = New System.Windows.Forms.Padding(6, 9, 6, 9)
         Me.Text = "ClassDetial"
         Me.Panel1.ResumeLayout(False)
@@ -482,4 +484,6 @@ Partial Class ClassDetial
     Friend WithEvents btnUpdate As Button
     Friend WithEvents dtpEndDate As DateTimePicker
     Friend WithEvents cbStatus As ComboBox
+    Friend WithEvents CachedInvoice1 As CachedInvoice
+    Friend WithEvents CachedInvoice2 As CachedInvoice
 End Class

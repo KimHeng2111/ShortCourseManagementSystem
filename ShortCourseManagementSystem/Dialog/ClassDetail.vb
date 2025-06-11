@@ -1,5 +1,5 @@
 ﻿Imports System.Data.OleDb
-Public Class ClassDetial
+Public Class ClassDetail
     Dim classDetail As New ManageClass()
     Public Sub New(classDetail As ManageClass)
         ' This call is required by the designer.
@@ -21,7 +21,7 @@ Public Class ClassDetial
         txtStatus.Text = classDetail.GetStatusByID()
     End Sub
     Sub GetData()
-        Dim query As String = "SELECT tblStudent.ID, tblStudent.KhName, tblStudent.Email, tblStudent.Phone, tblStudent.Address, tblPaymentStatus.Status
+        Dim query As String = "SELECT tblStudent.ID, tblStudent.KhName, tblStudent.Phone, tblStudent.Address, tblPaymentStatus.Status
             FROM (tblPaymentStatus INNER JOIN tblPayment ON tblPaymentStatus.ID = tblPayment.StatusID) INNER JOIN (tblStudent INNER JOIN tblRegister ON tblStudent.ID = tblRegister.StudentID) ON tblPayment.ID = tblRegister.PaymentID
             WHERE (((tblRegister.ClassID)=" & classDetail.classID & "));"
         Dim dt As DataTable = classDetail.ExecuteQuery(query)

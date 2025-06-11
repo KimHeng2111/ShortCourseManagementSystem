@@ -82,11 +82,10 @@ Public Class Register
     'Insert DATA TO combobox
     Public Function GetCourseList() As Dictionary(Of String, Integer)
         Dim CourseList As New Dictionary(Of String, Integer)
-        Dim query As String = "SELECT tblCourses.CourseName, tblCourses.ID
+        Dim query As String = "SELECT DISTINCT tblCourses.CourseName, tblCourses.ID
                                 FROM tblCourses INNER JOIN tblClass ON tblCourses.ID = tblClass.CourseID
-                                GROUP BY tblCourses.CourseName, tblCourses.ID, tblClass.StatusID
-                                HAVING (((tblClass.StatusID)<=2))
-                                ORDER BY Var(tblClass.ClassID) ASC;"
+                                GROUP BY tblCourses.CourseName, tblCourses.ID, tblClass.StatusID, tblClass.ClassID
+                                HAVING (((tblClass.StatusID)<=2));"
         OpenConnection()
         Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
         Dim reader As OleDbDataReader = cmd.ExecuteReader()

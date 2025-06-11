@@ -1,4 +1,4 @@
-﻿Public Class CourseDialog
+﻿Public Class CourseDetail
     Dim course As New Course()
     Public Sub New(course As Course)
 
@@ -98,5 +98,4 @@ HAVING (((tblClass.CourseID)=[@courseID]));"
         End If
         Return True
     End Function
-
 End Class

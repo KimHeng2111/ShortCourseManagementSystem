@@ -90,7 +90,7 @@ Public Class CoursesForm
             Dim hit As DataGridView.HitTestInfo = DataGridView1.HitTest(e.X, e.Y)
             If hit.RowIndex >= 0 Then
                 DataGridView1.Rows(hit.RowIndex).Selected = True
-                Dim CoursID As String = DataGridView1.CurrentRow.Cells(0).Value.ToString()
+                Dim CoursID As String = DataGridView1.Rows(hit.RowIndex).Cells(0).Value.ToString()
                 course.GetCourseByID(CoursID)
                 menu.Show(DataGridView1, e.Location)
             End If
@@ -107,8 +107,8 @@ Public Class CoursesForm
     End Sub
 
     Private Sub ShowDetails()
-        Dim curseDialog As New CourseDialog(course)
-        curseDialog.ShowDialog()
+        Dim courseDialog As New CourseDetail(course)
+        courseDialog.ShowDialog()
         Display()
     End Sub
 
