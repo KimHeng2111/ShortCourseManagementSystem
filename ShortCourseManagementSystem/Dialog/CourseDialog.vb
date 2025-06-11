@@ -11,26 +11,32 @@
         Display()
     End Sub
     Sub Display()
-        Dim query As String = "SELECT tblClass.ClassID, tblTeacher.KhName, tblClass.ScheduleID, tblClass.RoomID, (SELECT COUNT(*) FROM tblRegister WHERE tblREgister.ClassID = tblClass.ClassID) AS TotalStudent, tblClassStatus.Status
-FROM tblTeacher INNER JOIN (tblCourses INNER JOIN (tblClassStatus INNER JOIN (tblClass INNER JOIN tblRegister ON tblClass.ClassID = tblRegister.ClassID) ON tblClassStatus.ID = tblClass.StatusID) ON tblCourses.ID = tblClass.CourseID) ON tblTeacher.ID = tblClass.TeacherID
-GROUP BY tblClass.ClassID, tblTeacher.KhName, tblClass.ScheduleID, tblClass.RoomID, tblClassStatus.Status, tblCourses.ID
-HAVING (((tblCourses.ID)=@curseID));"
+        Dim query As String = "SELECT tblClass.ClassID, tblTeacher.KhName AS Teacher, tblRoom.Room AS Room, tblSchedule.Schedule, (SELECT COUNT(*) FROM tblRegister WHERE tblRegister.ClassID = tblClass.ClassID) AS TotalStudents, tblClassStatus.Status, tblClass.CourseID
+FROM tblTeacher INNER JOIN (tblSchedule INNER JOIN (tblRoom INNER JOIN (tblClassStatus INNER JOIN tblClass ON tblClassStatus.ID = tblClass.StatusID) ON tblRoom.ID = tblClass.RoomID) ON tblSchedule.ID = tblClass.ScheduleID) ON tblTeacher.ID = tblClass.TeacherID
+GROUP BY tblClass.ClassID, tblTeacher.KhName, tblRoom.Room, tblSchedule.Schedule, tblClassStatus.Status, tblClass.CourseID
+HAVING (((tblClass.CourseID)=[@courseID]));"
         Dim cmd As New OleDb.OleDbCommand(query, course.GetConnection())
         cmd.Parameters.AddWithValue("@curseID", course.courseID)
         DataGridView1.DataSource = course.ExecuteQuery(cmd)
         DataGridView1.ColumnHeadersHeight = 40
         'DataGridView1.AllowUserToResizeColumns = True
         'Customize DataGridView columns
-        DataGridView1.Columns(0).Width = 100
+        DataGridView1.Columns(0).Width = 75
         DataGridView1.Columns(1).Width = 200
-        DataGridView1.Columns(2).Width = 200
-        DataGridView1.Columns(3).Width = 100
+        DataGridView1.Columns(2).Width = 100
+        DataGridView1.Columns(3).Width = 200
         DataGridView1.Columns(4).Width = 100
         DataGridView1.Columns(5).Width = 100
+        DataGridView1.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridView1.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridView1.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridView1.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridView1.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridView1.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGridView1.Columns(0).HeaderText = "ClassID"
         DataGridView1.Columns(1).HeaderText = "គ្រូបង្រៀន"
-        DataGridView1.Columns(2).HeaderText = "វេនសិក្សា"
-        DataGridView1.Columns(3).HeaderText = "បន្ទប់"
+        DataGridView1.Columns(2).HeaderText = "បន្ទប់"
+        DataGridView1.Columns(3).HeaderText = "វេនសិក្សា"
         DataGridView1.Columns(4).HeaderText = "សិស្សសរុប"
         DataGridView1.Columns(5).HeaderText = "ស្ថានភាព"
         For i As Integer = 0 To DataGridView1.Rows.Count - 1

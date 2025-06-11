@@ -78,12 +78,7 @@ C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagemen
 C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\obj\Debug\StudentManagementSystem.xml
 C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\obj\Debug\StudentManagementSystem.pdb
 C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\obj\Debug\StudentManagementSystem.Room.resources
-C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\bin\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll
-C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\bin\Debug\Bunifu.UI.WinForms.BunifuColorTransition.dll
-C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\bin\Debug\Bunifu.UI.WinForms.BunifuDatePicker.dll
-C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\bin\Debug\Bunifu.UI.WinForms.BunifuRadioButton.dll
-C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\bin\Debug\Bunifu.UI.WinForms.BunifuTextbox.dll
-C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\bin\Debug\Bunifu.UI.WinForms.BunifuUserControl.dll
 C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\obj\Debug\StudentManagementSystem.ClassDetial.resources
 C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\obj\Debug\StudentManagementSystem.Schedule.resources
 C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\obj\Debug\StudentManagementSystem.Schedule.km-KH.resources
+C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\bin\Debug\Guna.UI2.dll
