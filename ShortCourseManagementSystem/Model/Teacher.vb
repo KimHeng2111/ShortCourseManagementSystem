@@ -16,25 +16,25 @@ Public Class Teacher
     Public Picture As String
 
     Public Function GetTeacherData() As DataTable
-        Dim query As String = "SELECT tblTeacher.ID, tblTeacher.KhName AS KhmerName, tblTeacher.engName AS EnglishName, tblTeacher.DOB AS DateOfBirth, tblTeacher.POB AS PlaceOfBirth, tblTeacher.Email, tblTeacher.Phone, tblTeacher.IsActive AS Status FROM tblTeacher;"
+        Dim query As String = "SELECT tblTeacher.ID, tblTeacher.KhName AS KhmerName, tblTeacher.engName AS EnglishName, tblTeacher.DOB AS DateOfBirth, tblTeacher.POB AS PlaceOfBirth, tblTeacher.Email, tblTeacher.Phone FROM tblTeacher;"
         Dim dt As DataTable = ExecuteQuery(query)
         Return dt
     End Function
 
-    Public Sub AddTeacher(khName As String, EngName As String, Gender As String, DOB As Date, Address As String, Phone As String, Email As String, Picture As String)
+    Public Sub AddTeacher()
         Dim query As String = "INSERT INTO tblTeacher(khName , engName ,Gender , DOB , POB , Email , Phone ,Picture ,IsActive) 
                                                      VALUES (@KhName, @EngName, @Gender, @DoB, @Address, @Email, @Phone, @Picture, 1)"
         Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
-        cmd.Parameters.AddWithValue("@KhName", khName)
-        cmd.Parameters.AddWithValue("@EngName", EngName)
-        cmd.Parameters.AddWithValue("@Gender", Gender)
-        cmd.Parameters.AddWithValue("@DoB", DOB)
-        cmd.Parameters.AddWithValue("@Address", Address)
-        cmd.Parameters.AddWithValue("@Email", Email)
-        cmd.Parameters.AddWithValue("@Phone", Phone)
-        cmd.Parameters.AddWithValue("@Picter", Picture)
+        cmd.Parameters.AddWithValue("@KhName", Me.KhName)
+        cmd.Parameters.AddWithValue("@EngName", Me.EngName)
+        cmd.Parameters.AddWithValue("@Gender", Me.Gender)
+        cmd.Parameters.AddWithValue("@DoB", Me.DoB)
+        cmd.Parameters.AddWithValue("@Address", Me.Address)
+        cmd.Parameters.AddWithValue("@Email", Me.Email)
+        cmd.Parameters.AddWithValue("@Phone", Me.Phone)
+        cmd.Parameters.AddWithValue("@Picter", Me.Picture)
         ExecuteNonQuery(cmd)
-        MessageBox.Show("Teacher Name : " & khName & " has been added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        MessageBox.Show("Teacher Name : " & KhName & " has been added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
     Public Sub UpdateTeacher()
         Dim query As String = "UPDATE tblTeacher SET KhName = @KhName, engName = @engName, Gender = @Gender, DOB = @DOB, POB = @POB, Email = @Email, Phone = @Phone, Picture = @Picture WHERE ID = @ID"
@@ -106,5 +106,17 @@ Public Class Teacher
         reader.Close()
         CloseConnection()
     End Sub
-
+    Public Function GetAddressData() As ArrayList
+        Dim addressList As New ArrayList()
+        Dim query As String = "SELECT * FROM tblProvince;"
+        Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
+        OpenConnection()
+        Dim reader As OleDbDataReader = cmd.ExecuteReader()
+        While reader.Read()
+            addressList.Add(reader(0).ToString)
+        End While
+        reader.Close()
+        CloseConnection()
+        Return addressList
+    End Function
 End Class

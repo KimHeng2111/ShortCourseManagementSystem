@@ -66,7 +66,7 @@ Public Class ManageClassForm
         Dim CourseID As Integer = cbCourse.SelectedValue
         manageClass.startDate = dtpStartDate.Value
         If String.IsNullOrEmpty(ClassName) Then
-            MessageBox.Show("សូមបញ្ចូល", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("សូមបញ្ចូលClassID", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return False
         End If
         If TimeID <= 0 Or RoomID <= 0 Or TeacherID <= 0 Or CourseID <= 0 Then

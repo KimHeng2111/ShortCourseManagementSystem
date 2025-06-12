@@ -11,7 +11,7 @@
         Display()
     End Sub
     Sub Display()
-        Dim query As String = "SELECT tblClass.ClassID, tblTeacher.KhName AS Teacher, tblRoom.Room AS Room, tblSchedule.Schedule, (SELECT COUNT(*) FROM tblRegister WHERE tblRegister.ClassID = tblClass.ClassID) AS TotalStudents, tblClassStatus.Status, tblClass.CourseID
+        Dim query As String = "SELECT tblClass.ClassID, tblTeacher.KhName AS Teacher, tblRoom.Room AS Room, tblSchedule.Schedule, (SELECT COUNT(*) FROM tblRegister WHERE tblRegister.ClassID = tblClass.ClassID) AS TotalStudents, tblClassStatus.Status
 FROM tblTeacher INNER JOIN (tblSchedule INNER JOIN (tblRoom INNER JOIN (tblClassStatus INNER JOIN tblClass ON tblClassStatus.ID = tblClass.StatusID) ON tblRoom.ID = tblClass.RoomID) ON tblSchedule.ID = tblClass.ScheduleID) ON tblTeacher.ID = tblClass.TeacherID
 GROUP BY tblClass.ClassID, tblTeacher.KhName, tblRoom.Room, tblSchedule.Schedule, tblClassStatus.Status, tblClass.CourseID
 HAVING (((tblClass.CourseID)=[@courseID]));"

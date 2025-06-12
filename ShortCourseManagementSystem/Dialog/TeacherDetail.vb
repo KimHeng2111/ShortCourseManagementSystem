@@ -1,0 +1,65 @@
+﻿Public Class TeacherDetail
+    Dim teacher As Teacher = New Teacher()
+    Public Sub New(teacher As Teacher)
+        ' This call is required by the designer.
+        InitializeComponent()
+        ' Add any initialization after the InitializeComponent() call.
+        Me.teacher = teacher
+    End Sub
+    Private Sub btnClose_Click(sender As Object, e As EventArgs)
+        Me.Close()
+    End Sub
+    Private Sub FillData()
+        txtID.Text = teacher.TeacherID
+        txtkhName.Text = teacher.KhName
+        txtEngName.Text = teacher.EngName
+        txtAddress.Text = teacher.Address
+        txtDob.Text = teacher.DoB
+        txtPhone.Text = teacher.Phone
+        txtEmail.Text = teacher.Email
+        picTeacher.ImageLocation = teacher.Picture
+    End Sub
+    Sub Display()
+        Dim query As String = "SELECT tblClass.ClassID, tblCourses.CourseName, tblRoom.Room AS Room, tblSchedule.Schedule, (SELECT COUNT(*) FROM tblRegister WHERE tblRegister.ClassID = tblClass.ClassID) AS TotalStudents, tblClassStatus.Status
+                       FROM tblCourses INNER JOIN (tblTeacher INNER JOIN (tblSchedule INNER JOIN (tblRoom INNER JOIN (tblClassStatus INNER JOIN tblClass ON tblClassStatus.ID = tblClass.StatusID) ON tblRoom.ID = tblClass.RoomID) ON tblSchedule.ID = tblClass.ScheduleID) ON tblTeacher.ID = tblClass.TeacherID) ON tblCourses.ID = tblClass.CourseID
+                       GROUP BY tblClass.ClassID, tblCourses.CourseName, tblRoom.Room, tblSchedule.Schedule, tblClassStatus.Status, tblClass.TeacherID
+                       HAVING (((tblClass.TeacherID)=@teacherID));"
+        Dim cmd As New OleDb.OleDbCommand(query, teacher.GetConnection())
+        cmd.Parameters.AddWithValue("@teacherID", teacher.TeacherID)
+        DataGridView1.DataSource = teacher.ExecuteQuery(cmd)
+        Regonize()
+
+    End Sub
+
+    Private Sub Panel3_Paint(sender As Object, e As PaintEventArgs) Handles Panel3.Paint
+        FillData()
+        Display()
+    End Sub
+    Sub Regonize()
+        ' Customize DataGridView columns
+        DataGridView1.ColumnHeadersHeight = 40
+        DataGridView1.Columns(0).Width = 75
+        DataGridView1.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridView1.Columns(1).Width = 250
+        DataGridView1.Columns(1).HeaderText = "វគ្គសិក្សា"
+        DataGridView1.Columns(2).Width = 100
+        DataGridView1.Columns(2).HeaderText = "បន្ទប់"
+        DataGridView1.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridView1.Columns(3).Width = 200
+        DataGridView1.Columns(3).HeaderText = "វេនសិក្សា"
+        DataGridView1.Columns(4).Width = 100
+        DataGridView1.Columns(4).HeaderText = "សិស្សសរុប"
+        DataGridView1.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridView1.Columns(5).Width = 100
+        DataGridView1.Columns(5).HeaderText = "ស្ថានភាព"
+        DataGridView1.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        For i As Integer = 0 To DataGridView1.Rows.Count - 1
+            If i Mod 2 = 1 Then
+                DataGridView1.Rows(i).DefaultCellStyle.BackColor = Color.FromArgb(254, 254, 254) ' Alternate row color
+            Else
+                DataGridView1.Rows(i).DefaultCellStyle.BackColor = Color.FromArgb(245, 250, 253)
+            End If
+        Next i
+        DataGridView1.ClearSelection()
+    End Sub
+End Class

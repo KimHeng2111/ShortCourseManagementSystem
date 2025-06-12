@@ -41,7 +41,6 @@ Public Class StudentForm
             result = False
         End If
         Dim count As Integer = 0
-        Dim str As String = ""
         If student.khName <> khName Then
             count += 1
         End If
@@ -52,6 +51,12 @@ Public Class StudentForm
             count += 1
         End If
         If student.phone <> phone Then
+            count += 1
+        End If
+        If student.gender <> cbGender.Text Then
+            count += 1
+        End If
+        If student.DateOfBirth <> dtpDob.Value Then
             count += 1
         End If
         If count = 0 Then
@@ -102,9 +107,7 @@ Public Class StudentForm
         menu.Items.Add("លម្អិត", Nothing, AddressOf ShowDetails)
         menu.Items.Add("កែប្រែ", Nothing, AddressOf EditClass)
         menu.Items.Add("លុប", Nothing, AddressOf DeleteCourse)
-
         menu.Items(0).BackColor = Color.FromArgb(245, 250, 253)
-
         If e.Button = MouseButtons.Right Then
             Dim hit As DataGridView.HitTestInfo = DataGridView1.HitTest(e.X, e.Y)
             If hit.RowIndex >= 0 Then

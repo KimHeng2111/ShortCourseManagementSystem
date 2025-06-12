@@ -78,6 +78,15 @@ Public Class Student
             Me.picture = reader("Picture").ToString()
         End While
     End Sub
-
+    Public Function GetAddressData() As ArrayList
+        Dim addressList As New ArrayList()
+        Dim query As String = "SELECT * FROM tblProvince;"
+        Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
+        Dim reader As OleDbDataReader = cmd.ExecuteReader()
+        While reader.Read()
+            addressList.Add(reader(0).ToString)
+        End While
+        Return addressList
+    End Function
 
 End Class

@@ -206,6 +206,12 @@
     <Compile Include="Dialog\StudentDetail.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Dialog\TeacherDetail.Designer.vb">
+      <DependentUpon>TeacherDetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\TeacherDetail.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\CoursesForm.Designer.vb">
       <DependentUpon>CoursesForm.vb</DependentUpon>
     </Compile>
@@ -267,6 +273,7 @@
       <DependentUpon>MainForm.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Model\Address.vb" />
     <Compile Include="Model\ConnectionDB.vb" />
     <Compile Include="Model\Course.vb" />
     <Compile Include="Model\Getdata.vb" />
@@ -303,6 +310,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dialog\StudentDetail.resx">
       <DependentUpon>StudentDetail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\TeacherDetail.resx">
+      <DependentUpon>TeacherDetail.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CoursesForm.resx">
       <DependentUpon>CoursesForm.vb</DependentUpon>

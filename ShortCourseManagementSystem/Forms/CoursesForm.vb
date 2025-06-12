@@ -1,39 +1,12 @@
-﻿Imports System.Windows.Controls
+﻿Imports System.Windows
+Imports System.Windows.Controls
 
 Public Class CoursesForm
     Dim course As New Course()
-
+    Dim startup As Boolean = True
     Sub Display()
         DataGridView1.DataSource = course.GetCourseData()
-        DataGridView1.ColumnHeadersHeight = 40
-        'DataGridView1.AllowUserToResizeColumns = True
-        'Customize DataGridView columns
-        DataGridView1.Columns(0).Width = 50 ' ID column width
-        DataGridView1.Columns(1).Width = 200 ' Course Name column width
-        DataGridView1.Columns(2).Width = 250 ' Description column width
-        DataGridView1.Columns(3).Width = 150 ' Description column width
-        DataGridView1.Columns(4).Width = 150
-        DataGridView1.Columns(5).Width = 150
-        DataGridView1.Columns(6).Width = 150
-        DataGridView1.Columns(0).HeaderText = "ID"
-        DataGridView1.Columns(1).HeaderText = "វគ្គសិក្សា"
-        DataGridView1.Columns(2).HeaderText = "ការពិពណ៌នា"
-        DataGridView1.Columns(3).HeaderText = "រយៈពេល (ម៉ោង)"
-        DataGridView1.Columns(4).HeaderText = "តម្លៃ ($)"
-        DataGridView1.Columns(5).HeaderText = "ចំនួនថ្នាក់រៀន"
-        DataGridView1.Columns(6).HeaderText = "ចំនួនថ្នាក់បញ្ចប់"
-        For i As Integer = 0 To DataGridView1.Rows.Count - 1
-            If i Mod 2 = 1 Then
-                DataGridView1.Rows(i).DefaultCellStyle.BackColor = Color.FromArgb(254, 254, 254) ' Alternate row color
-            Else
-                DataGridView1.Rows(i).DefaultCellStyle.BackColor = Color.FromArgb(245, 250, 253)
-            End If
-            For j As Integer = 3 To DataGridView1.Columns.Count - 1
-                DataGridView1.Rows(i).Cells(j).Style.Alignment = DataGridViewContentAlignment.MiddleCenter
-            Next j
-        Next i
-
-        DataGridView1.ClearSelection()
+        Regonize()
         Panel1.Visible = False
     End Sub
 
@@ -73,6 +46,7 @@ Public Class CoursesForm
 
     Private Sub Panel5_Paint(sender As Object, e As PaintEventArgs) Handles Panel5.Paint
         Display()
+        startup = False
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
@@ -81,7 +55,7 @@ Public Class CoursesForm
 
     Private Sub DataGridView1_MouseClick(sender As Object, e As MouseEventArgs) Handles DataGridView1.MouseClick
         Dim menu As New ContextMenuStrip()
-        menu.Font = New Font("Khmer OS System", 9, FontStyle.Regular)
+        menu.Font = New Font("Khmer OS System", 9)
         menu.Items.Add("លម្អិត", Nothing, AddressOf ShowDetails)
         menu.Items.Add("លុប", Nothing, AddressOf DeleteCourse)
         menu.Items(0).BackColor = Color.FromArgb(245, 250, 253)
@@ -124,7 +98,11 @@ Public Class CoursesForm
         course.basePrice = 0D
         Panel1.Visible = False
     End Sub
-    Private Function SearchDataTable(condition As String) As DataTable
+
+    Private Sub txtSearch__TextChanged(sender As Object, e As EventArgs) Handles txtSearch._TextChanged
+        If startup Then
+            Return
+        End If
         Dim dt As New DataTable()
         Dim query As String = "SELECT tblCourses.ID, tblCourses.CourseName, tblCourses.Description, tblCourses.DurationHours, tblCourses.BasePrice, 
                         (SELECT COUNT(*) FROM tblClass WHERE tblClass.CourseID = tblCourses.ID) AS AllClass, 
@@ -133,45 +111,50 @@ Public Class CoursesForm
                         WHERE ((tblCourses.ID = @id) or (tblCourses.CourseName LIKE @Condition));"
         Dim cmd As New OleDb.OleDbCommand(query, course.GetConnection())
         Dim id As Integer
-        If IsNumeric(condition) Then
-            id = Integer.Parse(condition)
+        Dim condition As String = txtSearch.Texts.Trim()
+        If IsNumeric(Condition) Then
+            id = Integer.Parse(Condition)
         Else
             id = 0
         End If
+        condition = condition + "%"
         cmd.Parameters.AddWithValue("@id", id)
-        condition = condition & "%"
+        Condition = Condition & "%"
         cmd.Parameters.AddWithValue("@Condition", condition)
-        dt = course.ExecuteQuery(cmd)
-        Return dt
-    End Function
-
-    Private Sub txtSearch__TextChanged(sender As Object, e As EventArgs) Handles txtSearch._TextChanged
-        If Not txtSearch.Texts = String.Empty Then
-            Dim condition As String = txtSearch.Texts.Trim()
-            DataGridView1.DataSource = SearchDataTable(condition)
-            If DataGridView1.Columns.Count <= 0 Then
-                Return
-            End If
-            DataGridView1.Columns(0).Width = 50 ' ID column width
-            DataGridView1.Columns(1).Width = 200 ' Course Name column width
-            DataGridView1.Columns(2).Width = 250 ' Description column width
-            DataGridView1.Columns(3).Width = 150 ' Description column width
-            DataGridView1.Columns(4).Width = 150
-            DataGridView1.Columns(5).Width = 150
-            DataGridView1.Columns(6).Width = 150
-            DataGridView1.Columns(0).HeaderText = "ID"
-            DataGridView1.Columns(1).HeaderText = "វគ្គសិក្សា"
-            DataGridView1.Columns(2).HeaderText = "ការពិពណ៌នា"
-            DataGridView1.Columns(3).HeaderText = "រយៈពេល (ម៉ោង)"
-            DataGridView1.Columns(4).HeaderText = "តម្លៃ ($)"
-            DataGridView1.Columns(5).HeaderText = "ចំនួនថ្នាក់រៀន"
-            DataGridView1.Columns(6).HeaderText = "ចំនួនថ្នាក់បញ្ចប់"
-            DataGridView1.ClearSelection()
-        End If
+        DataGridView1.DataSource = course.ExecuteQuery(cmd)
+        Regonize()
     End Sub
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
         txtSearch.Texts = ""
         Display()
+    End Sub
+    Sub Regonize()
+        DataGridView1.ColumnHeadersHeight = 40
+        DataGridView1.Columns(0).Width = 50 ' ID column width
+        DataGridView1.Columns(1).Width = 200 ' Course Name column width
+        DataGridView1.Columns(2).Width = 250 ' Description column width
+        DataGridView1.Columns(3).Width = 150 ' Description column width
+        DataGridView1.Columns(4).Width = 150
+        DataGridView1.Columns(5).Width = 150
+        DataGridView1.Columns(6).Width = 150
+        DataGridView1.Columns(0).HeaderText = "ID"
+        DataGridView1.Columns(1).HeaderText = "វគ្គសិក្សា"
+        DataGridView1.Columns(2).HeaderText = "ការពិពណ៌នា"
+        DataGridView1.Columns(3).HeaderText = "រយៈពេល (ម៉ោង)"
+        DataGridView1.Columns(4).HeaderText = "តម្លៃ ($)"
+        DataGridView1.Columns(5).HeaderText = "ចំនួនថ្នាក់រៀន"
+        DataGridView1.Columns(6).HeaderText = "ចំនួនថ្នាក់បញ្ចប់"
+        For i As Integer = 0 To DataGridView1.Rows.Count - 1
+            If i Mod 2 = 1 Then
+                DataGridView1.Rows(i).DefaultCellStyle.BackColor = Color.FromArgb(254, 254, 254) ' Alternate row color
+            Else
+                DataGridView1.Rows(i).DefaultCellStyle.BackColor = Color.FromArgb(245, 250, 253)
+            End If
+            For j As Integer = 3 To DataGridView1.Columns.Count - 1
+                DataGridView1.Rows(i).Cells(j).Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+            Next j
+        Next i
+        DataGridView1.ClearSelection()
     End Sub
 End Class
