@@ -188,6 +188,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Auth\LoginForm.Designer.vb">
+      <DependentUpon>LoginForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Auth\LoginForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Dialog\ClassDetail.Designer.vb">
       <DependentUpon>ClassDetail.vb</DependentUpon>
     </Compile>
@@ -302,6 +308,9 @@
     <Compile Include="ThemeColor.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Auth\LoginForm.resx">
+      <DependentUpon>LoginForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialog\ClassDetail.resx">
       <DependentUpon>ClassDetail.vb</DependentUpon>
     </EmbeddedResource>
@@ -390,6 +399,8 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\loginfrom.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

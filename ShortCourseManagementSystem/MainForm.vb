@@ -9,6 +9,7 @@ Public Class MainForm
         InitializeComponent()
 
         'Add any initialization after the InitializeComponent() call.
+
         leftBorderBtn = New Panel()
         leftBorderBtn.Size = New Size(10, btnReport.Height)
         panelMenu.Controls.Add(leftBorderBtn)
@@ -119,5 +120,13 @@ Public Class MainForm
 
     Private Sub btnMin_Click(sender As Object, e As EventArgs) Handles btnMin.Click
         Me.WindowState = FormWindowState.Minimized
+    End Sub
+
+    Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim test As LoginForm = New LoginForm()
+
+        If test.ShowDialog() = 2 Then
+            Me.Close()
+        End If
     End Sub
 End Class
