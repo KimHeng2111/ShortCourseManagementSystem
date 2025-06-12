@@ -7,10 +7,10 @@ Public Class TeachersForm
         ' This call is required by the designer.
         InitializeComponent()
         ' Add any initialization after the InitializeComponent() call.
-        Dim addressData = teacher.GetAddressData()
-        addressData.Add("ជ្រើសរើសខេត្ត")
-        cbAddress.DataSource = addressData
-        cbAddress.SelectedIndex = cbAddress.Items.Count - 1
+        'Dim addressData = teacher.GetAddressData()
+        'addressData.Add("ជ្រើសរើសខេត្ត")
+        'cbAddress.DataSource = addressData
+        'cbAddress.SelectedIndex = cbAddress.Items.Count - 1
     End Sub
     'Display all teachers in DataGridView
     Sub Display()
@@ -253,8 +253,8 @@ Public Class TeachersForm
             Return
         End If
         Dim query As String = "SELECT tblTeacher.ID, tblTeacher.KhName AS KhmerName, tblTeacher.engName AS EnglishName, tblTeacher.DOB AS DateOfBirth, 
-                                tblTeacher.POB AS PlaceOfBirth, tblTeacher.Email, tblTeacher.Phone FROM tblTeacher
-                                WHERE POB LIKE @address AND (ID Like @id OR (KhName Like @name OR engName Like @name));"
+                                tblTeacher.Address AS PlaceOfBirth, tblTeacher.Email, tblTeacher.Phone FROM tblTeacher
+                                WHERE Address LIKE @address AND (ID Like @id OR (KhName Like @name OR engName Like @name));"
         Dim cmd As OleDbCommand = New OleDbCommand(query, teacher.GetConnection())
         Dim name As String = If(txtSearch.Texts.Trim() = "", "%", "%" & txtSearch.Texts.Trim() & "%")
         Dim id As String = If(IsNumeric(txtSearch.Texts.Trim()), txtSearch.Texts.Trim(), "%")
@@ -278,6 +278,10 @@ Public Class TeachersForm
         SearchAddressData.Add("គ្រប់ខេត្តទាំងអស់")
         cbSearchAddress.DataSource = SearchAddressData
         cbSearchAddress.SelectedIndex = cbSearchAddress.Items.Count - 1
+        Dim addressData = teacher.GetAddressData()
+        addressData.Add("ជ្រើសរើសខេត្ត")
+        cbAddress.DataSource = addressData
+        cbAddress.SelectedIndex = cbAddress.Items.Count - 1
     End Sub
 
     Private Sub cbSearchAddress_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbSearchAddress.SelectedIndexChanged

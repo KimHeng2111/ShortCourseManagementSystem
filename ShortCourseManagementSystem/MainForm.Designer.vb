@@ -66,7 +66,7 @@ Partial Class MainForm
         Me.panelMenu.Dock = System.Windows.Forms.DockStyle.Left
         Me.panelMenu.Location = New System.Drawing.Point(0, 33)
         Me.panelMenu.Name = "panelMenu"
-        Me.panelMenu.Size = New System.Drawing.Size(200, 1047)
+        Me.panelMenu.Size = New System.Drawing.Size(200, 1028)
         Me.panelMenu.TabIndex = 0
         '
         'btnReport
@@ -77,7 +77,7 @@ Partial Class MainForm
         Me.btnReport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(134, Byte), Integer), CType(CType(217, Byte), Integer))
         Me.btnReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(6, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(96, Byte), Integer))
         Me.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnReport.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnReport.Font = New System.Drawing.Font("Khmer Busra", 11.25!, System.Drawing.FontStyle.Bold)
         Me.btnReport.ForeColor = System.Drawing.Color.Gainsboro
         Me.btnReport.IconChar = FontAwesome.Sharp.IconChar.FileAlt
         Me.btnReport.IconColor = System.Drawing.Color.Gainsboro
@@ -90,8 +90,8 @@ Partial Class MainForm
         Me.btnReport.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
         Me.btnReport.Size = New System.Drawing.Size(200, 57)
         Me.btnReport.TabIndex = 4
-        Me.btnReport.Tag = "Report"
-        Me.btnReport.Text = "Report"
+        Me.btnReport.Tag = "របាយការណ៍"
+        Me.btnReport.Text = "របាយការណ៍"
         Me.btnReport.UseVisualStyleBackColor = False
         '
         'btnCourse
@@ -102,7 +102,7 @@ Partial Class MainForm
         Me.btnCourse.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(134, Byte), Integer), CType(CType(217, Byte), Integer))
         Me.btnCourse.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(6, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(96, Byte), Integer))
         Me.btnCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCourse.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCourse.Font = New System.Drawing.Font("Khmer Busra", 11.25!, System.Drawing.FontStyle.Bold)
         Me.btnCourse.ForeColor = System.Drawing.Color.Gainsboro
         Me.btnCourse.IconChar = FontAwesome.Sharp.IconChar.Book
         Me.btnCourse.IconColor = System.Drawing.Color.Gainsboro
@@ -115,8 +115,8 @@ Partial Class MainForm
         Me.btnCourse.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
         Me.btnCourse.Size = New System.Drawing.Size(200, 57)
         Me.btnCourse.TabIndex = 7
-        Me.btnCourse.Tag = "Course"
-        Me.btnCourse.Text = "Course"
+        Me.btnCourse.Tag = "គ្រប់គ្រងមុខវិជ្ជា"
+        Me.btnCourse.Text = "មុខវិជ្ជា"
         Me.btnCourse.UseVisualStyleBackColor = False
         '
         'btnClass
@@ -127,7 +127,7 @@ Partial Class MainForm
         Me.btnClass.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(134, Byte), Integer), CType(CType(217, Byte), Integer))
         Me.btnClass.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(6, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(96, Byte), Integer))
         Me.btnClass.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnClass.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClass.Font = New System.Drawing.Font("Khmer Busra", 11.25!, System.Drawing.FontStyle.Bold)
         Me.btnClass.ForeColor = System.Drawing.Color.Gainsboro
         Me.btnClass.IconChar = FontAwesome.Sharp.IconChar.Clipboard
         Me.btnClass.IconColor = System.Drawing.Color.Gainsboro
@@ -140,8 +140,8 @@ Partial Class MainForm
         Me.btnClass.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
         Me.btnClass.Size = New System.Drawing.Size(200, 57)
         Me.btnClass.TabIndex = 5
-        Me.btnClass.Tag = "Manage Class"
-        Me.btnClass.Text = "Manage Class"
+        Me.btnClass.Tag = "គ្រប់គ្រងថ្នាក់រៀន"
+        Me.btnClass.Text = "ថ្នាក់រៀន"
         Me.btnClass.UseVisualStyleBackColor = False
         '
         'btnStudent
@@ -152,7 +152,7 @@ Partial Class MainForm
         Me.btnStudent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(134, Byte), Integer), CType(CType(217, Byte), Integer))
         Me.btnStudent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(6, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(96, Byte), Integer))
         Me.btnStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnStudent.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnStudent.Font = New System.Drawing.Font("Khmer Busra", 11.25!, System.Drawing.FontStyle.Bold)
         Me.btnStudent.ForeColor = System.Drawing.Color.Gainsboro
         Me.btnStudent.IconChar = FontAwesome.Sharp.IconChar.UserGraduate
         Me.btnStudent.IconColor = System.Drawing.Color.Gainsboro
@@ -165,8 +165,8 @@ Partial Class MainForm
         Me.btnStudent.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
         Me.btnStudent.Size = New System.Drawing.Size(200, 57)
         Me.btnStudent.TabIndex = 8
-        Me.btnStudent.Tag = "Student"
-        Me.btnStudent.Text = "Student"
+        Me.btnStudent.Tag = "សិស្ស"
+        Me.btnStudent.Text = "សិស្ស"
         Me.btnStudent.UseVisualStyleBackColor = False
         '
         'btnExit
@@ -182,7 +182,7 @@ Partial Class MainForm
         Me.btnExit.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.btnExit.IconSize = 32
         Me.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnExit.Location = New System.Drawing.Point(0, 987)
+        Me.btnExit.Location = New System.Drawing.Point(0, 968)
         Me.btnExit.Margin = New System.Windows.Forms.Padding(3, 10, 3, 3)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
@@ -200,7 +200,7 @@ Partial Class MainForm
         Me.btnTeacher.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(134, Byte), Integer), CType(CType(217, Byte), Integer))
         Me.btnTeacher.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(6, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(96, Byte), Integer))
         Me.btnTeacher.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnTeacher.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTeacher.Font = New System.Drawing.Font("Khmer Busra", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnTeacher.ForeColor = System.Drawing.Color.Gainsboro
         Me.btnTeacher.IconChar = FontAwesome.Sharp.IconChar.ChalkboardTeacher
         Me.btnTeacher.IconColor = System.Drawing.Color.Gainsboro
@@ -213,8 +213,8 @@ Partial Class MainForm
         Me.btnTeacher.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
         Me.btnTeacher.Size = New System.Drawing.Size(200, 57)
         Me.btnTeacher.TabIndex = 6
-        Me.btnTeacher.Tag = "Teachers"
-        Me.btnTeacher.Text = "Teachers"
+        Me.btnTeacher.Tag = "គ្រូបង្រៀន"
+        Me.btnTeacher.Text = "គ្រូបង្រៀន"
         Me.btnTeacher.UseVisualStyleBackColor = False
         '
         'btnRegister
@@ -225,7 +225,7 @@ Partial Class MainForm
         Me.btnRegister.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(134, Byte), Integer), CType(CType(217, Byte), Integer))
         Me.btnRegister.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(6, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(96, Byte), Integer))
         Me.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRegister.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRegister.Font = New System.Drawing.Font("Khmer Busra", 11.25!, System.Drawing.FontStyle.Bold)
         Me.btnRegister.ForeColor = System.Drawing.Color.Gainsboro
         Me.btnRegister.IconChar = FontAwesome.Sharp.IconChar.UserPlus
         Me.btnRegister.IconColor = System.Drawing.Color.Gainsboro
@@ -238,8 +238,8 @@ Partial Class MainForm
         Me.btnRegister.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
         Me.btnRegister.Size = New System.Drawing.Size(200, 57)
         Me.btnRegister.TabIndex = 3
-        Me.btnRegister.Tag = "Student"
-        Me.btnRegister.Text = "Register"
+        Me.btnRegister.Tag = "ចុះឈ្មោះ"
+        Me.btnRegister.Text = "ចុះឈ្មោះ"
         Me.btnRegister.UseVisualStyleBackColor = False
         '
         'btnDashboard
@@ -304,13 +304,14 @@ Partial Class MainForm
         '
         'lbFormTitle
         '
+        Me.lbFormTitle.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lbFormTitle.AutoSize = True
-        Me.lbFormTitle.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbFormTitle.ForeColor = System.Drawing.Color.Gainsboro
+        Me.lbFormTitle.Font = New System.Drawing.Font("Khmer OS Moul", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbFormTitle.ForeColor = System.Drawing.Color.White
         Me.lbFormTitle.ImageAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.lbFormTitle.Location = New System.Drawing.Point(47, 12)
+        Me.lbFormTitle.Location = New System.Drawing.Point(836, 2)
         Me.lbFormTitle.Name = "lbFormTitle"
-        Me.lbFormTitle.Size = New System.Drawing.Size(49, 19)
+        Me.lbFormTitle.Size = New System.Drawing.Size(84, 34)
         Me.lbFormTitle.TabIndex = 1
         Me.lbFormTitle.Text = "Home"
         '
@@ -348,7 +349,7 @@ Partial Class MainForm
         Me.panelChildForm.ForeColor = System.Drawing.SystemColors.ControlText
         Me.panelChildForm.Location = New System.Drawing.Point(200, 71)
         Me.panelChildForm.Name = "panelChildForm"
-        Me.panelChildForm.Size = New System.Drawing.Size(1720, 1009)
+        Me.panelChildForm.Size = New System.Drawing.Size(1720, 990)
         Me.panelChildForm.TabIndex = 2
         '
         'Panel1
@@ -422,7 +423,7 @@ Partial Class MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1920, 1080)
+        Me.ClientSize = New System.Drawing.Size(1920, 1061)
         Me.Controls.Add(Me.panelChildForm)
         Me.Controls.Add(Me.panelTitlebar)
         Me.Controls.Add(Me.panelMenu)

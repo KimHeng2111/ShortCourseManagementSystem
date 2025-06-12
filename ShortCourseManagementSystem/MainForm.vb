@@ -9,7 +9,7 @@ Public Class MainForm
         InitializeComponent()
 
         'Add any initialization after the InitializeComponent() call.
-
+        Me.FormBorderStyle = FormBorderStyle.None
         leftBorderBtn = New Panel()
         leftBorderBtn.Size = New Size(10, btnReport.Height)
         panelMenu.Controls.Add(leftBorderBtn)
@@ -40,6 +40,8 @@ Public Class MainForm
             IconCurrentForm.IconColor = ThemeColor.ChangeColorBrightness(customColor, 0.5)
             'Current Form Title
             lbFormTitle.Text = LTrim(currentBtn.Tag.ToString)
+            Dim middle As Integer = ((panelTitlebar.Size.Width / 2) - (lbFormTitle.Size.Width / 2))
+            lbFormTitle.Location = New Point(middle, lbFormTitle.Location.Y)
         End If
     End Sub
 
@@ -124,9 +126,6 @@ Public Class MainForm
 
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim test As LoginForm = New LoginForm()
-
-        If test.ShowDialog() = 2 Then
-            Me.Close()
-        End If
+        Dim a As Integer = test.ShowDialog()
     End Sub
 End Class

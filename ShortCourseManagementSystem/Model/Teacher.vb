@@ -14,15 +14,14 @@ Public Class Teacher
     Public Phone As String
     Public Email As String
     Public Picture As String
-
     Public Function GetTeacherData() As DataTable
-        Dim query As String = "SELECT tblTeacher.ID, tblTeacher.KhName AS KhmerName, tblTeacher.engName AS EnglishName, tblTeacher.DOB AS DateOfBirth, tblTeacher.POB AS PlaceOfBirth, tblTeacher.Email, tblTeacher.Phone FROM tblTeacher;"
+        Dim query As String = "SELECT tblTeacher.ID, tblTeacher.KhName AS KhmerName, tblTeacher.engName AS EnglishName, tblTeacher.DOB AS DateOfBirth, tblTeacher.Address AS PlaceOfBirth, tblTeacher.Email, tblTeacher.Phone FROM tblTeacher;"
         Dim dt As DataTable = ExecuteQuery(query)
         Return dt
     End Function
 
     Public Sub AddTeacher()
-        Dim query As String = "INSERT INTO tblTeacher(khName , engName ,Gender , DOB , POB , Email , Phone ,Picture ,IsActive) 
+        Dim query As String = "INSERT INTO tblTeacher(khName , EngName ,Gender , DOB , Address , Email , Phone ,Picture ,IsActive) 
                                                      VALUES (@KhName, @EngName, @Gender, @DoB, @Address, @Email, @Phone, @Picture, 1)"
         Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
         cmd.Parameters.AddWithValue("@KhName", Me.KhName)
@@ -37,13 +36,13 @@ Public Class Teacher
         MessageBox.Show("Teacher Name : " & KhName & " has been added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
     Public Sub UpdateTeacher()
-        Dim query As String = "UPDATE tblTeacher SET KhName = @KhName, engName = @engName, Gender = @Gender, DOB = @DOB, POB = @POB, Email = @Email, Phone = @Phone, Picture = @Picture WHERE ID = @ID"
+        Dim query As String = "UPDATE tblTeacher SET KhName = @KhName, engName = @engName, Gender = @Gender, DOB = @DOB, Address = @Address, Email = @Email, Phone = @Phone, Picture = @Picture WHERE ID = @ID"
         Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
         cmd.Parameters.AddWithValue("@khName", KhName)
-        cmd.Parameters.AddWithValue("@engName", EngName)
+        cmd.Parameters.AddWithValue("@EngName", EngName)
         cmd.Parameters.AddWithValue("@Gender", Gender)
         cmd.Parameters.AddWithValue("@DOB", DoB)
-        cmd.Parameters.AddWithValue("@POB", Address)
+        cmd.Parameters.AddWithValue("@Address", Me.Address)
         cmd.Parameters.AddWithValue("@Email", Email)
         cmd.Parameters.AddWithValue("@Phone", Phone)
         cmd.Parameters.AddWithValue("@Picture", Picture)
@@ -68,7 +67,7 @@ Public Class Teacher
             Me.TeacherID = reader("ID").ToString()
             Me.KhName = reader("KhName").ToString()
             Me.EngName = reader("EngName").ToString()
-            Me.Address = reader("POB").ToString()
+            Me.Address = reader("Address").ToString()
             Me.DoB = Convert.ToDateTime(reader("DOB"))
             Me.Gender = reader("Gender").ToString()
             Me.Phone = reader("Phone").ToString()
@@ -92,7 +91,7 @@ Public Class Teacher
             Me.TeacherID = reader("ID").ToString()
             Me.KhName = reader("KhName").ToString()
             Me.EngName = reader("EngName").ToString()
-            Me.Address = reader("POB").ToString()
+            Me.Address = reader("Address").ToString()
             Me.DoB = Convert.ToDateTime(reader("DOB"))
             Me.Gender = reader("Gender").ToString()
             Me.Phone = reader("Phone").ToString()

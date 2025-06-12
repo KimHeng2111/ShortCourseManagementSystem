@@ -20,7 +20,7 @@ Public Class Student
         Dim dt As DataTable = ExecuteQuery(query)
         Return dt
     End Function
-    Public Sub AddStudent(khName As String, EngName As String, Gender As String, DOB As Date, Address As String, Phone As String, Email As String, Picture As String)
+    Public Sub AddStudent(khName As String, EngName As String, Gender As String, DOB As Date, Address As String, Phone As String, Picture As String)
         Dim query As String = "INSERT INTO tblStudent(KhName , EngName ,Gender , DateOfBirth , Address , Phone ,Picture ) 
                                                      VALUES (@KhName, @EngName, @Gender, @DateOfBirth, @Address,  @Phone, @Picture)"
         OpenConnection()
@@ -81,11 +81,15 @@ Public Class Student
     Public Function GetAddressData() As ArrayList
         Dim addressList As New ArrayList()
         Dim query As String = "SELECT * FROM tblProvince;"
+        OpenConnection()
         Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
         Dim reader As OleDbDataReader = cmd.ExecuteReader()
         While reader.Read()
             addressList.Add(reader(0).ToString)
         End While
+        reader.Close()
+        cmd.Dispose()
+        CloseConnection()
         Return addressList
     End Function
 

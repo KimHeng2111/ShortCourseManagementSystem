@@ -3,6 +3,7 @@ Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 Public Class StudentForm
     Dim student As Student = New Student()
+    Dim startup As Boolean = True ' To prevent initial search on form load
     Public Sub New()
         ' Constructor for StudentForm class
         InitializeComponent()
@@ -17,7 +18,7 @@ Public Class StudentForm
     Private Function CheckField() As Boolean
         Dim khName As String = txtKhName.Texts.Trim()
         Dim engName As String = txtEngName.Texts.Trim()
-        Dim address As String = txtAddress.Texts.Trim()
+        Dim address As String = cbAddress.Text.Trim()
         Dim phone As String = txtPhone.Texts.Trim()
         If String.IsNullOrEmpty(khName) Then
             MessageBox.Show("សូ​មបញ្ជូលឈ្មោះសិស្ស", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -135,7 +136,7 @@ Public Class StudentForm
         Panel2.Visible = True
         txtKhName.Texts = student.khName
         txtEngName.Texts = student.engName
-        txtAddress.Texts = student.address
+        cbAddress.Text = student.address
         txtPhone.Texts = student.phone
         dtpDob.Value = student.DateOfBirth
         cbGender.SelectedIndex = cbGender.FindStringExact(student.gender)
@@ -146,7 +147,7 @@ Public Class StudentForm
         Panel2.Visible = False
         txtKhName.Texts = ""
         txtEngName.Texts = ""
-        txtAddress.Texts = ""
+        cbAddress.Text = ""
         txtPhone.Texts = ""
         dtpDob.Value = DateTime.Now
     End Sub
@@ -154,9 +155,49 @@ Public Class StudentForm
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         If CheckField() Then
 
-            student.UpdateStudent(student.id, txtKhName.Texts.Trim(), txtEngName.Texts.Trim(), cbGender.SelectedItem.ToString(), dtpDob.Value, txtAddress.Texts.Trim(), txtPhone.Texts.Trim(), picStudent.ImageLocation)
+            student.UpdateStudent(student.id, txtKhName.Texts.Trim(), txtEngName.Texts.Trim(), cbGender.SelectedItem.ToString(), dtpDob.Value, cbAddress.Text.Trim(), txtPhone.Texts.Trim(), picStudent.ImageLocation)
             MessageBox.Show("ព័ត៌មានសិស្សបានកែប្រែដោយជោគជ័យ", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Display()
         End If
+    End Sub
+    Sub GetCbAddress()
+
+        Dim SearchAddressData As ArrayList = student.GetAddressData()
+        SearchAddressData.Add("គ្រប់ខេត្តទាំងអស់")
+        cbSearchAddress.DataSource = SearchAddressData
+        cbSearchAddress.SelectedIndex = cbSearchAddress.Items.Count - 1
+        Dim addressData = student.GetAddressData()
+        addressData.Add("ជ្រើសរើសខេត្ត")
+        cbAddress.DataSource = addressData
+        cbAddress.SelectedIndex = cbAddress.Items.Count - 1
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+        GetCbAddress()
+        startup = False
+    End Sub
+    Sub SearchData() Handles cbSearchAddress.SelectedIndexChanged, txtSearch._TextChanged
+        If startup Then
+            Return
+        End If
+        Dim query As String = "SELECT tblStudent.ID, tblStudent.KhName, tblStudent.EngName, tblStudent.Gender, 
+                                tblStudent.DateOfBirth, tblStudent.Address, tblStudent.Phone FROM tblStudent
+                                WHERE Address LIKE @address AND (ID Like @id OR (KhName Like @name OR EngName Like @name));"
+        Dim cmd As OleDbCommand = New OleDbCommand(query, student.GetConnection())
+        Dim name As String = If(txtSearch.Texts.Trim() = "", "%", "%" & txtSearch.Texts.Trim() & "%")
+        Dim id As String = If(IsNumeric(txtSearch.Texts.Trim()), txtSearch.Texts.Trim(), "%")
+        Dim address As String = If(cbSearchAddress.SelectedIndex = cbSearchAddress.Items.Count - 1, "%", cbSearchAddress.SelectedItem.ToString())
+        address = "%" & address & "%"
+        cmd.Parameters.AddWithValue("@address", address)
+        cmd.Parameters.AddWithValue("@id", id)
+        cmd.Parameters.AddWithValue("@name", name)
+        Dim dt As DataTable = student.ExecuteQuery(cmd)
+        DataGridView1.DataSource = dt
+        Regonize()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        txtSearch.Texts = ""
+        cbSearchAddress.SelectedIndex = cbSearchAddress.Items.Count - 1
     End Sub
 End Class

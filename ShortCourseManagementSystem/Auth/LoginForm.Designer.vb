@@ -30,7 +30,7 @@ Partial Class LoginForm
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.Color.Transparent
-        Me.Button1.Location = New System.Drawing.Point(468, 372)
+        Me.Button1.Location = New System.Drawing.Point(651, 448)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(142, 50)
         Me.Button1.TabIndex = 0
@@ -43,7 +43,7 @@ Partial Class LoginForm
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label1.Location = New System.Drawing.Point(524, 150)
+        Me.Label1.Location = New System.Drawing.Point(515, 132)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(58, 29)
         Me.Label1.TabIndex = 1

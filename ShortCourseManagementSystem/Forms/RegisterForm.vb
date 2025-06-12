@@ -10,23 +10,13 @@ Public Class RegisterForm
         InitializeComponent()
 
         ' Add any initialization after the InitializeComponent() call.
-        Display()
         GetCbCourse()
         picStudent.ImageLocation = Application.StartupPath & "\Images\defalutStudent.png"
     End Sub
 
     Sub Display()
-        DataGridView2.DataSource = register.GetRegisterData()
-        DataGridView2.ClearSelection()
-        For i As Integer = 0 To DataGridView2.Rows.Count - 1
-            If i Mod 2 = 1 Then
-                DataGridView2.Rows(i).DefaultCellStyle.BackColor = Color.FromArgb(245, 250, 253)
-                ' Alternate row color
-            Else
-                DataGridView2.Rows(i).DefaultCellStyle.BackColor = Color.FromArgb(254, 254, 254)
-            End If
-
-        Next i
+        DataGridView1.DataSource = register.GetRegisterData()
+        Regonize()
     End Sub
 
 
@@ -74,9 +64,9 @@ Public Class RegisterForm
             txtEngName.Focus()
             Return False
         End If
-        If txtPOB.Texts.Length <= 0 Then
+        If txtAddress.Texts.Length <= 0 Then
             MessageBox.Show("Please enter Student's place of birth", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            txtPOB.Focus()
+            txtAddress.Focus()
 
             Return False
         End If
@@ -89,20 +79,6 @@ Public Class RegisterForm
         ElseIf txtPhone.Texts.Length = 0 Then
             Dim result = MessageBox.Show("Do not have Phone Number", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
         End If
-        If txtEmail.Texts.Length <= 0 Then
-            MessageBox.Show("Please enter Student's email", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            txtEmail.Focus()
-            Return False
-        ElseIf Not IsValidEmail(txtEmail.Texts) Then
-            MessageBox.Show("Please enter a valid email", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            txtEmail.Focus()
-            Return False
-        End If
-        If cbCourse.Text.Length <= 0 Then
-            MessageBox.Show("Please select a course", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            cbCourse.Focus()
-            Return False
-        End If
         If txtpay.Text.Length <= 0 Or Not IsNumeric(txtpay.Text) Then
             MessageBox.Show("Please Enter payment amount", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             txtpay.Focus()
@@ -111,16 +87,34 @@ Public Class RegisterForm
         Return True
     End Function
 
-    'IsValidEmail
-    Function IsValidEmail(ByVal email As String) As Boolean
-        Try
-            Dim addr As New System.Net.Mail.MailAddress(email)
-            Return True
-        Catch
+    Function CheckValidation() As Boolean
+        'Check if the student has already registered for the class
+        Dim studentID As Integer = register.student.id
+        Dim classID As Integer = Convert.ToInt32(cbTime.SelectedValue)
+        Dim query As String = "SELECT COUNT(*) FROM tblRegister WHERE StudentID = @StudentID AND ClassID = @ClassID"
+        Dim cmd As New OleDbCommand(query, register.GetConnection())
+        cmd.Parameters.AddWithValue("@StudentID", studentID)
+        cmd.Parameters.AddWithValue("@ClassID", classID)
+        register.OpenConnection()
+        Dim count As Integer = Convert.ToInt32(cmd.ExecuteScalar())
+        register.CloseConnection()
+        If count > 0 Then
+            MessageBox.Show("សូមអភ័យទោសសិស្សឈ្មោះ " & register.student.khName & " ចានចុះឈ្មោះវគ្គសិក្សានេះរូចហើយ", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return False
-        End Try
+        End If
+        'Check if the Student has already Other at this Schedule
+        Dim scheduleQuery As String = "SELECT COUNT(*) FROM tblRegister WHERE StudentID = @StudentID AND ScheduleID = @ScheduleID;"
+        cmd = New OleDbCommand(scheduleQuery, register.GetConnection())
+        cmd.Parameters.AddWithValue("@StudentID", studentID)
+        cmd.Parameters.AddWithValue("@ScheduleID", cbTime.SelectedValue)
+        register.OpenConnection()
+        count = Convert.ToInt32(cmd.ExecuteScalar())
+        If count > 0 Then
+            MessageBox.Show("សូមអភ័យទោសសិស្សឈ្មោះ " & register.student.khName & " ចានចុះឈ្មោះវេនសិក្សានេះរូចហើយ", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return False
+        End If
+        Return True
     End Function
-
     'Save Image and reture the path
     Function SaveImageAndReturnPath() As String
         If Path.GetFileName(picStudent.ImageLocation) = "defalutStudent.png" Then
@@ -158,8 +152,11 @@ Public Class RegisterForm
         If Not CheckField() Then
             Return
         End If
+        If Not CheckValidation() Then
+            Return
+        End If
         'Step 2 : Create Student
-        register.student.AddStudent(txtKhName.Texts.Trim(), txtEngName.Texts.Trim(), cbGender.Text, dtpDob.Value, txtPOB.Texts.Trim(), txtPhone.Texts.Trim(), txtEmail.Texts.Trim(), SaveImageAndReturnPath())
+        register.student.AddStudent(txtKhName.Texts.Trim(), txtEngName.Texts.Trim(), cbGender.Text, dtpDob.Value, txtAddress.Texts.Trim(), txtPhone.Texts.Trim(), SaveImageAndReturnPath())
         'Assign data to register
         register.manageClass.GetClassByID(cbTime.SelectedValue.ToString()) 'ADD ManageClass
         register.discount = If(txtDis.Text = String.Empty, 0, Convert.ToDecimal(txtDis.Text))
@@ -184,5 +181,44 @@ Public Class RegisterForm
         lbPrice.Text = register.manageClass.course.basePrice.ToString("F2")
         txtDis.Text = "0"
     End Sub
+    Sub Regonize()
+        DataGridView1.ColumnHeadersHeight = 40
+        DataGridView1.Columns(0).Width = 50 ' ID column width
+        DataGridView1.Columns(1).Width = 250 ' Course Name column width
+        DataGridView1.Columns(2).Width = 200 ' Description column width
+        DataGridView1.Columns(3).Width = 150 ' Description column width
+        DataGridView1.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridView1.Columns(4).Width = 150
+        DataGridView1.Columns(5).Width = 150
+        DataGridView1.Columns(6).Width = 150
+        DataGridView1.Columns(0).HeaderText = "ClassID"
+        DataGridView1.Columns(1).HeaderText = "វគ្គសិក្សា"
+        DataGridView1.Columns(2).HeaderText = "គ្រូបង្រៀន"
+        DataGridView1.Columns(3).HeaderText = "ថ្ងៃចូលរៀន"
+        DataGridView1.Columns(4).HeaderText = "វេនសិក្សា"
+        DataGridView1.Columns(5).HeaderText = "បន្ទប់រៀន"
+        DataGridView1.Columns(6).HeaderText = "សិស្សសរុប"
+        DataGridView1.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridView1.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridView1.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        For i As Integer = 0 To DataGridView1.Rows.Count - 1
+            If i Mod 2 = 1 Then
+                DataGridView1.Rows(i).DefaultCellStyle.BackColor = Color.FromArgb(254, 254, 254) ' Alternate row color
+            Else
+                DataGridView1.Rows(i).DefaultCellStyle.BackColor = Color.FromArgb(245, 250, 253)
+            End If
+            For j As Integer = 3 To DataGridView1.Columns.Count - 1
+                DataGridView1.Rows(i).Cells(j).Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+            Next j
+        Next i
+        DataGridView1.ClearSelection()
+    End Sub
 
+    Private Sub Panel16_Paint(sender As Object, e As PaintEventArgs) Handles Panel16.Paint
+        Display()
+    End Sub
+
+    Private Sub btnChooseStudent_Click(sender As Object, e As EventArgs) Handles btnChooseStudent.Click
+
+    End Sub
 End Class

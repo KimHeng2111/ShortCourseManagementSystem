@@ -22,20 +22,15 @@ Partial Class RegisterForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label33 = New System.Windows.Forms.Label()
         Me.Label34 = New System.Windows.Forms.Label()
         Me.Label35 = New System.Windows.Forms.Label()
         Me.txtpay = New System.Windows.Forms.TextBox()
-        Me.Panel15 = New System.Windows.Forms.Panel()
-        Me.Label29 = New System.Windows.Forms.Label()
-        Me.txtEmail = New CustomControls.RJControls.RJTextBox()
-        Me.Label32 = New System.Windows.Forms.Label()
         Me.btnChooseStudent = New System.Windows.Forms.Button()
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.cbTime = New System.Windows.Forms.ComboBox()
@@ -71,7 +66,7 @@ Partial Class RegisterForm
         Me.dtpDob = New CustomControls.RJControls.RJDatePicker()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.txtPOB = New CustomControls.RJControls.RJTextBox()
+        Me.txtAddress = New CustomControls.RJControls.RJTextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -93,14 +88,17 @@ Partial Class RegisterForm
         Me.Label5 = New System.Windows.Forms.Label()
         Me.picStudent = New System.Windows.Forms.PictureBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.Panel13 = New System.Windows.Forms.Panel()
-        Me.Label26 = New System.Windows.Forms.Label()
         Me.OpenPic = New System.Windows.Forms.OpenFileDialog()
         Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
-        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.Panel16 = New System.Windows.Forms.Panel()
+        Me.cbSearchTeacher = New System.Windows.Forms.ComboBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.txtSearch = New CustomControls.RJControls.RJTextBox()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Panel13 = New System.Windows.Forms.Panel()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        Me.Panel15.SuspendLayout()
         Me.Panel14.SuspendLayout()
         Me.Panel12.SuspendLayout()
         Me.Panel11.SuspendLayout()
@@ -113,16 +111,16 @@ Partial Class RegisterForm
         Me.Panel5.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.picStudent, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel16.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel13.SuspendLayout()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Panel2.Controls.Add(Me.DateTimePicker1)
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(223, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.Panel13)
         Me.Panel2.Controls.Add(Me.Panel1)
-        Me.Panel2.Controls.Add(Me.Panel15)
         Me.Panel2.Controls.Add(Me.btnChooseStudent)
         Me.Panel2.Controls.Add(Me.Panel14)
         Me.Panel2.Controls.Add(Me.Panel12)
@@ -136,35 +134,24 @@ Partial Class RegisterForm
         Me.Panel2.Controls.Add(Me.Panel4)
         Me.Panel2.Controls.Add(Me.Panel6)
         Me.Panel2.Controls.Add(Me.Panel5)
-        Me.Panel2.Controls.Add(Me.IconButton1)
         Me.Panel2.Controls.Add(Me.Label13)
         Me.Panel2.Controls.Add(Me.Panel3)
-        Me.Panel2.Controls.Add(Me.picStudent)
         Me.Panel2.Controls.Add(Me.Label7)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel2.Location = New System.Drawing.Point(5, 2)
+        Me.Panel2.Location = New System.Drawing.Point(15, 15)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 3, 3, 5)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1710, 434)
+        Me.Panel2.Size = New System.Drawing.Size(1690, 389)
         Me.Panel2.TabIndex = 3
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(191, 337)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.ShowUpDown = True
-        Me.DateTimePicker1.Size = New System.Drawing.Size(215, 20)
-        Me.DateTimePicker1.TabIndex = 74
-        Me.DateTimePicker1.Value = New Date(2025, 6, 8, 19, 0, 0, 0)
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.Panel1.BackColor = System.Drawing.Color.Transparent
         Me.Panel1.Controls.Add(Me.Label33)
         Me.Panel1.Controls.Add(Me.Label34)
         Me.Panel1.Controls.Add(Me.Label35)
         Me.Panel1.Controls.Add(Me.txtpay)
-        Me.Panel1.Location = New System.Drawing.Point(1118, 241)
+        Me.Panel1.Location = New System.Drawing.Point(587, 234)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(278, 42)
         Me.Panel1.TabIndex = 73
@@ -209,87 +196,35 @@ Partial Class RegisterForm
         Me.txtpay.Location = New System.Drawing.Point(118, 3)
         Me.txtpay.Name = "txtpay"
         Me.txtpay.Size = New System.Drawing.Size(131, 35)
-        Me.txtpay.TabIndex = 71
-        '
-        'Panel15
-        '
-        Me.Panel15.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.Panel15.Controls.Add(Me.Label29)
-        Me.Panel15.Controls.Add(Me.txtEmail)
-        Me.Panel15.Controls.Add(Me.Label32)
-        Me.Panel15.Location = New System.Drawing.Point(58, 172)
-        Me.Panel15.Name = "Panel15"
-        Me.Panel15.Size = New System.Drawing.Size(480, 42)
-        Me.Panel15.TabIndex = 72
-        '
-        'Label29
-        '
-        Me.Label29.AutoSize = True
-        Me.Label29.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label29.Location = New System.Drawing.Point(96, 6)
-        Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(16, 27)
-        Me.Label29.TabIndex = 3
-        Me.Label29.Text = ":"
-        '
-        'txtEmail
-        '
-        Me.txtEmail.AccessibleRole = System.Windows.Forms.AccessibleRole.None
-        Me.txtEmail.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.txtEmail.BorderColor = System.Drawing.SystemColors.AppWorkspace
-        Me.txtEmail.BorderFocusColor = System.Drawing.Color.CornflowerBlue
-        Me.txtEmail.BorderRadius = 3
-        Me.txtEmail.BorderSize = 2
-        Me.txtEmail.Dock = System.Windows.Forms.DockStyle.Right
-        Me.txtEmail.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEmail.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.txtEmail.Location = New System.Drawing.Point(157, 0)
-        Me.txtEmail.Margin = New System.Windows.Forms.Padding(4)
-        Me.txtEmail.Multiline = False
-        Me.txtEmail.Name = "txtEmail"
-        Me.txtEmail.Padding = New System.Windows.Forms.Padding(10, 7, 10, 7)
-        Me.txtEmail.PasswordChar = False
-        Me.txtEmail.PlaceholderColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(248, Byte), Integer))
-        Me.txtEmail.PlaceholderText = "example@gmail.com"
-        Me.txtEmail.Size = New System.Drawing.Size(323, 42)
-        Me.txtEmail.TabIndex = 2
-        Me.txtEmail.Texts = ""
-        Me.txtEmail.UnderlinedStyle = True
-        '
-        'Label32
-        '
-        Me.Label32.AutoSize = True
-        Me.Label32.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label32.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label32.Location = New System.Drawing.Point(8, 8)
-        Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(48, 27)
-        Me.Label32.TabIndex = 51
-        Me.Label32.Text = "Email"
+        Me.txtpay.TabIndex = 9
         '
         'btnChooseStudent
         '
         Me.btnChooseStudent.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btnChooseStudent.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnChooseStudent.Location = New System.Drawing.Point(815, 360)
+        Me.btnChooseStudent.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(76, Byte), Integer))
+        Me.btnChooseStudent.FlatAppearance.BorderSize = 0
+        Me.btnChooseStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnChooseStudent.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnChooseStudent.ForeColor = System.Drawing.Color.White
+        Me.btnChooseStudent.Location = New System.Drawing.Point(805, 324)
         Me.btnChooseStudent.Name = "btnChooseStudent"
         Me.btnChooseStudent.Size = New System.Drawing.Size(151, 44)
         Me.btnChooseStudent.TabIndex = 71
-        Me.btnChooseStudent.Text = "Choose Student"
-        Me.btnChooseStudent.UseVisualStyleBackColor = True
+        Me.btnChooseStudent.Text = "ជ្រើសរើសសិស្ស"
+        Me.btnChooseStudent.UseVisualStyleBackColor = False
         '
         'Panel14
         '
-        Me.Panel14.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.Panel14.BackColor = System.Drawing.Color.Transparent
         Me.Panel14.Controls.Add(Me.cbTime)
         Me.Panel14.Controls.Add(Me.lbRoom)
         Me.Panel14.Controls.Add(Me.Label30)
         Me.Panel14.Controls.Add(Me.Label31)
         Me.Panel14.Controls.Add(Me.Label27)
         Me.Panel14.Controls.Add(Me.Label28)
-        Me.Panel14.Location = New System.Drawing.Point(58, 242)
+        Me.Panel14.Location = New System.Drawing.Point(589, 177)
         Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(477, 41)
+        Me.Panel14.Size = New System.Drawing.Size(480, 41)
         Me.Panel14.TabIndex = 70
         '
         'cbTime
@@ -299,7 +234,7 @@ Partial Class RegisterForm
         Me.cbTime.Location = New System.Drawing.Point(101, 2)
         Me.cbTime.Name = "cbTime"
         Me.cbTime.Size = New System.Drawing.Size(199, 35)
-        Me.cbTime.TabIndex = 23
+        Me.cbTime.TabIndex = 7
         '
         'lbRoom
         '
@@ -356,12 +291,13 @@ Partial Class RegisterForm
         '
         'Panel12
         '
-        Me.Panel12.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.Panel12.BackColor = System.Drawing.Color.Transparent
         Me.Panel12.Controls.Add(Me.Label21)
         Me.Panel12.Controls.Add(Me.lbAmount)
         Me.Panel12.Controls.Add(Me.Label24)
         Me.Panel12.Controls.Add(Me.Label25)
-        Me.Panel12.Location = New System.Drawing.Point(839, 241)
+        Me.Panel12.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel12.Location = New System.Drawing.Point(308, 234)
         Me.Panel12.Name = "Panel12"
         Me.Panel12.Size = New System.Drawing.Size(227, 42)
         Me.Panel12.TabIndex = 69
@@ -418,28 +354,36 @@ Partial Class RegisterForm
         'btnClear
         '
         Me.btnClear.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btnClear.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnClear.Location = New System.Drawing.Point(1006, 360)
+        Me.btnClear.BackColor = System.Drawing.Color.Red
+        Me.btnClear.FlatAppearance.BorderSize = 0
+        Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnClear.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClear.ForeColor = System.Drawing.Color.White
+        Me.btnClear.Location = New System.Drawing.Point(996, 324)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(151, 44)
         Me.btnClear.TabIndex = 68
-        Me.btnClear.Text = "Clear"
-        Me.btnClear.UseVisualStyleBackColor = True
+        Me.btnClear.Text = "សម្អាត"
+        Me.btnClear.UseVisualStyleBackColor = False
         '
         'btnRegister
         '
         Me.btnRegister.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btnRegister.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRegister.Location = New System.Drawing.Point(618, 360)
+        Me.btnRegister.BackColor = System.Drawing.Color.FromArgb(CType(CType(6, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(148, Byte), Integer))
+        Me.btnRegister.FlatAppearance.BorderSize = 0
+        Me.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRegister.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRegister.ForeColor = System.Drawing.Color.White
+        Me.btnRegister.Location = New System.Drawing.Point(608, 324)
         Me.btnRegister.Name = "btnRegister"
         Me.btnRegister.Size = New System.Drawing.Size(151, 44)
         Me.btnRegister.TabIndex = 68
-        Me.btnRegister.Text = "Register"
-        Me.btnRegister.UseVisualStyleBackColor = True
+        Me.btnRegister.Text = "ចុះឈ្មោះ"
+        Me.btnRegister.UseVisualStyleBackColor = False
         '
         'Panel11
         '
-        Me.Panel11.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.Panel11.BackColor = System.Drawing.Color.Transparent
         Me.Panel11.Controls.Add(Me.Label23)
         Me.Panel11.Controls.Add(Me.lbPrice)
         Me.Panel11.Controls.Add(Me.Label19)
@@ -501,12 +445,12 @@ Partial Class RegisterForm
         '
         'Panel10
         '
-        Me.Panel10.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.Panel10.BackColor = System.Drawing.Color.Transparent
         Me.Panel10.Controls.Add(Me.Label22)
         Me.Panel10.Controls.Add(Me.Label17)
         Me.Panel10.Controls.Add(Me.Label18)
         Me.Panel10.Controls.Add(Me.txtDis)
-        Me.Panel10.Location = New System.Drawing.Point(589, 241)
+        Me.Panel10.Location = New System.Drawing.Point(58, 234)
         Me.Panel10.Name = "Panel10"
         Me.Panel10.Size = New System.Drawing.Size(229, 42)
         Me.Panel10.TabIndex = 66
@@ -553,15 +497,15 @@ Partial Class RegisterForm
         Me.txtDis.Location = New System.Drawing.Point(106, 3)
         Me.txtDis.Name = "txtDis"
         Me.txtDis.Size = New System.Drawing.Size(89, 35)
-        Me.txtDis.TabIndex = 71
+        Me.txtDis.TabIndex = 8
         '
         'Panel9
         '
-        Me.Panel9.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.Panel9.BackColor = System.Drawing.Color.Transparent
         Me.Panel9.Controls.Add(Me.cbCourse)
         Me.Panel9.Controls.Add(Me.Label3)
         Me.Panel9.Controls.Add(Me.Label16)
-        Me.Panel9.Location = New System.Drawing.Point(589, 178)
+        Me.Panel9.Location = New System.Drawing.Point(58, 177)
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Size = New System.Drawing.Size(480, 41)
         Me.Panel9.TabIndex = 65
@@ -598,7 +542,7 @@ Partial Class RegisterForm
         '
         'Panel8
         '
-        Me.Panel8.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.Panel8.BackColor = System.Drawing.Color.Transparent
         Me.Panel8.Controls.Add(Me.Label11)
         Me.Panel8.Controls.Add(Me.Label8)
         Me.Panel8.Controls.Add(Me.dtpDob)
@@ -640,15 +584,15 @@ Partial Class RegisterForm
         Me.dtpDob.ShowUpDown = True
         Me.dtpDob.Size = New System.Drawing.Size(320, 35)
         Me.dtpDob.SkinColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.dtpDob.TabIndex = 14
+        Me.dtpDob.TabIndex = 3
         Me.dtpDob.TextColor = System.Drawing.Color.Black
         Me.dtpDob.Value = New Date(2005, 12, 30, 0, 0, 0, 0)
         '
         'Panel7
         '
-        Me.Panel7.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.Panel7.BackColor = System.Drawing.Color.Transparent
         Me.Panel7.Controls.Add(Me.Label9)
-        Me.Panel7.Controls.Add(Me.txtPOB)
+        Me.Panel7.Controls.Add(Me.txtAddress)
         Me.Panel7.Controls.Add(Me.Label12)
         Me.Panel7.Location = New System.Drawing.Point(589, 116)
         Me.Panel7.Name = "Panel7"
@@ -665,29 +609,29 @@ Partial Class RegisterForm
         Me.Label9.TabIndex = 3
         Me.Label9.Text = ":"
         '
-        'txtPOB
+        'txtAddress
         '
-        Me.txtPOB.AccessibleRole = System.Windows.Forms.AccessibleRole.None
-        Me.txtPOB.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtPOB.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.txtPOB.BorderColor = System.Drawing.SystemColors.AppWorkspace
-        Me.txtPOB.BorderFocusColor = System.Drawing.Color.CornflowerBlue
-        Me.txtPOB.BorderRadius = 3
-        Me.txtPOB.BorderSize = 2
-        Me.txtPOB.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPOB.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.txtPOB.Location = New System.Drawing.Point(157, -1)
-        Me.txtPOB.Margin = New System.Windows.Forms.Padding(4)
-        Me.txtPOB.Multiline = False
-        Me.txtPOB.Name = "txtPOB"
-        Me.txtPOB.Padding = New System.Windows.Forms.Padding(10, 7, 10, 7)
-        Me.txtPOB.PasswordChar = False
-        Me.txtPOB.PlaceholderColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(248, Byte), Integer))
-        Me.txtPOB.PlaceholderText = "PlaceOfBirth"
-        Me.txtPOB.Size = New System.Drawing.Size(323, 42)
-        Me.txtPOB.TabIndex = 55
-        Me.txtPOB.Texts = ""
-        Me.txtPOB.UnderlinedStyle = True
+        Me.txtAddress.AccessibleRole = System.Windows.Forms.AccessibleRole.None
+        Me.txtAddress.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtAddress.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.txtAddress.BorderColor = System.Drawing.SystemColors.AppWorkspace
+        Me.txtAddress.BorderFocusColor = System.Drawing.Color.CornflowerBlue
+        Me.txtAddress.BorderRadius = 3
+        Me.txtAddress.BorderSize = 2
+        Me.txtAddress.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtAddress.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.txtAddress.Location = New System.Drawing.Point(157, -1)
+        Me.txtAddress.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtAddress.Multiline = False
+        Me.txtAddress.Name = "txtAddress"
+        Me.txtAddress.Padding = New System.Windows.Forms.Padding(10, 7, 10, 7)
+        Me.txtAddress.PasswordChar = False
+        Me.txtAddress.PlaceholderColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.txtAddress.PlaceholderText = "PlaceOfBirth"
+        Me.txtAddress.Size = New System.Drawing.Size(323, 42)
+        Me.txtAddress.TabIndex = 4
+        Me.txtAddress.Texts = ""
+        Me.txtAddress.UnderlinedStyle = True
         '
         'Label12
         '
@@ -702,7 +646,7 @@ Partial Class RegisterForm
         '
         'Panel4
         '
-        Me.Panel4.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.Panel4.BackColor = System.Drawing.Color.Transparent
         Me.Panel4.Controls.Add(Me.Label4)
         Me.Panel4.Controls.Add(Me.txtPhone)
         Me.Panel4.Controls.Add(Me.Label10)
@@ -741,7 +685,7 @@ Partial Class RegisterForm
         Me.txtPhone.PlaceholderColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(248, Byte), Integer))
         Me.txtPhone.PlaceholderText = "PhoneNumber"
         Me.txtPhone.Size = New System.Drawing.Size(165, 42)
-        Me.txtPhone.TabIndex = 2
+        Me.txtPhone.TabIndex = 5
         Me.txtPhone.Texts = ""
         Me.txtPhone.UnderlinedStyle = True
         '
@@ -758,7 +702,7 @@ Partial Class RegisterForm
         '
         'Panel6
         '
-        Me.Panel6.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.Panel6.BackColor = System.Drawing.Color.Transparent
         Me.Panel6.Controls.Add(Me.Label14)
         Me.Panel6.Controls.Add(Me.Label15)
         Me.Panel6.Controls.Add(Me.txtEngName)
@@ -808,13 +752,13 @@ Partial Class RegisterForm
         Me.txtEngName.PlaceholderColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(248, Byte), Integer))
         Me.txtEngName.PlaceholderText = "EnglishName"
         Me.txtEngName.Size = New System.Drawing.Size(323, 42)
-        Me.txtEngName.TabIndex = 2
+        Me.txtEngName.TabIndex = 1
         Me.txtEngName.Texts = ""
         Me.txtEngName.UnderlinedStyle = True
         '
         'Panel5
         '
-        Me.Panel5.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.Panel5.BackColor = System.Drawing.Color.Transparent
         Me.Panel5.Controls.Add(Me.Label2)
         Me.Panel5.Controls.Add(Me.Label1)
         Me.Panel5.Controls.Add(Me.txtKhName)
@@ -864,38 +808,44 @@ Partial Class RegisterForm
         Me.txtKhName.PlaceholderColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(248, Byte), Integer))
         Me.txtKhName.PlaceholderText = "Khmer Name"
         Me.txtKhName.Size = New System.Drawing.Size(323, 42)
-        Me.txtKhName.TabIndex = 2
+        Me.txtKhName.TabIndex = 0
         Me.txtKhName.Texts = ""
         Me.txtKhName.UnderlinedStyle = True
         '
         'IconButton1
         '
-        Me.IconButton1.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.IconButton1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.IconButton1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(76, Byte), Integer))
+        Me.IconButton1.FlatAppearance.BorderSize = 0
+        Me.IconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.IconButton1.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.IconButton1.ForeColor = System.Drawing.Color.White
         Me.IconButton1.IconChar = FontAwesome.Sharp.IconChar.None
-        Me.IconButton1.IconColor = System.Drawing.Color.Black
+        Me.IconButton1.IconColor = System.Drawing.Color.Transparent
         Me.IconButton1.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.IconButton1.Location = New System.Drawing.Point(1511, 290)
+        Me.IconButton1.Location = New System.Drawing.Point(0, 229)
         Me.IconButton1.Name = "IconButton1"
-        Me.IconButton1.Size = New System.Drawing.Size(136, 32)
+        Me.IconButton1.Size = New System.Drawing.Size(142, 32)
         Me.IconButton1.TabIndex = 59
-        Me.IconButton1.Text = "Choose Image"
-        Me.IconButton1.UseVisualStyleBackColor = True
+        Me.IconButton1.Text = "ជ្រើសរើសរូបភាព"
+        Me.IconButton1.UseVisualStyleBackColor = False
         '
         'Label13
         '
         Me.Label13.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Tlok", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Font = New System.Drawing.Font("Khmer Moul", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label13.Location = New System.Drawing.Point(778, 7)
+        Me.Label13.Location = New System.Drawing.Point(768, 7)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(154, 29)
+        Me.Label13.Size = New System.Drawing.Size(127, 37)
         Me.Label13.TabIndex = 58
-        Me.Label13.Text = "RegisterForm"
+        Me.Label13.Text = "ចុះឈ្មោះសិស្ស"
         '
         'Panel3
         '
-        Me.Panel3.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.Panel3.BackColor = System.Drawing.Color.Transparent
         Me.Panel3.Controls.Add(Me.cbGender)
         Me.Panel3.Controls.Add(Me.Label6)
         Me.Panel3.Controls.Add(Me.Label5)
@@ -914,7 +864,7 @@ Partial Class RegisterForm
         Me.cbGender.Location = New System.Drawing.Point(113, 2)
         Me.cbGender.Name = "cbGender"
         Me.cbGender.Size = New System.Drawing.Size(162, 35)
-        Me.cbGender.TabIndex = 15
+        Me.cbGender.TabIndex = 2
         '
         'Label6
         '
@@ -939,12 +889,12 @@ Partial Class RegisterForm
         '
         'picStudent
         '
-        Me.picStudent.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.picStudent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.picStudent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.picStudent.Location = New System.Drawing.Point(1506, 64)
+        Me.picStudent.Dock = System.Windows.Forms.DockStyle.Top
+        Me.picStudent.Location = New System.Drawing.Point(0, 0)
         Me.picStudent.Name = "picStudent"
-        Me.picStudent.Size = New System.Drawing.Size(146, 209)
+        Me.picStudent.Size = New System.Drawing.Size(142, 223)
         Me.picStudent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picStudent.TabIndex = 50
         Me.picStudent.TabStop = False
@@ -959,29 +909,6 @@ Partial Class RegisterForm
         Me.Label7.TabIndex = 13
         Me.Label7.Text = ":"
         '
-        'Panel13
-        '
-        Me.Panel13.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Panel13.Controls.Add(Me.DataGridView2)
-        Me.Panel13.Controls.Add(Me.Label26)
-        Me.Panel13.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel13.Location = New System.Drawing.Point(5, 444)
-        Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(1710, 528)
-        Me.Panel13.TabIndex = 4
-        '
-        'Label26
-        '
-        Me.Label26.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Label26.AutoSize = True
-        Me.Label26.Font = New System.Drawing.Font("Khmer OS Moul Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label26.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label26.Location = New System.Drawing.Point(767, 32)
-        Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(120, 29)
-        Me.Label26.TabIndex = 59
-        Me.Label26.Text = "បញ្ជីវគ្គសិក្សា"
-        '
         'OpenPic
         '
         Me.OpenPic.FileName = "StudentImage"
@@ -992,73 +919,153 @@ Partial Class RegisterForm
         '
         Me.PrintDialog1.UseEXDialog = True
         '
-        'DataGridView2
+        'Panel16
         '
-        Me.DataGridView2.AllowUserToAddRows = False
-        Me.DataGridView2.AllowUserToDeleteRows = False
-        Me.DataGridView2.AllowUserToOrderColumns = True
-        Me.DataGridView2.AllowUserToResizeColumns = False
-        Me.DataGridView2.AllowUserToResizeRows = False
-        Me.DataGridView2.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.DataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(254, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(111, Byte), Integer), CType(CType(210, Byte), Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.GridColor = System.Drawing.Color.DarkGray
-        Me.DataGridView2.Location = New System.Drawing.Point(14, 117)
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.ReadOnly = True
-        Me.DataGridView2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.NullValue = "48745"
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView2.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.DataGridView2.RowHeadersVisible = False
-        Me.DataGridView2.RowHeadersWidth = 35
-        Me.DataGridView2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Khmer OS Siemreap", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
-        Me.DataGridView2.RowsDefaultCellStyle = DataGridViewCellStyle3
-        Me.DataGridView2.RowTemplate.ReadOnly = True
-        Me.DataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView2.Size = New System.Drawing.Size(1684, 440)
-        Me.DataGridView2.TabIndex = 64
+        Me.Panel16.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(253, Byte), Integer))
+        Me.Panel16.Controls.Add(Me.ComboBox1)
+        Me.Panel16.Controls.Add(Me.cbSearchTeacher)
+        Me.Panel16.Controls.Add(Me.Button1)
+        Me.Panel16.Controls.Add(Me.txtSearch)
+        Me.Panel16.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel16.Location = New System.Drawing.Point(15, 404)
+        Me.Panel16.Margin = New System.Windows.Forms.Padding(3, 3, 3, 10)
+        Me.Panel16.Name = "Panel16"
+        Me.Panel16.Padding = New System.Windows.Forms.Padding(15)
+        Me.Panel16.Size = New System.Drawing.Size(1690, 72)
+        Me.Panel16.TabIndex = 5
+        '
+        'cbSearchTeacher
+        '
+        Me.cbSearchTeacher.BackColor = System.Drawing.Color.FromArgb(CType(CType(202, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.cbSearchTeacher.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbSearchTeacher.Font = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbSearchTeacher.ForeColor = System.Drawing.SystemColors.MenuText
+        Me.cbSearchTeacher.FormattingEnabled = True
+        Me.cbSearchTeacher.ItemHeight = 24
+        Me.cbSearchTeacher.Location = New System.Drawing.Point(396, 20)
+        Me.cbSearchTeacher.Name = "cbSearchTeacher"
+        Me.cbSearchTeacher.Size = New System.Drawing.Size(197, 32)
+        Me.cbSearchTeacher.TabIndex = 24
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.Red
+        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(37, Byte), Integer))
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(618, 16)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(170, 41)
+        Me.Button1.TabIndex = 21
+        Me.Button1.Text = "សម្អាត"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'txtSearch
+        '
+        Me.txtSearch.BackColor = System.Drawing.SystemColors.Window
+        Me.txtSearch.BorderColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(111, Byte), Integer), CType(CType(210, Byte), Integer))
+        Me.txtSearch.BorderFocusColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtSearch.BorderRadius = 10
+        Me.txtSearch.BorderSize = 2
+        Me.txtSearch.Font = New System.Drawing.Font("Khmer OS Battambang", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSearch.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.txtSearch.Location = New System.Drawing.Point(36, 17)
+        Me.txtSearch.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtSearch.Multiline = False
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.Padding = New System.Windows.Forms.Padding(10, 7, 10, 7)
+        Me.txtSearch.PasswordChar = False
+        Me.txtSearch.PlaceholderColor = System.Drawing.Color.DarkGray
+        Me.txtSearch.PlaceholderText = "ស្វែងរក ឈ្មោះមុខវីជ្ជា ឬ ClassID"
+        Me.txtSearch.Size = New System.Drawing.Size(340, 39)
+        Me.txtSearch.TabIndex = 30
+        Me.txtSearch.Texts = ""
+        Me.txtSearch.UnderlinedStyle = False
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.AllowUserToResizeColumns = False
+        Me.DataGridView1.AllowUserToResizeRows = False
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(254, Byte), Integer))
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
+        Me.DataGridView1.ColumnHeadersHeight = 40
+        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DataGridView1.EnableHeadersVisualStyles = False
+        Me.DataGridView1.Location = New System.Drawing.Point(15, 476)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(3, 3, 15, 3)
+        Me.DataGridView1.MultiSelect = False
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle11
+        Me.DataGridView1.RowHeadersVisible = False
+        Me.DataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
+        DataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(253, Byte), Integer))
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(138, Byte), Integer))
+        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle12
+        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DataGridView1.Size = New System.Drawing.Size(1690, 491)
+        Me.DataGridView1.TabIndex = 6
+        '
+        'Panel13
+        '
+        Me.Panel13.Controls.Add(Me.picStudent)
+        Me.Panel13.Controls.Add(Me.IconButton1)
+        Me.Panel13.Location = New System.Drawing.Point(1523, 64)
+        Me.Panel13.Name = "Panel13"
+        Me.Panel13.Size = New System.Drawing.Size(142, 265)
+        Me.Panel13.TabIndex = 74
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(202, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox1.Font = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox1.ForeColor = System.Drawing.SystemColors.MenuText
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.ItemHeight = 24
+        Me.ComboBox1.Location = New System.Drawing.Point(1532, 20)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(154, 32)
+        Me.ComboBox1.TabIndex = 32
         '
         'RegisterForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.LightGray
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(253, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1720, 982)
-        Me.Controls.Add(Me.Panel13)
+        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.Panel16)
         Me.Controls.Add(Me.Panel2)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "RegisterForm"
-        Me.Padding = New System.Windows.Forms.Padding(5, 2, 5, 10)
+        Me.Padding = New System.Windows.Forms.Padding(15)
         Me.Text = "Student"
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.Panel15.ResumeLayout(False)
-        Me.Panel15.PerformLayout()
         Me.Panel14.ResumeLayout(False)
         Me.Panel14.PerformLayout()
         Me.Panel12.ResumeLayout(False)
@@ -1082,9 +1089,9 @@ Partial Class RegisterForm
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         CType(Me.picStudent, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel16.ResumeLayout(False)
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel13.ResumeLayout(False)
-        Me.Panel13.PerformLayout()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1097,7 +1104,7 @@ Partial Class RegisterForm
     Friend WithEvents Label8 As Label
     Friend WithEvents picStudent As PictureBox
     Friend WithEvents Label10 As Label
-    Friend WithEvents txtPOB As CustomControls.RJControls.RJTextBox
+    Friend WithEvents txtAddress As CustomControls.RJControls.RJTextBox
     Friend WithEvents Label12 As Label
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Label6 As Label
@@ -1135,8 +1142,6 @@ Partial Class RegisterForm
     Friend WithEvents Label25 As Label
     Friend WithEvents lbPrice As Label
     Friend WithEvents Label22 As Label
-    Friend WithEvents Panel13 As Panel
-    Friend WithEvents Label26 As Label
     Friend WithEvents Panel14 As Panel
     Friend WithEvents Label27 As Label
     Friend WithEvents Label28 As Label
@@ -1148,10 +1153,6 @@ Partial Class RegisterForm
     Friend WithEvents Label30 As Label
     Friend WithEvents Label31 As Label
     Friend WithEvents btnChooseStudent As Button
-    Friend WithEvents Panel15 As Panel
-    Friend WithEvents Label29 As Label
-    Friend WithEvents txtEmail As CustomControls.RJControls.RJTextBox
-    Friend WithEvents Label32 As Label
     Friend WithEvents PrintDialog1 As PrintDialog
     Friend WithEvents cbTime As ComboBox
     Friend WithEvents Panel1 As Panel
@@ -1159,6 +1160,11 @@ Partial Class RegisterForm
     Friend WithEvents Label34 As Label
     Friend WithEvents Label35 As Label
     Friend WithEvents txtpay As TextBox
-    Friend WithEvents DateTimePicker1 As DateTimePicker
-    Friend WithEvents DataGridView2 As DataGridView
+    Friend WithEvents Panel16 As Panel
+    Friend WithEvents cbSearchTeacher As ComboBox
+    Friend WithEvents Button1 As Button
+    Friend WithEvents txtSearch As CustomControls.RJControls.RJTextBox
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Panel13 As Panel
+    Friend WithEvents ComboBox1 As ComboBox
 End Class
