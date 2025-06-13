@@ -77,7 +77,7 @@ Public Class TeachersForm
         Display()
     End Sub
 
-    Private Sub btnChooseImage_Click(sender As Object, e As EventArgs) Handles btnChooseImage.Click
+    Private Sub btnChooseImage_Click(sender As Object, e As EventArgs)
         OpenPic.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp"
         OpenPic.Title = "Select a Picture"
         OpenPic.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)
@@ -115,19 +115,19 @@ Public Class TeachersForm
         DataGridView1.ClearSelection()
     End Sub
 
-    Private Sub Panel13_Paint(sender As Object, e As PaintEventArgs) Handles Panel13.Paint
+    Private Sub Panel13_Paint(sender As Object, e As PaintEventArgs)
         Display()
 
     End Sub
 
-    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+    Private Sub btnAdd_Click(sender As Object, e As EventArgs)
         Panel2.Visible = True
         picTeacher.ImageLocation = Application.StartupPath & "\Images\defalutStudent.png"
         btnAddNew.Visible = True
         btnEdit.Visible = False
     End Sub
 
-    Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
+    Private Sub btnEdit_Click(sender As Object, e As EventArgs)
         If Not CheckField() Then
             Return
         End If
@@ -169,7 +169,7 @@ Public Class TeachersForm
         Display()
     End Sub
 
-    Private Sub btnAddNew_Click(sender As Object, e As EventArgs) Handles btnAddNew.Click
+    Private Sub btnAddNew_Click(sender As Object, e As EventArgs)
         If Not CheckField() Then
             Return
         Else
@@ -186,7 +186,7 @@ Public Class TeachersForm
         Display()
     End Sub
 
-    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs)
         Panel2.Visible = False
         txtKhName.Texts = ""
         txtEngName.Texts = ""
@@ -199,7 +199,7 @@ Public Class TeachersForm
         btnAddNew.Visible = False
     End Sub
 
-    Private Sub DataGridView1_MouseClick(sender As Object, e As MouseEventArgs) Handles DataGridView1.MouseClick
+    Private Sub DataGridView1_MouseClick(sender As Object, e As MouseEventArgs)
         Dim menu As New ContextMenuStrip()
         menu.Font = New Font("Khmer OS System", 9)
         menu.Items.Add("លម្អិត", Nothing, AddressOf ShowDetails)
@@ -243,7 +243,7 @@ Public Class TeachersForm
         btnAddNew.Visible = False
     End Sub
 
-    Private Sub Panel9_Paint(sender As Object, e As PaintEventArgs) Handles Panel9.Paint
+    Private Sub Panel9_Paint(sender As Object, e As PaintEventArgs)
         startup = False
         GetCbAddress()
     End Sub
@@ -269,7 +269,7 @@ Public Class TeachersForm
         Regonize()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
         cbAddress.SelectedIndex = cbAddress.Items.Count - 1
         txtSearch.Texts = ""
     End Sub
@@ -287,5 +287,13 @@ Public Class TeachersForm
 
     Private Sub cbSearchAddress_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbSearchAddress.SelectedIndexChanged
         SearchData()
+    End Sub
+
+    Private Sub DataGridView2_Click(sender As Object, e As DataGridViewCellEventArgs)
+
+    End Sub
+
+    Private Sub SearchData(sender As Object, e As EventArgs)
+
     End Sub
 End Class

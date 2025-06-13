@@ -36,8 +36,8 @@ Partial Class LoginForm
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnShowHide = New FontAwesome.Sharp.IconButton()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.btnClose = New FontAwesome.Sharp.IconButton()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.btnClose = New FontAwesome.Sharp.IconButton()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -237,6 +237,21 @@ Partial Class LoginForm
         Me.Panel2.Size = New System.Drawing.Size(984, 25)
         Me.Panel2.TabIndex = 17
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label6.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Label6.Location = New System.Drawing.Point(5, 0)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(3, 5, 0, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Padding = New System.Windows.Forms.Padding(0, 3, 0, 0)
+        Me.Label6.Size = New System.Drawing.Size(234, 22)
+        Me.Label6.TabIndex = 14
+        Me.Label6.Text = "ShorCourse Management Systme"
+        '
         'btnClose
         '
         Me.btnClose.BackColor = System.Drawing.Color.Transparent
@@ -256,21 +271,6 @@ Partial Class LoginForm
         Me.btnClose.TabIndex = 12
         Me.btnClose.Text = "X"
         Me.btnClose.UseVisualStyleBackColor = False
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label6.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Label6.Location = New System.Drawing.Point(5, 0)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(3, 5, 0, 0)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Padding = New System.Windows.Forms.Padding(0, 3, 0, 0)
-        Me.Label6.Size = New System.Drawing.Size(234, 22)
-        Me.Label6.TabIndex = 14
-        Me.Label6.Text = "ShorCourse Management Systme"
         '
         'LoginForm
         '
