@@ -32,6 +32,11 @@ StudentManagementSystem
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:StudentManagementSystem.My.Resources.Resources.loginfrom1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:StudentManagementSystem.My.Resources.Resources.profile">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.

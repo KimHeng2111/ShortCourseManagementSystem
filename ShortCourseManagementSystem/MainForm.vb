@@ -3,6 +3,7 @@ Public Class MainForm
     Private currentBtn As IconButton
     Private leftBorderBtn As Panel
     Private currentChildForm As Form
+    Public login As Integer
     'Constructor
     Public Sub New()
         ' This call is required by the designer.
@@ -15,6 +16,8 @@ Public Class MainForm
         panelMenu.Controls.Add(leftBorderBtn)
         Me.DoubleBuffered = True
         Me.MaximizedBounds = Screen.FromHandle(Me.Handle).WorkingArea
+        Dim test As LoginForm = New LoginForm()
+        login = test.ShowDialog()
     End Sub
     Private Sub Activatebutton(senderBtn As Object, customColor As Color)
         If senderBtn IsNot Nothing Then
@@ -125,7 +128,8 @@ Public Class MainForm
     End Sub
 
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim test As LoginForm = New LoginForm()
-        Dim a As Integer = test.ShowDialog()
+        If login = 2 Then
+            Application.Exit()
+        End If
     End Sub
 End Class

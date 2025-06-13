@@ -254,15 +254,16 @@ Public Class TeachersForm
         End If
         Dim query As String = "SELECT tblTeacher.ID, tblTeacher.KhName AS KhmerName, tblTeacher.engName AS EnglishName, tblTeacher.DOB AS DateOfBirth, 
                                 tblTeacher.Address AS PlaceOfBirth, tblTeacher.Email, tblTeacher.Phone FROM tblTeacher
-                                WHERE Address LIKE @address AND (ID Like @id OR (KhName Like @name OR engName Like @name));"
+                                WHERE Address LIKE @address AND (ID Like @id AND (KhName Like @name OR engName Like @name));"
         Dim cmd As OleDbCommand = New OleDbCommand(query, teacher.GetConnection())
-        Dim name As String = If(txtSearch.Texts.Trim() = "", "%", "%" & txtSearch.Texts.Trim() & "%")
+        Dim name As String = If(txtSearch.Texts.Trim() = "", "%", txtSearch.Texts.Trim() & "%")
         Dim id As String = If(IsNumeric(txtSearch.Texts.Trim()), txtSearch.Texts.Trim(), "%")
         Dim address As String = If(cbSearchAddress.SelectedIndex = cbSearchAddress.Items.Count - 1, "%", cbSearchAddress.SelectedItem.ToString())
         address = "%" & address & "%"
         cmd.Parameters.AddWithValue("@address", address)
         cmd.Parameters.AddWithValue("@id", id)
         cmd.Parameters.AddWithValue("@name", name)
+
         Dim dt As DataTable = teacher.ExecuteQuery(cmd)
         DataGridView1.DataSource = dt
         Regonize()
