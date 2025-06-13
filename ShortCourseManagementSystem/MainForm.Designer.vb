@@ -360,8 +360,9 @@ Partial Class MainForm
         Me.Panel1.Controls.Add(Me.btnClose)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 0, 0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Padding = New System.Windows.Forms.Padding(15, 5, 0, 0)
+        Me.Panel1.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
         Me.Panel1.Size = New System.Drawing.Size(1920, 33)
         Me.Panel1.TabIndex = 3
         '
@@ -372,10 +373,11 @@ Partial Class MainForm
         Me.Label1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(15, 5)
+        Me.Label1.Location = New System.Drawing.Point(15, 0)
         Me.Label1.Margin = New System.Windows.Forms.Padding(3, 0, 0, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(234, 19)
+        Me.Label1.Padding = New System.Windows.Forms.Padding(0, 5, 0, 0)
+        Me.Label1.Size = New System.Drawing.Size(234, 24)
         Me.Label1.TabIndex = 13
         Me.Label1.Text = "ShorCourse Management Systme"
         '
@@ -392,9 +394,9 @@ Partial Class MainForm
         Me.btnMin.IconColor = System.Drawing.Color.Black
         Me.btnMin.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.btnMin.IconSize = 30
-        Me.btnMin.Location = New System.Drawing.Point(1860, 5)
+        Me.btnMin.Location = New System.Drawing.Point(1860, 0)
         Me.btnMin.Name = "btnMin"
-        Me.btnMin.Size = New System.Drawing.Size(30, 28)
+        Me.btnMin.Size = New System.Drawing.Size(30, 33)
         Me.btnMin.TabIndex = 12
         Me.btnMin.Text = "-"
         Me.btnMin.UseVisualStyleBackColor = False
@@ -412,9 +414,9 @@ Partial Class MainForm
         Me.btnClose.IconColor = System.Drawing.Color.Black
         Me.btnClose.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.btnClose.IconSize = 30
-        Me.btnClose.Location = New System.Drawing.Point(1890, 5)
+        Me.btnClose.Location = New System.Drawing.Point(1890, 0)
         Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(30, 28)
+        Me.btnClose.Size = New System.Drawing.Size(30, 33)
         Me.btnClose.TabIndex = 11
         Me.btnClose.Text = "X"
         Me.btnClose.UseVisualStyleBackColor = False

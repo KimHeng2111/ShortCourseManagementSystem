@@ -194,6 +194,7 @@
     <Compile Include="Auth\LoginForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Auth\User.vb" />
     <Compile Include="Dialog\ClassDetail.Designer.vb">
       <DependentUpon>ClassDetail.vb</DependentUpon>
     </Compile>
