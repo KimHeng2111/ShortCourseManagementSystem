@@ -6,8 +6,6 @@
 
         ' Add any initialization after the InitializeComponent() call.
         Me.FormBorderStyle = FormBorderStyle.None
-        Dim test As Boolean = ("A" = "a")
-        MsgBox(test.ToString())
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnExit.Click
