@@ -17,7 +17,7 @@
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles btnLogin.Click
         If CheckField() Then
-            If User.CheckLogin(txtUserName.Texts.Trim(), txtPassWord.Texts.Trim()) Then
+            If User.CheckLogin(txtUserName.Text.Trim(), txtPassWord.Text.Trim()) Then
                 MessageBox.Show("សូមស្វាគមន៍ " & User.userName, "ការជោគជ័យ", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                 Me.DialogResult = 1
@@ -29,12 +29,12 @@
         End If
     End Sub
     Function CheckField() As Boolean
-        If txtUserName.Texts = "" Then
+        If txtUserName.Text = "" Then
             MessageBox.Show("សូមបញ្ចូលឈ្មោះអ្នកប្រើប្រាស់", "ការព្រមាន", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             txtUserName.Focus()
             Return False
         Else
-            If txtPassWord.Texts = "" Then
+            If txtPassWord.Text = "" Then
                 MessageBox.Show("សូមបញ្ចូលពាក្យសម្ងាត់", "ការព្រមាន", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 txtPassWord.Focus()
                 Return False
@@ -44,11 +44,11 @@
         End If
     End Function
     Private Sub btnShowHide_Click(sender As Object, e As EventArgs) Handles btnShowHide.Click
-        If txtPassWord.PasswordChar = True Then
-            txtPassWord.PasswordChar = False
+        If txtPassWord.UseSystemPasswordChar = True Then
+            txtPassWord.UseSystemPasswordChar = False
             btnShowHide.IconChar = FontAwesome.Sharp.IconChar.EyeSlash
         Else
-            txtPassWord.PasswordChar = True
+            txtPassWord.UseSystemPasswordChar = True
             btnShowHide.IconChar = FontAwesome.Sharp.IconChar.Eye
         End If
     End Sub

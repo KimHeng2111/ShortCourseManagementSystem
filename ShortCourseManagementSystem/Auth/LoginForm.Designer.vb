@@ -22,12 +22,11 @@ Partial Class LoginForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LoginForm))
         Me.Label5 = New System.Windows.Forms.Label()
         Me.btnExit = New System.Windows.Forms.Button()
         Me.btnLogin = New System.Windows.Forms.Button()
-        Me.txtPassWord = New CustomControls.RJControls.RJTextBox()
-        Me.txtUserName = New CustomControls.RJControls.RJTextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -36,8 +35,11 @@ Partial Class LoginForm
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnShowHide = New FontAwesome.Sharp.IconButton()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.btnClose = New FontAwesome.Sharp.IconButton()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.btnClose = New FontAwesome.Sharp.IconButton()
+        Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
+        Me.txtUserName = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtPassWord = New Guna.UI2.WinForms.Guna2TextBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -50,7 +52,7 @@ Partial Class LoginForm
         Me.Label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label5.Font = New System.Drawing.Font("Khmer OS Siemreap", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(153, 318)
+        Me.Label5.Location = New System.Drawing.Point(153, 254)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(110, 33)
         Me.Label5.TabIndex = 10
@@ -85,58 +87,12 @@ Partial Class LoginForm
         Me.btnLogin.Text = "ចូល"
         Me.btnLogin.UseVisualStyleBackColor = False
         '
-        'txtPassWord
-        '
-        Me.txtPassWord.AccessibleRole = System.Windows.Forms.AccessibleRole.None
-        Me.txtPassWord.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtPassWord.BorderColor = System.Drawing.SystemColors.HotTrack
-        Me.txtPassWord.BorderFocusColor = System.Drawing.Color.Blue
-        Me.txtPassWord.BorderRadius = 3
-        Me.txtPassWord.BorderSize = 2
-        Me.txtPassWord.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPassWord.ForeColor = System.Drawing.Color.Black
-        Me.txtPassWord.Location = New System.Drawing.Point(653, 214)
-        Me.txtPassWord.Margin = New System.Windows.Forms.Padding(4)
-        Me.txtPassWord.Multiline = False
-        Me.txtPassWord.Name = "txtPassWord"
-        Me.txtPassWord.Padding = New System.Windows.Forms.Padding(10, 7, 10, 7)
-        Me.txtPassWord.PasswordChar = True
-        Me.txtPassWord.PlaceholderColor = System.Drawing.Color.Gainsboro
-        Me.txtPassWord.PlaceholderText = "ពាក្យសម្ងាត់"
-        Me.txtPassWord.Size = New System.Drawing.Size(270, 42)
-        Me.txtPassWord.TabIndex = 12
-        Me.txtPassWord.Texts = ""
-        Me.txtPassWord.UnderlinedStyle = True
-        '
-        'txtUserName
-        '
-        Me.txtUserName.AccessibleRole = System.Windows.Forms.AccessibleRole.None
-        Me.txtUserName.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtUserName.BorderColor = System.Drawing.SystemColors.HotTrack
-        Me.txtUserName.BorderFocusColor = System.Drawing.Color.Blue
-        Me.txtUserName.BorderRadius = 3
-        Me.txtUserName.BorderSize = 2
-        Me.txtUserName.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUserName.ForeColor = System.Drawing.Color.Black
-        Me.txtUserName.Location = New System.Drawing.Point(653, 150)
-        Me.txtUserName.Margin = New System.Windows.Forms.Padding(4)
-        Me.txtUserName.Multiline = False
-        Me.txtUserName.Name = "txtUserName"
-        Me.txtUserName.Padding = New System.Windows.Forms.Padding(10, 7, 10, 7)
-        Me.txtUserName.PasswordChar = False
-        Me.txtUserName.PlaceholderColor = System.Drawing.Color.LightGray
-        Me.txtUserName.PlaceholderText = "ឈ្មោះអ្នកប្រើប្រាស់"
-        Me.txtUserName.Size = New System.Drawing.Size(270, 42)
-        Me.txtUserName.TabIndex = 11
-        Me.txtUserName.Texts = ""
-        Me.txtUserName.UnderlinedStyle = True
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Black
+        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(6, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(79, Byte), Integer))
         Me.Label2.Location = New System.Drawing.Point(522, 218)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(117, 34)
@@ -148,8 +104,8 @@ Partial Class LoginForm
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(522, 154)
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(6, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(79, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(515, 154)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(124, 34)
         Me.Label1.TabIndex = 9
@@ -186,7 +142,7 @@ Partial Class LoginForm
         Me.Label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label4.Font = New System.Drawing.Font("Khmer OS Siemreap", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(19, 202)
+        Me.Label4.Location = New System.Drawing.Point(19, 208)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(378, 24)
         Me.Label4.TabIndex = 9
@@ -219,7 +175,7 @@ Partial Class LoginForm
         Me.btnShowHide.IconColor = System.Drawing.Color.Black
         Me.btnShowHide.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.btnShowHide.IconSize = 30
-        Me.btnShowHide.Location = New System.Drawing.Point(887, 218)
+        Me.btnShowHide.Location = New System.Drawing.Point(885, 215)
         Me.btnShowHide.Name = "btnShowHide"
         Me.btnShowHide.Size = New System.Drawing.Size(35, 34)
         Me.btnShowHide.TabIndex = 16
@@ -236,6 +192,21 @@ Partial Class LoginForm
         Me.Panel2.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
         Me.Panel2.Size = New System.Drawing.Size(984, 25)
         Me.Panel2.TabIndex = 17
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label6.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Label6.Location = New System.Drawing.Point(5, 0)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(3, 5, 0, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Padding = New System.Windows.Forms.Padding(0, 3, 0, 0)
+        Me.Label6.Size = New System.Drawing.Size(234, 22)
+        Me.Label6.TabIndex = 14
+        Me.Label6.Text = "ShorCourse Management Systme"
         '
         'btnClose
         '
@@ -257,20 +228,72 @@ Partial Class LoginForm
         Me.btnClose.Text = "X"
         Me.btnClose.UseVisualStyleBackColor = False
         '
-        'Label6
+        'Guna2Elipse1
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label6.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Label6.Location = New System.Drawing.Point(5, 0)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(3, 5, 0, 0)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Padding = New System.Windows.Forms.Padding(0, 3, 0, 0)
-        Me.Label6.Size = New System.Drawing.Size(234, 22)
-        Me.Label6.TabIndex = 14
-        Me.Label6.Text = "ShorCourse Management Systme"
+        Me.Guna2Elipse1.TargetControl = Me
+        '
+        'txtUserName
+        '
+        Me.txtUserName.BackColor = System.Drawing.Color.Transparent
+        Me.txtUserName.BorderColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(233, Byte), Integer))
+        Me.txtUserName.BorderRadius = 10
+        Me.txtUserName.BorderThickness = 2
+        Me.txtUserName.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtUserName.DefaultText = ""
+        Me.txtUserName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtUserName.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtUserName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtUserName.DisabledState.Parent = Me.txtUserName
+        Me.txtUserName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtUserName.FillColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtUserName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtUserName.FocusedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtUserName.FocusedState.Parent = Me.txtUserName
+        Me.txtUserName.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUserName.ForeColor = System.Drawing.Color.Black
+        Me.txtUserName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtUserName.HoverState.Parent = Me.txtUserName
+        Me.txtUserName.Location = New System.Drawing.Point(653, 150)
+        Me.txtUserName.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.txtUserName.Name = "txtUserName"
+        Me.txtUserName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtUserName.PlaceholderText = "ឈ្មោះអ្នកប្រើប្រាស់"
+        Me.txtUserName.SelectedText = ""
+        Me.txtUserName.ShadowDecoration.Parent = Me.txtUserName
+        Me.txtUserName.Size = New System.Drawing.Size(270, 46)
+        Me.txtUserName.TabIndex = 18
+        '
+        'txtPassWord
+        '
+        Me.txtPassWord.BackColor = System.Drawing.Color.Transparent
+        Me.txtPassWord.BorderColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(233, Byte), Integer))
+        Me.txtPassWord.BorderRadius = 10
+        Me.txtPassWord.BorderThickness = 2
+        Me.txtPassWord.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtPassWord.DefaultText = ""
+        Me.txtPassWord.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtPassWord.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtPassWord.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtPassWord.DisabledState.Parent = Me.txtPassWord
+        Me.txtPassWord.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtPassWord.FillColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtPassWord.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtPassWord.FocusedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtPassWord.FocusedState.Parent = Me.txtPassWord
+        Me.txtPassWord.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPassWord.ForeColor = System.Drawing.Color.Black
+        Me.txtPassWord.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtPassWord.HoverState.Parent = Me.txtPassWord
+        Me.txtPassWord.Location = New System.Drawing.Point(653, 208)
+        Me.txtPassWord.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.txtPassWord.Name = "txtPassWord"
+        Me.txtPassWord.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtPassWord.PlaceholderText = "ពាក្យសម្ងាត់"
+        Me.txtPassWord.SelectedText = ""
+        Me.txtPassWord.ShadowDecoration.Parent = Me.txtPassWord
+        Me.txtPassWord.Size = New System.Drawing.Size(270, 46)
+        Me.txtPassWord.TabIndex = 19
+        Me.txtPassWord.UseSystemPasswordChar = True
         '
         'LoginForm
         '
@@ -279,22 +302,23 @@ Partial Class LoginForm
         Me.BackgroundImage = Global.StudentManagementSystem.My.Resources.Resources.loginfrom1
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(984, 502)
+        Me.Controls.Add(Me.txtUserName)
         Me.Controls.Add(Me.btnShowHide)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnLogin)
-        Me.Controls.Add(Me.txtPassWord)
-        Me.Controls.Add(Me.txtUserName)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel2)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
+        Me.Controls.Add(Me.txtPassWord)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximumSize = New System.Drawing.Size(1000, 700)
         Me.MinimumSize = New System.Drawing.Size(100, 500)
         Me.Name = "LoginForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "LoginForm"
+        Me.TransparencyKey = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
@@ -308,8 +332,6 @@ Partial Class LoginForm
     Friend WithEvents Label5 As Label
     Friend WithEvents btnExit As Button
     Friend WithEvents btnLogin As Button
-    Friend WithEvents txtPassWord As CustomControls.RJControls.RJTextBox
-    Friend WithEvents txtUserName As CustomControls.RJControls.RJTextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox1 As PictureBox
@@ -320,4 +342,7 @@ Partial Class LoginForm
     Friend WithEvents Panel2 As Panel
     Friend WithEvents btnClose As FontAwesome.Sharp.IconButton
     Friend WithEvents Label6 As Label
+    Friend WithEvents Guna2Elipse1 As Guna.UI2.WinForms.Guna2Elipse
+    Friend WithEvents txtUserName As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txtPassWord As Guna.UI2.WinForms.Guna2TextBox
 End Class
