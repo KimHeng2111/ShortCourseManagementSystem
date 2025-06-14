@@ -3,15 +3,6 @@
 Public Class TeachersForm
     Dim teacher As Teacher = New Teacher()
     Dim startup As Boolean = True
-    Public Sub New()
-        ' This call is required by the designer.
-        InitializeComponent()
-        ' Add any initialization after the InitializeComponent() call.
-        'Dim addressData = teacher.GetAddressData()
-        'addressData.Add("ជ្រើសរើសខេត្ត")
-        'cbAddress.DataSource = addressData
-        'cbAddress.SelectedIndex = cbAddress.Items.Count - 1
-    End Sub
     'Display all teachers in DataGridView
     Sub Display()
         DataGridView1.DataSource = teacher.GetTeacherData()
@@ -53,7 +44,7 @@ Public Class TeachersForm
         Return True
     End Function
 
-    Private Sub DataGridView2_Click(sender As Object, e As EventArgs) Handles DataGridView1.CellClick
+    Private Sub DataGridView1_Click(sender As Object, e As EventArgs) Handles DataGridView1.CellClick
         Dim teacterID As String = DataGridView1.CurrentRow.Cells(0).Value.ToString()
         teacher.GetTeacherByID(teacterID)
         txtKhName.Texts = teacher.KhName
@@ -68,13 +59,6 @@ Public Class TeachersForm
         Else
             picTeacher.ImageLocation = Application.StartupPath & "\Images\defalutStudent.png"
         End If
-    End Sub
-
-    Private Sub btnUpdate_Click(sender As Object, e As EventArgs)
-        If CheckField() Then
-
-        End If
-        Display()
     End Sub
 
     Private Sub btnChooseImage_Click(sender As Object, e As EventArgs) Handles btnChooseImage.Click
@@ -114,12 +98,6 @@ Public Class TeachersForm
         End If
         DataGridView1.ClearSelection()
     End Sub
-
-    Private Sub Panel13_Paint(sender As Object, e As PaintEventArgs) Handles Panel13.Paint
-        Display()
-
-    End Sub
-
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         Panel2.Visible = True
         picTeacher.ImageLocation = Application.StartupPath & "\Images\defalutStudent.png"
@@ -243,10 +221,6 @@ Public Class TeachersForm
         btnAddNew.Visible = False
     End Sub
 
-    Private Sub Panel9_Paint(sender As Object, e As PaintEventArgs) Handles Panel9.Paint
-        startup = False
-        GetCbAddress()
-    End Sub
 
     Sub SearchData() Handles cbSearchAddress.SelectedIndexChanged, txtSearch._TextChanged
         If startup Then
@@ -268,13 +242,7 @@ Public Class TeachersForm
         DataGridView1.DataSource = dt
         Regonize()
     End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        cbAddress.SelectedIndex = cbAddress.Items.Count - 1
-        txtSearch.Texts = ""
-    End Sub
     Sub GetCbAddress()
-
         Dim SearchAddressData As ArrayList = teacher.GetAddressData()
         SearchAddressData.Add("គ្រប់ខេត្តទាំងអស់")
         cbSearchAddress.DataSource = SearchAddressData
@@ -285,7 +253,26 @@ Public Class TeachersForm
         cbAddress.SelectedIndex = cbAddress.Items.Count - 1
     End Sub
 
-    Private Sub cbSearchAddress_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbSearchAddress.SelectedIndexChanged
-        SearchData()
+    Private Sub FlowLayoutPanel1_Paint(sender As Object, e As PaintEventArgs) Handles FlowLayoutPanel1.Paint
+        GetCbAddress()
+        Display()
+    End Sub
+
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+        cbAddress.SelectedIndex = cbAddress.Items.Count - 1
+        txtSearch.Texts = ""
+    End Sub
+
+    Private Sub btnAdd_Click_1(sender As Object, e As EventArgs) Handles btnAdd.Click
+        Panel2.Visible = True
+    End Sub
+
+    Private Sub Panel9_Paint_1(sender As Object, e As PaintEventArgs) Handles Panel9.Paint
+        startup = False
+        GetCbAddress()
+    End Sub
+
+    Private Sub btnEdit_Click_1(sender As Object, e As EventArgs) Handles btnEdit.Click
+
     End Sub
 End Class
