@@ -23,7 +23,7 @@ Public Class RegisterForm
 
 
 
-    Private Sub IconButton1_Click(sender As Object, e As EventArgs) Handles IconButton1.Click
+    Private Sub IconButton1_Click(sender As Object, e As EventArgs)
         OpenPic.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp"
         OpenPic.Title = "Select a Picture"
         OpenPic.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)
@@ -34,7 +34,7 @@ Public Class RegisterForm
     End Sub
 
 
-    Private Sub txtDis_TextChanged_1(sender As Object, e As EventArgs) Handles txtDis.TextChanged
+    Private Sub txtDis_TextChanged_1(sender As Object, e As EventArgs)
         Dim dis As Decimal
         If cbCourse.Text = String.Empty Then
             txtDis.Text = 0
@@ -140,7 +140,7 @@ Public Class RegisterForm
         cbAddress.DataSource = addressData
         cbAddress.SelectedIndex = cbAddress.Items.Count - 1
     End Sub
-    Private Sub cbCourse_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbCourse.SelectedIndexChanged
+    Private Sub cbCourse_SelectedIndexChanged(sender As Object, e As EventArgs)
         If Integer.TryParse(cbCourse.SelectedValue.ToString(), Nothing) = False Then
             Return
         End If
@@ -164,7 +164,7 @@ Public Class RegisterForm
             Return
         End If
         'Step 2 : Create Student
-        register.student.AddStudent(txtKhName.Text.Trim(), txtEngName.Text.Trim(), cbGender.Text, dtpDob.Value, cbAddress.Text.Trim(), txtPhone.Text.Trim(), SaveImageAndReturnPath())
+        register.student.AddStudent(txtKhName.Text.Trim(), txtEngName.Text.Trim(), cbGender.Text, dtpDob.Text, cbAddress.Text.Trim(), txtPhone.Text.Trim(), SaveImageAndReturnPath())
         'Assign data to register
         register.manageClass.GetClassByID(cbTime.SelectedValue.ToString()) 'ADD ManageClass
         register.discount = If(txtDis.Text = String.Empty, 0, Convert.ToDecimal(txtDis.Text))
@@ -182,7 +182,7 @@ Public Class RegisterForm
 
     End Sub
 
-    Private Sub cbTime_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbTime.SelectedIndexChanged
+    Private Sub cbTime_SelectedIndexChanged(sender As Object, e As EventArgs)
         If Integer.TryParse(cbTime.SelectedValue.ToString(), Nothing) = False Then
             Return
         End If
@@ -224,5 +224,26 @@ Public Class RegisterForm
 
     Private Sub PanelListShow_Paint(sender As Object, e As PaintEventArgs) Handles PanelListShow.Paint
         Display()
+    End Sub
+    Private Sub dtpDob_TextChanged(sender As Object, e As EventArgs) Handles dtpDob.TextChanged
+        Dim input As String = dtpDob.Text.Replace("/", "") ' Remove existing slashes
+        If input.Length >= 2 AndAlso input.Length < 4 Then
+            dtpDob.Text = input.Insert(2, "/") ' Add slash after day
+            dtpDob.SelectionStart = dtpDob.Text.Length ' Move cursor to end
+        ElseIf input.Length >= 4 Then
+            dtpDob.Text = input.Insert(2, "/").Insert(5, "/") ' Add slash after month
+            dtpDob.SelectionStart = dtpDob.Text.Length ' Move cursor to end
+        End If
+    End Sub
+
+    Private Sub dtpDob_Leave(sender As Object, e As EventArgs) Handles dtpDob.Leave
+        Dim inputDate As DateTime
+        If DateTime.TryParse(dtpDob.Text, inputDate) Then
+            dtpDob.Text = inputDate.ToString("dd/MM/yyyy")
+        Else
+            MessageBox.Show("សូមបញ្ចូលថ្ងៃខែឆ្នាំកំណើតរបស់សិស្ស", "បញ្ចូលទិន្ន័យមិនត្រឹមត្រូវ", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
     End Sub
 End Class

@@ -3,68 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|c:\\users\\lengk\\onedrive\\desktop\\shortcoursemanagementsystem\\shortcoursemanagementsystem\\report\\invoice.rpt||{C0EF7560-990E-4D61-B970-65A6096B6866}",
-      "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:report\\invoice.rpt||{C0EF7560-990E-4D61-B970-65A6096B6866}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|c:\\users\\lengk\\onedrive\\desktop\\shortcoursemanagementsystem\\shortcoursemanagementsystem\\forms\\registerform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:forms\\registerform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|c:\\users\\lengk\\onedrive\\desktop\\shortcoursemanagementsystem\\shortcoursemanagementsystem\\forms\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:forms\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|c:\\users\\lengk\\onedrive\\desktop\\shortcoursemanagementsystem\\shortcoursemanagementsystem\\forms\\roomform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:forms\\roomform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|c:\\users\\lengk\\onedrive\\desktop\\shortcoursemanagementsystem\\shortcoursemanagementsystem\\forms\\roomform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:forms\\roomform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\forms\\coursesform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:forms\\coursesform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|c:\\users\\lengk\\onedrive\\desktop\\shortcoursemanagementsystem\\shortcoursemanagementsystem\\forms\\registerform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\forms\\registerform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
       "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:forms\\registerform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|c:\\users\\lengk\\onedrive\\desktop\\shortcoursemanagementsystem\\shortcoursemanagementsystem\\forms\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:forms\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|c:\\users\\lengk\\onedrive\\desktop\\shortcoursemanagementsystem\\shortcoursemanagementsystem\\forms\\dashboardform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\forms\\dashboardform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
       "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:forms\\dashboardform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\forms\\dashboardform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:forms\\dashboardform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\model\\dashboard.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:model\\dashboard.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|c:\\users\\lengk\\onedrive\\desktop\\shortcoursemanagementsystem\\shortcoursemanagementsystem\\mainform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:mainform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\mainform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:mainform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|c:\\users\\lengk\\onedrive\\desktop\\shortcoursemanagementsystem\\shortcoursemanagementsystem\\forms\\studentform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:forms\\studentform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|c:\\users\\lengk\\onedrive\\desktop\\shortcoursemanagementsystem\\shortcoursemanagementsystem\\forms\\studentform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:forms\\studentform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|c:\\users\\lengk\\onedrive\\desktop\\shortcoursemanagementsystem\\shortcoursemanagementsystem\\forms\\schedule.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:forms\\schedule.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|c:\\users\\lengk\\onedrive\\desktop\\shortcoursemanagementsystem\\shortcoursemanagementsystem\\report\\invoice.rpt||{C0EF7560-990E-4D61-B970-65A6096B6866}",
+      "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:report\\invoice.rpt||{C0EF7560-990E-4D61-B970-65A6096B6866}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\forms\\coursesform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
@@ -73,6 +25,46 @@
     {
       "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\forms\\teachersform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:forms\\teachersform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\forms\\coursesform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:forms\\coursesform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\forms\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:forms\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\forms\\dashboardform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:forms\\dashboardform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\forms\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:forms\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\forms\\roomform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:forms\\roomform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\forms\\roomform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:forms\\roomform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\mainform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:mainform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\forms\\studentform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:forms\\studentform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\forms\\studentform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:forms\\studentform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\forms\\schedule.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}|ShortCourseManagementSystem.vbproj|solutionrelative:forms\\schedule.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -102,7 +94,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Invoice.rpt",
               "DocumentMoniker": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Report\\Invoice.rpt",
               "RelativeDocumentMoniker": "Report\\Invoice.rpt",
@@ -114,7 +106,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 11,
+              "Title": "RoomForm.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Forms\\RoomForm.vb",
+              "RelativeDocumentMoniker": "Forms\\RoomForm.vb",
+              "ToolTip": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Forms\\RoomForm.vb [Design]",
+              "RelativeToolTip": "Forms\\RoomForm.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-06-15T16:27:54.252Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "RoomForm.vb",
               "DocumentMoniker": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Forms\\RoomForm.vb",
               "RelativeDocumentMoniker": "Forms\\RoomForm.vb",
@@ -127,18 +131,6 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "RoomForm.vb [Design]",
-              "DocumentMoniker": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Forms\\RoomForm.vb",
-              "RelativeDocumentMoniker": "Forms\\RoomForm.vb",
-              "ToolTip": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Forms\\RoomForm.vb [Design]",
-              "RelativeToolTip": "Forms\\RoomForm.vb [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-06-15T16:27:54.252Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 13,
               "Title": "StudentForm.vb",
               "DocumentMoniker": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Forms\\StudentForm.vb",
@@ -147,8 +139,7 @@
               "RelativeToolTip": "Forms\\StudentForm.vb",
               "ViewState": "AgIAAD8AAAAAAAAAAAAAAKIAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-06-15T15:20:32.468Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-15T15:20:32.468Z"
             },
             {
               "$type": "Document",
@@ -159,8 +150,7 @@
               "ToolTip": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Forms\\StudentForm.vb [Design]",
               "RelativeToolTip": "Forms\\StudentForm.vb [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-06-15T15:20:29.882Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-06-15T15:20:29.882Z"
             },
             {
               "$type": "Document",
@@ -171,8 +161,7 @@
               "ToolTip": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Forms\\Schedule.vb [Design]",
               "RelativeToolTip": "Forms\\Schedule.vb [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-06-15T15:20:27.395Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-06-15T15:20:27.395Z"
             },
             {
               "$type": "Document",
@@ -184,43 +173,17 @@
               "RelativeToolTip": "MainForm.vb",
               "ViewState": "AgIAAG8AAAAAAAAAAAAxwIUAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-06-15T04:33:35.862Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-15T04:33:35.862Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "MainForm.vb [Design]",
-              "DocumentMoniker": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\MainForm.vb",
-              "RelativeDocumentMoniker": "MainForm.vb",
-              "ToolTip": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\MainForm.vb [Design]",
-              "RelativeToolTip": "MainForm.vb [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-06-15T04:32:43.126Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Dashboard.vb",
-              "DocumentMoniker": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Model\\Dashboard.vb",
-              "RelativeDocumentMoniker": "Model\\Dashboard.vb",
-              "ToolTip": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Model\\Dashboard.vb",
-              "RelativeToolTip": "Model\\Dashboard.vb",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAADIAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-06-14T15:47:34.124Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "DashboardForm.vb",
               "DocumentMoniker": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Forms\\DashboardForm.vb",
               "RelativeDocumentMoniker": "Forms\\DashboardForm.vb",
               "ToolTip": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Forms\\DashboardForm.vb",
               "RelativeToolTip": "Forms\\DashboardForm.vb",
-              "ViewState": "AgIAABEAAAAAAAAAAAAMwFgAAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAAAGsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-06-14T14:40:28.439Z",
               "EditorCaption": ""
@@ -248,13 +211,13 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "RegisterForm.vb",
               "DocumentMoniker": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Forms\\RegisterForm.vb",
               "RelativeDocumentMoniker": "Forms\\RegisterForm.vb",
               "ToolTip": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Forms\\RegisterForm.vb",
               "RelativeToolTip": "Forms\\RegisterForm.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAMIAAAAAAAAAAAAAAO4AAABTAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-06-15T13:56:58.691Z",
               "IsPinned": true,
@@ -262,7 +225,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "Form1.vb",
               "DocumentMoniker": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Forms\\Form1.vb",
               "RelativeDocumentMoniker": "Forms\\Form1.vb",
@@ -275,7 +238,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 5,
               "Title": "TeachersForm.vb",
               "DocumentMoniker": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Forms\\TeachersForm.vb",
               "RelativeDocumentMoniker": "Forms\\TeachersForm.vb",
@@ -288,7 +251,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 4,
               "Title": "CoursesForm.vb",
               "DocumentMoniker": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Forms\\CoursesForm.vb",
               "RelativeDocumentMoniker": "Forms\\CoursesForm.vb",
@@ -301,7 +264,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 2,
               "Title": "DashboardForm.vb [Design]",
               "DocumentMoniker": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Forms\\DashboardForm.vb",
               "RelativeDocumentMoniker": "Forms\\DashboardForm.vb",
@@ -313,7 +276,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "CoursesForm.vb [Design]",
               "DocumentMoniker": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Forms\\CoursesForm.vb",
               "RelativeDocumentMoniker": "Forms\\CoursesForm.vb",
@@ -325,7 +288,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "RegisterForm.vb [Design]",
               "DocumentMoniker": "C:\\Users\\lengk\\OneDrive\\Desktop\\ShortCourseManagementSystem\\ShortCourseManagementSystem\\Forms\\RegisterForm.vb",
               "RelativeDocumentMoniker": "Forms\\RegisterForm.vb",
