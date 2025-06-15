@@ -286,7 +286,7 @@ Public Class ManageClassForm
     End Sub
 
     Private Sub btnRoom_Click(sender As Object, e As EventArgs) Handles btnRoom.Click 'Show the Room form
-        Dim RoomForm As New Room()
+        Dim RoomForm As New RoomForm()
         RoomForm.ShowDialog()
         RoomForm.Dispose()
         GetCbRoom()

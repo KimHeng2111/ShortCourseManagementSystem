@@ -22,14 +22,14 @@ Partial Class DashboardForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle25 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle27 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle28 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle26 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle29 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle31 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle32 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle30 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Guna2CustomGradientPanel1 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
@@ -65,7 +65,7 @@ Partial Class DashboardForm
         Me.lbTotalCourse = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
-        Me.Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.PanelCourse = New Guna.UI2.WinForms.Guna2Panel()
         Me.ClassList = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -74,7 +74,7 @@ Partial Class DashboardForm
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label32 = New System.Windows.Forms.Label()
-        Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.PanelRegisterList = New Guna.UI2.WinForms.Guna2Panel()
         Me.RegisterList = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -95,9 +95,9 @@ Partial Class DashboardForm
         Me.Guna2CustomGradientPanel2.SuspendLayout()
         Me.Guna2CustomGradientPanel3.SuspendLayout()
         Me.Guna2CustomGradientPanel4.SuspendLayout()
-        Me.Guna2Panel3.SuspendLayout()
+        Me.PanelCourse.SuspendLayout()
         CType(Me.ClassList, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Guna2Panel4.SuspendLayout()
+        Me.PanelRegisterList.SuspendLayout()
         CType(Me.RegisterList, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel1.SuspendLayout()
         Me.Guna2Panel2.SuspendLayout()
@@ -109,11 +109,12 @@ Partial Class DashboardForm
         Me.FlowLayoutPanel1.AutoScroll = True
         Me.FlowLayoutPanel1.AutoScrollMargin = New System.Drawing.Size(10, 0)
         Me.FlowLayoutPanel1.Controls.Add(Me.FlowLayoutPanel2)
-        Me.FlowLayoutPanel1.Controls.Add(Me.Guna2Panel3)
-        Me.FlowLayoutPanel1.Controls.Add(Me.Guna2Panel4)
+        Me.FlowLayoutPanel1.Controls.Add(Me.PanelCourse)
+        Me.FlowLayoutPanel1.Controls.Add(Me.PanelRegisterList)
         Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.FlowLayoutPanel1.Location = New System.Drawing.Point(15, 86)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
+        Me.FlowLayoutPanel1.Padding = New System.Windows.Forms.Padding(0, 30, 0, 0)
         Me.FlowLayoutPanel1.Size = New System.Drawing.Size(1674, 842)
         Me.FlowLayoutPanel1.TabIndex = 0
         '
@@ -123,8 +124,8 @@ Partial Class DashboardForm
         Me.FlowLayoutPanel2.Controls.Add(Me.Guna2CustomGradientPanel2)
         Me.FlowLayoutPanel2.Controls.Add(Me.Guna2CustomGradientPanel3)
         Me.FlowLayoutPanel2.Controls.Add(Me.Guna2CustomGradientPanel4)
-        Me.FlowLayoutPanel2.Location = New System.Drawing.Point(3, 10)
-        Me.FlowLayoutPanel2.Margin = New System.Windows.Forms.Padding(3, 10, 3, 20)
+        Me.FlowLayoutPanel2.Location = New System.Drawing.Point(3, 40)
+        Me.FlowLayoutPanel2.Margin = New System.Windows.Forms.Padding(3, 10, 3, 50)
         Me.FlowLayoutPanel2.Name = "FlowLayoutPanel2"
         Me.FlowLayoutPanel2.Size = New System.Drawing.Size(1660, 170)
         Me.FlowLayoutPanel2.TabIndex = 1
@@ -608,20 +609,20 @@ Partial Class DashboardForm
         Me.Label21.TabIndex = 4
         Me.Label21.Text = "មុខវិជ្ជាសរុប ៖"
         '
-        'Guna2Panel3
+        'PanelCourse
         '
-        Me.Guna2Panel3.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2Panel3.BorderRadius = 15
-        Me.Guna2Panel3.Controls.Add(Me.ClassList)
-        Me.Guna2Panel3.Controls.Add(Me.Label32)
-        Me.Guna2Panel3.FillColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Guna2Panel3.Location = New System.Drawing.Point(3, 210)
-        Me.Guna2Panel3.Margin = New System.Windows.Forms.Padding(3, 10, 3, 20)
-        Me.Guna2Panel3.Name = "Guna2Panel3"
-        Me.Guna2Panel3.Padding = New System.Windows.Forms.Padding(3)
-        Me.Guna2Panel3.ShadowDecoration.Parent = Me.Guna2Panel3
-        Me.Guna2Panel3.Size = New System.Drawing.Size(1660, 492)
-        Me.Guna2Panel3.TabIndex = 2
+        Me.PanelCourse.BackColor = System.Drawing.Color.Transparent
+        Me.PanelCourse.BorderRadius = 15
+        Me.PanelCourse.Controls.Add(Me.ClassList)
+        Me.PanelCourse.Controls.Add(Me.Label32)
+        Me.PanelCourse.FillColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.PanelCourse.Location = New System.Drawing.Point(3, 270)
+        Me.PanelCourse.Margin = New System.Windows.Forms.Padding(3, 10, 3, 20)
+        Me.PanelCourse.Name = "PanelCourse"
+        Me.PanelCourse.Padding = New System.Windows.Forms.Padding(3)
+        Me.PanelCourse.ShadowDecoration.Parent = Me.PanelCourse
+        Me.PanelCourse.Size = New System.Drawing.Size(1660, 358)
+        Me.PanelCourse.TabIndex = 2
         '
         'ClassList
         '
@@ -633,11 +634,11 @@ Partial Class DashboardForm
         Me.ClassList.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.ClassList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.ClassList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(136, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.ClassList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(136, Byte), Integer))
+        DataGridViewCellStyle25.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle25.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.ClassList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle25
         Me.ClassList.ColumnHeadersHeight = 40
         Me.ClassList.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6})
         Me.ClassList.Dock = System.Windows.Forms.DockStyle.Fill
@@ -647,30 +648,30 @@ Partial Class DashboardForm
         Me.ClassList.MultiSelect = False
         Me.ClassList.Name = "ClassList"
         Me.ClassList.ReadOnly = True
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ClassList.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle27.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ClassList.RowHeadersDefaultCellStyle = DataGridViewCellStyle27
         Me.ClassList.RowHeadersVisible = False
         Me.ClassList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(253, Byte), Integer))
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ClassList.RowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle28.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(253, Byte), Integer))
+        DataGridViewCellStyle28.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle28.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle28.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ClassList.RowsDefaultCellStyle = DataGridViewCellStyle28
         Me.ClassList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.ClassList.Size = New System.Drawing.Size(1654, 432)
+        Me.ClassList.Size = New System.Drawing.Size(1654, 298)
         Me.ClassList.TabIndex = 3
         '
         'Column1
         '
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        Me.Column1.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle26.BackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle26.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle26.ForeColor = System.Drawing.Color.Black
+        Me.Column1.DefaultCellStyle = DataGridViewCellStyle26
         Me.Column1.FillWeight = 250.0!
         Me.Column1.HeaderText = "វគ្គសិក្សា"
         Me.Column1.Name = "Column1"
@@ -724,20 +725,20 @@ Partial Class DashboardForm
         Me.Label32.Text = "បញ្ជីវគ្គសិក្សា"
         Me.Label32.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'Guna2Panel4
+        'PanelRegisterList
         '
-        Me.Guna2Panel4.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2Panel4.BorderRadius = 15
-        Me.Guna2Panel4.Controls.Add(Me.RegisterList)
-        Me.Guna2Panel4.Controls.Add(Me.Label5)
-        Me.Guna2Panel4.FillColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Guna2Panel4.Location = New System.Drawing.Point(3, 732)
-        Me.Guna2Panel4.Margin = New System.Windows.Forms.Padding(3, 10, 3, 20)
-        Me.Guna2Panel4.Name = "Guna2Panel4"
-        Me.Guna2Panel4.Padding = New System.Windows.Forms.Padding(3)
-        Me.Guna2Panel4.ShadowDecoration.Parent = Me.Guna2Panel4
-        Me.Guna2Panel4.Size = New System.Drawing.Size(1660, 492)
-        Me.Guna2Panel4.TabIndex = 3
+        Me.PanelRegisterList.BackColor = System.Drawing.Color.Transparent
+        Me.PanelRegisterList.BorderRadius = 15
+        Me.PanelRegisterList.Controls.Add(Me.RegisterList)
+        Me.PanelRegisterList.Controls.Add(Me.Label5)
+        Me.PanelRegisterList.FillColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.PanelRegisterList.Location = New System.Drawing.Point(3, 658)
+        Me.PanelRegisterList.Margin = New System.Windows.Forms.Padding(3, 10, 3, 20)
+        Me.PanelRegisterList.Name = "PanelRegisterList"
+        Me.PanelRegisterList.Padding = New System.Windows.Forms.Padding(3)
+        Me.PanelRegisterList.ShadowDecoration.Parent = Me.PanelRegisterList
+        Me.PanelRegisterList.Size = New System.Drawing.Size(1660, 492)
+        Me.PanelRegisterList.TabIndex = 3
         '
         'RegisterList
         '
@@ -751,11 +752,11 @@ Partial Class DashboardForm
         Me.RegisterList.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.RegisterList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.RegisterList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(136, Byte), Integer))
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.RegisterList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(136, Byte), Integer))
+        DataGridViewCellStyle29.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle29.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.RegisterList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle29
         Me.RegisterList.ColumnHeadersHeight = 40
         Me.RegisterList.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.Column7, Me.DataGridViewTextBoxColumn5})
         Me.RegisterList.Dock = System.Windows.Forms.DockStyle.Fill
@@ -765,20 +766,20 @@ Partial Class DashboardForm
         Me.RegisterList.MultiSelect = False
         Me.RegisterList.Name = "RegisterList"
         Me.RegisterList.ReadOnly = True
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.RegisterList.RowHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle31.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.RegisterList.RowHeadersDefaultCellStyle = DataGridViewCellStyle31
         Me.RegisterList.RowHeadersVisible = False
         Me.RegisterList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(253, Byte), Integer))
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!)
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle8.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.RegisterList.RowsDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(253, Byte), Integer))
+        DataGridViewCellStyle32.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!)
+        DataGridViewCellStyle32.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle32.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        DataGridViewCellStyle32.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle32.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.RegisterList.RowsDefaultCellStyle = DataGridViewCellStyle32
         Me.RegisterList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.RegisterList.Size = New System.Drawing.Size(1654, 432)
         Me.RegisterList.TabIndex = 3
@@ -786,11 +787,11 @@ Partial Class DashboardForm
         'DataGridViewTextBoxColumn1
         '
         Me.DataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
-        Me.DataGridViewTextBoxColumn1.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle30.BackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle30.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle30.ForeColor = System.Drawing.Color.Black
+        Me.DataGridViewTextBoxColumn1.DefaultCellStyle = DataGridViewCellStyle30
         Me.DataGridViewTextBoxColumn1.FillWeight = 276.4822!
         Me.DataGridViewTextBoxColumn1.HeaderText = "លេខកូដចុះឈ្មោះ"
         Me.DataGridViewTextBoxColumn1.MinimumWidth = 50
@@ -875,6 +876,7 @@ Partial Class DashboardForm
         '
         'Guna2Panel2
         '
+        Me.Guna2Panel2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Guna2Panel2.BackColor = System.Drawing.Color.Transparent
         Me.Guna2Panel2.BorderColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Guna2Panel2.BorderRadius = 25
@@ -900,6 +902,7 @@ Partial Class DashboardForm
         '
         'Label2
         '
+        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Kh Bokor", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(1470, 20)
@@ -924,6 +927,7 @@ Partial Class DashboardForm
         Me.Panel2.Controls.Add(Me.Guna2Panel1)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(15, 15)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 3, 3, 50)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Padding = New System.Windows.Forms.Padding(0, 0, 20, 0)
         Me.Panel2.Size = New System.Drawing.Size(1674, 71)
@@ -949,9 +953,9 @@ Partial Class DashboardForm
         Me.Guna2CustomGradientPanel3.PerformLayout()
         Me.Guna2CustomGradientPanel4.ResumeLayout(False)
         Me.Guna2CustomGradientPanel4.PerformLayout()
-        Me.Guna2Panel3.ResumeLayout(False)
+        Me.PanelCourse.ResumeLayout(False)
         CType(Me.ClassList, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Guna2Panel4.ResumeLayout(False)
+        Me.PanelRegisterList.ResumeLayout(False)
         CType(Me.RegisterList, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2Panel1.ResumeLayout(False)
         Me.Guna2Panel1.PerformLayout()
@@ -993,7 +997,7 @@ Partial Class DashboardForm
     Friend WithEvents Label23 As Label
     Friend WithEvents lbActionCourse As Label
     Friend WithEvents lbTotalCourse As Label
-    Friend WithEvents Guna2Panel3 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents PanelCourse As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Label32 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label9 As Label
@@ -1006,7 +1010,7 @@ Partial Class DashboardForm
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
-    Friend WithEvents Guna2Panel4 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents PanelRegisterList As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Label5 As Label
     Friend WithEvents RegisterList As DataGridView
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn

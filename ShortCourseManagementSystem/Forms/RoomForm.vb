@@ -1,5 +1,5 @@
 ﻿Imports System.Data.OleDb
-Public Class Room
+Public Class RoomForm
     Dim conn As New ConnectionDB()
     Dim id As Integer = 0
     Sub Display()

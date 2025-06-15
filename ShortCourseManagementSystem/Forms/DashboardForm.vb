@@ -36,26 +36,55 @@ Public Class DashboardForm
 
     End Sub
 
-    Sub Regonize()
-
-        'DataGridView1
-
+    Private Sub DashboardForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Display()
     End Sub
 
 
-    Private Sub DashboardForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Guna2Panel4_Paint(sender As Object, e As PaintEventArgs) Handles PanelRegisterList.Paint
+
+    End Sub
+
+    Private Sub Guna2Panel3_Paint(sender As Object, e As PaintEventArgs) Handles PanelCourse.Paint
+
+    End Sub
+    Sub Display()
         GetNewRegister()
         GetDataClass()
+        Regonize()
     End Sub
-
-
-    Private Sub Guna2Panel4_Paint(sender As Object, e As PaintEventArgs) Handles Guna2Panel4.Paint
-        For i As Integer = 0 To RegisterList.Rows.Count - 1
+    Sub Regonize()
+        'DatagridView Class
+        For i As Integer = 0 To ClassList.Columns.Count - 1
+            ClassList.Columns(i).SortMode = DataGridViewColumnSortMode.NotSortable
+        Next i
+        For i As Integer = 0 To ClassList.Rows.Count - 1
             If i Mod 2 = 1 Then
-                RegisterList.Rows(i).DefaultCellStyle.BackColor = Color.FromArgb(254, 254, 254)
+                ClassList.Rows(i).DefaultCellStyle.BackColor = Color.FromArgb(123, 150, 240) ' Alternate row color
 
             Else
-                RegisterList.Rows(i).DefaultCellStyle.BackColor = Color.White ' Alternate row color
+                ClassList.Rows(i).DefaultCellStyle.BackColor = Color.FromArgb(223, 239, 255)
+            End If
+        Next i
+        ClassList.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        ClassList.Columns(2).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        ClassList.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        ClassList.Columns(3).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        ClassList.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        ClassList.Columns(4).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        ClassList.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        ClassList.Columns(5).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        Dim height1 = ClassList.Rows(0).Height
+        height1 += height1 + 40 + 60
+        PanelRegisterList.Size = New Size(PanelCourse.Width, height1)
+        ClassList.ClearSelection()
+        'DatagridView NewRegister
+        For i As Integer = 0 To ClassList.Rows.Count - 1
+            If i Mod 2 = 1 Then
+                ClassList.Rows(i).DefaultCellStyle.BackColor = Color.FromArgb(123, 150, 240) ' Alternate row color
+
+            Else
+                ClassList.Rows(i).DefaultCellStyle.BackColor = Color.FromArgb(223, 239, 255)
             End If
         Next i
         For i As Integer = 0 To 5
@@ -68,27 +97,12 @@ Public Class DashboardForm
         RegisterList.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         RegisterList.Columns(4).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
         RegisterList.ClearSelection()
+        Dim height = RegisterList.Rows(1).Height
+        height += height + 40 + 60
+        PanelCourse.Size = New Size(PanelCourse.Width, height)
     End Sub
 
-    Private Sub Guna2Panel3_Paint(sender As Object, e As PaintEventArgs) Handles Guna2Panel3.Paint
-        For i As Integer = 0 To ClassList.Columns.Count - 1
-            ClassList.Columns(i).SortMode = DataGridViewColumnSortMode.NotSortable
-        Next i
-        For i As Integer = 0 To ClassList.Rows.Count - 1
-            If i Mod 2 = 1 Then
-                ClassList.Rows(i).DefaultCellStyle.BackColor = Color.Green ' Alternate row color
-            Else
-                ClassList.Rows(i).DefaultCellStyle.BackColor = Color.FromArgb(254, 254, 254)
-            End If
-        Next i
-        ClassList.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        ClassList.Columns(2).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
-        ClassList.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        ClassList.Columns(3).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
-        ClassList.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        ClassList.Columns(4).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
-        ClassList.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        ClassList.Columns(5).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
-        ClassList.ClearSelection()
+    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
+        Regonize()
     End Sub
 End Class

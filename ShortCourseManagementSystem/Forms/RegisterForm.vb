@@ -1,7 +1,5 @@
 ﻿Imports System.Data.OleDb
 Imports System.IO
-Imports System.Drawing.Printing
-Imports System.Text.RegularExpressions
 Public Class RegisterForm
     Dim register As New Register()
     Public Sub New()
@@ -11,7 +9,11 @@ Public Class RegisterForm
 
         ' Add any initialization after the InitializeComponent() call.
         GetCbCourse()
+        GetCbAddress()
         picStudent.ImageLocation = Application.StartupPath & "\Images\defalutStudent.png"
+        register.GetRegisterByID("1")
+        Dim test As New Form1(register)
+        test.ShowDialog()
     End Sub
 
     Sub Display()
@@ -35,7 +37,7 @@ Public Class RegisterForm
     Private Sub txtDis_TextChanged_1(sender As Object, e As EventArgs) Handles txtDis.TextChanged
         Dim dis As Decimal
         If cbCourse.Text = String.Empty Then
-            MessageBox.Show("Please Choose Course !!!!!", "Warrning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            txtDis.Text = 0
             Return
         End If
         If Not (Decimal.TryParse(txtDis.Text, dis)) Or dis < 0 Or dis > 100 Then
@@ -53,34 +55,34 @@ Public Class RegisterForm
 
     Private Function CheckField() As Boolean
 
-        If txtKhName.Texts.Length <= 0 Then
-            MessageBox.Show("Please enter Student's KhmerName", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            txtKhName.PlaceholderColor = Color.Red
+        If txtKhName.Text.Length <= 0 Then
+            MessageBox.Show("សូមបញ្ចូលឈ្មោះសិស្ស", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             txtKhName.Focus()
             Return False
         End If
-        If txtEngName.Texts.Length <= 0 Then
-            MessageBox.Show("Please enter Student's EnglishName", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        If txtEngName.Text.Length <= 0 Then
+            MessageBox.Show("សូមបញ្ចូលឈ្មោះឡាតាំងរបស់សិស្ស", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             txtEngName.Focus()
             Return False
         End If
-        If txtAddress.Texts.Length <= 0 Then
-            MessageBox.Show("Please enter Student's place of birth", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            txtAddress.Focus()
-
+        If cbAddress.SelectedIndex = cbAddress.Items.Count - 1 Then
+            MessageBox.Show("សូមជ្រើសរើសអាស័យដ្ឋាន", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            cbAddress.Focus()
             Return False
         End If
-        If (txtPhone.Texts.Length < 9 Or txtPhone.Texts.Length > 10) And txtPhone.Texts.Length <> 0 Then
-            MessageBox.Show("Please enter a valid phone number", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            txtPhone.PlaceholderColor = Color.Red
+        If txtPhone.Text.Length = 0 Then
+            Dim result = MessageBox.Show("តើអ្នកសិស្សមិនមានលេខទូរស័ព្ទមែនទេ", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+            If result = DialogResult.No Then
+                txtPhone.Focus()
+                Return False
+            End If
+        ElseIf (txtPhone.Text.Length < 9 Or txtPhone.Text.Length > 10) And txtPhone.Text.Length <> 0 Then
+            MessageBox.Show("សូមបញ្ចូលលេខទូរស័ព្ទដែលត្រឹមត្រូវ", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             txtPhone.Focus()
-            'txtPhone.SelectAll()
             Return False
-        ElseIf txtPhone.Texts.Length = 0 Then
-            Dim result = MessageBox.Show("Do not have Phone Number", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
         End If
         If txtpay.Text.Length <= 0 Or Not IsNumeric(txtpay.Text) Then
-            MessageBox.Show("Please Enter payment amount", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show("សូមបញ្ចូលចំនួនទឹកប្រាក់ដែលសិស្សបង់", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             txtpay.Focus()
             Return False
         End If
@@ -132,6 +134,12 @@ Public Class RegisterForm
         cbCourse.ValueMember = "Value"
         cbCourse.SelectedIndex = cbCourse.Items.Count - 1 ' Set to the last item
     End Sub
+    Sub GetCbAddress()
+        Dim addressData = register.student.GetAddressData()
+        addressData.Add("ជ្រើសរើសខេត្ត")
+        cbAddress.DataSource = addressData
+        cbAddress.SelectedIndex = cbAddress.Items.Count - 1
+    End Sub
     Private Sub cbCourse_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbCourse.SelectedIndexChanged
         If Integer.TryParse(cbCourse.SelectedValue.ToString(), Nothing) = False Then
             Return
@@ -139,7 +147,7 @@ Public Class RegisterForm
         If Integer.Parse(cbCourse.SelectedValue) = -1 Then
             Return
         End If
-        register.manageClass.course.GetCourseByID(cbCourse.SelectedValue.ToString())
+
         Dim courseID As Integer = Convert.ToInt32(cbCourse.SelectedValue)
         cbTime.DataSource = New BindingSource(register.GetTimeList(courseID), Nothing)
         cbTime.DisplayMember = "Key"
@@ -156,7 +164,7 @@ Public Class RegisterForm
             Return
         End If
         'Step 2 : Create Student
-        register.student.AddStudent(txtKhName.Texts.Trim(), txtEngName.Texts.Trim(), cbGender.Text, dtpDob.Value, txtAddress.Texts.Trim(), txtPhone.Texts.Trim(), SaveImageAndReturnPath())
+        register.student.AddStudent(txtKhName.Text.Trim(), txtEngName.Text.Trim(), cbGender.Text, dtpDob.Value, cbAddress.Text.Trim(), txtPhone.Text.Trim(), SaveImageAndReturnPath())
         'Assign data to register
         register.manageClass.GetClassByID(cbTime.SelectedValue.ToString()) 'ADD ManageClass
         register.discount = If(txtDis.Text = String.Empty, 0, Convert.ToDecimal(txtDis.Text))
@@ -178,6 +186,11 @@ Public Class RegisterForm
         If Integer.TryParse(cbTime.SelectedValue.ToString(), Nothing) = False Then
             Return
         End If
+        If cbTime.SelectedValue = -1 Then
+            Return
+        End If
+        register.manageClass.GetClassByID(cbTime.SelectedValue.ToString())
+        lbRoom.Text = register.manageClass.roomID
         lbPrice.Text = register.manageClass.course.basePrice.ToString("F2")
         txtDis.Text = "0"
     End Sub
@@ -201,24 +214,15 @@ Public Class RegisterForm
         DataGridView1.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGridView1.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGridView1.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        For i As Integer = 0 To DataGridView1.Rows.Count - 1
-            If i Mod 2 = 1 Then
-                DataGridView1.Rows(i).DefaultCellStyle.BackColor = Color.FromArgb(254, 254, 254) ' Alternate row color
-            Else
-                DataGridView1.Rows(i).DefaultCellStyle.BackColor = Color.FromArgb(245, 250, 253)
-            End If
-            For j As Integer = 3 To DataGridView1.Columns.Count - 1
-                DataGridView1.Rows(i).Cells(j).Style.Alignment = DataGridViewContentAlignment.MiddleCenter
-            Next j
-        Next i
         DataGridView1.ClearSelection()
     End Sub
 
-    Private Sub Panel16_Paint(sender As Object, e As PaintEventArgs) Handles Panel16.Paint
-        Display()
+
+    Private Sub btnChooseStudent_Click(sender As Object, e As EventArgs)
+
     End Sub
 
-    Private Sub btnChooseStudent_Click(sender As Object, e As EventArgs) Handles btnChooseStudent.Click
-
+    Private Sub PanelListShow_Paint(sender As Object, e As PaintEventArgs) Handles PanelListShow.Paint
+        Display()
     End Sub
 End Class
