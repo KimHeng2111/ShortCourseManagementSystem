@@ -250,7 +250,7 @@ Partial Class MainForm
         Me.btnDashboard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(134, Byte), Integer), CType(CType(217, Byte), Integer))
         Me.btnDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(6, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(96, Byte), Integer))
         Me.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDashboard.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDashboard.Font = New System.Drawing.Font("Khmer Busra", 11.25!, System.Drawing.FontStyle.Bold)
         Me.btnDashboard.ForeColor = System.Drawing.Color.Gainsboro
         Me.btnDashboard.IconChar = FontAwesome.Sharp.IconChar.Chalkboard
         Me.btnDashboard.IconColor = System.Drawing.Color.Gainsboro
@@ -263,8 +263,8 @@ Partial Class MainForm
         Me.btnDashboard.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
         Me.btnDashboard.Size = New System.Drawing.Size(200, 57)
         Me.btnDashboard.TabIndex = 1
-        Me.btnDashboard.Tag = "Dashboard"
-        Me.btnDashboard.Text = "Dashboard"
+        Me.btnDashboard.Tag = "ផ្ទាំងគ្រប់គ្រង"
+        Me.btnDashboard.Text = "ផ្ទាំងគ្រប់គ្រង"
         Me.btnDashboard.UseVisualStyleBackColor = False
         '
         'panelMenuUpper

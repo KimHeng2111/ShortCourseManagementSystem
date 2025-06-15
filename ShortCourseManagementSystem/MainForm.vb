@@ -88,7 +88,7 @@ Public Class MainForm
 
     Private Sub BtnDashboard_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click
         Activatebutton(sender, ThemeColor.DashboardColor)
-
+        OpenChildForm(New DashboardForm())
     End Sub
     Private Sub BtnStudent_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
         Activatebutton(sender, ThemeColor.activeColor)
@@ -131,5 +131,6 @@ Public Class MainForm
         If login = 2 Then
             Application.Exit()
         End If
+        btnDashboard.PerformClick()
     End Sub
 End Class
