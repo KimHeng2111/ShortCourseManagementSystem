@@ -133,4 +133,9 @@ Public Class MainForm
         End If
         btnDashboard.PerformClick()
     End Sub
+
+    Private Sub btnReport_Click(sender As Object, e As EventArgs) Handles btnReport.Click
+        Activatebutton(sender, ThemeColor.activeColor)
+        OpenChildForm(New ReportForm())
+    End Sub
 End Class

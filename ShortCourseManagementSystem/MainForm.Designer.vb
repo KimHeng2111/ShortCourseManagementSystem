@@ -24,6 +24,15 @@ Partial Class MainForm
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainForm))
         Me.panelMenu = New System.Windows.Forms.Panel()
+        Me.panelMenuUpper = New System.Windows.Forms.Panel()
+        Me.lbSchoolName = New System.Windows.Forms.Label()
+        Me.lbFormTitle = New System.Windows.Forms.Label()
+        Me.panelTitlebar = New System.Windows.Forms.Panel()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.panelChildForm = New System.Windows.Forms.Panel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.IconCurrentForm = New FontAwesome.Sharp.IconPictureBox()
         Me.btnReport = New FontAwesome.Sharp.IconButton()
         Me.btnCourse = New FontAwesome.Sharp.IconButton()
         Me.btnClass = New FontAwesome.Sharp.IconButton()
@@ -32,24 +41,15 @@ Partial Class MainForm
         Me.btnTeacher = New FontAwesome.Sharp.IconButton()
         Me.btnRegister = New FontAwesome.Sharp.IconButton()
         Me.btnDashboard = New FontAwesome.Sharp.IconButton()
-        Me.panelMenuUpper = New System.Windows.Forms.Panel()
-        Me.lbSchoolName = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.lbFormTitle = New System.Windows.Forms.Label()
-        Me.IconCurrentForm = New FontAwesome.Sharp.IconPictureBox()
-        Me.panelTitlebar = New System.Windows.Forms.Panel()
-        Me.panelChildForm = New System.Windows.Forms.Panel()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.btnMin = New FontAwesome.Sharp.IconButton()
         Me.btnClose = New FontAwesome.Sharp.IconButton()
-        Me.Label29 = New System.Windows.Forms.Label()
         Me.panelMenu.SuspendLayout()
         Me.panelMenuUpper.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.IconCurrentForm, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelTitlebar.SuspendLayout()
         Me.Panel1.SuspendLayout()
+        CType(Me.IconCurrentForm, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'panelMenu
@@ -69,6 +69,123 @@ Partial Class MainForm
         Me.panelMenu.Name = "panelMenu"
         Me.panelMenu.Size = New System.Drawing.Size(200, 1028)
         Me.panelMenu.TabIndex = 0
+        '
+        'panelMenuUpper
+        '
+        Me.panelMenuUpper.Controls.Add(Me.lbSchoolName)
+        Me.panelMenuUpper.Controls.Add(Me.PictureBox1)
+        Me.panelMenuUpper.Dock = System.Windows.Forms.DockStyle.Top
+        Me.panelMenuUpper.Location = New System.Drawing.Point(0, 0)
+        Me.panelMenuUpper.Margin = New System.Windows.Forms.Padding(3, 3, 3, 10)
+        Me.panelMenuUpper.Name = "panelMenuUpper"
+        Me.panelMenuUpper.Size = New System.Drawing.Size(200, 160)
+        Me.panelMenuUpper.TabIndex = 0
+        '
+        'lbSchoolName
+        '
+        Me.lbSchoolName.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.lbSchoolName.AutoSize = True
+        Me.lbSchoolName.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbSchoolName.ForeColor = System.Drawing.Color.White
+        Me.lbSchoolName.Location = New System.Drawing.Point(63, 130)
+        Me.lbSchoolName.Name = "lbSchoolName"
+        Me.lbSchoolName.Size = New System.Drawing.Size(66, 19)
+        Me.lbSchoolName.TabIndex = 1
+        Me.lbSchoolName.Text = "RPITSB"
+        '
+        'lbFormTitle
+        '
+        Me.lbFormTitle.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lbFormTitle.Font = New System.Drawing.Font("Khmer OS Moul", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbFormTitle.ForeColor = System.Drawing.Color.White
+        Me.lbFormTitle.ImageAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.lbFormTitle.Location = New System.Drawing.Point(0, 0)
+        Me.lbFormTitle.Name = "lbFormTitle"
+        Me.lbFormTitle.Size = New System.Drawing.Size(1720, 72)
+        Me.lbFormTitle.TabIndex = 1
+        Me.lbFormTitle.Text = "ផ្ទាំងគ្រប់គ្រង"
+        Me.lbFormTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'panelTitlebar
+        '
+        Me.panelTitlebar.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.panelTitlebar.Controls.Add(Me.Label29)
+        Me.panelTitlebar.Controls.Add(Me.IconCurrentForm)
+        Me.panelTitlebar.Controls.Add(Me.lbFormTitle)
+        Me.panelTitlebar.Dock = System.Windows.Forms.DockStyle.Top
+        Me.panelTitlebar.Location = New System.Drawing.Point(200, 33)
+        Me.panelTitlebar.Name = "panelTitlebar"
+        Me.panelTitlebar.Size = New System.Drawing.Size(1720, 72)
+        Me.panelTitlebar.TabIndex = 1
+        '
+        'Label29
+        '
+        Me.Label29.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label29.Font = New System.Drawing.Font("Kh Bokor", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label29.ForeColor = System.Drawing.Color.White
+        Me.Label29.Location = New System.Drawing.Point(1439, 22)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
+        Me.Label29.Size = New System.Drawing.Size(278, 29)
+        Me.Label29.TabIndex = 4
+        Me.Label29.Tag = "គណនីប្រើប្រាស់ ៖ "
+        Me.Label29.Text = "គណនីប្រើប្រាស់ ៖ Admin"
+        Me.Label29.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'panelChildForm
+        '
+        Me.panelChildForm.BackColor = System.Drawing.SystemColors.MenuBar
+        Me.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.panelChildForm.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.panelChildForm.Location = New System.Drawing.Point(200, 105)
+        Me.panelChildForm.Name = "panelChildForm"
+        Me.panelChildForm.Size = New System.Drawing.Size(1720, 956)
+        Me.panelChildForm.TabIndex = 2
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.btnMin)
+        Me.Panel1.Controls.Add(Me.btnClose)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 0, 0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
+        Me.Panel1.Size = New System.Drawing.Size(1920, 33)
+        Me.Panel1.TabIndex = 3
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(15, 0)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(3, 0, 0, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Padding = New System.Windows.Forms.Padding(0, 5, 0, 0)
+        Me.Label1.Size = New System.Drawing.Size(234, 24)
+        Me.Label1.TabIndex = 13
+        Me.Label1.Text = "ShorCourse Management Systme"
+        '
+        'IconCurrentForm
+        '
+        Me.IconCurrentForm.BackColor = System.Drawing.Color.Transparent
+        Me.IconCurrentForm.ForeColor = System.Drawing.Color.Gainsboro
+        Me.IconCurrentForm.IconChar = FontAwesome.Sharp.IconChar.Home
+        Me.IconCurrentForm.IconColor = System.Drawing.Color.Gainsboro
+        Me.IconCurrentForm.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.IconCurrentForm.IconSize = 51
+        Me.IconCurrentForm.Location = New System.Drawing.Point(6, 9)
+        Me.IconCurrentForm.Name = "IconCurrentForm"
+        Me.IconCurrentForm.Padding = New System.Windows.Forms.Padding(0, 5, 0, 0)
+        Me.IconCurrentForm.Size = New System.Drawing.Size(58, 51)
+        Me.IconCurrentForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.IconCurrentForm.TabIndex = 0
+        Me.IconCurrentForm.TabStop = False
         '
         'btnReport
         '
@@ -91,7 +208,7 @@ Partial Class MainForm
         Me.btnReport.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
         Me.btnReport.Size = New System.Drawing.Size(200, 57)
         Me.btnReport.TabIndex = 4
-        Me.btnReport.Tag = "របាយការណ៍"
+        Me.btnReport.Tag = "ផ្ទាំងគ្រប់គ្រងរបាយការណ៍"
         Me.btnReport.Text = "របាយការណ៍"
         Me.btnReport.UseVisualStyleBackColor = False
         '
@@ -268,29 +385,6 @@ Partial Class MainForm
         Me.btnDashboard.Text = "ផ្ទាំងគ្រប់គ្រង"
         Me.btnDashboard.UseVisualStyleBackColor = False
         '
-        'panelMenuUpper
-        '
-        Me.panelMenuUpper.Controls.Add(Me.lbSchoolName)
-        Me.panelMenuUpper.Controls.Add(Me.PictureBox1)
-        Me.panelMenuUpper.Dock = System.Windows.Forms.DockStyle.Top
-        Me.panelMenuUpper.Location = New System.Drawing.Point(0, 0)
-        Me.panelMenuUpper.Margin = New System.Windows.Forms.Padding(3, 3, 3, 10)
-        Me.panelMenuUpper.Name = "panelMenuUpper"
-        Me.panelMenuUpper.Size = New System.Drawing.Size(200, 160)
-        Me.panelMenuUpper.TabIndex = 0
-        '
-        'lbSchoolName
-        '
-        Me.lbSchoolName.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.lbSchoolName.AutoSize = True
-        Me.lbSchoolName.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbSchoolName.ForeColor = System.Drawing.Color.White
-        Me.lbSchoolName.Location = New System.Drawing.Point(63, 130)
-        Me.lbSchoolName.Name = "lbSchoolName"
-        Me.lbSchoolName.Size = New System.Drawing.Size(66, 19)
-        Me.lbSchoolName.TabIndex = 1
-        Me.lbSchoolName.Text = "RPITSB"
-        '
         'PictureBox1
         '
         Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Top
@@ -302,86 +396,6 @@ Partial Class MainForm
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
-        '
-        'lbFormTitle
-        '
-        Me.lbFormTitle.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lbFormTitle.Font = New System.Drawing.Font("Khmer OS Moul", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbFormTitle.ForeColor = System.Drawing.Color.White
-        Me.lbFormTitle.ImageAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.lbFormTitle.Location = New System.Drawing.Point(0, 0)
-        Me.lbFormTitle.Name = "lbFormTitle"
-        Me.lbFormTitle.Size = New System.Drawing.Size(1720, 72)
-        Me.lbFormTitle.TabIndex = 1
-        Me.lbFormTitle.Text = "ផ្ទាំងគ្រប់គ្រង"
-        Me.lbFormTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'IconCurrentForm
-        '
-        Me.IconCurrentForm.BackColor = System.Drawing.Color.Transparent
-        Me.IconCurrentForm.ForeColor = System.Drawing.Color.Gainsboro
-        Me.IconCurrentForm.IconChar = FontAwesome.Sharp.IconChar.Home
-        Me.IconCurrentForm.IconColor = System.Drawing.Color.Gainsboro
-        Me.IconCurrentForm.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.IconCurrentForm.IconSize = 51
-        Me.IconCurrentForm.Location = New System.Drawing.Point(6, 9)
-        Me.IconCurrentForm.Name = "IconCurrentForm"
-        Me.IconCurrentForm.Padding = New System.Windows.Forms.Padding(0, 5, 0, 0)
-        Me.IconCurrentForm.Size = New System.Drawing.Size(58, 51)
-        Me.IconCurrentForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.IconCurrentForm.TabIndex = 0
-        Me.IconCurrentForm.TabStop = False
-        '
-        'panelTitlebar
-        '
-        Me.panelTitlebar.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.panelTitlebar.Controls.Add(Me.Label29)
-        Me.panelTitlebar.Controls.Add(Me.IconCurrentForm)
-        Me.panelTitlebar.Controls.Add(Me.lbFormTitle)
-        Me.panelTitlebar.Dock = System.Windows.Forms.DockStyle.Top
-        Me.panelTitlebar.Location = New System.Drawing.Point(200, 33)
-        Me.panelTitlebar.Name = "panelTitlebar"
-        Me.panelTitlebar.Size = New System.Drawing.Size(1720, 72)
-        Me.panelTitlebar.TabIndex = 1
-        '
-        'panelChildForm
-        '
-        Me.panelChildForm.BackColor = System.Drawing.SystemColors.MenuBar
-        Me.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.panelChildForm.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.panelChildForm.Location = New System.Drawing.Point(200, 105)
-        Me.panelChildForm.Name = "panelChildForm"
-        Me.panelChildForm.Size = New System.Drawing.Size(1720, 956)
-        Me.panelChildForm.TabIndex = 2
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Controls.Add(Me.btnMin)
-        Me.Panel1.Controls.Add(Me.btnClose)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 0, 0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
-        Me.Panel1.Size = New System.Drawing.Size(1920, 33)
-        Me.Panel1.TabIndex = 3
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(15, 0)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(3, 0, 0, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Padding = New System.Windows.Forms.Padding(0, 5, 0, 0)
-        Me.Label1.Size = New System.Drawing.Size(234, 24)
-        Me.Label1.TabIndex = 13
-        Me.Label1.Text = "ShorCourse Management Systme"
         '
         'btnMin
         '
@@ -423,20 +437,6 @@ Partial Class MainForm
         Me.btnClose.Text = "X"
         Me.btnClose.UseVisualStyleBackColor = False
         '
-        'Label29
-        '
-        Me.Label29.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label29.Font = New System.Drawing.Font("Kh Bokor", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label29.ForeColor = System.Drawing.Color.White
-        Me.Label29.Location = New System.Drawing.Point(1439, 22)
-        Me.Label29.Name = "Label29"
-        Me.Label29.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
-        Me.Label29.Size = New System.Drawing.Size(278, 29)
-        Me.Label29.TabIndex = 4
-        Me.Label29.Tag = "គណនីប្រើប្រាស់ ៖ "
-        Me.Label29.Text = "គណនីប្រើប្រាស់ ៖ Admin"
-        Me.Label29.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -455,11 +455,11 @@ Partial Class MainForm
         Me.panelMenu.ResumeLayout(False)
         Me.panelMenuUpper.ResumeLayout(False)
         Me.panelMenuUpper.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.IconCurrentForm, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelTitlebar.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.IconCurrentForm, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
