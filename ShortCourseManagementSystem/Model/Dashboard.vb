@@ -33,8 +33,7 @@
     'Courses DataTable
     Public Function GetCourseDataTable() As DataTable
         Dim query As String = "SELECT tblCourses.CourseName, tblTeacher.KhName, (SELECT COUNT(*) FROM tblRegister WHERE tblRegister.ClassID = tblClass.ClassID) AS TotalStudent, tblClass.StartDate, tblClass.EndDate, tblClassStatus.Status
-                                FROM tblClassStatus INNER JOIN ((tblTeacher INNER JOIN (tblCourses INNER JOIN tblClass ON tblCourses.ID = tblClass.CourseID) ON tblTeacher.ID = tblClass.TeacherID) 
-                                INNER JOIN tblRegister ON tblClass.ClassID = tblRegister.ClassID) ON (tblClassStatus.ID = tblClass.StatusID) AND (tblClassStatus.ID = tblClass.StatusID) 
+                                FROM tblTeacher INNER JOIN (tblCourses INNER JOIN (tblClassStatus INNER JOIN tblClass ON (tblClassStatus.ID = tblClass.StatusID) AND (tblClassStatus.ID = tblClass.StatusID)) ON tblCourses.ID = tblClass.CourseID) ON tblTeacher.ID = tblClass.TeacherID
                                 WHERE (((tblClass.StatusID)<=2));"
         Dim dt = ExecuteQuery(query)
         Return dt

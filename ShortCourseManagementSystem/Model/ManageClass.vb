@@ -7,7 +7,7 @@ Public Class ManageClass
     Public teacher As Teacher
     Public startDate As Date
     Public endDate As Date
-    Public roomID As Integer
+    Public room As Room
     Public scheduleID As Integer
     Public StatusID As Integer
     Public Sub New()
@@ -15,6 +15,7 @@ Public Class ManageClass
         MyBase.New()
         course = New Course()
         teacher = New Teacher()
+        room = New Room()
     End Sub
     Public Function GetClassData() As DataTable
         Dim query As String = "SELECT tblClass.ClassID, tblCourses.CourseName AS Course, tblTeacher.KhName AS Teacher, tblRoom.Room AS Room, tblSchedule.Schedule, (SELECT COUNT(*) FROM tblRegister WHERE tblRegister.ClassID = tblClass.ClassID) AS TotalStudents, tblClassStatus.Status
@@ -29,12 +30,13 @@ Public Class ManageClass
         Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
         cmd.Parameters.AddWithValue("@ClassID", id)
         Dim reader As OleDbDataReader = cmd.ExecuteReader()
+        Dim roomID As Integer
         If reader.Read() Then
             classID = reader("ClassID").ToString()
             course.GetCourseByID(reader("CourseID").ToString())
             teacher.GetTeacherByID(reader("TeacherID").ToString())
             startDate = Convert.ToDateTime(reader("StartDate"))
-            roomID = Convert.ToInt32(reader("RoomID"))
+            room.GetRoomByID(Convert.ToInt16(reader("RoomID")))
             scheduleID = Convert.ToInt32(reader("ScheduleID"))
             endDate = If(IsDBNull(reader("EndDate")), Date.Now(), Convert.ToDateTime(reader("EndDate")))
             StatusID = Convert.ToInt32(reader("StatusID"))
@@ -50,7 +52,7 @@ Public Class ManageClass
         cmd.Parameters.AddWithValue("@CourseID", course.courseID)
         cmd.Parameters.AddWithValue("@TeacherID", teacher.TeacherID)
         cmd.Parameters.AddWithValue("@StartDate", startDate)
-        cmd.Parameters.AddWithValue("@RoomID", roomID)
+        cmd.Parameters.AddWithValue("@RoomID", room.id)
         cmd.Parameters.AddWithValue("@ScheduleID", scheduleID)
         ExecuteNonQuery(cmd)
     End Sub
@@ -156,7 +158,7 @@ FROM tblRoom;"
     Function GetRoomByID() As String
         Dim query As String = "SELECT Room FROM tblRoom WHERE ID = @RoomID;"
         Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
-        cmd.Parameters.AddWithValue("@RoomID", roomID)
+        cmd.Parameters.AddWithValue("@RoomID", room)
         OpenConnection()
         Dim roomName As String = String.Empty
         Dim reader As OleDbDataReader = cmd.ExecuteReader()

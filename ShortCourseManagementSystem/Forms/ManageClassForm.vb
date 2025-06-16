@@ -134,7 +134,7 @@ Public Class ManageClassForm
         End If
         manageClass.classID = txtClassID.Text.Trim()
         manageClass.scheduleID = Convert.ToInt32(cbTime.SelectedValue.ToString())
-        manageClass.roomID = Convert.ToInt32(cbRoom.SelectedValue.ToString())
+        manageClass.room.GetRoomByID(cbRoom.SelectedValue)
         manageClass.teacher.TeacherID = cbTeacher.SelectedValue.ToString()
         manageClass.course.courseID = cbCourse.SelectedValue.ToString()
         manageClass.startDate = dtpStartDate.Value
@@ -144,18 +144,18 @@ Public Class ManageClassForm
 
 
 
-    Private Sub btnUpdate_Click(sender As Object, e As EventArgs)
-        If CheckField() Then
-            Dim id As String = txtClassID.Text.Trim()
-            Dim courseID As String = cbCourse.SelectedValue.ToString()
-            Dim teacherID As String = cbTeacher.SelectedValue.ToString()
-            Dim startDate As String = dtpStartDate.Value
-            Dim roomID As Integer = Convert.ToInt32(cbRoom.SelectedValue)
-            Dim secheduleID As Integer = Convert.ToInt32(cbTime.SelectedValue)
-            manageClass.UpdateClass(id, courseID, teacherID, startDate, roomID, secheduleID)
-        End If
-        Display()
-    End Sub
+    'Private Sub btnUpdate_Click(sender As Object, e As EventArgs)
+    '    If CheckField() Then
+    '        Dim id As String = txtClassID.Text.Trim()
+    '        Dim courseID As String = cbCourse.SelectedValue.ToString()
+    '        Dim teacherID As String = cbTeacher.SelectedValue.ToString()
+    '        Dim startDate As String = dtpStartDate.Value
+    '        Dim roomID As Integer = Convert.ToInt32(cbRoom.SelectedValue)
+    '        Dim secheduleID As Integer = Convert.ToInt32(cbTime.SelectedValue)
+    '        manageClass.UpdateClass(id, courseID, teacherID, startDate, roomID, secheduleID)
+    '    End If
+    '    Display()
+    'End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnClear.Click
         cbSearchTeacher.SelectedIndex = cbSearchTeacher.Items.Count - 1
@@ -358,7 +358,7 @@ Public Class ManageClassForm
         cbCourse.SelectedIndex = cbCourse.FindStringExact(manageClass.course.courseName)
         MsgBox(manageClass.teacher.TeacherID)
         cbTeacher.SelectedValue = manageClass.teacher.TeacherID
-        cbRoom.SelectedValue = manageClass.roomID
+        cbRoom.SelectedValue = manageClass.room.id
         cbTime.SelectedValue = manageClass.scheduleID
         dtpStartDate.Value = manageClass.startDate
         Panel2.Visible = True
@@ -368,7 +368,7 @@ Public Class ManageClassForm
     End Sub
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
-        If txtClassID.Text = manageClass.classID And cbCourse.SelectedValue = manageClass.course.courseID And cbRoom.SelectedValue = manageClass.roomID And cbTeacher.SelectedValue = manageClass.teacher.TeacherID And dtpStartDate.Value = manageClass.startDate And
+        If txtClassID.Text = manageClass.classID And cbCourse.SelectedValue = manageClass.course.courseID And cbRoom.SelectedValue = manageClass.room.id And cbTeacher.SelectedValue = manageClass.teacher.TeacherID And dtpStartDate.Value = manageClass.startDate And
             cbTime.SelectedValue = manageClass.scheduleID Then
             MessageBox.Show("សូមកែប្រែវគ្គសិក្សា", "Edit Class", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Return

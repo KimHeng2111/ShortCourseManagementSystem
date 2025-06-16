@@ -43,6 +43,7 @@ Partial Class MainForm
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnMin = New FontAwesome.Sharp.IconButton()
         Me.btnClose = New FontAwesome.Sharp.IconButton()
+        Me.Label29 = New System.Windows.Forms.Label()
         Me.panelMenu.SuspendLayout()
         Me.panelMenuUpper.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -165,7 +166,7 @@ Partial Class MainForm
         Me.btnStudent.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
         Me.btnStudent.Size = New System.Drawing.Size(200, 57)
         Me.btnStudent.TabIndex = 8
-        Me.btnStudent.Tag = "សិស្ស"
+        Me.btnStudent.Tag = "ផ្ទាំងគ្រប់គ្រងសិស្ស"
         Me.btnStudent.Text = "សិស្ស"
         Me.btnStudent.UseVisualStyleBackColor = False
         '
@@ -213,7 +214,7 @@ Partial Class MainForm
         Me.btnTeacher.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
         Me.btnTeacher.Size = New System.Drawing.Size(200, 57)
         Me.btnTeacher.TabIndex = 6
-        Me.btnTeacher.Tag = "គ្រូបង្រៀន"
+        Me.btnTeacher.Tag = "ផ្ទាំងគ្រប់គ្រងគ្រូបង្រៀន"
         Me.btnTeacher.Text = "គ្រូបង្រៀន"
         Me.btnTeacher.UseVisualStyleBackColor = False
         '
@@ -238,7 +239,7 @@ Partial Class MainForm
         Me.btnRegister.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
         Me.btnRegister.Size = New System.Drawing.Size(200, 57)
         Me.btnRegister.TabIndex = 3
-        Me.btnRegister.Tag = "ចុះឈ្មោះ"
+        Me.btnRegister.Tag = "ផ្ទាំងចុះឈ្មោះសិស្ស"
         Me.btnRegister.Text = "ចុះឈ្មោះ"
         Me.btnRegister.UseVisualStyleBackColor = False
         '
@@ -304,16 +305,16 @@ Partial Class MainForm
         '
         'lbFormTitle
         '
-        Me.lbFormTitle.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.lbFormTitle.AutoSize = True
-        Me.lbFormTitle.Font = New System.Drawing.Font("Khmer OS Moul", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbFormTitle.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lbFormTitle.Font = New System.Drawing.Font("Khmer OS Moul", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbFormTitle.ForeColor = System.Drawing.Color.White
         Me.lbFormTitle.ImageAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.lbFormTitle.Location = New System.Drawing.Point(836, 2)
+        Me.lbFormTitle.Location = New System.Drawing.Point(0, 0)
         Me.lbFormTitle.Name = "lbFormTitle"
-        Me.lbFormTitle.Size = New System.Drawing.Size(84, 34)
+        Me.lbFormTitle.Size = New System.Drawing.Size(1720, 72)
         Me.lbFormTitle.TabIndex = 1
-        Me.lbFormTitle.Text = "Home"
+        Me.lbFormTitle.Text = "ផ្ទាំងគ្រប់គ្រង"
+        Me.lbFormTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'IconCurrentForm
         '
@@ -322,11 +323,11 @@ Partial Class MainForm
         Me.IconCurrentForm.IconChar = FontAwesome.Sharp.IconChar.Home
         Me.IconCurrentForm.IconColor = System.Drawing.Color.Gainsboro
         Me.IconCurrentForm.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.IconCurrentForm.IconSize = 35
-        Me.IconCurrentForm.Location = New System.Drawing.Point(6, 3)
+        Me.IconCurrentForm.IconSize = 51
+        Me.IconCurrentForm.Location = New System.Drawing.Point(6, 9)
         Me.IconCurrentForm.Name = "IconCurrentForm"
         Me.IconCurrentForm.Padding = New System.Windows.Forms.Padding(0, 5, 0, 0)
-        Me.IconCurrentForm.Size = New System.Drawing.Size(35, 35)
+        Me.IconCurrentForm.Size = New System.Drawing.Size(58, 51)
         Me.IconCurrentForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.IconCurrentForm.TabIndex = 0
         Me.IconCurrentForm.TabStop = False
@@ -334,12 +335,13 @@ Partial Class MainForm
         'panelTitlebar
         '
         Me.panelTitlebar.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.panelTitlebar.Controls.Add(Me.lbFormTitle)
+        Me.panelTitlebar.Controls.Add(Me.Label29)
         Me.panelTitlebar.Controls.Add(Me.IconCurrentForm)
+        Me.panelTitlebar.Controls.Add(Me.lbFormTitle)
         Me.panelTitlebar.Dock = System.Windows.Forms.DockStyle.Top
         Me.panelTitlebar.Location = New System.Drawing.Point(200, 33)
         Me.panelTitlebar.Name = "panelTitlebar"
-        Me.panelTitlebar.Size = New System.Drawing.Size(1720, 38)
+        Me.panelTitlebar.Size = New System.Drawing.Size(1720, 72)
         Me.panelTitlebar.TabIndex = 1
         '
         'panelChildForm
@@ -347,9 +349,9 @@ Partial Class MainForm
         Me.panelChildForm.BackColor = System.Drawing.SystemColors.MenuBar
         Me.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill
         Me.panelChildForm.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.panelChildForm.Location = New System.Drawing.Point(200, 71)
+        Me.panelChildForm.Location = New System.Drawing.Point(200, 105)
         Me.panelChildForm.Name = "panelChildForm"
-        Me.panelChildForm.Size = New System.Drawing.Size(1720, 990)
+        Me.panelChildForm.Size = New System.Drawing.Size(1720, 956)
         Me.panelChildForm.TabIndex = 2
         '
         'Panel1
@@ -421,6 +423,20 @@ Partial Class MainForm
         Me.btnClose.Text = "X"
         Me.btnClose.UseVisualStyleBackColor = False
         '
+        'Label29
+        '
+        Me.Label29.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label29.Font = New System.Drawing.Font("Kh Bokor", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label29.ForeColor = System.Drawing.Color.White
+        Me.Label29.Location = New System.Drawing.Point(1439, 22)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
+        Me.Label29.Size = New System.Drawing.Size(278, 29)
+        Me.Label29.TabIndex = 4
+        Me.Label29.Tag = "គណនីប្រើប្រាស់ ៖ "
+        Me.Label29.Text = "គណនីប្រើប្រាស់ ៖ Admin"
+        Me.Label29.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -442,7 +458,6 @@ Partial Class MainForm
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.IconCurrentForm, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelTitlebar.ResumeLayout(False)
-        Me.panelTitlebar.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
@@ -469,4 +484,5 @@ Partial Class MainForm
     Friend WithEvents btnMin As FontAwesome.Sharp.IconButton
     Friend WithEvents btnClose As FontAwesome.Sharp.IconButton
     Friend WithEvents Label1 As Label
+    Friend WithEvents Label29 As Label
 End Class

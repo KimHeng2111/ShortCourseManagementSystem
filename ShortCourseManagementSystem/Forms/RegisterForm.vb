@@ -1,5 +1,6 @@
 ﻿Imports System.Data.OleDb
 Imports System.IO
+Imports Guna.UI2.WinForms
 Public Class RegisterForm
     Dim register As New Register()
     Public Sub New()
@@ -142,6 +143,7 @@ Public Class RegisterForm
             Return
         End If
         If Integer.Parse(cbCourse.SelectedValue) = -1 Then
+            cbTime.Enabled = False
             Return
         End If
 
@@ -150,6 +152,7 @@ Public Class RegisterForm
         cbTime.DisplayMember = "Key"
         cbTime.ValueMember = "Value"
         cbTime.SelectedIndex = cbTime.Items.Count - 1
+        cbTime.Enabled = True
     End Sub
 
     Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
@@ -180,14 +183,20 @@ Public Class RegisterForm
     End Sub
 
     Private Sub cbTime_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbTime.SelectedIndexChanged
-        If Integer.TryParse(cbTime.SelectedValue.ToString(), Nothing) = False Then
+        If cbTime.Items.Count = 1 Then
             Return
         End If
+        If Not IsNumeric(cbTime.SelectedValue.ToString()) Then
+            Return
+        End If
+        'If cbTime.SelectedValue =  Then
+        '    Return
+        'End If
         If cbTime.SelectedValue = -1 Then
             Return
         End If
         register.manageClass.GetClassByID(cbTime.SelectedValue.ToString())
-        lbRoom.Text = register.manageClass.roomID
+        lbRoom.Text = register.manageClass.room.room
         lbPrice.Text = register.manageClass.course.basePrice.ToString("F2")
         txtDis.Text = "0"
     End Sub
@@ -238,9 +247,30 @@ Public Class RegisterForm
         If DateTime.TryParse(dtpDob.Text, inputDate) Then
             dtpDob.Text = inputDate.ToString("dd/MM/yyyy")
         Else
+            If dtpDob.Text.Length = 0 Then
+                Return
+            End If
             MessageBox.Show("សូមបញ្ចូលថ្ងៃខែឆ្នាំកំណើតរបស់សិស្ស", "បញ្ចូលទិន្ន័យមិនត្រឹមត្រូវ", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
         End If
 
+    End Sub
+
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+        txtKhName.Clear()
+        txtEngName.Clear()
+        txtDis.Clear()
+        txtpay.Clear()
+        txtPhone.Clear()
+        lbAmount.Text = "$"
+        lbPrice.Text = "$"
+        dtpDob.Clear()
+        lbRoom.Text = ".........."
+        cbAddress.SelectedIndex = cbAddress.Items.Count - 1
+        cbCourse.SelectedIndex = cbCourse.Items.Count - 1
+        cbGender.SelectedIndex = cbGender.Items.Count - 1
+        cbTime.SelectedIndex = cbTime.Items.Count - 1
+        cbTime.Enabled = False
+        picStudent.ImageLocation = Application.StartupPath & "\Images\defalutStudent.png"
     End Sub
 End Class
