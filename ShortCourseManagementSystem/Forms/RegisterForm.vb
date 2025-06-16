@@ -11,9 +11,6 @@ Public Class RegisterForm
         GetCbCourse()
         GetCbAddress()
         picStudent.ImageLocation = Application.StartupPath & "\Images\defalutStudent.png"
-        register.GetRegisterByID("1")
-        Dim test As New Form1(register)
-        test.ShowDialog()
     End Sub
 
     Sub Display()
@@ -23,7 +20,7 @@ Public Class RegisterForm
 
 
 
-    Private Sub IconButton1_Click(sender As Object, e As EventArgs)
+    Private Sub IconButton1_Click(sender As Object, e As EventArgs) Handles IconButton1.Click
         OpenPic.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp"
         OpenPic.Title = "Select a Picture"
         OpenPic.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)
@@ -34,7 +31,7 @@ Public Class RegisterForm
     End Sub
 
 
-    Private Sub txtDis_TextChanged_1(sender As Object, e As EventArgs)
+    Private Sub txtDis_TextChanged_1(sender As Object, e As EventArgs) Handles txtDis.Click
         Dim dis As Decimal
         If cbCourse.Text = String.Empty Then
             txtDis.Text = 0
@@ -140,7 +137,7 @@ Public Class RegisterForm
         cbAddress.DataSource = addressData
         cbAddress.SelectedIndex = cbAddress.Items.Count - 1
     End Sub
-    Private Sub cbCourse_SelectedIndexChanged(sender As Object, e As EventArgs)
+    Private Sub cbCourse_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbCourse.SelectedIndexChanged
         If Integer.TryParse(cbCourse.SelectedValue.ToString(), Nothing) = False Then
             Return
         End If
@@ -182,7 +179,7 @@ Public Class RegisterForm
 
     End Sub
 
-    Private Sub cbTime_SelectedIndexChanged(sender As Object, e As EventArgs)
+    Private Sub cbTime_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbTime.SelectedIndexChanged
         If Integer.TryParse(cbTime.SelectedValue.ToString(), Nothing) = False Then
             Return
         End If

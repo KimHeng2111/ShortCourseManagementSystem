@@ -86,3 +86,4 @@ C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagemen
 C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\obj\Debug\StudentManagementSystem.Form2.resources
 C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\obj\Debug\StudentManagementSystem.DashboardForm.resources
 C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\obj\Debug\StudentManagementSystem.RoomForm.resources
+C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\bin\Debug\Guna.UI2.dll
