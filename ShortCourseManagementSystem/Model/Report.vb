@@ -48,4 +48,30 @@ Public Class Report
         End While
         Return dt
     End Function
+    Public Function GetClassReport() As DataTable
+        Dim query As String = "SELECT tblClass.ClassID, tblCourses.CourseName, tblTeacher.KhName, tblSchedule.Schedule, tblRoom.Room, tblClass.StartDate, tblClass.EndDate, tblClass.CurrentEnrollment
+                                FROM tblRoom INNER JOIN (tblSchedule INNER JOIN (tblTeacher INNER JOIN (tblCourses INNER JOIN tblClass ON tblCourses.ID = tblClass.CourseID) 
+                                ON tblTeacher.ID = tblClass.TeacherID) 
+                                ON tblSchedule.ID = tblClass.ScheduleID) ON tblRoom.ID = tblClass.RoomID;"
+        OpenConnection()
+        Dim cmd As New OleDbCommand(query, GetConnection())
+        Dim reader As OleDbDataReader = cmd.ExecuteReader()
+        Dim dt As New DataTable()
+        dt.Columns.Add("ClassID", GetType(Integer))
+        dt.Columns.Add("CourseName", GetType(String))
+        dt.Columns.Add("KhName", GetType(String))
+        dt.Columns.Add("Schedule", GetType(String))
+        dt.Columns.Add("Room", GetType(String))
+        dt.Columns.Add("StartDate", GetType(String))
+        dt.Columns.Add("EndDate", GetType(String)) ' Change to String for formatting
+        dt.Columns.Add("CurrentEnrollment", GetType(String))
+        While reader.Read()
+            Dim startDate As String = Convert.ToDateTime(reader("StartDate")).ToString("dd/MM/yyyy") ' Example format
+            Dim EndDate As String = Convert.ToDateTime(reader("EndDate")).ToString("dd/MM/yyyy")
+            dt.Rows.Add(reader(0), reader(1), reader(2), reader(3), reader(4),
+                   startDate, EndDate, reader(7))
+        End While
+        Return dt
+    End Function
+
 End Class

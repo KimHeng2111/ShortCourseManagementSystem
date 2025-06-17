@@ -170,12 +170,6 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Auth\Form2.Designer.vb">
-      <DependentUpon>Form2.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Auth\Form2.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Auth\LoginForm.Designer.vb">
       <DependentUpon>LoginForm.vb</DependentUpon>
     </Compile>
@@ -183,12 +177,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Auth\User.vb" />
-    <Compile Include="DataSet\ReportTable.Designer.vb">
+    <Compile Include="Dialog\ReportTable.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ReportTable.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSet\ReportTable.vb">
+    <Compile Include="Dialog\ReportTable.vb">
       <DependentUpon>ReportTable.xsd</DependentUpon>
     </Compile>
     <Compile Include="Dialog\ClassDetail.Designer.vb">
@@ -310,6 +304,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Report\ClassReport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClassReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Report\Invoice.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -331,9 +331,6 @@
     <Compile Include="ThemeColor.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Auth\Form2.resx">
-      <DependentUpon>Form2.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Auth\LoginForm.resx">
       <DependentUpon>LoginForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -395,6 +392,10 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\ClassReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ClassReport.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\Invoice.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Invoice.vb</LastGenOutput>
@@ -409,15 +410,15 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="DataSet\ReportTable.xsc">
+    <None Include="Dialog\ReportTable.xsc">
       <DependentUpon>ReportTable.xsd</DependentUpon>
     </None>
-    <None Include="DataSet\ReportTable.xsd">
+    <None Include="Dialog\ReportTable.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>ReportTable.Designer.vb</LastGenOutput>
     </None>
-    <None Include="DataSet\ReportTable.xss">
+    <None Include="Dialog\ReportTable.xss">
       <DependentUpon>ReportTable.xsd</DependentUpon>
     </None>
     <None Include="My Project\app.manifest" />
@@ -455,6 +456,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\loginfrom1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataSet\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

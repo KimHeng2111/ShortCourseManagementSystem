@@ -39,6 +39,10 @@ Public Class Register
         cmd.ExecuteNonQuery()
         cmd.CommandText = "SELECT @@IDENTITY;"
         Dim id As String = cmd.ExecuteScalar().ToString()
+        query = "UPDATE tblClass SET CurrentEnrollment = CurrentEnrollment + 1 WHERE ClassID = @id"
+        cmd.CommandText = query
+        cmd.Parameters.AddWithValue("@id", manageClass.classID)
+        ExecuteNonQuery(cmd)
         GetRegisterByID(id)
     End Sub
     'Get register by ID
@@ -47,7 +51,6 @@ Public Class Register
         OpenConnection()
         Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
         cmd.Parameters.AddWithValue("@RegisterID", Convert.ToInt16(id))
-        MessageBox.Show("Register ID : " & id)
         Dim reader As OleDbDataReader = cmd.ExecuteReader()
         If reader.Read() Then
             registerID = reader("ID").ToString()
@@ -76,6 +79,10 @@ Public Class Register
         Dim query As String = "DELETE FROM tblRegister WHERE RegisterID = @RegisterID;"
         Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
         cmd.Parameters.AddWithValue("@RegisterID", id)
+        ExecuteNonQuery(cmd)
+        query = "UPDATE tblClass SET CurrentEnrollment = CurrentEnrollment - 1 WHERE ClassID IN (SELECT ClassID FROM tblRegister WHERE ID = @id"
+        cmd.CommandText = query
+        cmd.Parameters.AddWithValue("@id", id)
         ExecuteNonQuery(cmd)
     End Sub
 

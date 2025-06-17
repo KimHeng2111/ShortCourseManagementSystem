@@ -55,4 +55,11 @@
         Me.DialogResult = 2
         Me.Close()
     End Sub
+
+
+    Private Sub txtPassWord_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPassWord.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            btnLogin.PerformClick()
+        End If
+    End Sub
 End Class

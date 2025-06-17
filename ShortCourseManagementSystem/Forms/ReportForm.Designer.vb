@@ -25,18 +25,19 @@ Partial Class ReportForm
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.crsReport = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.cbReport = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.cbReport = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Panel2.SuspendLayout()
         Me.Guna2Panel2.SuspendLayout()
-        Me.Panel1.SuspendLayout()
+        Me.FlowLayoutPanel1.SuspendLayout()
+        Me.Guna2Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel2
         '
         Me.Panel2.Controls.Add(Me.Guna2Panel2)
-        Me.Panel2.Controls.Add(Me.Panel1)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel2.Location = New System.Drawing.Point(15, 15)
         Me.Panel2.Name = "Panel2"
@@ -47,11 +48,12 @@ Partial Class ReportForm
         'Guna2Panel2
         '
         Me.Guna2Panel2.Controls.Add(Me.crsReport)
+        Me.Guna2Panel2.Controls.Add(Me.FlowLayoutPanel1)
         Me.Guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2Panel2.Location = New System.Drawing.Point(286, 5)
+        Me.Guna2Panel2.Location = New System.Drawing.Point(5, 5)
         Me.Guna2Panel2.Name = "Guna2Panel2"
         Me.Guna2Panel2.ShadowDecoration.Parent = Me.Guna2Panel2
-        Me.Guna2Panel2.Size = New System.Drawing.Size(1383, 903)
+        Me.Guna2Panel2.Size = New System.Drawing.Size(1664, 903)
         Me.Guna2Panel2.TabIndex = 2
         '
         'crsReport
@@ -60,7 +62,7 @@ Partial Class ReportForm
         Me.crsReport.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.crsReport.Cursor = System.Windows.Forms.Cursors.Default
         Me.crsReport.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.crsReport.Location = New System.Drawing.Point(0, 0)
+        Me.crsReport.Location = New System.Drawing.Point(269, 0)
         Me.crsReport.Name = "crsReport"
         Me.crsReport.ShowCloseButton = False
         Me.crsReport.ShowGotoPageButton = False
@@ -70,28 +72,52 @@ Partial Class ReportForm
         Me.crsReport.ShowParameterPanelButton = False
         Me.crsReport.ShowRefreshButton = False
         Me.crsReport.ShowTextSearchButton = False
-        Me.crsReport.Size = New System.Drawing.Size(1383, 903)
+        Me.crsReport.Size = New System.Drawing.Size(1395, 903)
         Me.crsReport.TabIndex = 0
         Me.crsReport.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
         '
-        'Panel1
+        'FlowLayoutPanel1
         '
-        Me.Panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Panel1.Controls.Add(Me.cbReport)
-        Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel1.Location = New System.Drawing.Point(5, 5)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(281, 903)
-        Me.Panel1.TabIndex = 1
+        Me.FlowLayoutPanel1.Controls.Add(Me.Guna2Panel1)
+        Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 0)
+        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(269, 903)
+        Me.FlowLayoutPanel1.TabIndex = 9
+        '
+        'Guna2Panel1
+        '
+        Me.Guna2Panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Guna2Panel1.Controls.Add(Me.Label2)
+        Me.Guna2Panel1.Controls.Add(Me.cbReport)
+        Me.Guna2Panel1.Location = New System.Drawing.Point(3, 3)
+        Me.Guna2Panel1.Name = "Guna2Panel1"
+        Me.Guna2Panel1.Padding = New System.Windows.Forms.Padding(5)
+        Me.Guna2Panel1.ShadowDecoration.Parent = Me.Guna2Panel1
+        Me.Guna2Panel1.Size = New System.Drawing.Size(260, 81)
+        Me.Guna2Panel1.TabIndex = 9
+        '
+        'Label2
+        '
+        Me.Label2.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label2.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(22, Byte), Integer), CType(CType(98, Byte), Integer))
+        Me.Label2.Location = New System.Drawing.Point(5, 5)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(3, 0, 3, 30)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(250, 29)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "របាយការណ៍  ៖"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'cbReport
         '
-        Me.cbReport.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.cbReport.BackColor = System.Drawing.Color.Transparent
         Me.cbReport.BorderColor = System.Drawing.Color.DimGray
         Me.cbReport.BorderRadius = 8
         Me.cbReport.BorderThickness = 2
+        Me.cbReport.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.cbReport.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
         Me.cbReport.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbReport.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(136, Byte), Integer))
@@ -114,23 +140,12 @@ Partial Class ReportForm
         Me.cbReport.ItemsAppearance.Parent = Me.cbReport
         Me.cbReport.ItemsAppearance.SelectedBackColor = System.Drawing.Color.White
         Me.cbReport.ItemsAppearance.SelectedForeColor = System.Drawing.Color.Black
-        Me.cbReport.Location = New System.Drawing.Point(12, 75)
+        Me.cbReport.Location = New System.Drawing.Point(5, 35)
         Me.cbReport.Name = "cbReport"
         Me.cbReport.ShadowDecoration.Parent = Me.cbReport
-        Me.cbReport.Size = New System.Drawing.Size(266, 41)
+        Me.cbReport.Size = New System.Drawing.Size(250, 41)
         Me.cbReport.StartIndex = 5
         Me.cbReport.TabIndex = 8
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(88, 18)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(104, 29)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "របាយការណ៍ "
         '
         'ReportForm
         '
@@ -143,15 +158,16 @@ Partial Class ReportForm
         Me.Text = "ReportForm"
         Me.Panel2.ResumeLayout(False)
         Me.Guna2Panel2.ResumeLayout(False)
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
+        Me.FlowLayoutPanel1.ResumeLayout(False)
+        Me.Guna2Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents crsReport As CrystalDecisions.Windows.Forms.CrystalReportViewer
     Friend WithEvents Label2 As Label
     Friend WithEvents cbReport As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+    Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
 End Class

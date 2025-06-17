@@ -84,7 +84,7 @@ Partial Class LoginForm
         Me.btnLogin.Name = "btnLogin"
         Me.btnLogin.Size = New System.Drawing.Size(155, 43)
         Me.btnLogin.TabIndex = 13
-        Me.btnLogin.Text = "ចូល"
+        Me.btnLogin.Text = "ចូលប្រើប្រាស់"
         Me.btnLogin.UseVisualStyleBackColor = False
         '
         'Label2

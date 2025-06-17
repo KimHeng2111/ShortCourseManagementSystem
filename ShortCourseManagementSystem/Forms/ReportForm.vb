@@ -3,10 +3,6 @@ Imports CrystalDecisions.Windows.Forms
 
 Public Class ReportForm
     Dim report As New Report()
-    Private Sub CrsReport_Load(sender As Object, e As EventArgs)
-        crsReport.PrintMode = PrintMode.
-    End Sub
-
     Private Sub ReportForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
@@ -19,7 +15,8 @@ Public Class ReportForm
             StudentReport()
         ElseIf cbReport.SelectedIndex = 1 Then
             TeacherReport()
-
+        ElseIf cbReport.SelectedIndex = 2 Then
+            ClassReport()
         End If
     End Sub
     Sub TeacherReport()
@@ -32,5 +29,9 @@ Public Class ReportForm
         studentReport.Database.Tables("tblStudentReport").SetDataSource(report.GetStudentReport())
         crsReport.ReportSource = studentReport
     End Sub
-
+    Sub ClassReport()
+        Dim classReport As New ClassReport()
+        classReport.Database.Tables("tblClassReport").SetDataSource(report.GetClassReport())
+        crsReport.ReportSource = classReport
+    End Sub
 End Class

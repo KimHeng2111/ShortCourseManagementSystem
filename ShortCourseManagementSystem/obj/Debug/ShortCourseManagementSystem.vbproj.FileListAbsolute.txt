@@ -24,7 +24,6 @@ C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagemen
 C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\bin\Debug\CrystalDecisions.ReportSource.dll
 C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\bin\Debug\CrystalDecisions.Shared.dll
 C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\bin\Debug\CrystalDecisions.Windows.Forms.dll
-C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\bin\Debug\CustomControls.dll
 C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\bin\Debug\FontAwesome.Sharp.dll
 C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\bin\Debug\itextsharp.dll
 C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
@@ -83,7 +82,6 @@ C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagemen
 C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\obj\Debug\StudentManagementSystem.StudentDetail.resources
 C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\obj\Debug\StudentManagementSystem.TeacherDetail.resources
 C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\obj\Debug\StudentManagementSystem.LoginForm.resources
-C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\obj\Debug\StudentManagementSystem.Form2.resources
 C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\obj\Debug\StudentManagementSystem.DashboardForm.resources
 C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\obj\Debug\StudentManagementSystem.RoomForm.resources
 C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\obj\Debug\StudentManagementSystem.ReportForm.resources
