@@ -30,7 +30,6 @@ Public Class ManageClass
         Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
         cmd.Parameters.AddWithValue("@ClassID", id)
         Dim reader As OleDbDataReader = cmd.ExecuteReader()
-        Dim roomID As Integer
         If reader.Read() Then
             classID = reader("ClassID").ToString()
             course.GetCourseByID(reader("CourseID").ToString())

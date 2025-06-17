@@ -13,7 +13,7 @@ Public Class Form1
 
         ' Add any initialization after the InitializeComponent() call.
         register = reg
-        'rdReport.Load("Report\Invoice.rpt")
+        rdReport.Load("Report\Invoice.rpt")
         rdReport.SetParameterValue("PaymentID", register.payment.paymentID) ' Example parameter, replace with actual value
         rdReport.SetParameterValue("khName", register.student.khName)
         rdReport.SetParameterValue(2, register.student.engName) ' Example parameter, replace with actual value)
@@ -28,23 +28,23 @@ Public Class Form1
     End Sub
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
 
-        Dim exportOption As ExportOptions
-        Dim diskFileDestinationOptions As New DiskFileDestinationOptions()
+        'Dim exportOption As ExportOptions
+        'Dim diskFileDestinationOptions As New DiskFileDestinationOptions()
 
-        Dim sfd As New SaveFileDialog()
-        sfd.Filter = "Pdf Files|*.pdf"
-        sfd.FileName = "Invoice00" + register.registerID
-        If sfd.ShowDialog() = DialogResult.OK Then
-            diskFileDestinationOptions.DiskFileName = sfd.FileName
-        Else
-            Return
-        End If
-        exportOption = rdReport.ExportOptions
-        exportOption.ExportDestinationType = ExportDestinationType.DiskFile
-        exportOption.ExportFormatType = ExportFormatType.PortableDocFormat
-        exportOption.ExportDestinationOptions = diskFileDestinationOptions
-        exportOption.FormatOptions = New PdfRtfWordFormatOptions()
-        rdReport.Export()
+        'Dim sfd As New SaveFileDialog()
+        'sfd.Filter = "Pdf Files|*.pdf"
+        'sfd.FileName = "Invoice00" + register.registerID
+        'If sfd.ShowDialog() = DialogResult.OK Then
+        '    diskFileDestinationOptions.DiskFileName = sfd.FileName
+        'Else
+        '    Return
+        'End If
+        'exportOption = rdReport.ExportOptions
+        'exportOption.ExportDestinationType = ExportDestinationType.DiskFile
+        'exportOption.ExportFormatType = ExportFormatType.PortableDocFormat
+        'exportOption.ExportDestinationOptions = diskFileDestinationOptions
+        'exportOption.FormatOptions = New PdfRtfWordFormatOptions()
+        'rdReport.Export()
     End Sub
 
     Private Sub ViewInvoice_Load(sender As Object, e As EventArgs) Handles ViewInvoice.Load
