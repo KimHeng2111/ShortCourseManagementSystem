@@ -4,7 +4,7 @@ Imports CrystalDecisions.Windows.Forms
 Public Class ReportForm
     Dim report As New Report()
     Private Sub CrsReport_Load(sender As Object, e As EventArgs)
-        crsReport.PrintMode = PrintMode.ActiveX
+        crsReport.PrintMode = PrintMode.
     End Sub
 
     Private Sub ReportForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
