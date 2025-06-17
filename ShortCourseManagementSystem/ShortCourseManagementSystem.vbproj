@@ -183,13 +183,13 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Auth\User.vb" />
-    <Compile Include="DataSet\DataSet1.Designer.vb">
+    <Compile Include="DataSet\ReportTable.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+      <DependentUpon>ReportTable.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSet\DataSet1.vb">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+    <Compile Include="DataSet\ReportTable.vb">
+      <DependentUpon>ReportTable.xsd</DependentUpon>
     </Compile>
     <Compile Include="Dialog\ClassDetail.Designer.vb">
       <DependentUpon>ClassDetail.vb</DependentUpon>
@@ -316,6 +316,12 @@
       <DependentUpon>Invoice.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Report\StudentReport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Report\TeacherReport.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -393,22 +399,26 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Invoice.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\StudentReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StudentReport.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\TeacherReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>TeacherReport.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="DataSet\DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+    <None Include="DataSet\ReportTable.xsc">
+      <DependentUpon>ReportTable.xsd</DependentUpon>
     </None>
-    <None Include="DataSet\DataSet1.xsd">
+    <None Include="DataSet\ReportTable.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.vb</LastGenOutput>
+      <LastGenOutput>ReportTable.Designer.vb</LastGenOutput>
     </None>
-    <None Include="DataSet\DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+    <None Include="DataSet\ReportTable.xss">
+      <DependentUpon>ReportTable.xsd</DependentUpon>
     </None>
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">

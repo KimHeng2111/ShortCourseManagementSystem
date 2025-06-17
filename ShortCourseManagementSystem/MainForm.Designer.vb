@@ -264,7 +264,7 @@ Partial Class MainForm
         Me.btnDashboard.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
         Me.btnDashboard.Size = New System.Drawing.Size(200, 57)
         Me.btnDashboard.TabIndex = 1
-        Me.btnDashboard.Tag = "ទំព័រដើម"
+        Me.btnDashboard.Tag = "ប្រព័ន្ធគ្រប់គ្រងវគ្គសិក្សាវគ្គខ្លី"
         Me.btnDashboard.Text = "ទំព័រដើម"
         Me.btnDashboard.UseVisualStyleBackColor = False
         '
