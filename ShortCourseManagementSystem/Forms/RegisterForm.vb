@@ -198,6 +198,7 @@ Public Class RegisterForm
         register.manageClass.GetClassByID(cbTime.SelectedValue.ToString())
         lbRoom.Text = register.manageClass.room.room
         lbPrice.Text = register.manageClass.course.basePrice.ToString("F2")
+        lbAmount.Text = register.manageClass.course.basePrice.ToString("F2")
         txtDis.Text = "0"
     End Sub
     Sub Regonize()
@@ -272,5 +273,9 @@ Public Class RegisterForm
         cbTime.SelectedIndex = cbTime.Items.Count - 1
         cbTime.Enabled = False
         picStudent.ImageLocation = Application.StartupPath & "\Images\defalutStudent.png"
+    End Sub
+
+    Private Sub txtDis_TextChanged(sender As Object, e As EventArgs) Handles txtDis.TextChanged
+
     End Sub
 End Class

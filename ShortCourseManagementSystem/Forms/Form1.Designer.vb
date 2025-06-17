@@ -53,7 +53,7 @@ Partial Class Form1
         '
         'btnPrint
         '
-        Me.btnPrint.Location = New System.Drawing.Point(0, 0)
+        Me.btnPrint.Location = New System.Drawing.Point(12, 12)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(75, 23)
         Me.btnPrint.TabIndex = 1

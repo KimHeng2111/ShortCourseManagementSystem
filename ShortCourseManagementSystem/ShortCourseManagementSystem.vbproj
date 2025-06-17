@@ -183,6 +183,14 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Auth\User.vb" />
+    <Compile Include="DataSet\DataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\DataSet1.vb">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Dialog\ClassDetail.Designer.vb">
       <DependentUpon>ClassDetail.vb</DependentUpon>
     </Compile>
@@ -281,10 +289,10 @@
     <Compile Include="Model\ManageClass.vb" />
     <Compile Include="Model\Payment.vb" />
     <Compile Include="Model\Register.vb" />
-    <Compile Include="Model\ReportForm.Designer.vb">
+    <Compile Include="Forms\ReportForm.Designer.vb">
       <DependentUpon>ReportForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="Model\ReportForm.vb">
+    <Compile Include="Forms\ReportForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Model\Room.vb" />
@@ -306,6 +314,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Invoice.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\TeacherReport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TeacherReport.rpt</DependentUpon>
     </Compile>
     <Compile Include="ThemeColor.vb" />
   </ItemGroup>
@@ -364,7 +377,7 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Model\ReportForm.resx">
+    <EmbeddedResource Include="Forms\ReportForm.resx">
       <DependentUpon>ReportForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
@@ -378,8 +391,23 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Invoice.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\TeacherReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TeacherReport.vb</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="DataSet\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
