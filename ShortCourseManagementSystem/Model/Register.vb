@@ -4,17 +4,17 @@ Imports System.Web.UI
 Public Class Register
     Inherits ConnectionDB
     Public registerID As String
-    Public manageClass As ManageClass
+    Public manageClass As Course
     Public student As Student
     Public discount As Byte
     Public payment As Payment
 
-    'Method to register a student for a course
+    'Method to register a student for a subject
     Public Function GetRegisterData() As DataTable
-        Dim query As String = "SELECT tblClass.ClassID, tblCourses.CourseName, tblTeacher.engName AS TeacherName, tblClass.StartDate, tblSchedule.Schedule, tblRoom.Room, (SELECT COUNT(*) FROM tblRegister WHERE tblClass.ClassID = tblRegister.ClassID) AS TotalStudent
-                                FROM tblTeacher INNER JOIN (tblSchedule INNER JOIN (tblRoom INNER JOIN (tblCourses INNER JOIN (tblClassStatus INNER JOIN tblClass ON tblClassStatus.ID = tblClass.StatusID) ON tblCourses.ID = tblClass.CourseID) ON tblRoom.ID = tblClass.RoomID) ON tblSchedule.ID = tblClass.ScheduleID) ON tblTeacher.ID = tblClass.TeacherID
-                                WHERE (((tblClass.StatusID)<=2))
-                                ORDER BY tblClass.ClassID;"
+        Dim query As String = "SELECT tblCourse.ID, tblSubject.Subject, tblTeacher.EngName, tblCourse.StartDate, tblSchedule.Schedule, tblRoom.Room, (SELECT COUNT(*) FROM tblRegister WHERE tblCourse.ID = tblRegister.CourseID) AS TotalStudent
+                                FROM tblTeacher INNER JOIN (tblSchedule INNER JOIN (tblRoom INNER JOIN (tblSubject INNER JOIN (tblCourseStatus INNER JOIN tblCourse ON tblCourseStatus.ID = tblCourse.StatusID) ON tblSubject.ID = tblCourse.ID) ON tblRoom.ID = tblCourse.RoomID) ON tblSchedule.ID = tblCourse.ScheduleID) ON tblTeacher.ID = tblCourse.TeacherID
+                                WHERE (((tblCourse.StatusID)<=2))
+                                ORDER BY tblCourse.ID;"
         Dim dt As DataTable = ExecuteQuery(query)
         Return dt
     End Function
@@ -22,26 +22,26 @@ Public Class Register
     Public Sub New()
         ' Constructor for Register class
         MyBase.New()
-        manageClass = New ManageClass()
+        manageClass = New Course()
         student = New Student()
         payment = New Payment()
     End Sub
 
     'Register a student for a class
     Public Sub RegisterStudent()
-        Dim query As String = "INSERT INTO tblRegister (ClassID, StudentID, Discount,PaymentID) VALUES (@ClassID, @StudentID, @Discount,@PaymentID);"
+        Dim query As String = "INSERT INTO tblRegister (CourseID, StudentID, Discount,PaymentID) VALUES (@CourseID, @StudentID, @Discount,@PaymentID);"
         OpenConnection()
         Dim cmd As New OleDbCommand(query, GetConnection())
-        cmd.Parameters.AddWithValue("@ClassID", manageClass.classID)
+        cmd.Parameters.AddWithValue("@CourseID", manageClass.ID)
         cmd.Parameters.AddWithValue("@StudentID", student.id)
         cmd.Parameters.AddWithValue("@Discount", discount)
         cmd.Parameters.AddWithValue("@PaymentID", payment.paymentID)
         cmd.ExecuteNonQuery()
         cmd.CommandText = "SELECT @@IDENTITY;"
         Dim id As String = cmd.ExecuteScalar().ToString()
-        query = "UPDATE tblClass SET CurrentEnrollment = CurrentEnrollment + 1 WHERE ClassID = @id"
+        query = "UPDATE tblCourse SET CurrentEnrollment = CurrentEnrollment + 1 WHERE ID = @id"
         cmd.CommandText = query
-        cmd.Parameters.AddWithValue("@id", manageClass.classID)
+        cmd.Parameters.AddWithValue("@id", manageClass.ID)
         ExecuteNonQuery(cmd)
         GetRegisterByID(id)
     End Sub
@@ -54,7 +54,7 @@ Public Class Register
         Dim reader As OleDbDataReader = cmd.ExecuteReader()
         If reader.Read() Then
             registerID = reader("ID").ToString()
-            manageClass.GetClassByID(reader("ClassID").ToString())
+            manageClass.GetCourseByID(reader("CourseID").ToString())
             student.GetStudentByID(reader("StudentID").ToString())
 
             discount = Convert.ToByte(reader("Discount"))
@@ -65,9 +65,9 @@ Public Class Register
     End Sub
     'Update register information
     Public Sub UpdateRegister(id As String)
-        Dim query As String = "UPDATE tblRegister SET ClassID = @ClassID, StudentID = @StudentID, Discount = @Discount, PaymentID = @PaymentID WHERE RegisterID = @RegisterID;"
+        Dim query As String = "UPDATE tblRegister SET CourseID = @CourseID, StudentID = @StudentID, Discount = @Discount, PaymentID = @PaymentID WHERE RegisterID = @RegisterID;"
         Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
-        cmd.Parameters.AddWithValue("@ClassID", manageClass.classID)
+        cmd.Parameters.AddWithValue("@CourseID", manageClass.ID)
         cmd.Parameters.AddWithValue("@StudentID", student.id)
         cmd.Parameters.AddWithValue("@Discount", discount)
         cmd.Parameters.AddWithValue("@PaymentID", payment.paymentID)
@@ -80,7 +80,7 @@ Public Class Register
         Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
         cmd.Parameters.AddWithValue("@RegisterID", id)
         ExecuteNonQuery(cmd)
-        query = "UPDATE tblClass SET CurrentEnrollment = CurrentEnrollment - 1 WHERE ClassID IN (SELECT ClassID FROM tblRegister WHERE ID = @id"
+        query = "UPDATE tblCourse SET CurrentEnrollment = CurrentEnrollment - 1 WHERE ID IN (SELECT ClassID FROM tblRegister WHERE ID = @id"
         cmd.CommandText = query
         cmd.Parameters.AddWithValue("@id", id)
         ExecuteNonQuery(cmd)
@@ -89,15 +89,15 @@ Public Class Register
     'Insert DATA TO combobox
     Public Function GetCourseList() As Dictionary(Of String, Integer)
         Dim CourseList As New Dictionary(Of String, Integer)
-        Dim query As String = "SELECT DISTINCT tblCourses.CourseName, tblCourses.ID
-                                FROM tblCourses INNER JOIN tblClass ON tblCourses.ID = tblClass.CourseID
-                                GROUP BY tblCourses.CourseName, tblCourses.ID, tblClass.StatusID, tblClass.ClassID
-                                HAVING (((tblClass.StatusID)<=2));"
+        Dim query As String = "SELECT DISTINCT tblSubject.Subject, tblSubject.ID
+                                FROM tblSubject INNER JOIN tblCourse ON tblSubject.ID = tblCourse.ID
+                                GROUP BY tblSubject.Subject, tblSubject.ID, tblCourse.StatusID, tblCourse.ID
+                                HAVING (((tblCourse.StatusID)<=2));"
         OpenConnection()
         Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
         Dim reader As OleDbDataReader = cmd.ExecuteReader()
         While reader.Read()
-            CourseList.Add(reader("CourseName"), Integer.Parse(reader("ID")))
+            CourseList.Add(reader("Subject"), Integer.Parse(reader("ID")))
         End While
         CourseList.Add("ជ្រើសរើសវគ្គសិក្សា", -1)
         reader.Close()
@@ -106,16 +106,16 @@ Public Class Register
     End Function
     Public Function GetTimeList(courseID As String) As Dictionary(Of String, Integer)
         Dim TimeList As New Dictionary(Of String, Integer)
-        Dim query As String = "SELECT tblSchedule.Schedule, tblClass.ClassID
-                                FROM tblSchedule INNER JOIN tblClass ON tblSchedule.ID = tblClass.ScheduleID
-                                WHERE (((tblClass.CourseID)=@courseID) AND ((tblClass.StatusID)<=2))
+        Dim query As String = "SELECT tblSchedule.Schedule, tblCourse.ID
+                                FROM tblSchedule INNER JOIN tblCourse ON tblSchedule.ID = tblCourse.ScheduleID
+                                WHERE (((tblCourse.ID)=@ID) AND ((tblCourse.StatusID)<=2))
                                 ORDER BY tblSchedule.Schedule;"
         OpenConnection()
         Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
-        cmd.Parameters.AddWithValue("@courseID", courseID)
+        cmd.Parameters.AddWithValue("@ID", courseID)
         Dim reader As OleDbDataReader = cmd.ExecuteReader()
         While reader.Read()
-            TimeList.Add(reader("Schedule"), Integer.Parse(reader("ClassID")))
+            TimeList.Add(reader("Schedule"), Integer.Parse(reader("ID")))
         End While
         TimeList.Add("ជ្រើសរើសម៉ោង", -1)
         reader.Close()

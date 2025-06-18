@@ -6,12 +6,12 @@ Public Class DashboardForm
     Private Sub FlowLayoutPanel2_Paint(sender As Object, e As PaintEventArgs) Handles FlowLayoutPanel2.Paint
         lbTotalStudnet.Text = dashboard.totalStudent.ToString()
         lbCompleteStudent.Text = dashboard.completeStudent.ToString()
-        lbTotalClass.Text = dashboard.totalClass
-        lbCompleteClass.Text = dashboard.completeClass
+        lbTotalClass.Text = dashboard.totalCourse
+        lbCompleteClass.Text = dashboard.completeCourse
         lbTotalTeacher.Text = dashboard.totalTeacher
         lbActionTeacher.Text = dashboard.actionTeacher
-        lbTotalCourse.Text = dashboard.totalCourse
-        lbActionCourse.Text = dashboard.actionCourse
+        lbTotalCourse.Text = dashboard.TotalSubject
+        lbActionCourse.Text = dashboard.actionSubject
 
     End Sub
 

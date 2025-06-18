@@ -8,7 +8,7 @@
   <Shapes>
     <Shape ID="DesignTable:tblTeacherReport" ZOrder="3" X="293" Y="140" Height="181" Width="167" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="177" />
     <Shape ID="DesignTable:tblStudentReport" ZOrder="2" X="500" Y="143" Height="201" Width="176" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="197" />
-    <Shape ID="DesignTable:tblClassReport" ZOrder="1" X="712" Y="150" Height="181" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="177" />
+    <Shape ID="DesignTable:tblCourseReport" ZOrder="1" X="712" Y="150" Height="200" Width="161" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="177" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

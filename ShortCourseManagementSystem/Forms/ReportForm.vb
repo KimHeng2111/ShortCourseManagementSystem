@@ -16,7 +16,7 @@ Public Class ReportForm
         ElseIf cbReport.SelectedIndex = 1 Then
             TeacherReport()
         ElseIf cbReport.SelectedIndex = 2 Then
-            ClassReport()
+            CourseReport()
         End If
     End Sub
     Sub TeacherReport()
@@ -29,9 +29,9 @@ Public Class ReportForm
         studentReport.Database.Tables("tblStudentReport").SetDataSource(report.GetStudentReport())
         crsReport.ReportSource = studentReport
     End Sub
-    Sub ClassReport()
-        Dim classReport As New ClassReport()
-        classReport.Database.Tables("tblClassReport").SetDataSource(report.GetClassReport())
-        crsReport.ReportSource = classReport
+    Sub CourseReport()
+        Dim CourseReport As New CourseReport()
+        CourseReport.Database.Tables("tblCourseReport").SetDataSource(report.GetCourseReport())
+        crsReport.ReportSource = CourseReport
     End Sub
 End Class

@@ -1,36 +1,44 @@
 ﻿Imports System.Windows
 Imports System.Windows.Controls
 
-Public Class CoursesForm
-    Dim course As New Course()
+Public Class SubjectForm
+    Dim subject As New Subject()
     Dim startup As Boolean = True
     Sub Display()
-        DataGridView1.DataSource = course.GetCourseData()
+        DataGridView1.DataSource = subject.GetSubjectData()
         Regonize()
         Panel1.Visible = False
     End Sub
 
     Function CheckField() As Boolean
-        Dim courseName As String = txtCourseName.Texts.Trim()
+        Dim subject As String = txtSubject.Texts.Trim()
         Dim description As String = txtDes.Texts.Trim()
-        Dim duration As String = txtDuration.Texts.Trim()
+        Dim creditHours As String = txtCreditHours.Texts.Trim()
         Dim basePrice As String = txtBasePrice.Texts.Trim()
-        If String.IsNullOrEmpty(courseName) Then
-            MessageBox.Show("Please fill in all fields.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        If String.IsNullOrEmpty(subject) Then
+            MessageBox.Show("សូមបញ្ចូលមុខវិជ្ជាអោយបានត្រឹមត្រូវ!!!!", "បញ្ចូលទិន្ន័យមិនត្រឹមត្រូវ", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return False
         End If
         If String.IsNullOrEmpty(description) Then
-            MessageBox.Show("Please fill in all fields.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("សូមបញ្ចូលការពិពណ៌នាអំពីមុខវិជ្ជា!!!!", "បញ្ចូលទិន្ន័យមិនត្រឹមត្រូវ", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return False
         End If
-        If String.IsNullOrEmpty(duration) OrElse Not IsNumeric(duration) Then
-            MessageBox.Show("Please enter a valid duration in hours.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        If String.IsNullOrEmpty(creditHours) OrElse Not IsNumeric(creditHours) Then
+            MessageBox.Show("សូមបញ្ចូលរយៈពេលសិក្សា!!!!", "បញ្ចូលទិន្ន័យមិនត្រឹមត្រូវ", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return False
         End If
         If String.IsNullOrEmpty(basePrice) OrElse Not IsNumeric(basePrice) Then
-            MessageBox.Show("Please enter a valid base price.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("សូមបញ្ចូលតម្លៃនៃមុខវិជ្ជានេះ!!!!", "បញ្ចូលទិន្ន័យមិនត្រឹមត្រូវ", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return False
         End If
+        'Check Duplicate Subject
+        Dim dt As DataTable = Me.subject.GetSubjectData()
+        For Each row As DataRow In dt.Rows
+            If txtSubject.Texts.Trim() = row(1).ToString() Then
+                MsgBox("មុខវិជ្ជានេះគឺមនារូចហើយ")
+                Return False
+            End If
+        Next
         Return True
     End Function
 
@@ -38,8 +46,8 @@ Public Class CoursesForm
         If Not CheckField() Then
             Return
         Else
-            course.AddCourse(txtCourseName.Texts.Trim(), txtDes.Texts.Trim(), Convert.ToInt32(txtDuration.Texts.Trim()), Convert.ToDecimal(txtBasePrice.Texts.Trim()))
-            MessageBox.Show("វគ្គសិក្សា ៖ " & txtCourseName.Texts & "ត្រូវបានបង្កើតបានដោយជោគជ័យ!!!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            subject.AddCourse(txtSubject.Texts.Trim(), txtDes.Texts.Trim(), Convert.ToInt32(txtCreditHours.Texts.Trim()), Convert.ToDecimal(txtBasePrice.Texts.Trim()))
+            MessageBox.Show("វគ្គសិក្សា ៖ " & txtSubject.Texts & "ត្រូវបានបង្កើតបានដោយជោគជ័យ!!!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
         Display()
     End Sub
@@ -65,7 +73,7 @@ Public Class CoursesForm
             If hit.RowIndex >= 0 Then
                 DataGridView1.Rows(hit.RowIndex).Selected = True
                 Dim CoursID As String = DataGridView1.Rows(hit.RowIndex).Cells(0).Value.ToString()
-                course.GetCourseByID(CoursID)
+                subject.GetCourseByID(CoursID)
                 menu.Show(DataGridView1, e.Location)
             End If
         End If
@@ -74,28 +82,28 @@ Public Class CoursesForm
 
     Private Sub DeleteCourse()
         If DialogResult.Yes = MessageBox.Show("តើអ្នកពិតជាចង់លុបវគ្គសិក្សានេះទេ?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) Then
-            course.DeleteCourse()
-            MessageBox.Show("វគ្គសិក្សា ៖ " & course.courseName & " ត្រូវបានលុបដោយជោគជ័យ!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            subject.DeleteCourse()
+            MessageBox.Show("វគ្គសិក្សា ៖ " & subject.Subject & " ត្រូវបានលុបដោយជោគជ័យ!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Display()
         End If
     End Sub
 
     Private Sub ShowDetails()
-        Dim courseDialog As New CourseDetail(course)
+        Dim courseDialog As New SubjectDetail(subject)
         courseDialog.ShowDialog()
         Display()
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         txtBasePrice.Text = ""
-        txtCourseName.Text = ""
+        txtSubject.Text = ""
         txtDes.Text = ""
-        txtDuration.Text = ""
-        course.courseID = ""
-        course.courseName = ""
-        course.Description = ""
-        course.durations = 0
-        course.basePrice = 0D
+        txtCreditHours.Text = ""
+        subject.ID = ""
+        subject.Subject = ""
+        subject.Description = ""
+        subject.CreditHours = 0
+        subject.basePrice = 0D
         Panel1.Visible = False
     End Sub
 
@@ -104,24 +112,24 @@ Public Class CoursesForm
             Return
         End If
         Dim dt As New DataTable()
-        Dim query As String = "SELECT tblCourses.ID, tblCourses.CourseName, tblCourses.Description, tblCourses.DurationHours, tblCourses.BasePrice, 
-                        (SELECT COUNT(*) FROM tblClass WHERE tblClass.CourseID = tblCourses.ID) AS AllClass, 
-                        (SELECT COUNT(*) FROM tblClass WHERE StatusID = 3 AND tblClass.CourseID = tblCourses.ID) AS CompleteClass
-                        FROM tblCourses
-                        WHERE ((tblCourses.ID = @id) or (tblCourses.CourseName LIKE @Condition));"
-        Dim cmd As New OleDb.OleDbCommand(query, course.GetConnection())
+        Dim query As String = "SELECT tblSubject.ID, tblSubject.Subject, tblSubject.Description, tblSubject.CreditHours, tblSubject.BasePrice, 
+                        (SELECT COUNT(*) FROM tblCourse WHERE tblCourse.ID = tblSubject.ID) AS AllCourses, 
+                        (SELECT COUNT(*) FROM tblCourse WHERE StatusID = 3 AND tblCourse.ID = tblSubject.ID) AS CompleteCourse
+                        FROM tblSubject
+                        WHERE ((tblSubject.ID = @id) or (tblSubject.Subject LIKE @Condition));"
+        Dim cmd As New OleDb.OleDbCommand(query, subject.GetConnection())
         Dim id As Integer
         Dim condition As String = txtSearch.Texts.Trim()
-        If IsNumeric(Condition) Then
-            id = Integer.Parse(Condition)
+        If IsNumeric(condition) Then
+            id = Integer.Parse(condition)
         Else
             id = 0
         End If
         condition = condition + "%"
         cmd.Parameters.AddWithValue("@id", id)
-        Condition = Condition & "%"
+        condition = condition & "%"
         cmd.Parameters.AddWithValue("@Condition", condition)
-        DataGridView1.DataSource = course.ExecuteQuery(cmd)
+        DataGridView1.DataSource = subject.ExecuteQuery(cmd)
         Regonize()
     End Sub
 

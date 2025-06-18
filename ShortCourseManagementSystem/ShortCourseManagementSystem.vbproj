@@ -177,24 +177,24 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Auth\User.vb" />
-    <Compile Include="Dialog\ReportTable.Designer.vb">
+    <Compile Include="DataSet\ReportTable.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ReportTable.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Dialog\ReportTable.vb">
+    <Compile Include="DataSet\ReportTable.vb">
       <DependentUpon>ReportTable.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Dialog\ClassDetail.Designer.vb">
-      <DependentUpon>ClassDetail.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Dialog\ClassDetail.vb">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Dialog\CourseDetail.Designer.vb">
       <DependentUpon>CourseDetail.vb</DependentUpon>
     </Compile>
     <Compile Include="Dialog\CourseDetail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\SubjectDetail.Designer.vb">
+      <DependentUpon>SubjectDetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\SubjectDetail.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Dialog\StudentDetail.Designer.vb">
@@ -209,10 +209,10 @@
     <Compile Include="Dialog\TeacherDetail.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\CoursesForm.Designer.vb">
-      <DependentUpon>CoursesForm.vb</DependentUpon>
+    <Compile Include="Forms\SubjectForm.Designer.vb">
+      <DependentUpon>SubjectForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\CoursesForm.vb">
+    <Compile Include="Forms\SubjectForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\DashboardForm.Designer.vb">
@@ -227,10 +227,10 @@
     <Compile Include="Forms\Form1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ManageClassForm.Designer.vb">
-      <DependentUpon>ManageClassForm.vb</DependentUpon>
+    <Compile Include="Forms\CourseForm.Designer.vb">
+      <DependentUpon>CourseForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ManageClassForm.vb">
+    <Compile Include="Forms\CourseForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\PaymentForm.Designer.vb">
@@ -277,10 +277,10 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Model\ConnectionDB.vb" />
-    <Compile Include="Model\Course.vb" />
+    <Compile Include="Model\Subject.vb" />
     <Compile Include="Model\Dashboard.vb" />
     <Compile Include="Model\Getdata.vb" />
-    <Compile Include="Model\ManageClass.vb" />
+    <Compile Include="Model\Course.vb" />
     <Compile Include="Model\Payment.vb" />
     <Compile Include="Model\Register.vb" />
     <Compile Include="Forms\ReportForm.Designer.vb">
@@ -304,10 +304,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Report\ClassReport.vb">
+    <Compile Include="Report\CourseReport.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ClassReport.rpt</DependentUpon>
+      <DependentUpon>CourseReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Report\Invoice.vb">
@@ -334,11 +334,11 @@
     <EmbeddedResource Include="Auth\LoginForm.resx">
       <DependentUpon>LoginForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dialog\ClassDetail.resx">
-      <DependentUpon>ClassDetail.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Dialog\CourseDetail.resx">
       <DependentUpon>CourseDetail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\SubjectDetail.resx">
+      <DependentUpon>SubjectDetail.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialog\StudentDetail.resx">
       <DependentUpon>StudentDetail.vb</DependentUpon>
@@ -346,8 +346,8 @@
     <EmbeddedResource Include="Dialog\TeacherDetail.resx">
       <DependentUpon>TeacherDetail.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CoursesForm.resx">
-      <DependentUpon>CoursesForm.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\SubjectForm.resx">
+      <DependentUpon>SubjectForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DashboardForm.resx">
       <DependentUpon>DashboardForm.vb</DependentUpon>
@@ -355,8 +355,8 @@
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ManageClassForm.resx">
-      <DependentUpon>ManageClassForm.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\CourseForm.resx">
+      <DependentUpon>CourseForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PaymentForm.resx">
       <DependentUpon>PaymentForm.vb</DependentUpon>
@@ -392,9 +392,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report\ClassReport.rpt">
+    <EmbeddedResource Include="Report\CourseReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClassReport.vb</LastGenOutput>
+      <LastGenOutput>CourseReport.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\Invoice.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -410,15 +410,15 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Dialog\ReportTable.xsc">
+    <None Include="DataSet\ReportTable.xsc">
       <DependentUpon>ReportTable.xsd</DependentUpon>
     </None>
-    <None Include="Dialog\ReportTable.xsd">
+    <None Include="DataSet\ReportTable.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>ReportTable.Designer.vb</LastGenOutput>
     </None>
-    <None Include="Dialog\ReportTable.xss">
+    <None Include="DataSet\ReportTable.xss">
       <DependentUpon>ReportTable.xsd</DependentUpon>
     </None>
     <None Include="My Project\app.manifest" />
@@ -457,8 +457,6 @@
   <ItemGroup>
     <None Include="Resources\loginfrom1.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DataSet\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

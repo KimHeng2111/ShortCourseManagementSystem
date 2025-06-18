@@ -29,7 +29,7 @@ Partial Public Class DataSet1
     
     Private tabletblStudentReport As tblStudentReportDataTable
     
-    Private tabletblClassReport As tblClassReportDataTable
+    Private tabletblCourseReport As tblCourseReportDataTable
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -66,8 +66,8 @@ Partial Public Class DataSet1
             If (Not (ds.Tables("tblStudentReport")) Is Nothing) Then
                 MyBase.Tables.Add(New tblStudentReportDataTable(ds.Tables("tblStudentReport")))
             End If
-            If (Not (ds.Tables("tblClassReport")) Is Nothing) Then
-                MyBase.Tables.Add(New tblClassReportDataTable(ds.Tables("tblClassReport")))
+            If (Not (ds.Tables("tblCourseReport")) Is Nothing) Then
+                MyBase.Tables.Add(New tblCourseReportDataTable(ds.Tables("tblCourseReport")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -110,9 +110,9 @@ Partial Public Class DataSet1
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property tblClassReport() As tblClassReportDataTable
+    Public ReadOnly Property tblCourseReport() As tblCourseReportDataTable
         Get
-            Return Me.tabletblClassReport
+            Return Me.tabletblCourseReport
         End Get
     End Property
     
@@ -189,8 +189,8 @@ Partial Public Class DataSet1
             If (Not (ds.Tables("tblStudentReport")) Is Nothing) Then
                 MyBase.Tables.Add(New tblStudentReportDataTable(ds.Tables("tblStudentReport")))
             End If
-            If (Not (ds.Tables("tblClassReport")) Is Nothing) Then
-                MyBase.Tables.Add(New tblClassReportDataTable(ds.Tables("tblClassReport")))
+            If (Not (ds.Tables("tblCourseReport")) Is Nothing) Then
+                MyBase.Tables.Add(New tblCourseReportDataTable(ds.Tables("tblCourseReport")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -236,10 +236,10 @@ Partial Public Class DataSet1
                 Me.tabletblStudentReport.InitVars
             End If
         End If
-        Me.tabletblClassReport = CType(MyBase.Tables("tblClassReport"),tblClassReportDataTable)
+        Me.tabletblCourseReport = CType(MyBase.Tables("tblCourseReport"),tblCourseReportDataTable)
         If (initTable = true) Then
-            If (Not (Me.tabletblClassReport) Is Nothing) Then
-                Me.tabletblClassReport.InitVars
+            If (Not (Me.tabletblCourseReport) Is Nothing) Then
+                Me.tabletblCourseReport.InitVars
             End If
         End If
     End Sub
@@ -256,8 +256,8 @@ Partial Public Class DataSet1
         MyBase.Tables.Add(Me.tabletblTeacherReport)
         Me.tabletblStudentReport = New tblStudentReportDataTable()
         MyBase.Tables.Add(Me.tabletblStudentReport)
-        Me.tabletblClassReport = New tblClassReportDataTable()
-        MyBase.Tables.Add(Me.tabletblClassReport)
+        Me.tabletblCourseReport = New tblCourseReportDataTable()
+        MyBase.Tables.Add(Me.tabletblCourseReport)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -274,7 +274,7 @@ Partial Public Class DataSet1
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Private Function ShouldSerializetblClassReport() As Boolean
+    Private Function ShouldSerializetblCourseReport() As Boolean
         Return false
     End Function
     
@@ -343,7 +343,7 @@ Partial Public Class DataSet1
     Public Delegate Sub tblStudentReportRowChangeEventHandler(ByVal sender As Object, ByVal e As tblStudentReportRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Public Delegate Sub tblClassReportRowChangeEventHandler(ByVal sender As Object, ByVal e As tblClassReportRowChangeEvent)
+    Public Delegate Sub tblCourseReportRowChangeEventHandler(ByVal sender As Object, ByVal e As tblCourseReportRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
@@ -367,7 +367,7 @@ Partial Public Class DataSet1
         
         Private columnStartDate As Global.System.Data.DataColumn
         
-        Private columnDataColumn1 As Global.System.Data.DataColumn
+        Private columnIsActive As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
@@ -462,9 +462,9 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property DataColumn1Column() As Global.System.Data.DataColumn
+        Public ReadOnly Property IsActiveColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnDataColumn1
+                Return Me.columnIsActive
             End Get
         End Property
         
@@ -505,9 +505,9 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddtblTeacherReportRow(ByVal ID As String, ByVal khName As String, ByVal engName As String, ByVal Address As String, ByVal Phone As String, ByVal Email As String, ByVal StartDate As String, ByVal DataColumn1 As String) As tblTeacherReportRow
+        Public Overloads Function AddtblTeacherReportRow(ByVal ID As String, ByVal khName As String, ByVal engName As String, ByVal Address As String, ByVal Phone As String, ByVal Email As String, ByVal StartDate As String, ByVal IsActive As String) As tblTeacherReportRow
             Dim rowtblTeacherReportRow As tblTeacherReportRow = CType(Me.NewRow,tblTeacherReportRow)
-            Dim columnValuesArray() As Object = New Object() {ID, khName, engName, Address, Phone, Email, StartDate, DataColumn1}
+            Dim columnValuesArray() As Object = New Object() {ID, khName, engName, Address, Phone, Email, StartDate, IsActive}
             rowtblTeacherReportRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowtblTeacherReportRow)
             Return rowtblTeacherReportRow
@@ -532,12 +532,12 @@ Partial Public Class DataSet1
         Friend Sub InitVars()
             Me.columnID = MyBase.Columns("ID")
             Me.columnkhName = MyBase.Columns("khName")
-            Me.columnengName = MyBase.Columns("engName")
+            Me.columnengName = MyBase.Columns("EngName")
             Me.columnAddress = MyBase.Columns("Address")
             Me.columnPhone = MyBase.Columns("Phone")
             Me.columnEmail = MyBase.Columns("Email")
             Me.columnStartDate = MyBase.Columns("StartDate")
-            Me.columnDataColumn1 = MyBase.Columns("DataColumn1")
+            Me.columnIsActive = MyBase.Columns("IsActive")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -547,7 +547,11 @@ Partial Public Class DataSet1
             MyBase.Columns.Add(Me.columnID)
             Me.columnkhName = New Global.System.Data.DataColumn("khName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnkhName)
-            Me.columnengName = New Global.System.Data.DataColumn("engName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnengName = New Global.System.Data.DataColumn("EngName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnengName.ExtendedProperties.Add("Generator_ColumnPropNameInRow", "engName")
+            Me.columnengName.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "engNameColumn")
+            Me.columnengName.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnengName")
+            Me.columnengName.ExtendedProperties.Add("Generator_UserColumnName", "EngName")
             MyBase.Columns.Add(Me.columnengName)
             Me.columnAddress = New Global.System.Data.DataColumn("Address", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnAddress)
@@ -557,8 +561,8 @@ Partial Public Class DataSet1
             MyBase.Columns.Add(Me.columnEmail)
             Me.columnStartDate = New Global.System.Data.DataColumn("StartDate", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnStartDate)
-            Me.columnDataColumn1 = New Global.System.Data.DataColumn("DataColumn1", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnDataColumn1)
+            Me.columnIsActive = New Global.System.Data.DataColumn("IsActive", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIsActive)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -710,7 +714,7 @@ Partial Public Class DataSet1
         
         Private columnPhone As Global.System.Data.DataColumn
         
-        Private columnCourseName As Global.System.Data.DataColumn
+        Private columnSubject As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
@@ -805,9 +809,9 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property CourseNameColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property SubjectColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnCourseName
+                Return Me.columnSubject
             End Get
         End Property
         
@@ -848,9 +852,9 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddtblStudentReportRow(ByVal ID As String, ByVal KhName As String, ByVal EngName As String, ByVal Gender As String, ByVal DateOfBirth As String, ByVal Address As String, ByVal Phone As String, ByVal CourseName As String) As tblStudentReportRow
+        Public Overloads Function AddtblStudentReportRow(ByVal ID As String, ByVal KhName As String, ByVal EngName As String, ByVal Gender As String, ByVal DateOfBirth As String, ByVal Address As String, ByVal Phone As String, ByVal Subject As String) As tblStudentReportRow
             Dim rowtblStudentReportRow As tblStudentReportRow = CType(Me.NewRow,tblStudentReportRow)
-            Dim columnValuesArray() As Object = New Object() {ID, KhName, EngName, Gender, DateOfBirth, Address, Phone, CourseName}
+            Dim columnValuesArray() As Object = New Object() {ID, KhName, EngName, Gender, DateOfBirth, Address, Phone, Subject}
             rowtblStudentReportRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowtblStudentReportRow)
             Return rowtblStudentReportRow
@@ -880,7 +884,7 @@ Partial Public Class DataSet1
             Me.columnDateOfBirth = MyBase.Columns("DateOfBirth")
             Me.columnAddress = MyBase.Columns("Address")
             Me.columnPhone = MyBase.Columns("Phone")
-            Me.columnCourseName = MyBase.Columns("CourseName")
+            Me.columnSubject = MyBase.Columns("Subject")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -900,8 +904,8 @@ Partial Public Class DataSet1
             MyBase.Columns.Add(Me.columnAddress)
             Me.columnPhone = New Global.System.Data.DataColumn("Phone", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnPhone)
-            Me.columnCourseName = New Global.System.Data.DataColumn("CourseName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnCourseName)
+            Me.columnSubject = New Global.System.Data.DataColumn("Subject", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSubject)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1036,12 +1040,12 @@ Partial Public Class DataSet1
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class tblClassReportDataTable
-        Inherits Global.System.Data.TypedTableBase(Of tblClassReportRow)
+    Partial Public Class tblCourseReportDataTable
+        Inherits Global.System.Data.TypedTableBase(Of tblCourseReportRow)
         
-        Private columnClassID As Global.System.Data.DataColumn
+        Private columnID As Global.System.Data.DataColumn
         
-        Private columnCourseName As Global.System.Data.DataColumn
+        Private columnSubject As Global.System.Data.DataColumn
         
         Private columnKhName As Global.System.Data.DataColumn
         
@@ -1055,11 +1059,13 @@ Partial Public Class DataSet1
         
         Private columnCurrentEnrollment As Global.System.Data.DataColumn
         
+        Private columnStatus As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "tblClassReport"
+            Me.TableName = "tblCourseReport"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -1092,17 +1098,17 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property ClassIDColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property IDColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnClassID
+                Return Me.columnID
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property CourseNameColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property SubjectColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnCourseName
+                Return Me.columnSubject
             End Get
         End Property
         
@@ -1155,6 +1161,14 @@ Partial Public Class DataSet1
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property StatusColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnStatus
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -1165,44 +1179,44 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As tblClassReportRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As tblCourseReportRow
             Get
-                Return CType(Me.Rows(index),tblClassReportRow)
+                Return CType(Me.Rows(index),tblCourseReportRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event tblClassReportRowChanging As tblClassReportRowChangeEventHandler
+        Public Event tblCourseReportRowChanging As tblCourseReportRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event tblClassReportRowChanged As tblClassReportRowChangeEventHandler
+        Public Event tblCourseReportRowChanged As tblCourseReportRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event tblClassReportRowDeleting As tblClassReportRowChangeEventHandler
+        Public Event tblCourseReportRowDeleting As tblCourseReportRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event tblClassReportRowDeleted As tblClassReportRowChangeEventHandler
+        Public Event tblCourseReportRowDeleted As tblCourseReportRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Sub AddtblClassReportRow(ByVal row As tblClassReportRow)
+        Public Overloads Sub AddtblCourseReportRow(ByVal row As tblCourseReportRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddtblClassReportRow(ByVal ClassID As String, ByVal CourseName As String, ByVal KhName As String, ByVal Schedule As String, ByVal Room As String, ByVal StartDate As String, ByVal EndDate As String, ByVal CurrentEnrollment As String) As tblClassReportRow
-            Dim rowtblClassReportRow As tblClassReportRow = CType(Me.NewRow,tblClassReportRow)
-            Dim columnValuesArray() As Object = New Object() {ClassID, CourseName, KhName, Schedule, Room, StartDate, EndDate, CurrentEnrollment}
-            rowtblClassReportRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowtblClassReportRow)
-            Return rowtblClassReportRow
+        Public Overloads Function AddtblCourseReportRow(ByVal ID As String, ByVal Subject As String, ByVal KhName As String, ByVal Schedule As String, ByVal Room As String, ByVal StartDate As String, ByVal EndDate As String, ByVal CurrentEnrollment As String, ByVal Status As String) As tblCourseReportRow
+            Dim rowtblCourseReportRow As tblCourseReportRow = CType(Me.NewRow,tblCourseReportRow)
+            Dim columnValuesArray() As Object = New Object() {ID, Subject, KhName, Schedule, Room, StartDate, EndDate, CurrentEnrollment, Status}
+            rowtblCourseReportRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowtblCourseReportRow)
+            Return rowtblCourseReportRow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As tblClassReportDataTable = CType(MyBase.Clone,tblClassReportDataTable)
+            Dim cln As tblCourseReportDataTable = CType(MyBase.Clone,tblCourseReportDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -1210,29 +1224,30 @@ Partial Public Class DataSet1
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New tblClassReportDataTable()
+            Return New tblCourseReportDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Friend Sub InitVars()
-            Me.columnClassID = MyBase.Columns("ClassID")
-            Me.columnCourseName = MyBase.Columns("CourseName")
+            Me.columnID = MyBase.Columns("ID")
+            Me.columnSubject = MyBase.Columns("Subject")
             Me.columnKhName = MyBase.Columns("KhName")
             Me.columnSchedule = MyBase.Columns("Schedule")
             Me.columnRoom = MyBase.Columns("Room")
             Me.columnStartDate = MyBase.Columns("StartDate")
             Me.columnEndDate = MyBase.Columns("EndDate")
             Me.columnCurrentEnrollment = MyBase.Columns("CurrentEnrollment")
+            Me.columnStatus = MyBase.Columns("Status")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Private Sub InitClass()
-            Me.columnClassID = New Global.System.Data.DataColumn("ClassID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnClassID)
-            Me.columnCourseName = New Global.System.Data.DataColumn("CourseName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnCourseName)
+            Me.columnID = New Global.System.Data.DataColumn("ID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnID)
+            Me.columnSubject = New Global.System.Data.DataColumn("Subject", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSubject)
             Me.columnKhName = New Global.System.Data.DataColumn("KhName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnKhName)
             Me.columnSchedule = New Global.System.Data.DataColumn("Schedule", GetType(String), Nothing, Global.System.Data.MappingType.Element)
@@ -1245,32 +1260,34 @@ Partial Public Class DataSet1
             MyBase.Columns.Add(Me.columnEndDate)
             Me.columnCurrentEnrollment = New Global.System.Data.DataColumn("CurrentEnrollment", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnCurrentEnrollment)
+            Me.columnStatus = New Global.System.Data.DataColumn("Status", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnStatus)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function NewtblClassReportRow() As tblClassReportRow
-            Return CType(Me.NewRow,tblClassReportRow)
+        Public Function NewtblCourseReportRow() As tblCourseReportRow
+            Return CType(Me.NewRow,tblCourseReportRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New tblClassReportRow(builder)
+            Return New tblCourseReportRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(tblClassReportRow)
+            Return GetType(tblCourseReportRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.tblClassReportRowChangedEvent) Is Nothing) Then
-                RaiseEvent tblClassReportRowChanged(Me, New tblClassReportRowChangeEvent(CType(e.Row,tblClassReportRow), e.Action))
+            If (Not (Me.tblCourseReportRowChangedEvent) Is Nothing) Then
+                RaiseEvent tblCourseReportRowChanged(Me, New tblCourseReportRowChangeEvent(CType(e.Row,tblCourseReportRow), e.Action))
             End If
         End Sub
         
@@ -1278,8 +1295,8 @@ Partial Public Class DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.tblClassReportRowChangingEvent) Is Nothing) Then
-                RaiseEvent tblClassReportRowChanging(Me, New tblClassReportRowChangeEvent(CType(e.Row,tblClassReportRow), e.Action))
+            If (Not (Me.tblCourseReportRowChangingEvent) Is Nothing) Then
+                RaiseEvent tblCourseReportRowChanging(Me, New tblCourseReportRowChangeEvent(CType(e.Row,tblCourseReportRow), e.Action))
             End If
         End Sub
         
@@ -1287,8 +1304,8 @@ Partial Public Class DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.tblClassReportRowDeletedEvent) Is Nothing) Then
-                RaiseEvent tblClassReportRowDeleted(Me, New tblClassReportRowChangeEvent(CType(e.Row,tblClassReportRow), e.Action))
+            If (Not (Me.tblCourseReportRowDeletedEvent) Is Nothing) Then
+                RaiseEvent tblCourseReportRowDeleted(Me, New tblCourseReportRowChangeEvent(CType(e.Row,tblCourseReportRow), e.Action))
             End If
         End Sub
         
@@ -1296,14 +1313,14 @@ Partial Public Class DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.tblClassReportRowDeletingEvent) Is Nothing) Then
-                RaiseEvent tblClassReportRowDeleting(Me, New tblClassReportRowChangeEvent(CType(e.Row,tblClassReportRow), e.Action))
+            If (Not (Me.tblCourseReportRowDeletingEvent) Is Nothing) Then
+                RaiseEvent tblCourseReportRowDeleting(Me, New tblCourseReportRowChangeEvent(CType(e.Row,tblCourseReportRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub RemovetblClassReportRow(ByVal row As tblClassReportRow)
+        Public Sub RemovetblCourseReportRow(ByVal row As tblCourseReportRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -1330,7 +1347,7 @@ Partial Public Class DataSet1
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "tblClassReportDataTable"
+            attribute2.FixedValue = "tblCourseReportDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -1426,7 +1443,7 @@ Partial Public Class DataSet1
                 Try 
                     Return CType(Me(Me.tabletblTeacherReport.engNameColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'engName' in table 'tblTeacherReport' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'EngName' in table 'tblTeacherReport' is DBNull.", e)
                 End Try
             End Get
             Set
@@ -1496,16 +1513,16 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property DataColumn1() As String
+        Public Property IsActive() As String
             Get
                 Try 
-                    Return CType(Me(Me.tabletblTeacherReport.DataColumn1Column),String)
+                    Return CType(Me(Me.tabletblTeacherReport.IsActiveColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'DataColumn1' in table 'tblTeacherReport' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'IsActive' in table 'tblTeacherReport' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tabletblTeacherReport.DataColumn1Column) = value
+                Me(Me.tabletblTeacherReport.IsActiveColumn) = value
             End Set
         End Property
         
@@ -1595,14 +1612,14 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function IsDataColumn1Null() As Boolean
-            Return Me.IsNull(Me.tabletblTeacherReport.DataColumn1Column)
+        Public Function IsIsActiveNull() As Boolean
+            Return Me.IsNull(Me.tabletblTeacherReport.IsActiveColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub SetDataColumn1Null()
-            Me(Me.tabletblTeacherReport.DataColumn1Column) = Global.System.Convert.DBNull
+        Public Sub SetIsActiveNull()
+            Me(Me.tabletblTeacherReport.IsActiveColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -1728,16 +1745,16 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property CourseName() As String
+        Public Property Subject() As String
             Get
                 Try 
-                    Return CType(Me(Me.tabletblStudentReport.CourseNameColumn),String)
+                    Return CType(Me(Me.tabletblStudentReport.SubjectColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'CourseName' in table 'tblStudentReport' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Subject' in table 'tblStudentReport' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tabletblStudentReport.CourseNameColumn) = value
+                Me(Me.tabletblStudentReport.SubjectColumn) = value
             End Set
         End Property
         
@@ -1827,59 +1844,59 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function IsCourseNameNull() As Boolean
-            Return Me.IsNull(Me.tabletblStudentReport.CourseNameColumn)
+        Public Function IsSubjectNull() As Boolean
+            Return Me.IsNull(Me.tabletblStudentReport.SubjectColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub SetCourseNameNull()
-            Me(Me.tabletblStudentReport.CourseNameColumn) = Global.System.Convert.DBNull
+        Public Sub SetSubjectNull()
+            Me(Me.tabletblStudentReport.SubjectColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class tblClassReportRow
+    Partial Public Class tblCourseReportRow
         Inherits Global.System.Data.DataRow
         
-        Private tabletblClassReport As tblClassReportDataTable
+        Private tabletblCourseReport As tblCourseReportDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tabletblClassReport = CType(Me.Table,tblClassReportDataTable)
+            Me.tabletblCourseReport = CType(Me.Table,tblCourseReportDataTable)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property ClassID() As String
+        Public Property ID() As String
             Get
                 Try 
-                    Return CType(Me(Me.tabletblClassReport.ClassIDColumn),String)
+                    Return CType(Me(Me.tabletblCourseReport.IDColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'ClassID' in table 'tblClassReport' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ID' in table 'tblCourseReport' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tabletblClassReport.ClassIDColumn) = value
+                Me(Me.tabletblCourseReport.IDColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property CourseName() As String
+        Public Property Subject() As String
             Get
                 Try 
-                    Return CType(Me(Me.tabletblClassReport.CourseNameColumn),String)
+                    Return CType(Me(Me.tabletblCourseReport.SubjectColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'CourseName' in table 'tblClassReport' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Subject' in table 'tblCourseReport' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tabletblClassReport.CourseNameColumn) = value
+                Me(Me.tabletblCourseReport.SubjectColumn) = value
             End Set
         End Property
         
@@ -1888,13 +1905,13 @@ Partial Public Class DataSet1
         Public Property KhName() As String
             Get
                 Try 
-                    Return CType(Me(Me.tabletblClassReport.KhNameColumn),String)
+                    Return CType(Me(Me.tabletblCourseReport.KhNameColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'KhName' in table 'tblClassReport' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'KhName' in table 'tblCourseReport' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tabletblClassReport.KhNameColumn) = value
+                Me(Me.tabletblCourseReport.KhNameColumn) = value
             End Set
         End Property
         
@@ -1903,13 +1920,13 @@ Partial Public Class DataSet1
         Public Property Schedule() As String
             Get
                 Try 
-                    Return CType(Me(Me.tabletblClassReport.ScheduleColumn),String)
+                    Return CType(Me(Me.tabletblCourseReport.ScheduleColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Schedule' in table 'tblClassReport' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Schedule' in table 'tblCourseReport' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tabletblClassReport.ScheduleColumn) = value
+                Me(Me.tabletblCourseReport.ScheduleColumn) = value
             End Set
         End Property
         
@@ -1918,13 +1935,13 @@ Partial Public Class DataSet1
         Public Property Room() As String
             Get
                 Try 
-                    Return CType(Me(Me.tabletblClassReport.RoomColumn),String)
+                    Return CType(Me(Me.tabletblCourseReport.RoomColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Room' in table 'tblClassReport' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Room' in table 'tblCourseReport' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tabletblClassReport.RoomColumn) = value
+                Me(Me.tabletblCourseReport.RoomColumn) = value
             End Set
         End Property
         
@@ -1933,13 +1950,13 @@ Partial Public Class DataSet1
         Public Property StartDate() As String
             Get
                 Try 
-                    Return CType(Me(Me.tabletblClassReport.StartDateColumn),String)
+                    Return CType(Me(Me.tabletblCourseReport.StartDateColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'StartDate' in table 'tblClassReport' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'StartDate' in table 'tblCourseReport' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tabletblClassReport.StartDateColumn) = value
+                Me(Me.tabletblCourseReport.StartDateColumn) = value
             End Set
         End Property
         
@@ -1948,13 +1965,13 @@ Partial Public Class DataSet1
         Public Property EndDate() As String
             Get
                 Try 
-                    Return CType(Me(Me.tabletblClassReport.EndDateColumn),String)
+                    Return CType(Me(Me.tabletblCourseReport.EndDateColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'EndDate' in table 'tblClassReport' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'EndDate' in table 'tblCourseReport' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tabletblClassReport.EndDateColumn) = value
+                Me(Me.tabletblCourseReport.EndDateColumn) = value
             End Set
         End Property
         
@@ -1963,110 +1980,137 @@ Partial Public Class DataSet1
         Public Property CurrentEnrollment() As String
             Get
                 Try 
-                    Return CType(Me(Me.tabletblClassReport.CurrentEnrollmentColumn),String)
+                    Return CType(Me(Me.tabletblCourseReport.CurrentEnrollmentColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'CurrentEnrollment' in table 'tblClassReport' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'CurrentEnrollment' in table 'tblCourseReport' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tabletblClassReport.CurrentEnrollmentColumn) = value
+                Me(Me.tabletblCourseReport.CurrentEnrollmentColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function IsClassIDNull() As Boolean
-            Return Me.IsNull(Me.tabletblClassReport.ClassIDColumn)
+        Public Property Status() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tabletblCourseReport.StatusColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Status' in table 'tblCourseReport' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabletblCourseReport.StatusColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function IsIDNull() As Boolean
+            Return Me.IsNull(Me.tabletblCourseReport.IDColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub SetClassIDNull()
-            Me(Me.tabletblClassReport.ClassIDColumn) = Global.System.Convert.DBNull
+        Public Sub SetIDNull()
+            Me(Me.tabletblCourseReport.IDColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function IsCourseNameNull() As Boolean
-            Return Me.IsNull(Me.tabletblClassReport.CourseNameColumn)
+        Public Function IsSubjectNull() As Boolean
+            Return Me.IsNull(Me.tabletblCourseReport.SubjectColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub SetCourseNameNull()
-            Me(Me.tabletblClassReport.CourseNameColumn) = Global.System.Convert.DBNull
+        Public Sub SetSubjectNull()
+            Me(Me.tabletblCourseReport.SubjectColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsKhNameNull() As Boolean
-            Return Me.IsNull(Me.tabletblClassReport.KhNameColumn)
+            Return Me.IsNull(Me.tabletblCourseReport.KhNameColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetKhNameNull()
-            Me(Me.tabletblClassReport.KhNameColumn) = Global.System.Convert.DBNull
+            Me(Me.tabletblCourseReport.KhNameColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsScheduleNull() As Boolean
-            Return Me.IsNull(Me.tabletblClassReport.ScheduleColumn)
+            Return Me.IsNull(Me.tabletblCourseReport.ScheduleColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetScheduleNull()
-            Me(Me.tabletblClassReport.ScheduleColumn) = Global.System.Convert.DBNull
+            Me(Me.tabletblCourseReport.ScheduleColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsRoomNull() As Boolean
-            Return Me.IsNull(Me.tabletblClassReport.RoomColumn)
+            Return Me.IsNull(Me.tabletblCourseReport.RoomColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetRoomNull()
-            Me(Me.tabletblClassReport.RoomColumn) = Global.System.Convert.DBNull
+            Me(Me.tabletblCourseReport.RoomColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsStartDateNull() As Boolean
-            Return Me.IsNull(Me.tabletblClassReport.StartDateColumn)
+            Return Me.IsNull(Me.tabletblCourseReport.StartDateColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetStartDateNull()
-            Me(Me.tabletblClassReport.StartDateColumn) = Global.System.Convert.DBNull
+            Me(Me.tabletblCourseReport.StartDateColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsEndDateNull() As Boolean
-            Return Me.IsNull(Me.tabletblClassReport.EndDateColumn)
+            Return Me.IsNull(Me.tabletblCourseReport.EndDateColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetEndDateNull()
-            Me(Me.tabletblClassReport.EndDateColumn) = Global.System.Convert.DBNull
+            Me(Me.tabletblCourseReport.EndDateColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsCurrentEnrollmentNull() As Boolean
-            Return Me.IsNull(Me.tabletblClassReport.CurrentEnrollmentColumn)
+            Return Me.IsNull(Me.tabletblCourseReport.CurrentEnrollmentColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetCurrentEnrollmentNull()
-            Me(Me.tabletblClassReport.CurrentEnrollmentColumn) = Global.System.Convert.DBNull
+            Me(Me.tabletblCourseReport.CurrentEnrollmentColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function IsStatusNull() As Boolean
+            Return Me.IsNull(Me.tabletblCourseReport.StatusColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub SetStatusNull()
+            Me(Me.tabletblCourseReport.StatusColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -2146,16 +2190,16 @@ Partial Public Class DataSet1
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Public Class tblClassReportRowChangeEvent
+    Public Class tblCourseReportRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As tblClassReportRow
+        Private eventRow As tblCourseReportRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub New(ByVal row As tblClassReportRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As tblCourseReportRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -2163,7 +2207,7 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property Row() As tblClassReportRow
+        Public ReadOnly Property Row() As tblCourseReportRow
             Get
                 Return Me.eventRow
             End Get

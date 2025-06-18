@@ -72,6 +72,7 @@ Public Class TeachersForm
     End Sub
     Sub Regonize()
         If DataGridView1.Columns.Count = 7 Then
+            DataGridView1.Columns(0).HeaderText = "លេខកូដ"
             DataGridView1.Columns(0).Width = 100
             DataGridView1.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
             DataGridView1.Columns(1).Width = 250
@@ -226,7 +227,7 @@ Public Class TeachersForm
         If startup Then
             Return
         End If
-        Dim query As String = "SELECT tblTeacher.ID, tblTeacher.KhName AS KhmerName, tblTeacher.engName AS EnglishName, tblTeacher.DOB AS DateOfBirth, 
+        Dim query As String = "SELECT tblTeacher.ID, tblTeacher.KhName AS KhmerName, tblTeacher.EngName AS EnglishName, tblTeacher.DOB AS DateOfBirth, 
                                 tblTeacher.Address AS PlaceOfBirth, tblTeacher.Email, tblTeacher.Phone FROM tblTeacher
                                 WHERE Address LIKE @address AND (ID Like @id AND (KhName Like @name OR engName Like @name));"
         Dim cmd As OleDbCommand = New OleDbCommand(query, teacher.GetConnection())

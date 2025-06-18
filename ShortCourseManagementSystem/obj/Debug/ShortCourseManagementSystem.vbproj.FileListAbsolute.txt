@@ -1,8 +1,5 @@
 C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\obj\Debug\ShortCourseManagementSystem.vbproj.AssemblyReference.cache
-C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\obj\Debug\StudentManagementSystem.ClassDetail.resources
-C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\obj\Debug\StudentManagementSystem.CoursesForm.resources
 C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\obj\Debug\StudentManagementSystem.Form1.resources
-C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\obj\Debug\StudentManagementSystem.ManageClassForm.resources
 C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\obj\Debug\StudentManagementSystem.PaymentForm.resources
 C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\obj\Debug\StudentManagementSystem.RegisterForm.resources
 C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\obj\Debug\StudentManagementSystem.Schedule.resources
@@ -85,3 +82,6 @@ C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagemen
 C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\obj\Debug\StudentManagementSystem.DashboardForm.resources
 C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\obj\Debug\StudentManagementSystem.RoomForm.resources
 C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\obj\Debug\StudentManagementSystem.ReportForm.resources
+C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\obj\Debug\StudentManagementSystem.SubjectForm.resources
+C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\obj\Debug\StudentManagementSystem.CourseForm.resources
+C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\obj\Debug\StudentManagementSystem.SubjectDetail.resources

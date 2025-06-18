@@ -39,7 +39,7 @@ Public Class RegisterForm
             Return
         End If
         If Not (Decimal.TryParse(txtDis.Text, dis)) Or dis < 0 Or dis > 100 Then
-            MessageBox.Show("Please enter a valid number for the discount.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show("សូមបញ្ចូលភាគរយបញ្ចុះតម្លៃអោយបានត្រឹមត្រូវ!!!", "បញ្ចូលទិន្ន័យមិនត្រឹមត្រូវ", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             txtDis.Focus()
             txtDis.SelectAll()
             Return
@@ -88,13 +88,13 @@ Public Class RegisterForm
     End Function
 
     Function CheckValidation() As Boolean
-        'Check if the student has already registered for the class
+        'Check if the student has already registered for the Course
         Dim studentID As Integer = register.student.id
         Dim classID As Integer = Convert.ToInt32(cbTime.SelectedValue)
-        Dim query As String = "SELECT COUNT(*) FROM tblRegister WHERE StudentID = @StudentID AND ClassID = @ClassID"
+        Dim query As String = "SELECT COUNT(*) FROM tblRegister WHERE StudentID = @StudentID AND CourseID = @CourseID"
         Dim cmd As New OleDbCommand(query, register.GetConnection())
         cmd.Parameters.AddWithValue("@StudentID", studentID)
-        cmd.Parameters.AddWithValue("@ClassID", classID)
+        cmd.Parameters.AddWithValue("@CourseID", classID)
         register.OpenConnection()
         Dim count As Integer = Convert.ToInt32(cmd.ExecuteScalar())
         register.CloseConnection()
@@ -166,7 +166,7 @@ Public Class RegisterForm
         'Step 2 : Create Student
         register.student.AddStudent(txtKhName.Text.Trim(), txtEngName.Text.Trim(), cbGender.Text, dtpDob.Text, cbAddress.Text.Trim(), txtPhone.Text.Trim(), SaveImageAndReturnPath())
         'Assign data to register
-        register.manageClass.GetClassByID(cbTime.SelectedValue.ToString()) 'ADD ManageClass
+        register.manageClass.GetCourseByID(cbTime.SelectedValue.ToString()) 'ADD ManageClass
         register.discount = If(txtDis.Text = String.Empty, 0, Convert.ToDecimal(txtDis.Text))
         Dim amount As Decimal = Decimal.Parse(lbAmount.Text)
         Dim unpaid As Decimal = amount - Convert.ToDecimal(txtpay.Text)
@@ -195,10 +195,10 @@ Public Class RegisterForm
         If cbTime.SelectedValue = -1 Then
             Return
         End If
-        register.manageClass.GetClassByID(cbTime.SelectedValue.ToString())
+        register.manageClass.GetCourseByID(cbTime.SelectedValue.ToString())
         lbRoom.Text = register.manageClass.room.room
-        lbPrice.Text = register.manageClass.course.basePrice.ToString("F2")
-        lbAmount.Text = register.manageClass.course.basePrice.ToString("F2")
+        lbPrice.Text = register.manageClass.subject.basePrice.ToString("F2")
+        lbAmount.Text = register.manageClass.subject.basePrice.ToString("F2")
         txtDis.Text = "0"
     End Sub
     Sub Regonize()
@@ -211,7 +211,7 @@ Public Class RegisterForm
         DataGridView1.Columns(4).Width = 150
         DataGridView1.Columns(5).Width = 150
         DataGridView1.Columns(6).Width = 150
-        DataGridView1.Columns(0).HeaderText = "ClassID"
+        DataGridView1.Columns(0).HeaderText = "លេខកូដ"
         DataGridView1.Columns(1).HeaderText = "វគ្គសិក្សា"
         DataGridView1.Columns(2).HeaderText = "គ្រូបង្រៀន"
         DataGridView1.Columns(3).HeaderText = "ថ្ងៃចូលរៀន"

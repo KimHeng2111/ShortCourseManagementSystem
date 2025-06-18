@@ -1,101 +1,109 @@
-﻿Public Class CourseDetail
+﻿Imports System.Data.OleDb
+Public Class CourseDetail
     Dim course As New Course()
-    Public Sub New(course As Course)
-
+    Public Sub New(classDetail As Course)
         ' This call is required by the designer.
         InitializeComponent()
-
         ' Add any initialization after the InitializeComponent() call.
-        Me.course = course
-        FillCourseDetails()
-        Display()
+        Me.course = classDetail
+        FillClassDetails()
+
     End Sub
-    Sub Display()
-        Dim query As String = "SELECT tblClass.ClassID, tblTeacher.KhName AS Teacher, tblRoom.Room AS Room, tblSchedule.Schedule, (SELECT COUNT(*) FROM tblRegister WHERE tblRegister.ClassID = tblClass.ClassID) AS TotalStudents, tblClassStatus.Status
-FROM tblTeacher INNER JOIN (tblSchedule INNER JOIN (tblRoom INNER JOIN (tblClassStatus INNER JOIN tblClass ON tblClassStatus.ID = tblClass.StatusID) ON tblRoom.ID = tblClass.RoomID) ON tblSchedule.ID = tblClass.ScheduleID) ON tblTeacher.ID = tblClass.TeacherID
-GROUP BY tblClass.ClassID, tblTeacher.KhName, tblRoom.Room, tblSchedule.Schedule, tblClassStatus.Status, tblClass.CourseID
-HAVING (((tblClass.CourseID)=[@courseID]));"
-        Dim cmd As New OleDb.OleDbCommand(query, course.GetConnection())
-        cmd.Parameters.AddWithValue("@curseID", course.courseID)
-        DataGridView1.DataSource = course.ExecuteQuery(cmd)
-        DataGridView1.ColumnHeadersHeight = 40
-        'DataGridView1.AllowUserToResizeColumns = True
-        'Customize DataGridView columns
-        DataGridView1.Columns(0).Width = 75
-        DataGridView1.Columns(1).Width = 200
-        DataGridView1.Columns(2).Width = 100
-        DataGridView1.Columns(3).Width = 200
-        DataGridView1.Columns(4).Width = 100
-        DataGridView1.Columns(5).Width = 100
-        DataGridView1.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGridView1.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
-        DataGridView1.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGridView1.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGridView1.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGridView1.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGridView1.Columns(0).HeaderText = "ClassID"
-        DataGridView1.Columns(1).HeaderText = "គ្រូបង្រៀន"
-        DataGridView1.Columns(2).HeaderText = "បន្ទប់"
-        DataGridView1.Columns(3).HeaderText = "វេនសិក្សា"
-        DataGridView1.Columns(4).HeaderText = "សិស្សសរុប"
-        DataGridView1.Columns(5).HeaderText = "ស្ថានភាព"
-        For i As Integer = 0 To DataGridView1.Rows.Count - 1
-            If i Mod 2 = 1 Then
-                DataGridView1.Rows(i).DefaultCellStyle.BackColor = Color.FromArgb(254, 254, 254) ' Alternate row color
-            Else
-                DataGridView1.Rows(i).DefaultCellStyle.BackColor = Color.FromArgb(245, 250, 253)
-            End If
-            For j As Integer = 3 To DataGridView1.Columns.Count - 1
-                DataGridView1.Rows(i).Cells(j).Style.Alignment = DataGridViewContentAlignment.MiddleCenter
-            Next j
-        Next i
+    Sub FillClassDetails()
+        txtID.Text = course.ID
+        txtCourse.Text = course.subject.Subject
+        txtTeacher.Text = course.teacher.KhName
+        txtStartDate.Text = course.startDate.ToString("dd/MM/yyyy")
+        txtEndDate.Text = course.endDate.ToString("dd/MM/yyyy")
+        txtRoom.Text = course.room.room
+        txtSchedule.Text = course.GetScheduleByID()
+        txtTotal.Text = course.GetCurrentEnrollments().ToString()
+        txtStatus.Text = course.GetStatusByID()
+    End Sub
+    Sub GetData()
+        Dim query As String = "SELECT tblStudent.ID, tblStudent.KhName, tblStudent.Phone, tblStudent.Address, tblPaymentStatus.Status
+            FROM (tblPaymentStatus INNER JOIN tblPayment ON tblPaymentStatus.ID = tblPayment.StatusID) INNER JOIN (tblStudent INNER JOIN tblRegister ON tblStudent.ID = tblRegister.StudentID) ON tblPayment.ID = tblRegister.PaymentID
+            WHERE (((tblRegister.ClassID)=" & course.ID & "));"
+        Dim dt As DataTable = course.ExecuteQuery(query)
+        DataGridView1.DataSource = dt
+        Regonize()
+    End Sub
+    Sub Regonize()
+        If DataGridView1.Columns.Count = 6 Then
+            DataGridView1.Columns(0).Width = 100
+            DataGridView1.Columns(0).HeaderText = "StudentID"
+            DataGridView1.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            DataGridView1.Columns(1).Width = 200
+            DataGridView1.Columns(1).HeaderText = "ឈ្មោះ"
+            DataGridView1.Columns(2).Width = 250
+            DataGridView1.Columns(2).HeaderText = "Email"
+            DataGridView1.Columns(3).Width = 200
+            DataGridView1.Columns(3).HeaderText = "លេខទូរស័ព្ទ"
+            DataGridView1.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            DataGridView1.Columns(4).Width = 200
+            DataGridView1.Columns(4).HeaderText = "អាស័យដ្ឋាន"
+            DataGridView1.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            DataGridView1.Columns(5).Width = 150
+            DataGridView1.Columns(5).HeaderText = "ស្ថានភាពបង់ប្រាក់"
+            DataGridView1.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            For i As Integer = 0 To DataGridView1.Rows.Count - 1
+                If i Mod 2 = 1 Then
+                    DataGridView1.Rows(i).DefaultCellStyle.BackColor = Color.FromArgb(150, 203, 175) ' Alternate row color
+                Else
+                    DataGridView1.Rows(i).DefaultCellStyle.BackColor = Color.FromArgb(235, 255, 255)
+                End If
+            Next i
+        End If
         DataGridView1.ClearSelection()
     End Sub
-    Sub FillCourseDetails()
-        txtCourseName.Texts = course.courseName
-        txtDes.Texts = course.Description.ToString()
-        txtDuration.Texts = course.durations.ToString()
-        txtBasePrice.Texts = course.basePrice.ToString("F2")
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+        GetData()
     End Sub
 
-    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
-        Me.Close()
+    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
+        btnCancel.Visible = True
+        btnSave.Visible = True
+        btnUpdate.Visible = False
+        cbStatus.Visible = True
+        dtpEndDate.Visible = True
+        txtEndDate.Visible = False
+        txtStatus.Visible = False
+        FillData()
     End Sub
 
-    Private Sub btmCreate_Click(sender As Object, e As EventArgs) Handles btmCreate.Click
-        'Cheack Filed
-        If Not CheckField() Then
-            Return
-        Else
-            course.courseName = txtCourseName.Texts.Trim()
-            course.basePrice = Convert.ToDecimal(txtBasePrice.Texts.Trim())
-            course.durations = Convert.ToInt32(txtDuration.Texts.Trim())
-            course.Description = txtDes.Texts.Trim()
-            course.UpdateCourse()
-            Display()
-        End If
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+        btnCancel.Visible = False
+        btnSave.Visible = False
+        btnUpdate.Visible = True
+        cbStatus.Visible = False
+        dtpEndDate.Visible = False
+        txtEndDate.Visible = True
+        txtStatus.Visible = True
     End Sub
-    Function CheckField() As Boolean
-        Dim courseName As String = txtCourseName.Texts.Trim()
-        Dim description As String = txtDes.Texts.Trim()
-        Dim duration As String = txtDuration.Texts.Trim()
-        Dim basePrice As String = txtBasePrice.Texts.Trim()
-        If String.IsNullOrEmpty(courseName) Then
-            MessageBox.Show("ឈ្មោះវគ្គសិក្សាមិនត្រឹមត្រូវ", "បញ្ចូលទិន្ន័យមិនត្រឹមត្រូវ", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Return False
-        End If
-        If String.IsNullOrEmpty(description) Then
-            MessageBox.Show("ការពិពណ៌រនាមិនត្រឹមត្រូវ", "បញ្ចូលទិន្ន័យមិនត្រឹមត្រូវ", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Return False
-        End If
-        If String.IsNullOrEmpty(duration) OrElse Not IsNumeric(duration) Then
-            MessageBox.Show("សូមបញ្ជូលរយៈពលេសិក្សា", "បញ្ចូលទិន្ន័យមិនត្រឹមត្រូវ", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Return False
-        End If
-        If String.IsNullOrEmpty(basePrice) OrElse Not IsNumeric(basePrice) Then
-            MessageBox.Show("សូមបញ្ជូលតម្លៃវគ្គសិក្សា", "បញ្ចូលទិន្ន័យមិនត្រឹមត្រូវ", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Return False
-        End If
-        Return True
-    End Function
+
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        Dim query As String = "UPDATE tblClass 
+            SET StatusID = @StatusID, EndDate = @EndDate 
+            WHERE ClassID = @ClassID;"
+        Dim cmd As OleDbCommand = New OleDbCommand(query, course.GetConnection())
+        cmd.Parameters.AddWithValue("@StatusID", Convert.ToInt32(cbStatus.SelectedValue))
+        cmd.Parameters.AddWithValue("@EndDate", dtpEndDate.Value.Date)
+        cmd.Parameters.AddWithValue("@ClassID", Convert.ToInt32(course.ID))
+        course.ExecuteNonQuery(cmd)
+        MessageBox.Show("ថ្នាក់រៀន ត្រូវបានធ្វើបច្ចុប្បន្នភាពដោយជោគជ័យ!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        btnCancel.PerformClick()
+        course.StatusID = cbStatus.SelectedValue
+        course.endDate = dtpEndDate.Value.Date
+        txtStatus.Text = course.GetStatusByID()
+        txtEndDate.Text = dtpEndDate.Value.ToString("dd/MM/yyyy")
+    End Sub
+    Sub FillData()
+        Dim StatusList = course.GetClassStatusList()
+        cbStatus.DataSource = New BindingSource(StatusList, Nothing)
+        cbStatus.DisplayMember = "Key"
+        cbStatus.ValueMember = "Value"
+        cbStatus.SelectedValue = course.StatusID
+        dtpEndDate.Value = course.endDate
+    End Sub
 End Class

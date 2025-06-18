@@ -15,7 +15,7 @@ Public Class Teacher
     Public Email As String
     Public Picture As String
     Public Function GetTeacherData() As DataTable
-        Dim query As String = "SELECT tblTeacher.ID, tblTeacher.KhName AS KhmerName, tblTeacher.engName AS EnglishName, tblTeacher.DOB AS DateOfBirth, tblTeacher.Address AS PlaceOfBirth, tblTeacher.Email, tblTeacher.Phone FROM tblTeacher;"
+        Dim query As String = "SELECT tblTeacher.ID, tblTeacher.KhName, tblTeacher.EngName, tblTeacher.DOB, tblTeacher.Address, tblTeacher.Email, tblTeacher.Phone FROM tblTeacher;"
         Dim dt As DataTable = ExecuteQuery(query)
         Return dt
     End Function
@@ -33,10 +33,10 @@ Public Class Teacher
         cmd.Parameters.AddWithValue("@Phone", Me.Phone)
         cmd.Parameters.AddWithValue("@Picter", Me.Picture)
         ExecuteNonQuery(cmd)
-        MessageBox.Show("Teacher Name : " & KhName & " has been added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
     End Sub
     Public Sub UpdateTeacher()
-        Dim query As String = "UPDATE tblTeacher SET KhName = @KhName, engName = @engName, Gender = @Gender, DOB = @DOB, Address = @Address, Email = @Email, Phone = @Phone, Picture = @Picture WHERE ID = @ID"
+        Dim query As String = "UPDATE tblTeacher SET KhName = @KhName, EngName = @engName, Gender = @Gender, DOB = @DOB, Address = @Address, Email = @Email, Phone = @Phone, Picture = @Picture WHERE ID = @ID"
         Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
         cmd.Parameters.AddWithValue("@khName", KhName)
         cmd.Parameters.AddWithValue("@EngName", EngName)
@@ -48,14 +48,12 @@ Public Class Teacher
         cmd.Parameters.AddWithValue("@Picture", Picture)
         cmd.Parameters.AddWithValue("@ID", TeacherID)
         ExecuteNonQuery(cmd)
-        MessageBox.Show("Teacher with ID: " & TeacherID & " has been updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
     Public Sub DeleteTeacher(teacherID As String)
         Dim query As String = "DELETE FROM tblTeacher WHERE ID = @ID;"
         Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
         cmd.Parameters.AddWithValue("@ID", teacherID)
         ExecuteNonQuery(cmd)
-        MessageBox.Show("Teacher with ID: " & teacherID & " has been deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
     Public Sub GetTeacherByID(ID As String)
         Dim query As String = "SELECT * FROM tblTeacher WHERE ID = @ID;"

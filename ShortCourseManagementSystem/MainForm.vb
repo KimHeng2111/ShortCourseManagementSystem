@@ -101,7 +101,7 @@ Public Class MainForm
 
     Private Sub btnCourse_Click(sender As Object, e As EventArgs) Handles btnCourse.Click
         Activatebutton(sender, ThemeColor.activeColor)
-        OpenChildForm(New CoursesForm())
+        OpenChildForm(New SubjectForm())
     End Sub
 
     Private Sub btnTeacher_Click(sender As Object, e As EventArgs) Handles btnTeacher.Click
@@ -116,7 +116,7 @@ Public Class MainForm
 
     Private Sub btnClass_Click(sender As Object, e As EventArgs) Handles btnClass.Click
         Activatebutton(sender, ThemeColor.activeColor)
-        OpenChildForm(New ManageClassForm())
+        OpenChildForm(New CourseForm())
     End Sub
 
     Private Sub btnClose_Click_1(sender As Object, e As EventArgs) Handles btnClose.Click
