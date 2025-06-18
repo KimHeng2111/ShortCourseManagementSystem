@@ -27,8 +27,10 @@ Partial Class ReportForm
         Me.crsReport = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnPrint = New Guna.UI2.WinForms.Guna2Button()
         Me.cbReport = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout()
         Me.Guna2Panel2.SuspendLayout()
         Me.FlowLayoutPanel1.SuspendLayout()
@@ -63,6 +65,7 @@ Partial Class ReportForm
         Me.crsReport.Cursor = System.Windows.Forms.Cursors.Default
         Me.crsReport.Dock = System.Windows.Forms.DockStyle.Fill
         Me.crsReport.Location = New System.Drawing.Point(0, 58)
+        Me.crsReport.Margin = New System.Windows.Forms.Padding(3, 0, 3, 3)
         Me.crsReport.Name = "crsReport"
         Me.crsReport.ShowCloseButton = False
         Me.crsReport.ShowGotoPageButton = False
@@ -81,8 +84,8 @@ Partial Class ReportForm
         Me.FlowLayoutPanel1.Controls.Add(Me.Guna2Panel1)
         Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 0)
+        Me.FlowLayoutPanel1.Margin = New System.Windows.Forms.Padding(3, 3, 3, 12)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.FlowLayoutPanel1.Size = New System.Drawing.Size(1664, 58)
         Me.FlowLayoutPanel1.TabIndex = 9
         '
@@ -90,29 +93,54 @@ Partial Class ReportForm
         '
         Me.Guna2Panel1.BackColor = System.Drawing.Color.Gainsboro
         Me.Guna2Panel1.BorderRadius = 15
-        Me.Guna2Panel1.Controls.Add(Me.Label2)
+        Me.Guna2Panel1.Controls.Add(Me.Guna2Button2)
+        Me.Guna2Panel1.Controls.Add(Me.btnPrint)
         Me.Guna2Panel1.Controls.Add(Me.cbReport)
+        Me.Guna2Panel1.Controls.Add(Me.Label2)
         Me.Guna2Panel1.FillColor = System.Drawing.Color.White
-        Me.Guna2Panel1.Location = New System.Drawing.Point(13, 3)
+        Me.Guna2Panel1.Location = New System.Drawing.Point(3, 3)
+        Me.Guna2Panel1.Margin = New System.Windows.Forms.Padding(3, 3, 3, 15)
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.Padding = New System.Windows.Forms.Padding(5)
         Me.Guna2Panel1.ShadowDecoration.Parent = Me.Guna2Panel1
-        Me.Guna2Panel1.Size = New System.Drawing.Size(562, 51)
+        Me.Guna2Panel1.Size = New System.Drawing.Size(1682, 55)
         Me.Guna2Panel1.TabIndex = 9
         '
-        'Label2
+        'Guna2Button2
         '
-        Me.Label2.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label2.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label2.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(22, Byte), Integer), CType(CType(98, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(5, 5)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(3, 0, 3, 30)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(123, 41)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "របាយការណ៍  ៖"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Guna2Button2.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Button2.BorderRadius = 5
+        Me.Guna2Button2.CheckedState.Parent = Me.Guna2Button2
+        Me.Guna2Button2.CustomImages.Parent = Me.Guna2Button2
+        Me.Guna2Button2.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(3, Byte), Integer))
+        Me.Guna2Button2.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2Button2.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button2.HoverState.Parent = Me.Guna2Button2
+        Me.Guna2Button2.Location = New System.Drawing.Point(1521, 3)
+        Me.Guna2Button2.Name = "Guna2Button2"
+        Me.Guna2Button2.PressedColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(76, Byte), Integer))
+        Me.Guna2Button2.ShadowDecoration.Parent = Me.Guna2Button2
+        Me.Guna2Button2.Size = New System.Drawing.Size(137, 45)
+        Me.Guna2Button2.TabIndex = 11
+        Me.Guna2Button2.Text = "Export"
+        '
+        'btnPrint
+        '
+        Me.btnPrint.BackColor = System.Drawing.Color.Transparent
+        Me.btnPrint.BorderRadius = 5
+        Me.btnPrint.CheckedState.Parent = Me.btnPrint
+        Me.btnPrint.CustomImages.Parent = Me.btnPrint
+        Me.btnPrint.FillColor = System.Drawing.Color.FromArgb(CType(CType(6, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(148, Byte), Integer))
+        Me.btnPrint.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPrint.ForeColor = System.Drawing.Color.White
+        Me.btnPrint.HoverState.Parent = Me.btnPrint
+        Me.btnPrint.Location = New System.Drawing.Point(1338, 3)
+        Me.btnPrint.Name = "btnPrint"
+        Me.btnPrint.PressedColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(136, Byte), Integer))
+        Me.btnPrint.ShadowDecoration.Parent = Me.btnPrint
+        Me.btnPrint.Size = New System.Drawing.Size(137, 45)
+        Me.btnPrint.TabIndex = 10
+        Me.btnPrint.Text = "Print"
         '
         'cbReport
         '
@@ -120,7 +148,7 @@ Partial Class ReportForm
         Me.cbReport.BorderColor = System.Drawing.Color.DimGray
         Me.cbReport.BorderRadius = 8
         Me.cbReport.BorderThickness = 2
-        Me.cbReport.Dock = System.Windows.Forms.DockStyle.Right
+        Me.cbReport.Dock = System.Windows.Forms.DockStyle.Left
         Me.cbReport.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
         Me.cbReport.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbReport.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(136, Byte), Integer))
@@ -143,12 +171,26 @@ Partial Class ReportForm
         Me.cbReport.ItemsAppearance.Parent = Me.cbReport
         Me.cbReport.ItemsAppearance.SelectedBackColor = System.Drawing.Color.White
         Me.cbReport.ItemsAppearance.SelectedForeColor = System.Drawing.Color.Black
-        Me.cbReport.Location = New System.Drawing.Point(152, 5)
+        Me.cbReport.Location = New System.Drawing.Point(128, 5)
         Me.cbReport.Name = "cbReport"
         Me.cbReport.ShadowDecoration.Parent = Me.cbReport
         Me.cbReport.Size = New System.Drawing.Size(405, 41)
         Me.cbReport.StartIndex = 5
         Me.cbReport.TabIndex = 8
+        '
+        'Label2
+        '
+        Me.Label2.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label2.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label2.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(22, Byte), Integer), CType(CType(98, Byte), Integer))
+        Me.Label2.Location = New System.Drawing.Point(5, 5)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(3, 0, 3, 30)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(123, 45)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "របាយការណ៍  ៖"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'ReportForm
         '
@@ -173,4 +215,6 @@ Partial Class ReportForm
     Friend WithEvents cbReport As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnPrint As Guna.UI2.WinForms.Guna2Button
 End Class

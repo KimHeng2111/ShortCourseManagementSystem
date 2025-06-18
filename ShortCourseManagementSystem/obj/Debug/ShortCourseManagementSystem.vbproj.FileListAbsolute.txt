@@ -85,3 +85,15 @@ C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagemen
 C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\obj\Debug\StudentManagementSystem.SubjectForm.resources
 C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\obj\Debug\StudentManagementSystem.CourseForm.resources
 C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\obj\Debug\StudentManagementSystem.SubjectDetail.resources
+C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\bin\Debug\Report\CourseReport.rpt
+C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\bin\Debug\Report\Invoice.rpt
+C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\bin\Debug\Report\PaymentReport.rpt
+C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\bin\Debug\Report\StudentReport.rpt
+C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\bin\Debug\Report\SubjectReport.rpt
+C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\bin\Debug\Report\TeacherReport.rpt
+C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\bin\Debug\Report\CourseReport.vb
+C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\bin\Debug\Report\Invoice.vb
+C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\bin\Debug\Report\PaymentReport.vb
+C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\bin\Debug\Report\StudentReport.vb
+C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\bin\Debug\Report\SubjectReport.vb
+C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\bin\Debug\Report\TeacherReport.vb

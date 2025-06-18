@@ -14,6 +14,9 @@ Public Class Form1
         ' Add any initialization after the InitializeComponent() call.
         register = reg
         rdReport.Load("Report\Invoice.rpt")
+        'Dim invoic As New Invoice()
+        'Dim rdReport As New ReportDocument
+        'rdReport.Load(invoic.FullResourceName)
         rdReport.SetParameterValue("PaymentID", register.payment.paymentID) ' Example parameter, replace with actual value
         rdReport.SetParameterValue("khName", register.student.khName)
         rdReport.SetParameterValue(2, register.student.engName) ' Example parameter, replace with actual value)
