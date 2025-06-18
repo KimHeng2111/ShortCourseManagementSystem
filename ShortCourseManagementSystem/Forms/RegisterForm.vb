@@ -32,24 +32,6 @@ Public Class RegisterForm
     End Sub
 
 
-    Private Sub txtDis_TextChanged_1(sender As Object, e As EventArgs) Handles txtDis.Click
-        Dim dis As Decimal
-        If cbCourse.Text = String.Empty Then
-            txtDis.Text = 0
-            Return
-        End If
-        If Not (Decimal.TryParse(txtDis.Text, dis)) Or dis < 0 Or dis > 100 Then
-            MessageBox.Show("សូមបញ្ចូលភាគរយបញ្ចុះតម្លៃអោយបានត្រឹមត្រូវ!!!", "បញ្ចូលទិន្ន័យមិនត្រឹមត្រូវ", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            txtDis.Focus()
-            txtDis.SelectAll()
-            Return
-        End If
-        Dim amount As Decimal
-        Dim price As Decimal = Decimal.Parse(lbPrice.Text)
-        amount = price - price * (dis / 100.0) ' Ensures decimal division
-        lbAmount.Text = amount.ToString("F2") ' Formats output as 2 decimal places
-        amount.ToString("F2")
-    End Sub
 
     Private Function CheckField() As Boolean
 
@@ -167,7 +149,10 @@ Public Class RegisterForm
         register.student.AddStudent(txtKhName.Text.Trim(), txtEngName.Text.Trim(), cbGender.Text, dtpDob.Text, cbAddress.Text.Trim(), txtPhone.Text.Trim(), SaveImageAndReturnPath())
         'Assign data to register
         register.manageClass.GetCourseByID(cbTime.SelectedValue.ToString()) 'ADD ManageClass
-        register.discount = If(txtDis.Text = String.Empty, 0, Convert.ToDecimal(txtDis.Text))
+        Dim Price = Convert.ToDecimal(lbPrice.Text)
+        Dim Dis = Convert.ToInt16(txtDis.Text)
+        register.discount = Price * Dis / 100.0
+        MsgBox(register.discount.ToString())
         Dim amount As Decimal = Decimal.Parse(lbAmount.Text)
         Dim unpaid As Decimal = amount - Convert.ToDecimal(txtpay.Text)
         register.payment.NewPayment(amount, unpaid) 'Create Payment
@@ -276,6 +261,21 @@ Public Class RegisterForm
     End Sub
 
     Private Sub txtDis_TextChanged(sender As Object, e As EventArgs) Handles txtDis.TextChanged
-
+        Dim dis As Decimal
+        If cbCourse.Text = String.Empty Then
+            txtDis.Text = 0
+            Return
+        End If
+        If Not (Decimal.TryParse(txtDis.Text, dis)) Or dis < 0 Or dis > 100 Then
+            MessageBox.Show("សូមបញ្ចូលភាគរយបញ្ចុះតម្លៃអោយបានត្រឹមត្រូវ!!!", "បញ្ចូលទិន្ន័យមិនត្រឹមត្រូវ", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            txtDis.Focus()
+            txtDis.SelectAll()
+            Return
+        End If
+        Dim amount As Decimal
+        Dim price As Decimal = Decimal.Parse(lbPrice.Text)
+        amount = price - price * (dis / 100.0) ' Ensures decimal division
+        lbAmount.Text = amount.ToString("F2") ' Formats output as 2 decimal places
+        amount.ToString("F2")
     End Sub
 End Class

@@ -72,6 +72,16 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
+<member name="T:StudentManagementSystem.DataSet1.tblSubjectReportDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:StudentManagementSystem.DataSet1.tblPaymentReportDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
 <member name="T:StudentManagementSystem.DataSet1.tblTeacherReportRow">
 <summary>
 Represents strongly named DataRow class.
@@ -87,6 +97,16 @@ Represents strongly named DataRow class.
 Represents strongly named DataRow class.
 </summary>
 </member>
+<member name="T:StudentManagementSystem.DataSet1.tblSubjectReportRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:StudentManagementSystem.DataSet1.tblPaymentReportRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
 <member name="T:StudentManagementSystem.DataSet1.tblTeacherReportRowChangeEvent">
 <summary>
 Row event argument class
@@ -98,6 +118,16 @@ Row event argument class
 </summary>
 </member>
 <member name="T:StudentManagementSystem.DataSet1.tblCourseReportRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:StudentManagementSystem.DataSet1.tblSubjectReportRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:StudentManagementSystem.DataSet1.tblPaymentReportRowChangeEvent">
 <summary>
 Row event argument class
 </summary>

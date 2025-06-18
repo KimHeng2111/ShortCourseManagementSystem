@@ -17,6 +17,10 @@ Public Class ReportForm
             TeacherReport()
         ElseIf cbReport.SelectedIndex = 2 Then
             CourseReport()
+        ElseIf cbReport.SelectedIndex = 3 Then
+            SubjectReport()
+        ElseIf cbReport.SelectedIndex = 4 Then
+            PaymentReport()
         End If
     End Sub
     Sub TeacherReport()
@@ -33,5 +37,15 @@ Public Class ReportForm
         Dim CourseReport As New CourseReport()
         CourseReport.Database.Tables("tblCourseReport").SetDataSource(report.GetCourseReport())
         crsReport.ReportSource = CourseReport
+    End Sub
+    Sub SubjectReport()
+        Dim subjectReport As New SubjectReport()
+        subjectReport.Database.Tables("tblSubjectReport").SetDataSource(report.GetSubjectReport())
+        crsReport.ReportSource = subjectReport
+    End Sub
+    Sub PaymentReport()
+        Dim paymentReport As New PaymentReport()
+        paymentReport.Database.Tables("tblPaymentReport").SetDataSource(report.GetPaymentReport())
+        crsReport.ReportSource = paymentReport
     End Sub
 End Class

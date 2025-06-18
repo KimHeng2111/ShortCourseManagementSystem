@@ -62,7 +62,7 @@ Partial Class ReportForm
         Me.crsReport.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.crsReport.Cursor = System.Windows.Forms.Cursors.Default
         Me.crsReport.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.crsReport.Location = New System.Drawing.Point(269, 0)
+        Me.crsReport.Location = New System.Drawing.Point(0, 58)
         Me.crsReport.Name = "crsReport"
         Me.crsReport.ShowCloseButton = False
         Me.crsReport.ShowGotoPageButton = False
@@ -72,41 +72,44 @@ Partial Class ReportForm
         Me.crsReport.ShowParameterPanelButton = False
         Me.crsReport.ShowRefreshButton = False
         Me.crsReport.ShowTextSearchButton = False
-        Me.crsReport.Size = New System.Drawing.Size(1395, 903)
+        Me.crsReport.Size = New System.Drawing.Size(1664, 845)
         Me.crsReport.TabIndex = 0
         Me.crsReport.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
         '
         'FlowLayoutPanel1
         '
         Me.FlowLayoutPanel1.Controls.Add(Me.Guna2Panel1)
-        Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 0)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(269, 903)
+        Me.FlowLayoutPanel1.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(1664, 58)
         Me.FlowLayoutPanel1.TabIndex = 9
         '
         'Guna2Panel1
         '
-        Me.Guna2Panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Guna2Panel1.BackColor = System.Drawing.Color.Gainsboro
+        Me.Guna2Panel1.BorderRadius = 15
         Me.Guna2Panel1.Controls.Add(Me.Label2)
         Me.Guna2Panel1.Controls.Add(Me.cbReport)
-        Me.Guna2Panel1.Location = New System.Drawing.Point(3, 3)
+        Me.Guna2Panel1.FillColor = System.Drawing.Color.White
+        Me.Guna2Panel1.Location = New System.Drawing.Point(13, 3)
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.Padding = New System.Windows.Forms.Padding(5)
         Me.Guna2Panel1.ShadowDecoration.Parent = Me.Guna2Panel1
-        Me.Guna2Panel1.Size = New System.Drawing.Size(260, 81)
+        Me.Guna2Panel1.Size = New System.Drawing.Size(562, 51)
         Me.Guna2Panel1.TabIndex = 9
         '
         'Label2
         '
         Me.Label2.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label2.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label2.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(22, Byte), Integer), CType(CType(98, Byte), Integer))
         Me.Label2.Location = New System.Drawing.Point(5, 5)
         Me.Label2.Margin = New System.Windows.Forms.Padding(3, 0, 3, 30)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(250, 29)
+        Me.Label2.Size = New System.Drawing.Size(123, 41)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "របាយការណ៍  ៖"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -117,7 +120,7 @@ Partial Class ReportForm
         Me.cbReport.BorderColor = System.Drawing.Color.DimGray
         Me.cbReport.BorderRadius = 8
         Me.cbReport.BorderThickness = 2
-        Me.cbReport.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.cbReport.Dock = System.Windows.Forms.DockStyle.Right
         Me.cbReport.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
         Me.cbReport.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbReport.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(136, Byte), Integer))
@@ -140,10 +143,10 @@ Partial Class ReportForm
         Me.cbReport.ItemsAppearance.Parent = Me.cbReport
         Me.cbReport.ItemsAppearance.SelectedBackColor = System.Drawing.Color.White
         Me.cbReport.ItemsAppearance.SelectedForeColor = System.Drawing.Color.Black
-        Me.cbReport.Location = New System.Drawing.Point(5, 35)
+        Me.cbReport.Location = New System.Drawing.Point(152, 5)
         Me.cbReport.Name = "cbReport"
         Me.cbReport.ShadowDecoration.Parent = Me.cbReport
-        Me.cbReport.Size = New System.Drawing.Size(250, 41)
+        Me.cbReport.Size = New System.Drawing.Size(405, 41)
         Me.cbReport.StartIndex = 5
         Me.cbReport.TabIndex = 8
         '

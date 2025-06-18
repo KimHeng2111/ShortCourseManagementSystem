@@ -6,13 +6,13 @@ Public Class Register
     Public registerID As String
     Public manageClass As Course
     Public student As Student
-    Public discount As Byte
+    Public discount As Decimal
     Public payment As Payment
 
     'Method to register a student for a subject
     Public Function GetRegisterData() As DataTable
         Dim query As String = "SELECT tblCourse.ID, tblSubject.Subject, tblTeacher.EngName, tblCourse.StartDate, tblSchedule.Schedule, tblRoom.Room, (SELECT COUNT(*) FROM tblRegister WHERE tblCourse.ID = tblRegister.CourseID) AS TotalStudent
-                                FROM tblTeacher INNER JOIN (tblSchedule INNER JOIN (tblRoom INNER JOIN (tblSubject INNER JOIN (tblCourseStatus INNER JOIN tblCourse ON tblCourseStatus.ID = tblCourse.StatusID) ON tblSubject.ID = tblCourse.ID) ON tblRoom.ID = tblCourse.RoomID) ON tblSchedule.ID = tblCourse.ScheduleID) ON tblTeacher.ID = tblCourse.TeacherID
+                                FROM tblTeacher INNER JOIN (tblSchedule INNER JOIN (tblRoom INNER JOIN (tblSubject INNER JOIN (tblCourseStatus INNER JOIN tblCourse ON tblCourseStatus.ID = tblCourse.StatusID) ON tblSubject.ID = tblCourse.SubjectID) ON tblRoom.ID = tblCourse.RoomID) ON tblSchedule.ID = tblCourse.ScheduleID) ON tblTeacher.ID = tblCourse.TeacherID
                                 WHERE (((tblCourse.StatusID)<=2))
                                 ORDER BY tblCourse.ID;"
         Dim dt As DataTable = ExecuteQuery(query)
@@ -90,8 +90,8 @@ Public Class Register
     Public Function GetCourseList() As Dictionary(Of String, Integer)
         Dim CourseList As New Dictionary(Of String, Integer)
         Dim query As String = "SELECT DISTINCT tblSubject.Subject, tblSubject.ID
-                                FROM tblSubject INNER JOIN tblCourse ON tblSubject.ID = tblCourse.ID
-                                GROUP BY tblSubject.Subject, tblSubject.ID, tblCourse.StatusID, tblCourse.ID
+                                FROM tblSubject INNER JOIN tblCourse ON tblSubject.ID = tblCourse.SubjectID
+                                GROUP BY tblSubject.Subject, tblSubject.ID, tblCourse.StatusID, tblCourse.SubjectID
                                 HAVING (((tblCourse.StatusID)<=2));"
         OpenConnection()
         Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
@@ -104,15 +104,15 @@ Public Class Register
         CloseConnection()
         Return CourseList
     End Function
-    Public Function GetTimeList(courseID As String) As Dictionary(Of String, Integer)
+    Public Function GetTimeList(subjectID As String) As Dictionary(Of String, Integer)
         Dim TimeList As New Dictionary(Of String, Integer)
         Dim query As String = "SELECT tblSchedule.Schedule, tblCourse.ID
                                 FROM tblSchedule INNER JOIN tblCourse ON tblSchedule.ID = tblCourse.ScheduleID
-                                WHERE (((tblCourse.ID)=@ID) AND ((tblCourse.StatusID)<=2))
+                                WHERE (((tblCourse.SubjectID)=@ID) AND ((tblCourse.StatusID)<=2))
                                 ORDER BY tblSchedule.Schedule;"
         OpenConnection()
         Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
-        cmd.Parameters.AddWithValue("@ID", courseID)
+        cmd.Parameters.AddWithValue("@ID", subjectID)
         Dim reader As OleDbDataReader = cmd.ExecuteReader()
         While reader.Read()
             TimeList.Add(reader("Schedule"), Integer.Parse(reader("ID")))

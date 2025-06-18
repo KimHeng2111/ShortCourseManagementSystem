@@ -171,7 +171,7 @@ FROM tblRoom;"
         Return scheduleName
     End Function
     Function GetStatusByID() As String
-        Dim query As String = "SELECT Status FROM tblClassStatus WHERE ID = @StatusID;"
+        Dim query As String = "SELECT Status FROM tblCourseStatus WHERE ID = @StatusID;"
         Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
         cmd.Parameters.AddWithValue("@StatusID", StatusID)
         OpenConnection()

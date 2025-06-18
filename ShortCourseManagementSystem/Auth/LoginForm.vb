@@ -62,4 +62,8 @@
             btnLogin.PerformClick()
         End If
     End Sub
+
+    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
+        txtUserName.Focus()
+    End Sub
 End Class
