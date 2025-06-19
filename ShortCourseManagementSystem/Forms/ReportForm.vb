@@ -27,12 +27,12 @@ Public Class ReportForm
         End If
     End Sub
     Sub TeacherReport()
-        'Dim teacherReport As New TeacherReport()
-        'teacherReport.Database.Tables("tblTeacherReport").SetDataSource(report.GetTeacherReport())
-        'crsReport.ReportSource = teacherReport
-        reportDocument.Load(Application.StartupPath & "Report\TeacherReport.rpt")
-        reportDocument.Database.Tables("tblTeacherReport").SetDataSource(report.GetTeacherReport())
-        crsReport.ReportSource = reportDocument
+        Dim teacherReport As New TeacherReport()
+        teacherReport.Database.Tables("tblTeacherReport").SetDataSource(report.GetTeacherReport())
+        crsReport.ReportSource = teacherReport
+        'reportDocument.Load(Application.StartupPath & "Report\TeacherReport.rpt")
+        'reportDocument.Database.Tables("tblTeacherReport").SetDataSource(report.GetTeacherReport())
+        'crsReport.ReportSource = reportDocument
     End Sub
     Sub StudentReport()
         Dim studentReport As New StudentReport()
@@ -64,13 +64,13 @@ Public Class ReportForm
             Dim dlg As New PrintDialog()
             dlg.AllowSomePages = True
             dlg.PrinterSettings = New PrinterSettings()
-            If DLBitString.showDialog() = DialogResult.OK Then
+            If dlg.ShowDialog() = DialogResult.OK Then
                 reportDocument.PrintOptions.PrinterName = dlg.PrinterSettings.PrinterName
                 reportDocument.PrintToPrinter(dlg.PrinterSettings.Copies, False, 0, 0)
                 MessageBox.Show("របាយការណ៍ត្រូវបានPrintរួចរាល់!!!!", "Print", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         Catch ex As Exception
-            MessageBox.Show("របាយការណ៍័មិនអាចpRI")
+            MessageBox.Show("របាយការណ៍័មិនអាច")
         End Try
 
     End Sub
