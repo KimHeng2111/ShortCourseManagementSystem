@@ -106,8 +106,8 @@ Public Class StudentForm
         Dim menu As New ContextMenuStrip()
         menu.Font = New Font("Khmer OS System", 9)
         menu.Items.Add("លម្អិត", Nothing, AddressOf ShowDetails)
-        menu.Items.Add("កែប្រែ", Nothing, AddressOf EditClass)
-        menu.Items.Add("លុប", Nothing, AddressOf DeleteCourse)
+        menu.Items.Add("កែប្រែ", Nothing, AddressOf EditeStudent)
+        menu.Items.Add("លុប", Nothing, AddressOf DeleteStudent)
         menu.Items(0).BackColor = Color.FromArgb(245, 250, 253)
         If e.Button = MouseButtons.Right Then
             Dim hit As DataGridView.HitTestInfo = DataGridView1.HitTest(e.X, e.Y)
@@ -118,7 +118,7 @@ Public Class StudentForm
             End If
         End If
     End Sub
-    Private Sub DeleteCourse()
+    Private Sub DeleteStudent()
         If DialogResult.Yes = MessageBox.Show("តើអ្នកពិតជាចង់លុប សិស្សឈ្មោះ" & student.khName & " នេះ មែនទេ?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) Then
             student.DeleteStudent()
             Display()
@@ -132,7 +132,7 @@ Public Class StudentForm
         detailForm.Dispose()
         Display()
     End Sub
-    Private Sub EditClass()
+    Private Sub EditeStudent()
         Panel2.Visible = True
         txtKhName.Texts = student.khName
         txtEngName.Texts = student.engName

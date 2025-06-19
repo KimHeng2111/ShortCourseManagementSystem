@@ -278,4 +278,18 @@ Public Class RegisterForm
         lbAmount.Text = amount.ToString("F2") ' Formats output as 2 decimal places
         amount.ToString("F2")
     End Sub
+
+    Private Sub btnChooseStudent_Click_1(sender As Object, e As EventArgs) Handles btnChooseStudent.Click
+        Dim student As New StudentList()
+        If student.ShowDialog() = 2 Then
+            Return
+        End If
+        register.student = student.student
+        txtKhName.Text = register.student.khName
+        txtEngName.Text = register.student.engName
+        txtPhone.Text = register.student.phone
+        cbGender.SelectedIndex = cbGender.FindStringExact(register.student.gender)
+        dtpDob.Text = register.student.DateOfBirth.ToString("dd/MM/yyyy")
+        cbAddress.SelectedIndex = cbAddress.FindStringExact(register.student.address)
+    End Sub
 End Class

@@ -16,8 +16,6 @@
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles btnLogin.Click
         If CheckField() Then
             If User.CheckLogin(txtUserName.Text.Trim(), txtPassWord.Text.Trim()) Then
-                MessageBox.Show("សូមស្វាគមន៍ " & User.userName, "ការជោគជ័យ", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
                 Me.DialogResult = 1
                 Me.Close()
             Else
@@ -61,9 +59,5 @@
         If e.KeyCode = Keys.Enter Then
             btnLogin.PerformClick()
         End If
-    End Sub
-
-    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
-        txtUserName.Focus()
     End Sub
 End Class

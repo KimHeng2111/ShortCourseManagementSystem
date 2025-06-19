@@ -22,17 +22,15 @@ Partial Class DashboardForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim Title1 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
+        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim Title2 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
+        Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Guna2CustomGradientPanel1 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -67,61 +65,45 @@ Partial Class DashboardForm
         Me.lbTotalCourse = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
-        Me.PanelRegisterList = New Guna.UI2.WinForms.Guna2Panel()
-        Me.RegisterList = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.PanelCourse = New Guna.UI2.WinForms.Guna2Panel()
-        Me.ClassList = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Label32 = New System.Windows.Forms.Label()
-        Me.FlowLayoutPanel1.SuspendLayout()
+        Me.StudentChart = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.CourseChart = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.Guna2Panel1.SuspendLayout()
         Me.FlowLayoutPanel2.SuspendLayout()
         Me.Guna2CustomGradientPanel1.SuspendLayout()
         Me.Guna2CustomGradientPanel2.SuspendLayout()
         Me.Guna2CustomGradientPanel3.SuspendLayout()
         Me.Guna2CustomGradientPanel4.SuspendLayout()
-        Me.PanelRegisterList.SuspendLayout()
-        CType(Me.RegisterList, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PanelCourse.SuspendLayout()
-        CType(Me.ClassList, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.StudentChart, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CourseChart, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'FlowLayoutPanel1
+        'Guna2Panel1
         '
-        Me.FlowLayoutPanel1.AutoScroll = True
-        Me.FlowLayoutPanel1.AutoScrollMargin = New System.Drawing.Size(10, 0)
-        Me.FlowLayoutPanel1.Controls.Add(Me.FlowLayoutPanel2)
-        Me.FlowLayoutPanel1.Controls.Add(Me.PanelRegisterList)
-        Me.FlowLayoutPanel1.Controls.Add(Me.PanelCourse)
-        Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(15, 15)
-        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Padding = New System.Windows.Forms.Padding(0, 10, 0, 0)
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(1689, 913)
-        Me.FlowLayoutPanel1.TabIndex = 0
+        Me.Guna2Panel1.BackColor = System.Drawing.Color.Gainsboro
+        Me.Guna2Panel1.Controls.Add(Me.StudentChart)
+        Me.Guna2Panel1.Controls.Add(Me.CourseChart)
+        Me.Guna2Panel1.Controls.Add(Me.FlowLayoutPanel2)
+        Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Guna2Panel1.Location = New System.Drawing.Point(15, 15)
+        Me.Guna2Panel1.Name = "Guna2Panel1"
+        Me.Guna2Panel1.ShadowDecoration.Parent = Me.Guna2Panel1
+        Me.Guna2Panel1.Size = New System.Drawing.Size(1674, 913)
+        Me.Guna2Panel1.TabIndex = 0
         '
         'FlowLayoutPanel2
         '
+        Me.FlowLayoutPanel2.BackColor = System.Drawing.Color.White
         Me.FlowLayoutPanel2.Controls.Add(Me.Guna2CustomGradientPanel1)
         Me.FlowLayoutPanel2.Controls.Add(Me.Guna2CustomGradientPanel2)
         Me.FlowLayoutPanel2.Controls.Add(Me.Guna2CustomGradientPanel3)
         Me.FlowLayoutPanel2.Controls.Add(Me.Guna2CustomGradientPanel4)
-        Me.FlowLayoutPanel2.Location = New System.Drawing.Point(3, 10)
+        Me.FlowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.FlowLayoutPanel2.Location = New System.Drawing.Point(0, 0)
         Me.FlowLayoutPanel2.Margin = New System.Windows.Forms.Padding(3, 0, 3, 30)
         Me.FlowLayoutPanel2.Name = "FlowLayoutPanel2"
-        Me.FlowLayoutPanel2.Size = New System.Drawing.Size(1660, 170)
-        Me.FlowLayoutPanel2.TabIndex = 1
+        Me.FlowLayoutPanel2.Padding = New System.Windows.Forms.Padding(0, 15, 0, 0)
+        Me.FlowLayoutPanel2.Size = New System.Drawing.Size(1674, 201)
+        Me.FlowLayoutPanel2.TabIndex = 5
         '
         'Guna2CustomGradientPanel1
         '
@@ -139,7 +121,7 @@ Partial Class DashboardForm
         Me.Guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(136, Byte), Integer))
         Me.Guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(136, Byte), Integer))
         Me.Guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(233, Byte), Integer))
-        Me.Guna2CustomGradientPanel1.Location = New System.Drawing.Point(3, 3)
+        Me.Guna2CustomGradientPanel1.Location = New System.Drawing.Point(3, 18)
         Me.Guna2CustomGradientPanel1.Margin = New System.Windows.Forms.Padding(3, 3, 75, 3)
         Me.Guna2CustomGradientPanel1.Name = "Guna2CustomGradientPanel1"
         Me.Guna2CustomGradientPanel1.Quality = 20
@@ -163,6 +145,7 @@ Partial Class DashboardForm
         Me.Label24.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label24.ForeColor = System.Drawing.Color.White
         Me.Label24.Location = New System.Drawing.Point(280, 108)
+        Me.Label24.Margin = New System.Windows.Forms.Padding(3, 20, 3, 0)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(40, 29)
         Me.Label24.TabIndex = 8
@@ -270,7 +253,7 @@ Partial Class DashboardForm
         Me.Guna2CustomGradientPanel2.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(3, Byte), Integer))
         Me.Guna2CustomGradientPanel2.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(3, Byte), Integer))
         Me.Guna2CustomGradientPanel2.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(133, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(87, Byte), Integer))
-        Me.Guna2CustomGradientPanel2.Location = New System.Drawing.Point(431, 3)
+        Me.Guna2CustomGradientPanel2.Location = New System.Drawing.Point(431, 18)
         Me.Guna2CustomGradientPanel2.Margin = New System.Windows.Forms.Padding(3, 3, 85, 3)
         Me.Guna2CustomGradientPanel2.Name = "Guna2CustomGradientPanel2"
         Me.Guna2CustomGradientPanel2.ShadowDecoration.Parent = Me.Guna2CustomGradientPanel2
@@ -386,7 +369,7 @@ Partial Class DashboardForm
         Me.Guna2CustomGradientPanel3.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(122, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(168, Byte), Integer))
         Me.Guna2CustomGradientPanel3.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(122, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(168, Byte), Integer))
         Me.Guna2CustomGradientPanel3.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.Guna2CustomGradientPanel3.Location = New System.Drawing.Point(869, 3)
+        Me.Guna2CustomGradientPanel3.Location = New System.Drawing.Point(869, 18)
         Me.Guna2CustomGradientPanel3.Margin = New System.Windows.Forms.Padding(3, 3, 85, 3)
         Me.Guna2CustomGradientPanel3.Name = "Guna2CustomGradientPanel3"
         Me.Guna2CustomGradientPanel3.ShadowDecoration.Parent = Me.Guna2CustomGradientPanel3
@@ -502,7 +485,7 @@ Partial Class DashboardForm
         Me.Guna2CustomGradientPanel4.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Guna2CustomGradientPanel4.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Guna2CustomGradientPanel4.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.Guna2CustomGradientPanel4.Location = New System.Drawing.Point(1307, 3)
+        Me.Guna2CustomGradientPanel4.Location = New System.Drawing.Point(1307, 18)
         Me.Guna2CustomGradientPanel4.Name = "Guna2CustomGradientPanel4"
         Me.Guna2CustomGradientPanel4.ShadowDecoration.Parent = Me.Guna2CustomGradientPanel4
         Me.Guna2CustomGradientPanel4.Size = New System.Drawing.Size(350, 164)
@@ -602,278 +585,192 @@ Partial Class DashboardForm
         Me.Label21.TabIndex = 4
         Me.Label21.Text = "មុខវិជ្ជាសរុប ៖"
         '
-        'PanelRegisterList
+        'StudentChart
         '
-        Me.PanelRegisterList.BackColor = System.Drawing.Color.Transparent
-        Me.PanelRegisterList.BorderRadius = 15
-        Me.PanelRegisterList.Controls.Add(Me.RegisterList)
-        Me.PanelRegisterList.Controls.Add(Me.Label5)
-        Me.PanelRegisterList.FillColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.PanelRegisterList.Location = New System.Drawing.Point(3, 220)
-        Me.PanelRegisterList.Margin = New System.Windows.Forms.Padding(3, 10, 3, 30)
-        Me.PanelRegisterList.Name = "PanelRegisterList"
-        Me.PanelRegisterList.Padding = New System.Windows.Forms.Padding(3)
-        Me.PanelRegisterList.ShadowDecoration.Parent = Me.PanelRegisterList
-        Me.PanelRegisterList.Size = New System.Drawing.Size(1660, 383)
-        Me.PanelRegisterList.TabIndex = 3
+        Me.StudentChart.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.StudentChart.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.Center
+        Me.StudentChart.BorderlineColor = System.Drawing.Color.Black
+        Me.StudentChart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid
+        Me.StudentChart.BorderlineWidth = 0
+        ChartArea1.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Lines
+        ChartArea1.AxisX.InterlacedColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        ChartArea1.AxisX.LabelAutoFitStyle = CType((((((System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.IncreaseFont Or System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.DecreaseFont) _
+            Or System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.StaggeredLabels) _
+            Or System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.LabelsAngleStep30) _
+            Or System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.LabelsAngleStep45) _
+            Or System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.WordWrap), System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles)
+        ChartArea1.AxisX.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet
+        ChartArea1.AxisX.LineWidth = 0
+        ChartArea1.AxisX.MajorGrid.LineWidth = 0
+        ChartArea1.AxisX.MajorTickMark.Interval = 0R
+        ChartArea1.AxisX.MajorTickMark.LineWidth = 0
+        ChartArea1.AxisX.MajorTickMark.TickMarkStyle = System.Windows.Forms.DataVisualization.Charting.TickMarkStyle.AcrossAxis
+        ChartArea1.AxisX.TitleFont = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea1.AxisY.MajorTickMark.LineWidth = 0
+        ChartArea1.AxisY.TitleFont = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea1.CursorX.IsUserEnabled = True
+        ChartArea1.CursorX.LineColor = System.Drawing.SystemColors.ActiveCaptionText
+        ChartArea1.CursorX.LineWidth = 0
+        ChartArea1.CursorX.SelectionColor = System.Drawing.Color.DimGray
+        ChartArea1.CursorY.LineColor = System.Drawing.Color.MistyRose
+        ChartArea1.CursorY.LineWidth = 0
+        ChartArea1.Name = "ChartArea1"
+        Me.StudentChart.ChartAreas.Add(ChartArea1)
+        Legend1.BackColor = System.Drawing.Color.Transparent
+        Legend1.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet
+        Legend1.BorderWidth = 0
+        Legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Left
+        Legend1.Font = New System.Drawing.Font("Khmer OS Siemreap", 10.0!)
+        Legend1.InterlacedRows = True
+        Legend1.IsTextAutoFit = False
+        Legend1.LegendItemOrder = System.Windows.Forms.DataVisualization.Charting.LegendItemOrder.SameAsSeriesOrder
+        Legend1.LegendStyle = System.Windows.Forms.DataVisualization.Charting.LegendStyle.Column
+        Legend1.Name = "Legend1"
+        Legend1.ShadowColor = System.Drawing.Color.Transparent
+        Legend1.TitleBackColor = System.Drawing.Color.White
+        Legend1.TitleFont = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Legend1.TitleForeColor = System.Drawing.Color.BlanchedAlmond
+        Me.StudentChart.Legends.Add(Legend1)
+        Me.StudentChart.Location = New System.Drawing.Point(0, 212)
+        Me.StudentChart.Name = "StudentChart"
+        Me.StudentChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None
+        Series1.BackImageTransparentColor = System.Drawing.Color.White
+        Series1.BackSecondaryColor = System.Drawing.Color.FromArgb(CType(CType(6, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(148, Byte), Integer))
+        Series1.ChartArea = "ChartArea1"
+        Series1.Color = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Series1.CustomProperties = "MaxPixelPointWidth=75, EmptyPointValue=Zero, DrawSideBySide=True, MinPixelPointWi" &
+    "dth=20"
+        Series1.EmptyPointStyle.Color = System.Drawing.Color.LightGray
+        Series1.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Series1.IsValueShownAsLabel = True
+        Series1.IsVisibleInLegend = False
+        Series1.Label = "#VAL{0""នាក់""}"
+        Series1.LabelAngle = 2
+        Series1.LabelBackColor = System.Drawing.Color.Transparent
+        Series1.LabelBorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet
+        Series1.LabelBorderWidth = 0
+        Series1.Legend = "Legend1"
+        Series1.MarkerBorderWidth = 0
+        Series1.MarkerColor = System.Drawing.Color.Black
+        Series1.Name = "Subject"
+        Series1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.BrightPastel
+        Series1.SmartLabelStyle.CalloutLineColor = System.Drawing.Color.Transparent
+        Series1.XValueMember = "20"
+        Series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.[String]
+        Series1.YValueMembers = "10"
+        Series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32
+        Me.StudentChart.Series.Add(Series1)
+        Me.StudentChart.Size = New System.Drawing.Size(1067, 687)
+        Me.StudentChart.TabIndex = 6
+        Me.StudentChart.Text = "ស្ថិតិសិស្ស"
+        Title1.Alignment = System.Drawing.ContentAlignment.TopCenter
+        Title1.Font = New System.Drawing.Font("Khmer OS Moul", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Title1.Name = "Title1"
+        Title1.Text = "ចំនួនសិស្សក្នុងមុខវិជ្ជានិមួយៗ"
+        Me.StudentChart.Titles.Add(Title1)
         '
-        'RegisterList
+        'CourseChart
         '
-        Me.RegisterList.AllowUserToAddRows = False
-        Me.RegisterList.AllowUserToDeleteRows = False
-        Me.RegisterList.AllowUserToResizeColumns = False
-        Me.RegisterList.AllowUserToResizeRows = False
-        Me.RegisterList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.RegisterList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        Me.RegisterList.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.RegisterList.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.RegisterList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        Me.RegisterList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(136, Byte), Integer))
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.RegisterList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle11
-        Me.RegisterList.ColumnHeadersHeight = 40
-        Me.RegisterList.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.Column7, Me.DataGridViewTextBoxColumn5})
-        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle13.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.RegisterList.DefaultCellStyle = DataGridViewCellStyle13
-        Me.RegisterList.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RegisterList.EnableHeadersVisualStyles = False
-        Me.RegisterList.Location = New System.Drawing.Point(3, 57)
-        Me.RegisterList.Margin = New System.Windows.Forms.Padding(3, 15, 15, 3)
-        Me.RegisterList.MultiSelect = False
-        Me.RegisterList.Name = "RegisterList"
-        Me.RegisterList.ReadOnly = True
-        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle14.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.RegisterList.RowHeadersDefaultCellStyle = DataGridViewCellStyle14
-        Me.RegisterList.RowHeadersVisible = False
-        Me.RegisterList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        DataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(253, Byte), Integer))
-        DataGridViewCellStyle15.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!)
-        DataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle15.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.RegisterList.RowsDefaultCellStyle = DataGridViewCellStyle15
-        Me.RegisterList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.RegisterList.Size = New System.Drawing.Size(1654, 323)
-        Me.RegisterList.TabIndex = 3
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle12.BackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black
-        Me.DataGridViewTextBoxColumn1.DefaultCellStyle = DataGridViewCellStyle12
-        Me.DataGridViewTextBoxColumn1.FillWeight = 276.4822!
-        Me.DataGridViewTextBoxColumn1.HeaderText = "លេខកូដចុះឈ្មោះ"
-        Me.DataGridViewTextBoxColumn1.MinimumWidth = 50
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        Me.DataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.DataGridViewTextBoxColumn1.Width = 200
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.FillWeight = 89.39595!
-        Me.DataGridViewTextBoxColumn2.HeaderText = "គោត្តនាម នាម"
-        Me.DataGridViewTextBoxColumn2.MinimumWidth = 250
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.FillWeight = 59.59729!
-        Me.DataGridViewTextBoxColumn3.HeaderText = "វគ្គសិកស្សា"
-        Me.DataGridViewTextBoxColumn3.MinimumWidth = 350
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.FillWeight = 59.59729!
-        Me.DataGridViewTextBoxColumn4.HeaderText = "គ្រូបង្រៀន"
-        Me.DataGridViewTextBoxColumn4.MinimumWidth = 300
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        Me.DataGridViewTextBoxColumn4.ReadOnly = True
-        '
-        'Column7
-        '
-        Me.Column7.HeaderText = "ថ្ងៃចុះឈ្មោះ"
-        Me.Column7.MinimumWidth = 200
-        Me.Column7.Name = "Column7"
-        Me.Column7.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.FillWeight = 59.59729!
-        Me.DataGridViewTextBoxColumn5.HeaderText = "ស្ថានភាពបង់ប្រាក់"
-        Me.DataGridViewTextBoxColumn5.MinimumWidth = 200
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        Me.DataGridViewTextBoxColumn5.ReadOnly = True
-        '
-        'Label5
-        '
-        Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label5.Font = New System.Drawing.Font("Khmer OS Koulen", 16.0!)
-        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(136, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(3, 3)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(3, 0, 3, 15)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Label5.Size = New System.Drawing.Size(1654, 54)
-        Me.Label5.TabIndex = 2
-        Me.Label5.Text = "បញ្ជីសិស្សចុះឈ្មោះថ្ងីៗ"
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'PanelCourse
-        '
-        Me.PanelCourse.BackColor = System.Drawing.Color.Transparent
-        Me.PanelCourse.BorderRadius = 15
-        Me.PanelCourse.Controls.Add(Me.ClassList)
-        Me.PanelCourse.Controls.Add(Me.Label32)
-        Me.PanelCourse.FillColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.PanelCourse.Location = New System.Drawing.Point(3, 643)
-        Me.PanelCourse.Margin = New System.Windows.Forms.Padding(3, 10, 3, 20)
-        Me.PanelCourse.Name = "PanelCourse"
-        Me.PanelCourse.Padding = New System.Windows.Forms.Padding(3)
-        Me.PanelCourse.ShadowDecoration.Parent = Me.PanelCourse
-        Me.PanelCourse.Size = New System.Drawing.Size(1660, 358)
-        Me.PanelCourse.TabIndex = 2
-        '
-        'ClassList
-        '
-        Me.ClassList.AllowUserToAddRows = False
-        Me.ClassList.AllowUserToDeleteRows = False
-        Me.ClassList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.ClassList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        Me.ClassList.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.ClassList.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.ClassList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        Me.ClassList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(136, Byte), Integer))
-        DataGridViewCellStyle16.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle16.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.ClassList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle16
-        Me.ClassList.ColumnHeadersHeight = 40
-        Me.ClassList.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6})
-        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle18.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.ClassList.DefaultCellStyle = DataGridViewCellStyle18
-        Me.ClassList.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ClassList.EnableHeadersVisualStyles = False
-        Me.ClassList.Location = New System.Drawing.Point(3, 57)
-        Me.ClassList.Margin = New System.Windows.Forms.Padding(3, 15, 0, 3)
-        Me.ClassList.MultiSelect = False
-        Me.ClassList.Name = "ClassList"
-        Me.ClassList.ReadOnly = True
-        DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle19.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ClassList.RowHeadersDefaultCellStyle = DataGridViewCellStyle19
-        Me.ClassList.RowHeadersVisible = False
-        Me.ClassList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        DataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(253, Byte), Integer))
-        DataGridViewCellStyle20.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ClassList.RowsDefaultCellStyle = DataGridViewCellStyle20
-        Me.ClassList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.ClassList.Size = New System.Drawing.Size(1654, 298)
-        Me.ClassList.TabIndex = 3
-        '
-        'Column1
-        '
-        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle17.BackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle17.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle17.ForeColor = System.Drawing.Color.Black
-        Me.Column1.DefaultCellStyle = DataGridViewCellStyle17
-        Me.Column1.FillWeight = 250.0!
-        Me.Column1.HeaderText = "វគ្គសិក្សា"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'Column2
-        '
-        Me.Column2.FillWeight = 150.0!
-        Me.Column2.HeaderText = "គ្រូបង្រៀន"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "ចំនួនសិស្សសរុប"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "ថ្ងៃចូលរៀន"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "ថ្ងៃបញ្ជប់ការសិក្សា"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        '
-        'Column6
-        '
-        Me.Column6.HeaderText = "ស្ថានភាព"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
-        '
-        'Label32
-        '
-        Me.Label32.BackColor = System.Drawing.Color.Transparent
-        Me.Label32.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label32.Font = New System.Drawing.Font("Khmer OS Koulen", 16.0!)
-        Me.Label32.ForeColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(136, Byte), Integer))
-        Me.Label32.Location = New System.Drawing.Point(3, 3)
-        Me.Label32.Margin = New System.Windows.Forms.Padding(3, 0, 3, 15)
-        Me.Label32.Name = "Label32"
-        Me.Label32.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Label32.Size = New System.Drawing.Size(1654, 54)
-        Me.Label32.TabIndex = 2
-        Me.Label32.Text = "បញ្ជីវគ្គសិក្សា"
-        Me.Label32.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.CourseChart.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.CourseChart.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.Center
+        Me.CourseChart.BorderlineColor = System.Drawing.Color.Black
+        Me.CourseChart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid
+        Me.CourseChart.BorderlineWidth = 0
+        ChartArea2.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Lines
+        ChartArea2.AxisX.InterlacedColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        ChartArea2.AxisX.LabelAutoFitStyle = CType((((((System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.IncreaseFont Or System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.DecreaseFont) _
+            Or System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.StaggeredLabels) _
+            Or System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.LabelsAngleStep30) _
+            Or System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.LabelsAngleStep45) _
+            Or System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.WordWrap), System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles)
+        ChartArea2.AxisX.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet
+        ChartArea2.AxisX.LineWidth = 0
+        ChartArea2.AxisX.MajorGrid.LineWidth = 0
+        ChartArea2.AxisX.MajorTickMark.Interval = 0R
+        ChartArea2.AxisX.MajorTickMark.LineWidth = 0
+        ChartArea2.AxisX.MajorTickMark.TickMarkStyle = System.Windows.Forms.DataVisualization.Charting.TickMarkStyle.AcrossAxis
+        ChartArea2.AxisX.TitleFont = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea2.AxisY.MajorTickMark.LineWidth = 0
+        ChartArea2.AxisY.TitleFont = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea2.CursorX.IsUserEnabled = True
+        ChartArea2.CursorX.LineColor = System.Drawing.SystemColors.ActiveCaptionText
+        ChartArea2.CursorX.LineWidth = 0
+        ChartArea2.CursorX.SelectionColor = System.Drawing.Color.DimGray
+        ChartArea2.CursorY.LineColor = System.Drawing.Color.MistyRose
+        ChartArea2.CursorY.LineWidth = 0
+        ChartArea2.Name = "ChartArea1"
+        Me.CourseChart.ChartAreas.Add(ChartArea2)
+        Legend2.BackColor = System.Drawing.Color.Transparent
+        Legend2.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet
+        Legend2.BorderWidth = 0
+        Legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom
+        Legend2.Font = New System.Drawing.Font("Khmer OS Siemreap", 10.0!)
+        Legend2.InterlacedRows = True
+        Legend2.IsTextAutoFit = False
+        Legend2.ItemColumnSpacing = 20
+        Legend2.LegendItemOrder = System.Windows.Forms.DataVisualization.Charting.LegendItemOrder.SameAsSeriesOrder
+        Legend2.MaximumAutoSize = 100.0!
+        Legend2.Name = "Legend1"
+        Legend2.ShadowColor = System.Drawing.Color.Transparent
+        Legend2.TableStyle = System.Windows.Forms.DataVisualization.Charting.LegendTableStyle.Wide
+        Legend2.TitleAlignment = System.Drawing.StringAlignment.Near
+        Legend2.TitleBackColor = System.Drawing.Color.White
+        Legend2.TitleFont = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Legend2.TitleForeColor = System.Drawing.Color.BlanchedAlmond
+        Me.CourseChart.Legends.Add(Legend2)
+        Me.CourseChart.Location = New System.Drawing.Point(1085, 212)
+        Me.CourseChart.Name = "CourseChart"
+        Me.CourseChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent
+        Series2.BackImageTransparentColor = System.Drawing.Color.White
+        Series2.BackSecondaryColor = System.Drawing.Color.FromArgb(CType(CType(6, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(148, Byte), Integer))
+        Series2.BorderWidth = 0
+        Series2.ChartArea = "ChartArea1"
+        Series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
+        Series2.Color = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Series2.EmptyPointStyle.AxisLabel = """"""
+        Series2.EmptyPointStyle.Color = System.Drawing.Color.LightGray
+        Series2.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Series2.IsValueShownAsLabel = True
+        Series2.Label = "#VAL{0""វគ្គ""}"
+        Series2.LabelBackColor = System.Drawing.Color.Transparent
+        Series2.LabelBorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet
+        Series2.LabelBorderWidth = 0
+        Series2.Legend = "Legend1"
+        Series2.LegendText = "#VALX #VAL{00""វគ្គ""}"
+        Series2.MarkerBorderWidth = 0
+        Series2.MarkerColor = System.Drawing.Color.Black
+        Series2.Name = "Subject"
+        Series2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.BrightPastel
+        Series2.SmartLabelStyle.CalloutLineColor = System.Drawing.Color.Transparent
+        Series2.XValueMember = "20"
+        Series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.[String]
+        Series2.YValueMembers = "10"
+        Series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32
+        Me.CourseChart.Series.Add(Series2)
+        Me.CourseChart.Size = New System.Drawing.Size(589, 687)
+        Me.CourseChart.TabIndex = 7
+        Me.CourseChart.Text = "ស្ថិតិសិស្ស"
+        Title2.Alignment = System.Drawing.ContentAlignment.TopCenter
+        Title2.Font = New System.Drawing.Font("Khmer OS Moul", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Title2.Name = "Title1"
+        Title2.Text = "ទិន្ន័យវគ្គសិក្សា"
+        Me.CourseChart.Titles.Add(Title2)
         '
         'DashboardForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Gainsboro
         Me.ClientSize = New System.Drawing.Size(1704, 943)
-        Me.Controls.Add(Me.FlowLayoutPanel1)
+        Me.Controls.Add(Me.Guna2Panel1)
         Me.Name = "DashboardForm"
-        Me.Padding = New System.Windows.Forms.Padding(15, 15, 0, 15)
+        Me.Padding = New System.Windows.Forms.Padding(15)
         Me.Text = "DashboardForm"
-        Me.FlowLayoutPanel1.ResumeLayout(False)
+        Me.Guna2Panel1.ResumeLayout(False)
         Me.FlowLayoutPanel2.ResumeLayout(False)
         Me.Guna2CustomGradientPanel1.ResumeLayout(False)
         Me.Guna2CustomGradientPanel1.PerformLayout()
@@ -883,65 +780,47 @@ Partial Class DashboardForm
         Me.Guna2CustomGradientPanel3.PerformLayout()
         Me.Guna2CustomGradientPanel4.ResumeLayout(False)
         Me.Guna2CustomGradientPanel4.PerformLayout()
-        Me.PanelRegisterList.ResumeLayout(False)
-        CType(Me.RegisterList, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.PanelCourse.ResumeLayout(False)
-        CType(Me.ClassList, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.StudentChart, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CourseChart, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+    Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents StudentChart As DataVisualization.Charting.Chart
     Friend WithEvents FlowLayoutPanel2 As FlowLayoutPanel
     Friend WithEvents Guna2CustomGradientPanel1 As Guna.UI2.WinForms.Guna2CustomGradientPanel
-    Friend WithEvents Label4 As Label
-    Friend WithEvents lbTotalStudnet As Label
-    Friend WithEvents Guna2CustomGradientPanel2 As Guna.UI2.WinForms.Guna2CustomGradientPanel
-    Friend WithEvents lbTotalClass As Label
-    Friend WithEvents Guna2CustomGradientPanel3 As Guna.UI2.WinForms.Guna2CustomGradientPanel
-    Friend WithEvents Guna2CustomGradientPanel4 As Guna.UI2.WinForms.Guna2CustomGradientPanel
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label24 As Label
+    Friend WithEvents Label25 As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents lbCompleteStudent As Label
     Friend WithEvents Label12 As Label
+    Friend WithEvents lbTotalStudnet As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Guna2CustomGradientPanel2 As Guna.UI2.WinForms.Guna2CustomGradientPanel
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label26 As Label
+    Friend WithEvents Label27 As Label
     Friend WithEvents lbCompleteClass As Label
     Friend WithEvents Label16 As Label
     Friend WithEvents Label15 As Label
-    Friend WithEvents Label19 As Label
-    Friend WithEvents Label18 As Label
-    Friend WithEvents Label24 As Label
-    Friend WithEvents Label25 As Label
-    Friend WithEvents Label26 As Label
-    Friend WithEvents Label27 As Label
-    Friend WithEvents Label22 As Label
-    Friend WithEvents Label21 As Label
+    Friend WithEvents lbTotalClass As Label
+    Friend WithEvents Guna2CustomGradientPanel3 As Guna.UI2.WinForms.Guna2CustomGradientPanel
+    Friend WithEvents Label9 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Label20 As Label
     Friend WithEvents lbActionTeacher As Label
     Friend WithEvents lbTotalTeacher As Label
+    Friend WithEvents Label19 As Label
+    Friend WithEvents Label18 As Label
+    Friend WithEvents Guna2CustomGradientPanel4 As Guna.UI2.WinForms.Guna2CustomGradientPanel
+    Friend WithEvents Label11 As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents Label23 As Label
     Friend WithEvents lbActionCourse As Label
     Friend WithEvents lbTotalCourse As Label
-    Friend WithEvents PanelCourse As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Label32 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Label11 As Label
-    Friend WithEvents ClassList As DataGridView
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As DataGridViewTextBoxColumn
-    Friend WithEvents PanelRegisterList As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Label5 As Label
-    Friend WithEvents RegisterList As DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column7 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
+    Friend WithEvents Label22 As Label
+    Friend WithEvents Label21 As Label
+    Friend WithEvents CourseChart As DataVisualization.Charting.Chart
 End Class

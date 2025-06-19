@@ -1,5 +1,7 @@
 ﻿Imports System.Drawing.Printing
+Imports System.IO
 Imports CrystalDecisions.CrystalReports.Engine
+Imports CrystalDecisions.Shared
 Imports CrystalDecisions.Windows.Forms
 Imports Org.BouncyCastle.Asn1
 
@@ -27,32 +29,29 @@ Public Class ReportForm
         End If
     End Sub
     Sub TeacherReport()
-        Dim teacherReport As New TeacherReport()
-        teacherReport.Database.Tables("tblTeacherReport").SetDataSource(report.GetTeacherReport())
-        crsReport.ReportSource = teacherReport
-        'reportDocument.Load(Application.StartupPath & "Report\TeacherReport.rpt")
-        'reportDocument.Database.Tables("tblTeacherReport").SetDataSource(report.GetTeacherReport())
-        'crsReport.ReportSource = reportDocument
+        reportDocument.Load(Application.StartupPath & "\Report\TeacherReport.rpt")
+        reportDocument.Database.Tables("tblTeacherReport").SetDataSource(report.GetTeacherReport())
+        crsReport.ReportSource = reportDocument
     End Sub
     Sub StudentReport()
-        Dim studentReport As New StudentReport()
-        studentReport.Database.Tables("tblStudentReport").SetDataSource(report.GetStudentReport())
-        crsReport.ReportSource = studentReport
+        reportDocument.Load(Application.StartupPath & "\Report\StudentReport.rpt")
+        reportDocument.Database.Tables("tblStudentReport").SetDataSource(report.GetStudentReport())
+        crsReport.ReportSource = reportDocument
     End Sub
     Sub CourseReport()
-        Dim CourseReport As New CourseReport()
-        CourseReport.Database.Tables("tblCourseReport").SetDataSource(report.GetCourseReport())
-        crsReport.ReportSource = CourseReport
+        reportDocument.Load(Application.StartupPath & "\Report\CourseReport.rpt")
+        reportDocument.Database.Tables("tblCourseReport").SetDataSource(report.GetCourseReport())
+        crsReport.ReportSource = reportDocument
     End Sub
     Sub SubjectReport()
-        Dim subjectReport As New SubjectReport()
-        subjectReport.Database.Tables("tblSubjectReport").SetDataSource(report.GetSubjectReport())
-        crsReport.ReportSource = subjectReport
+        reportDocument.Load(Application.StartupPath & "\Report\SubjectReport.rpt")
+        reportDocument.Database.Tables("tblSubjectReport").SetDataSource(report.GetSubjectReport())
+        crsReport.ReportSource = reportDocument
     End Sub
     Sub PaymentReport()
-        Dim paymentReport As New PaymentReport()
-        paymentReport.Database.Tables("tblPaymentReport").SetDataSource(report.GetPaymentReport())
-        crsReport.ReportSource = paymentReport
+        reportDocument.Load(Application.StartupPath & "\Report\PaymentReport.rpt")
+        reportDocument.Database.Tables("tblPaymentReport").SetDataSource(report.GetPaymentReport())
+        crsReport.ReportSource = reportDocument
     End Sub
 
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
@@ -66,12 +65,56 @@ Public Class ReportForm
             dlg.PrinterSettings = New PrinterSettings()
             If dlg.ShowDialog() = DialogResult.OK Then
                 reportDocument.PrintOptions.PrinterName = dlg.PrinterSettings.PrinterName
+                reportDocument.PrintOptions.PaperSize = CrystalDecisions.Shared.PaperSize.PaperA4
+                reportDocument.PrintOptions.PaperOrientation = PaperOrientation.Landscape
                 reportDocument.PrintToPrinter(dlg.PrinterSettings.Copies, False, 0, 0)
+
                 MessageBox.Show("របាយការណ៍ត្រូវបានPrintរួចរាល់!!!!", "Print", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         Catch ex As Exception
             MessageBox.Show("របាយការណ៍័មិនអាច")
         End Try
 
+    End Sub
+
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
+        Dim exportOption As ExportOptions
+        Dim diskFileDestinationOptions As New DiskFileDestinationOptions()
+
+        Dim sfd As New SaveFileDialog()
+        sfd.Filter = "PDF Files|*.pdf|Excel Files|*.xls"
+        sfd.FileName = cbReport.Text & "_" & DateTime.Now().ToString("dd-MM-yyyy")
+
+        If sfd.ShowDialog() = DialogResult.OK Then
+            diskFileDestinationOptions.DiskFileName = sfd.FileName
+        Else
+            Return
+        End If
+
+        exportOption = reportDocument.ExportOptions
+        exportOption.ExportDestinationType = ExportDestinationType.DiskFile
+        exportOption.ExportDestinationOptions = diskFileDestinationOptions
+
+        Select Case Path.GetExtension(sfd.FileName).ToLower()
+            Case ".pdf"
+                exportOption.ExportFormatType = ExportFormatType.PortableDocFormat
+                exportOption.FormatOptions = New PdfRtfWordFormatOptions()
+            Case ".xls"
+                exportOption.ExportFormatType = ExportFormatType.Excel
+                exportOption.FormatOptions = New ExcelFormatOptions() With {
+            .ExcelUseConstantColumnWidth = True
+        }
+            Case ".html"
+                exportOption.ExportFormatType = ExportFormatType.HTML40
+                exportOption.FormatOptions = New HTMLFormatOptions() With {
+            .HTMLBaseFolderName = Path.GetDirectoryName(sfd.FileName),
+            .HTMLFileName = Path.GetFileName(sfd.FileName)
+        }
+            Case Else
+                MessageBox.Show("Unsupported export format.")
+                Return
+        End Select
+
+        reportDocument.Export()
     End Sub
 End Class
