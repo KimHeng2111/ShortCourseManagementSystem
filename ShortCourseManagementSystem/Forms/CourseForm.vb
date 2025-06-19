@@ -169,7 +169,7 @@ Public Class CourseForm
     '        Dim startDate As String = dtpStartDate.Value
     '        Dim roomID As Integer = Convert.ToInt32(cbRoom.SelectedValue)
     '        Dim secheduleID As Integer = Convert.ToInt32(cbTime.SelectedValue)
-    '        course.UpdateCourse(id, courseID, teacherID, startDate, roomID, secheduleID)
+    '        course.UpdateSubject(id, courseID, teacherID, startDate, roomID, secheduleID)
     '    End If
     '    Display()
     'End Sub

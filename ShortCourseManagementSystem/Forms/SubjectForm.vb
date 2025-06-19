@@ -46,7 +46,7 @@ Public Class SubjectForm
         If Not CheckField() Then
             Return
         Else
-            subject.AddCourse(txtSubject.Texts.Trim(), txtDes.Texts.Trim(), Convert.ToInt32(txtCreditHours.Texts.Trim()), Convert.ToDecimal(txtBasePrice.Texts.Trim()))
+            subject.AddSubject(txtSubject.Texts.Trim(), txtDes.Texts.Trim(), Convert.ToInt32(txtCreditHours.Texts.Trim()), Convert.ToDecimal(txtBasePrice.Texts.Trim()))
             MessageBox.Show("វគ្គសិក្សា ៖ " & txtSubject.Texts & "ត្រូវបានបង្កើតបានដោយជោគជ័យ!!!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
         Display()
@@ -73,7 +73,7 @@ Public Class SubjectForm
             If hit.RowIndex >= 0 Then
                 DataGridView1.Rows(hit.RowIndex).Selected = True
                 Dim CoursID As String = DataGridView1.Rows(hit.RowIndex).Cells(0).Value.ToString()
-                subject.GetCourseByID(CoursID)
+                subject.GetSubjectByID(CoursID)
                 menu.Show(DataGridView1, e.Location)
             End If
         End If
@@ -82,7 +82,7 @@ Public Class SubjectForm
 
     Private Sub DeleteCourse()
         If DialogResult.Yes = MessageBox.Show("តើអ្នកពិតជាចង់លុបវគ្គសិក្សានេះទេ?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) Then
-            subject.DeleteCourse()
+            subject.DeleteSubject()
             MessageBox.Show("វគ្គសិក្សា ៖ " & subject.Subject & " ត្រូវបានលុបដោយជោគជ័យ!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Display()
         End If

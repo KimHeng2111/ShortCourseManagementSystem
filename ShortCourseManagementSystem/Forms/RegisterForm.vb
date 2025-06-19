@@ -9,7 +9,7 @@ Public Class RegisterForm
         InitializeComponent()
 
         ' Add any initialization after the InitializeComponent() call.
-        GetCbCourse()
+        GetCbSubject()
         GetCbAddress()
         picStudent.ImageLocation = Application.StartupPath & "\Images\defalutStudent.png"
     End Sub
@@ -108,8 +108,8 @@ Public Class RegisterForm
         Return destination
     End Function
 
-    Sub GetCbCourse()
-        cbCourse.DataSource = New BindingSource(register.GetCourseList(), Nothing)
+    Sub GetCbSubject()
+        cbCourse.DataSource = New BindingSource(register.GetSubjectList(), Nothing)
         cbCourse.DisplayMember = "Key"
         cbCourse.ValueMember = "Value"
         cbCourse.SelectedIndex = cbCourse.Items.Count - 1 ' Set to the last item
@@ -129,8 +129,10 @@ Public Class RegisterForm
             Return
         End If
 
-        Dim courseID As Integer = Convert.ToInt32(cbCourse.SelectedValue)
-        cbTime.DataSource = New BindingSource(register.GetTimeList(courseID), Nothing)
+        Dim SubjectID As Integer = Convert.ToInt32(cbCourse.SelectedValue)
+        cbTime.DataSource = New BindingSource(register.GetTimeList(SubjectID), Nothing)
+        register.manageClass.subject.GetSubjectByID(SubjectID)
+        lbPrice.Text = register.manageClass.subject.basePrice.ToString("F2")
         cbTime.DisplayMember = "Key"
         cbTime.ValueMember = "Value"
         cbTime.SelectedIndex = cbTime.Items.Count - 1

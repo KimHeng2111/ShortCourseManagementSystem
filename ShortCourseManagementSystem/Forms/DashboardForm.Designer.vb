@@ -31,6 +31,8 @@ Partial Class DashboardForm
         Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Dim Title2 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.StudentChart = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.CourseChart = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Guna2CustomGradientPanel1 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -65,16 +67,14 @@ Partial Class DashboardForm
         Me.lbTotalCourse = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
-        Me.StudentChart = New System.Windows.Forms.DataVisualization.Charting.Chart()
-        Me.CourseChart = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.Guna2Panel1.SuspendLayout()
+        CType(Me.StudentChart, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CourseChart, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.FlowLayoutPanel2.SuspendLayout()
         Me.Guna2CustomGradientPanel1.SuspendLayout()
         Me.Guna2CustomGradientPanel2.SuspendLayout()
         Me.Guna2CustomGradientPanel3.SuspendLayout()
         Me.Guna2CustomGradientPanel4.SuspendLayout()
-        CType(Me.StudentChart, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CourseChart, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Guna2Panel1
@@ -89,6 +89,181 @@ Partial Class DashboardForm
         Me.Guna2Panel1.ShadowDecoration.Parent = Me.Guna2Panel1
         Me.Guna2Panel1.Size = New System.Drawing.Size(1674, 913)
         Me.Guna2Panel1.TabIndex = 0
+        '
+        'StudentChart
+        '
+        Me.StudentChart.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.StudentChart.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.Center
+        Me.StudentChart.BorderlineColor = System.Drawing.Color.Black
+        Me.StudentChart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid
+        Me.StudentChart.BorderlineWidth = 0
+        ChartArea1.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Lines
+        ChartArea1.AxisX.InterlacedColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        ChartArea1.AxisX.LabelAutoFitStyle = CType((((((System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.IncreaseFont Or System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.DecreaseFont) _
+            Or System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.StaggeredLabels) _
+            Or System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.LabelsAngleStep30) _
+            Or System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.LabelsAngleStep45) _
+            Or System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.WordWrap), System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles)
+        ChartArea1.AxisX.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet
+        ChartArea1.AxisX.LineWidth = 0
+        ChartArea1.AxisX.MajorGrid.LineWidth = 0
+        ChartArea1.AxisX.MajorTickMark.Interval = 0R
+        ChartArea1.AxisX.MajorTickMark.LineWidth = 0
+        ChartArea1.AxisX.MajorTickMark.TickMarkStyle = System.Windows.Forms.DataVisualization.Charting.TickMarkStyle.AcrossAxis
+        ChartArea1.AxisX.TitleFont = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea1.AxisY.MajorTickMark.LineWidth = 0
+        ChartArea1.AxisY.TitleFont = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea1.CursorX.IsUserEnabled = True
+        ChartArea1.CursorX.LineColor = System.Drawing.SystemColors.ActiveCaptionText
+        ChartArea1.CursorX.LineWidth = 0
+        ChartArea1.CursorX.SelectionColor = System.Drawing.Color.DimGray
+        ChartArea1.CursorY.LineColor = System.Drawing.Color.MistyRose
+        ChartArea1.CursorY.LineWidth = 0
+        ChartArea1.Name = "ChartArea1"
+        Me.StudentChart.ChartAreas.Add(ChartArea1)
+        Legend1.BackColor = System.Drawing.Color.Transparent
+        Legend1.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet
+        Legend1.BorderWidth = 0
+        Legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Left
+        Legend1.Font = New System.Drawing.Font("Khmer OS Siemreap", 10.0!)
+        Legend1.InterlacedRows = True
+        Legend1.IsTextAutoFit = False
+        Legend1.LegendItemOrder = System.Windows.Forms.DataVisualization.Charting.LegendItemOrder.SameAsSeriesOrder
+        Legend1.LegendStyle = System.Windows.Forms.DataVisualization.Charting.LegendStyle.Column
+        Legend1.Name = "Legend1"
+        Legend1.ShadowColor = System.Drawing.Color.Transparent
+        Legend1.TitleBackColor = System.Drawing.Color.White
+        Legend1.TitleFont = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Legend1.TitleForeColor = System.Drawing.Color.BlanchedAlmond
+        Me.StudentChart.Legends.Add(Legend1)
+        Me.StudentChart.Location = New System.Drawing.Point(0, 212)
+        Me.StudentChart.Name = "StudentChart"
+        Me.StudentChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None
+        Series1.BackImageTransparentColor = System.Drawing.Color.White
+        Series1.BackSecondaryColor = System.Drawing.Color.FromArgb(CType(CType(6, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(148, Byte), Integer))
+        Series1.ChartArea = "ChartArea1"
+        Series1.Color = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Series1.CustomProperties = "MaxPixelPointWidth=75, EmptyPointValue=Zero, DrawSideBySide=True, MinPixelPointWi" &
+    "dth=20"
+        Series1.EmptyPointStyle.Color = System.Drawing.Color.LightGray
+        Series1.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Series1.IsValueShownAsLabel = True
+        Series1.IsVisibleInLegend = False
+        Series1.Label = "#VAL{0""នាក់""}"
+        Series1.LabelAngle = 2
+        Series1.LabelBackColor = System.Drawing.Color.Transparent
+        Series1.LabelBorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet
+        Series1.LabelBorderWidth = 0
+        Series1.Legend = "Legend1"
+        Series1.MarkerBorderWidth = 0
+        Series1.MarkerColor = System.Drawing.Color.Black
+        Series1.Name = "Subject"
+        Series1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.BrightPastel
+        Series1.SmartLabelStyle.CalloutLineColor = System.Drawing.Color.Transparent
+        Series1.XValueMember = "20"
+        Series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.[String]
+        Series1.YValueMembers = "10"
+        Series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32
+        Me.StudentChart.Series.Add(Series1)
+        Me.StudentChart.Size = New System.Drawing.Size(1055, 687)
+        Me.StudentChart.TabIndex = 6
+        Me.StudentChart.Text = "ស្ថិតិសិស្ស"
+        Title1.Alignment = System.Drawing.ContentAlignment.TopCenter
+        Title1.Font = New System.Drawing.Font("Khmer OS Moul", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Title1.Name = "Title1"
+        Title1.Text = "ចំនួនសិស្សក្នុងមុខវិជ្ជានិមួយៗ"
+        Me.StudentChart.Titles.Add(Title1)
+        '
+        'CourseChart
+        '
+        Me.CourseChart.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.CourseChart.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.Center
+        Me.CourseChart.BorderlineColor = System.Drawing.Color.Black
+        Me.CourseChart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid
+        Me.CourseChart.BorderlineWidth = 0
+        ChartArea2.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Lines
+        ChartArea2.AxisX.InterlacedColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        ChartArea2.AxisX.LabelAutoFitStyle = CType((((((System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.IncreaseFont Or System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.DecreaseFont) _
+            Or System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.StaggeredLabels) _
+            Or System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.LabelsAngleStep30) _
+            Or System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.LabelsAngleStep45) _
+            Or System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.WordWrap), System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles)
+        ChartArea2.AxisX.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet
+        ChartArea2.AxisX.LineWidth = 0
+        ChartArea2.AxisX.MajorGrid.LineWidth = 0
+        ChartArea2.AxisX.MajorTickMark.Interval = 0R
+        ChartArea2.AxisX.MajorTickMark.LineWidth = 0
+        ChartArea2.AxisX.MajorTickMark.TickMarkStyle = System.Windows.Forms.DataVisualization.Charting.TickMarkStyle.AcrossAxis
+        ChartArea2.AxisX.TitleFont = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea2.AxisY.MajorTickMark.LineWidth = 0
+        ChartArea2.AxisY.TitleFont = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea2.CursorX.IsUserEnabled = True
+        ChartArea2.CursorX.LineColor = System.Drawing.SystemColors.ActiveCaptionText
+        ChartArea2.CursorX.LineWidth = 0
+        ChartArea2.CursorX.SelectionColor = System.Drawing.Color.DimGray
+        ChartArea2.CursorY.LineColor = System.Drawing.Color.MistyRose
+        ChartArea2.CursorY.LineWidth = 0
+        ChartArea2.Name = "ChartArea1"
+        Me.CourseChart.ChartAreas.Add(ChartArea2)
+        Legend2.BackColor = System.Drawing.Color.Transparent
+        Legend2.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet
+        Legend2.BorderWidth = 0
+        Legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom
+        Legend2.Font = New System.Drawing.Font("Khmer OS Siemreap", 10.0!)
+        Legend2.InterlacedRows = True
+        Legend2.IsTextAutoFit = False
+        Legend2.ItemColumnSpacing = 20
+        Legend2.LegendItemOrder = System.Windows.Forms.DataVisualization.Charting.LegendItemOrder.SameAsSeriesOrder
+        Legend2.MaximumAutoSize = 100.0!
+        Legend2.Name = "Legend1"
+        Legend2.ShadowColor = System.Drawing.Color.Transparent
+        Legend2.TableStyle = System.Windows.Forms.DataVisualization.Charting.LegendTableStyle.Wide
+        Legend2.TitleAlignment = System.Drawing.StringAlignment.Near
+        Legend2.TitleBackColor = System.Drawing.Color.White
+        Legend2.TitleFont = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Legend2.TitleForeColor = System.Drawing.Color.BlanchedAlmond
+        Me.CourseChart.Legends.Add(Legend2)
+        Me.CourseChart.Location = New System.Drawing.Point(1085, 212)
+        Me.CourseChart.Name = "CourseChart"
+        Me.CourseChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent
+        Series2.BackImageTransparentColor = System.Drawing.Color.White
+        Series2.BackSecondaryColor = System.Drawing.Color.FromArgb(CType(CType(6, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(148, Byte), Integer))
+        Series2.BorderWidth = 0
+        Series2.ChartArea = "ChartArea1"
+        Series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
+        Series2.Color = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Series2.EmptyPointStyle.AxisLabel = """"""
+        Series2.EmptyPointStyle.Color = System.Drawing.Color.LightGray
+        Series2.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Series2.IsValueShownAsLabel = True
+        Series2.Label = "#VAL{0""វគ្គ""}"
+        Series2.LabelBackColor = System.Drawing.Color.Transparent
+        Series2.LabelBorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet
+        Series2.LabelBorderWidth = 0
+        Series2.Legend = "Legend1"
+        Series2.LegendText = "#VALX #VAL{00""វគ្គ""}"
+        Series2.MarkerBorderWidth = 0
+        Series2.MarkerColor = System.Drawing.Color.Black
+        Series2.Name = "Subject"
+        Series2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.BrightPastel
+        Series2.SmartLabelStyle.CalloutLineColor = System.Drawing.Color.Transparent
+        Series2.XValueMember = "20"
+        Series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.[String]
+        Series2.YValueMembers = "10"
+        Series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32
+        Me.CourseChart.Series.Add(Series2)
+        Me.CourseChart.Size = New System.Drawing.Size(589, 687)
+        Me.CourseChart.TabIndex = 7
+        Me.CourseChart.Text = "ស្ថិតិសិស្ស"
+        Title2.Alignment = System.Drawing.ContentAlignment.TopCenter
+        Title2.Font = New System.Drawing.Font("Khmer OS Moul", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Title2.Name = "Title1"
+        Title2.Text = "ទិន្ន័យវគ្គសិក្សា"
+        Me.CourseChart.Titles.Add(Title2)
         '
         'FlowLayoutPanel2
         '
@@ -585,181 +760,6 @@ Partial Class DashboardForm
         Me.Label21.TabIndex = 4
         Me.Label21.Text = "មុខវិជ្ជាសរុប ៖"
         '
-        'StudentChart
-        '
-        Me.StudentChart.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.StudentChart.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.Center
-        Me.StudentChart.BorderlineColor = System.Drawing.Color.Black
-        Me.StudentChart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid
-        Me.StudentChart.BorderlineWidth = 0
-        ChartArea1.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Lines
-        ChartArea1.AxisX.InterlacedColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
-        ChartArea1.AxisX.LabelAutoFitStyle = CType((((((System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.IncreaseFont Or System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.DecreaseFont) _
-            Or System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.StaggeredLabels) _
-            Or System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.LabelsAngleStep30) _
-            Or System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.LabelsAngleStep45) _
-            Or System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.WordWrap), System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles)
-        ChartArea1.AxisX.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet
-        ChartArea1.AxisX.LineWidth = 0
-        ChartArea1.AxisX.MajorGrid.LineWidth = 0
-        ChartArea1.AxisX.MajorTickMark.Interval = 0R
-        ChartArea1.AxisX.MajorTickMark.LineWidth = 0
-        ChartArea1.AxisX.MajorTickMark.TickMarkStyle = System.Windows.Forms.DataVisualization.Charting.TickMarkStyle.AcrossAxis
-        ChartArea1.AxisX.TitleFont = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        ChartArea1.AxisY.MajorTickMark.LineWidth = 0
-        ChartArea1.AxisY.TitleFont = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        ChartArea1.CursorX.IsUserEnabled = True
-        ChartArea1.CursorX.LineColor = System.Drawing.SystemColors.ActiveCaptionText
-        ChartArea1.CursorX.LineWidth = 0
-        ChartArea1.CursorX.SelectionColor = System.Drawing.Color.DimGray
-        ChartArea1.CursorY.LineColor = System.Drawing.Color.MistyRose
-        ChartArea1.CursorY.LineWidth = 0
-        ChartArea1.Name = "ChartArea1"
-        Me.StudentChart.ChartAreas.Add(ChartArea1)
-        Legend1.BackColor = System.Drawing.Color.Transparent
-        Legend1.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet
-        Legend1.BorderWidth = 0
-        Legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Left
-        Legend1.Font = New System.Drawing.Font("Khmer OS Siemreap", 10.0!)
-        Legend1.InterlacedRows = True
-        Legend1.IsTextAutoFit = False
-        Legend1.LegendItemOrder = System.Windows.Forms.DataVisualization.Charting.LegendItemOrder.SameAsSeriesOrder
-        Legend1.LegendStyle = System.Windows.Forms.DataVisualization.Charting.LegendStyle.Column
-        Legend1.Name = "Legend1"
-        Legend1.ShadowColor = System.Drawing.Color.Transparent
-        Legend1.TitleBackColor = System.Drawing.Color.White
-        Legend1.TitleFont = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Legend1.TitleForeColor = System.Drawing.Color.BlanchedAlmond
-        Me.StudentChart.Legends.Add(Legend1)
-        Me.StudentChart.Location = New System.Drawing.Point(0, 212)
-        Me.StudentChart.Name = "StudentChart"
-        Me.StudentChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None
-        Series1.BackImageTransparentColor = System.Drawing.Color.White
-        Series1.BackSecondaryColor = System.Drawing.Color.FromArgb(CType(CType(6, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(148, Byte), Integer))
-        Series1.ChartArea = "ChartArea1"
-        Series1.Color = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Series1.CustomProperties = "MaxPixelPointWidth=75, EmptyPointValue=Zero, DrawSideBySide=True, MinPixelPointWi" &
-    "dth=20"
-        Series1.EmptyPointStyle.Color = System.Drawing.Color.LightGray
-        Series1.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Series1.IsValueShownAsLabel = True
-        Series1.IsVisibleInLegend = False
-        Series1.Label = "#VAL{0""នាក់""}"
-        Series1.LabelAngle = 2
-        Series1.LabelBackColor = System.Drawing.Color.Transparent
-        Series1.LabelBorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet
-        Series1.LabelBorderWidth = 0
-        Series1.Legend = "Legend1"
-        Series1.MarkerBorderWidth = 0
-        Series1.MarkerColor = System.Drawing.Color.Black
-        Series1.Name = "Subject"
-        Series1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.BrightPastel
-        Series1.SmartLabelStyle.CalloutLineColor = System.Drawing.Color.Transparent
-        Series1.XValueMember = "20"
-        Series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.[String]
-        Series1.YValueMembers = "10"
-        Series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32
-        Me.StudentChart.Series.Add(Series1)
-        Me.StudentChart.Size = New System.Drawing.Size(1067, 687)
-        Me.StudentChart.TabIndex = 6
-        Me.StudentChart.Text = "ស្ថិតិសិស្ស"
-        Title1.Alignment = System.Drawing.ContentAlignment.TopCenter
-        Title1.Font = New System.Drawing.Font("Khmer OS Moul", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Title1.Name = "Title1"
-        Title1.Text = "ចំនួនសិស្សក្នុងមុខវិជ្ជានិមួយៗ"
-        Me.StudentChart.Titles.Add(Title1)
-        '
-        'CourseChart
-        '
-        Me.CourseChart.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.CourseChart.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.Center
-        Me.CourseChart.BorderlineColor = System.Drawing.Color.Black
-        Me.CourseChart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid
-        Me.CourseChart.BorderlineWidth = 0
-        ChartArea2.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Lines
-        ChartArea2.AxisX.InterlacedColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
-        ChartArea2.AxisX.LabelAutoFitStyle = CType((((((System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.IncreaseFont Or System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.DecreaseFont) _
-            Or System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.StaggeredLabels) _
-            Or System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.LabelsAngleStep30) _
-            Or System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.LabelsAngleStep45) _
-            Or System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.WordWrap), System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles)
-        ChartArea2.AxisX.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet
-        ChartArea2.AxisX.LineWidth = 0
-        ChartArea2.AxisX.MajorGrid.LineWidth = 0
-        ChartArea2.AxisX.MajorTickMark.Interval = 0R
-        ChartArea2.AxisX.MajorTickMark.LineWidth = 0
-        ChartArea2.AxisX.MajorTickMark.TickMarkStyle = System.Windows.Forms.DataVisualization.Charting.TickMarkStyle.AcrossAxis
-        ChartArea2.AxisX.TitleFont = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        ChartArea2.AxisY.MajorTickMark.LineWidth = 0
-        ChartArea2.AxisY.TitleFont = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        ChartArea2.CursorX.IsUserEnabled = True
-        ChartArea2.CursorX.LineColor = System.Drawing.SystemColors.ActiveCaptionText
-        ChartArea2.CursorX.LineWidth = 0
-        ChartArea2.CursorX.SelectionColor = System.Drawing.Color.DimGray
-        ChartArea2.CursorY.LineColor = System.Drawing.Color.MistyRose
-        ChartArea2.CursorY.LineWidth = 0
-        ChartArea2.Name = "ChartArea1"
-        Me.CourseChart.ChartAreas.Add(ChartArea2)
-        Legend2.BackColor = System.Drawing.Color.Transparent
-        Legend2.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet
-        Legend2.BorderWidth = 0
-        Legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom
-        Legend2.Font = New System.Drawing.Font("Khmer OS Siemreap", 10.0!)
-        Legend2.InterlacedRows = True
-        Legend2.IsTextAutoFit = False
-        Legend2.ItemColumnSpacing = 20
-        Legend2.LegendItemOrder = System.Windows.Forms.DataVisualization.Charting.LegendItemOrder.SameAsSeriesOrder
-        Legend2.MaximumAutoSize = 100.0!
-        Legend2.Name = "Legend1"
-        Legend2.ShadowColor = System.Drawing.Color.Transparent
-        Legend2.TableStyle = System.Windows.Forms.DataVisualization.Charting.LegendTableStyle.Wide
-        Legend2.TitleAlignment = System.Drawing.StringAlignment.Near
-        Legend2.TitleBackColor = System.Drawing.Color.White
-        Legend2.TitleFont = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Legend2.TitleForeColor = System.Drawing.Color.BlanchedAlmond
-        Me.CourseChart.Legends.Add(Legend2)
-        Me.CourseChart.Location = New System.Drawing.Point(1085, 212)
-        Me.CourseChart.Name = "CourseChart"
-        Me.CourseChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent
-        Series2.BackImageTransparentColor = System.Drawing.Color.White
-        Series2.BackSecondaryColor = System.Drawing.Color.FromArgb(CType(CType(6, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(148, Byte), Integer))
-        Series2.BorderWidth = 0
-        Series2.ChartArea = "ChartArea1"
-        Series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
-        Series2.Color = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Series2.EmptyPointStyle.AxisLabel = """"""
-        Series2.EmptyPointStyle.Color = System.Drawing.Color.LightGray
-        Series2.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Series2.IsValueShownAsLabel = True
-        Series2.Label = "#VAL{0""វគ្គ""}"
-        Series2.LabelBackColor = System.Drawing.Color.Transparent
-        Series2.LabelBorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet
-        Series2.LabelBorderWidth = 0
-        Series2.Legend = "Legend1"
-        Series2.LegendText = "#VALX #VAL{00""វគ្គ""}"
-        Series2.MarkerBorderWidth = 0
-        Series2.MarkerColor = System.Drawing.Color.Black
-        Series2.Name = "Subject"
-        Series2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.BrightPastel
-        Series2.SmartLabelStyle.CalloutLineColor = System.Drawing.Color.Transparent
-        Series2.XValueMember = "20"
-        Series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.[String]
-        Series2.YValueMembers = "10"
-        Series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32
-        Me.CourseChart.Series.Add(Series2)
-        Me.CourseChart.Size = New System.Drawing.Size(589, 687)
-        Me.CourseChart.TabIndex = 7
-        Me.CourseChart.Text = "ស្ថិតិសិស្ស"
-        Title2.Alignment = System.Drawing.ContentAlignment.TopCenter
-        Title2.Font = New System.Drawing.Font("Khmer OS Moul", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Title2.Name = "Title1"
-        Title2.Text = "ទិន្ន័យវគ្គសិក្សា"
-        Me.CourseChart.Titles.Add(Title2)
-        '
         'DashboardForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -771,6 +771,8 @@ Partial Class DashboardForm
         Me.Padding = New System.Windows.Forms.Padding(15)
         Me.Text = "DashboardForm"
         Me.Guna2Panel1.ResumeLayout(False)
+        CType(Me.StudentChart, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CourseChart, System.ComponentModel.ISupportInitialize).EndInit()
         Me.FlowLayoutPanel2.ResumeLayout(False)
         Me.Guna2CustomGradientPanel1.ResumeLayout(False)
         Me.Guna2CustomGradientPanel1.PerformLayout()
@@ -780,8 +782,6 @@ Partial Class DashboardForm
         Me.Guna2CustomGradientPanel3.PerformLayout()
         Me.Guna2CustomGradientPanel4.ResumeLayout(False)
         Me.Guna2CustomGradientPanel4.PerformLayout()
-        CType(Me.StudentChart, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CourseChart, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

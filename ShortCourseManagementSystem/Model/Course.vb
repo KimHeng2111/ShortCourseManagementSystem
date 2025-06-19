@@ -36,7 +36,7 @@ Public Class Course
         Dim reader As OleDbDataReader = cmd.ExecuteReader()
         If reader.Read() Then
             Me.ID = reader("ID").ToString()
-            subject.GetCourseByID(reader("ID").ToString())
+            subject.GetSubjectByID(reader("ID").ToString())
             teacher.GetTeacherByID(reader("TeacherID").ToString())
             startDate = Convert.ToDateTime(reader("StartDate"))
             room.GetRoomByID(Convert.ToInt16(reader("RoomID")))
@@ -48,12 +48,12 @@ Public Class Course
         CloseConnection()
     End Sub
     Public Sub AddCourse()
-        Dim query As String = "INSERT INTO tblCourse ( ID, ID, TeacherID, StartDate, RoomID, ScheduleID ) 
-                                VALUES (@ID, @ID, @TeacherID, @StartDate, @RoomID, @ScheduleID) "
+        Dim query As String = "INSERT INTO tblCourse ( ID, SubjectID, TeacherID, StartDate, RoomID, ScheduleID ) 
+                                VALUES (@ID, @SubjectID, @TeacherID, @StartDate, @RoomID, @ScheduleID) "
         Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
-        cmd.Parameters.AddWithValue("@ID", ID)
-        cmd.Parameters.AddWithValue("@ID", subject.ID)
-        cmd.Parameters.AddWithValue("@TeacherID", teacher.TeacherID)
+        cmd.Parameters.AddWithValue("@ID", Convert.ToInt16(ID))
+        cmd.Parameters.AddWithValue("@SubjectID", Convert.ToInt16(subject.ID))
+        cmd.Parameters.AddWithValue("@TeacherID", convert.ToInt16(teacher.TeacherID))
         cmd.Parameters.AddWithValue("@StartDate", startDate)
         cmd.Parameters.AddWithValue("@RoomID", room.id)
         cmd.Parameters.AddWithValue("@ScheduleID", scheduleID)

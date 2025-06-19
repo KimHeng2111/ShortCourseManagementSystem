@@ -31,7 +31,7 @@ Public Class Subject
         Dim dt As DataTable = ExecuteQuery(query)
         Return dt
     End Function
-    Public Sub GetCourseByID(courseID As String)
+    Public Sub GetSubjectByID(courseID As String)
         Dim query As String = "SELECT * FROM tblSubject WHERE ID = @ID"
         OpenConnection()
         Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
@@ -47,7 +47,7 @@ Public Class Subject
         reader.Close()
         CloseConnection()
     End Sub
-    Public Sub GetCourseByName(subject As String)
+    Public Sub GetSubjectByName(subject As String)
         Dim query As String = "SELECT * FROM tblSubject WHERE Subject = @subject"
         OpenConnection()
         Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
@@ -63,7 +63,7 @@ Public Class Subject
         reader.Close()
         CloseConnection()
     End Sub
-    Public Sub AddCourse(subject As String, description As String, creditHours As Integer, basePrice As Decimal)
+    Public Sub AddSubject(subject As String, description As String, creditHours As Integer, basePrice As Decimal)
         Dim query As String = "INSERT INTO tblSubject (Subject, Description, CreditHours, BasePrice) VALUES (@subject, @Description, @CreditHours, @BasePrice)"
         Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
         cmd.Parameters.AddWithValue("@subject", subject)
@@ -72,13 +72,13 @@ Public Class Subject
         cmd.Parameters.AddWithValue("@BasePrice", basePrice)
         ExecuteNonQuery(cmd)
     End Sub
-    Public Sub DeleteCourse()
+    Public Sub DeleteSubject()
         Dim query As String = "DELETE FROM tblSubject WHERE ID = @ID"
         Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
         cmd.Parameters.AddWithValue("@ID", Me.ID)
         ExecuteNonQuery(cmd)
     End Sub
-    Public Sub UpdateCourse()
+    Public Sub UpdateSubject()
         Dim query As String = "UPDATE tblSubject SET Subject = @subject, Description = @Description, CreditHours = @CreditHours, BasePrice = @BasePrice WHERE ID = @ID"
         Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
         cmd.Parameters.AddWithValue("@subject", Me.Subject)

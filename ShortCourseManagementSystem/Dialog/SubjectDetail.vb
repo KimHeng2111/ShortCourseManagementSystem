@@ -71,7 +71,7 @@ HAVING (((tblClass.CourseID)=[@ID]));"
             course.basePrice = Convert.ToDecimal(txtBasePrice.Texts.Trim())
             course.CreditHours = Convert.ToInt32(txtDuration.Texts.Trim())
             course.Description = txtDes.Texts.Trim()
-            course.UpdateCourse()
+            course.UpdateSubject()
             Display()
         End If
     End Sub

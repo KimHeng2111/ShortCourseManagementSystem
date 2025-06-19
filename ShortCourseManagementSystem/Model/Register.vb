@@ -87,8 +87,8 @@ Public Class Register
     End Sub
 
     'Insert DATA TO combobox
-    Public Function GetCourseList() As Dictionary(Of String, Integer)
-        Dim CourseList As New Dictionary(Of String, Integer)
+    Public Function GetSubjectList() As Dictionary(Of String, Integer)
+        Dim subjectList As New Dictionary(Of String, Integer)
         Dim query As String = "SELECT DISTINCT tblSubject.Subject, tblSubject.ID
                                 FROM tblSubject INNER JOIN tblCourse ON tblSubject.ID = tblCourse.SubjectID
                                 GROUP BY tblSubject.Subject, tblSubject.ID, tblCourse.StatusID, tblCourse.SubjectID
@@ -97,12 +97,12 @@ Public Class Register
         Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
         Dim reader As OleDbDataReader = cmd.ExecuteReader()
         While reader.Read()
-            CourseList.Add(reader("Subject"), Integer.Parse(reader("ID")))
+            subjectList.Add(reader("Subject"), Integer.Parse(reader("ID")))
         End While
-        CourseList.Add("ជ្រើសរើសវគ្គសិក្សា", -1)
+        subjectList.Add("ជ្រើសរើសវគ្គសិក្សា", -1)
         reader.Close()
         CloseConnection()
-        Return CourseList
+        Return subjectList
     End Function
     Public Function GetTimeList(subjectID As String) As Dictionary(Of String, Integer)
         Dim TimeList As New Dictionary(Of String, Integer)
