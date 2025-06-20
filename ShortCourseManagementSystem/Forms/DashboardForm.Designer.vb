@@ -36,6 +36,7 @@ Partial Class DashboardForm
         Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Dim Title2 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
         Me.dgSubjectList = New System.Windows.Forms.DataGridView()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -78,8 +79,8 @@ Partial Class DashboardForm
         Me.lbTotalCourse = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
-        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Guna2Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.Guna2Panel3.SuspendLayout()
         CType(Me.dgSubjectList, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel2.SuspendLayout()
@@ -91,7 +92,6 @@ Partial Class DashboardForm
         Me.Guna2CustomGradientPanel2.SuspendLayout()
         Me.Guna2CustomGradientPanel3.SuspendLayout()
         Me.Guna2CustomGradientPanel4.SuspendLayout()
-        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Guna2Panel1
@@ -106,13 +106,25 @@ Partial Class DashboardForm
         Me.Guna2Panel1.Size = New System.Drawing.Size(1674, 913)
         Me.Guna2Panel1.TabIndex = 0
         '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.Guna2Panel3)
+        Me.Panel2.Controls.Add(Me.Guna2Panel2)
+        Me.Panel2.Controls.Add(Me.StudentChart)
+        Me.Panel2.Controls.Add(Me.CourseChart)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel2.Location = New System.Drawing.Point(0, 196)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(1674, 717)
+        Me.Panel2.TabIndex = 10
+        '
         'Guna2Panel3
         '
         Me.Guna2Panel3.BackColor = System.Drawing.Color.Transparent
         Me.Guna2Panel3.BorderRadius = 5
         Me.Guna2Panel3.Controls.Add(Me.dgSubjectList)
         Me.Guna2Panel3.Controls.Add(Me.Label2)
-        Me.Guna2Panel3.FillColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(22, Byte), Integer), CType(CType(98, Byte), Integer))
+        Me.Guna2Panel3.FillColor = System.Drawing.Color.White
         Me.Guna2Panel3.Location = New System.Drawing.Point(629, 450)
         Me.Guna2Panel3.Margin = New System.Windows.Forms.Padding(0, 3, 0, 3)
         Me.Guna2Panel3.Name = "Guna2Panel3"
@@ -161,11 +173,11 @@ Partial Class DashboardForm
         '
         'Label2
         '
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.BackColor = System.Drawing.Color.White
         Me.Label2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label2.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.ForeColor = System.Drawing.Color.Black
         Me.Label2.Location = New System.Drawing.Point(5, 5)
         Me.Label2.Name = "Label2"
         Me.Label2.Padding = New System.Windows.Forms.Padding(0, 3, 0, 0)
@@ -180,7 +192,7 @@ Partial Class DashboardForm
         Me.Guna2Panel2.BorderRadius = 5
         Me.Guna2Panel2.Controls.Add(Me.CoomingCouseList)
         Me.Guna2Panel2.Controls.Add(Me.Label1)
-        Me.Guna2Panel2.FillColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(22, Byte), Integer), CType(CType(98, Byte), Integer))
+        Me.Guna2Panel2.FillColor = System.Drawing.Color.White
         Me.Guna2Panel2.Location = New System.Drawing.Point(5, 450)
         Me.Guna2Panel2.Margin = New System.Windows.Forms.Padding(0, 3, 0, 3)
         Me.Guna2Panel2.Name = "Guna2Panel2"
@@ -229,11 +241,11 @@ Partial Class DashboardForm
         '
         'Label1
         '
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.BackColor = System.Drawing.Color.White
         Me.Label1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label1.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.ForeColor = System.Drawing.Color.Black
         Me.Label1.Location = New System.Drawing.Point(5, 5)
         Me.Label1.Name = "Label1"
         Me.Label1.Padding = New System.Windows.Forms.Padding(0, 3, 0, 0)
@@ -969,18 +981,6 @@ Partial Class DashboardForm
         Me.Label21.TabIndex = 4
         Me.Label21.Text = "មុខវិជ្ជាសរុប ៖"
         '
-        'Panel2
-        '
-        Me.Panel2.Controls.Add(Me.Guna2Panel3)
-        Me.Panel2.Controls.Add(Me.Guna2Panel2)
-        Me.Panel2.Controls.Add(Me.StudentChart)
-        Me.Panel2.Controls.Add(Me.CourseChart)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel2.Location = New System.Drawing.Point(0, 196)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1674, 717)
-        Me.Panel2.TabIndex = 10
-        '
         'DashboardForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -992,6 +992,7 @@ Partial Class DashboardForm
         Me.Padding = New System.Windows.Forms.Padding(15)
         Me.Text = "DashboardForm"
         Me.Guna2Panel1.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
         Me.Guna2Panel3.ResumeLayout(False)
         CType(Me.dgSubjectList, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2Panel2.ResumeLayout(False)
@@ -1007,7 +1008,6 @@ Partial Class DashboardForm
         Me.Guna2CustomGradientPanel3.PerformLayout()
         Me.Guna2CustomGradientPanel4.ResumeLayout(False)
         Me.Guna2CustomGradientPanel4.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub

@@ -61,9 +61,9 @@ Public Class RegisterForm
             txtPhone.Focus()
             Return False
         End If
-        If txtpay.Text.Length <= 0 Or Not IsNumeric(txtpay.Text) Then
+        If txtPay.Text.Length <= 0 Or Not IsNumeric(txtPay.Text) Then
             MessageBox.Show("សូមបញ្ចូលចំនួនទឹកប្រាក់ដែលសិស្សបង់", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            txtpay.Focus()
+            txtPay.Focus()
             Return False
         End If
         Return True
@@ -156,7 +156,7 @@ Public Class RegisterForm
         register.discount = Price * Dis / 100.0
         MsgBox(register.discount.ToString())
         Dim amount As Decimal = Decimal.Parse(lbAmount.Text)
-        Dim unpaid As Decimal = amount - Convert.ToDecimal(txtpay.Text)
+        Dim unpaid As Decimal = amount - Convert.ToDecimal(txtPay.Text)
         register.payment.NewPayment(amount, unpaid) 'Create Payment
         'Step 3 : Create Register
         register.RegisterStudent()
@@ -251,7 +251,7 @@ Public Class RegisterForm
         txtKhName.Clear()
         txtEngName.Clear()
         txtDis.Clear()
-        txtpay.Clear()
+        txtPay.Clear()
         txtPhone.Clear()
         lbAmount.Text = "$"
         lbPrice.Text = "$"
