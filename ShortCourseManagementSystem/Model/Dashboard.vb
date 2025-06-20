@@ -64,4 +64,26 @@ Public Class Dashboard
         Dim dt = ExecuteQuery(query)
         Return dt
     End Function
+    Public Function CourseCoomingSoon() As DataTable
+        Dim query As String = "SELECT DCount( '*','tblCourse','StartDate >= #' & Format([StartDate],'yyyy-mm-dd hh:nn : ss') & '#') AS [No], tblSubject.Subject, tblCourse.StartDate, tblCourse.CurrentEnrollment
+                            From tblSubject INNER Join tblCourse On tblSubject.ID = tblCourse.SubjectID
+                            Where (((tblCourse.StartDate) > Now()));"
+        Dim dt = ExecuteQuery(query)
+        Return dt
+    End Function
+    Public Function GetSubjectList() As DataTable
+        Dim query As String = " SELECT 
+                                    tblSubject.ID, 
+                                    tblSubject.Subject,
+                                    COUNT(tblCourse.ID) AS TotalCourse,
+                                    SUM(IIf(tblCourse.StatusID = 3, 1, 0)) AS CompleteCourse,
+                                    SUM(tblCourse.CurrentEnrollment) AS SumOfCurrentEnrollment
+                                FROM 
+                                    tblSubject 
+                                    INNER JOIN tblCourse ON tblSubject.ID = tblCourse.SubjectID
+                                GROUP BY 
+                                    tblSubject.ID, tblSubject.Subject;"
+        Dim dt = ExecuteQuery(query)
+        Return dt
+    End Function
 End Class

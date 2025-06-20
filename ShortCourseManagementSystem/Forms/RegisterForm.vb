@@ -180,11 +180,14 @@ Public Class RegisterForm
         '    Return
         'End If
         If cbTime.SelectedValue = -1 Then
+            MsgBox("Hell")
             Return
         End If
         register.manageClass.GetCourseByID(cbTime.SelectedValue.ToString())
         lbRoom.Text = register.manageClass.room.room
         lbPrice.Text = register.manageClass.subject.basePrice.ToString("F2")
+        MsgBox(register.manageClass.subject.Subject)
+        MsgBox(register.manageClass.subject.basePrice)
         lbAmount.Text = register.manageClass.subject.basePrice.ToString("F2")
         txtDis.Text = "0"
     End Sub

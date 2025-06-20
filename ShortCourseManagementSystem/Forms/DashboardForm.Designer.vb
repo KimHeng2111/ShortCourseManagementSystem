@@ -22,15 +22,26 @@ Partial Class DashboardForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
         Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
         Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Dim Title1 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
         Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
         Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
         Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Dim Title2 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.dgSubjectList = New System.Windows.Forms.DataGridView()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.CoomingCouseList = New System.Windows.Forms.DataGridView()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.StudentChart = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.CourseChart = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
@@ -67,7 +78,12 @@ Partial Class DashboardForm
         Me.lbTotalCourse = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Guna2Panel1.SuspendLayout()
+        Me.Guna2Panel3.SuspendLayout()
+        CType(Me.dgSubjectList, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Guna2Panel2.SuspendLayout()
+        CType(Me.CoomingCouseList, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StudentChart, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CourseChart, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.FlowLayoutPanel2.SuspendLayout()
@@ -75,13 +91,13 @@ Partial Class DashboardForm
         Me.Guna2CustomGradientPanel2.SuspendLayout()
         Me.Guna2CustomGradientPanel3.SuspendLayout()
         Me.Guna2CustomGradientPanel4.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Guna2Panel1
         '
-        Me.Guna2Panel1.BackColor = System.Drawing.Color.Gainsboro
-        Me.Guna2Panel1.Controls.Add(Me.StudentChart)
-        Me.Guna2Panel1.Controls.Add(Me.CourseChart)
+        Me.Guna2Panel1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Guna2Panel1.Controls.Add(Me.Panel2)
         Me.Guna2Panel1.Controls.Add(Me.FlowLayoutPanel2)
         Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2Panel1.Location = New System.Drawing.Point(15, 15)
@@ -90,17 +106,151 @@ Partial Class DashboardForm
         Me.Guna2Panel1.Size = New System.Drawing.Size(1674, 913)
         Me.Guna2Panel1.TabIndex = 0
         '
+        'Guna2Panel3
+        '
+        Me.Guna2Panel3.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Panel3.BorderRadius = 5
+        Me.Guna2Panel3.Controls.Add(Me.dgSubjectList)
+        Me.Guna2Panel3.Controls.Add(Me.Label2)
+        Me.Guna2Panel3.FillColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(22, Byte), Integer), CType(CType(98, Byte), Integer))
+        Me.Guna2Panel3.Location = New System.Drawing.Point(629, 450)
+        Me.Guna2Panel3.Margin = New System.Windows.Forms.Padding(0, 3, 0, 3)
+        Me.Guna2Panel3.Name = "Guna2Panel3"
+        Me.Guna2Panel3.Padding = New System.Windows.Forms.Padding(5)
+        Me.Guna2Panel3.ShadowDecoration.Parent = Me.Guna2Panel3
+        Me.Guna2Panel3.Size = New System.Drawing.Size(596, 255)
+        Me.Guna2Panel3.TabIndex = 9
+        '
+        'dgSubjectList
+        '
+        Me.dgSubjectList.AllowUserToAddRows = False
+        Me.dgSubjectList.AllowUserToDeleteRows = False
+        Me.dgSubjectList.AllowUserToResizeColumns = False
+        Me.dgSubjectList.AllowUserToResizeRows = False
+        Me.dgSubjectList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgSubjectList.BackgroundColor = System.Drawing.Color.WhiteSmoke
+        Me.dgSubjectList.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dgSubjectList.CausesValidation = False
+        Me.dgSubjectList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.dgSubjectList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(186, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(251, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(22, Byte), Integer), CType(CType(98, Byte), Integer))
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(186, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(251, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(22, Byte), Integer), CType(CType(98, Byte), Integer))
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgSubjectList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgSubjectList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgSubjectList.DefaultCellStyle = DataGridViewCellStyle2
+        Me.dgSubjectList.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgSubjectList.Location = New System.Drawing.Point(5, 48)
+        Me.dgSubjectList.Name = "dgSubjectList"
+        Me.dgSubjectList.ReadOnly = True
+        Me.dgSubjectList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.dgSubjectList.RowHeadersVisible = False
+        Me.dgSubjectList.Size = New System.Drawing.Size(586, 202)
+        Me.dgSubjectList.TabIndex = 4
+        '
+        'Label2
+        '
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label2.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(5, 5)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Padding = New System.Windows.Forms.Padding(0, 3, 0, 0)
+        Me.Label2.Size = New System.Drawing.Size(586, 43)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "បញ្ជីមុខវិជ្ជា"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Guna2Panel2
+        '
+        Me.Guna2Panel2.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Panel2.BorderRadius = 5
+        Me.Guna2Panel2.Controls.Add(Me.CoomingCouseList)
+        Me.Guna2Panel2.Controls.Add(Me.Label1)
+        Me.Guna2Panel2.FillColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(22, Byte), Integer), CType(CType(98, Byte), Integer))
+        Me.Guna2Panel2.Location = New System.Drawing.Point(5, 450)
+        Me.Guna2Panel2.Margin = New System.Windows.Forms.Padding(0, 3, 0, 3)
+        Me.Guna2Panel2.Name = "Guna2Panel2"
+        Me.Guna2Panel2.Padding = New System.Windows.Forms.Padding(5)
+        Me.Guna2Panel2.ShadowDecoration.Parent = Me.Guna2Panel2
+        Me.Guna2Panel2.Size = New System.Drawing.Size(618, 255)
+        Me.Guna2Panel2.TabIndex = 8
+        '
+        'CoomingCouseList
+        '
+        Me.CoomingCouseList.AllowUserToAddRows = False
+        Me.CoomingCouseList.AllowUserToDeleteRows = False
+        Me.CoomingCouseList.AllowUserToResizeColumns = False
+        Me.CoomingCouseList.AllowUserToResizeRows = False
+        Me.CoomingCouseList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.CoomingCouseList.BackgroundColor = System.Drawing.Color.WhiteSmoke
+        Me.CoomingCouseList.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.CoomingCouseList.CausesValidation = False
+        Me.CoomingCouseList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.CoomingCouseList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(186, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(251, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(22, Byte), Integer), CType(CType(98, Byte), Integer))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(186, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(251, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(22, Byte), Integer), CType(CType(98, Byte), Integer))
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.CoomingCouseList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        Me.CoomingCouseList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.Desktop
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.CoomingCouseList.DefaultCellStyle = DataGridViewCellStyle4
+        Me.CoomingCouseList.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.CoomingCouseList.Location = New System.Drawing.Point(5, 48)
+        Me.CoomingCouseList.Name = "CoomingCouseList"
+        Me.CoomingCouseList.ReadOnly = True
+        Me.CoomingCouseList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.CoomingCouseList.RowHeadersVisible = False
+        Me.CoomingCouseList.Size = New System.Drawing.Size(608, 202)
+        Me.CoomingCouseList.TabIndex = 4
+        '
+        'Label1
+        '
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label1.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(5, 5)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Padding = New System.Windows.Forms.Padding(0, 3, 0, 0)
+        Me.Label1.Size = New System.Drawing.Size(608, 43)
+        Me.Label1.TabIndex = 3
+        Me.Label1.Text = "វគ្គសិក្សាកំពុងបើកអោយចុះឈ្មោះ"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
         'StudentChart
         '
-        Me.StudentChart.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.StudentChart.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.Center
         Me.StudentChart.BorderlineColor = System.Drawing.Color.Black
         Me.StudentChart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid
         Me.StudentChart.BorderlineWidth = 0
         ChartArea1.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Lines
         ChartArea1.AxisX.InterlacedColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        ChartArea1.AxisX.IsMarginVisible = False
         ChartArea1.AxisX.LabelAutoFitStyle = CType((((((System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.IncreaseFont Or System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.DecreaseFont) _
             Or System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.StaggeredLabels) _
             Or System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.LabelsAngleStep30) _
@@ -112,16 +262,27 @@ Partial Class DashboardForm
         ChartArea1.AxisX.MajorTickMark.Interval = 0R
         ChartArea1.AxisX.MajorTickMark.LineWidth = 0
         ChartArea1.AxisX.MajorTickMark.TickMarkStyle = System.Windows.Forms.DataVisualization.Charting.TickMarkStyle.AcrossAxis
+        ChartArea1.AxisX.MaximumAutoSize = 50.0!
         ChartArea1.AxisX.TitleFont = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         ChartArea1.AxisY.MajorTickMark.LineWidth = 0
         ChartArea1.AxisY.TitleFont = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea1.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(254, Byte), Integer))
         ChartArea1.CursorX.IsUserEnabled = True
         ChartArea1.CursorX.LineColor = System.Drawing.SystemColors.ActiveCaptionText
         ChartArea1.CursorX.LineWidth = 0
         ChartArea1.CursorX.SelectionColor = System.Drawing.Color.DimGray
         ChartArea1.CursorY.LineColor = System.Drawing.Color.MistyRose
         ChartArea1.CursorY.LineWidth = 0
+        ChartArea1.InnerPlotPosition.Auto = False
+        ChartArea1.InnerPlotPosition.Height = 90.41054!
+        ChartArea1.InnerPlotPosition.Width = 93.29175!
+        ChartArea1.InnerPlotPosition.X = 5.70825!
+        ChartArea1.InnerPlotPosition.Y = 2.58178!
         ChartArea1.Name = "ChartArea1"
+        ChartArea1.Position.Auto = False
+        ChartArea1.Position.Height = 81.33923!
+        ChartArea1.Position.Width = 100.0!
+        ChartArea1.Position.Y = 15.66076!
         Me.StudentChart.ChartAreas.Add(ChartArea1)
         Legend1.BackColor = System.Drawing.Color.Transparent
         Legend1.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet
@@ -130,6 +291,7 @@ Partial Class DashboardForm
         Legend1.Font = New System.Drawing.Font("Khmer OS Siemreap", 10.0!)
         Legend1.InterlacedRows = True
         Legend1.IsTextAutoFit = False
+        Legend1.ItemColumnSpacing = 5
         Legend1.LegendItemOrder = System.Windows.Forms.DataVisualization.Charting.LegendItemOrder.SameAsSeriesOrder
         Legend1.LegendStyle = System.Windows.Forms.DataVisualization.Charting.LegendStyle.Column
         Legend1.Name = "Legend1"
@@ -138,9 +300,10 @@ Partial Class DashboardForm
         Legend1.TitleFont = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Legend1.TitleForeColor = System.Drawing.Color.BlanchedAlmond
         Me.StudentChart.Legends.Add(Legend1)
-        Me.StudentChart.Location = New System.Drawing.Point(0, 212)
+        Me.StudentChart.Location = New System.Drawing.Point(5, 13)
         Me.StudentChart.Name = "StudentChart"
         Me.StudentChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None
+        Me.StudentChart.PaletteCustomColors = New System.Drawing.Color() {System.Drawing.Color.Crimson, System.Drawing.Color.RoyalBlue, System.Drawing.Color.LimeGreen, System.Drawing.Color.Goldenrod, System.Drawing.Color.DeepSkyBlue, System.Drawing.Color.MediumOrchid, System.Drawing.Color.Tomato, System.Drawing.Color.SlateGray}
         Series1.BackImageTransparentColor = System.Drawing.Color.White
         Series1.BackSecondaryColor = System.Drawing.Color.FromArgb(CType(CType(6, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(148, Byte), Integer))
         Series1.ChartArea = "ChartArea1"
@@ -152,7 +315,7 @@ Partial Class DashboardForm
         Series1.IsValueShownAsLabel = True
         Series1.IsVisibleInLegend = False
         Series1.Label = "#VAL{0""នាក់""}"
-        Series1.LabelAngle = 2
+        Series1.LabelAngle = 1
         Series1.LabelBackColor = System.Drawing.Color.Transparent
         Series1.LabelBorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet
         Series1.LabelBorderWidth = 0
@@ -167,24 +330,33 @@ Partial Class DashboardForm
         Series1.YValueMembers = "10"
         Series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32
         Me.StudentChart.Series.Add(Series1)
-        Me.StudentChart.Size = New System.Drawing.Size(1055, 687)
+        Me.StudentChart.Size = New System.Drawing.Size(1213, 428)
         Me.StudentChart.TabIndex = 6
         Me.StudentChart.Text = "ស្ថិតិសិស្ស"
         Title1.Alignment = System.Drawing.ContentAlignment.TopCenter
-        Title1.Font = New System.Drawing.Font("Khmer OS Moul", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Title1.Font = New System.Drawing.Font("Khmer OS Moul", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Title1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(22, Byte), Integer), CType(CType(98, Byte), Integer))
         Title1.Name = "Title1"
-        Title1.Text = "ចំនួនសិស្សក្នុងមុខវិជ្ជានិមួយៗ"
+        Title1.Text = "ទិន្ន័យសិស្សក្នុងមុខវិជ្ជានីមួយៗ"
         Me.StudentChart.Titles.Add(Title1)
         '
         'CourseChart
         '
-        Me.CourseChart.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.CourseChart.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.Center
+        Me.CourseChart.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.CourseChart.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.CourseChart.BackSecondaryColor = System.Drawing.Color.Transparent
         Me.CourseChart.BorderlineColor = System.Drawing.Color.Black
         Me.CourseChart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid
         Me.CourseChart.BorderlineWidth = 0
+        ChartArea2.AlignmentOrientation = CType((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Vertical Or System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Horizontal), System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations)
+        ChartArea2.Area3DStyle.Enable3D = True
+        ChartArea2.Area3DStyle.Inclination = 10
+        ChartArea2.Area3DStyle.IsRightAngleAxes = False
+        ChartArea2.Area3DStyle.Perspective = 10
+        ChartArea2.Area3DStyle.PointDepth = 50
+        ChartArea2.Area3DStyle.PointGapDepth = 200
+        ChartArea2.Area3DStyle.Rotation = 0
+        ChartArea2.Area3DStyle.WallWidth = 10
         ChartArea2.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Lines
         ChartArea2.AxisX.InterlacedColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
         ChartArea2.AxisX.LabelAutoFitStyle = CType((((((System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.IncreaseFont Or System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.DecreaseFont) _
@@ -194,58 +366,87 @@ Partial Class DashboardForm
             Or System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.WordWrap), System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles)
         ChartArea2.AxisX.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet
         ChartArea2.AxisX.LineWidth = 0
+        ChartArea2.AxisX.LogarithmBase = 5.0R
         ChartArea2.AxisX.MajorGrid.LineWidth = 0
         ChartArea2.AxisX.MajorTickMark.Interval = 0R
         ChartArea2.AxisX.MajorTickMark.LineWidth = 0
         ChartArea2.AxisX.MajorTickMark.TickMarkStyle = System.Windows.Forms.DataVisualization.Charting.TickMarkStyle.AcrossAxis
+        ChartArea2.AxisX.TitleAlignment = System.Drawing.StringAlignment.Near
         ChartArea2.AxisX.TitleFont = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea2.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Triangle
+        ChartArea2.AxisY.MajorGrid.LineWidth = 0
         ChartArea2.AxisY.MajorTickMark.LineWidth = 0
         ChartArea2.AxisY.TitleFont = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea2.BackColor = System.Drawing.Color.White
         ChartArea2.CursorX.IsUserEnabled = True
         ChartArea2.CursorX.LineColor = System.Drawing.SystemColors.ActiveCaptionText
         ChartArea2.CursorX.LineWidth = 0
         ChartArea2.CursorX.SelectionColor = System.Drawing.Color.DimGray
         ChartArea2.CursorY.LineColor = System.Drawing.Color.MistyRose
         ChartArea2.CursorY.LineWidth = 0
+        ChartArea2.InnerPlotPosition.Auto = False
+        ChartArea2.InnerPlotPosition.Height = 70.0!
+        ChartArea2.InnerPlotPosition.Width = 100.0!
+        ChartArea2.InnerPlotPosition.Y = 5.0!
         ChartArea2.Name = "ChartArea1"
+        ChartArea2.Position.Auto = False
+        ChartArea2.Position.Height = 55.5!
+        ChartArea2.Position.Width = 100.0!
+        ChartArea2.Position.Y = 6.5!
+        ChartArea3.AlignmentOrientation = CType((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Vertical Or System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Horizontal), System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations)
+        ChartArea3.BackColor = System.Drawing.Color.White
+        ChartArea3.Name = "ChartArea2"
+        ChartArea3.Position.Auto = False
+        ChartArea3.Position.Height = 37.0!
+        ChartArea3.Position.Width = 100.0!
+        ChartArea3.Position.Y = 63.0!
         Me.CourseChart.ChartAreas.Add(ChartArea2)
+        Me.CourseChart.ChartAreas.Add(ChartArea3)
+        Legend2.AutoFitMinFontSize = 10
         Legend2.BackColor = System.Drawing.Color.Transparent
+        Legend2.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Bottom
+        Legend2.BorderColor = System.Drawing.Color.Transparent
         Legend2.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet
         Legend2.BorderWidth = 0
-        Legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom
-        Legend2.Font = New System.Drawing.Font("Khmer OS Siemreap", 10.0!)
+        Legend2.DockedToChartArea = "ChartArea2"
+        Legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top
+        Legend2.Font = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Legend2.HeaderSeparator = System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle.Line
         Legend2.InterlacedRows = True
+        Legend2.IsEquallySpacedItems = True
         Legend2.IsTextAutoFit = False
         Legend2.ItemColumnSpacing = 20
         Legend2.LegendItemOrder = System.Windows.Forms.DataVisualization.Charting.LegendItemOrder.SameAsSeriesOrder
         Legend2.MaximumAutoSize = 100.0!
         Legend2.Name = "Legend1"
         Legend2.ShadowColor = System.Drawing.Color.Transparent
-        Legend2.TableStyle = System.Windows.Forms.DataVisualization.Charting.LegendTableStyle.Wide
+        Legend2.TableStyle = System.Windows.Forms.DataVisualization.Charting.LegendTableStyle.Tall
+        Legend2.TextWrapThreshold = 0
         Legend2.TitleAlignment = System.Drawing.StringAlignment.Near
         Legend2.TitleBackColor = System.Drawing.Color.White
         Legend2.TitleFont = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Legend2.TitleForeColor = System.Drawing.Color.BlanchedAlmond
         Me.CourseChart.Legends.Add(Legend2)
-        Me.CourseChart.Location = New System.Drawing.Point(1085, 212)
+        Me.CourseChart.Location = New System.Drawing.Point(1236, 13)
         Me.CourseChart.Name = "CourseChart"
         Me.CourseChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent
         Series2.BackImageTransparentColor = System.Drawing.Color.White
         Series2.BackSecondaryColor = System.Drawing.Color.FromArgb(CType(CType(6, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(148, Byte), Integer))
         Series2.BorderWidth = 0
         Series2.ChartArea = "ChartArea1"
-        Series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
+        Series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut
         Series2.Color = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Series2.CustomProperties = "PieLineColor=64\, 64\, 64"
         Series2.EmptyPointStyle.AxisLabel = """"""
         Series2.EmptyPointStyle.Color = System.Drawing.Color.LightGray
         Series2.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Series2.IsValueShownAsLabel = True
-        Series2.Label = "#VAL{0""វគ្គ""}"
+        Series2.Label = "#VAL{0}"
         Series2.LabelBackColor = System.Drawing.Color.Transparent
         Series2.LabelBorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet
         Series2.LabelBorderWidth = 0
         Series2.Legend = "Legend1"
-        Series2.LegendText = "#VALX #VAL{00""វគ្គ""}"
+        Series2.LegendText = "#VALX ចំនួន៖ #VALវគ្គ"
         Series2.MarkerBorderWidth = 0
         Series2.MarkerColor = System.Drawing.Color.Black
         Series2.Name = "Subject"
@@ -256,18 +457,26 @@ Partial Class DashboardForm
         Series2.YValueMembers = "10"
         Series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32
         Me.CourseChart.Series.Add(Series2)
-        Me.CourseChart.Size = New System.Drawing.Size(589, 687)
+        Me.CourseChart.Size = New System.Drawing.Size(436, 691)
         Me.CourseChart.TabIndex = 7
         Me.CourseChart.Text = "ស្ថិតិសិស្ស"
         Title2.Alignment = System.Drawing.ContentAlignment.TopCenter
-        Title2.Font = New System.Drawing.Font("Khmer OS Moul", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Title2.BackColor = System.Drawing.Color.White
+        Title2.DockedToChartArea = "ChartArea1"
+        Title2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Left
+        Title2.DockingOffset = 3
+        Title2.Font = New System.Drawing.Font("Khmer OS Moul", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Title2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(22, Byte), Integer), CType(CType(98, Byte), Integer))
         Title2.Name = "Title1"
+        Title2.Position.Auto = False
+        Title2.Position.Height = 6.691873!
+        Title2.Position.Width = 100.0!
         Title2.Text = "ទិន្ន័យវគ្គសិក្សា"
         Me.CourseChart.Titles.Add(Title2)
         '
         'FlowLayoutPanel2
         '
-        Me.FlowLayoutPanel2.BackColor = System.Drawing.Color.White
+        Me.FlowLayoutPanel2.BackColor = System.Drawing.Color.Transparent
         Me.FlowLayoutPanel2.Controls.Add(Me.Guna2CustomGradientPanel1)
         Me.FlowLayoutPanel2.Controls.Add(Me.Guna2CustomGradientPanel2)
         Me.FlowLayoutPanel2.Controls.Add(Me.Guna2CustomGradientPanel3)
@@ -277,7 +486,7 @@ Partial Class DashboardForm
         Me.FlowLayoutPanel2.Margin = New System.Windows.Forms.Padding(3, 0, 3, 30)
         Me.FlowLayoutPanel2.Name = "FlowLayoutPanel2"
         Me.FlowLayoutPanel2.Padding = New System.Windows.Forms.Padding(0, 15, 0, 0)
-        Me.FlowLayoutPanel2.Size = New System.Drawing.Size(1674, 201)
+        Me.FlowLayoutPanel2.Size = New System.Drawing.Size(1674, 196)
         Me.FlowLayoutPanel2.TabIndex = 5
         '
         'Guna2CustomGradientPanel1
@@ -317,12 +526,12 @@ Partial Class DashboardForm
         Me.Label24.AutoSize = True
         Me.Label24.BackColor = System.Drawing.Color.Transparent
         Me.Label24.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label24.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label24.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label24.ForeColor = System.Drawing.Color.White
         Me.Label24.Location = New System.Drawing.Point(280, 108)
         Me.Label24.Margin = New System.Windows.Forms.Padding(3, 20, 3, 0)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(40, 29)
+        Me.Label24.Size = New System.Drawing.Size(49, 34)
         Me.Label24.TabIndex = 8
         Me.Label24.Text = "នាក់"
         '
@@ -332,11 +541,11 @@ Partial Class DashboardForm
         Me.Label25.AutoSize = True
         Me.Label25.BackColor = System.Drawing.Color.Transparent
         Me.Label25.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label25.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label25.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label25.ForeColor = System.Drawing.Color.White
         Me.Label25.Location = New System.Drawing.Point(280, 60)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(40, 29)
+        Me.Label25.Size = New System.Drawing.Size(49, 34)
         Me.Label25.TabIndex = 7
         Me.Label25.Text = "នាក់"
         '
@@ -346,11 +555,11 @@ Partial Class DashboardForm
         Me.Label13.AutoSize = True
         Me.Label13.BackColor = System.Drawing.Color.Transparent
         Me.Label13.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label13.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.White
         Me.Label13.Location = New System.Drawing.Point(10, 108)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(129, 29)
+        Me.Label13.Size = New System.Drawing.Size(163, 34)
         Me.Label13.TabIndex = 6
         Me.Label13.Text = "សិស្សបានបញ្ចប់ ៖"
         '
@@ -359,9 +568,9 @@ Partial Class DashboardForm
         Me.lbCompleteStudent.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lbCompleteStudent.BackColor = System.Drawing.Color.Transparent
         Me.lbCompleteStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.lbCompleteStudent.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbCompleteStudent.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbCompleteStudent.ForeColor = System.Drawing.Color.White
-        Me.lbCompleteStudent.Location = New System.Drawing.Point(159, 104)
+        Me.lbCompleteStudent.Location = New System.Drawing.Point(159, 107)
         Me.lbCompleteStudent.Name = "lbCompleteStudent"
         Me.lbCompleteStudent.Padding = New System.Windows.Forms.Padding(0, 0, 3, 0)
         Me.lbCompleteStudent.Size = New System.Drawing.Size(125, 36)
@@ -375,11 +584,11 @@ Partial Class DashboardForm
         Me.Label12.AutoSize = True
         Me.Label12.BackColor = System.Drawing.Color.Transparent
         Me.Label12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label12.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.White
         Me.Label12.Location = New System.Drawing.Point(10, 60)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(96, 29)
+        Me.Label12.Size = New System.Drawing.Size(122, 34)
         Me.Label12.TabIndex = 4
         Me.Label12.Text = "សិស្សសរុប ៖"
         '
@@ -388,9 +597,9 @@ Partial Class DashboardForm
         Me.lbTotalStudnet.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lbTotalStudnet.BackColor = System.Drawing.Color.Transparent
         Me.lbTotalStudnet.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.lbTotalStudnet.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbTotalStudnet.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbTotalStudnet.ForeColor = System.Drawing.Color.White
-        Me.lbTotalStudnet.Location = New System.Drawing.Point(159, 56)
+        Me.lbTotalStudnet.Location = New System.Drawing.Point(159, 59)
         Me.lbTotalStudnet.Name = "lbTotalStudnet"
         Me.lbTotalStudnet.Padding = New System.Windows.Forms.Padding(0, 0, 3, 0)
         Me.lbTotalStudnet.Size = New System.Drawing.Size(125, 36)
@@ -403,7 +612,7 @@ Partial Class DashboardForm
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label4.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Khmer OS Siemreap", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
         Me.Label4.Location = New System.Drawing.Point(0, 0)
         Me.Label4.Name = "Label4"
@@ -439,7 +648,7 @@ Partial Class DashboardForm
         '
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label7.Font = New System.Drawing.Font("Khmer OS Koulen", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Font = New System.Drawing.Font("Khmer OS Siemreap", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.White
         Me.Label7.Location = New System.Drawing.Point(0, 0)
         Me.Label7.Name = "Label7"
@@ -454,11 +663,11 @@ Partial Class DashboardForm
         Me.Label26.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label26.AutoSize = True
         Me.Label26.BackColor = System.Drawing.Color.Transparent
-        Me.Label26.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label26.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label26.ForeColor = System.Drawing.Color.White
         Me.Label26.Location = New System.Drawing.Point(271, 108)
         Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(66, 29)
+        Me.Label26.Size = New System.Drawing.Size(83, 34)
         Me.Label26.TabIndex = 8
         Me.Label26.Text = "វគ្គសិក្សា"
         '
@@ -467,11 +676,11 @@ Partial Class DashboardForm
         Me.Label27.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label27.AutoSize = True
         Me.Label27.BackColor = System.Drawing.Color.Transparent
-        Me.Label27.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label27.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label27.ForeColor = System.Drawing.Color.White
         Me.Label27.Location = New System.Drawing.Point(271, 60)
         Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(66, 29)
+        Me.Label27.Size = New System.Drawing.Size(83, 34)
         Me.Label27.TabIndex = 7
         Me.Label27.Text = "វគ្គសិក្សា"
         '
@@ -479,9 +688,9 @@ Partial Class DashboardForm
         '
         Me.lbCompleteClass.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lbCompleteClass.BackColor = System.Drawing.Color.Transparent
-        Me.lbCompleteClass.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbCompleteClass.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbCompleteClass.ForeColor = System.Drawing.Color.White
-        Me.lbCompleteClass.Location = New System.Drawing.Point(177, 108)
+        Me.lbCompleteClass.Location = New System.Drawing.Point(177, 107)
         Me.lbCompleteClass.Name = "lbCompleteClass"
         Me.lbCompleteClass.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
         Me.lbCompleteClass.Size = New System.Drawing.Size(96, 36)
@@ -494,11 +703,11 @@ Partial Class DashboardForm
         Me.Label16.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label16.AutoSize = True
         Me.Label16.BackColor = System.Drawing.Color.Transparent
-        Me.Label16.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label16.ForeColor = System.Drawing.Color.White
         Me.Label16.Location = New System.Drawing.Point(3, 108)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(145, 29)
+        Me.Label16.Size = New System.Drawing.Size(184, 34)
         Me.Label16.TabIndex = 5
         Me.Label16.Text = "វគ្គសិក្សាបានបញ្ចប់ ៖"
         '
@@ -507,11 +716,11 @@ Partial Class DashboardForm
         Me.Label15.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label15.AutoSize = True
         Me.Label15.BackColor = System.Drawing.Color.Transparent
-        Me.Label15.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.ForeColor = System.Drawing.Color.White
         Me.Label15.Location = New System.Drawing.Point(3, 60)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(112, 29)
+        Me.Label15.Size = New System.Drawing.Size(143, 34)
         Me.Label15.TabIndex = 4
         Me.Label15.Text = "វគ្គសិក្សាសរុប ៖"
         '
@@ -519,9 +728,9 @@ Partial Class DashboardForm
         '
         Me.lbTotalClass.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lbTotalClass.BackColor = System.Drawing.Color.Transparent
-        Me.lbTotalClass.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbTotalClass.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbTotalClass.ForeColor = System.Drawing.Color.White
-        Me.lbTotalClass.Location = New System.Drawing.Point(171, 60)
+        Me.lbTotalClass.Location = New System.Drawing.Point(171, 59)
         Me.lbTotalClass.Name = "lbTotalClass"
         Me.lbTotalClass.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
         Me.lbTotalClass.Size = New System.Drawing.Size(102, 36)
@@ -555,7 +764,7 @@ Partial Class DashboardForm
         '
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label9.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Font = New System.Drawing.Font("Khmer OS Siemreap", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.White
         Me.Label9.Location = New System.Drawing.Point(0, 0)
         Me.Label9.Name = "Label9"
@@ -570,11 +779,11 @@ Partial Class DashboardForm
         Me.Label8.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.White
         Me.Label8.Location = New System.Drawing.Point(300, 108)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(40, 29)
+        Me.Label8.Size = New System.Drawing.Size(49, 34)
         Me.Label8.TabIndex = 12
         Me.Label8.Text = "នាក់"
         '
@@ -583,11 +792,11 @@ Partial Class DashboardForm
         Me.Label20.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label20.AutoSize = True
         Me.Label20.BackColor = System.Drawing.Color.Transparent
-        Me.Label20.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label20.ForeColor = System.Drawing.Color.White
         Me.Label20.Location = New System.Drawing.Point(300, 60)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(40, 29)
+        Me.Label20.Size = New System.Drawing.Size(49, 34)
         Me.Label20.TabIndex = 11
         Me.Label20.Text = "នាក់"
         '
@@ -595,9 +804,9 @@ Partial Class DashboardForm
         '
         Me.lbActionTeacher.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lbActionTeacher.BackColor = System.Drawing.Color.Transparent
-        Me.lbActionTeacher.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbActionTeacher.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbActionTeacher.ForeColor = System.Drawing.Color.White
-        Me.lbActionTeacher.Location = New System.Drawing.Point(159, 108)
+        Me.lbActionTeacher.Location = New System.Drawing.Point(159, 107)
         Me.lbActionTeacher.Name = "lbActionTeacher"
         Me.lbActionTeacher.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
         Me.lbActionTeacher.Size = New System.Drawing.Size(128, 36)
@@ -609,9 +818,9 @@ Partial Class DashboardForm
         '
         Me.lbTotalTeacher.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lbTotalTeacher.BackColor = System.Drawing.Color.Transparent
-        Me.lbTotalTeacher.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbTotalTeacher.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbTotalTeacher.ForeColor = System.Drawing.Color.White
-        Me.lbTotalTeacher.Location = New System.Drawing.Point(153, 60)
+        Me.lbTotalTeacher.Location = New System.Drawing.Point(153, 59)
         Me.lbTotalTeacher.Name = "lbTotalTeacher"
         Me.lbTotalTeacher.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
         Me.lbTotalTeacher.Size = New System.Drawing.Size(134, 36)
@@ -624,11 +833,11 @@ Partial Class DashboardForm
         Me.Label19.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label19.AutoSize = True
         Me.Label19.BackColor = System.Drawing.Color.Transparent
-        Me.Label19.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label19.ForeColor = System.Drawing.Color.White
         Me.Label19.Location = New System.Drawing.Point(3, 108)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(129, 29)
+        Me.Label19.Size = New System.Drawing.Size(166, 34)
         Me.Label19.TabIndex = 6
         Me.Label19.Text = "គ្រូបង្រៀនសកម្ម ៖"
         '
@@ -637,11 +846,11 @@ Partial Class DashboardForm
         Me.Label18.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label18.AutoSize = True
         Me.Label18.BackColor = System.Drawing.Color.Transparent
-        Me.Label18.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label18.ForeColor = System.Drawing.Color.White
         Me.Label18.Location = New System.Drawing.Point(3, 60)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(123, 29)
+        Me.Label18.Size = New System.Drawing.Size(159, 34)
         Me.Label18.TabIndex = 4
         Me.Label18.Text = "គ្រូបង្រៀនសរុប ៖"
         '
@@ -670,7 +879,7 @@ Partial Class DashboardForm
         '
         Me.Label11.BackColor = System.Drawing.Color.Transparent
         Me.Label11.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label11.Font = New System.Drawing.Font("Khmer OS Koulen", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Font = New System.Drawing.Font("Khmer OS Siemreap", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.White
         Me.Label11.Location = New System.Drawing.Point(0, 0)
         Me.Label11.Name = "Label11"
@@ -685,11 +894,11 @@ Partial Class DashboardForm
         Me.Label10.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label10.AutoSize = True
         Me.Label10.BackColor = System.Drawing.Color.Transparent
-        Me.Label10.Font = New System.Drawing.Font("Khmer OS Koulen", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.White
         Me.Label10.Location = New System.Drawing.Point(280, 108)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(66, 36)
+        Me.Label10.Size = New System.Drawing.Size(70, 34)
         Me.Label10.TabIndex = 12
         Me.Label10.Text = "មុខវិជ្ជា"
         '
@@ -698,11 +907,11 @@ Partial Class DashboardForm
         Me.Label23.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label23.AutoSize = True
         Me.Label23.BackColor = System.Drawing.Color.Transparent
-        Me.Label23.Font = New System.Drawing.Font("Khmer OS Koulen", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label23.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label23.ForeColor = System.Drawing.Color.White
         Me.Label23.Location = New System.Drawing.Point(280, 60)
         Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(66, 36)
+        Me.Label23.Size = New System.Drawing.Size(70, 34)
         Me.Label23.TabIndex = 11
         Me.Label23.Text = "មុខវិជ្ជា"
         '
@@ -710,9 +919,9 @@ Partial Class DashboardForm
         '
         Me.lbActionCourse.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lbActionCourse.BackColor = System.Drawing.Color.Transparent
-        Me.lbActionCourse.Font = New System.Drawing.Font("Khmer OS Koulen", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbActionCourse.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbActionCourse.ForeColor = System.Drawing.Color.White
-        Me.lbActionCourse.Location = New System.Drawing.Point(155, 108)
+        Me.lbActionCourse.Location = New System.Drawing.Point(155, 107)
         Me.lbActionCourse.Name = "lbActionCourse"
         Me.lbActionCourse.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
         Me.lbActionCourse.Size = New System.Drawing.Size(119, 36)
@@ -724,9 +933,9 @@ Partial Class DashboardForm
         '
         Me.lbTotalCourse.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lbTotalCourse.BackColor = System.Drawing.Color.Transparent
-        Me.lbTotalCourse.Font = New System.Drawing.Font("Khmer OS Koulen", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbTotalCourse.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbTotalCourse.ForeColor = System.Drawing.Color.White
-        Me.lbTotalCourse.Location = New System.Drawing.Point(155, 60)
+        Me.lbTotalCourse.Location = New System.Drawing.Point(155, 59)
         Me.lbTotalCourse.Name = "lbTotalCourse"
         Me.lbTotalCourse.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
         Me.lbTotalCourse.Size = New System.Drawing.Size(119, 36)
@@ -739,11 +948,11 @@ Partial Class DashboardForm
         Me.Label22.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label22.AutoSize = True
         Me.Label22.BackColor = System.Drawing.Color.Transparent
-        Me.Label22.Font = New System.Drawing.Font("Khmer OS Koulen", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label22.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label22.ForeColor = System.Drawing.Color.White
         Me.Label22.Location = New System.Drawing.Point(33, 108)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(126, 36)
+        Me.Label22.Size = New System.Drawing.Size(137, 34)
         Me.Label22.TabIndex = 6
         Me.Label22.Text = "មុខវិជ្ជាសកម្ម ៖"
         '
@@ -752,25 +961,41 @@ Partial Class DashboardForm
         Me.Label21.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label21.AutoSize = True
         Me.Label21.BackColor = System.Drawing.Color.Transparent
-        Me.Label21.Font = New System.Drawing.Font("Khmer OS Koulen", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label21.ForeColor = System.Drawing.Color.White
         Me.Label21.Location = New System.Drawing.Point(33, 60)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(119, 36)
+        Me.Label21.Size = New System.Drawing.Size(130, 34)
         Me.Label21.TabIndex = 4
         Me.Label21.Text = "មុខវិជ្ជាសរុប ៖"
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.Guna2Panel3)
+        Me.Panel2.Controls.Add(Me.Guna2Panel2)
+        Me.Panel2.Controls.Add(Me.StudentChart)
+        Me.Panel2.Controls.Add(Me.CourseChart)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel2.Location = New System.Drawing.Point(0, 196)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(1674, 717)
+        Me.Panel2.TabIndex = 10
         '
         'DashboardForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Gainsboro
+        Me.BackColor = System.Drawing.Color.WhiteSmoke
         Me.ClientSize = New System.Drawing.Size(1704, 943)
         Me.Controls.Add(Me.Guna2Panel1)
         Me.Name = "DashboardForm"
         Me.Padding = New System.Windows.Forms.Padding(15)
         Me.Text = "DashboardForm"
         Me.Guna2Panel1.ResumeLayout(False)
+        Me.Guna2Panel3.ResumeLayout(False)
+        CType(Me.dgSubjectList, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Guna2Panel2.ResumeLayout(False)
+        CType(Me.CoomingCouseList, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StudentChart, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CourseChart, System.ComponentModel.ISupportInitialize).EndInit()
         Me.FlowLayoutPanel2.ResumeLayout(False)
@@ -782,6 +1007,7 @@ Partial Class DashboardForm
         Me.Guna2CustomGradientPanel3.PerformLayout()
         Me.Guna2CustomGradientPanel4.ResumeLayout(False)
         Me.Guna2CustomGradientPanel4.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -823,4 +1049,11 @@ Partial Class DashboardForm
     Friend WithEvents Label22 As Label
     Friend WithEvents Label21 As Label
     Friend WithEvents CourseChart As DataVisualization.Charting.Chart
+    Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Label1 As Label
+    Friend WithEvents CoomingCouseList As DataGridView
+    Friend WithEvents Guna2Panel3 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents dgSubjectList As DataGridView
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Panel2 As Panel
 End Class

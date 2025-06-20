@@ -91,7 +91,7 @@ Partial Class MainForm
         Me.btnReport.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
         Me.btnReport.Size = New System.Drawing.Size(200, 57)
         Me.btnReport.TabIndex = 4
-        Me.btnReport.Tag = "បញ្ជីព័ត៌មានរបាយការណ៍"
+        Me.btnReport.Tag = "បញ្ជីរបាយការណ៍"
         Me.btnReport.Text = "របាយការណ៍"
         Me.btnReport.UseVisualStyleBackColor = False
         '
@@ -141,8 +141,8 @@ Partial Class MainForm
         Me.btnClass.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
         Me.btnClass.Size = New System.Drawing.Size(200, 57)
         Me.btnClass.TabIndex = 5
-        Me.btnClass.Tag = "បញ្ជីព័ត៌ថ្នាក់រៀន"
-        Me.btnClass.Text = "ថ្នាក់រៀន"
+        Me.btnClass.Tag = "បញ្ជីព័ត៌មានវគ្គសិក្សា"
+        Me.btnClass.Text = "វគ្គសិក្សា"
         Me.btnClass.UseVisualStyleBackColor = False
         '
         'btnStudent
@@ -166,7 +166,7 @@ Partial Class MainForm
         Me.btnStudent.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
         Me.btnStudent.Size = New System.Drawing.Size(200, 57)
         Me.btnStudent.TabIndex = 8
-        Me.btnStudent.Tag = "បញ្ជីប័ត៌មានសិស្ស"
+        Me.btnStudent.Tag = "បញ្ជីព័ត៌មានសិស្ស"
         Me.btnStudent.Text = "សិស្ស"
         Me.btnStudent.UseVisualStyleBackColor = False
         '
@@ -239,7 +239,7 @@ Partial Class MainForm
         Me.btnRegister.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
         Me.btnRegister.Size = New System.Drawing.Size(200, 57)
         Me.btnRegister.TabIndex = 3
-        Me.btnRegister.Tag = "បញ្ជីព័ត៌មានចុះឈ្មោះសិស្ស"
+        Me.btnRegister.Tag = "បញ្ជីចុះឈ្មោះសិស្ស"
         Me.btnRegister.Text = "ចុះឈ្មោះ"
         Me.btnRegister.UseVisualStyleBackColor = False
         '
