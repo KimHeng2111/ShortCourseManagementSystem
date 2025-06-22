@@ -168,6 +168,7 @@ Partial Class DashboardForm
         Me.dgSubjectList.ReadOnly = True
         Me.dgSubjectList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.dgSubjectList.RowHeadersVisible = False
+        Me.dgSubjectList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgSubjectList.Size = New System.Drawing.Size(586, 202)
         Me.dgSubjectList.TabIndex = 4
         '
@@ -236,6 +237,7 @@ Partial Class DashboardForm
         Me.CoomingCouseList.ReadOnly = True
         Me.CoomingCouseList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.CoomingCouseList.RowHeadersVisible = False
+        Me.CoomingCouseList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.CoomingCouseList.Size = New System.Drawing.Size(608, 202)
         Me.CoomingCouseList.TabIndex = 4
         '

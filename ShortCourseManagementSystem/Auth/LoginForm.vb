@@ -17,6 +17,7 @@
         If CheckField() Then
             If User.CheckLogin(txtUserName.Text.Trim(), txtPassWord.Text.Trim()) Then
                 Me.DialogResult = 1
+                User.userName = txtUserName.Text.Trim()
                 Me.Close()
             Else
                 MessageBox.Show("ឈ្មោះអ្នកប្រើប្រាស់ ឬ ពាក្យសម្ងាត់មិនត្រឹមត្រូវទេ", "ការព្រមាន", MessageBoxButtons.OK, MessageBoxIcon.Warning)

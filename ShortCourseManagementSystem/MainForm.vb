@@ -18,6 +18,7 @@ Public Class MainForm
         Me.MaximizedBounds = Screen.FromHandle(Me.Handle).WorkingArea
         Dim test As LoginForm = New LoginForm()
         login = test.ShowDialog()
+        lbUsername.Text = User.userName
     End Sub
     Private Sub Activatebutton(senderBtn As Object, customColor As Color)
         If senderBtn IsNot Nothing Then

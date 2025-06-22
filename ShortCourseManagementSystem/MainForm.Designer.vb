@@ -37,7 +37,7 @@ Partial Class MainForm
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lbFormTitle = New System.Windows.Forms.Label()
         Me.panelTitlebar = New System.Windows.Forms.Panel()
-        Me.Label29 = New System.Windows.Forms.Label()
+        Me.lbUsername = New System.Windows.Forms.Label()
         Me.IconCurrentForm = New FontAwesome.Sharp.IconPictureBox()
         Me.panelChildForm = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -320,7 +320,7 @@ Partial Class MainForm
         'panelTitlebar
         '
         Me.panelTitlebar.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.panelTitlebar.Controls.Add(Me.Label29)
+        Me.panelTitlebar.Controls.Add(Me.lbUsername)
         Me.panelTitlebar.Controls.Add(Me.IconCurrentForm)
         Me.panelTitlebar.Controls.Add(Me.lbFormTitle)
         Me.panelTitlebar.Dock = System.Windows.Forms.DockStyle.Top
@@ -329,19 +329,19 @@ Partial Class MainForm
         Me.panelTitlebar.Size = New System.Drawing.Size(1720, 72)
         Me.panelTitlebar.TabIndex = 1
         '
-        'Label29
+        'lbUsername
         '
-        Me.Label29.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label29.Font = New System.Drawing.Font("Kh Bokor", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label29.ForeColor = System.Drawing.Color.White
-        Me.Label29.Location = New System.Drawing.Point(1439, 22)
-        Me.Label29.Name = "Label29"
-        Me.Label29.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
-        Me.Label29.Size = New System.Drawing.Size(278, 29)
-        Me.Label29.TabIndex = 4
-        Me.Label29.Tag = "គណនីប្រើប្រាស់ ៖ "
-        Me.Label29.Text = "គណនីប្រើប្រាស់ ៖ Admin"
-        Me.Label29.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lbUsername.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lbUsername.Font = New System.Drawing.Font("Kh Bokor", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbUsername.ForeColor = System.Drawing.Color.White
+        Me.lbUsername.Location = New System.Drawing.Point(1439, 22)
+        Me.lbUsername.Name = "lbUsername"
+        Me.lbUsername.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
+        Me.lbUsername.Size = New System.Drawing.Size(278, 29)
+        Me.lbUsername.TabIndex = 4
+        Me.lbUsername.Tag = "គណនីប្រើប្រាស់ ៖ "
+        Me.lbUsername.Text = "គណនីប្រើប្រាស់ ៖ Admin"
+        Me.lbUsername.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'IconCurrentForm
         '
@@ -485,5 +485,5 @@ Partial Class MainForm
     Friend WithEvents btnMin As FontAwesome.Sharp.IconButton
     Friend WithEvents btnClose As FontAwesome.Sharp.IconButton
     Friend WithEvents Label1 As Label
-    Friend WithEvents Label29 As Label
+    Friend WithEvents lbUsername As Label
 End Class

@@ -4,7 +4,7 @@ Imports System.Web.UI
 Public Class Register
     Inherits ConnectionDB
     Public registerID As String
-    Public manageClass As Course
+    Public course As Course
     Public student As Student
     Public discount As Decimal
     Public payment As Payment
@@ -22,7 +22,7 @@ Public Class Register
     Public Sub New()
         ' Constructor for Register class
         MyBase.New()
-        manageClass = New Course()
+        course = New Course()
         student = New Student()
         payment = New Payment()
     End Sub
@@ -32,7 +32,7 @@ Public Class Register
         Dim query As String = "INSERT INTO tblRegister (CourseID, StudentID, Discount,PaymentID) VALUES (@CourseID, @StudentID, @Discount,@PaymentID);"
         OpenConnection()
         Dim cmd As New OleDbCommand(query, GetConnection())
-        cmd.Parameters.AddWithValue("@CourseID", manageClass.ID)
+        cmd.Parameters.AddWithValue("@CourseID", course.ID)
         cmd.Parameters.AddWithValue("@StudentID", student.id)
         cmd.Parameters.AddWithValue("@Discount", discount)
         cmd.Parameters.AddWithValue("@PaymentID", payment.paymentID)
@@ -41,7 +41,7 @@ Public Class Register
         Dim id As String = cmd.ExecuteScalar().ToString()
         query = "UPDATE tblCourse SET CurrentEnrollment = CurrentEnrollment + 1 WHERE ID = @id"
         cmd.CommandText = query
-        cmd.Parameters.AddWithValue("@id", manageClass.ID)
+        cmd.Parameters.AddWithValue("@id", course.ID)
         ExecuteNonQuery(cmd)
         GetRegisterByID(id)
     End Sub
@@ -54,7 +54,7 @@ Public Class Register
         Dim reader As OleDbDataReader = cmd.ExecuteReader()
         If reader.Read() Then
             registerID = reader("ID").ToString()
-            manageClass.GetCourseByID(reader("CourseID").ToString())
+            course.GetCourseByID(reader("CourseID").ToString())
             student.GetStudentByID(reader("StudentID").ToString())
 
             discount = Convert.ToByte(reader("Discount"))
@@ -67,7 +67,7 @@ Public Class Register
     Public Sub UpdateRegister(id As String)
         Dim query As String = "UPDATE tblRegister SET CourseID = @CourseID, StudentID = @StudentID, Discount = @Discount, PaymentID = @PaymentID WHERE RegisterID = @RegisterID;"
         Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
-        cmd.Parameters.AddWithValue("@CourseID", manageClass.ID)
+        cmd.Parameters.AddWithValue("@CourseID", course.ID)
         cmd.Parameters.AddWithValue("@StudentID", student.id)
         cmd.Parameters.AddWithValue("@Discount", discount)
         cmd.Parameters.AddWithValue("@PaymentID", payment.paymentID)

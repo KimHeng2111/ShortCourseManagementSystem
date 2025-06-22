@@ -1,6 +1,9 @@
 ﻿Imports System.Data.OleDb
 Imports System.IO
+Imports CrystalDecisions.CrystalReports.Engine
+Imports CrystalDecisions.Shared
 Imports Guna.UI2.WinForms
+Imports Microsoft.SqlServer
 Public Class RegisterForm
     Dim register As New Register()
     Public Sub New()
@@ -72,11 +75,12 @@ Public Class RegisterForm
     Function CheckValidation() As Boolean
         'Check if the student has already registered for the Course
         Dim studentID As Integer = register.student.id
-        Dim classID As Integer = Convert.ToInt32(cbTime.SelectedValue)
+        Dim courseID As Integer = register.course.ID
         Dim query As String = "SELECT COUNT(*) FROM tblRegister WHERE StudentID = @StudentID AND CourseID = @CourseID"
+        MsgBox(register.course.ID.ToString() & register.student.engName)
         Dim cmd As New OleDbCommand(query, register.GetConnection())
         cmd.Parameters.AddWithValue("@StudentID", studentID)
-        cmd.Parameters.AddWithValue("@CourseID", classID)
+        cmd.Parameters.AddWithValue("@CourseID", courseID)
         register.OpenConnection()
         Dim count As Integer = Convert.ToInt32(cmd.ExecuteScalar())
         register.CloseConnection()
@@ -88,7 +92,7 @@ Public Class RegisterForm
         Dim scheduleQuery As String = "SELECT COUNT(*) FROM tblRegister WHERE StudentID = @StudentID AND ScheduleID = @ScheduleID;"
         cmd = New OleDbCommand(scheduleQuery, register.GetConnection())
         cmd.Parameters.AddWithValue("@StudentID", studentID)
-        cmd.Parameters.AddWithValue("@ScheduleID", cbTime.SelectedValue)
+        cmd.Parameters.AddWithValue("@ScheduleID", register.course.scheduleID)
         register.OpenConnection()
         count = Convert.ToInt32(cmd.ExecuteScalar())
         If count > 0 Then
@@ -99,13 +103,25 @@ Public Class RegisterForm
     End Function
     'Save Image and reture the path
     Function SaveImageAndReturnPath() As String
-        If Path.GetFileName(picStudent.ImageLocation) = "defalutStudent.png" Then
+        If Path.GetFileName(picStudent.ImageLocation) = "defaultStudent.png" Then
             Return picStudent.ImageLocation
         End If
+
         Dim source As String = picStudent.ImageLocation
-        Dim destination As String = "\Images\" & Path.GetFileName(source)
-        FileCopy(source, destination)
-        Return destination
+        Dim imagesDir As String = Path.Combine(Application.StartupPath, "Images")
+        Dim destination As String = Path.Combine(imagesDir, Path.GetFileName(source))
+
+        Try
+            If Not Directory.Exists(imagesDir) Then
+                Directory.CreateDirectory(imagesDir)
+            End If
+
+            FileCopy(source, destination)
+            Return destination
+        Catch ex As Exception
+            MessageBox.Show("Failed to copy image: " & ex.Message)
+            Return ""
+        End Try
     End Function
 
     Sub GetCbSubject()
@@ -131,8 +147,8 @@ Public Class RegisterForm
 
         Dim SubjectID As Integer = Convert.ToInt32(cbCourse.SelectedValue)
         cbTime.DataSource = New BindingSource(register.GetTimeList(SubjectID), Nothing)
-        register.manageClass.subject.GetSubjectByID(SubjectID)
-        lbPrice.Text = register.manageClass.subject.basePrice.ToString("F2")
+        register.course.subject.GetSubjectByID(SubjectID)
+        txtPrice.Text = register.course.subject.basePrice.ToString("F2")
         cbTime.DisplayMember = "Key"
         cbTime.ValueMember = "Value"
         cbTime.SelectedIndex = cbTime.Items.Count - 1
@@ -144,28 +160,30 @@ Public Class RegisterForm
         If Not CheckField() Then
             Return
         End If
+        If register.student.id = String.Empty Then
+            register.student.AddStudent(txtKhName.Text.Trim(), txtEngName.Text.Trim(), cbGender.Text, dtpDob.Text, cbAddress.Text.Trim(), txtPhone.Text.Trim(), SaveImageAndReturnPath())
+        End If
+        'Assign data to register
+        register.course.GetCourseByID(cbTime.SelectedValue.ToString())
         If Not CheckValidation() Then
             Return
         End If
         'Step 2 : Create Student
-        register.student.AddStudent(txtKhName.Text.Trim(), txtEngName.Text.Trim(), cbGender.Text, dtpDob.Text, cbAddress.Text.Trim(), txtPhone.Text.Trim(), SaveImageAndReturnPath())
-        'Assign data to register
-        register.manageClass.GetCourseByID(cbTime.SelectedValue.ToString()) 'ADD ManageClass
-        Dim Price = Convert.ToDecimal(lbPrice.Text)
+        'register.student.AddStudent(txtKhName.Text.Trim(), txtEngName.Text.Trim(), cbGender.Text, dtpDob.Text, cbAddress.Text.Trim(), txtPhone.Text.Trim(), SaveImageAndReturnPath())
+
+        Dim Price = Convert.ToDecimal(txtPrice.Text)
         Dim Dis = Convert.ToInt16(txtDis.Text)
         register.discount = Price * Dis / 100.0
-        MsgBox(register.discount.ToString())
-        Dim amount As Decimal = Decimal.Parse(lbAmount.Text)
+        Dim amount As Decimal = Decimal.Parse(txtAmount.Text)
         Dim unpaid As Decimal = amount - Convert.ToDecimal(txtPay.Text)
         register.payment.NewPayment(amount, unpaid) 'Create Payment
         'Step 3 : Create Register
         register.RegisterStudent()
-
         'Print Invoice
-        Dim invoice As New Form1(register)
-        invoice.ShowDialog()
+        ExportAndShow()
         'Step 4 Display Data
         Display()
+        btnClear.PerformClick()
 
     End Sub
 
@@ -176,49 +194,43 @@ Public Class RegisterForm
         If Not IsNumeric(cbTime.SelectedValue.ToString()) Then
             Return
         End If
-        'If cbTime.SelectedValue =  Then
-        '    Return
-        'End If
         If cbTime.SelectedValue = -1 Then
-            MsgBox("Hell")
             Return
         End If
-        register.manageClass.GetCourseByID(cbTime.SelectedValue.ToString())
-        lbRoom.Text = register.manageClass.room.room
-        lbPrice.Text = register.manageClass.subject.basePrice.ToString("F2")
-        MsgBox(register.manageClass.subject.Subject)
-        MsgBox(register.manageClass.subject.basePrice)
-        lbAmount.Text = register.manageClass.subject.basePrice.ToString("F2")
+        register.course.GetCourseByID(cbTime.SelectedValue.ToString())
+        lbRoom.Text = register.course.room.room
+        txtPrice.Text = register.course.subject.basePrice.ToString("F2")
+        txtAmount.Text = register.course.subject.basePrice.ToString("F2")
         txtDis.Text = "0"
     End Sub
     Sub Regonize()
-        DataGridView1.ColumnHeadersHeight = 40
-        DataGridView1.Columns(0).Width = 50 ' ID column width
-        DataGridView1.Columns(1).Width = 250 ' Course Name column width
-        DataGridView1.Columns(2).Width = 200 ' Description column width
-        DataGridView1.Columns(3).Width = 150 ' Description column width
-        DataGridView1.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGridView1.Columns(4).Width = 150
-        DataGridView1.Columns(5).Width = 150
-        DataGridView1.Columns(6).Width = 150
-        DataGridView1.Columns(0).HeaderText = "លេខកូដ"
-        DataGridView1.Columns(1).HeaderText = "វគ្គសិក្សា"
-        DataGridView1.Columns(2).HeaderText = "គ្រូបង្រៀន"
-        DataGridView1.Columns(3).HeaderText = "ថ្ងៃចូលរៀន"
-        DataGridView1.Columns(4).HeaderText = "វេនសិក្សា"
-        DataGridView1.Columns(5).HeaderText = "បន្ទប់រៀន"
-        DataGridView1.Columns(6).HeaderText = "សិស្សសរុប"
-        DataGridView1.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGridView1.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGridView1.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGridView1.ClearSelection()
+        For Each col As DataGridViewColumn In DataGridView1.Columns
+            col.SortMode = DataGridViewColumnSortMode.NotSortable
+        Next
+        With DataGridView1
+            .ColumnHeadersHeight = 40
+            .Columns(0).Width = 50 ' ID column width
+            .Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            .Columns(1).Width = 250 ' Course Name column width
+            .Columns(2).Width = 200 ' Description column width
+            .Columns(3).Width = 150 ' Description column width
+            .Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            .Columns(4).Width = 150
+            .Columns(5).Width = 150
+            .Columns(6).Width = 150
+            .Columns(0).HeaderText = "លេខកូដ"
+            .Columns(1).HeaderText = "វគ្គសិក្សា"
+            .Columns(2).HeaderText = "គ្រូបង្រៀន"
+            .Columns(3).HeaderText = "ថ្ងៃចូលរៀន"
+            .Columns(4).HeaderText = "វេនសិក្សា"
+            .Columns(5).HeaderText = "បន្ទប់រៀន"
+            .Columns(6).HeaderText = "សិស្សសរុប"
+            .Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            .Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            .Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            .ClearSelection()
+        End With
     End Sub
-
-
-    Private Sub btnChooseStudent_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
     Private Sub PanelListShow_Paint(sender As Object, e As PaintEventArgs) Handles PanelListShow.Paint
         Display()
     End Sub
@@ -253,8 +265,8 @@ Public Class RegisterForm
         txtDis.Clear()
         txtPay.Clear()
         txtPhone.Clear()
-        lbAmount.Text = "$"
-        lbPrice.Text = "$"
+        txtAmount.Text = "$"
+        txtPrice.Text = "$"
         dtpDob.Clear()
         lbRoom.Text = ".........."
         cbAddress.SelectedIndex = cbAddress.Items.Count - 1
@@ -263,9 +275,13 @@ Public Class RegisterForm
         cbTime.SelectedIndex = cbTime.Items.Count - 1
         cbTime.Enabled = False
         picStudent.ImageLocation = Application.StartupPath & "\Images\defalutStudent.png"
+        register = New Register()
     End Sub
 
     Private Sub txtDis_TextChanged(sender As Object, e As EventArgs) Handles txtDis.TextChanged
+        If cbCourse.SelectedIndex = cbCourse.Items.Count - 1 Then
+            Return
+        End If
         Dim dis As Decimal
         If cbCourse.Text = String.Empty Then
             txtDis.Text = 0
@@ -278,9 +294,9 @@ Public Class RegisterForm
             Return
         End If
         Dim amount As Decimal
-        Dim price As Decimal = Decimal.Parse(lbPrice.Text)
+        Dim price As Decimal = Decimal.Parse(txtPrice.Text)
         amount = price - price * (dis / 100.0) ' Ensures decimal division
-        lbAmount.Text = amount.ToString("F2") ' Formats output as 2 decimal places
+        txtAmount.Text = amount.ToString("F2") ' Formats output as 2 decimal places
         amount.ToString("F2")
     End Sub
 
@@ -296,5 +312,30 @@ Public Class RegisterForm
         cbGender.SelectedIndex = cbGender.FindStringExact(register.student.gender)
         dtpDob.Text = register.student.DateOfBirth.ToString("dd/MM/yyyy")
         cbAddress.SelectedIndex = cbAddress.FindStringExact(register.student.address)
+    End Sub
+    Private Sub ExportAndShow()
+        Dim rdReport As New ReportDocument
+        rdReport.Load("Report\Invoice.rpt")
+        rdReport.SetParameterValue("PaymentID", register.payment.paymentID)
+        rdReport.SetParameterValue("khName", register.student.khName)
+        rdReport.SetParameterValue(2, register.student.engName)
+        rdReport.SetParameterValue(3, register.student.address)
+        rdReport.SetParameterValue(4, register.student.phone)
+        rdReport.SetParameterValue(7, register.registerID)
+        rdReport.SetParameterValue(9, register.course.subject.Subject)
+        rdReport.SetParameterValue(8, register.course.subject.basePrice)
+        rdReport.SetParameterValue(5, register.payment.amount)
+        rdReport.SetParameterValue(6, register.payment.unpaid)
+        rdReport.SetParameterValue(10, register.course.startDate)
+        rdReport.SetParameterValue(11, register.course.GetSchedule())
+        rdReport.SetParameterValue(12, register.course.room.room)
+        rdReport.PrintOptions.PaperSize = PaperSize.PaperA4
+        Dim exportPath As String = Application.StartupPath & "\Export\Invoices"
+        If Not Directory.Exists(exportPath) Then
+            Directory.CreateDirectory(exportPath)
+        End If
+        exportPath = exportPath + "\Inv_" & register.student.khName & "_" & Date.Now().ToString("dd-MMM-yyyy") & ".pdf"
+        rdReport.ExportToDisk(ExportFormatType.PortableDocFormat, exportPath)
+        Process.Start(exportPath)
     End Sub
 End Class

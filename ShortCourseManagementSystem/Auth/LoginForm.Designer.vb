@@ -52,7 +52,7 @@ Partial Class LoginForm
         Me.Label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label5.Font = New System.Drawing.Font("Khmer OS Siemreap", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(153, 254)
+        Me.Label5.Location = New System.Drawing.Point(170, 254)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(110, 33)
         Me.Label5.TabIndex = 10
@@ -115,7 +115,7 @@ Partial Class LoginForm
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(153, 28)
+        Me.PictureBox1.Location = New System.Drawing.Point(170, 28)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(111, 143)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -132,7 +132,7 @@ Partial Class LoginForm
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 25)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(417, 477)
+        Me.Panel1.Size = New System.Drawing.Size(451, 477)
         Me.Panel1.TabIndex = 15
         '
         'Label4
@@ -142,7 +142,7 @@ Partial Class LoginForm
         Me.Label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label4.Font = New System.Drawing.Font("Khmer OS Siemreap", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(19, 208)
+        Me.Label4.Location = New System.Drawing.Point(36, 208)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(378, 24)
         Me.Label4.TabIndex = 9
@@ -156,7 +156,7 @@ Partial Class LoginForm
         Me.Label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label3.Font = New System.Drawing.Font("Khmer OS Siemreap", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(1, 174)
+        Me.Label3.Location = New System.Drawing.Point(18, 174)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(415, 33)
         Me.Label3.TabIndex = 8
@@ -299,7 +299,7 @@ Partial Class LoginForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.StudentManagementSystem.My.Resources.Resources.loginfrom1
+        Me.BackgroundImage = Global.StudentManagementSystem.My.Resources.Resources.loginfrom2
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(984, 502)
         Me.Controls.Add(Me.txtUserName)

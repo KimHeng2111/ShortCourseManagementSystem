@@ -27,7 +27,7 @@ Partial Class ReportForm
         Me.crsReport = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnExport = New Guna.UI2.WinForms.Guna2Button()
         Me.btnPrint = New Guna.UI2.WinForms.Guna2Button()
         Me.cbReport = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -68,16 +68,18 @@ Partial Class ReportForm
         Me.crsReport.Margin = New System.Windows.Forms.Padding(3, 0, 3, 3)
         Me.crsReport.Name = "crsReport"
         Me.crsReport.ShowCloseButton = False
-        Me.crsReport.ShowGotoPageButton = False
+        Me.crsReport.ShowCopyButton = False
+        Me.crsReport.ShowExportButton = False
         Me.crsReport.ShowGroupTreeButton = False
         Me.crsReport.ShowLogo = False
-        Me.crsReport.ShowPageNavigateButtons = False
         Me.crsReport.ShowParameterPanelButton = False
         Me.crsReport.ShowRefreshButton = False
         Me.crsReport.ShowTextSearchButton = False
+        Me.crsReport.ShowZoomButton = False
         Me.crsReport.Size = New System.Drawing.Size(1664, 845)
         Me.crsReport.TabIndex = 0
         Me.crsReport.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
+        Me.crsReport.ToolPanelWidth = 100
         '
         'FlowLayoutPanel1
         '
@@ -91,9 +93,9 @@ Partial Class ReportForm
         '
         'Guna2Panel1
         '
-        Me.Guna2Panel1.BackColor = System.Drawing.Color.Gainsboro
+        Me.Guna2Panel1.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Guna2Panel1.BorderRadius = 15
-        Me.Guna2Panel1.Controls.Add(Me.Guna2Button2)
+        Me.Guna2Panel1.Controls.Add(Me.btnExport)
         Me.Guna2Panel1.Controls.Add(Me.btnPrint)
         Me.Guna2Panel1.Controls.Add(Me.cbReport)
         Me.Guna2Panel1.Controls.Add(Me.Label2)
@@ -106,23 +108,23 @@ Partial Class ReportForm
         Me.Guna2Panel1.Size = New System.Drawing.Size(1682, 55)
         Me.Guna2Panel1.TabIndex = 9
         '
-        'Guna2Button2
+        'btnExport
         '
-        Me.Guna2Button2.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2Button2.BorderRadius = 5
-        Me.Guna2Button2.CheckedState.Parent = Me.Guna2Button2
-        Me.Guna2Button2.CustomImages.Parent = Me.Guna2Button2
-        Me.Guna2Button2.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(3, Byte), Integer))
-        Me.Guna2Button2.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2Button2.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button2.HoverState.Parent = Me.Guna2Button2
-        Me.Guna2Button2.Location = New System.Drawing.Point(1521, 3)
-        Me.Guna2Button2.Name = "Guna2Button2"
-        Me.Guna2Button2.PressedColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(76, Byte), Integer))
-        Me.Guna2Button2.ShadowDecoration.Parent = Me.Guna2Button2
-        Me.Guna2Button2.Size = New System.Drawing.Size(137, 45)
-        Me.Guna2Button2.TabIndex = 11
-        Me.Guna2Button2.Text = "Export"
+        Me.btnExport.BackColor = System.Drawing.Color.Transparent
+        Me.btnExport.BorderRadius = 5
+        Me.btnExport.CheckedState.Parent = Me.btnExport
+        Me.btnExport.CustomImages.Parent = Me.btnExport
+        Me.btnExport.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(3, Byte), Integer))
+        Me.btnExport.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnExport.ForeColor = System.Drawing.Color.White
+        Me.btnExport.HoverState.Parent = Me.btnExport
+        Me.btnExport.Location = New System.Drawing.Point(1521, 3)
+        Me.btnExport.Name = "btnExport"
+        Me.btnExport.PressedColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(76, Byte), Integer))
+        Me.btnExport.ShadowDecoration.Parent = Me.btnExport
+        Me.btnExport.Size = New System.Drawing.Size(137, 45)
+        Me.btnExport.TabIndex = 11
+        Me.btnExport.Text = "Export"
         '
         'btnPrint
         '
@@ -196,7 +198,7 @@ Partial Class ReportForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BackColor = System.Drawing.Color.WhiteSmoke
         Me.ClientSize = New System.Drawing.Size(1704, 943)
         Me.Controls.Add(Me.Panel2)
         Me.Name = "ReportForm"
@@ -216,6 +218,6 @@ Partial Class ReportForm
     Friend WithEvents cbReport As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnExport As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnPrint As Guna.UI2.WinForms.Guna2Button
 End Class

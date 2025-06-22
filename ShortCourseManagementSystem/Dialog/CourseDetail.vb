@@ -16,9 +16,9 @@ Public Class CourseDetail
         txtStartDate.Text = course.startDate.ToString("dd/MM/yyyy")
         txtEndDate.Text = course.endDate.ToString("dd/MM/yyyy")
         txtRoom.Text = course.room.room
-        txtSchedule.Text = course.GetScheduleByID()
+        txtSchedule.Text = course.GetSchedule()
         txtTotal.Text = course.GetCurrentEnrollments().ToString()
-        txtStatus.Text = course.GetStatusByID()
+        txtStatus.Text = course.GetStatus()
     End Sub
     Sub GetData()
         Dim query As String = "SELECT tblStudent.ID, tblStudent.KhName, tblStudent.Phone, tblStudent.Address, tblPaymentStatus.Status
@@ -95,7 +95,7 @@ Public Class CourseDetail
         btnCancel.PerformClick()
         course.StatusID = cbStatus.SelectedValue
         course.endDate = dtpEndDate.Value.Date
-        txtStatus.Text = course.GetStatusByID()
+        txtStatus.Text = course.GetStatus()
         txtEndDate.Text = dtpEndDate.Value.ToString("dd/MM/yyyy")
     End Sub
     Sub FillData()

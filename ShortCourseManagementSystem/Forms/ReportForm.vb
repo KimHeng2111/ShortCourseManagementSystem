@@ -77,11 +77,18 @@ Public Class ReportForm
 
     End Sub
 
-    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles btnExport.Click
+        If cbReport.SelectedIndex = cbReport.Items.Count - 1 Then
+            MessageBox.Show("សូមជ្រើសរើសរបាយការណ៍!!!!", "Warrning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End If
         Dim exportOption As ExportOptions
         Dim diskFileDestinationOptions As New DiskFileDestinationOptions()
-
+        Dim exportPath As String = Application.StartupPath & "\Export\Report"
+        If Not Directory.Exists(exportPath) Then
+            Directory.CreateDirectory(exportPath)
+        End If
         Dim sfd As New SaveFileDialog()
+        sfd.InitialDirectory = exportPath
         sfd.Filter = "PDF Files|*.pdf|Excel Files|*.xls"
         sfd.FileName = cbReport.Text & "_" & DateTime.Now().ToString("dd-MM-yyyy")
 
