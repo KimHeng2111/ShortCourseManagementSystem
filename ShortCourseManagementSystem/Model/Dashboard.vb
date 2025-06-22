@@ -19,7 +19,8 @@ Public Class Dashboard
         Dim query As String = "SELECT COUNT(*) FROM tblRegister;"
         totalStudent = Int16.Parse(ExecuteScalar(query))
         query = "SELECT Count(*) AS TotalStudent FROM tblRegister INNER JOIN tblCourse ON tblRegister.CourseID = tblCourse.ID GROUP BY tblCourse.StatusID HAVING (((tblCourse.StatusID)=3));"
-        completeStudent = Int16.Parse(ExecuteScalar(query))
+        Dim result = ExecuteScalar(query)
+        completeStudent = If(result IsNot Nothing, Convert.ToInt16(result), 0)
         query = "SELECT COUNT(*) FROM tblCourse;"
         totalCourse = Int16.Parse(ExecuteScalar(query))
         query = "SELECT COUNT(*) FROM tblCourse WHERE StatusID = 3 ;"

@@ -1,14 +1,15 @@
 ﻿Imports System.Data.OleDb
+Imports System.Data.SqlTypes
 Imports System.Windows
 Public Class CourseForm
     Dim course As Course = New Course()
     Dim startup As Boolean = True
     Public Sub New()
 
-        ' This call is required by the designer.
+        'This call is required by the designer.
         InitializeComponent()
 
-        ' Add any initialization after the InitializeComponent() call.
+        'Add any initialization after the InitializeComponent() call.
         GetcbStatus()
         GetcbSearch()
     End Sub
@@ -53,6 +54,12 @@ Public Class CourseForm
         If count > 0 Then
             MessageBox.Show("គ្រូបង្រៀននេះ ត្រូវបានប្រើប្រាស់រួចហើយនៅក្នុងវេនសិក្សានេះ ។ សូមជ្រើសរើស គ្រូបង្រៀនថ្មី ។", "ទិន្ន័យមិនត្រឹមត្រូវ", MessageBoxButtons.OK, MessageBoxIcon.Error)
             result = False
+        End If
+        If dtpStartDate.Value.Date <= DateTime.Now().Date Then
+            MessageBox.Show("សូមបញ្ចូលថ្ងៃចូលរៀនអោយបានត្រឹមត្រូវ !!!!", "ទិន្ន័យមិនត្រឹមត្រូវ", MessageBoxButton.OK, MessageBoxIcon.Warning)
+        End If
+        If dtpEndDate.Value.Date <= dtpStartDate.Value.Date.AddDays(10) Then
+            MessageBox.Show("សូមបញ្ចូលថ្ងៃចូលរៀនអោយបានត្រឹមត្រូវ !!!!", "ទិន្ន័យមិនត្រឹមត្រូវ", MessageBoxButton.OK, MessageBoxIcon.Warning)
         End If
         Return result
     End Function
@@ -122,10 +129,10 @@ Public Class CourseForm
     Sub GetcbStatus()
         Dim classStatusList = course.GetClassStatusList()
         classStatusList.Add("គ្រប់ស្ថានភាព", 0)
-        cbStatus.DataSource = New BindingSource(classStatusList, Nothing)
-        cbStatus.DisplayMember = "Key"
-        cbStatus.ValueMember = "Value"
-        cbStatus.SelectedIndex = cbStatus.Items.Count - 1 ' Select the last item (which is "All")
+        cbSearchStatus.DataSource = New BindingSource(classStatusList, Nothing)
+        cbSearchStatus.DisplayMember = "Key"
+        cbSearchStatus.ValueMember = "Value"
+        cbSearchStatus.SelectedIndex = cbSearchStatus.Items.Count - 1 ' Select the last item (which is "All")
     End Sub
     Private Sub btnNewClass_Click(sender As Object, e As EventArgs) Handles btnNewClass.Click
         If Not CheckValidation() Then
@@ -137,16 +144,17 @@ Public Class CourseForm
         course.teacher.TeacherID = cbTeacher.SelectedValue.ToString()
         course.subject.ID = cbSubject.SelectedValue.ToString()
         course.startDate = dtpStartDate.Value
+        course.endDate = dtpEndDate.Value
         course.AddCourse()
         Display()
     End Sub
 
-    Sub SearchCourseData() Handles txtSearch._TextChanged, cbSearchTeacher.SelectedIndexChanged, cbStatus.SelectedIndexChanged
+    Sub SearchCourseData() Handles txtSearch._TextChanged, cbSearchTeacher.SelectedIndexChanged, cbSearchStatus.SelectedIndexChanged
         If startup Then
             Return
         Else
             Dim textSearch = If(txtSearch.Texts.Trim() = "", "%", txtSearch.Texts.Trim()) + "%"
-            Dim StatusID As String = If(cbStatus.SelectedValue = 0, "%", cbStatus.SelectedValue.ToString())
+            Dim StatusID As String = If(cbSearchStatus.SelectedValue = 0, "%", cbSearchStatus.SelectedValue.ToString())
 
             Dim teacherSearch = cbSearchTeacher.SelectedValue
             Dim query As String = " SELECT tblCourse.ID, tblSubject.Subject AS Subject, tblTeacher.KhName AS Teacher, tblRoom.Room AS Room, tblSchedule.Schedule, (SELECT COUNT(*) FROM tblRegister WHERE tblRegister.CourseID = tblCourse.ID) AS TotalStudents, tblCourseStatus.Status
@@ -161,22 +169,9 @@ Public Class CourseForm
         End If
     End Sub
 
-    'Private Sub btnUpdate_Click(sender As Object, e As EventArgs)
-    '    If CheckField() Then
-    '        Dim id As String = txtClassID.Text.Trim()
-    '        Dim courseID As String = cbCourse.SelectedValue.ToString()
-    '        Dim teacherID As String = cbTeacher.SelectedValue.ToString()
-    '        Dim startDate As String = dtpStartDate.Value
-    '        Dim roomID As Integer = Convert.ToInt32(cbRoom.SelectedValue)
-    '        Dim secheduleID As Integer = Convert.ToInt32(cbTime.SelectedValue)
-    '        course.UpdateSubject(id, courseID, teacherID, startDate, roomID, secheduleID)
-    '    End If
-    '    Display()
-    'End Sub
-
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnClear.Click
         cbSearchTeacher.SelectedIndex = cbSearchTeacher.Items.Count - 1
-        cbStatus.SelectedIndex = cbStatus.Items.Count - 1
+        cbSearchStatus.SelectedIndex = cbSearchStatus.Items.Count - 1
         txtSearch.Texts = ""
         Display()
     End Sub
@@ -186,8 +181,9 @@ Public Class CourseForm
         DataGridView1.DataSource = data
         Regonize()
     End Sub
-    'Regonize DataGridView2 
+    ' Regonize DataGridView2
     Sub Regonize()
+
         If DataGridView1.Columns.Count = 7 Then
             DataGridView1.Columns(0).HeaderText = "លេខកូដ"
             DataGridView1.Columns(0).Width = 100
@@ -251,6 +247,7 @@ Public Class CourseForm
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         Panel2.Visible = True 'Show the panel for adding a new class
+        Panel11.Visible = False
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
@@ -292,7 +289,7 @@ Public Class CourseForm
     End Sub
 
     Private Sub DeleteCourse()
-        If DialogResult.Yes = MessageBox.Show("តើអ្នកពិតជាចង់លុបថ្នាក់រៀននេះមែនទេ?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) Then
+        If DialogResult.Yes = MessageBox.Show("តើអ្នកពិតជាចង់លុបថ្នាក់រៀននេះមែនទេ?", "លុបវគ្គសិក្សា", MessageBoxButtons.YesNo, MessageBoxIcon.Question) Then
             course.DeleteCourse()
             Display()
         End If
@@ -311,33 +308,46 @@ Public Class CourseForm
     Private Sub EditClass()
         txtCourseID.Text = course.ID
         cbSubject.SelectedIndex = cbSubject.FindStringExact(course.subject.Subject)
-        MsgBox(course.teacher.TeacherID)
         cbTeacher.SelectedValue = course.teacher.TeacherID
         cbRoom.SelectedValue = course.room.id
         cbSchedule.SelectedValue = course.scheduleID
         dtpStartDate.Value = course.startDate
+        dtpEndDate.Value = course.endDate
+        cbStatus.SelectedIndex = course.statusID - 1
         Panel2.Visible = True
         btnEdit.Visible = True
         btnNewClass.Visible = False
+        Panel11.Visible = True
 
     End Sub
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
-        If txtCourseID.Text = course.ID And cbSubject.SelectedValue = course.subject.ID And cbRoom.SelectedValue = course.room.id And cbTeacher.SelectedValue = course.teacher.TeacherID And dtpStartDate.Value = course.startDate And
-            cbSchedule.SelectedValue = course.scheduleID Then
-            MessageBox.Show("សូមកែប្រែវគ្គសិក្សា", "Edit Class", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        If txtCourseID.Text = course.ID And cbSubject.SelectedValue = course.subject.ID And cbRoom.SelectedValue = course.room.id And cbTeacher.SelectedValue = course.teacher.TeacherID And dtpStartDate.Value = course.startDate And dtpEndDate.Value = course.endDate And
+            cbSchedule.SelectedValue = course.scheduleID And cbStatus.SelectedIndex = course.statusID - 1 Then
+            MessageBox.Show("សូមកែប្រែវគ្គសិក្សា", "ទិន្ន័យមិនត្រឹមត្រូវ", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
             Return
         End If
-        If Not CheckValidation() Then
+        If Not CheckField() Then
             Return
         End If
+        course.ID = txtCourseID.Text.Trim()
+        course.scheduleID = Convert.ToInt32(cbSchedule.SelectedValue.ToString())
+        course.room.GetRoomByID(cbRoom.SelectedValue)
+        course.teacher.TeacherID = cbTeacher.SelectedValue.ToString()
+        course.subject.ID = cbSubject.SelectedValue.ToString()
+        course.startDate = dtpStartDate.Value
+        course.endDate = dtpEndDate.Value
+        course.statusID = cbStatus.SelectedIndex + 1
         txtCourseID.ReadOnly = True
-        course.UpdateCourse(txtCourseID.Text.Trim(), cbSubject.SelectedValue.ToString(), cbTeacher.SelectedValue.ToString(), dtpStartDate.Value, Convert.ToInt32(cbRoom.SelectedValue), Convert.ToInt32(cbSchedule.SelectedValue))
-        MessageBox.Show("វគ្គសិក្សា ត្រូវបានកែប្រែដោយជោគជ័យ!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        course.UpdateCourse()
+        MessageBox.Show("វគ្គសិក្សា ត្រូវបានកែប្រែដោយជោគជ័យ!", "ទិន្ន័យមិនត្រឹមត្រូវ", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Display()
     End Sub
 
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
         Display()
         startup = False
     End Sub
+
 End Class

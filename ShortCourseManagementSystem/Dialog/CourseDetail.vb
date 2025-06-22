@@ -93,7 +93,7 @@ Public Class CourseDetail
         course.ExecuteNonQuery(cmd)
         MessageBox.Show("ថ្នាក់រៀន ត្រូវបានធ្វើបច្ចុប្បន្នភាពដោយជោគជ័យ!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
         btnCancel.PerformClick()
-        course.StatusID = cbStatus.SelectedValue
+        course.statusID = cbStatus.SelectedValue
         course.endDate = dtpEndDate.Value.Date
         txtStatus.Text = course.GetStatus()
         txtEndDate.Text = dtpEndDate.Value.ToString("dd/MM/yyyy")
@@ -103,7 +103,7 @@ Public Class CourseDetail
         cbStatus.DataSource = New BindingSource(StatusList, Nothing)
         cbStatus.DisplayMember = "Key"
         cbStatus.ValueMember = "Value"
-        cbStatus.SelectedValue = course.StatusID
+        cbStatus.SelectedValue = course.statusID
         dtpEndDate.Value = course.endDate
     End Sub
 End Class
