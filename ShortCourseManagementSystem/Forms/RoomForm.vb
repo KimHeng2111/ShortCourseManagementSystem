@@ -1,7 +1,7 @@
 ﻿Imports System.Data.OleDb
 Public Class RoomForm
     Dim conn As New ConnectionDB()
-    Dim id As Integer = 0
+    Dim room As New Room
     Sub Display()
         Dim query As String = "SELECT tblRoom.* FROM tblRoom;"
         Dim dt As DataTable = conn.ExecuteQuery(query)
@@ -24,15 +24,24 @@ Public Class RoomForm
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
-        If txtRoom.Texts.Trim() = "" Then
+        If txtRoom.Text.Trim() = "" Then
             MsgBox("សូមបញ្ចូលឈ្មោះបន្ទប់")
             Return
         End If
-        Dim query As String = "INSERT INTO tblRoom (Room) VALUES (@RoomName);"
-        Dim cmd As OleDbCommand = New OleDbCommand(query, conn.GetConnection())
-        cmd.Parameters.AddWithValue("@RoomName", txtRoom.Texts.Trim())
+        Dim query As String = "SELECT COUNT(*) FROM tblRoom WHERE Room = @room;"
+        Dim cmd As New OleDbCommand(query, room.GetConnection())
+        cmd.Parameters.AddWithValue("@room", txtRoom.Text.Trim())
+        Dim count As Integer = Convert.ToInt16(room.ExecuteScalar(cmd))
+        If count > 0 Then
+            MessageBox.Show("បន្ទប់សិកស្សានេះមានរួចហើយ", "បន្ទប់មានរួចហើយ", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
+        query = "INSERT INTO tblRoom (Room) VALUES (@RoomName);"
+        cmd = New OleDbCommand(query, conn.GetConnection())
+        cmd.Parameters.AddWithValue("@RoomName", txtRoom.Text.Trim())
         conn.ExecuteNonQuery(cmd)
-        txtRoom.Texts = ""
+        txtRoom.Text = ""
+        MessageBox.Show("បន្ទប់សិក្សា " & txtRoom.Text & " នេះត្រូវបានបង្កើតដោយជោគជ័យ", "ជោគជ័យ", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Display()
     End Sub
 
@@ -40,14 +49,22 @@ Public Class RoomForm
         If DialogResult.Yes = MessageBox.Show("តើអ្នកពិតជាចង់លុបបន្ទប់នេះមែនទេ?", "បញ្ជាក់", MessageBoxButtons.YesNo, MessageBoxIcon.Question) Then
             Dim query As String = "DELETE FROM tblRoom WHERE ID = @ID;"
             Dim cmd As OleDbCommand = New OleDbCommand(query, conn.GetConnection())
-            cmd.Parameters.AddWithValue("@ID", id)
+            cmd.Parameters.AddWithValue("@ID", room.id)
             conn.ExecuteNonQuery(cmd)
             Display()
         End If
     End Sub
 
     Private Sub DataGridView2_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellClick
-        id = Convert.ToInt32(DataGridView2.CurrentRow.Cells(0).Value)
-        txtRoom.Texts = DataGridView2.CurrentRow.Cells(1).Value.ToString()
+        room.GetRoomByID(Convert.ToInt16(DataGridView2.CurrentRow.Cells(0).Value))
+        txtRoom.Text = room.room
+    End Sub
+
+    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        Me.Close()
+    End Sub
+
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+        txtRoom.Clear()
     End Sub
 End Class

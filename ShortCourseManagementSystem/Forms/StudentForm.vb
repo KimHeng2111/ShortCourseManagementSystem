@@ -5,7 +5,7 @@ Public Class StudentForm
     Dim student As Student = New Student()
     Dim startup As Boolean = True ' To prevent initial search on form load
     Public Sub New()
-        ' Constructor for StudentForm class
+        'Constructor for StudentForm class
         InitializeComponent()
         picStudent.ImageLocation = Application.StartupPath & "\Images\default.png"
         GetCbAddress()
@@ -72,6 +72,7 @@ Public Class StudentForm
             With DataGridView1
                 .Columns(0).Width = 75
                 .Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                .Columns(0).DefaultCellStyle.Format = "000"
                 .Columns(1).Width = 250
                 .Columns(1).HeaderText = "គោត្តនាម នាម"
                 .Columns(2).Width = 200
@@ -96,13 +97,13 @@ Public Class StudentForm
                     DataGridView1.Rows(i).DefaultCellStyle.BackColor = Color.FromArgb(245, 250, 253)
                 End If
             Next i
+            For Each col As DataGridViewColumn In DataGridView1.Columns
+                col.SortMode = DataGridViewColumnSortMode.NotSortable
+            Next
         End If
         DataGridView1.ClearSelection()
     End Sub
 
-    Private Sub Panel13_Paint(sender As Object, e As PaintEventArgs) Handles Panel13.Paint
-        Display()
-    End Sub
 
     Private Sub DataGridView1_MouseClick(sender As Object, e As MouseEventArgs) Handles DataGridView1.MouseClick
         Dim menu As New ContextMenuStrip()
@@ -145,7 +146,7 @@ Public Class StudentForm
         picStudent.ImageLocation = student.picture
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnClear.Click
         Panel2.Visible = False
         txtKhName.Text = ""
         txtEngName.Text = ""
@@ -202,7 +203,7 @@ Public Class StudentForm
         GetCbAddress()
         startup = False
     End Sub
-    Sub SearchData() Handles cbSearchAddress.SelectedIndexChanged, txtSearch._TextChanged
+    Sub SearchData() Handles cbSearchAddress.SelectedIndexChanged, txtSearch.TextChanged
         If startup Then
             Return
         End If
@@ -210,8 +211,8 @@ Public Class StudentForm
                                 tblStudent.DateOfBirth, tblStudent.Address, tblStudent.Phone FROM tblStudent
                                 WHERE Address LIKE @address AND (ID Like @id AND (KhName Like @name OR EngName Like @name));"
         Dim cmd As OleDbCommand = New OleDbCommand(query, student.GetConnection())
-        Dim id As String = If(IsNumeric(txtSearch.Texts.Trim()), txtSearch.Texts.Trim() & "%", "%")
-        Dim name As String = If(txtSearch.Texts.Trim() = "", "%", If(IsNumeric(txtSearch.Texts.Trim()), "%", "%" & txtSearch.Texts.Trim() & "%"))
+        Dim id As String = If(IsNumeric(txtSearch.Text.Trim()), txtSearch.Text.Trim() & "%", "%")
+        Dim name As String = If(txtSearch.Text.Trim() = "", "%", If(IsNumeric(txtSearch.Text.Trim()), "%", "%" & txtSearch.Text.Trim() & "%"))
         Dim address As String = If(cbSearchAddress.SelectedIndex = cbSearchAddress.Items.Count - 1, "%", cbSearchAddress.SelectedItem.ToString())
         address = "%" & address & "%"
         cmd.Parameters.AddWithValue("@address", address)
@@ -223,7 +224,7 @@ Public Class StudentForm
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        txtSearch.Texts = ""
+        txtSearch.Text = ""
         cbSearchAddress.SelectedIndex = cbSearchAddress.Items.Count - 1
     End Sub
 
@@ -235,5 +236,9 @@ Public Class StudentForm
             Dim filePath As String = OpenPic.FileName
             picStudent.ImageLocation = filePath
         End If
+    End Sub
+
+    Private Sub Guna2Panel3_Paint(sender As Object, e As PaintEventArgs) Handles Guna2Panel3.Paint
+        Display()
     End Sub
 End Class

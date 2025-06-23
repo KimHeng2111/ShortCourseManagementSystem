@@ -24,7 +24,7 @@ Public Class RegisterForm
 
 
 
-    Private Sub IconButton1_Click(sender As Object, e As EventArgs) Handles btnChooseImage.Click
+    Private Sub btnChooseImage_Click(sender As Object, e As EventArgs) Handles btnChooseImage.Click
         OpenPic.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp"
         OpenPic.Title = "Select a Picture"
         OpenPic.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)
@@ -77,7 +77,6 @@ Public Class RegisterForm
         Dim studentID As Integer = register.student.id
         Dim courseID As Integer = register.course.ID
         Dim query As String = "SELECT COUNT(*) FROM tblRegister WHERE StudentID = @StudentID AND CourseID = @CourseID"
-        MsgBox(register.course.ID.ToString() & register.student.engName)
         Dim cmd As New OleDbCommand(query, register.GetConnection())
         cmd.Parameters.AddWithValue("@StudentID", studentID)
         cmd.Parameters.AddWithValue("@CourseID", courseID)
@@ -89,7 +88,9 @@ Public Class RegisterForm
             Return False
         End If
         'Check if the Student has already Other at this Schedule
-        Dim scheduleQuery As String = "SELECT COUNT(*) FROM tblRegister WHERE StudentID = @StudentID AND ScheduleID = @ScheduleID;"
+        Dim scheduleQuery As String = "SELECT Count(*) 
+                                        FROM tblCourse INNER JOIN tblRegister ON tblCourse.ID = tblRegister.CourseID
+                                        WHERE (((tblRegister.StudentID)=@StudentID) AND ((tblCourse.StatusID)=@ScheduleID));"
         cmd = New OleDbCommand(scheduleQuery, register.GetConnection())
         cmd.Parameters.AddWithValue("@StudentID", studentID)
         cmd.Parameters.AddWithValue("@ScheduleID", register.course.scheduleID)
@@ -211,6 +212,7 @@ Public Class RegisterForm
             .ColumnHeadersHeight = 40
             .Columns(0).Width = 50 ' ID column width
             .Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            .Columns(0).DefaultCellStyle.Format = "Reg000"
             .Columns(1).Width = 250 ' Course Name column width
             .Columns(2).Width = 200 ' Description column width
             .Columns(3).Width = 150 ' Description column width

@@ -1,8 +1,17 @@
 ﻿Imports System.Data.OleDb
+Imports System.IO
 
 Public Class TeachersForm
     Dim teacher As Teacher = New Teacher()
     Dim startup As Boolean = True
+    Public Sub New()
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+
+    End Sub
     'Display all teachers in DataGridView
     Sub Display()
         DataGridView1.DataSource = teacher.GetTeacherData()
@@ -11,13 +20,13 @@ Public Class TeachersForm
 
     'Check User Input
     Private Function CheckField() As Boolean
-        Dim khName As String = txtKhName.Texts
-        Dim engName As String = txtEngName.Texts.Trim()
+        Dim khName As String = txtKhName.Text
+        Dim engName As String = txtEngName.Text.Trim()
         Dim Gender As String = cbGender.Text
-        Dim DoB As Date = dtpDob.Value
+        Dim DoB As Date = Convert.ToDateTime(dtpDob.Text.Trim())
         Dim Address As String = cbAddress.Text.Trim()
-        Dim Phone As String = txtPhone.Texts.Trim()
-        Dim Email As String = txtEmail.Texts.Trim()
+        Dim Phone As String = txtPhone.Text.Trim()
+        Dim Email As String = txtEmail.Text.Trim()
         ' Validate inputs
         If String.IsNullOrEmpty(khName) Then
             MessageBox.Show("សូមបញ្ចូល គោត្តនាម នាម", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -45,19 +54,22 @@ Public Class TeachersForm
     End Function
 
     Private Sub DataGridView1_Click(sender As Object, e As EventArgs) Handles DataGridView1.CellClick
+        If btnEdit.Visible = False Then
+            Return
+        End If
         Dim teacterID As String = DataGridView1.CurrentRow.Cells(0).Value.ToString()
         teacher.GetTeacherByID(teacterID)
-        txtKhName.Texts = teacher.KhName
-        txtEngName.Texts = teacher.EngName
-        cbAddress.Text = teacher.Address
-        dtpDob.Value = teacher.DoB
-        txtPhone.Texts = teacher.Phone
+        txtKhName.Text = teacher.KhName
+        txtEngName.Text = teacher.EngName
+        cbAddress.SelectedIndex = cbAddress.FindStringExact(teacher.Address)
+        dtpDob.Text = teacher.DoB.ToString("dd/MM/yyyy")
+        txtPhone.Text = teacher.Phone
         cbGender.Text = teacher.Gender
-        txtEmail.Texts = teacher.Email
+        txtEmail.Text = teacher.Email
         If Not String.IsNullOrEmpty(teacher.Picture) Then
             picTeacher.ImageLocation = teacher.Picture
         Else
-            picTeacher.ImageLocation = Application.StartupPath & "\Images\defalutStudent.png"
+            picTeacher.ImageLocation = Application.StartupPath & "\Images\default.png"
         End If
     End Sub
 
@@ -72,36 +84,42 @@ Public Class TeachersForm
     End Sub
     Sub Regonize()
         If DataGridView1.Columns.Count = 7 Then
-            DataGridView1.Columns(0).HeaderText = "លេខកូដ"
-            DataGridView1.Columns(0).Width = 100
-            DataGridView1.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-            DataGridView1.Columns(1).Width = 250
-            DataGridView1.Columns(1).HeaderText = "គោត្តនាម នាម"
-            DataGridView1.Columns(2).Width = 250
-            DataGridView1.Columns(2).HeaderText = "ឈ្មោះឡាតាំង"
-            DataGridView1.Columns(3).Width = 200
-            DataGridView1.Columns(3).HeaderText = "ថ្ងៃខែឆ្នាំកំណើត"
-            DataGridView1.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-            DataGridView1.Columns(4).Width = 200
-            DataGridView1.Columns(4).HeaderText = "អាស័យដ្ឋាន"
-            DataGridView1.Columns(5).Width = 250
-            DataGridView1.Columns(5).HeaderText = "Email"
-            DataGridView1.Columns(6).Width = 200
-            DataGridView1.Columns(6).HeaderText = "លេខទូរស័ព្ទ"
-            DataGridView1.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
+            With DataGridView1
+                .Columns(0).HeaderText = "លេខកូដ"
+                .Columns(0).Width = 100
+                .Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                .Columns(0).DefaultCellStyle.Format = "000"
+                .Columns(1).Width = 250
+                .Columns(1).HeaderText = "គោត្តនាម នាម"
+                .Columns(2).Width = 250
+                .Columns(2).HeaderText = "ឈ្មោះឡាតាំង"
+                .Columns(3).Width = 200
+                .Columns(3).HeaderText = "ថ្ងៃខែឆ្នាំកំណើត"
+                .Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                .Columns(4).Width = 200
+                .Columns(4).HeaderText = "អាស័យដ្ឋាន"
+                .Columns(5).Width = 250
+                .Columns(5).HeaderText = "Email"
+                .Columns(6).Width = 200
+                .Columns(6).HeaderText = "លេខទូរស័ព្ទ"
+                .Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
+            End With
             For i As Integer = 0 To DataGridView1.Rows.Count - 1
                 If i Mod 2 = 1 Then
                     DataGridView1.Rows(i).DefaultCellStyle.BackColor = Color.FromArgb(254, 254, 254) ' Alternate row color
                 Else
                     DataGridView1.Rows(i).DefaultCellStyle.BackColor = Color.FromArgb(245, 250, 253)
                 End If
+                For Each col As DataGridViewColumn In DataGridView1.Columns
+                    col.SortMode = DataGridViewColumnSortMode.NotSortable
+                Next
             Next i
         End If
         DataGridView1.ClearSelection()
     End Sub
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         Panel2.Visible = True
-        picTeacher.ImageLocation = Application.StartupPath & "\Images\defalutStudent.png"
+        picTeacher.ImageLocation = Application.StartupPath & "\Images\default.png"
         btnAddNew.Visible = True
         btnEdit.Visible = False
     End Sub
@@ -111,38 +129,38 @@ Public Class TeachersForm
             Return
         End If
         Dim count = 0
-        If txtKhName.Texts <> teacher.KhName Then
+        If txtKhName.Text <> teacher.KhName Then
             count += 1
         End If
-        If txtEngName.Texts <> teacher.EngName Then
+        If txtEngName.Text <> teacher.EngName Then
             count += 1
         End If
-        If dtpDob.Value <> teacher.DoB Then
+        If Convert.ToDateTime(dtpDob.Text) <> teacher.DoB Then
             count += 1
         End If
         If cbAddress.Text <> teacher.Address Then
             count += 1
         End If
-        If txtPhone.Texts <> teacher.Phone Then
+        If txtPhone.Text <> teacher.Phone Then
             count += 1
         End If
         If cbGender.Text <> teacher.Gender Then
             count += 1
         End If
-        If txtEmail.Texts <> teacher.Email Then
+        If txtEmail.Text <> teacher.Email Then
             count += 1
         End If
         If count = 0 Then
             MessageBox.Show("មិនមានការផ្លាស់ប្តូរទេ។", "No Changes", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Return
         End If
-        teacher.KhName = txtKhName.Texts
-        teacher.EngName = txtEngName.Texts.Trim()
-        teacher.DoB = dtpDob.Value
+        teacher.KhName = txtKhName.Text
+        teacher.EngName = txtEngName.Text.Trim()
+        teacher.DoB = Convert.ToDateTime(dtpDob.Text)
         teacher.Address = cbAddress.Text.Trim()
-        teacher.Phone = txtPhone.Texts.Trim()
+        teacher.Phone = txtPhone.Text.Trim()
         teacher.Gender = cbGender.Text
-        teacher.Email = txtEmail.Texts.Trim()
+        teacher.Email = txtEmail.Text.Trim()
         teacher.Picture = picTeacher.ImageLocation
         teacher.UpdateTeacher()
         Display()
@@ -152,35 +170,55 @@ Public Class TeachersForm
         If Not CheckField() Then
             Return
         Else
-            teacher.KhName = txtKhName.Texts
-            teacher.EngName = txtEngName.Texts.Trim()
-            teacher.DoB = dtpDob.Value
-            teacher.Address = cbAddress.Text.Trim()
-            teacher.Phone = txtPhone.Texts.Trim()
+            teacher.KhName = txtKhName.Text
+            teacher.EngName = txtEngName.Text.Trim()
+            teacher.DoB = Convert.ToDateTime(dtpDob.Text)
+            teacher.Address = cbAddress.Text
+            teacher.Phone = txtPhone.Text.Trim()
             teacher.Gender = cbGender.Text
-            teacher.Email = txtEmail.Texts.Trim()
-            teacher.Picture = picTeacher.ImageLocation
+            teacher.Email = txtEmail.Text.Trim()
+            teacher.Picture = SaveImageAndReturnPath()
             teacher.AddTeacher()
         End If
         Display()
     End Sub
+    Function SaveImageAndReturnPath() As String
+        If Path.GetFileName(picTeacher.ImageLocation) = "default.png" Then
+            Return picTeacher.ImageLocation
+        End If
 
+        Dim source As String = picTeacher.ImageLocation
+        Dim imagesDir As String = Path.Combine(Application.StartupPath, "Images")
+        Dim destination As String = Path.Combine(imagesDir, Path.GetFileName(source))
+
+        Try
+            If Not Directory.Exists(imagesDir) Then
+                Directory.CreateDirectory(imagesDir)
+            End If
+
+            FileCopy(source, destination)
+            Return destination
+        Catch ex As Exception
+            MessageBox.Show("Failed to copy image: " & ex.Message)
+            Return ""
+        End Try
+    End Function
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         Panel2.Visible = False
-        txtKhName.Texts = ""
-        txtEngName.Texts = ""
-        cbAddress.Text = ""
-        txtPhone.Texts = ""
-        txtEmail.Texts = ""
-        cbGender.Text = ""
-        dtpDob.Value = DateTime.Now
-        picTeacher.ImageLocation = Application.StartupPath & "\Images\defalutStudent.png"
+        txtKhName.Text = ""
+        txtEngName.Text = ""
+        cbAddress.SelectedIndex = cbAddress.Items.Count - 1
+        txtPhone.Text = ""
+        txtEmail.Text = ""
+        cbGender.SelectedText = cbGender.Items.Count - 1
+        dtpDob.Text = DateTime.Now().ToString("dd/MM/yyyy")
+        picTeacher.ImageLocation = Application.StartupPath & "\Images\default.png"
         btnAddNew.Visible = False
     End Sub
 
     Private Sub DataGridView1_MouseClick(sender As Object, e As MouseEventArgs) Handles DataGridView1.MouseClick
         Dim menu As New ContextMenuStrip()
-        menu.Font = New Font("Khmer OS System", 9)
+        menu.Font = New Font("Khmer OS System", 13)
         menu.Items.Add("លម្អិត", Nothing, AddressOf ShowDetails)
         menu.Items.Add("កែប្រែ", Nothing, AddressOf EditClass)
         menu.Items.Add("លុប", Nothing, AddressOf DeleteCourse)
@@ -210,35 +248,34 @@ Public Class TeachersForm
     End Sub
     Private Sub EditClass()
         Panel2.Visible = True
-        txtKhName.Texts = teacher.KhName
-        txtEngName.Texts = teacher.EngName
-        cbAddress.Text = teacher.Address
-        txtPhone.Texts = teacher.Phone
-        dtpDob.Value = teacher.DoB
+        txtKhName.Text = teacher.KhName
+        txtEngName.Text = teacher.EngName
+        cbAddress.SelectedIndex = cbAddress.FindStringExact(teacher.Address)
+        txtPhone.Text = teacher.Phone
+        dtpDob.Text = teacher.DoB.ToString("dd/MM/yyyy")
         cbGender.SelectedIndex = cbGender.FindStringExact(teacher.Gender)
-        txtEmail.Texts = teacher.Email
+        txtEmail.Text = teacher.Email
         picTeacher.ImageLocation = teacher.Picture
         btnEdit.Visible = True
         btnAddNew.Visible = False
     End Sub
 
 
-    Sub SearchData() Handles cbSearchAddress.SelectedIndexChanged, txtSearch._TextChanged
+    Sub SearchData() Handles cbSearchAddress.SelectedIndexChanged, txtSearch.TextChanged
         If startup Then
             Return
         End If
         Dim query As String = "SELECT tblTeacher.ID, tblTeacher.KhName AS KhmerName, tblTeacher.EngName AS EnglishName, tblTeacher.DOB AS DateOfBirth, 
                                 tblTeacher.Address AS PlaceOfBirth, tblTeacher.Email, tblTeacher.Phone FROM tblTeacher
-                                WHERE Address LIKE @address AND (ID Like @id AND (KhName Like @name OR engName Like @name));"
+                                WHERE Address LIKE @address AND (ID Like @id OR (KhName Like @name OR engName Like @name));"
         Dim cmd As OleDbCommand = New OleDbCommand(query, teacher.GetConnection())
-        Dim name As String = If(txtSearch.Texts.Trim() = "", "%", txtSearch.Texts.Trim() & "%")
-        Dim id As String = If(IsNumeric(txtSearch.Texts.Trim()), txtSearch.Texts.Trim(), "%")
+        Dim name As String = If(txtSearch.Text.Trim() = "", "%", txtSearch.Text.Trim() & "%")
+        Dim id As String = If(IsNumeric(txtSearch.Text.Trim()), txtSearch.Text.Trim() & "%", "0")
         Dim address As String = If(cbSearchAddress.SelectedIndex = cbSearchAddress.Items.Count - 1, "%", cbSearchAddress.SelectedItem.ToString())
         address = "%" & address & "%"
         cmd.Parameters.AddWithValue("@address", address)
         cmd.Parameters.AddWithValue("@id", id)
         cmd.Parameters.AddWithValue("@name", name)
-
         Dim dt As DataTable = teacher.ExecuteQuery(cmd)
         DataGridView1.DataSource = dt
         Regonize()
@@ -254,14 +291,9 @@ Public Class TeachersForm
         cbAddress.SelectedIndex = cbAddress.Items.Count - 1
     End Sub
 
-    Private Sub FlowLayoutPanel1_Paint(sender As Object, e As PaintEventArgs) Handles FlowLayoutPanel1.Paint
-        GetCbAddress()
-        Display()
-    End Sub
-
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
         cbAddress.SelectedIndex = cbAddress.Items.Count - 1
-        txtSearch.Texts = ""
+        txtSearch.Text = ""
     End Sub
 
     Private Sub btnAdd_Click_1(sender As Object, e As EventArgs) Handles btnAdd.Click
@@ -269,11 +301,12 @@ Public Class TeachersForm
     End Sub
 
     Private Sub Panel9_Paint_1(sender As Object, e As PaintEventArgs) Handles Panel9.Paint
+
         startup = False
-        GetCbAddress()
     End Sub
 
-    Private Sub btnEdit_Click_1(sender As Object, e As EventArgs) Handles btnEdit.Click
-
+    Private Sub Guna2Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Guna2Panel1.Paint
+        Display()
+        GetCbAddress()
     End Sub
 End Class

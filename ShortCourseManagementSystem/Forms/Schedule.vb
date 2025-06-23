@@ -83,4 +83,8 @@ Public Class Schedule
         DataGridView2.ClearSelection()
         id = 0
     End Sub
+
+    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        Me.Close()
+    End Sub
 End Class

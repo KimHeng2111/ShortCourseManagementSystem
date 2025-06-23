@@ -117,29 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;Panel2.Name" xml:space="preserve">
+    <value>Panel2</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="Label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Khmer OS Moul, 11.25pt</value>
+  <data name="&gt;&gt;Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;Panel2.Parent" xml:space="preserve">
+    <value>Guna2Panel2</value>
   </data>
-  <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>206, 9</value>
-  </data>
-  <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 27</value>
-  </data>
-  <data name="Label1.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;Panel2.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="Label1.Text" xml:space="preserve">
-    <value>គ្រប់គ្រងវេនសិក្សា</value>
+  <data name="&gt;&gt;Panel1.Name" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Panel1.Parent" xml:space="preserve">
+    <value>Guna2Panel2</value>
+  </data>
+  <data name="&gt;&gt;Panel1.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;Label1.Name" xml:space="preserve">
     <value>Label1</value>
@@ -148,28 +148,364 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;Label1.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>Guna2Panel2</value>
   </data>
   <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="Label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Guna2Panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
-  <data name="Label2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Khmer OS Battambang, 9.75pt</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="Guna2Panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 35</value>
   </data>
-  <data name="Label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>84, 46</value>
+  <data name="Guna2Panel2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 10, 5, 5</value>
   </data>
-  <data name="Label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 24</value>
+  <data name="Guna2Panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>595, 540</value>
   </data>
-  <data name="Label2.TabIndex" type="System.Int32, mscorlib">
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Guna2Panel2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="Label2.Text" xml:space="preserve">
-    <value>វេនសិក្សា ៖</value>
+  <data name="&gt;&gt;Guna2Panel2.Name" xml:space="preserve">
+    <value>Guna2Panel2</value>
+  </data>
+  <data name="&gt;&gt;Guna2Panel2.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2Panel, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;Guna2Panel2.Parent" xml:space="preserve">
+    <value>Guna2Panel1</value>
+  </data>
+  <data name="&gt;&gt;Guna2Panel2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Label5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Label5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 12pt, style=Bold</value>
+  </data>
+  <data name="Label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="Label5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 0, 0, 0</value>
+  </data>
+  <data name="Label5.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 5, 0, 0</value>
+  </data>
+  <data name="Label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>565, 35</value>
+  </data>
+  <data name="Label5.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="Label5.Text" xml:space="preserve">
+    <value>ShorCourse Management Systme</value>
+  </data>
+  <data name="&gt;&gt;Label5.Name" xml:space="preserve">
+    <value>Label5</value>
+  </data>
+  <data name="&gt;&gt;Label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label5.Parent" xml:space="preserve">
+    <value>Guna2Panel3</value>
+  </data>
+  <data name="&gt;&gt;Label5.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnClose.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="btnClose.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnClose.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10pt, style=Bold</value>
+  </data>
+  <data name="btnClose.Location" type="System.Drawing.Point, System.Drawing">
+    <value>565, 0</value>
+  </data>
+  <data name="btnClose.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 35</value>
+  </data>
+  <data name="btnClose.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="&gt;&gt;btnClose.Name" xml:space="preserve">
+    <value>btnClose</value>
+  </data>
+  <data name="&gt;&gt;btnClose.Type" xml:space="preserve">
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.4.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f</value>
+  </data>
+  <data name="&gt;&gt;btnClose.Parent" xml:space="preserve">
+    <value>Guna2Panel3</value>
+  </data>
+  <data name="&gt;&gt;btnClose.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Guna2Panel3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="Guna2Panel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="Guna2Panel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>595, 35</value>
+  </data>
+  <data name="Guna2Panel3.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;Guna2Panel3.Name" xml:space="preserve">
+    <value>Guna2Panel3</value>
+  </data>
+  <data name="&gt;&gt;Guna2Panel3.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2Panel, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;Guna2Panel3.Parent" xml:space="preserve">
+    <value>Guna2Panel1</value>
+  </data>
+  <data name="&gt;&gt;Guna2Panel3.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Guna2Panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Guna2Panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 5</value>
+  </data>
+  <data name="Guna2Panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>595, 575</value>
+  </data>
+  <data name="Guna2Panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;Guna2Panel1.Name" xml:space="preserve">
+    <value>Guna2Panel1</value>
+  </data>
+  <data name="&gt;&gt;Guna2Panel1.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2Panel, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;Guna2Panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Guna2Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;DataGridView2.Name" xml:space="preserve">
+    <value>DataGridView2</value>
+  </data>
+  <data name="&gt;&gt;DataGridView2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DataGridView2.Parent" xml:space="preserve">
+    <value>Panel2</value>
+  </data>
+  <data name="&gt;&gt;DataGridView2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;Label6.Name" xml:space="preserve">
+    <value>Label6</value>
+  </data>
+  <data name="&gt;&gt;Label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label6.Parent" xml:space="preserve">
+    <value>Panel2</value>
+  </data>
+  <data name="&gt;&gt;Label6.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 266</value>
+  </data>
+  <data name="Panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>585, 269</value>
+  </data>
+  <data name="Panel2.TabIndex" type="System.Int32, mscorlib">
+    <value>67</value>
+  </data>
+  <data name="&gt;&gt;Panel2.Name" xml:space="preserve">
+    <value>Panel2</value>
+  </data>
+  <data name="&gt;&gt;Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Panel2.Parent" xml:space="preserve">
+    <value>Guna2Panel2</value>
+  </data>
+  <data name="&gt;&gt;Panel2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="DataGridView2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="DataGridView2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 32</value>
+  </data>
+  <data name="DataGridView2.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="DataGridView2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>585, 237</value>
+  </data>
+  <data name="DataGridView2.TabIndex" type="System.Int32, mscorlib">
+    <value>63</value>
+  </data>
+  <data name="&gt;&gt;DataGridView2.Name" xml:space="preserve">
+    <value>DataGridView2</value>
+  </data>
+  <data name="&gt;&gt;DataGridView2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DataGridView2.Parent" xml:space="preserve">
+    <value>Panel2</value>
+  </data>
+  <data name="&gt;&gt;DataGridView2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Label6.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="Label6.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Khmer OS Moul Light, 9.75pt</value>
+  </data>
+  <data name="Label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="Label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>585, 32</value>
+  </data>
+  <data name="Label6.TabIndex" type="System.Int32, mscorlib">
+    <value>64</value>
+  </data>
+  <data name="Label6.Text" xml:space="preserve">
+    <value>បញ្ជីវេនសិក្សា</value>
+  </data>
+  <data name="Label6.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;Label6.Name" xml:space="preserve">
+    <value>Label6</value>
+  </data>
+  <data name="&gt;&gt;Label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label6.Parent" xml:space="preserve">
+    <value>Panel2</value>
+  </data>
+  <data name="&gt;&gt;Label6.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;btnDelete.Name" xml:space="preserve">
+    <value>btnDelete</value>
+  </data>
+  <data name="&gt;&gt;btnDelete.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;btnDelete.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;btnDelete.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btnAdd.Name" xml:space="preserve">
+    <value>btnAdd</value>
+  </data>
+  <data name="&gt;&gt;btnAdd.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;btnAdd.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;btnAdd.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;btnClear.Name" xml:space="preserve">
+    <value>btnClear</value>
+  </data>
+  <data name="&gt;&gt;btnClear.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;btnClear.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;btnClear.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;Label4.Name" xml:space="preserve">
+    <value>Label4</value>
+  </data>
+  <data name="&gt;&gt;Label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label4.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;Label4.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;tpEnd.Name" xml:space="preserve">
+    <value>tpEnd</value>
+  </data>
+  <data name="&gt;&gt;tpEnd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpEnd.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;tpEnd.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;tpStart.Name" xml:space="preserve">
+    <value>tpStart</value>
+  </data>
+  <data name="&gt;&gt;tpStart.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpStart.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;tpStart.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;cbDay.Name" xml:space="preserve">
+    <value>cbDay</value>
+  </data>
+  <data name="&gt;&gt;cbDay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbDay.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;cbDay.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;Label3.Name" xml:space="preserve">
+    <value>Label3</value>
+  </data>
+  <data name="&gt;&gt;Label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label3.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;Label3.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <data name="&gt;&gt;Label2.Name" xml:space="preserve">
     <value>Label2</value>
@@ -183,38 +519,203 @@
   <data name="&gt;&gt;Label2.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="Label3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="Panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
   </data>
-  <data name="Label3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Khmer OS Battambang, 9.75pt</value>
+  <data name="Panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 43</value>
   </data>
-  <data name="Label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="Panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>585, 223</value>
   </data>
-  <data name="Label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>84, 109</value>
+  <data name="Panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>66</value>
   </data>
-  <data name="Label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 24</value>
-  </data>
-  <data name="Label3.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="Label3.Text" xml:space="preserve">
-    <value>ម៉ោងសិក្សា ៖</value>
-  </data>
-  <data name="&gt;&gt;Label3.Name" xml:space="preserve">
-    <value>Label3</value>
-  </data>
-  <data name="&gt;&gt;Label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label3.Parent" xml:space="preserve">
+  <data name="&gt;&gt;Panel1.Name" xml:space="preserve">
     <value>Panel1</value>
   </data>
-  <data name="&gt;&gt;Label3.ZOrder" xml:space="preserve">
-    <value>7</value>
+  <data name="&gt;&gt;Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Panel1.Parent" xml:space="preserve">
+    <value>Guna2Panel2</value>
+  </data>
+  <data name="&gt;&gt;Panel1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnDelete.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Khmer OS Siemreap, 12pt, style=Bold</value>
+  </data>
+  <data name="btnDelete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>227, 166</value>
+  </data>
+  <data name="btnDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 37</value>
+  </data>
+  <data name="btnDelete.TabIndex" type="System.Int32, mscorlib">
+    <value>107</value>
+  </data>
+  <data name="btnDelete.Text" xml:space="preserve">
+    <value>លុប</value>
+  </data>
+  <data name="&gt;&gt;btnDelete.Name" xml:space="preserve">
+    <value>btnDelete</value>
+  </data>
+  <data name="&gt;&gt;btnDelete.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;btnDelete.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;btnDelete.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnAdd.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Khmer OS Siemreap, 12pt, style=Bold</value>
+  </data>
+  <data name="btnAdd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 166</value>
+  </data>
+  <data name="btnAdd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 37</value>
+  </data>
+  <data name="btnAdd.TabIndex" type="System.Int32, mscorlib">
+    <value>105</value>
+  </data>
+  <data name="btnAdd.Text" xml:space="preserve">
+    <value>បន្ថែម</value>
+  </data>
+  <data name="&gt;&gt;btnAdd.Name" xml:space="preserve">
+    <value>btnAdd</value>
+  </data>
+  <data name="&gt;&gt;btnAdd.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;btnAdd.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;btnAdd.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnClear.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Khmer OS Siemreap, 12pt, style=Bold</value>
+  </data>
+  <data name="btnClear.Location" type="System.Drawing.Point, System.Drawing">
+    <value>420, 166</value>
+  </data>
+  <data name="btnClear.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 37</value>
+  </data>
+  <data name="btnClear.TabIndex" type="System.Int32, mscorlib">
+    <value>106</value>
+  </data>
+  <data name="btnClear.Text" xml:space="preserve">
+    <value>សម្អាត</value>
+  </data>
+  <data name="&gt;&gt;btnClear.Name" xml:space="preserve">
+    <value>btnClear</value>
+  </data>
+  <data name="&gt;&gt;btnClear.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;btnClear.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;btnClear.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="Label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Khmer OS Battambang, 9.75pt</value>
+  </data>
+  <data name="Label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>329, 108</value>
+  </data>
+  <data name="Label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 24</value>
+  </data>
+  <data name="Label4.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="Label4.Text" xml:space="preserve">
+    <value>ដល់</value>
+  </data>
+  <data name="&gt;&gt;Label4.Name" xml:space="preserve">
+    <value>Label4</value>
+  </data>
+  <data name="&gt;&gt;Label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label4.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;Label4.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tpEnd.CalendarFont" type="System.Drawing.Font, System.Drawing">
+    <value>Khmer OS Siemreap, 9.75pt</value>
+  </data>
+  <data name="tpEnd.CustomFormat" xml:space="preserve">
+    <value>hh:mm tt</value>
+  </data>
+  <data name="tpEnd.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="tpEnd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>385, 106</value>
+  </data>
+  <data name="tpEnd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="tpEnd.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;tpEnd.Name" xml:space="preserve">
+    <value>tpEnd</value>
+  </data>
+  <data name="&gt;&gt;tpEnd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpEnd.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;tpEnd.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tpStart.CalendarFont" type="System.Drawing.Font, System.Drawing">
+    <value>Khmer OS Siemreap, 9.75pt</value>
+  </data>
+  <data name="tpStart.CustomFormat" xml:space="preserve">
+    <value>hh:mm tt</value>
+  </data>
+  <data name="tpStart.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="tpStart.Location" type="System.Drawing.Point, System.Drawing">
+    <value>194, 106</value>
+  </data>
+  <data name="tpStart.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 22</value>
+  </data>
+  <data name="tpStart.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;tpStart.Name" xml:space="preserve">
+    <value>tpStart</value>
+  </data>
+  <data name="&gt;&gt;tpStart.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpStart.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;tpStart.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="cbDay.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>System</value>
@@ -252,291 +753,111 @@
   <data name="&gt;&gt;cbDay.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="Label4.AutoSize" type="System.Boolean, mscorlib">
+  <data name="Label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="Label4.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="Label3.Font" type="System.Drawing.Font, System.Drawing">
     <value>Khmer OS Battambang, 9.75pt</value>
   </data>
-  <data name="Label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="Label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="Label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>329, 108</value>
+  <data name="Label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>84, 109</value>
   </data>
-  <data name="Label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 24</value>
+  <data name="Label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 24</value>
   </data>
-  <data name="Label4.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="Label4.Text" xml:space="preserve">
-    <value>ដល់</value>
-  </data>
-  <data name="&gt;&gt;Label4.Name" xml:space="preserve">
-    <value>Label4</value>
-  </data>
-  <data name="&gt;&gt;Label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label4.Parent" xml:space="preserve">
-    <value>Panel1</value>
-  </data>
-  <data name="&gt;&gt;Label4.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tpEnd.CalendarFont" type="System.Drawing.Font, System.Drawing">
-    <value>Khmer OS Siemreap, 9.75pt</value>
-  </data>
-  <data name="tpEnd.CustomFormat" xml:space="preserve">
-    <value>hh:mm tt</value>
-  </data>
-  <data name="tpEnd.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="tpEnd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>385, 106</value>
-  </data>
-  <data name="tpEnd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 22</value>
-  </data>
-  <data name="tpEnd.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;tpEnd.Name" xml:space="preserve">
-    <value>tpEnd</value>
-  </data>
-  <data name="&gt;&gt;tpEnd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpEnd.Parent" xml:space="preserve">
-    <value>Panel1</value>
-  </data>
-  <data name="&gt;&gt;tpEnd.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tpStart.CalendarFont" type="System.Drawing.Font, System.Drawing">
-    <value>Khmer OS Siemreap, 9.75pt</value>
-  </data>
-  <data name="tpStart.CustomFormat" xml:space="preserve">
-    <value>hh:mm tt</value>
-  </data>
-  <data name="tpStart.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="tpStart.Location" type="System.Drawing.Point, System.Drawing">
-    <value>194, 106</value>
-  </data>
-  <data name="tpStart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 22</value>
-  </data>
-  <data name="tpStart.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;tpStart.Name" xml:space="preserve">
-    <value>tpStart</value>
-  </data>
-  <data name="&gt;&gt;tpStart.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpStart.Parent" xml:space="preserve">
-    <value>Panel1</value>
-  </data>
-  <data name="&gt;&gt;tpStart.ZOrder" xml:space="preserve">
+  <data name="Label3.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="btnClear.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Khmer OS Battambang, 9.75pt</value>
+  <data name="Label3.Text" xml:space="preserve">
+    <value>ម៉ោងសិក្សា ៖</value>
   </data>
-  <data name="btnClear.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;Label3.Name" xml:space="preserve">
+    <value>Label3</value>
   </data>
-  <data name="btnClear.Location" type="System.Drawing.Point, System.Drawing">
-    <value>385, 193</value>
-  </data>
-  <data name="btnClear.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 31</value>
-  </data>
-  <data name="btnClear.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="btnClear.Text" xml:space="preserve">
-    <value>សម្អាត</value>
-  </data>
-  <data name="&gt;&gt;btnClear.Name" xml:space="preserve">
-    <value>btnClear</value>
-  </data>
-  <data name="&gt;&gt;btnClear.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnClear.Parent" xml:space="preserve">
-    <value>Panel1</value>
-  </data>
-  <data name="&gt;&gt;btnClear.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="btnDelete.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Khmer OS Battambang, 9.75pt</value>
-  </data>
-  <data name="btnDelete.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnDelete.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 193</value>
-  </data>
-  <data name="btnDelete.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 31</value>
-  </data>
-  <data name="btnDelete.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="btnDelete.Text" xml:space="preserve">
-    <value>លុប</value>
-  </data>
-  <data name="&gt;&gt;btnDelete.Name" xml:space="preserve">
-    <value>btnDelete</value>
-  </data>
-  <data name="&gt;&gt;btnDelete.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnDelete.Parent" xml:space="preserve">
-    <value>Panel1</value>
-  </data>
-  <data name="&gt;&gt;btnDelete.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="btnAdd.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Khmer OS Battambang, 9.75pt</value>
-  </data>
-  <data name="btnAdd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>107, 193</value>
-  </data>
-  <data name="btnAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 31</value>
-  </data>
-  <data name="btnAdd.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>បន្ថែម</value>
-  </data>
-  <data name="&gt;&gt;btnAdd.Name" xml:space="preserve">
-    <value>btnAdd</value>
-  </data>
-  <data name="&gt;&gt;btnAdd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnAdd.Parent" xml:space="preserve">
-    <value>Panel1</value>
-  </data>
-  <data name="&gt;&gt;btnAdd.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="Panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 52</value>
-  </data>
-  <data name="Panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>589, 238</value>
-  </data>
-  <data name="Panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;Panel1.Name" xml:space="preserve">
-    <value>Panel1</value>
-  </data>
-  <data name="&gt;&gt;Panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Panel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;Panel1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="Label6.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="Label6.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Khmer OS Moul Light, 9.75pt</value>
-  </data>
-  <data name="Label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="Label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>243, 19</value>
-  </data>
-  <data name="Label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 24</value>
-  </data>
-  <data name="Label6.TabIndex" type="System.Int32, mscorlib">
-    <value>64</value>
-  </data>
-  <data name="Label6.Text" xml:space="preserve">
-    <value>បញ្ជីវេនសិក្សា</value>
-  </data>
-  <data name="&gt;&gt;Label6.Name" xml:space="preserve">
-    <value>Label6</value>
-  </data>
-  <data name="&gt;&gt;Label6.Type" xml:space="preserve">
+  <data name="&gt;&gt;Label3.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Label6.Parent" xml:space="preserve">
-    <value>Panel2</value>
+  <data name="&gt;&gt;Label3.Parent" xml:space="preserve">
+    <value>Panel1</value>
   </data>
-  <data name="&gt;&gt;Label6.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;Label3.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
-  <data name="DataGridView2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
+  <data name="Label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="DataGridView2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 55</value>
+  <data name="Label2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Khmer OS Battambang, 9.75pt</value>
   </data>
-  <data name="DataGridView2.RowHeadersWidth" type="System.Int32, mscorlib">
-    <value>35</value>
+  <data name="Label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="DataGridView2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>547, 222</value>
+  <data name="Label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>84, 46</value>
   </data>
-  <data name="DataGridView2.TabIndex" type="System.Int32, mscorlib">
-    <value>63</value>
+  <data name="Label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 24</value>
   </data>
-  <data name="&gt;&gt;DataGridView2.Name" xml:space="preserve">
-    <value>DataGridView2</value>
-  </data>
-  <data name="&gt;&gt;DataGridView2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DataGridView2.Parent" xml:space="preserve">
-    <value>Panel2</value>
-  </data>
-  <data name="&gt;&gt;DataGridView2.ZOrder" xml:space="preserve">
+  <data name="Label2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="Panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
+  <data name="Label2.Text" xml:space="preserve">
+    <value>វេនសិក្សា ៖</value>
   </data>
-  <data name="Panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 296</value>
+  <data name="&gt;&gt;Label2.Name" xml:space="preserve">
+    <value>Label2</value>
   </data>
-  <data name="Panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>589, 289</value>
+  <data name="&gt;&gt;Label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="Panel2.TabIndex" type="System.Int32, mscorlib">
-    <value>64</value>
+  <data name="&gt;&gt;Label2.Parent" xml:space="preserve">
+    <value>Panel1</value>
   </data>
-  <data name="&gt;&gt;Panel2.Name" xml:space="preserve">
-    <value>Panel2</value>
+  <data name="&gt;&gt;Label2.ZOrder" xml:space="preserve">
+    <value>8</value>
   </data>
-  <data name="&gt;&gt;Panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="Label1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
   </data>
-  <data name="&gt;&gt;Panel2.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="Label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Khmer OS Moul, 11.25pt</value>
   </data>
-  <data name="&gt;&gt;Panel2.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="Label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
+  <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 10</value>
+  </data>
+  <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>585, 33</value>
+  </data>
+  <data name="Label1.TabIndex" type="System.Int32, mscorlib">
+    <value>65</value>
+  </data>
+  <data name="Label1.Text" xml:space="preserve">
+    <value>គ្រប់គ្រងវេនសិក្សា</value>
+  </data>
+  <data name="Label1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;Label1.Name" xml:space="preserve">
+    <value>Label1</value>
+  </data>
+  <data name="&gt;&gt;Label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label1.Parent" xml:space="preserve">
+    <value>Guna2Panel2</value>
+  </data>
+  <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="Guna2Elipse1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -544,7 +865,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>589, 585</value>
+    <value>605, 585</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -622,11 +943,20 @@
         AAMAAAADAAAAAwAAAAOAAAAHwAAAD/4f4f8=
 </value>
   </data>
+  <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>វេនសិក្សា</value>
   </data>
+  <data name="&gt;&gt;Guna2Elipse1.Name" xml:space="preserve">
+    <value>Guna2Elipse1</value>
+  </data>
+  <data name="&gt;&gt;Guna2Elipse1.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2Elipse, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>Room</value>
+    <value>Schedule</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

@@ -23,12 +23,22 @@ Partial Class RegisterForm
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RegisterForm))
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.OpenPic = New System.Windows.Forms.OpenFileDialog()
-        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
+        Me.PanelSearch = New System.Windows.Forms.Panel()
+        Me.cbSearchTeacher = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.txtSearch = New CustomControls.RJControls.RJTextBox()
+        Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.PanelListShow = New Guna.UI2.WinForms.Guna2Panel()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Label36 = New System.Windows.Forms.Label()
+        Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
         Me.PanelRegister = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.txtPay = New Guna.UI2.WinForms.Guna2TextBox()
@@ -83,16 +93,11 @@ Partial Class RegisterForm
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.txtRoom = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label31 = New System.Windows.Forms.Label()
-        Me.PanelSearch = New System.Windows.Forms.Panel()
-        Me.cbSearchTeacher = New System.Windows.Forms.ComboBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.txtSearch = New CustomControls.RJControls.RJTextBox()
-        Me.PanelListShow = New Guna.UI2.WinForms.Guna2Panel()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Label36 = New System.Windows.Forms.Label()
-        Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
         Me.Guna2Elipse2 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
-        Me.FlowLayoutPanel1.SuspendLayout()
+        Me.PanelSearch.SuspendLayout()
+        Me.Guna2Panel1.SuspendLayout()
+        Me.PanelListShow.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelRegister.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel12.SuspendLayout()
@@ -109,9 +114,6 @@ Partial Class RegisterForm
         Me.Panel16.SuspendLayout()
         Me.Panel8.SuspendLayout()
         Me.Panel4.SuspendLayout()
-        Me.PanelSearch.SuspendLayout()
-        Me.PanelListShow.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'OpenPic
@@ -120,17 +122,196 @@ Partial Class RegisterForm
         Me.OpenPic.RestoreDirectory = True
         Me.OpenPic.Title = "Choose Image"
         '
-        'FlowLayoutPanel1
+        'Guna2Elipse1
         '
-        Me.FlowLayoutPanel1.AutoScroll = True
-        Me.FlowLayoutPanel1.Controls.Add(Me.PanelRegister)
-        Me.FlowLayoutPanel1.Controls.Add(Me.PanelSearch)
-        Me.FlowLayoutPanel1.Controls.Add(Me.PanelListShow)
-        Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(15, 15)
-        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(1705, 952)
-        Me.FlowLayoutPanel1.TabIndex = 9
+        Me.Guna2Elipse1.BorderRadius = 10
+        Me.Guna2Elipse1.TargetControl = Me.PanelSearch
+        '
+        'PanelSearch
+        '
+        Me.PanelSearch.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.PanelSearch.Controls.Add(Me.cbSearchTeacher)
+        Me.PanelSearch.Controls.Add(Me.Button1)
+        Me.PanelSearch.Controls.Add(Me.txtSearch)
+        Me.PanelSearch.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PanelSearch.Location = New System.Drawing.Point(0, 443)
+        Me.PanelSearch.Margin = New System.Windows.Forms.Padding(3, 7, 3, 10)
+        Me.PanelSearch.Name = "PanelSearch"
+        Me.PanelSearch.Padding = New System.Windows.Forms.Padding(15)
+        Me.PanelSearch.Size = New System.Drawing.Size(1700, 60)
+        Me.PanelSearch.TabIndex = 23
+        '
+        'cbSearchTeacher
+        '
+        Me.cbSearchTeacher.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.cbSearchTeacher.BackColor = System.Drawing.Color.Transparent
+        Me.cbSearchTeacher.BorderColor = System.Drawing.Color.DimGray
+        Me.cbSearchTeacher.BorderRadius = 8
+        Me.cbSearchTeacher.BorderThickness = 2
+        Me.cbSearchTeacher.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cbSearchTeacher.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbSearchTeacher.Enabled = False
+        Me.cbSearchTeacher.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(136, Byte), Integer))
+        Me.cbSearchTeacher.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(136, Byte), Integer))
+        Me.cbSearchTeacher.FocusedState.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbSearchTeacher.FocusedState.ForeColor = System.Drawing.Color.Black
+        Me.cbSearchTeacher.FocusedState.Parent = Me.cbSearchTeacher
+        Me.cbSearchTeacher.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbSearchTeacher.ForeColor = System.Drawing.Color.Black
+        Me.cbSearchTeacher.FormattingEnabled = True
+        Me.cbSearchTeacher.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(136, Byte), Integer))
+        Me.cbSearchTeacher.HoverState.FillColor = System.Drawing.Color.White
+        Me.cbSearchTeacher.HoverState.ForeColor = System.Drawing.Color.Black
+        Me.cbSearchTeacher.HoverState.Parent = Me.cbSearchTeacher
+        Me.cbSearchTeacher.ItemHeight = 35
+        Me.cbSearchTeacher.ItemsAppearance.BackColor = System.Drawing.Color.White
+        Me.cbSearchTeacher.ItemsAppearance.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbSearchTeacher.ItemsAppearance.ForeColor = System.Drawing.Color.Black
+        Me.cbSearchTeacher.ItemsAppearance.Parent = Me.cbSearchTeacher
+        Me.cbSearchTeacher.ItemsAppearance.SelectedBackColor = System.Drawing.Color.White
+        Me.cbSearchTeacher.ItemsAppearance.SelectedForeColor = System.Drawing.Color.Black
+        Me.cbSearchTeacher.Location = New System.Drawing.Point(359, 9)
+        Me.cbSearchTeacher.Name = "cbSearchTeacher"
+        Me.cbSearchTeacher.ShadowDecoration.Parent = Me.cbSearchTeacher
+        Me.cbSearchTeacher.Size = New System.Drawing.Size(266, 41)
+        Me.cbSearchTeacher.TabIndex = 2
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.Red
+        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(37, Byte), Integer))
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(644, 10)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(170, 41)
+        Me.Button1.TabIndex = 3
+        Me.Button1.Text = "សម្អាត"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'txtSearch
+        '
+        Me.txtSearch.BackColor = System.Drawing.SystemColors.Window
+        Me.txtSearch.BorderColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(111, Byte), Integer), CType(CType(210, Byte), Integer))
+        Me.txtSearch.BorderFocusColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtSearch.BorderRadius = 10
+        Me.txtSearch.BorderSize = 2
+        Me.txtSearch.Font = New System.Drawing.Font("Khmer OS Battambang", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSearch.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.txtSearch.Location = New System.Drawing.Point(5, 9)
+        Me.txtSearch.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtSearch.Multiline = False
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.Padding = New System.Windows.Forms.Padding(10, 7, 10, 7)
+        Me.txtSearch.PasswordChar = False
+        Me.txtSearch.PlaceholderColor = System.Drawing.Color.DarkGray
+        Me.txtSearch.PlaceholderText = "ស្វែងរក ឈ្មោះមុខវីជ្ជា ឬ ClassID"
+        Me.txtSearch.Size = New System.Drawing.Size(340, 39)
+        Me.txtSearch.TabIndex = 1
+        Me.txtSearch.Texts = ""
+        Me.txtSearch.UnderlinedStyle = False
+        '
+        'Guna2Panel1
+        '
+        Me.Guna2Panel1.Controls.Add(Me.PanelListShow)
+        Me.Guna2Panel1.Controls.Add(Me.Guna2Panel2)
+        Me.Guna2Panel1.Controls.Add(Me.PanelSearch)
+        Me.Guna2Panel1.Controls.Add(Me.Guna2Panel3)
+        Me.Guna2Panel1.Controls.Add(Me.PanelRegister)
+        Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Guna2Panel1.Location = New System.Drawing.Point(10, 10)
+        Me.Guna2Panel1.Name = "Guna2Panel1"
+        Me.Guna2Panel1.ShadowDecoration.Parent = Me.Guna2Panel1
+        Me.Guna2Panel1.Size = New System.Drawing.Size(1700, 962)
+        Me.Guna2Panel1.TabIndex = 0
+        '
+        'PanelListShow
+        '
+        Me.PanelListShow.BorderRadius = 15
+        Me.PanelListShow.Controls.Add(Me.DataGridView1)
+        Me.PanelListShow.Controls.Add(Me.Label36)
+        Me.PanelListShow.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PanelListShow.FillColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.PanelListShow.Location = New System.Drawing.Point(0, 513)
+        Me.PanelListShow.Name = "PanelListShow"
+        Me.PanelListShow.Padding = New System.Windows.Forms.Padding(5)
+        Me.PanelListShow.ShadowDecoration.Parent = Me.PanelListShow
+        Me.PanelListShow.Size = New System.Drawing.Size(1700, 449)
+        Me.PanelListShow.TabIndex = 22
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(254, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DataGridView1.EnableHeadersVisualStyles = False
+        Me.DataGridView1.Location = New System.Drawing.Point(5, 59)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(3, 3, 15, 3)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.DataGridView1.RowHeadersVisible = False
+        Me.DataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(253, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle3
+        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DataGridView1.Size = New System.Drawing.Size(1690, 385)
+        Me.DataGridView1.TabIndex = 4
+        '
+        'Label36
+        '
+        Me.Label36.BackColor = System.Drawing.Color.Transparent
+        Me.Label36.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label36.Font = New System.Drawing.Font("Khmer OS Koulen", 16.0!)
+        Me.Label36.ForeColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(136, Byte), Integer))
+        Me.Label36.Location = New System.Drawing.Point(5, 5)
+        Me.Label36.Margin = New System.Windows.Forms.Padding(3, 0, 3, 15)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.Label36.Size = New System.Drawing.Size(1690, 54)
+        Me.Label36.TabIndex = 3
+        Me.Label36.Text = "បញ្ជីវគ្គសិក្សា"
+        Me.Label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Guna2Panel2
+        '
+        Me.Guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Guna2Panel2.Location = New System.Drawing.Point(0, 503)
+        Me.Guna2Panel2.Name = "Guna2Panel2"
+        Me.Guna2Panel2.ShadowDecoration.Parent = Me.Guna2Panel2
+        Me.Guna2Panel2.Size = New System.Drawing.Size(1700, 10)
+        Me.Guna2Panel2.TabIndex = 104
+        '
+        'Guna2Panel3
+        '
+        Me.Guna2Panel3.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Guna2Panel3.Location = New System.Drawing.Point(0, 433)
+        Me.Guna2Panel3.Name = "Guna2Panel3"
+        Me.Guna2Panel3.ShadowDecoration.Parent = Me.Guna2Panel3
+        Me.Guna2Panel3.Size = New System.Drawing.Size(1700, 10)
+        Me.Guna2Panel3.TabIndex = 105
         '
         'PanelRegister
         '
@@ -153,10 +334,11 @@ Partial Class RegisterForm
         Me.PanelRegister.Controls.Add(Me.btnClear)
         Me.PanelRegister.Controls.Add(Me.btnRegister)
         Me.PanelRegister.Controls.Add(Me.Panel4)
-        Me.PanelRegister.Location = New System.Drawing.Point(3, 3)
+        Me.PanelRegister.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PanelRegister.Location = New System.Drawing.Point(0, 0)
         Me.PanelRegister.Name = "PanelRegister"
-        Me.PanelRegister.Size = New System.Drawing.Size(1678, 426)
-        Me.PanelRegister.TabIndex = 3
+        Me.PanelRegister.Size = New System.Drawing.Size(1700, 433)
+        Me.PanelRegister.TabIndex = 21
         '
         'Panel1
         '
@@ -636,7 +818,7 @@ Partial Class RegisterForm
         Me.Label4.ForeColor = System.Drawing.Color.White
         Me.Label4.Location = New System.Drawing.Point(0, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(1678, 49)
+        Me.Label4.Size = New System.Drawing.Size(1700, 49)
         Me.Label4.TabIndex = 95
         Me.Label4.Text = "ព័ត៌មានសិស្សចុះឈ្មោះ"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -967,7 +1149,7 @@ Partial Class RegisterForm
         Me.btnChooseStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnChooseStudent.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnChooseStudent.ForeColor = System.Drawing.Color.White
-        Me.btnChooseStudent.Location = New System.Drawing.Point(767, 373)
+        Me.btnChooseStudent.Location = New System.Drawing.Point(778, 380)
         Me.btnChooseStudent.Name = "btnChooseStudent"
         Me.btnChooseStudent.Size = New System.Drawing.Size(151, 44)
         Me.btnChooseStudent.TabIndex = 12
@@ -982,7 +1164,7 @@ Partial Class RegisterForm
         Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClear.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClear.ForeColor = System.Drawing.Color.White
-        Me.btnClear.Location = New System.Drawing.Point(958, 373)
+        Me.btnClear.Location = New System.Drawing.Point(969, 380)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(151, 44)
         Me.btnClear.TabIndex = 13
@@ -997,7 +1179,7 @@ Partial Class RegisterForm
         Me.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnRegister.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRegister.ForeColor = System.Drawing.Color.White
-        Me.btnRegister.Location = New System.Drawing.Point(570, 373)
+        Me.btnRegister.Location = New System.Drawing.Point(581, 380)
         Me.btnRegister.Name = "btnRegister"
         Me.btnRegister.Size = New System.Drawing.Size(151, 44)
         Me.btnRegister.TabIndex = 11
@@ -1059,158 +1241,26 @@ Partial Class RegisterForm
         Me.Label31.Text = "បន្ទប់ ៖"
         Me.Label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'PanelSearch
-        '
-        Me.PanelSearch.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.PanelSearch.Controls.Add(Me.cbSearchTeacher)
-        Me.PanelSearch.Controls.Add(Me.Button1)
-        Me.PanelSearch.Controls.Add(Me.txtSearch)
-        Me.PanelSearch.Location = New System.Drawing.Point(3, 439)
-        Me.PanelSearch.Margin = New System.Windows.Forms.Padding(3, 7, 3, 10)
-        Me.PanelSearch.Name = "PanelSearch"
-        Me.PanelSearch.Padding = New System.Windows.Forms.Padding(15)
-        Me.PanelSearch.Size = New System.Drawing.Size(1678, 60)
-        Me.PanelSearch.TabIndex = 20
-        '
-        'cbSearchTeacher
-        '
-        Me.cbSearchTeacher.BackColor = System.Drawing.Color.FromArgb(CType(CType(202, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(248, Byte), Integer))
-        Me.cbSearchTeacher.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbSearchTeacher.Font = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbSearchTeacher.ForeColor = System.Drawing.SystemColors.MenuText
-        Me.cbSearchTeacher.FormattingEnabled = True
-        Me.cbSearchTeacher.ItemHeight = 24
-        Me.cbSearchTeacher.Location = New System.Drawing.Point(364, 16)
-        Me.cbSearchTeacher.Name = "cbSearchTeacher"
-        Me.cbSearchTeacher.Size = New System.Drawing.Size(197, 32)
-        Me.cbSearchTeacher.TabIndex = 2
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.Red
-        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(587, 10)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(170, 41)
-        Me.Button1.TabIndex = 3
-        Me.Button1.Text = "សម្អាត"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
-        'txtSearch
-        '
-        Me.txtSearch.BackColor = System.Drawing.SystemColors.Window
-        Me.txtSearch.BorderColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(111, Byte), Integer), CType(CType(210, Byte), Integer))
-        Me.txtSearch.BorderFocusColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSearch.BorderRadius = 10
-        Me.txtSearch.BorderSize = 2
-        Me.txtSearch.Font = New System.Drawing.Font("Khmer OS Battambang", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSearch.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.txtSearch.Location = New System.Drawing.Point(5, 9)
-        Me.txtSearch.Margin = New System.Windows.Forms.Padding(4)
-        Me.txtSearch.Multiline = False
-        Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Padding = New System.Windows.Forms.Padding(10, 7, 10, 7)
-        Me.txtSearch.PasswordChar = False
-        Me.txtSearch.PlaceholderColor = System.Drawing.Color.DarkGray
-        Me.txtSearch.PlaceholderText = "ស្វែងរក ឈ្មោះមុខវីជ្ជា ឬ ClassID"
-        Me.txtSearch.Size = New System.Drawing.Size(340, 39)
-        Me.txtSearch.TabIndex = 1
-        Me.txtSearch.Texts = ""
-        Me.txtSearch.UnderlinedStyle = False
-        '
-        'PanelListShow
-        '
-        Me.PanelListShow.BorderRadius = 15
-        Me.PanelListShow.Controls.Add(Me.DataGridView1)
-        Me.PanelListShow.Controls.Add(Me.Label36)
-        Me.PanelListShow.FillColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.PanelListShow.Location = New System.Drawing.Point(3, 512)
-        Me.PanelListShow.Name = "PanelListShow"
-        Me.PanelListShow.Padding = New System.Windows.Forms.Padding(5)
-        Me.PanelListShow.ShadowDecoration.Parent = Me.PanelListShow
-        Me.PanelListShow.Size = New System.Drawing.Size(1678, 391)
-        Me.PanelListShow.TabIndex = 9
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(254, Byte), Integer))
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
-        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView1.EnableHeadersVisualStyles = False
-        Me.DataGridView1.Location = New System.Drawing.Point(5, 59)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(3, 3, 15, 3)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
-        Me.DataGridView1.RowHeadersVisible = False
-        Me.DataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(253, Byte), Integer))
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle6
-        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(1668, 327)
-        Me.DataGridView1.TabIndex = 4
-        '
-        'Label36
-        '
-        Me.Label36.BackColor = System.Drawing.Color.Transparent
-        Me.Label36.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label36.Font = New System.Drawing.Font("Khmer OS Koulen", 16.0!)
-        Me.Label36.ForeColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(136, Byte), Integer))
-        Me.Label36.Location = New System.Drawing.Point(5, 5)
-        Me.Label36.Margin = New System.Windows.Forms.Padding(3, 0, 3, 15)
-        Me.Label36.Name = "Label36"
-        Me.Label36.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Label36.Size = New System.Drawing.Size(1668, 54)
-        Me.Label36.TabIndex = 3
-        Me.Label36.Text = "បញ្ជីវគ្គសិក្សា"
-        Me.Label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Guna2Elipse1
-        '
-        Me.Guna2Elipse1.BorderRadius = 15
-        Me.Guna2Elipse1.TargetControl = Me.PanelRegister
-        '
         'Guna2Elipse2
         '
-        Me.Guna2Elipse2.BorderRadius = 15
-        Me.Guna2Elipse2.TargetControl = Me.PanelSearch
+        Me.Guna2Elipse2.BorderRadius = 10
+        Me.Guna2Elipse2.TargetControl = Me.PanelRegister
         '
         'RegisterForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.Control
+        Me.BackColor = System.Drawing.Color.WhiteSmoke
         Me.ClientSize = New System.Drawing.Size(1720, 982)
-        Me.Controls.Add(Me.FlowLayoutPanel1)
+        Me.Controls.Add(Me.Guna2Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "RegisterForm"
-        Me.Padding = New System.Windows.Forms.Padding(15, 15, 0, 15)
+        Me.Padding = New System.Windows.Forms.Padding(10)
         Me.Text = "Student"
-        Me.FlowLayoutPanel1.ResumeLayout(False)
+        Me.PanelSearch.ResumeLayout(False)
+        Me.Guna2Panel1.ResumeLayout(False)
+        Me.PanelListShow.ResumeLayout(False)
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelRegister.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
@@ -1239,42 +1289,36 @@ Partial Class RegisterForm
         Me.Panel8.ResumeLayout(False)
         Me.Panel8.PerformLayout()
         Me.Panel4.ResumeLayout(False)
-        Me.PanelSearch.ResumeLayout(False)
-        Me.PanelListShow.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents OpenPic As OpenFileDialog
-    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
-    Friend WithEvents PanelSearch As Panel
-    Friend WithEvents cbSearchTeacher As ComboBox
-    Friend WithEvents Button1 As Button
-    Friend WithEvents txtSearch As CustomControls.RJControls.RJTextBox
+    Friend WithEvents Guna2Elipse1 As Guna.UI2.WinForms.Guna2Elipse
+    Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents PanelRegister As Panel
-    Friend WithEvents btnChooseStudent As Button
-    Friend WithEvents btnClear As Button
-    Friend WithEvents btnRegister As Button
-    Friend WithEvents PanelListShow As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Label36 As Label
-    Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents txtPay As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label33 As Label
     Friend WithEvents Label34 As Label
     Friend WithEvents Label35 As Label
     Friend WithEvents Panel12 As Panel
+    Friend WithEvents txtAmount As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label21 As Label
     Friend WithEvents Label24 As Label
     Friend WithEvents Label25 As Label
     Friend WithEvents Panel10 As Panel
+    Friend WithEvents txtDis As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label22 As Label
     Friend WithEvents Label17 As Label
     Friend WithEvents Label18 As Label
+    Friend WithEvents Panel6 As Panel
+    Friend WithEvents cbCourse As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents Label6 As Label
     Friend WithEvents Panel14 As Panel
     Friend WithEvents cbTime As Guna.UI2.WinForms.Guna2ComboBox
-    Friend WithEvents Label31 As Label
     Friend WithEvents Label28 As Label
     Friend WithEvents Panel11 As Panel
+    Friend WithEvents txtPrice As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label23 As Label
     Friend WithEvents Label20 As Label
     Friend WithEvents Panel5 As Panel
@@ -1294,20 +1338,25 @@ Partial Class RegisterForm
     Friend WithEvents cbAddress As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Panel16 As Panel
+    Friend WithEvents dtpDob As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label14 As Label
     Friend WithEvents Panel8 As Panel
     Friend WithEvents txtPhone As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents dtpDob As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Guna2Elipse1 As Guna.UI2.WinForms.Guna2Elipse
-    Friend WithEvents Guna2Elipse2 As Guna.UI2.WinForms.Guna2Elipse
-    Friend WithEvents txtPay As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents txtDis As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents txtAmount As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents txtPrice As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents btnChooseStudent As Button
+    Friend WithEvents btnClear As Button
+    Friend WithEvents btnRegister As Button
     Friend WithEvents Panel4 As Panel
     Friend WithEvents txtRoom As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Panel6 As Panel
-    Friend WithEvents cbCourse As Guna.UI2.WinForms.Guna2ComboBox
-    Friend WithEvents Label6 As Label
+    Friend WithEvents Label31 As Label
+    Friend WithEvents PanelSearch As Panel
+    Friend WithEvents Button1 As Button
+    Friend WithEvents txtSearch As CustomControls.RJControls.RJTextBox
+    Friend WithEvents PanelListShow As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Label36 As Label
+    Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Guna2Panel3 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Guna2Elipse2 As Guna.UI2.WinForms.Guna2Elipse
+    Friend WithEvents cbSearchTeacher As Guna.UI2.WinForms.Guna2ComboBox
 End Class

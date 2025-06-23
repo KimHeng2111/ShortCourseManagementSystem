@@ -191,26 +191,28 @@ Public Class CourseForm
     Sub Regonize()
 
         If DataGridView1.Columns.Count = 7 Then
-            DataGridView1.Columns(0).HeaderText = "លេខកូដ"
-            DataGridView1.Columns(0).Width = 100
-            DataGridView1.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-            DataGridView1.Columns(1).Width = 250
-            DataGridView1.Columns(1).HeaderText = "វគ្គសិក្សា"
-            DataGridView1.Columns(2).Width = 200
-            DataGridView1.Columns(2).HeaderText = "គ្រូបង្រៀន"
-            DataGridView1.Columns(3).Width = 150
-            DataGridView1.Columns(3).HeaderText = "បន្ទប់"
-            DataGridView1.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-            DataGridView1.Columns(4).Width = 200
-            DataGridView1.Columns(4).HeaderText = "វេនសិក្សា"
-            DataGridView1.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-            DataGridView1.Columns(5).Width = 150
-            DataGridView1.Columns(5).HeaderText = "សិស្សសរុប"
-            DataGridView1.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-            DataGridView1.Columns(6).Width = 200
-            DataGridView1.Columns(6).HeaderText = "ស្ថានភាព"
-            DataGridView1.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-
+            With DataGridView1
+                .Columns(0).HeaderText = "លេខកូដ"
+                .Columns(0).Width = 100
+                .Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                .Columns(0).DefaultCellStyle.Format = "000"
+                .Columns(1).Width = 250
+                .Columns(1).HeaderText = "វគ្គសិក្សា"
+                .Columns(2).Width = 200
+                .Columns(2).HeaderText = "គ្រូបង្រៀន"
+                .Columns(3).Width = 150
+                .Columns(3).HeaderText = "បន្ទប់"
+                .Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                .Columns(4).Width = 200
+                .Columns(4).HeaderText = "វេនសិក្សា"
+                .Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                .Columns(5).Width = 150
+                .Columns(5).HeaderText = "សិស្សសរុប"
+                .Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                .Columns(6).Width = 200
+                .Columns(6).HeaderText = "ស្ថានភាព"
+                .Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            End With
             For i As Integer = 0 To DataGridView1.Rows.Count - 1
                 If i Mod 2 = 1 Then
                     DataGridView1.Rows(i).DefaultCellStyle.BackColor = Color.FromArgb(254, 254, 254) ' Alternate row color
@@ -219,6 +221,9 @@ Public Class CourseForm
                 End If
             Next i
         End If
+        For Each col As DataGridViewColumn In DataGridView1.Columns
+            col.SortMode = DataGridViewColumnSortMode.NotSortable
+        Next
         DataGridView1.ClearSelection()
     End Sub
 
