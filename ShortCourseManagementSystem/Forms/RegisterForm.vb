@@ -212,7 +212,7 @@ Public Class RegisterForm
             .ColumnHeadersHeight = 40
             .Columns(0).Width = 50 ' ID column width
             .Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-            .Columns(0).DefaultCellStyle.Format = "Reg000"
+            .Columns(0).DefaultCellStyle.Format = "000"
             .Columns(1).Width = 250 ' Course Name column width
             .Columns(2).Width = 200 ' Description column width
             .Columns(3).Width = 150 ' Description column width
