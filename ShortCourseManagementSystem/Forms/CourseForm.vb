@@ -149,20 +149,26 @@ Public Class CourseForm
         Display()
     End Sub
 
-    Sub SearchCourseData() Handles txtSearch._TextChanged, cbSearchTeacher.SelectedIndexChanged, cbSearchStatus.SelectedIndexChanged
+    Sub SearchCourseData() Handles txtSearch.TextChanged, cbSearchTeacher.SelectedIndexChanged, cbSearchStatus.SelectedIndexChanged
         If startup Then
             Return
         Else
-            Dim textSearch = If(txtSearch.Texts.Trim() = "", "%", txtSearch.Texts.Trim()) + "%"
+            Dim textSearch = If(txtSearch.Text.Trim() = "", "%", txtSearch.Text.Trim())
+            Dim id As String = If(IsNumeric(textSearch), textSearch & "%", "%")
+            Dim subject As String = If(IsNumeric(textSearch), "%", textSearch & "%")
             Dim StatusID As String = If(cbSearchStatus.SelectedValue = 0, "%", cbSearchStatus.SelectedValue.ToString())
-
-            Dim teacherSearch = cbSearchTeacher.SelectedValue
-            Dim query As String = " SELECT tblCourse.ID, tblSubject.Subject AS Subject, tblTeacher.KhName AS Teacher, tblRoom.Room AS Room, tblSchedule.Schedule, (SELECT COUNT(*) FROM tblRegister WHERE tblRegister.CourseID = tblCourse.ID) AS TotalStudents, tblCourseStatus.Status
-                                    FROM tblTeacher INNER JOIN (tblSchedule INNER JOIN (tblRoom INNER JOIN (tblSubject INNER JOIN (tblCourseStatus INNER JOIN tblCourse ON tblCourseStatus.ID = tblCourse.StatusID) ON tblSubject.ID = tblCourse.ID) ON tblRoom.ID = tblClass.RoomID) ON tblSchedule.ID = tblClass.ScheduleID) ON tblTeacher.ID = tblCourse.TeacherID
-                                    GROUP BY tblCourse.ID, tblSubject.Subject, tblTeacher.KhName, tblRoom.Room, tblSchedule.Schedule, tblCourseStatus.Status, tblTeacher.ID, tblCourseStatus.ID
-                                    HAVING (((tblCourse.ID) Like [@id]) AND ((tblTeacher.ID) Like [@Teacher]) AND ((tblCourseStatus.ID) Like [@StatusID])) OR (((tblSubject.Subject) Like [@id]) AND ((tblTeacher.ID) Like [@Teacher]) AND ((tblCourseStatus.ID) Like [@StatusID]));"
+            Dim teacherSearch = cbSearchTeacher.SelectedValue.ToString()
+            Dim query As String = " SELECT tblCourse.ID, tblSubject.Subject, tblTeacher.KhName, tblRoom.Room, 
+                                tblSchedule.Schedule, tblCourse.CurrentEnrollment, tblCourseStatus.Status
+                                FROM tblSchedule INNER JOIN (tblRoom INNER JOIN (tblTeacher 
+                                INNER JOIN (tblSubject INNER JOIN (tblCourseStatus INNER JOIN tblCourse
+                                ON (tblCourseStatus.ID = tblCourse.StatusID) AND (tblCourseStatus.ID = tblCourse.StatusID)) 
+                                ON tblSubject.ID = tblCourse.SubjectID) ON tblTeacher.ID = tblCourse.TeacherID) 
+                                ON tblRoom.ID = tblCourse.RoomID) ON tblSchedule.ID = tblCourse.ScheduleID
+                                WHERE tblCourse.ID LIKE @id AND tblSubject.Subject LIKE @subject AND tblTeacher.ID LIKE @teacher AND tblCourse.StatusID LIKE @StatusID;"
             Dim cmd As New OleDbCommand(query, course.GetConnection())
-            cmd.Parameters.AddWithValue("@id", textSearch)
+            cmd.Parameters.AddWithValue("@id", id)
+            cmd.Parameters.AddWithValue("@subject", subject)
             cmd.Parameters.AddWithValue("@Teacher", teacherSearch)
             cmd.Parameters.AddWithValue("@StatusID", StatusID)
             InsertData(course.ExecuteQuery(cmd))
@@ -172,7 +178,7 @@ Public Class CourseForm
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnClear.Click
         cbSearchTeacher.SelectedIndex = cbSearchTeacher.Items.Count - 1
         cbSearchStatus.SelectedIndex = cbSearchStatus.Items.Count - 1
-        txtSearch.Texts = ""
+        txtSearch.Text = ""
         Display()
     End Sub
 
@@ -247,7 +253,7 @@ Public Class CourseForm
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         Panel2.Visible = True 'Show the panel for adding a new class
-        Panel11.Visible = False
+        cbStatus.Enabled = False
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
@@ -317,7 +323,7 @@ Public Class CourseForm
         Panel2.Visible = True
         btnEdit.Visible = True
         btnNewClass.Visible = False
-        Panel11.Visible = True
+        cbStatus.Enabled = True
 
     End Sub
 
@@ -341,7 +347,7 @@ Public Class CourseForm
         course.statusID = cbStatus.SelectedIndex + 1
         txtCourseID.ReadOnly = True
         course.UpdateCourse()
-        MessageBox.Show("វគ្គសិក្សា ត្រូវបានកែប្រែដោយជោគជ័យ!", "ទិន្ន័យមិនត្រឹមត្រូវ", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        MessageBox.Show("វគ្គសិក្សា ត្រូវបានកែប្រែដោយជោគជ័យ!", "បច្ចុប្បន្នភាពវគ្គសិក្សា", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Display()
     End Sub
 

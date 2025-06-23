@@ -7,7 +7,8 @@ Public Class StudentForm
     Public Sub New()
         ' Constructor for StudentForm class
         InitializeComponent()
-        picStudent.ImageLocation = Application.StartupPath & "\Images\defalutStudent.png"
+        picStudent.ImageLocation = Application.StartupPath & "\Images\default.png"
+        GetCbAddress()
     End Sub
     Private Sub Display()
         DataGridView1.DataSource = student.GetStudentData()
@@ -16,10 +17,10 @@ Public Class StudentForm
 
     'Check User Input
     Private Function CheckField() As Boolean
-        Dim khName As String = txtKhName.Texts.Trim()
-        Dim engName As String = txtEngName.Texts.Trim()
+        Dim khName As String = txtKhName.Text.Trim()
+        Dim engName As String = txtEngName.Text.Trim()
         Dim address As String = cbAddress.Text.Trim()
-        Dim phone As String = txtPhone.Texts.Trim()
+        Dim phone As String = txtPhone.Text.Trim()
         If String.IsNullOrEmpty(khName) Then
             MessageBox.Show("សូ​មបញ្ជូលឈ្មោះសិស្ស", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return False
@@ -57,7 +58,7 @@ Public Class StudentForm
         If student.gender <> cbGender.Text Then
             count += 1
         End If
-        If student.DateOfBirth <> dtpDob.Value Then
+        If student.DateOfBirth <> Convert.ToDateTime(dtpDob.Text) Then
             count += 1
         End If
         If count = 0 Then
@@ -68,25 +69,26 @@ Public Class StudentForm
     End Function
     Sub Regonize()
         If DataGridView1.Columns.Count = 7 Then
-            DataGridView1.Columns(0).Width = 75
-            DataGridView1.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-            DataGridView1.Columns(1).Width = 250
-            DataGridView1.Columns(1).HeaderText = "គោត្តនាម នាម"
-            DataGridView1.Columns(2).Width = 200
-            DataGridView1.Columns(2).HeaderText = "ឈ្មោះឡាតាំង"
-            DataGridView1.Columns(3).Width = 75
-            DataGridView1.Columns(3).HeaderText = "ភេទ"
-            DataGridView1.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-            DataGridView1.Columns(4).Width = 200
-            DataGridView1.Columns(4).HeaderText = "ថ្ងៃខែឆ្នាំកំណើត"
-            DataGridView1.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-            DataGridView1.Columns(5).Width = 150
-            DataGridView1.Columns(5).HeaderText = "អាស័យដ្ឋាន"
-            DataGridView1.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-            DataGridView1.Columns(6).Width = 200
-            DataGridView1.Columns(6).HeaderText = "លេខទូរស័ព្ទ"
-            DataGridView1.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-
+            With DataGridView1
+                .Columns(0).Width = 75
+                .Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                .Columns(1).Width = 250
+                .Columns(1).HeaderText = "គោត្តនាម នាម"
+                .Columns(2).Width = 200
+                .Columns(2).HeaderText = "ឈ្មោះឡាតាំង"
+                .Columns(3).Width = 75
+                .Columns(3).HeaderText = "ភេទ"
+                .Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                .Columns(4).Width = 200
+                .Columns(4).HeaderText = "ថ្ងៃខែឆ្នាំកំណើត"
+                .Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                .Columns(5).Width = 150
+                .Columns(5).HeaderText = "អាស័យដ្ឋាន"
+                .Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                .Columns(6).Width = 200
+                .Columns(6).HeaderText = "លេខទូរស័ព្ទ"
+                .Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            End With
             For i As Integer = 0 To DataGridView1.Rows.Count - 1
                 If i Mod 2 = 1 Then
                     DataGridView1.Rows(i).DefaultCellStyle.BackColor = Color.FromArgb(254, 254, 254) ' Alternate row color
@@ -106,7 +108,7 @@ Public Class StudentForm
         Dim menu As New ContextMenuStrip()
         menu.Font = New Font("Khmer OS System", 9)
         menu.Items.Add("លម្អិត", Nothing, AddressOf ShowDetails)
-        menu.Items.Add("កែប្រែ", Nothing, AddressOf EditeStudent)
+        menu.Items.Add("កែប្រែ", Nothing, AddressOf EditStudent)
         menu.Items.Add("លុប", Nothing, AddressOf DeleteStudent)
         menu.Items(0).BackColor = Color.FromArgb(245, 250, 253)
         If e.Button = MouseButtons.Right Then
@@ -132,33 +134,57 @@ Public Class StudentForm
         detailForm.Dispose()
         Display()
     End Sub
-    Private Sub EditeStudent()
+    Private Sub EditStudent()
         Panel2.Visible = True
-        txtKhName.Texts = student.khName
-        txtEngName.Texts = student.engName
-        cbAddress.Text = student.address
-        txtPhone.Texts = student.phone
-        dtpDob.Value = student.DateOfBirth
+        txtKhName.Text = student.khName
+        txtEngName.Text = student.engName
+        cbAddress.SelectedIndex = cbAddress.FindStringExact(student.address)
+        txtPhone.Text = student.phone
+        dtpDob.Text = student.DateOfBirth.ToString("dd/MM/yyyy")
         cbGender.SelectedIndex = cbGender.FindStringExact(student.gender)
         picStudent.ImageLocation = student.picture
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Panel2.Visible = False
-        txtKhName.Texts = ""
-        txtEngName.Texts = ""
+        txtKhName.Text = ""
+        txtEngName.Text = ""
         cbAddress.Text = ""
-        txtPhone.Texts = ""
-        dtpDob.Value = DateTime.Now
+        txtPhone.Text = ""
+        dtpDob.Text = DateTime.Now().ToString("dd/MM/yyyy")
     End Sub
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         If CheckField() Then
 
-            student.UpdateStudent(student.id, txtKhName.Texts.Trim(), txtEngName.Texts.Trim(), cbGender.SelectedItem.ToString(), dtpDob.Value, cbAddress.Text.Trim(), txtPhone.Texts.Trim(), picStudent.ImageLocation)
+            student.UpdateStudent(student.id, txtKhName.Text.Trim(), txtEngName.Text.Trim(), cbGender.SelectedItem.ToString(), dtpDob.Text, cbAddress.Text.Trim(), txtPhone.Text.Trim(), picStudent.ImageLocation)
             MessageBox.Show("ព័ត៌មានសិស្សបានកែប្រែដោយជោគជ័យ", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Display()
         End If
+    End Sub
+    Private Sub dtpDob_TextChanged(sender As Object, e As EventArgs) Handles dtpDob.TextChanged
+        Dim input As String = dtpDob.Text.Replace("/", "") ' Remove existing slashes
+        If input.Length >= 2 AndAlso input.Length < 4 Then
+            dtpDob.Text = input.Insert(2, "/") ' Add slash after day
+            dtpDob.SelectionStart = dtpDob.Text.Length ' Move cursor to end
+        ElseIf input.Length >= 4 Then
+            dtpDob.Text = input.Insert(2, "/").Insert(5, "/") ' Add slash after month
+            dtpDob.SelectionStart = dtpDob.Text.Length ' Move cursor to end
+        End If
+    End Sub
+
+    Private Sub dtpDob_Leave(sender As Object, e As EventArgs) Handles dtpDob.Leave
+        Dim inputDate As DateTime
+        If DateTime.TryParse(dtpDob.Text, inputDate) Then
+            dtpDob.Text = inputDate.ToString("dd/MM/yyyy")
+        Else
+            If dtpDob.Text.Length = 0 Then
+                Return
+            End If
+            MessageBox.Show("សូមបញ្ចូលថ្ងៃខែឆ្នាំកំណើតរបស់សិស្ស", "បញ្ចូលទិន្ន័យមិនត្រឹមត្រូវ", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
     End Sub
     Sub GetCbAddress()
 
@@ -182,10 +208,10 @@ Public Class StudentForm
         End If
         Dim query As String = "SELECT tblStudent.ID, tblStudent.KhName, tblStudent.EngName, tblStudent.Gender, 
                                 tblStudent.DateOfBirth, tblStudent.Address, tblStudent.Phone FROM tblStudent
-                                WHERE Address LIKE @address AND (ID Like @id OR (KhName Like @name OR EngName Like @name));"
+                                WHERE Address LIKE @address AND (ID Like @id AND (KhName Like @name OR EngName Like @name));"
         Dim cmd As OleDbCommand = New OleDbCommand(query, student.GetConnection())
-        Dim name As String = If(txtSearch.Texts.Trim() = "", "%", "%" & txtSearch.Texts.Trim() & "%")
-        Dim id As String = If(IsNumeric(txtSearch.Texts.Trim()), txtSearch.Texts.Trim(), "%")
+        Dim id As String = If(IsNumeric(txtSearch.Texts.Trim()), txtSearch.Texts.Trim() & "%", "%")
+        Dim name As String = If(txtSearch.Texts.Trim() = "", "%", If(IsNumeric(txtSearch.Texts.Trim()), "%", "%" & txtSearch.Texts.Trim() & "%"))
         Dim address As String = If(cbSearchAddress.SelectedIndex = cbSearchAddress.Items.Count - 1, "%", cbSearchAddress.SelectedItem.ToString())
         address = "%" & address & "%"
         cmd.Parameters.AddWithValue("@address", address)
@@ -199,5 +225,15 @@ Public Class StudentForm
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         txtSearch.Texts = ""
         cbSearchAddress.SelectedIndex = cbSearchAddress.Items.Count - 1
+    End Sub
+
+    Private Sub btnChooseImage_Click(sender As Object, e As EventArgs) Handles btnChooseImage.Click
+        OpenPic.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp"
+        OpenPic.Title = "Select a Picture"
+        OpenPic.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)
+        If OpenPic.ShowDialog() = DialogResult.OK Then
+            Dim filePath As String = OpenPic.FileName
+            picStudent.ImageLocation = filePath
+        End If
     End Sub
 End Class

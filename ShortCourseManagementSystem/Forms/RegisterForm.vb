@@ -14,7 +14,7 @@ Public Class RegisterForm
         ' Add any initialization after the InitializeComponent() call.
         GetCbSubject()
         GetCbAddress()
-        picStudent.ImageLocation = Application.StartupPath & "\Images\defalutStudent.png"
+        picStudent.ImageLocation = Application.StartupPath & "\Images\default.png"
     End Sub
 
     Sub Display()
@@ -24,7 +24,7 @@ Public Class RegisterForm
 
 
 
-    Private Sub IconButton1_Click(sender As Object, e As EventArgs) Handles IconButton1.Click
+    Private Sub IconButton1_Click(sender As Object, e As EventArgs) Handles btnChooseImage.Click
         OpenPic.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp"
         OpenPic.Title = "Select a Picture"
         OpenPic.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)
@@ -103,7 +103,7 @@ Public Class RegisterForm
     End Function
     'Save Image and reture the path
     Function SaveImageAndReturnPath() As String
-        If Path.GetFileName(picStudent.ImageLocation) = "defaultStudent.png" Then
+        If Path.GetFileName(picStudent.ImageLocation) = "default.png" Then
             Return picStudent.ImageLocation
         End If
 
@@ -183,7 +183,7 @@ Public Class RegisterForm
         ExportAndShow()
         'Step 4 Display Data
         Display()
-        btnClear.PerformClick()
+        register = New Register()
 
     End Sub
 
@@ -198,7 +198,7 @@ Public Class RegisterForm
             Return
         End If
         register.course.GetCourseByID(cbTime.SelectedValue.ToString())
-        lbRoom.Text = register.course.room.room
+        txtRoom.Text = register.course.room.room
         txtPrice.Text = register.course.subject.basePrice.ToString("F2")
         txtAmount.Text = register.course.subject.basePrice.ToString("F2")
         txtDis.Text = "0"
@@ -262,19 +262,19 @@ Public Class RegisterForm
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
         txtKhName.Clear()
         txtEngName.Clear()
-        txtDis.Clear()
+        txtDis.Text = "0"
         txtPay.Clear()
         txtPhone.Clear()
-        txtAmount.Text = "$"
-        txtPrice.Text = "$"
+        txtAmount.Text = "0"
+        txtPrice.Text = "0"
         dtpDob.Clear()
-        lbRoom.Text = ".........."
+        txtRoom.Text = ""
         cbAddress.SelectedIndex = cbAddress.Items.Count - 1
         cbCourse.SelectedIndex = cbCourse.Items.Count - 1
         cbGender.SelectedIndex = cbGender.Items.Count - 1
         cbTime.SelectedIndex = cbTime.Items.Count - 1
         cbTime.Enabled = False
-        picStudent.ImageLocation = Application.StartupPath & "\Images\defalutStudent.png"
+        picStudent.ImageLocation = Application.StartupPath & "\Images\default.png"
         register = New Register()
     End Sub
 
@@ -312,6 +312,7 @@ Public Class RegisterForm
         cbGender.SelectedIndex = cbGender.FindStringExact(register.student.gender)
         dtpDob.Text = register.student.DateOfBirth.ToString("dd/MM/yyyy")
         cbAddress.SelectedIndex = cbAddress.FindStringExact(register.student.address)
+        picStudent.ImageLocation = register.student.picture
     End Sub
     Private Sub ExportAndShow()
         Dim rdReport As New ReportDocument

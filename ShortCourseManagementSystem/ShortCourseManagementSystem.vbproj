@@ -240,12 +240,6 @@
     <Compile Include="Forms\CourseForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\PaymentForm.Designer.vb">
-      <DependentUpon>PaymentForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\PaymentForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Forms\RegisterForm.Designer.vb">
       <DependentUpon>RegisterForm.vb</DependentUpon>
     </Compile>
@@ -382,9 +376,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CourseForm.resx">
       <DependentUpon>CourseForm.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PaymentForm.resx">
-      <DependentUpon>PaymentForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RegisterForm.resx">
       <DependentUpon>RegisterForm.vb</DependentUpon>
