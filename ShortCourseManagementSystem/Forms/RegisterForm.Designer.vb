@@ -915,17 +915,18 @@ Partial Class RegisterForm
         Me.Panel13.Controls.Add(Me.btnChooseImage)
         Me.Panel13.Location = New System.Drawing.Point(1495, 60)
         Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(150, 244)
+        Me.Panel13.Size = New System.Drawing.Size(150, 253)
         Me.Panel13.TabIndex = 10
         '
         'picStudent
         '
         Me.picStudent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.picStudent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.picStudent.Dock = System.Windows.Forms.DockStyle.Top
         Me.picStudent.Image = CType(resources.GetObject("picStudent.Image"), System.Drawing.Image)
         Me.picStudent.Location = New System.Drawing.Point(0, 0)
         Me.picStudent.Name = "picStudent"
-        Me.picStudent.Size = New System.Drawing.Size(150, 193)
+        Me.picStudent.Size = New System.Drawing.Size(150, 198)
         Me.picStudent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picStudent.TabIndex = 50
         Me.picStudent.TabStop = False
@@ -942,7 +943,7 @@ Partial Class RegisterForm
         Me.btnChooseImage.IconChar = FontAwesome.Sharp.IconChar.None
         Me.btnChooseImage.IconColor = System.Drawing.Color.Transparent
         Me.btnChooseImage.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.btnChooseImage.Location = New System.Drawing.Point(0, 211)
+        Me.btnChooseImage.Location = New System.Drawing.Point(0, 220)
         Me.btnChooseImage.Name = "btnChooseImage"
         Me.btnChooseImage.Size = New System.Drawing.Size(150, 32)
         Me.btnChooseImage.TabIndex = 10

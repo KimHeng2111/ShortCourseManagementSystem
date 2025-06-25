@@ -200,8 +200,8 @@ Public Class StudentForm
     End Sub
 
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
-        GetCbAddress()
-        startup = False
+        'GetCbAddress()
+        'startup = False
     End Sub
     Sub SearchData() Handles cbSearchAddress.SelectedIndexChanged, txtSearch.TextChanged
         If startup Then
@@ -240,5 +240,10 @@ Public Class StudentForm
 
     Private Sub Guna2Panel3_Paint(sender As Object, e As PaintEventArgs) Handles Guna2Panel3.Paint
         Display()
+    End Sub
+
+    Private Sub StudentForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        GetCbAddress()
+        startup = False
     End Sub
 End Class

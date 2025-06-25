@@ -18,7 +18,7 @@ Public Class MainForm
         Me.MaximizedBounds = Screen.FromHandle(Me.Handle).WorkingArea
         Dim test As LoginForm = New LoginForm()
         login = test.ShowDialog()
-        lbUsername.Text = User.userName
+        lbUsername.Text = lbUsername.Tag.ToString() & User.userName
     End Sub
     Private Sub Activatebutton(senderBtn As Object, customColor As Color)
         If senderBtn IsNot Nothing Then
@@ -138,5 +138,10 @@ Public Class MainForm
     Private Sub btnReport_Click(sender As Object, e As EventArgs) Handles btnReport.Click
         Activatebutton(sender, ThemeColor.activeColor)
         OpenChildForm(New ReportForm())
+    End Sub
+
+    Private Sub btnAbout_Click(sender As Object, e As EventArgs) Handles btnAbout.Click
+        Activatebutton(sender, ThemeColor.activeColor)
+        OpenChildForm(New AboutSystemForm())
     End Sub
 End Class

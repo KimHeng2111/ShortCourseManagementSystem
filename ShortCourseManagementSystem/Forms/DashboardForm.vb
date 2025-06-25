@@ -10,9 +10,7 @@ Public Class DashboardForm
         lbTotalClass.Text = dashboard.totalCourse
         lbCompleteClass.Text = dashboard.completeCourse
         lbTotalTeacher.Text = dashboard.totalTeacher
-        lbActionTeacher.Text = dashboard.actionTeacher
         lbTotalCourse.Text = dashboard.TotalSubject
-        lbActionCourse.Text = dashboard.actionSubject
         'Insert Data to chart
         StudentChart.DataSource = dashboard.CourseList
         StudentChart.Series(0).XValueMember = "Key"

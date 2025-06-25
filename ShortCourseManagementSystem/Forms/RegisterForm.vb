@@ -375,4 +375,12 @@ Public Class RegisterForm
             txtDis.Text = "0"
         End If
     End Sub
+
+    Private Sub SearchData(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        txtSearch.Clear()
+    End Sub
 End Class

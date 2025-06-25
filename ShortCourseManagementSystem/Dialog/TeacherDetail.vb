@@ -22,10 +22,9 @@
     End Sub
     Sub Display()
         Dim query As String = "SELECT tblCourse.ID, tblSubject.Subject, tblSchedule.Schedule, tblRoom.Room, tblCourse.CurrentEnrollment, tblCourseStatus.Status
-                                FROM tblRoom INNER JOIN (tblSubject INNER JOIN (tblSchedule INNER JOIN ((tblCourseStatus 
-                                INNER JOIN tblCourse ON tblCourseStatus.ID = tblCourse.StatusID) INNER JOIN tblRegister ON tblCourse.ID = tblRegister.CourseID)
-                                ON tblSchedule.ID = tblCourse.ScheduleID) ON tblSubject.ID = tblCourse.SubjectID) ON tblRoom.ID = tblCourse.RoomID
-                                WHERE (((tblCourse.TeacherID)=@teacherID));"
+FROM tblSchedule INNER JOIN (tblRoom INNER JOIN ((tblSubject INNER JOIN (tblCourseStatus INNER JOIN tblCourse ON tblCourseStatus.ID = tblCourse.StatusID) ON tblSubject.ID = tblCourse.SubjectID) INNER JOIN tblRegister ON tblCourse.ID = tblRegister.CourseID) ON tblRoom.ID = tblCourse.RoomID) ON tblSchedule.ID = tblCourse.ScheduleID
+GROUP BY tblCourse.ID, tblSubject.Subject, tblSchedule.Schedule, tblRoom.Room, tblCourse.CurrentEnrollment, tblCourseStatus.Status, tblCourse.TeacherID
+HAVING (((tblCourse.TeacherID)=[@teacherID]));"
         Dim cmd As New OleDb.OleDbCommand(query, teacher.GetConnection())
         cmd.Parameters.AddWithValue("@teacherID", teacher.TeacherID)
         DataGridView1.DataSource = teacher.ExecuteQuery(cmd)

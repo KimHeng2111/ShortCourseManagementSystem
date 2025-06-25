@@ -28,7 +28,7 @@ Partial Class MainForm
         Me.btnCourse = New FontAwesome.Sharp.IconButton()
         Me.btnClass = New FontAwesome.Sharp.IconButton()
         Me.btnStudent = New FontAwesome.Sharp.IconButton()
-        Me.btnExit = New FontAwesome.Sharp.IconButton()
+        Me.btnAbout = New FontAwesome.Sharp.IconButton()
         Me.btnTeacher = New FontAwesome.Sharp.IconButton()
         Me.btnRegister = New FontAwesome.Sharp.IconButton()
         Me.btnDashboard = New FontAwesome.Sharp.IconButton()
@@ -59,7 +59,7 @@ Partial Class MainForm
         Me.panelMenu.Controls.Add(Me.btnCourse)
         Me.panelMenu.Controls.Add(Me.btnClass)
         Me.panelMenu.Controls.Add(Me.btnStudent)
-        Me.panelMenu.Controls.Add(Me.btnExit)
+        Me.panelMenu.Controls.Add(Me.btnAbout)
         Me.panelMenu.Controls.Add(Me.btnTeacher)
         Me.panelMenu.Controls.Add(Me.btnRegister)
         Me.panelMenu.Controls.Add(Me.btnDashboard)
@@ -170,28 +170,30 @@ Partial Class MainForm
         Me.btnStudent.Text = "សិស្ស"
         Me.btnStudent.UseVisualStyleBackColor = False
         '
-        'btnExit
+        'btnAbout
         '
-        Me.btnExit.BackColor = System.Drawing.Color.Transparent
-        Me.btnExit.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.btnExit.FlatAppearance.BorderSize = 0
-        Me.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnExit.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnExit.ForeColor = System.Drawing.Color.Gainsboro
-        Me.btnExit.IconChar = FontAwesome.Sharp.IconChar.DoorClosed
-        Me.btnExit.IconColor = System.Drawing.Color.Gainsboro
-        Me.btnExit.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.btnExit.IconSize = 32
-        Me.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnExit.Location = New System.Drawing.Point(0, 968)
-        Me.btnExit.Margin = New System.Windows.Forms.Padding(3, 10, 3, 3)
-        Me.btnExit.Name = "btnExit"
-        Me.btnExit.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
-        Me.btnExit.Size = New System.Drawing.Size(200, 60)
-        Me.btnExit.TabIndex = 6
-        Me.btnExit.Tag = "        Exit"
-        Me.btnExit.Text = "        Exit"
-        Me.btnExit.UseVisualStyleBackColor = False
+        Me.btnAbout.BackColor = System.Drawing.Color.Transparent
+        Me.btnAbout.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.btnAbout.FlatAppearance.BorderSize = 0
+        Me.btnAbout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(134, Byte), Integer), CType(CType(217, Byte), Integer))
+        Me.btnAbout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(6, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(96, Byte), Integer))
+        Me.btnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAbout.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAbout.ForeColor = System.Drawing.Color.Gainsboro
+        Me.btnAbout.IconChar = FontAwesome.Sharp.IconChar.ExclamationCircle
+        Me.btnAbout.IconColor = System.Drawing.Color.Gainsboro
+        Me.btnAbout.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btnAbout.IconSize = 32
+        Me.btnAbout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAbout.Location = New System.Drawing.Point(0, 968)
+        Me.btnAbout.Margin = New System.Windows.Forms.Padding(3, 10, 3, 3)
+        Me.btnAbout.Name = "btnAbout"
+        Me.btnAbout.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
+        Me.btnAbout.Size = New System.Drawing.Size(200, 60)
+        Me.btnAbout.TabIndex = 6
+        Me.btnAbout.Tag = "ប្រព័ន្ធគ្រប់គ្រងវគ្គសិក្សាបង់ថ្លៃវគ្គខ្លី"
+        Me.btnAbout.Text = "អំពីប្រព័ន្ធ"
+        Me.btnAbout.UseVisualStyleBackColor = False
         '
         'btnTeacher
         '
@@ -264,7 +266,7 @@ Partial Class MainForm
         Me.btnDashboard.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
         Me.btnDashboard.Size = New System.Drawing.Size(200, 57)
         Me.btnDashboard.TabIndex = 1
-        Me.btnDashboard.Tag = "ប្រព័ន្ធគ្រប់គ្រងវគ្គសិក្សាវគ្គខ្លី"
+        Me.btnDashboard.Tag = "ប្រព័ន្ធគ្រប់គ្រងវគ្គសិក្សាបង់ថ្លៃវគ្គខ្លី"
         Me.btnDashboard.Text = "ទំព័រដើម"
         Me.btnDashboard.UseVisualStyleBackColor = False
         '
@@ -469,7 +471,7 @@ Partial Class MainForm
     Friend WithEvents panelMenuUpper As Panel
     Friend WithEvents panelTitlebar As Panel
     Friend WithEvents panelChildForm As Panel
-    Friend WithEvents btnExit As FontAwesome.Sharp.IconButton
+    Friend WithEvents btnAbout As FontAwesome.Sharp.IconButton
     Friend WithEvents btnTeacher As FontAwesome.Sharp.IconButton
     Friend WithEvents btnReport As FontAwesome.Sharp.IconButton
     Friend WithEvents btnRegister As FontAwesome.Sharp.IconButton

@@ -65,19 +65,13 @@ Partial Class DashboardForm
         Me.lbTotalClass = New System.Windows.Forms.Label()
         Me.Guna2CustomGradientPanel3 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
-        Me.lbActionTeacher = New System.Windows.Forms.Label()
         Me.lbTotalTeacher = New System.Windows.Forms.Label()
-        Me.Label19 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Guna2CustomGradientPanel4 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
-        Me.lbActionCourse = New System.Windows.Forms.Label()
         Me.lbTotalCourse = New System.Windows.Forms.Label()
-        Me.Label22 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.Guna2Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -757,11 +751,8 @@ Partial Class DashboardForm
         Me.Guna2CustomGradientPanel3.BackColor = System.Drawing.Color.Transparent
         Me.Guna2CustomGradientPanel3.BorderRadius = 10
         Me.Guna2CustomGradientPanel3.Controls.Add(Me.Label9)
-        Me.Guna2CustomGradientPanel3.Controls.Add(Me.Label8)
         Me.Guna2CustomGradientPanel3.Controls.Add(Me.Label20)
-        Me.Guna2CustomGradientPanel3.Controls.Add(Me.lbActionTeacher)
         Me.Guna2CustomGradientPanel3.Controls.Add(Me.lbTotalTeacher)
-        Me.Guna2CustomGradientPanel3.Controls.Add(Me.Label19)
         Me.Guna2CustomGradientPanel3.Controls.Add(Me.Label18)
         Me.Guna2CustomGradientPanel3.FillColor = System.Drawing.Color.FromArgb(CType(CType(122, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(168, Byte), Integer))
         Me.Guna2CustomGradientPanel3.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(122, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(168, Byte), Integer))
@@ -788,19 +779,6 @@ Partial Class DashboardForm
         Me.Label9.Text = "គ្រូបង្រៀន"
         Me.Label9.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'Label8
-        '
-        Me.Label8.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label8.AutoSize = True
-        Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(300, 108)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(49, 34)
-        Me.Label8.TabIndex = 12
-        Me.Label8.Text = "នាក់"
-        '
         'Label20
         '
         Me.Label20.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -808,25 +786,11 @@ Partial Class DashboardForm
         Me.Label20.BackColor = System.Drawing.Color.Transparent
         Me.Label20.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label20.ForeColor = System.Drawing.Color.White
-        Me.Label20.Location = New System.Drawing.Point(300, 60)
+        Me.Label20.Location = New System.Drawing.Point(297, 75)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(49, 34)
         Me.Label20.TabIndex = 11
         Me.Label20.Text = "នាក់"
-        '
-        'lbActionTeacher
-        '
-        Me.lbActionTeacher.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.lbActionTeacher.BackColor = System.Drawing.Color.Transparent
-        Me.lbActionTeacher.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbActionTeacher.ForeColor = System.Drawing.Color.White
-        Me.lbActionTeacher.Location = New System.Drawing.Point(159, 107)
-        Me.lbActionTeacher.Name = "lbActionTeacher"
-        Me.lbActionTeacher.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
-        Me.lbActionTeacher.Size = New System.Drawing.Size(128, 36)
-        Me.lbActionTeacher.TabIndex = 10
-        Me.lbActionTeacher.Text = "10"
-        Me.lbActionTeacher.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'lbTotalTeacher
         '
@@ -834,26 +798,13 @@ Partial Class DashboardForm
         Me.lbTotalTeacher.BackColor = System.Drawing.Color.Transparent
         Me.lbTotalTeacher.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbTotalTeacher.ForeColor = System.Drawing.Color.White
-        Me.lbTotalTeacher.Location = New System.Drawing.Point(153, 59)
+        Me.lbTotalTeacher.Location = New System.Drawing.Point(150, 74)
         Me.lbTotalTeacher.Name = "lbTotalTeacher"
         Me.lbTotalTeacher.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
         Me.lbTotalTeacher.Size = New System.Drawing.Size(134, 36)
         Me.lbTotalTeacher.TabIndex = 9
         Me.lbTotalTeacher.Text = "10"
         Me.lbTotalTeacher.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'Label19
-        '
-        Me.Label19.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label19.AutoSize = True
-        Me.Label19.BackColor = System.Drawing.Color.Transparent
-        Me.Label19.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.ForeColor = System.Drawing.Color.White
-        Me.Label19.Location = New System.Drawing.Point(3, 108)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(166, 34)
-        Me.Label19.TabIndex = 6
-        Me.Label19.Text = "គ្រូបង្រៀនសកម្ម ៖"
         '
         'Label18
         '
@@ -862,7 +813,7 @@ Partial Class DashboardForm
         Me.Label18.BackColor = System.Drawing.Color.Transparent
         Me.Label18.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label18.ForeColor = System.Drawing.Color.White
-        Me.Label18.Location = New System.Drawing.Point(3, 60)
+        Me.Label18.Location = New System.Drawing.Point(0, 75)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(159, 34)
         Me.Label18.TabIndex = 4
@@ -873,11 +824,8 @@ Partial Class DashboardForm
         Me.Guna2CustomGradientPanel4.BackColor = System.Drawing.Color.Transparent
         Me.Guna2CustomGradientPanel4.BorderRadius = 10
         Me.Guna2CustomGradientPanel4.Controls.Add(Me.Label11)
-        Me.Guna2CustomGradientPanel4.Controls.Add(Me.Label10)
         Me.Guna2CustomGradientPanel4.Controls.Add(Me.Label23)
-        Me.Guna2CustomGradientPanel4.Controls.Add(Me.lbActionCourse)
         Me.Guna2CustomGradientPanel4.Controls.Add(Me.lbTotalCourse)
-        Me.Guna2CustomGradientPanel4.Controls.Add(Me.Label22)
         Me.Guna2CustomGradientPanel4.Controls.Add(Me.Label21)
         Me.Guna2CustomGradientPanel4.FillColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Guna2CustomGradientPanel4.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
@@ -903,19 +851,6 @@ Partial Class DashboardForm
         Me.Label11.Text = "មុខវិជ្ជា"
         Me.Label11.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'Label10
-        '
-        Me.Label10.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label10.AutoSize = True
-        Me.Label10.BackColor = System.Drawing.Color.Transparent
-        Me.Label10.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(280, 108)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(70, 34)
-        Me.Label10.TabIndex = 12
-        Me.Label10.Text = "មុខវិជ្ជា"
-        '
         'Label23
         '
         Me.Label23.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -923,25 +858,11 @@ Partial Class DashboardForm
         Me.Label23.BackColor = System.Drawing.Color.Transparent
         Me.Label23.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label23.ForeColor = System.Drawing.Color.White
-        Me.Label23.Location = New System.Drawing.Point(280, 60)
+        Me.Label23.Location = New System.Drawing.Point(278, 76)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(70, 34)
         Me.Label23.TabIndex = 11
         Me.Label23.Text = "មុខវិជ្ជា"
-        '
-        'lbActionCourse
-        '
-        Me.lbActionCourse.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.lbActionCourse.BackColor = System.Drawing.Color.Transparent
-        Me.lbActionCourse.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbActionCourse.ForeColor = System.Drawing.Color.White
-        Me.lbActionCourse.Location = New System.Drawing.Point(155, 107)
-        Me.lbActionCourse.Name = "lbActionCourse"
-        Me.lbActionCourse.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
-        Me.lbActionCourse.Size = New System.Drawing.Size(119, 36)
-        Me.lbActionCourse.TabIndex = 10
-        Me.lbActionCourse.Text = "10"
-        Me.lbActionCourse.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'lbTotalCourse
         '
@@ -949,26 +870,13 @@ Partial Class DashboardForm
         Me.lbTotalCourse.BackColor = System.Drawing.Color.Transparent
         Me.lbTotalCourse.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbTotalCourse.ForeColor = System.Drawing.Color.White
-        Me.lbTotalCourse.Location = New System.Drawing.Point(155, 59)
+        Me.lbTotalCourse.Location = New System.Drawing.Point(153, 75)
         Me.lbTotalCourse.Name = "lbTotalCourse"
         Me.lbTotalCourse.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
         Me.lbTotalCourse.Size = New System.Drawing.Size(119, 36)
         Me.lbTotalCourse.TabIndex = 9
         Me.lbTotalCourse.Text = "10"
         Me.lbTotalCourse.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'Label22
-        '
-        Me.Label22.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label22.AutoSize = True
-        Me.Label22.BackColor = System.Drawing.Color.Transparent
-        Me.Label22.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.ForeColor = System.Drawing.Color.White
-        Me.Label22.Location = New System.Drawing.Point(33, 108)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(137, 34)
-        Me.Label22.TabIndex = 6
-        Me.Label22.Text = "មុខវិជ្ជាសកម្ម ៖"
         '
         'Label21
         '
@@ -977,7 +885,7 @@ Partial Class DashboardForm
         Me.Label21.BackColor = System.Drawing.Color.Transparent
         Me.Label21.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label21.ForeColor = System.Drawing.Color.White
-        Me.Label21.Location = New System.Drawing.Point(33, 60)
+        Me.Label21.Location = New System.Drawing.Point(31, 76)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(130, 34)
         Me.Label21.TabIndex = 4
@@ -1036,19 +944,13 @@ Partial Class DashboardForm
     Friend WithEvents lbTotalClass As Label
     Friend WithEvents Guna2CustomGradientPanel3 As Guna.UI2.WinForms.Guna2CustomGradientPanel
     Friend WithEvents Label9 As Label
-    Friend WithEvents Label8 As Label
     Friend WithEvents Label20 As Label
-    Friend WithEvents lbActionTeacher As Label
     Friend WithEvents lbTotalTeacher As Label
-    Friend WithEvents Label19 As Label
     Friend WithEvents Label18 As Label
     Friend WithEvents Guna2CustomGradientPanel4 As Guna.UI2.WinForms.Guna2CustomGradientPanel
     Friend WithEvents Label11 As Label
-    Friend WithEvents Label10 As Label
     Friend WithEvents Label23 As Label
-    Friend WithEvents lbActionCourse As Label
     Friend WithEvents lbTotalCourse As Label
-    Friend WithEvents Label22 As Label
     Friend WithEvents Label21 As Label
     Friend WithEvents CourseChart As DataVisualization.Charting.Chart
     Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel

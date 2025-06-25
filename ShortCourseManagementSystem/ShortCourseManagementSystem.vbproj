@@ -277,6 +277,12 @@
       <DependentUpon>MainForm.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\AboutSystemForm.Designer.vb">
+      <DependentUpon>AboutSystemForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AboutSystemForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Model\ConnectionDB.vb" />
     <Compile Include="Model\Subject.vb" />
     <Compile Include="Model\Dashboard.vb" />
@@ -367,6 +373,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dialog\TeacherDetail.resx">
       <DependentUpon>TeacherDetail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AboutSystemForm.resx">
+      <DependentUpon>AboutSystemForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SubjectForm.resx">
       <DependentUpon>SubjectForm.vb</DependentUpon>
@@ -489,6 +498,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\loginfrom2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\About System.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\System.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

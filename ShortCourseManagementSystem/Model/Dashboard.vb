@@ -7,9 +7,7 @@ Public Class Dashboard
     Public totalCourse As Int16
     Public completeCourse As Int16
     Public totalTeacher As Int16
-    Public actionTeacher As Int16
     Public TotalSubject As Int16
-    Public actionSubject As Int16
     Public CourseList As New Dictionary(Of String, Int16)
     Public SubjectList As New Dictionary(Of String, Int16)
     Public Sub New()
@@ -27,12 +25,8 @@ Public Class Dashboard
         completeCourse = Int16.Parse(ExecuteScalar(query))
         query = "SELECT COUNT(*) FROM tblTeacher;"
         totalTeacher = Int16.Parse(ExecuteScalar(query))
-        query = "SELECT Count(*) FROM tblTeacher WHERE isActive=True;"
-        actionTeacher = Int16.Parse(ExecuteScalar(query))
         query = "SELECT COUNT(*) FROM tblSubject"
         TotalSubject = Int16.Parse(ExecuteScalar(query))
-        query = "SELECT Count(*) FROM tblSubject WHERE isActive=True;"
-        actionSubject = Int16.Parse(ExecuteScalar(query))
         query = "SELECT tblSubject.Subject, SUM(tblCourse.CurrentEnrollment) AS TotalStudent FROM tblCourse INNER JOIN tblSubject ON tblCourse.SubjectID = tblSubject.ID GROUP BY tblSubject.Subject;"
         Dim cmd As New OleDbCommand(query, GetConnection())
         OpenConnection()
