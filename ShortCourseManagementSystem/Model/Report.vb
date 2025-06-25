@@ -26,9 +26,7 @@ Public Class Report
     End Function
     Public Function GetStudentReport() As DataTable
         Dim query As String = "SELECT tblStudent.ID, tblStudent.KhName, tblStudent.EngName, tblStudent.Gender, tblStudent.DateOfBirth, tblStudent.Address, tblStudent.Phone, tblSubject.Subject
-                        FROM tblStudent INNER JOIN ((tblPaymentStatus INNER JOIN tblPayment ON tblPaymentStatus.ID = tblPayment.StatusID) INNER JOIN (tblRegister INNER JOIN (tblSubject 
-                        INNER JOIN tblCourse ON tblSubject.ID = tblCourse.SubjectID) ON tblRegister.CourseID = tblCourse.ID)
-                         ON tblPayment.ID = tblRegister.PaymentID) ON tblStudent.ID = tblRegister.StudentID;"
+     FROM ((tblStudent INNER JOIN tblRegister ON tblStudent.ID = tblRegister.StudentID) INNER JOIN tblCourse ON tblRegister.CourseID = tblCourse.ID) INNER JOIN tblSubject ON tblCourse.SubjectID = tblSubject.ID;"
         OpenConnection()
         Dim cmd As New OleDbCommand(query, GetConnection())
         Dim reader As OleDbDataReader = cmd.ExecuteReader()
@@ -106,7 +104,7 @@ Public Class Report
                                 tblRegister.Discount, tblPayment.Amount, tblPayment.Unpaid, tblPaymentStatus.Status
                                 FROM tblStudent INNER JOIN ((tblSubject INNER JOIN tblCourse 
                                 ON tblSubject.ID = tblCourse.SubjectID) INNER JOIN ((tblPaymentStatus INNER JOIN tblPayment 
-                                ON tblPaymentStatus.ID = tblPayment.StatusID) INNER JOIN tblRegister ON tblPayment.ID = tblRegister.PaymentID) 
+                                ON tblPaymentStatus.ID = tblPayment.StatusID) INNER JOIN tblRegister ON tblPayment.RegisterID  = tblRegister.ID) 
                                 ON tblCourse.ID = tblRegister.CourseID) ON tblStudent.ID = tblRegister.StudentID;"
         OpenConnection()
         Dim cmd As New OleDbCommand(query, GetConnection())

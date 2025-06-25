@@ -49,8 +49,6 @@ C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagemen
 C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\bin\Debug\stdole.dll
 C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\bin\Debug\BouncyCastle.Cryptography.xml
-C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\bin\Debug\CustomControls.pdb
-C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\bin\Debug\CustomControls.dll.config
 C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
 C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
 C:\Users\lengk\OneDrive\Desktop\ShortCourseManagementSystem\ShortCourseManagementSystem\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml

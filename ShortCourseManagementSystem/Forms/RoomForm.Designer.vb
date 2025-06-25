@@ -22,10 +22,9 @@ Partial Class RoomForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -38,9 +37,8 @@ Partial Class RoomForm
         Me.txtRoom = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.btnClose = New FontAwesome.Sharp.IconButton()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
+        Me.btnClose = New FontAwesome.Sharp.IconButton()
         Me.Guna2Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -55,25 +53,26 @@ Partial Class RoomForm
         Me.Label1.Font = New System.Drawing.Font("Khmer OS Moul", 11.25!)
         Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label1.Location = New System.Drawing.Point(5, 15)
+        Me.Label1.Location = New System.Drawing.Point(5, 5)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(578, 38)
+        Me.Label1.Size = New System.Drawing.Size(573, 38)
         Me.Label1.TabIndex = 68
         Me.Label1.Text = "គ្រប់គ្រងព័ត៌មានបន្ទប់រៀន"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Guna2Panel1
         '
-        Me.Guna2Panel1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Guna2Panel1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Panel1.BorderRadius = 15
         Me.Guna2Panel1.Controls.Add(Me.Panel2)
         Me.Guna2Panel1.Controls.Add(Me.Panel1)
         Me.Guna2Panel1.Controls.Add(Me.Label1)
         Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2Panel1.Location = New System.Drawing.Point(5, 38)
+        Me.Guna2Panel1.Location = New System.Drawing.Point(0, 35)
         Me.Guna2Panel1.Name = "Guna2Panel1"
-        Me.Guna2Panel1.Padding = New System.Windows.Forms.Padding(5, 15, 5, 5)
+        Me.Guna2Panel1.Padding = New System.Windows.Forms.Padding(5)
         Me.Guna2Panel1.ShadowDecoration.Parent = Me.Guna2Panel1
-        Me.Guna2Panel1.Size = New System.Drawing.Size(588, 601)
+        Me.Guna2Panel1.Size = New System.Drawing.Size(583, 609)
         Me.Guna2Panel1.TabIndex = 0
         '
         'Panel2
@@ -81,10 +80,10 @@ Partial Class RoomForm
         Me.Panel2.Controls.Add(Me.DataGridView2)
         Me.Panel2.Controls.Add(Me.Label6)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel2.Location = New System.Drawing.Point(5, 288)
+        Me.Panel2.Location = New System.Drawing.Point(5, 268)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Padding = New System.Windows.Forms.Padding(5)
-        Me.Panel2.Size = New System.Drawing.Size(578, 308)
+        Me.Panel2.Size = New System.Drawing.Size(573, 336)
         Me.Panel2.TabIndex = 70
         '
         'DataGridView2
@@ -98,14 +97,14 @@ Partial Class RoomForm
         Me.DataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.DataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(254, Byte), Integer))
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(111, Byte), Integer), CType(CType(210, Byte), Integer))
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(254, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(111, Byte), Integer), CType(CType(210, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridView2.GridColor = System.Drawing.Color.DarkGray
@@ -113,28 +112,28 @@ Partial Class RoomForm
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.ReadOnly = True
         Me.DataGridView2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle8.NullValue = "48745"
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView2.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.NullValue = "48745"
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView2.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView2.RowHeadersVisible = False
         Me.DataGridView2.RowHeadersWidth = 35
         Me.DataGridView2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Khmer OS Siemreap", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle9.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black
-        Me.DataGridView2.RowsDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Khmer OS Siemreap", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
+        Me.DataGridView2.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView2.RowTemplate.ReadOnly = True
         Me.DataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView2.Size = New System.Drawing.Size(568, 260)
+        Me.DataGridView2.Size = New System.Drawing.Size(563, 288)
         Me.DataGridView2.TabIndex = 63
         '
         'Label6
@@ -146,7 +145,7 @@ Partial Class RoomForm
         Me.Label6.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.Label6.Location = New System.Drawing.Point(5, 5)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(568, 38)
+        Me.Label6.Size = New System.Drawing.Size(563, 38)
         Me.Label6.TabIndex = 64
         Me.Label6.Text = "បញ្ជីបន្ទប់រៀន"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -160,9 +159,9 @@ Partial Class RoomForm
         Me.Panel1.Controls.Add(Me.txtRoom)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(5, 53)
+        Me.Panel1.Location = New System.Drawing.Point(5, 43)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(578, 229)
+        Me.Panel1.Size = New System.Drawing.Size(573, 229)
         Me.Panel1.TabIndex = 69
         '
         'btnDelete
@@ -261,14 +260,29 @@ Partial Class RoomForm
         'Guna2Panel2
         '
         Me.Guna2Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.Guna2Panel2.BorderRadius = 15
         Me.Guna2Panel2.Controls.Add(Me.Label3)
         Me.Guna2Panel2.Controls.Add(Me.btnClose)
         Me.Guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Guna2Panel2.Location = New System.Drawing.Point(5, 3)
+        Me.Guna2Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Guna2Panel2.Name = "Guna2Panel2"
         Me.Guna2Panel2.ShadowDecoration.Parent = Me.Guna2Panel2
-        Me.Guna2Panel2.Size = New System.Drawing.Size(588, 35)
+        Me.Guna2Panel2.Size = New System.Drawing.Size(583, 35)
         Me.Guna2Panel2.TabIndex = 1
+        '
+        'Label3
+        '
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label3.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Label3.Location = New System.Drawing.Point(0, 0)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(3, 0, 0, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Padding = New System.Windows.Forms.Padding(0, 5, 0, 0)
+        Me.Label3.Size = New System.Drawing.Size(553, 35)
+        Me.Label3.TabIndex = 14
+        Me.Label3.Text = "ShorCourse Management Systme"
         '
         'btnClose
         '
@@ -283,42 +297,22 @@ Partial Class RoomForm
         Me.btnClose.IconColor = System.Drawing.Color.Black
         Me.btnClose.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.btnClose.IconSize = 30
-        Me.btnClose.Location = New System.Drawing.Point(558, 0)
+        Me.btnClose.Location = New System.Drawing.Point(553, 0)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(30, 35)
         Me.btnClose.TabIndex = 15
         Me.btnClose.Text = "X"
         Me.btnClose.UseVisualStyleBackColor = False
         '
-        'Label3
-        '
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label3.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(0, 0)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(3, 0, 0, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Padding = New System.Windows.Forms.Padding(0, 5, 0, 0)
-        Me.Label3.Size = New System.Drawing.Size(558, 35)
-        Me.Label3.TabIndex = 14
-        Me.Label3.Text = "ShorCourse Management Systme"
-        '
-        'Guna2Elipse1
-        '
-        Me.Guna2Elipse1.TargetControl = Me
-        '
         'RoomForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(136, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(598, 644)
+        Me.ClientSize = New System.Drawing.Size(583, 644)
         Me.Controls.Add(Me.Guna2Panel1)
         Me.Controls.Add(Me.Guna2Panel2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "RoomForm"
-        Me.Padding = New System.Windows.Forms.Padding(5, 3, 5, 5)
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Room"
         Me.Guna2Panel1.ResumeLayout(False)
@@ -342,7 +336,6 @@ Partial Class RoomForm
     Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Label3 As Label
     Friend WithEvents btnClose As FontAwesome.Sharp.IconButton
-    Friend WithEvents Guna2Elipse1 As Guna.UI2.WinForms.Guna2Elipse
     Friend WithEvents txtRoom As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents btnDelete As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnAdd As Guna.UI2.WinForms.Guna2Button

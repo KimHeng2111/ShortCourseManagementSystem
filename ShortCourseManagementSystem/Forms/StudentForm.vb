@@ -107,7 +107,7 @@ Public Class StudentForm
 
     Private Sub DataGridView1_MouseClick(sender As Object, e As MouseEventArgs) Handles DataGridView1.MouseClick
         Dim menu As New ContextMenuStrip()
-        menu.Font = New Font("Khmer OS System", 9)
+        menu.Font = New Font("Khmer OS System", 11)
         menu.Items.Add("លម្អិត", Nothing, AddressOf ShowDetails)
         menu.Items.Add("កែប្រែ", Nothing, AddressOf EditStudent)
         menu.Items.Add("លុប", Nothing, AddressOf DeleteStudent)

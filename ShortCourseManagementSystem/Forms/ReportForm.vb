@@ -68,8 +68,6 @@ Public Class ReportForm
                 reportDocument.PrintOptions.PaperSize = CrystalDecisions.Shared.PaperSize.PaperA4
                 reportDocument.PrintOptions.PaperOrientation = PaperOrientation.Landscape
                 reportDocument.PrintToPrinter(dlg.PrinterSettings.Copies, False, 0, 0)
-
-                MessageBox.Show("របាយការណ៍ត្រូវបានPrintរួចរាល់!!!!", "Print", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         Catch ex As Exception
             MessageBox.Show("របាយការណ៍័មិនអាច")
@@ -80,6 +78,7 @@ Public Class ReportForm
     Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles btnExport.Click
         If cbReport.SelectedIndex = cbReport.Items.Count - 1 Then
             MessageBox.Show("សូមជ្រើសរើសរបាយការណ៍!!!!", "Warrning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
         End If
         Dim exportOption As ExportOptions
         Dim diskFileDestinationOptions As New DiskFileDestinationOptions()
@@ -123,5 +122,7 @@ Public Class ReportForm
         End Select
 
         reportDocument.Export()
+        Process.Start(sfd.FileName)
+
     End Sub
 End Class

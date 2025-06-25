@@ -29,13 +29,12 @@ Public Class Register
 
     'Register a student for a class
     Public Sub RegisterStudent()
-        Dim query As String = "INSERT INTO tblRegister (CourseID, StudentID, Discount,PaymentID) VALUES (@CourseID, @StudentID, @Discount,@PaymentID);"
+        Dim query As String = "INSERT INTO tblRegister (CourseID, StudentID, Discount) VALUES (@CourseID, @StudentID, @Discount);"
         OpenConnection()
         Dim cmd As New OleDbCommand(query, GetConnection())
         cmd.Parameters.AddWithValue("@CourseID", course.ID)
         cmd.Parameters.AddWithValue("@StudentID", student.id)
         cmd.Parameters.AddWithValue("@Discount", discount)
-        cmd.Parameters.AddWithValue("@PaymentID", payment.paymentID)
         cmd.ExecuteNonQuery()
         cmd.CommandText = "SELECT @@IDENTITY;"
         Dim id As String = cmd.ExecuteScalar().ToString()
@@ -50,27 +49,25 @@ Public Class Register
         Dim query As String = "SELECT * FROM tblRegister WHERE ID = @RegisterID;"
         OpenConnection()
         Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
-        cmd.Parameters.AddWithValue("@RegisterID", Convert.ToInt16(id))
+        cmd.Parameters.AddWithValue("@RegisterID", id)
         Dim reader As OleDbDataReader = cmd.ExecuteReader()
         If reader.Read() Then
             registerID = reader("ID").ToString()
             course.GetCourseByID(reader("CourseID").ToString())
             student.GetStudentByID(reader("StudentID").ToString())
-
             discount = Convert.ToByte(reader("Discount"))
-            payment.GetPaymentByID(reader("PaymentID").ToString())
+            payment.GetPaymentByID(registerID)
         End If
         reader.Close()
         CloseConnection()
     End Sub
     'Update register information
     Public Sub UpdateRegister(id As String)
-        Dim query As String = "UPDATE tblRegister SET CourseID = @CourseID, StudentID = @StudentID, Discount = @Discount, PaymentID = @PaymentID WHERE RegisterID = @RegisterID;"
+        Dim query As String = "UPDATE tblRegister SET CourseID = @CourseID, StudentID = @StudentID, Discount = @Discount WHERE RegisterID = @RegisterID;"
         Dim cmd As OleDbCommand = New OleDbCommand(query, GetConnection())
         cmd.Parameters.AddWithValue("@CourseID", course.ID)
         cmd.Parameters.AddWithValue("@StudentID", student.id)
         cmd.Parameters.AddWithValue("@Discount", discount)
-        cmd.Parameters.AddWithValue("@PaymentID", payment.paymentID)
         cmd.Parameters.AddWithValue("@RegisterID", id)
         ExecuteNonQuery(cmd)
     End Sub

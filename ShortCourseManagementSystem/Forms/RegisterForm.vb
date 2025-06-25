@@ -1,4 +1,5 @@
 ﻿Imports System.Data.OleDb
+Imports System.Data.SqlTypes
 Imports System.IO
 Imports CrystalDecisions.CrystalReports.Engine
 Imports CrystalDecisions.Shared
@@ -6,6 +7,7 @@ Imports Guna.UI2.WinForms
 Imports Microsoft.SqlServer
 Public Class RegisterForm
     Dim register As New Register()
+    Dim startup As Boolean = True
     Public Sub New()
 
         ' This call is required by the designer.
@@ -15,6 +17,7 @@ Public Class RegisterForm
         GetCbSubject()
         GetCbAddress()
         picStudent.ImageLocation = Application.StartupPath & "\Images\default.png"
+
     End Sub
 
     Sub Display()
@@ -161,25 +164,24 @@ Public Class RegisterForm
         If Not CheckField() Then
             Return
         End If
+        'if don't Choose Student From List Thus Create a new student 
         If register.student.id = String.Empty Then
             register.student.AddStudent(txtKhName.Text.Trim(), txtEngName.Text.Trim(), cbGender.Text, dtpDob.Text, cbAddress.Text.Trim(), txtPhone.Text.Trim(), SaveImageAndReturnPath())
         End If
-        'Assign data to register
+        'Assign Course Data to Register
         register.course.GetCourseByID(cbTime.SelectedValue.ToString())
+        'Check Student Duplicate Course or Schedule
         If Not CheckValidation() Then
             Return
         End If
-        'Step 2 : Create Student
-        'register.student.AddStudent(txtKhName.Text.Trim(), txtEngName.Text.Trim(), cbGender.Text, dtpDob.Text, cbAddress.Text.Trim(), txtPhone.Text.Trim(), SaveImageAndReturnPath())
-
         Dim Price = Convert.ToDecimal(txtPrice.Text)
         Dim Dis = Convert.ToInt16(txtDis.Text)
         register.discount = Price * Dis / 100.0
         Dim amount As Decimal = Decimal.Parse(txtAmount.Text)
         Dim unpaid As Decimal = amount - Convert.ToDecimal(txtPay.Text)
-        register.payment.NewPayment(amount, unpaid) 'Create Payment
-        'Step 3 : Create Register
+        'Step 2 : Create Register
         register.RegisterStudent()
+        register.payment.NewPayment(register.registerID, amount, unpaid) 'Create Payment
         'Print Invoice
         ExportAndShow()
         'Step 4 Display Data
@@ -203,6 +205,7 @@ Public Class RegisterForm
         txtPrice.Text = register.course.subject.basePrice.ToString("F2")
         txtAmount.Text = register.course.subject.basePrice.ToString("F2")
         txtDis.Text = "0"
+        txtPay.Text = register.course.subject.basePrice.ToString("F2")
     End Sub
     Sub Regonize()
         For Each col As DataGridViewColumn In DataGridView1.Columns
@@ -319,7 +322,8 @@ Public Class RegisterForm
     Private Sub ExportAndShow()
         Dim rdReport As New ReportDocument
         rdReport.Load("Report\Invoice.rpt")
-        rdReport.SetParameterValue("PaymentID", register.payment.paymentID)
+        Dim num As Integer = Convert.ToInt16(register.payment.paymentID)
+        rdReport.SetParameterValue("PaymentID", num.ToString("0000"))
         rdReport.SetParameterValue("khName", register.student.khName)
         rdReport.SetParameterValue(2, register.student.engName)
         rdReport.SetParameterValue(3, register.student.address)
@@ -337,8 +341,38 @@ Public Class RegisterForm
         If Not Directory.Exists(exportPath) Then
             Directory.CreateDirectory(exportPath)
         End If
-        exportPath = exportPath + "\Inv_" & register.student.khName & "_" & Date.Now().ToString("dd-MMM-yyyy") & ".pdf"
+        exportPath = (exportPath + "\") & register.student.khName & "_" & Date.Now().ToString("dd-MMM-yyyy") & ".pdf"
         rdReport.ExportToDisk(ExportFormatType.PortableDocFormat, exportPath)
         Process.Start(exportPath)
+    End Sub
+    Sub SearchData() Handles txtSearch.TextChanged
+        If startup Then
+            Return
+        End If
+        Dim query As String = "SELECT tblCourse.ID, tblSubject.Subject, tblTeacher.EngName, tblCourse.StartDate, tblSchedule.Schedule, tblRoom.Room, (Select COUNT(*) FROM tblRegister WHERE tblCourse.ID = tblRegister.CourseID) As TotalStudent
+                                From tblTeacher INNER Join (tblSchedule INNER Join (tblRoom INNER Join (tblSubject INNER Join (tblCourseStatus INNER Join tblCourse On tblCourseStatus.ID = tblCourse.StatusID) ON tblSubject.ID = tblCourse.SubjectID) ON tblRoom.ID = tblCourse.RoomID) ON tblSchedule.ID = tblCourse.ScheduleID) ON tblTeacher.ID = tblCourse.TeacherID
+                                Where tblCourse.StatusID <= 2 AND tblSubject.Subject LIKE @subject
+                                Order By tblCourse.ID;"
+        Dim subject As String = If(txtSearch.Text = "", "%", txtSearch.Text & "%")
+        Dim cmd As New OleDbCommand(query, register.GetConnection())
+        cmd.Parameters.AddWithValue("@subject", subject)
+        DataGridView1.DataSource = register.ExecuteQuery(cmd)
+        Regonize()
+    End Sub
+
+    Private Sub RegisterForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        startup = False
+    End Sub
+    Private Sub DataGridView1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
+        Dim courseID As String = DataGridView1.SelectedRows(0).Cells(0).Value
+        register.course.GetCourseByID(courseID)
+        cbCourse.SelectedIndex = cbCourse.FindStringExact(register.course.subject.Subject)
+        cbTime.SelectedIndex = cbTime.FindStringExact(register.course.GetSchedule)
+    End Sub
+
+    Private Sub txtDis_Leave(sender As Object, e As EventArgs) Handles txtDis.Leave
+        If txtDis.Text.Length = 0 Then
+            txtDis.Text = "0"
+        End If
     End Sub
 End Class

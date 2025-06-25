@@ -21,7 +21,7 @@ Public Class StudentList
     End Sub
     Sub Regonize()
         DataGridView1.Columns(0).HeaderText = "លេខកូដ"
-        DataGridView1.Columns(0).Width = 100
+        DataGridView1.Columns(0).Width = 50
         DataGridView1.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGridView1.Columns(1).HeaderText = "គោត្តនាម នាម"
         DataGridView1.Columns(1).Width = 150
@@ -56,5 +56,9 @@ Public Class StudentList
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
         GetData()
         startup = False
+    End Sub
+
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+        txtSearch.Clear()
     End Sub
 End Class

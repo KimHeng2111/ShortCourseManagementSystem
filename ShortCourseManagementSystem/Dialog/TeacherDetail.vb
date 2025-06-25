@@ -13,6 +13,7 @@
         txtID.Text = teacher.TeacherID
         txtkhName.Text = teacher.KhName
         txtEngName.Text = teacher.EngName
+        txtGender.Text = teacher.Gender
         txtAddress.Text = teacher.Address
         txtDob.Text = teacher.DoB
         txtPhone.Text = teacher.Phone
@@ -20,10 +21,11 @@
         picTeacher.ImageLocation = teacher.Picture
     End Sub
     Sub Display()
-        Dim query As String = "SELECT tblClass.ClassID, tblCourses.CourseName, tblRoom.Room AS Room, tblSchedule.Schedule, (SELECT COUNT(*) FROM tblRegister WHERE tblRegister.ClassID = tblClass.ClassID) AS TotalStudents, tblClassStatus.Status
-                       FROM tblCourses INNER JOIN (tblTeacher INNER JOIN (tblSchedule INNER JOIN (tblRoom INNER JOIN (tblClassStatus INNER JOIN tblClass ON tblClassStatus.ID = tblClass.StatusID) ON tblRoom.ID = tblClass.RoomID) ON tblSchedule.ID = tblClass.ScheduleID) ON tblTeacher.ID = tblClass.TeacherID) ON tblCourses.ID = tblClass.CourseID
-                       GROUP BY tblClass.ClassID, tblCourses.CourseName, tblRoom.Room, tblSchedule.Schedule, tblClassStatus.Status, tblClass.TeacherID
-                       HAVING (((tblClass.TeacherID)=@teacherID));"
+        Dim query As String = "SELECT tblCourse.ID, tblSubject.Subject, tblSchedule.Schedule, tblRoom.Room, tblCourse.CurrentEnrollment, tblCourseStatus.Status
+                                FROM tblRoom INNER JOIN (tblSubject INNER JOIN (tblSchedule INNER JOIN ((tblCourseStatus 
+                                INNER JOIN tblCourse ON tblCourseStatus.ID = tblCourse.StatusID) INNER JOIN tblRegister ON tblCourse.ID = tblRegister.CourseID)
+                                ON tblSchedule.ID = tblCourse.ScheduleID) ON tblSubject.ID = tblCourse.SubjectID) ON tblRoom.ID = tblCourse.RoomID
+                                WHERE (((tblCourse.TeacherID)=@teacherID));"
         Dim cmd As New OleDb.OleDbCommand(query, teacher.GetConnection())
         cmd.Parameters.AddWithValue("@teacherID", teacher.TeacherID)
         DataGridView1.DataSource = teacher.ExecuteQuery(cmd)
@@ -42,11 +44,11 @@
         DataGridView1.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGridView1.Columns(1).Width = 250
         DataGridView1.Columns(1).HeaderText = "វគ្គសិក្សា"
-        DataGridView1.Columns(2).Width = 100
-        DataGridView1.Columns(2).HeaderText = "បន្ទប់"
-        DataGridView1.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGridView1.Columns(3).Width = 200
-        DataGridView1.Columns(3).HeaderText = "វេនសិក្សា"
+        DataGridView1.Columns(2).Width = 200
+        DataGridView1.Columns(2).HeaderText = "វេនសិក្សា"
+        DataGridView1.Columns(3).Width = 100
+        DataGridView1.Columns(3).HeaderText = "បន្ទប់"
+        DataGridView1.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGridView1.Columns(4).Width = 100
         DataGridView1.Columns(4).HeaderText = "សិស្សសរុប"
         DataGridView1.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
@@ -60,6 +62,9 @@
                 DataGridView1.Rows(i).DefaultCellStyle.BackColor = Color.FromArgb(245, 250, 253)
             End If
         Next i
+        For Each col As DataGridViewColumn In DataGridView1.Columns
+            col.SortMode = DataGridViewColumnSortMode.NotSortable
+        Next
         DataGridView1.ClearSelection()
     End Sub
 End Class

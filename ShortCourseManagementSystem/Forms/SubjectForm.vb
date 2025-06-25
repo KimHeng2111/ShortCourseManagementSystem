@@ -30,21 +30,22 @@ Public Class SubjectForm
             MessageBox.Show("សូមបញ្ចូលតម្លៃនៃមុខវិជ្ជានេះ!!!!", "បញ្ចូលទិន្ន័យមិនត្រឹមត្រូវ", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return False
         End If
-        'Check Duplicate Subject
-        Dim dt As DataTable = Me.subject.GetSubjectData()
-        For Each row As DataRow In dt.Rows
-            If txtSubject.Text.Trim() = row(1).ToString() Then
-                MsgBox("មុខវិជ្ជានេះគឺមនារូចហើយ")
-                Return False
-            End If
-        Next
+
         Return True
     End Function
 
-    Private Sub btmCreate_Click(sender As Object, e As EventArgs) Handles btmCreate.Click
+    Private Sub btmCreate_Click(sender As Object, e As EventArgs) Handles btnCreate.Click
         If Not CheckField() Then
             Return
         Else
+            'Check Duplicate Subject
+            Dim dt As DataTable = Me.subject.GetSubjectData()
+            For Each row As DataRow In dt.Rows
+                If txtSubject.Text.Trim() = row(1).ToString() Then
+                    MsgBox("មុខវិជ្ជានេះគឺមានរូចហើយ")
+                    Return
+                End If
+            Next
             subject.AddSubject(txtSubject.Text.Trim(), txtDes.Text.Trim(), Convert.ToInt32(txtCreditHours.Text.Trim()), Convert.ToDecimal(txtBasePrice.Text.Trim()))
             MessageBox.Show("វគ្គសិក្សា ៖ " & txtSubject.Text & "ត្រូវបានបង្កើតបានដោយជោគជ័យ!!!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
@@ -58,11 +59,12 @@ Public Class SubjectForm
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         Panel1.Visible = True
+        btnCreate.Visible = True
     End Sub
 
     Private Sub DataGridView1_MouseClick(sender As Object, e As MouseEventArgs) Handles DataGridView1.MouseClick
         Dim menu As New ContextMenuStrip()
-        menu.Font = New Font("Khmer OS System", 9)
+        menu.Font = New Font("Khmer OS System", 11)
         menu.Items.Add("លម្អិត", Nothing, AddressOf ShowDetails)
         menu.Items.Add("កែប្រែ", Nothing, AddressOf EditCourse)
         menu.Items.Add("លុប", Nothing, AddressOf DeleteCourse)
@@ -72,8 +74,8 @@ Public Class SubjectForm
             Dim hit As DataGridView.HitTestInfo = DataGridView1.HitTest(e.X, e.Y)
             If hit.RowIndex >= 0 Then
                 DataGridView1.Rows(hit.RowIndex).Selected = True
-                Dim CoursID As String = DataGridView1.Rows(hit.RowIndex).Cells(0).Value.ToString()
-                subject.GetSubjectByID(CoursID)
+                Dim subjectID As String = DataGridView1.Rows(hit.RowIndex).Cells(0).Value.ToString()
+                subject.GetSubjectByID(subjectID)
                 menu.Show(DataGridView1, e.Location)
             End If
         End If
@@ -88,7 +90,12 @@ Public Class SubjectForm
         End If
     End Sub
     Private Sub EditCourse()
-
+        Panel1.Visible = True
+        btnEdit.Visible = True
+        txtSubject.Text = subject.Subject
+        txtDes.Text = subject.Description.ToString()
+        txtCreditHours.Text = subject.CreditHours.ToString()
+        txtBasePrice.Text = subject.basePrice.ToString("F2")
     End Sub
 
     Private Sub ShowDetails()
@@ -107,6 +114,8 @@ Public Class SubjectForm
         subject.Description = ""
         subject.CreditHours = 0
         subject.basePrice = 0D
+        btnEdit.Visible = False
+        btnCreate.Visible = False
         Panel1.Visible = False
     End Sub
 
@@ -157,7 +166,7 @@ Public Class SubjectForm
             .Columns(3).HeaderText = "រយៈពេល (ម៉ោង)"
             .Columns(3).DefaultCellStyle.Format = "00ម៉ោង"
             .Columns(4).HeaderText = "តម្លៃ ($)"
-            Columns(3).DefaultCellStyle.Format = "C2"
+            .Columns(4).DefaultCellStyle.Format = "C2"
             .Columns(5).HeaderText = "ចំនួនថ្នាក់រៀន"
             .Columns(6).HeaderText = "ចំនួនថ្នាក់បញ្ចប់"
         End With
@@ -171,7 +180,25 @@ Public Class SubjectForm
                 DataGridView1.Rows(i).Cells(j).Style.Alignment = DataGridViewContentAlignment.MiddleCenter
             Next j
         Next i
-
+        For Each col As DataGridViewColumn In DataGridView1.Columns
+            col.SortMode = DataGridViewColumnSortMode.NotSortable
+        Next
         DataGridView1.ClearSelection()
+    End Sub
+
+    Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
+        If CheckField() Then
+            If txtSubject.Text = subject.Subject And txtDes.Text = subject.Description And Convert.ToDecimal(txtBasePrice.Text.Trim()) = subject.basePrice And Convert.ToInt16(txtCreditHours.Text.Trim()) = subject.CreditHours Then
+                MessageBox.Show("មិនមានទិន្ន័យណាត្រូវបានកែប្រែទេ!!!")
+            Else
+                subject.Subject = txtSubject.Text.Trim()
+                subject.basePrice = Convert.ToDecimal(txtBasePrice.Text.Trim())
+                subject.CreditHours = Convert.ToInt32(txtCreditHours.Text.Trim())
+                subject.Description = txtDes.Text.Trim()
+                subject.UpdateSubject()
+                MsgBox("មុខវិជ្ជាត្រូវបានកែប្រែដោយជោគជ័យ")
+                Display()
+            End If
+        End If
     End Sub
 End Class

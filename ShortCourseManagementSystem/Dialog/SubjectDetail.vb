@@ -1,23 +1,22 @@
 ﻿Public Class SubjectDetail
-    Dim course As New Subject()
+    Dim subject As New Subject()
     Public Sub New(course As Subject)
 
         ' This call is required by the designer.
         InitializeComponent()
 
         ' Add any initialization after the InitializeComponent() call.
-        Me.course = course
+        Me.subject = course
         FillCourseDetails()
         Display()
     End Sub
     Sub Display()
-        Dim query As String = "SELECT tblClass.ClassID, tblTeacher.KhName AS Teacher, tblRoom.Room AS Room, tblSchedule.Schedule, (SELECT COUNT(*) FROM tblRegister WHERE tblRegister.ClassID = tblClass.ClassID) AS TotalStudents, tblClassStatus.Status
-FROM tblTeacher INNER JOIN (tblSchedule INNER JOIN (tblRoom INNER JOIN (tblClassStatus INNER JOIN tblClass ON tblClassStatus.ID = tblClass.StatusID) ON tblRoom.ID = tblClass.RoomID) ON tblSchedule.ID = tblClass.ScheduleID) ON tblTeacher.ID = tblClass.TeacherID
-GROUP BY tblClass.ClassID, tblTeacher.KhName, tblRoom.Room, tblSchedule.Schedule, tblClassStatus.Status, tblClass.CourseID
-HAVING (((tblClass.CourseID)=[@ID]));"
-        Dim cmd As New OleDb.OleDbCommand(query, course.GetConnection())
-        cmd.Parameters.AddWithValue("@curseID", course.ID)
-        DataGridView1.DataSource = course.ExecuteQuery(cmd)
+        Dim query As String = "SELECT tblCourse.ID, tblTeacher.KhName AS Teacher, tblRoom.Room AS Room, tblSchedule.Schedule, tblCourse.CurrentEnrollment, tblCourseStatus.Status
+FROM tblTeacher INNER JOIN (tblSchedule INNER JOIN (tblRoom INNER JOIN (tblCourseStatus INNER JOIN tblCourse ON tblCourseStatus.ID = tblCourse.StatusID) ON tblRoom.ID = tblCourse.RoomID) ON tblSchedule.ID = tblCourse.ScheduleID) ON tblTeacher.ID = tblCourse.TeacherID
+WHERE tblCourse.SubjectID = @ID;"
+        Dim cmd As New OleDb.OleDbCommand(query, subject.GetConnection())
+        cmd.Parameters.AddWithValue("@ID", subject.ID)
+        DataGridView1.DataSource = subject.ExecuteQuery(cmd)
         DataGridView1.ColumnHeadersHeight = 40
         'DataGridView1.AllowUserToResizeColumns = True
         'Customize DataGridView columns
@@ -49,53 +48,56 @@ HAVING (((tblClass.CourseID)=[@ID]));"
                 DataGridView1.Rows(i).Cells(j).Style.Alignment = DataGridViewContentAlignment.MiddleCenter
             Next j
         Next i
+        For Each col As DataGridViewColumn In DataGridView1.Columns
+            col.SortMode = DataGridViewColumnSortMode.NotSortable
+        Next
         DataGridView1.ClearSelection()
     End Sub
     Sub FillCourseDetails()
-        txtCourseName.Texts = course.Subject
-        txtDes.Texts = course.Description.ToString()
-        txtDuration.Texts = course.CreditHours.ToString()
-        txtBasePrice.Texts = course.basePrice.ToString("F2")
+        txtSubject.Text = subject.Subject
+        txtDes.Text = subject.Description.ToString()
+        txtDuration.Text = subject.CreditHours.ToString()
+        txtBasePrice.Text = subject.basePrice.ToString("F2")
     End Sub
 
-    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
-        Me.Close()
-    End Sub
+    'Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+    '    Me.Close()
+    'End Sub
 
-    Private Sub btmCreate_Click(sender As Object, e As EventArgs) Handles btmCreate.Click
-        'Cheack Filed
-        If Not CheckField() Then
-            Return
-        Else
-            course.Subject = txtCourseName.Texts.Trim()
-            course.basePrice = Convert.ToDecimal(txtBasePrice.Texts.Trim())
-            course.CreditHours = Convert.ToInt32(txtDuration.Texts.Trim())
-            course.Description = txtDes.Texts.Trim()
-            course.UpdateSubject()
-            Display()
-        End If
-    End Sub
-    Function CheckField() As Boolean
-        Dim courseName As String = txtCourseName.Texts.Trim()
-        Dim description As String = txtDes.Texts.Trim()
-        Dim duration As String = txtDuration.Texts.Trim()
-        Dim basePrice As String = txtBasePrice.Texts.Trim()
-        If String.IsNullOrEmpty(courseName) Then
-            MessageBox.Show("ឈ្មោះវគ្គសិក្សាមិនត្រឹមត្រូវ", "បញ្ចូលទិន្ន័យមិនត្រឹមត្រូវ", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Return False
-        End If
-        If String.IsNullOrEmpty(description) Then
-            MessageBox.Show("ការពិពណ៌រនាមិនត្រឹមត្រូវ", "បញ្ចូលទិន្ន័យមិនត្រឹមត្រូវ", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Return False
-        End If
-        If String.IsNullOrEmpty(duration) OrElse Not IsNumeric(duration) Then
-            MessageBox.Show("សូមបញ្ជូលរយៈពលេសិក្សា", "បញ្ចូលទិន្ន័យមិនត្រឹមត្រូវ", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Return False
-        End If
-        If String.IsNullOrEmpty(basePrice) OrElse Not IsNumeric(basePrice) Then
-            MessageBox.Show("សូមបញ្ជូលតម្លៃវគ្គសិក្សា", "បញ្ចូលទិន្ន័យមិនត្រឹមត្រូវ", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Return False
-        End If
-        Return True
-    End Function
+    'Private Sub btmCreate_Click(sender As Object, e As EventArgs) Handles btmCreate.Click
+    '    'Cheack Filed
+    '    If Not CheckField() Then
+    '        Return
+    '    Else
+    'subject.Subject = txtCourseName.Texts.Trim()
+    'subject.basePrice = Convert.ToDecimal(txtBasePrice.Texts.Trim())
+    'subject.CreditHours = Convert.ToInt32(txtDuration.Texts.Trim())
+    'subject.Description = txtDes.Texts.Trim()
+    'subject.UpdateSubject()
+    'Display()
+    '    End If
+    'End Sub
+    'Function CheckField() As Boolean
+    '    Dim courseName As String = txtCourseName.Texts.Trim()
+    '    Dim description As String = txtDes.Texts.Trim()
+    '    Dim duration As String = txtDuration.Texts.Trim()
+    '    Dim basePrice As String = txtBasePrice.Texts.Trim()
+    '    If String.IsNullOrEmpty(courseName) Then
+    '        MessageBox.Show("ឈ្មោះវគ្គសិក្សាមិនត្រឹមត្រូវ", "បញ្ចូលទិន្ន័យមិនត្រឹមត្រូវ", MessageBoxButtons.OK, MessageBoxIcon.Error)
+    '        Return False
+    '    End If
+    '    If String.IsNullOrEmpty(description) Then
+    '        MessageBox.Show("ការពិពណ៌រនាមិនត្រឹមត្រូវ", "បញ្ចូលទិន្ន័យមិនត្រឹមត្រូវ", MessageBoxButtons.OK, MessageBoxIcon.Error)
+    '        Return False
+    '    End If
+    '    If String.IsNullOrEmpty(duration) OrElse Not IsNumeric(duration) Then
+    '        MessageBox.Show("សូមបញ្ជូលរយៈពលេសិក្សា", "បញ្ចូលទិន្ន័យមិនត្រឹមត្រូវ", MessageBoxButtons.OK, MessageBoxIcon.Error)
+    '        Return False
+    '    End If
+    '    If String.IsNullOrEmpty(basePrice) OrElse Not IsNumeric(basePrice) Then
+    '        MessageBox.Show("សូមបញ្ជូលតម្លៃវគ្គសិក្សា", "បញ្ចូលទិន្ន័យមិនត្រឹមត្រូវ", MessageBoxButtons.OK, MessageBoxIcon.Error)
+    '        Return False
+    '    End If
+    '    Return True
+    'End Function
 End Class

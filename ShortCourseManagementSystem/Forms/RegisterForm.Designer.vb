@@ -30,9 +30,8 @@ Partial Class RegisterForm
         Me.OpenPic = New System.Windows.Forms.OpenFileDialog()
         Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
         Me.PanelSearch = New System.Windows.Forms.Panel()
-        Me.cbSearchTeacher = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.txtSearch = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.txtSearch = New CustomControls.RJControls.RJTextBox()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.PanelListShow = New Guna.UI2.WinForms.Guna2Panel()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
@@ -130,9 +129,8 @@ Partial Class RegisterForm
         'PanelSearch
         '
         Me.PanelSearch.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.PanelSearch.Controls.Add(Me.cbSearchTeacher)
-        Me.PanelSearch.Controls.Add(Me.Button1)
         Me.PanelSearch.Controls.Add(Me.txtSearch)
+        Me.PanelSearch.Controls.Add(Me.Button1)
         Me.PanelSearch.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelSearch.Location = New System.Drawing.Point(0, 443)
         Me.PanelSearch.Margin = New System.Windows.Forms.Padding(3, 7, 3, 10)
@@ -141,40 +139,36 @@ Partial Class RegisterForm
         Me.PanelSearch.Size = New System.Drawing.Size(1700, 60)
         Me.PanelSearch.TabIndex = 23
         '
-        'cbSearchTeacher
+        'txtSearch
         '
-        Me.cbSearchTeacher.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.cbSearchTeacher.BackColor = System.Drawing.Color.Transparent
-        Me.cbSearchTeacher.BorderColor = System.Drawing.Color.DimGray
-        Me.cbSearchTeacher.BorderRadius = 8
-        Me.cbSearchTeacher.BorderThickness = 2
-        Me.cbSearchTeacher.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cbSearchTeacher.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbSearchTeacher.Enabled = False
-        Me.cbSearchTeacher.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(136, Byte), Integer))
-        Me.cbSearchTeacher.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(136, Byte), Integer))
-        Me.cbSearchTeacher.FocusedState.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbSearchTeacher.FocusedState.ForeColor = System.Drawing.Color.Black
-        Me.cbSearchTeacher.FocusedState.Parent = Me.cbSearchTeacher
-        Me.cbSearchTeacher.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbSearchTeacher.ForeColor = System.Drawing.Color.Black
-        Me.cbSearchTeacher.FormattingEnabled = True
-        Me.cbSearchTeacher.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(136, Byte), Integer))
-        Me.cbSearchTeacher.HoverState.FillColor = System.Drawing.Color.White
-        Me.cbSearchTeacher.HoverState.ForeColor = System.Drawing.Color.Black
-        Me.cbSearchTeacher.HoverState.Parent = Me.cbSearchTeacher
-        Me.cbSearchTeacher.ItemHeight = 35
-        Me.cbSearchTeacher.ItemsAppearance.BackColor = System.Drawing.Color.White
-        Me.cbSearchTeacher.ItemsAppearance.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbSearchTeacher.ItemsAppearance.ForeColor = System.Drawing.Color.Black
-        Me.cbSearchTeacher.ItemsAppearance.Parent = Me.cbSearchTeacher
-        Me.cbSearchTeacher.ItemsAppearance.SelectedBackColor = System.Drawing.Color.White
-        Me.cbSearchTeacher.ItemsAppearance.SelectedForeColor = System.Drawing.Color.Black
-        Me.cbSearchTeacher.Location = New System.Drawing.Point(359, 9)
-        Me.cbSearchTeacher.Name = "cbSearchTeacher"
-        Me.cbSearchTeacher.ShadowDecoration.Parent = Me.cbSearchTeacher
-        Me.cbSearchTeacher.Size = New System.Drawing.Size(266, 41)
-        Me.cbSearchTeacher.TabIndex = 2
+        Me.txtSearch.BorderColor = System.Drawing.Color.DimGray
+        Me.txtSearch.BorderRadius = 8
+        Me.txtSearch.BorderThickness = 2
+        Me.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtSearch.DefaultText = ""
+        Me.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSearch.DisabledState.Parent = Me.txtSearch
+        Me.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(136, Byte), Integer))
+        Me.txtSearch.FocusedState.FillColor = System.Drawing.Color.White
+        Me.txtSearch.FocusedState.ForeColor = System.Drawing.Color.Black
+        Me.txtSearch.FocusedState.Parent = Me.txtSearch
+        Me.txtSearch.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSearch.ForeColor = System.Drawing.Color.Black
+        Me.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtSearch.HoverState.Parent = Me.txtSearch
+        Me.txtSearch.Location = New System.Drawing.Point(15, 8)
+        Me.txtSearch.Margin = New System.Windows.Forms.Padding(4, 7, 4, 7)
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtSearch.PlaceholderForeColor = System.Drawing.Color.Black
+        Me.txtSearch.PlaceholderText = "ស្វែងរកតាមរយៈឈ្មោះមុខវិជ្ជា"
+        Me.txtSearch.SelectedText = ""
+        Me.txtSearch.ShadowDecoration.Parent = Me.txtSearch
+        Me.txtSearch.Size = New System.Drawing.Size(371, 44)
+        Me.txtSearch.TabIndex = 4
         '
         'Button1
         '
@@ -183,34 +177,12 @@ Partial Class RegisterForm
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(644, 10)
+        Me.Button1.Location = New System.Drawing.Point(431, 10)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(170, 41)
         Me.Button1.TabIndex = 3
         Me.Button1.Text = "សម្អាត"
         Me.Button1.UseVisualStyleBackColor = False
-        '
-        'txtSearch
-        '
-        Me.txtSearch.BackColor = System.Drawing.SystemColors.Window
-        Me.txtSearch.BorderColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(111, Byte), Integer), CType(CType(210, Byte), Integer))
-        Me.txtSearch.BorderFocusColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSearch.BorderRadius = 10
-        Me.txtSearch.BorderSize = 2
-        Me.txtSearch.Font = New System.Drawing.Font("Khmer OS Battambang", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSearch.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.txtSearch.Location = New System.Drawing.Point(5, 9)
-        Me.txtSearch.Margin = New System.Windows.Forms.Padding(4)
-        Me.txtSearch.Multiline = False
-        Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Padding = New System.Windows.Forms.Padding(10, 7, 10, 7)
-        Me.txtSearch.PasswordChar = False
-        Me.txtSearch.PlaceholderColor = System.Drawing.Color.DarkGray
-        Me.txtSearch.PlaceholderText = "ស្វែងរក ឈ្មោះមុខវីជ្ជា ឬ ClassID"
-        Me.txtSearch.Size = New System.Drawing.Size(340, 39)
-        Me.txtSearch.TabIndex = 1
-        Me.txtSearch.Texts = ""
-        Me.txtSearch.UnderlinedStyle = False
         '
         'Guna2Panel1
         '
@@ -1349,14 +1321,13 @@ Partial Class RegisterForm
     Friend WithEvents Panel4 As Panel
     Friend WithEvents txtRoom As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label31 As Label
-    Friend WithEvents PanelSearch As Panel
-    Friend WithEvents Button1 As Button
-    Friend WithEvents txtSearch As CustomControls.RJControls.RJTextBox
     Friend WithEvents PanelListShow As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Label36 As Label
     Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2Panel3 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2Elipse2 As Guna.UI2.WinForms.Guna2Elipse
-    Friend WithEvents cbSearchTeacher As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents PanelSearch As Panel
+    Friend WithEvents txtSearch As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Button1 As Button
 End Class
