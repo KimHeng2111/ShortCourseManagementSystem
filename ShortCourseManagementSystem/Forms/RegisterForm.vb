@@ -187,7 +187,7 @@ Public Class RegisterForm
         'Step 4 Display Data
         Display()
         register = New Register()
-
+        btnClear.PerformClick()
     End Sub
 
     Private Sub cbTime_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbTime.SelectedIndexChanged

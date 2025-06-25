@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{0F5A17D0-49EC-4437-92CF-AD1CB90FB213}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>StudentManagementSystem.MainForm</StartupObject>
+    <StartupObject>StudentManagementSystem.LoginForm</StartupObject>
     <RootNamespace>StudentManagementSystem</RootNamespace>
     <AssemblyName>StudentManagementSystem</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -286,7 +286,6 @@
     <Compile Include="Model\ConnectionDB.vb" />
     <Compile Include="Model\Subject.vb" />
     <Compile Include="Model\Dashboard.vb" />
-    <Compile Include="Model\Getdata.vb" />
     <Compile Include="Model\Course.vb" />
     <Compile Include="Model\Payment.vb" />
     <Compile Include="Model\Register.vb" />
@@ -498,9 +497,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\loginfrom2.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\About System.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\System.jpg" />

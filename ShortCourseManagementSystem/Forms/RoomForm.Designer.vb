@@ -36,14 +36,10 @@ Partial Class RoomForm
         Me.btnClear = New Guna.UI2.WinForms.Guna2Button()
         Me.txtRoom = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.btnClose = New FontAwesome.Sharp.IconButton()
         Me.Guna2Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
-        Me.Guna2Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -68,11 +64,11 @@ Partial Class RoomForm
         Me.Guna2Panel1.Controls.Add(Me.Panel1)
         Me.Guna2Panel1.Controls.Add(Me.Label1)
         Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2Panel1.Location = New System.Drawing.Point(0, 35)
+        Me.Guna2Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.Padding = New System.Windows.Forms.Padding(5)
         Me.Guna2Panel1.ShadowDecoration.Parent = Me.Guna2Panel1
-        Me.Guna2Panel1.Size = New System.Drawing.Size(583, 609)
+        Me.Guna2Panel1.Size = New System.Drawing.Size(583, 644)
         Me.Guna2Panel1.TabIndex = 0
         '
         'Panel2
@@ -80,7 +76,7 @@ Partial Class RoomForm
         Me.Panel2.Controls.Add(Me.DataGridView2)
         Me.Panel2.Controls.Add(Me.Label6)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel2.Location = New System.Drawing.Point(5, 268)
+        Me.Panel2.Location = New System.Drawing.Point(5, 303)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Padding = New System.Windows.Forms.Padding(5)
         Me.Panel2.Size = New System.Drawing.Size(573, 336)
@@ -257,61 +253,13 @@ Partial Class RoomForm
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "ឈ្មោះបន្ទប់៖"
         '
-        'Guna2Panel2
-        '
-        Me.Guna2Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2Panel2.BorderRadius = 15
-        Me.Guna2Panel2.Controls.Add(Me.Label3)
-        Me.Guna2Panel2.Controls.Add(Me.btnClose)
-        Me.Guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Guna2Panel2.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2Panel2.Name = "Guna2Panel2"
-        Me.Guna2Panel2.ShadowDecoration.Parent = Me.Guna2Panel2
-        Me.Guna2Panel2.Size = New System.Drawing.Size(583, 35)
-        Me.Guna2Panel2.TabIndex = 1
-        '
-        'Label3
-        '
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label3.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(0, 0)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(3, 0, 0, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Padding = New System.Windows.Forms.Padding(0, 5, 0, 0)
-        Me.Label3.Size = New System.Drawing.Size(553, 35)
-        Me.Label3.TabIndex = 14
-        Me.Label3.Text = "ShorCourse Management Systme"
-        '
-        'btnClose
-        '
-        Me.btnClose.BackColor = System.Drawing.Color.Transparent
-        Me.btnClose.Dock = System.Windows.Forms.DockStyle.Right
-        Me.btnClose.FlatAppearance.BorderSize = 0
-        Me.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
-        Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnClose.ForeColor = System.Drawing.Color.White
-        Me.btnClose.IconChar = FontAwesome.Sharp.IconChar.None
-        Me.btnClose.IconColor = System.Drawing.Color.Black
-        Me.btnClose.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.btnClose.IconSize = 30
-        Me.btnClose.Location = New System.Drawing.Point(553, 0)
-        Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(30, 35)
-        Me.btnClose.TabIndex = 15
-        Me.btnClose.Text = "X"
-        Me.btnClose.UseVisualStyleBackColor = False
-        '
         'RoomForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(583, 644)
         Me.Controls.Add(Me.Guna2Panel1)
-        Me.Controls.Add(Me.Guna2Panel2)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
         Me.Name = "RoomForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Room"
@@ -320,7 +268,6 @@ Partial Class RoomForm
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.Guna2Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -333,9 +280,6 @@ Partial Class RoomForm
     Friend WithEvents DataGridView2 As DataGridView
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label2 As Label
-    Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Label3 As Label
-    Friend WithEvents btnClose As FontAwesome.Sharp.IconButton
     Friend WithEvents txtRoom As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents btnDelete As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnAdd As Guna.UI2.WinForms.Guna2Button

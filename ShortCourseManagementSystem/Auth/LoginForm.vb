@@ -9,16 +9,14 @@
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnExit.Click
-        Me.DialogResult = 2
         Me.Close()
     End Sub
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles btnLogin.Click
         If CheckField() Then
             If User.CheckLogin(txtUserName.Text.Trim(), txtPassWord.Text.Trim()) Then
-                Me.DialogResult = 1
-                User.userName = txtUserName.Text.Trim()
-                Me.Close()
+                MainForm.Visible = True
+                Me.Hide()
             Else
                 MessageBox.Show("ឈ្មោះអ្នកប្រើប្រាស់ ឬ ពាក្យសម្ងាត់មិនត្រឹមត្រូវទេ", "ការព្រមាន", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 txtUserName.Focus()
@@ -51,7 +49,6 @@
     End Sub
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
-        Me.DialogResult = 2
         Me.Close()
     End Sub
 

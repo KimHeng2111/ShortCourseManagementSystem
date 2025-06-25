@@ -59,11 +59,6 @@ Public Class RoomForm
         room.GetRoomByID(Convert.ToInt16(DataGridView2.CurrentRow.Cells(0).Value))
         txtRoom.Text = room.room
     End Sub
-
-    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
-        Me.Close()
-    End Sub
-
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
         txtRoom.Clear()
     End Sub

@@ -59,45 +59,4 @@ WHERE tblCourse.SubjectID = @ID;"
         txtDuration.Text = subject.CreditHours.ToString()
         txtBasePrice.Text = subject.basePrice.ToString("F2")
     End Sub
-
-    'Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
-    '    Me.Close()
-    'End Sub
-
-    'Private Sub btmCreate_Click(sender As Object, e As EventArgs) Handles btmCreate.Click
-    '    'Cheack Filed
-    '    If Not CheckField() Then
-    '        Return
-    '    Else
-    'subject.Subject = txtCourseName.Texts.Trim()
-    'subject.basePrice = Convert.ToDecimal(txtBasePrice.Texts.Trim())
-    'subject.CreditHours = Convert.ToInt32(txtDuration.Texts.Trim())
-    'subject.Description = txtDes.Texts.Trim()
-    'subject.UpdateSubject()
-    'Display()
-    '    End If
-    'End Sub
-    'Function CheckField() As Boolean
-    '    Dim courseName As String = txtCourseName.Texts.Trim()
-    '    Dim description As String = txtDes.Texts.Trim()
-    '    Dim duration As String = txtDuration.Texts.Trim()
-    '    Dim basePrice As String = txtBasePrice.Texts.Trim()
-    '    If String.IsNullOrEmpty(courseName) Then
-    '        MessageBox.Show("ឈ្មោះវគ្គសិក្សាមិនត្រឹមត្រូវ", "បញ្ចូលទិន្ន័យមិនត្រឹមត្រូវ", MessageBoxButtons.OK, MessageBoxIcon.Error)
-    '        Return False
-    '    End If
-    '    If String.IsNullOrEmpty(description) Then
-    '        MessageBox.Show("ការពិពណ៌រនាមិនត្រឹមត្រូវ", "បញ្ចូលទិន្ន័យមិនត្រឹមត្រូវ", MessageBoxButtons.OK, MessageBoxIcon.Error)
-    '        Return False
-    '    End If
-    '    If String.IsNullOrEmpty(duration) OrElse Not IsNumeric(duration) Then
-    '        MessageBox.Show("សូមបញ្ជូលរយៈពលេសិក្សា", "បញ្ចូលទិន្ន័យមិនត្រឹមត្រូវ", MessageBoxButtons.OK, MessageBoxIcon.Error)
-    '        Return False
-    '    End If
-    '    If String.IsNullOrEmpty(basePrice) OrElse Not IsNumeric(basePrice) Then
-    '        MessageBox.Show("សូមបញ្ជូលតម្លៃវគ្គសិក្សា", "បញ្ចូលទិន្ន័យមិនត្រឹមត្រូវ", MessageBoxButtons.OK, MessageBoxIcon.Error)
-    '        Return False
-    '    End If
-    '    Return True
-    'End Function
 End Class

@@ -16,8 +16,8 @@ Public Class MainForm
         panelMenu.Controls.Add(leftBorderBtn)
         Me.DoubleBuffered = True
         Me.MaximizedBounds = Screen.FromHandle(Me.Handle).WorkingArea
-        Dim test As LoginForm = New LoginForm()
-        login = test.ShowDialog()
+        'Dim test As LoginForm = New LoginForm()
+        'login = test.ShowDialog()
         lbUsername.Text = lbUsername.Tag.ToString() & User.userName
     End Sub
     Private Sub Activatebutton(senderBtn As Object, customColor As Color)
